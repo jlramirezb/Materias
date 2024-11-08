@@ -1,0 +1,659 @@
+\documentclass{beamer}
+\mode<presentation>
+\usepackage{amssymb,textcomp}
+%\usepackage{beamerthemesplit}
+\usepackage{beamerthemeJuanLesPins}
+\usepackage{verbatim}
+\usefonttheme{serif}
+\title{Resoluci\'on Num\'erica de Sistemas de Ecuacionesl Lineales.}
+\author{Jos\'e Luis Ram\'irez B.}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%\section[Introducci\'on]{}
+\frame{\tableofcontents}
+
+\section{Introducci\'on}
+\begin{frame}[fragile]
+ %\frametitle{Motivaci\'on.}      
+ La cercha de la figura se carga con una fuerza uniforme repartida sobre el cord\'on superior
+
+ \begin{center}
+ \includegraphics[scale=0.5]{cercha.png}
+\end{center}
+
+ El planteamiento del problema conduce a un sistema lineal de ecuaciones de dimensi\'on $n=50$ y en el que la matriz tiene la siguiente estructura
+
+ \begin{center}
+ \includegraphics[scale=0.5]{matriz.png}
+\end{center}
+ 
+ Al resolver el sistema, se obtiene la deformaci\'on de la estructura
+ 
+ \begin{center}
+ \includegraphics[scale=0.5]{cerchadef.png}
+\end{center}
+ 
+\end{frame}
+%%%%
+\frame
+{
+  \frametitle{Motivaci\'on.} 
+  \begin{itemize}
+   \item<1->La formulaci\'on de problemas de ingenier\'ia a menudo conduce a sistemas lineales de ecuaciones. Estos sistemas pueden llegar a tener cientos o miles de grados de libertad. 
+   \item<2-> El objetivo de este tema es desarrollar estrategias num\'ericas que permitan resolver sistemas de ecuaciones relativamente grandes de una manera eficiente. 
+   \item<3-> Adem\'as, se analizar\'an con detalle algunos m\'etodos directos.
+  \end{itemize}
+}
+%%%%
+\frame
+{
+   \frametitle{Motivaci\'on.}
+   
+Si bien existen m\'etodos exactos  como el m\'etodo de Cramer, estos son muy costosos de aplicar en situaciones donde los sistemas a resolver tienen muchas ecuaciones.
+
+El n\'umero total de operaciones para resolver un sistema de dimensi\'on $n$ con este m\'etodo es
+$$
+T_C = (n+1)^{2}n!-1
+$$
+
+\begin{table}[!ht]
+ \begin{tabular}{|c|c|}\hline
+$n$ & $T_C$  \\\hline
+$5$ & $4319$ \\\hline
+$10$ & $4\times10^8$\\\hline
+$100$ &  $10^{158}$\\\hline
+ \end{tabular}
+\caption{Operaciones elementales del m\'etodo de Cramer segun el tama\~no de la matriz($n$).}
+\end{table}
+}
+%%%%
+\frame{
+\frametitle{Motivaci\'on.}
+Desde el punto de vista num\'erico se buscan algoritmos eficientes en diferentes aspectos:
+\begin{itemize}
+ \item<2-> N\'umero de operaciones necesarias (tiempo CPU)
+ \item<3-> Necesidades de almacenamiento (memoria)
+ \item<4-> Rango de aplicabilidad (sobre que tipo de matrices se pueden aplicar)
+\end{itemize}
+}
+%%%%%
+\frame
+{
+\frametitle{Introducci\'on.}
+Un sistema de $n$-ecuaciones (con coeficientes reales) en las $n$-inc\'ognitas $x_1,
+x_2,\ldots,x_n$ es un conjunto de $n$ ecuaciones de la forma:
+
+$$
+\left\{
+\begin{array}{c}
+  f_1(x_1,x_2,\ldots,x_n)=0 \\
+  f_2(x_1,x_2,\ldots,x_n)=0 \\
+  \dotfill \\
+  f_n(x_1,x_2,\ldots,x_n)=0 \\
+\end{array}
+\right.
+$$
+
+donde
+$$f_i(x_1,x_2,\ldots,x_n) = a_{i,1}x_1 + a_{i,2}x_2 + \cdots + a_{i,n}x_n - b_i$$
+}
+%%%
+\frame
+{
+con $a_{i,1},a_{i,2},\ldots,a_{i,n}$ y $b_i$ constantes reales, el sistema se dice lineal (con coeficientes reales);
+en cualquier otro caso el sistema se dice no-lineal.
+
+A los n\'umeros $a_{ij}$ se les denomina coeficientes del sistema y a los $b_i$ t\'erminos independientes.
+
+\uncover<2->{
+Si $C = (c_1, c_2,\ldots,c_n) \in \mathbb{R}^n$ es tal que $f_i(c_1,c_2,\ldots,c_n) = 0$ para cada $i = 1,2,\ldots,n$,
+entonces se dice que $C$ es una soluci\'on real del sistema planteado.
+}
+}
+%%%%
+\frame{
+Si se introducen las matrices
+$$
+A = \left[\begin{array}{cccc}
+           a_{11} & a_{12} & \cdots & a_{1n}\\
+           a_{21} & a_{22} & \cdots & a_{2n}\\
+           \vdots & \vdots & \ddots & \vdots\\
+           a_{m1} & a_{m2} & \cdots & a_{mn}\\
+          \end{array}\right], \qquad x=\left[\begin{array}{c}
+           x_1\\
+           x_2\\
+           \vdots\\
+           x_n\\
+          \end{array}\right], \qquad b=\left[\begin{array}{c}
+           b_1\\
+           b_2\\
+           \vdots\\
+           b_m\\
+          \end{array}\right]
+$$
+
+el sistema se puede representar de forma m\'as compacta por
+$$
+Ax=b
+$$
+}
+%%%%
+\frame{
+\frametitle{Existencia y unicidad de soluciones}
+\begin{block}{Teorema: Compatibilidad de un sistema de ecuaciones lineales}
+  La ecuaci\'on $Ax=b$ admite soluci\'on si y s\'olo si
+  $$
+  rango(A|b) = rango(A)
+  $$
+\end{block}
+
+\uncover<2->{
+\begin{block}{Corolario}
+ Si $A^{m\times n}$ tiene rango $m$, $Ax=b$ siempre tiene soluci\'on
+\end{block}}
+
+\uncover<3->{
+\begin{block}{Teorema}
+  Si $x_0$ es una soluci\'on de $Ax=b$, el conjunto de soluciones de la ecuaci\'on est\'a dado por $x_0+ker(A)$.
+\end{block}}
+
+\uncover<4->{
+\begin{block}{Corolario}
+ Una soluci\'on de $Ax=b$ es \'unica si y s\'olo si $ker(A)=\emptyset$.
+\end{block}}
+}
+%%%%
+\frame{
+\frametitle{Existencia y unicidad de soluciones}
+Consid\'erese una matriz cuadrada $A \in \mathbb{R}^{n\times n}$. Las siguientes condiciones son equivalentes:
+\begin{itemize}
+ \item<2-> Para cualquier $b \in \mathbb{R}^{n}$ el sistema $Ax=b$  tiene soluci\'on.
+ \item<3-> Si $Ax=b$ tiene soluci\'on, \'esta es \'unica.
+ \item<4-> Para cualquier $x \in \mathbb{R}^{n}$, $Ax=0 \Rightarrow x=0$.
+ \item<5-> Las columnas (filas) de la matriz $A$ son linealmente independientes.
+ \item<6-> Existe una matriz cuadrada $A^{-1}$ (matriz inversa) tal que
+ $$
+ AA^{-1} = A^{-1}A = I
+ $$
+ \item<7-> La matriz $A$ tiene determinante no nulo
+ $$
+ |A| = \det(A) \neq 0
+ $$
+\end{itemize}
+}
+%%%%%
+\frame{
+La primera opci\'on que se plantea es
+$$
+x = A^{-1}b
+$$
+\begin{itemize}
+ \item<2-> No es eficiente (demasiadas operaciones).
+ \item<3-> Si el determinante de $A$ es pr\'oximo a cero, el error de redondeo puede ser muy grande, y esto es dificil de estimar num\'ericamente
+ $$
+ \det(\gamma A) = \gamma^{n}\det(A)
+ $$
+\end{itemize}
+}
+%%%%
+\frame{
+Se requieren m\'etodos num\'ericos alternativos
+\begin{itemize}
+ \item<2-> m\'etodos directos, son exactos (no tienen asociado error de truncamiento), y son usados 
+cuando la mayor\'ia de los coeficientes de $A$ son distintos de cero y las matrices no son demasiado 
+grandes. Suelen ser algoritmos ``complicados de implementar''
+ \item<3-> m\'etodos indirectos o iterativos, tienen asociado un error de truncamiento y se usan 
+preferiblemente para matrices grandes ($n>>1000$) cuando los coeficientes de $A$ son la mayor\'ia 
+nulos (matrices sparse). Algoritmos sencillos de implementar que requiere aproximaci\'on inicial y 
+que en general no tiene porqu\'e converger (requieren an\'alisis de convergencia previo).
+\end{itemize}
+
+}
+%%%%
+\section{Condicionamiento}
+\frame
+{
+   \frametitle{Condicionamiento de Sistemas.}
+   \begin{itemize}
+    \item<1-> La existencia de un sistema mal condicionado es fuente de posibles errores y dificultades a la hora de resolver un sistema lineal. Se plantea entonces, c\'omo definir y cuantificar el condicionamiento de un sistema.
+    \item<2-> Supongase que se tiene el sistema lineal $Ax = b$, donde $A$ es la matriz de coeficientes, $b$ es el t\'ermino independiente y $x$ es la soluci\'on exacta del sistema, que llamaremos $u$.
+   \end{itemize}
+   \uncover<3->{\begin{block}{}
+                 $$Ax=b \Rightarrow x=u$$
+                \end{block}}
+}
+%%%%
+\frame
+{
+\frametitle{Condicionamiento de Sistemas.}
+ Modificando el t\'ermino independiente mediante una perturbaci\'on $\delta b$, entonces tenemos que resolver el sistema $Ax = b + \delta b$, que tendr\'a una nueva soluci\'on (distinta de la soluci\'on exacta) que llamaremos $u + \delta u$:
+
+\uncover<2->{
+\begin{block}{}
+$$
+Ax=b+\delta b \Rightarrow x=u+\delta u
+$$
+\end{block}
+}
+}
+%%%%
+\frame{
+\frametitle{Ejemplo:}
+Consideremos los dos sistemas de ecuaciones lineales
+$$
+Ax=b \to \left[\begin{array}{cc}
+                8 & -5\\
+                4 & 10
+               \end{array}\right]\left[\begin{array}{c}
+                                        x_1\\
+                                        x_2
+                                       \end{array}\right] = \left[\begin{array}{c}
+                                        3\\
+                                        14
+                                       \end{array}\right]
+$$
+y
+$$
+Bx=c \to \left[\begin{array}{cc}
+                0.66 & 3.34\\
+                1.99 & 10.01
+               \end{array}\right]\left[\begin{array}{c}
+                                        x_1\\
+                                        x_2
+                                       \end{array}\right] = \left[\begin{array}{c}
+                                        4\\
+                                        12
+                                       \end{array}\right]
+$$
+La soluci\'on de ambos es el vector $[1, 1]^{T}$
+
+\uncover<2->{
+Si se introduce una perturbaci\'on $[-0.04;-0.06]^{T}$ en el t\'ermino independiente del primer sistema, su soluci\'on pasar\'a a ser $[0.993;0.9968]^{T}$
+}
+}
+%%%%%
+\frame{
+\frametitle{Ejemplo:}
+\begin{itemize}
+ \item<1-> El cambio relativo en la norma eucl\'idea del vector $b$ es
+ $$
+ \dfrac{\|\delta b\|_2}{\|b\|_2} = \dfrac{\sqrt{0.04^{2}+0.06^{2}}}{\sqrt{3^{2}+14^{2}}}\approx0.0050
+ $$
+ \item<2-> Por lo que respecta al vector soluci\'on, ese cambio relativo en la norma eucl\'idea es
+ $$
+ \dfrac{\|\delta x\|_2}{\|x\|_2} = \dfrac{\sqrt{(1-0.993)^{2}+(1-0.9968)^{2}}}{\sqrt{1^{2}+1^{2}}}\approx0.0054
+ $$
+ \item<3-> Como se puede ver, un peque\~no cambio en el vector $b$ induce un cambio peque\~no en el vector soluci\'on.
+\end{itemize}
+}
+%%%%%
+\frame{
+
+\begin{itemize}
+ \item<1-> Introduciendo el mismo cambio, $[-0.04;-0.06]^{T}$, en el t\'ermino independiente del segundo sistema, su soluci\'on pasa a ser $[6; 0]^{T}$
+ \item<2-> Es decir, un cambio relativo en la norma eucl\'idea de $c$ igual a
+ $$
+ \dfrac{\|\delta c\|_2}{\|c\|_2} = \dfrac{\sqrt{0.04^{2}+0.06^{2}}}{\sqrt{4^{2}+12^{2}}}\approx0.0057
+ $$
+ produce un cambio en el vector soluci\'on igual a:
+ $$
+ \dfrac{\|\delta x\|_2}{\|x\|_2} = \dfrac{\sqrt{5^{2}+1^{2}}}{\sqrt{1^{2}+1^{2}}}\approx3.6055
+ $$
+ \item<3-> Evidentemente, el segundo sistema es mucho m\'as sensible a cambios en el t\'ermino independiente que el primero.
+\end{itemize}
+
+}
+%%%%%
+\frame{
+\begin{center}
+ \begin{tabular}{cc}
+ \includegraphics[scale=0.25]{sis1.jpg} & \includegraphics[scale=0.25]{sis2.jpg}
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+ \item<1-> La figura representa a la izquierda el primer sistema; el segundo a la derecha.
+ \item<2-> Como se puede apreciar, las dos rectas que representan las ecuaciones del primer sistema se cortan n\'itidamente en el punto $[1; 1]^{T}$.
+ \item<3-> En el caso del segundo sistema, aun usando una resoluci\'on gr\'afica mayor, apenas se diferencian las dos rectas y mucho menos d\'onde se cortan.
+\end{itemize}
+
+
+}
+%%%%%
+\frame
+{
+El sistema est\'a bien condicionado si cuando $\delta b$ es peque\~na, $\delta u$ tambi\'en lo es. Observese que:
+
+\uncover<2->{
+
+$$
+\left.\begin{array}{ccc}
+ Au +A(\delta u) & = & b + \delta b\\
+ Au & = & b
+\end{array}\right\}\Rightarrow\left\{\begin{array}{ccc}
+ A(\delta u) & = & \delta b\\
+ \delta u & = & A^{-1}(\delta b)
+\end{array}\right.
+$$
+}
+
+\uncover<3->{
+Usando la propiedad para normas matriciales:
+
+$$
+\|\delta u\| \leq \|A^{-1}\|\|\delta b\|
+$$
+}
+
+\uncover<4->{
+De la soluci\'on exacta, $\|b\| \leq \|A\|\|u\|$ , lo que implica que:
+
+$$
+\frac{1}{\|u\|}\leq\frac{\|A\|}{\|b\|}
+$$
+}
+}
+%%%%
+\frame
+{
+De las dos relaciones anteriores se llega a que:
+
+$$
+\frac{\|\delta u\|}{\|u\|} \leq \|A\|\|A^{-1}\|\frac{\|\delta b\|}{\|b\|}
+$$
+
+donde $\frac{\|\delta u\|}{\|u\|}$ representa el error relativo en los resultados, y $\frac{\|\delta b\|}{\|b\|}$ el error relativo en los datos.
+
+\uncover<2->{
+De la relaci\'on, parece deducirse que el n\'umero $\|A\|\|A^{-1}\|$ es el factor determinante de la relaci\'ón, ya que si es peque\~no se tendr\'a el efecto deseado, y si no, ocurre lo contrario.
+}
+}
+%%%%%
+\frame
+{
+\begin{block}{Definici\'on}
+Sea $\| \cdot \|$ una norma matricial subordinada y $A$ una matriz invertible. Se denomina n\'umero de condici\'on de la matriz $A$ respecto de la norma $\| \cdot \|$ a la expresi\'on:
+$$
+\kappa(A) = \|A\|\|A^{-1}\|
+$$
+\end{block}
+}
+%%%%
+\frame
+{
+\begin{block}{Ejemplo}
+ Estudiar el condicionamiento del sistema $Ax = b$ con $A=\left(\begin{array}{cc}
+                                                                 1 & 1+\varepsilon\\
+								                                 1-\varepsilon & 1\\
+                                                                \end{array}\right)$ siendo $\varepsilon>0$ en la norma $\|\cdot\|_{\infty}$
+\end{block}
+
+\uncover<2->{
+
+$$
+\|A\|_{\infty} = 2+\varepsilon \qquad \|A^{-1}\|_{\infty} = \dfrac{2+\varepsilon}{\varepsilon^2}
+$$
+}
+
+\uncover<3->{
+luego
+
+$$
+\kappa(A,\infty) = \dfrac{(2+\varepsilon)^2}{\varepsilon^2}>\dfrac{4}{\varepsilon^2}
+$$
+}
+
+\uncover<4->{
+Si $\varepsilon \leq 0.01$ entonces $\kappa(A,\infty)>40000$.  Esto indica que una perturbaci\'on de los datos de $0.01$ puede originar una perturbaci\'on de la soluci\'on del sistema de 40000.}
+
+}
+%%%%%
+\frame{
+\begin{itemize}
+ \item Si los datos de un sistema $Ax=b$ son exactos con la precisi\'on de la m\'aquina, el error relativo de la soluci\'on cumple que
+ $$
+ \dfrac{\|x^{*}-x\|}{\|x\|} \leq \kappa(A)\epsilon
+ $$
+ \item<2-> El concepto de n\'umero de condici\'on de una matriz se generaliza a cualquier matriz $A$ (no necesariamente cuadrada) de rango completo mediante la expresi\'on
+ $$
+ \kappa(A) = \|A\|\|A^{\dagger}\|
+ $$
+ donde $A^{\dagger}$ es la matriz pseudoinversa de la matriz $A$.
+ \item<3-> El n\'umero de condici\'on de una matriz $A$ es un indicador del error de amplificaci\'on que produce en un vector $x$ el someterlo a la transformaci\'on que define dicha matriz $A$.
+\end{itemize}
+
+}
+%%%%%
+\frame{
+\begin{itemize}
+ \item<1-> Estudiando la sensibilidad de un sistema de ecuaciones a peque\~nas perturbaciones en los coeficientes de la matriz.
+ \item<2-> Comparando la soluci\'on de
+ $$
+ Ax=b \qquad \mbox{ y } \qquad (A+\delta A)(x+\delta x)=b
+ $$
+ \item<3-> De la segunda igualdad, como $Ax=b$, haciendo $\delta x = -A^{-1}\delta A(x+\delta x)$, despreciando el producto $\delta A\cdot\delta x$, resulta que
+ $$
+ \|\delta x\| \leq \|A^{-1}\|\|\delta A\|\|x\|
+ $$
+\end{itemize}
+}
+%%%%%
+\frame{
+\begin{itemize}
+ \item<1-> Expresi\'on que tambi\'en se puede escribir como
+ $$
+ \dfrac{\|\delta x\|}{\|x\|} \leq \|A^{-1}\|\|A\|\dfrac{\|\delta A\|}{\|A\|}
+ $$
+ \item<2-> As\'i pues, el error relativo que resulta de perturbar ligeramente los coeficientesde la matriz del sistema $Ax=b$ est\'a tambi\'en acotado en t\'erminos del n\'umero de condici\'on de la matriz $A$.
+\end{itemize}
+}
+%%%%%
+\frame{
+\begin{block}{Teorema: Para toda matriz $A$ de rango completo}
+\begin{enumerate}
+ \item<1-> Su n\'umero de condici\'on $\kappa(A) \geq 1$.
+ \item<2-> $\kappa(A) = \kappa(A^{\dagger})$.
+ \item<3-> $\kappa(\alpha A) = \kappa(A)$ para todo escalar $\alpha \neq 0$.
+ \item<4-> $\kappa_2(A) = \dfrac{\sigma_n(A)}{\sigma_1(A)}$, donde $\sigma_n$ y $\sigma_1$ son, respectivamente, los valores singulares mayor y menor de $A$.
+ \item<5-> $\kappa_2(A) = \dfrac{\displaystyle\max_{i}|\lambda_i(A)|}{\displaystyle\min_{i}|\lambda_i(A)|}$, si $A$ es sim\'etrica.
+ \item<6-> $\kappa_2(A^{T}A)=\kappa_2^{2}(A)$
+ \item<7-> Su n\'umero $\kappa(A)=1$ si la matriz es la identidad o se trata de una matriz ortogonal.
+ \item<8-> Su n\'umero de condici\'on $\kappa_2(A)$ es invariante frente a transformaciones ortogonales.
+\end{enumerate}
+\end{block}
+}
+%%%%
+\frame{
+\begin{itemize}
+ \item<1-> Las matrices con n\'umeros de condici\'on peque\~nos (pr\'oximos a la unidad), se dicen 
+bien condicionadas; las que tienen n\'umeros de condici\'on alto, mal condicionadas.
+ \item<2-> Los distintos n\'umeros de condici\'on de una matriz $A \in \mathbb{R}^{n\times n}$ 
+asociados con las normas matriciales m\'as habituales cumplen que
+ \begin{eqnarray}
+\nonumber  \kappa_2(A)/n & \leq \kappa_1(A)  \leq &n\kappa_2(A)\\
+\nonumber  \kappa_{\infty}(A)/n &\leq  \kappa_2(A) \leq  &n\kappa_{\infty}(A)\\
+\nonumber  \kappa_1(A)/n^{2} & \leq \kappa_{\infty}(A)  \leq & n^{2}\kappa_1(A)
+ \end{eqnarray}
+\end{itemize}
+}
+%%%%%
+\frame{
+\frametitle{Ejemplo:}
+Retomando el ejemplo planteado, La matriz
+
+$$
+A=\left[\begin{array}{cc}
+                8 & -5\\
+                4 & 10
+               \end{array}\right]
+$$
+\uncover<2->{
+cuya inversa es
+$$
+A^{-1}=\left[\begin{array}{cc}
+                0.10 & 0.05\\
+                -0.04 & 0.08
+               \end{array}\right]
+$$}
+\uncover<3->{
+tiene un n\'umero de condici\'on
+$$
+\kappa_1(A) = \|A\|_1\|A^{-1}\|_1 = 15 \cdot 0.14 = 2.1
+$$}
+}
+%%%%%
+\frame{
+\frametitle{Ejemplo:}
+\uncover<1->{
+El de la matriz 
+$$
+B=\left[\begin{array}{cc}
+                0.66 & 3.34\\
+                1.99 & 10.01
+               \end{array}\right]
+$$}
+\uncover<2->{
+cuya inversa es
+$$
+B^{-1}=\left[\begin{array}{cc}
+                -250.25 & 83.5\\
+                49.75 & -16.5
+               \end{array}\right]
+$$}
+\uncover<3->{
+es 
+$$\kappa_1(B) = \|B\|_1\|B^{-1}\|_1 = 13.35 \cdot 300 = 4005$$
+tres \'ordenes de magnitud superior.
+}
+}
+%%%%
+\frame{
+\begin{itemize}
+ \item Un error que se comete con frecuencia es asimilar el concepto de n\'umero de condici\'on de una matriz con el de 
+su determinante y que, en ese sentido, a mayor determinante, mayor n\'umero de condici\'on; nada m\'as lejos de la 
+realidad.
+\item<2-> Ejemplo 1: Sea $A$ una matriz diagonal de orden 100 definida por
+$$
+a_{11} = 1 ; \quad a_{ii}=0.1, \quad 2\leq i\leq n
+$$
+De esta matriz
+$$
+\|A\|_2 = 1 \qquad \mbox{ y } \qquad \|A^{-1}\|_2 = 10
+$$
+\item<3-> El n\'umero de condici\'on $\kappa_2(A)=10$. Por el contrario, su determinante es 
+$\det(A)=1*(0.1)^{99}=10^{-99}$
+\end{itemize}
+}
+%%%%%
+\frame{
+\begin{itemize}
+ \item Ejemplo 2: Sea $A$ una matriz bidiagonal de la forma
+ $$
+ A=\left[\begin{array}{ccccc}
+          1 & 2 & & & \\
+           & 1 & 2 & & \\
+           & & \ddots & \ddots & \\
+           & & & 1 & 2 \\
+            & & & & 1
+         \end{array}
+\right]
+ $$
+ su inversa es 
+  $$
+ A^{-1}=\left[\begin{array}{ccccc}
+          1 & -2 & 4 &\cdots &(-2)^{n-1} \\
+           & 1 & -2 & &(-2)^{n-2} \\
+           & & 1 &  & \vdots\\
+           & & & \ddots & \vdots \\
+            & & & & 1
+         \end{array}
+\right]
+ $$
+\end{itemize}
+}
+%%%%%
+\frame{
+\begin{itemize}
+ \item Sus diversas normas son $\|A\|_{\infty}=\|A\|_1=3$ y $\|A^{-1}\|_{\infty}=\|A^{-1}\|_1= 
+1+2+4+\cdots+2^{n-1}=2^n-1$
+\item<2-> Sus n\'umeros de condici\'on $\kappa_{\infty}(A)=\kappa_1(A)\approx3\cdot2^n$. 
+\item<3-> Mientras qu su determinante es 1. 
+\end{itemize}
+}
+%%%%%
+\frame{
+\frametitle{Ejercicios:}
+Dado el sistema lineal
+$$
+ \left\{\begin{array}{rcl}
+         1.01x+0.99y & = & 2\\
+         0.99x+1.01y & = & 2
+        \end{array}\right.
+ $$
+ Calcule
+ \begin{enumerate}
+  \item La soluci\'on exacta del problema.
+  \item La soluci\'on usando solamente dos cifras decimales y redondeo.
+  \item La inversa de la matriz de coeficientes $A^{-1}$ con dos cifras decimales y redondeo.
+  \item El n\'umero de condici\'on de $A$ para el apartado anterior.
+  \item El residuo obtenido en el segundo item.
+
+ \end{enumerate}
+
+}
+%%%%%
+\frame{
+\frametitle{Ejercicios:}
+Dado el sistema lineal perturbado
+$$
+ \left\{\begin{array}{rcl}
+         1.02x+0.99y & = & 2.01\\
+         0.99x+1.01y & = & 2.02
+        \end{array}\right.
+ $$
+ Calcule
+\begin{enumerate}
+\item La soluci\'on exacta del problema.
+  \item La soluci\'on usando solamente dos cifras decimales y redondeo.
+  \item La inversa de la matriz de coeficientes $A^{-1}$ con dos cifras decimales y redondeo.
+  \item El n\'umero de condici\'on de $A$ para el apartado anterior.
+  \item El residuo obtenido en el segundo item y el error absoluto.
+\end{enumerate}
+}
+%%%%
+\frame{
+\frametitle{Ejercicios:}
+ La matriz de Hilbert
+ $$
+ H_n = \left(\dfrac{1}{i+j-1}\right)_{i,j=1}^{n} = \left(\begin{array}{cccc}
+                                                          1 & 1/2 & \cdots & 1/(n-1)\\
+                                                          1/2 & 1/3 & \cdots & 1/n\\
+                                                          \vdots & \vdots & \ddots & \vdots\\
+                                                          1/(n-1) & 1/n & \cdots & 1/(2n-1)
+                                                         \end{array}
+\right)
+ $$
+ es un ejemplo cl\'asico de una matriz mal condicionada. En MATLAB se puede construir f\'acilmente usando el comando \texttt{hilb(n)}.
+\begin{enumerate}
+ \item Escriba un script de MATLAB para calcular los valores de $\kappa_2(H_n)$ para $n = 1, 2, \ldots, 10$. Dibuje los resultados en escala logar\'itmica (comando \texttt{semilogy}).
+ \item  Estime la dependencia del n\'umero de condici\'on de la matriz de Hilbert de sus dimensiones. ?`De qu\'e tipo de crecimiento se trata, lineal, exponencial, etc.?
+\end{enumerate}
+}
+%%%%%
+\frame{
+\frametitle{Ejercicios:}
+\begin{enumerate}
+ \item Para la matriz de Hilbert $H_{10}$ aplique los criterios
+ $$
+ |\det(H_{10})\det(H_{10}^{-1})-1|, \quad \|(H_{10}^{-1})^{-1}-H_{10}\|_2, \quad \|H_{10}H_{10}^{-1}-I_{10}\|_2
+ $$
+para detectar la mala condici\'on de la misma.
+
+\end{enumerate}
+
+}
+\end{document}
