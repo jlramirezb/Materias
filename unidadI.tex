@@ -18,26 +18,34 @@
 
 \section{Introducci\'on}
 \begin{frame}[fragile]
- %\frametitle{Motivaci\'on.}      
- La cercha de la figura se carga con una fuerza uniforme repartida sobre el cord\'on superior
-
- \begin{center}
- \includegraphics[scale=0.5]{cercha.png}
-\end{center}
-
- El planteamiento del problema conduce a un sistema lineal de ecuaciones de dimensi\'on $n=50$ y en el que la matriz tiene la siguiente estructura
-
- \begin{center}
- \includegraphics[scale=0.5]{matriz.png}
-\end{center}
- 
- Al resolver el sistema, se obtiene la deformaci\'on de la estructura
- 
- \begin{center}
- \includegraphics[scale=0.5]{cerchadef.png}
-\end{center}
- 
+  \frametitle{Motivaci\'on.} 
+  \begin{itemize}
+    \item En el planteamiento matem\'atico de muchos problemas realistas, los sistemas de ecuaciones algebraicas, y de una manera especial los lineales, aparecen de manera natural.
+    \item<2-> La b\'usqueda de m\'etodos de resoluci\'on de sistemas de ecuaciones lineales es un tema de gran importancia en la ciencia.
+    \item<3-> El objetivo de este tema es desarrollar estrategias num\'ericas que permitan resolver sistemas de ecuaciones relativamente grandes de una manera eficiente.
+  \end{itemize}    
 \end{frame}
+% \begin{frame}[fragile]
+%  %\frametitle{Motivaci\'on.}      
+%  La cercha de la figura se carga con una fuerza uniforme repartida sobre el cord\'on superior
+
+%  \begin{center}
+%  %\includegraphics[scale=0.5]{cercha.png}
+% \end{center}
+
+%  El planteamiento del problema conduce a un sistema lineal de ecuaciones de dimensi\'on $n=50$ y en el que la matriz tiene la siguiente estructura
+
+%  \begin{center}
+%  %\includegraphics[scale=0.5]{matriz.png}
+% \end{center}
+ 
+%  Al resolver el sistema, se obtiene la deformaci\'on de la estructura
+ 
+%  \begin{center}
+%  %\includegraphics[scale=0.5]{cerchadef.png}
+% \end{center}
+ 
+% \end{frame}
 %%%%
 \frame
 {
@@ -107,39 +115,92 @@ $$f_i(x_1,x_2,\ldots,x_n) = a_{i,1}x_1 + a_{i,2}x_2 + \cdots + a_{i,n}x_n - b_i$
 con $a_{i,1},a_{i,2},\ldots,a_{i,n}$ y $b_i$ constantes reales, el sistema se dice lineal (con coeficientes reales);
 en cualquier otro caso el sistema se dice no-lineal.
 
-A los n\'umeros $a_{ij}$ se les denomina coeficientes del sistema y a los $b_i$ t\'erminos independientes.
-
+\vspace{0.5cm}
 \uncover<2->{
+  A los n\'umeros $a_{ij}$ se les denomina coeficientes del sistema y a los $b_i$ t\'erminos independientes.  
+}
+
+\vspace{0.5cm}
+\uncover<3->{
 Si $C = (c_1, c_2,\ldots,c_n) \in \mathbb{R}^n$ es tal que $f_i(c_1,c_2,\ldots,c_n) = 0$ para cada $i = 1,2,\ldots,n$,
 entonces se dice que $C$ es una soluci\'on real del sistema planteado.
-}
-}
+}}
 %%%%
 \frame{
 Si se introducen las matrices
 $$
-A = \left[\begin{array}{cccc}
-           a_{11} & a_{12} & \cdots & a_{1n}\\
-           a_{21} & a_{22} & \cdots & a_{2n}\\
-           \vdots & \vdots & \ddots & \vdots\\
-           a_{m1} & a_{m2} & \cdots & a_{mn}\\
-          \end{array}\right], \qquad x=\left[\begin{array}{c}
-           x_1\\
-           x_2\\
-           \vdots\\
-           x_n\\
-          \end{array}\right], \qquad b=\left[\begin{array}{c}
-           b_1\\
-           b_2\\
-           \vdots\\
-           b_m\\
-          \end{array}\right]
+  A = \left[\begin{array}{cccc}
+            a_{11} & a_{12} & \cdots & a_{1n}\\
+            a_{21} & a_{22} & \cdots & a_{2n}\\
+            \vdots & \vdots & \ddots & \vdots\\
+            a_{m1} & a_{m2} & \cdots & a_{mn}\\
+        \end{array}\right], \qquad x=\left[\begin{array}{c}
+          x_1\\
+          x_2\\
+          \vdots\\
+          x_n\\
+        \end{array}\right], \qquad b=\left[\begin{array}{c}
+          b_1\\
+          b_2\\
+          \vdots\\
+          b_m\\
+        \end{array}\right]
 $$
 
 el sistema se puede representar de forma m\'as compacta por
 $$
 Ax=b
 $$
+}
+%%%%
+\frame{
+  Podemos clasificar los sistemas de ecuaciones lineales atendiendo a:
+  \begin{enumerate}
+    \item Su tama\~no
+      \begin{enumerate}
+        \item Peque\~nos: $n \leq 300$ donde $n$ representa el n\'umero de ecuaciones.
+        \item Grandes: $n>300$
+      \end{enumerate}
+    \item<2-> Su estructura
+      \begin{enumerate}
+        \item Si la matriz posee pocos elementos nulos diremos que se trata de un sistema lleno.
+        \item Si, por el contrario, la matriz contiene muchos elementos nulos, diremos que la matriz, y por lo tanto, el sistema lineal es disperso o \textit{sparce}.
+      \end{enumerate}
+\end{enumerate}
+}
+\frame{
+  \begin{enumerate}
+  \item Matrices de este tipo son las denominadas
+      \begin{itemize}
+        \item Tridiagonales
+          $$
+          \left(\begin{array}{cccc}
+            a_{1,1} & a_{1,2} & 0 & 0 \\
+            a_{2,1} & a_{2,2} & a_{2,3} & 0 \\
+            0 & a_{3,2} & a_{3,3} & a_{3,4} \\
+            0 & 0 & a_{4,3} & a_{4,4} \\
+            \end{array}\right)
+          $$
+      \item<2-> Triangulares Superiores
+          $$
+          \left(\begin{array}{cccc}
+            a_{1,1} & a_{1,2} & a_{1,3} & a_{1,4} \\
+            0 & a_{2,2} & a_{2,3} & a_{2,4} \\
+            0 & 0 & a_{3,3} & a_{3,4} \\
+            0 & 0 & 0 & a_{4,4} \\
+            \end{array}\right)
+          $$
+      \item<3-> Triangulares Inferiores
+          $$
+          \left(\begin{array}{cccc}
+            a_{1,1} & 0 & 0 & 0 \\
+            a_{2,1} & a_{2,2} & 0 & 0 \\
+            a_{3,1} & a_{3,2} & a_{3,3} & 0 \\
+            a_{4,1} & a_{4,2} & a_{4,3} & a_{4,4} \\
+            \end{array}\right)
+          $$
+    \end{itemize}
+   \end{enumerate} 
 }
 %%%%
 \frame{
@@ -213,6 +274,137 @@ que en general no tiene porqu\'e converger (requieren an\'alisis de convergencia
 \end{itemize}
 
 }
+\section{M\'etodos Directos}
+\begin{frame}
+  \frametitle{M\'etodos Directos}
+  \begin{itemize}
+    \item \underline{\textbf{CASO 1}}: La matriz $A$ de coeficientes del sistema $Ax = b$ es triangular (superior o inferior) con
+    todas sus componentes sobre la diagonal principal no nulas.
+    
+    $$
+    \left\{\begin{array}{rcc}
+            a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,i}x_i + \cdots + a_{1.n}x_n & = & b_1\\
+             a_{2,2}x_2 + \cdots + a_{2,i}x_i + \cdots + a_{2,n}x_n & = & b_2\\
+              \vdots & & \vdots\\
+                 a_{i,i}x_i + \cdots + a_{i,n}x_n & = & b_i\\
+                        \vdots & & \vdots\\
+                     a_{n,n}x_n & = & b_n\\
+           \end{array}\right.
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\frame{
+  Como $a_{n,n} \neq 0$, se puede despejar $x_n$ de la \'ultima ecuaci\'on, y se obtiene:
+  $$
+  x_n = \frac{b_n}{a_{n,n}}
+  $$
+  conocido el valor de $x_n$, se puede emplear la pen\'ultima ecuaci\'on para conocer $x_{n-1}$
+  $$
+  x_{n-1} = \displaystyle\frac{b_{n-1}-a_{n-1,n}x_n}{a_{n-1,n-1}}
+  $$
+  conocidos $x_n$ y $x_{n-1}$, se obtiene de la antepen\'ultima ecuaci\'on
+  $$
+  x_{n-2} = \displaystyle\frac{b_{n-2}-\left(a_{n-2,n-1}x_{n-1}+a_{n-2,n}x_{n}\right)}{a_{n-2,n-2}}
+  $$
+}
+%%%%%
+\frame{
+  En general, conocidos $x_n, x_{n-1},\ldots,x_{i+1}$, se obtiene:
+  $$
+  x_i =  \frac{b_i - \displaystyle\sum_{k=i+1}^na_{i,k}x_k}{a_{i,i}} \quad\,\,\,\, \forall i=n-1,n-2,\ldots,2,1
+  $$
+  El m\'etodo anterior para determinar la soluci\'on del sistema se denomina sustituci\'on regresiva o hacia atr\'as.  
+}
+%%%
+\begin{frame}
+  Si la matriz de coeficientes del sistema es triangular inferior, para resolver el sistema podemos proceder de manera similar al caso anterior, pero empezando por despejar $x_1$ de la primera ecuaci\'on. El procedimiento en este caso se denomina sustituci\'on progresiva o hacia adelante.
+  $$
+    \left\{\begin{array}{lcc}
+            a_{1,1}x_1  & = & b_1\\
+            a_{2,1}x_1 + a_{2,2}x_2 & = & b_2\\
+              \vdots & & \vdots\\
+            a_{i,1}x_1 + \cdots + a_{i,i-1}x_{i-1} + a_{i,i}x_i  & = & b_i\\
+            \vdots & & \vdots\\
+            a_{n,1}x_{1} + a_{n,2}x_2 + \cdots + a_{n,i-1}x_{i-1} + a_{n,i}x_i + \cdots + a_{n,n}x_n & = & b_{n}
+           \end{array}\right.
+    $$
+\end{frame}
+%%%%
+\frame{
+  \begin{itemize}
+    \item \underline{\textbf{CASO 2}}: \underline{\textbf{CASO 2}}: La matriz $A$ de coeficientes, del sistema lineal $Ax = b$, es tal que no se requieren
+    intercambios de
+    filas para culminar con \'exito la eliminaci\'on Gaussiana.
+    
+    Digamos que el sistema $Ax = b$ tiene la forma
+    $$
+    \left\{\begin{array}{cccc}
+      E_1: & a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,j}x_j + \cdots + a_{1,n}x_n & = & b_1\\
+      E_2: & a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,j}x_j + \cdots + a_{2,n}x_n & = & b_2\\
+      & \vdots &   &\\
+      E_j: & a_{j,1}x_1 + a_{j,2}x_2 + \cdots + a_{j,j}x_j + \cdots + a_{j,n}x_n & = & b_j\\
+      & \vdots &   &\\
+      E_i: & a_{i,1}x_1 + a_{i,2}x_2 + \cdots + a_{i,j}x_j + \cdots + a_{i,n}x_n & = & b_i\\
+      & \vdots &   &\\
+      E_n: & a_{n,1}x_1 + a_{n,2}x_2 + \cdots + a_{n,j}x_j + \cdots + a_{n,n}x_n & = & b_n\\
+      \end{array}\right.
+    $$
+  \end{itemize}
+}
+%%%%%
+\frame{
+  El proceso de eliminaci\'on Gaussiana sin Pivoteo consiste en lo siguiente:
+\begin{enumerate}
+ \item<2-> Se elimina el coeficiente de $x_1$ en cada una de las ecuaciones $E_2,E_3,\ldots,E_n$ para obtener un sistema
+equivalente $A^{(1)}x=b^{(1)}$, realizando las operaciones elementales
+$$
+\left(E_i - \left(\frac{a_{i,1}}{a_{1,1}}\right)E_1\right)\rightarrow E_i^{(1)}, \quad \forall\,\,\, i=2,3,\ldots,n
+$$
+  \item<3-> Se elimina el coeficiente de $x_2$ en cada una de las ecuaciones $E_3^{(1)},E_4^{(1)},\ldots,E_n^{(1)}$, para
+obtener un sistema equivalente $A^{(2)}x=b^{(2)}$, realizando las operaciones elementales
+$$
+\left(E_i^{(1)} - \left(\frac{a_{i,2}^{(1)}}{a_{2,2}^{(1)}}\right)E_2^{(1)}\right)\rightarrow E_i^{(2)}, \quad
+\forall\,\,\, i=3,4,\ldots,n
+$$  
+\end{enumerate}
+}
+%%%%%
+\frame{
+\begin{enumerate}
+  \item En general, eliminados los coeficientes de $x_1,x_2,\ldots,x_{j-1}$, se elimina el coeficiente de $x_j$ en cada
+  una de las ecuaciones, para obtener un sistema equivalente $A^{(j)}x=b^{(j)}$, realizando las operaciones elementales
+  $$
+  \left(E_i^{(j-1)} - \left(\frac{a_{i,j}^{(j-1)}}{a_{j,j}^{(j-1)}}\right)E_j^{(j-1)}\right)\rightarrow E_i^{(j)}, \quad
+  \forall\,\,\, i=j+1,\ldots,n
+  $$
+  debe ocurrir que $a_{j,j}\neq 0$.
+\end{enumerate}
+}
+%%%%%
+\frame{
+  Los n\'umeros
+$$
+m_{i,j} = \frac{a_{i,j}^{(j-1)}}{a_{j,j}^{(j-1)}}\quad \forall\,\,\, j=1,\ldots,n-1,\,\, i=j+1,\ldots,n
+$$
+se llaman multiplicadores.
+
+El sistema resultante tendr\'a entonces la forma triangular superior con elementos no nulos en la diagonal, por lo tanto, se puede resolver mediante sustituci\'on regresiva.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %%%%
 \section{Condicionamiento}
 \frame
@@ -311,7 +503,7 @@ Si se introduce una perturbaci\'on $[-0.04;-0.06]^{T}$ en el t\'ermino independi
 \frame{
 \begin{center}
  \begin{tabular}{cc}
- \includegraphics[scale=0.25]{sis1.jpg} & \includegraphics[scale=0.25]{sis2.jpg}
+ %\includegraphics[scale=0.25]{sis1.jpg} & \includegraphics[scale=0.25]{sis2.jpg}
 \end{tabular}
 \end{center}
 
@@ -369,7 +561,7 @@ $$
 donde $\frac{\|\delta u\|}{\|u\|}$ representa el error relativo en los resultados, y $\frac{\|\delta b\|}{\|b\|}$ el error relativo en los datos.
 
 \uncover<2->{
-De la relaci\'on, parece deducirse que el n\'umero $\|A\|\|A^{-1}\|$ es el factor determinante de la relaci\'ón, ya que si es peque\~no se tendr\'a el efecto deseado, y si no, ocurre lo contrario.
+De la relaci\'on, parece deducirse que el n\'umero $\|A\|\|A^{-1}\|$ es el factor determinante de la relaci\'on, ya que si es peque\~no se tendr\'a el efecto deseado, y si no, ocurre lo contrario.
 }
 }
 %%%%%

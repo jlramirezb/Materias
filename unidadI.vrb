@@ -1,0 +1,6 @@
+\frametitle{Motivaci\'on.}
+  \begin{itemize}
+    \item En el planteamiento matem\'atico de muchos problemas realistas, los sistemas de ecuaciones algebraicas, y de una manera especial los lineales, aparecen de manera natural.
+    \item<2-> La b\'usqueda de m\'etodos de resoluci\'on de sistemas de ecuaciones lineales es un tema de gran importancia en la ciencia.
+    \item<3-> El objetivo de este tema es desarrollar estrategias num\'ericas que permitan resolver sistemas de ecuaciones relativamente grandes de una manera eficiente.
+  \end{itemize}
