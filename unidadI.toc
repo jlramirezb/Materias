@@ -1,3 +1,6 @@
 \beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
 \beamer@sectionintoc {2}{M\'etodos Directos}{41}{0}{2}
-\beamer@sectionintoc {3}{Condicionamiento}{51}{0}{3}
+\beamer@sectionintoc {3}{Estrategias de Pivoteo}{53}{0}{3}
+\beamer@sectionintoc {4}{Conteo de Operaciones}{73}{0}{4}
+\beamer@sectionintoc {5}{Condicionamiento}{77}{0}{5}
+\beamer@sectionintoc {6}{Descomposici\'on de Matrices}{105}{0}{6}

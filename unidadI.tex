@@ -4,6 +4,7 @@
 %\usepackage{beamerthemesplit}
 \usepackage{beamerthemeJuanLesPins}
 \usepackage{verbatim}
+\usepackage{algorithm2e}
 \usefonttheme{serif}
 \title{Resoluci\'on Num\'erica de Sistemas de Ecuacionesl Lineales.}
 \author{Jos\'e Luis Ram\'irez B.}
@@ -333,7 +334,7 @@ que en general no tiene porqu\'e converger (requieren an\'alisis de convergencia
 %%%%
 \frame{
   \begin{itemize}
-    \item \underline{\textbf{CASO 2}}: \underline{\textbf{CASO 2}}: La matriz $A$ de coeficientes, del sistema lineal $Ax = b$, es tal que no se requieren
+    \item \underline{\textbf{CASO 2}}: La matriz $A$ de coeficientes, del sistema lineal $Ax = b$, es tal que no se requieren
     intercambios de
     filas para culminar con \'exito la eliminaci\'on Gaussiana.
     
@@ -391,161 +392,378 @@ se llaman multiplicadores.
 
 El sistema resultante tendr\'a entonces la forma triangular superior con elementos no nulos en la diagonal, por lo tanto, se puede resolver mediante sustituci\'on regresiva.
 }
+%%%%
+\frame{
+\begin{algorithm}[H]
+% \SetLine
+ \SetKwInOut{Input}{input}
+ \SetKwInOut{Output}{output}
+ \caption{Algoritmo de eliminaci\'on Gaussiana sin pivoteo.}
+ \Input{$A \in \mathbb{R}^{n \times n}$, $b \in \mathbb{R}^n$}
+ \Output{Matriz $A \in \mathbb{R}^{n \times n}$ tal que $A$ es triangular superior.}
+ \BlankLine
+ \For{$k\leftarrow 1$ \KwTo $n-1$}
+ {
+   \For{$i\leftarrow k+1$ \KwTo $n$}
+    {
+      $factor \leftarrow \displaystyle\frac{a_{i,k}}{a_{k,k}}$\\
+      $a_{i,k} \leftarrow 0$\\
+      \For{$j \leftarrow k+1$ \KwTo $n$}
+      {
+        $a_{i,j} \leftarrow a_{i,j}-factor*a_{k,j}$\\
+      }	
+      $b_i \leftarrow b_i-factor*b_k$\\
+  }
+ }
+\end{algorithm}
+}
+%%%%
+\frame{
+  Utilice la eliminaci\'on Gaussiana sin pivoteo para resolver el sistemas de ecuaciones.
+  $$
+\left\{\begin{array}{l}
+    2x_1 + x_2 + x_3 = -3\\
+    x_1 - 2x_2 + 3x_3 = 6\\
+    x_1 - x_2 - x_3 = 6\\
+    \end{array}\right.
+  $$
+}
+%%%%
+\section{Estrategias de Pivoteo}
+\begin{frame}
+  \frametitle{Pivoteo Parcial}
+  Ejemplo de la necesidad de pivoteo parcial, en una aritm\'etica de 4 d\'igitos con redondeo correcto
+$$
+\left\{\begin{array}{l}
+        0.003000x_1 + 59.14x_2 = 59.17\\
+	5.291x_1-6.130x_2=46.78\\
+       \end{array}\right.
+$$
 
+cuya soluci\'on exacta es $x_1=10,00$ y $x_2=1,000$.
 
+\end{frame}
+%%%%
+\begin{frame}
+\frametitle{Pivoteo Parcial}
+\begin{itemize}
+  \item Si se realizan los pasos de eliminaci\'on Gaussiana se obtiene el siguiente resultado $\tilde{x}_1 = -10,00$ y $\tilde{x}_2=1,001$, el cual difiere bastante de la soluci\'on real, en el valor $x_1$.
 
+  \item<2-> El error tan grande de la soluci\'on num\'erica de $x_1$, resulta del error peque\~no de $0,001$ al resolver para $x_2$.
+\end{itemize}
+  
+\end{frame}
+%%%%
+\begin{frame}
+\frametitle{Pivoteo Parcial}
+\begin{itemize}
+  \item<1-> Ahora, si se elige como pivote
+  el m\'aximo entre $a_{1,1}$ y $a_{2,1}$.
+  
+  \item<2-> Pivote =$ \max(|0.003|;|5.291|)=5.291$, por tanto se realiza un intercambio de filas quedando el sistema de la siguiente manera:
+  $$
+  \left\{\begin{array}{l}
+    5.291x_1-6.130x_2=46.78\\
+          0.003000x_1 + 59.14x_2 = 59.17\\
+         \end{array}\right.
+  $$
+  \item<3-> cuya soluci\'on aproximada es $\tilde x_2 = 1 = x_2$ y  $\tilde x_1 = 10 = x_1$.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+\frametitle{Pivoteo Parcial}
+\begin{itemize}
+  \item<1-> Por tanto para cada paso de eliminaci\'on gaussiana tenemos que:
+  \begin{block}{EGPP}
+      $$
+        \mbox{Paso }k\left\{\begin{array}{l}
+            \mbox{Elegir }p\mbox{ como el primero tal que}\\
+            |a_{p,k}^{(k-1)}|=\max|a_{i,k}^{(k-1)}|\,\,\,k\leq i\leq n
+            \end{array}\right.
+      $$  
+  \end{block}  
+\end{itemize}
+\end{frame}
+%%%%
+\begin{frame} 
+\frametitle{Pivoteo Parcial}
+\begin{itemize}
+  \item<1-> Sea el Sistema lineal 
+  $$
+  \left(\begin{array}{cc|c}
+         1 & 10^4 & 10^4 \\
+         1 & 10^{-4} & 1 \\
+        \end{array}
+  \right)
+  $$
+  \item<2-> Soluci\'on exacta con 4 decimales correctos $x_1 = x_2 = 0.9999$.  
+  \item<3-> No hay pivoteo, ya que $|a_{1,1}|=|a_{2,1}|$. Se obtiene $\tilde x_2=1$ y $\tilde x_1=0$.
+\end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+\frametitle{Pivoteo Escalado}
+\begin{itemize}
+  \item<1-> Si se realiza pivoteo escalado de la siguiente manera.
+  \item <2-> se busca el m\'aximo por fila y luego se divide cada fila por dicho factor de escalamiento para luego aplicar pivoteo parcial.
+  \uncover<3->{\begin{eqnarray}
+    \nonumber S_1 = \max(|1|,|10^4|) = 10^4\\
+    \nonumber S_2 = \max(|1|,|10^{-4}|) = 1
+    \end{eqnarray}}  
+  \item<4->se obtiene el siguiente sistema:
+  $$
+  \left(\begin{array}{cc|c}
+         10^{-4} & 1 & 1 \\
+         1 & 10^{-4} & 1 \\
+        \end{array}
+  \right)$$
+  \item<5->y a este nuevo sistema lineal, equivalente al sistema original, se aplica la estrategia de pivoteo parcial.
+\end{itemize}
+\end{frame}
+%%%%
+\frame{
+\frametitle{Pivoteo Completo}
+\begin{itemize}
+  \item<1-> Es otra estrategia de pivoteo en el cual se intercambian filas y columnas en busca del m\'aximo de la matriz y colocarlo como pivote.
+  \item<2->$$
+\left\{\begin{array}{lcl}
+        x_1+10^4x_2 & = & 10^4\\
+        x_1+10^{-4}x_2 & = & 1\\
+       \end{array}
+\right.\equiv \left(\begin{array}{cc|c}
+       1 & 10^4 & 10^4 \\
+       1 & 10^{-4} & 1 \\
+      \end{array}
+\right)
+$$
+\item<3-> $$
+\max(|1|, |10^4|, |1|, |10^{-4}|) \Rightarrow \left(\begin{array}{cc|c}
+       10^4 & 1 & 10^4 \\
+       10^{-4} & 11 & 1 \\
+      \end{array}\right)
+$$
+\end{itemize}
+}
+%%%%
+\frame{
+\frametitle{Pivoteo Completo}
+\begin{itemize}
+  \item<1-> Entonces la estrategia de pivoteo completo consiste en
 
-
-
-
-
-
-
-
-
-
-
+  \begin{enumerate}
+   \item $$
+  \mbox{Paso }k\left\{\begin{array}{l}
+          \mbox{elegir }p \mbox{ y }q \mbox{ como los menores tales que}\\
+         \left|a_{p,q}^{(k-1)}\right|=\max\left|a_{i,j}^{(k-1)}\right|\,\,\,k\leq i,j\leq n\\
+                    \end{array}
+  \right.
+  $$
+  \item Intercambiar filas $k$ y $p$.
+  \item Intercambiar columnas $k$ y $q$.
+  
+  \end{enumerate}
+\end{itemize}
+}
+%%%%%
+\frame{
+\frametitle{Pr\'actica}
+\begin{itemize}
+  \item Resuelva el siguiente sistema lineal con truncamiento a 5 d\'igitos
+  $$
+  \left\{\begin{array}{l}
+         20x_1 + 15x_2 + 10x_3 = 45 \\
+         -3x_1 - 2.249x_2 + 7x_3 = 1.751 \\
+         5x_1 + x_2 + 3x_3 = 9          
+        \end{array}
+  \right.
+  $$
+  \item Usando Eliminaci\'on Gaussiana sin Pivoteo y luego con las diferentes estrategias de pivoteo compare los resultados obtenidos.
+\end{itemize}
+}
+%%%%%
+\section{Conteo de Operaciones}
+\begin{frame}
+  \frametitle{Conteo de Operaciones}
+\begin{block}{}
+  $$
+  \begin{array}{l}
+    \displaystyle\sum_{i=1}^mcf(i) = c\sum_{i=1}^mf(i) \\
+    \displaystyle\sum_{i=1}^mf(i)+g(i)=\sum_{i=1}^mf(i)+\sum_{i=1}^mg(i)\\
+    \displaystyle\sum_{i=1}^m1=1+1+\cdots+1=m \\ \displaystyle\sum_{i=k}^m1=\sum_{i=k-k+1}^{m-k+1}1=\sum_{i=1}^{m-k+1}1=m-k+1\\
+    \displaystyle\sum_{i=1}^mi=1+2+\cdots+m=\frac{m(m+1)}{2} \\
+    \displaystyle\sum_{i=1}^mi^2=1+4+\cdots+m^2=\frac{m(m+1)(2m+1)}{6}
+    \end{array}
+    $$
+\end{block}  
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Conteo de Operaciones}
+  Dadas estas definiciones, se puede hacer el conteo de operaciones para el algoritmo de eliminaci\'on Gaussiana sin pivoteo.
+  $$
+  \text{Total de Operaciones} = (+/-) + (\times/\div)
+  $$
+\end{frame}
+%%%%%
+%%%%
+\frame{
+  \textbf{Algoritmo de Eliminaci\'on Gaussiana sin Pivoteo.}
+\begin{algorithm}[H]
+% \SetLine
+ \SetKwInOut{Input}{input}
+ \SetKwInOut{Output}{output}
+ %\caption{Algoritmo de eliminaci\'on Gaussiana sin pivoteo.}
+ \Input{$A \in \mathbb{R}^{n \times n}$, $b \in \mathbb{R}^n$}
+ \Output{Matriz $A \in \mathbb{R}^{n \times n}$ tal que $A$ es triangular superior.}
+ \BlankLine
+ \For{$k\leftarrow 1$ \KwTo $n-1$}
+ {
+   \For{$i\leftarrow k+1$ \KwTo $n$}
+    {
+      $factor \leftarrow \displaystyle\frac{a_{i,k}}{a_{k,k}}$\\
+      $a_{i,k} \leftarrow 0$\\
+      \For{$j \leftarrow k+1$ \KwTo $n$}
+      {
+        $a_{i,j} \leftarrow a_{i,j}-factor*a_{k,j}$\\
+      }	
+      $b_i \leftarrow b_i-factor*b_k$\\
+  }
+ }
+\end{algorithm}
+}
+%%%%%
+\begin{frame}
+  \frametitle{Pr\'actica}
+  \begin{itemize}
+   \item Calcular el n\'umero de operaciones en el algoritmo de multiplicaci\'on de dos matrices triangulares superiores.
+   \item Calcular el n\'umero de operaciones en el algoritmo de soluci\'on de una sistema tridiagonal de ecuaciones lineales.
+   \item Calcular el n\'umero de operaciones en el algoritmo de Gauss-Jordan (cuando la matriz del sistema se reduce a la matriz identidad).
+  \end{itemize}
+\end{frame}
 %%%%
 \section{Condicionamiento}
-\frame
-{
-   \frametitle{Condicionamiento de Sistemas.}
-   \begin{itemize}
-    \item<1-> La existencia de un sistema mal condicionado es fuente de posibles errores y dificultades a la hora de resolver un sistema lineal. Se plantea entonces, c\'omo definir y cuantificar el condicionamiento de un sistema.
-    \item<2-> Supongase que se tiene el sistema lineal $Ax = b$, donde $A$ es la matriz de coeficientes, $b$ es el t\'ermino independiente y $x$ es la soluci\'on exacta del sistema, que llamaremos $u$.
-   \end{itemize}
-   \uncover<3->{\begin{block}{}
-                 $$Ax=b \Rightarrow x=u$$
-                \end{block}}
+\frame{
+  \frametitle{Condicionamiento de Sistemas.}
+  \begin{itemize}
+    \item<1-> Sea el sistema lineal $Ax=b$ con
+    \begin{eqnarray}
+     \nonumber A=\left(\begin{array}{cccc}
+                        10 & 7 & 8 & 7\\
+                        7 & 5 & 6 & 5\\
+                        8 & 6 & 10 & 9\\
+                        7 & 5 & 9 & 10\end{array}\right)\\
+     \nonumber b=\left(\begin{array}{c}
+                        32\\
+                        23\\
+                        33\\
+                        31
+                       \end{array}\right)
+    \end{eqnarray}
+    \item<2-> El sistema lineal anterior tiene como soluci\'on un vector de componentes unitarias. 
+    \item<3-> El sistema lineal resultante en realidad no ser\'a ese, sino que ser\'a un sistema lineal perturbado tanto en la matriz del sistema como en el t\'ermino independiente. El sistema lineal perturbado podr\'ia tener el siguiente aspecto.
+    \end{itemize}    
 }
 %%%%
-\frame
-{
+\frame{
 \frametitle{Condicionamiento de Sistemas.}
- Modificando el t\'ermino independiente mediante una perturbaci\'on $\delta b$, entonces tenemos que resolver el sistema $Ax = b + \delta b$, que tendr\'a una nueva soluci\'on (distinta de la soluci\'on exacta) que llamaremos $u + \delta u$:
+\begin{eqnarray}
+ \nonumber A+\Delta A=\left(\begin{array}{cccc}
+                    10 & 7 & 8.1 & 7.2\\
+                    7.08 & 5.04 & 6 & 5\\
+                    8 & 5.98 & 9.89 & 9\\
+                    6.99 & 4.99 & 9 & 9.98\end{array}\right)\\
+ \nonumber b+\Delta b=\left(\begin{array}{c}
+                    32.01\\
+                    23.02\\
+                    33.03\\
+                    31.04\end{array}\right)
+\end{eqnarray}
+} 
+%%%%
+\frame{
+  y por tanto $\Delta A$ y $\Delta b$, las perturbaciones, tendr\'ian los siguientes valores:
 
-\uncover<2->{
-\begin{block}{}
-$$
-Ax=b+\delta b \Rightarrow x=u+\delta u
-$$
-\end{block}
-}
+\begin{eqnarray}
+  \nonumber \Delta A=\left(\begin{array}{cccc}
+                    0 & 0 & 0.1 & 0.2\\
+                    0.08 & 0.04 & 0 & 0\\
+                    0 & -0.02 & -0.11 & 0\\
+                    -0.01 & -0.01 & 0 & -0.02\end{array}\right)\\
+  \nonumber \Delta b=\left(\begin{array}{c}
+                    0.01\\
+                    -0.01\\
+                    0.01\\
+                    -0.01
+                  \end{array}\right)
+\end{eqnarray}
 }
 %%%%
 \frame{
-\frametitle{Ejemplo:}
-Consideremos los dos sistemas de ecuaciones lineales
-$$
-Ax=b \to \left[\begin{array}{cc}
-                8 & -5\\
-                4 & 10
-               \end{array}\right]\left[\begin{array}{c}
-                                        x_1\\
-                                        x_2
-                                       \end{array}\right] = \left[\begin{array}{c}
-                                        3\\
-                                        14
-                                       \end{array}\right]
-$$
-y
-$$
-Bx=c \to \left[\begin{array}{cc}
-                0.66 & 3.34\\
-                1.99 & 10.01
-               \end{array}\right]\left[\begin{array}{c}
-                                        x_1\\
-                                        x_2
-                                       \end{array}\right] = \left[\begin{array}{c}
-                                        4\\
-                                        12
-                                       \end{array}\right]
-$$
-La soluci\'on de ambos es el vector $[1, 1]^{T}$
-
-\uncover<2->{
-Si se introduce una perturbaci\'on $[-0.04;-0.06]^{T}$ en el t\'ermino independiente del primer sistema, su soluci\'on pasar\'a a ser $[0.993;0.9968]^{T}$
+  \frametitle{Condicionamiento de Sistemas.}
+  \begin{itemize}
+    \item<1-> C\'omo var\'ia la soluci\'on del sistema lineal cuando se perturba la matriz del sistema y cuando se perturba s\'olo el t\'ermino independiente?.
+    \item<2-> Resolviendo primero el sistema lineal:
+    $$
+    A(x + \Delta x) = b + \Delta b
+    $$
+    
+    $$
+    x+\Delta x = \left(\begin{array}{c}
+                        1.82\\
+                        -0.36\\
+                        1.35\\
+                        0.79
+                       \end{array}\right) \Rightarrow \Delta x = \left(\begin{array}{c}
+                        0.82\\
+                        -1.36\\
+                        0.35\\
+                        -0.21
+                       \end{array}\right)
+    $$
+    \end{itemize}
 }
-}
-%%%%%
+%%%%
 \frame{
-\frametitle{Ejemplo:}
-\begin{itemize}
- \item<1-> El cambio relativo en la norma eucl\'idea del vector $b$ es
- $$
- \dfrac{\|\delta b\|_2}{\|b\|_2} = \dfrac{\sqrt{0.04^{2}+0.06^{2}}}{\sqrt{3^{2}+14^{2}}}\approx0.0050
- $$
- \item<2-> Por lo que respecta al vector soluci\'on, ese cambio relativo en la norma eucl\'idea es
- $$
- \dfrac{\|\delta x\|_2}{\|x\|_2} = \dfrac{\sqrt{(1-0.993)^{2}+(1-0.9968)^{2}}}{\sqrt{1^{2}+1^{2}}}\approx0.0054
- $$
- \item<3-> Como se puede ver, un peque\~no cambio en el vector $b$ induce un cambio peque\~no en el vector soluci\'on.
-\end{itemize}
+  \frametitle{Condicionamiento de Sistemas.}
+  Se ha perturbado el t\'ermino independiente
+$$
+\frac{\|\Delta b\|_{\infty}}{\|b\|_{\infty}} = 3.03\times10^{-4}
+$$
+y esta perturbaci\'on induce una variaci\'on en la soluci\'on
+$$
+\frac{\|\Delta x\|_{\infty}}{\|x\|_{\infty}} = 1.36
+$$
 }
-%%%%%
-\frame{
-
-\begin{itemize}
- \item<1-> Introduciendo el mismo cambio, $[-0.04;-0.06]^{T}$, en el t\'ermino independiente del segundo sistema, su soluci\'on pasa a ser $[6; 0]^{T}$
- \item<2-> Es decir, un cambio relativo en la norma eucl\'idea de $c$ igual a
- $$
- \dfrac{\|\delta c\|_2}{\|c\|_2} = \dfrac{\sqrt{0.04^{2}+0.06^{2}}}{\sqrt{4^{2}+12^{2}}}\approx0.0057
- $$
- produce un cambio en el vector soluci\'on igual a:
- $$
- \dfrac{\|\delta x\|_2}{\|x\|_2} = \dfrac{\sqrt{5^{2}+1^{2}}}{\sqrt{1^{2}+1^{2}}}\approx3.6055
- $$
- \item<3-> Evidentemente, el segundo sistema es mucho m\'as sensible a cambios en el t\'ermino independiente que el primero.
-\end{itemize}
-
-}
-%%%%%
-\frame{
-\begin{center}
- \begin{tabular}{cc}
- %\includegraphics[scale=0.25]{sis1.jpg} & \includegraphics[scale=0.25]{sis2.jpg}
-\end{tabular}
-\end{center}
-
-\begin{itemize}
- \item<1-> La figura representa a la izquierda el primer sistema; el segundo a la derecha.
- \item<2-> Como se puede apreciar, las dos rectas que representan las ecuaciones del primer sistema se cortan n\'itidamente en el punto $[1; 1]^{T}$.
- \item<3-> En el caso del segundo sistema, aun usando una resoluci\'on gr\'afica mayor, apenas se diferencian las dos rectas y mucho menos d\'onde se cortan.
-\end{itemize}
-
-
-}
-%%%%%
+%%%%
 \frame
 {
-El sistema est\'a bien condicionado si cuando $\delta b$ es peque\~na, $\delta u$ tambi\'en lo es. Observese que:
+El sistema est\'a bien condicionado si cuando $\Delta b$ es peque\~na, $\Delta x$ tambi\'en lo es. Observese que:
 
 \uncover<2->{
-
 $$
 \left.\begin{array}{ccc}
- Au +A(\delta u) & = & b + \delta b\\
- Au & = & b
+ Ax +A(\Delta x) & = & b + \Delta b\\
+ Ax & = & b
 \end{array}\right\}\Rightarrow\left\{\begin{array}{ccc}
- A(\delta u) & = & \delta b\\
- \delta u & = & A^{-1}(\delta b)
+ A(\Delta x) & = & \delta b\\
+ \Delta x & = & A^{-1}(\Delta b)
 \end{array}\right.
 $$
 }
 
 \uncover<3->{
 Usando la propiedad para normas matriciales:
-
 $$
-\|\delta u\| \leq \|A^{-1}\|\|\delta b\|
+\|\Delta x\| \leq \|A^{-1}\|\|\Delta b\|
 $$
 }
 
 \uncover<4->{
-De la soluci\'on exacta, $\|b\| \leq \|A\|\|u\|$ , lo que implica que:
+De la soluci\'on exacta, $\|b\| \leq \|A\|\|x\|$ , lo que implica que:
 
 $$
-\frac{1}{\|u\|}\leq\frac{\|A\|}{\|b\|}
+\frac{1}{\|x\|}\leq\frac{\|A\|}{\|b\|}
 $$
 }
 }
@@ -555,10 +773,10 @@ $$
 De las dos relaciones anteriores se llega a que:
 
 $$
-\frac{\|\delta u\|}{\|u\|} \leq \|A\|\|A^{-1}\|\frac{\|\delta b\|}{\|b\|}
+\frac{\|\Delta x\|}{\|x\|} \leq \|A\|\|A^{-1}\|\frac{\|\Delta b\|}{\|b\|}
 $$
 
-donde $\frac{\|\delta u\|}{\|u\|}$ representa el error relativo en los resultados, y $\frac{\|\delta b\|}{\|b\|}$ el error relativo en los datos.
+donde $\frac{\|\Delta x\|}{\|x\|}$ representa el error relativo en los resultados, y $\frac{\|\Delta b\|}{\|b\|}$ el error relativo en los datos.
 
 \uncover<2->{
 De la relaci\'on, parece deducirse que el n\'umero $\|A\|\|A^{-1}\|$ es el factor determinante de la relaci\'on, ya que si es peque\~no se tendr\'a el efecto deseado, y si no, ocurre lo contrario.
@@ -573,35 +791,6 @@ $$
 \kappa(A) = \|A\|\|A^{-1}\|
 $$
 \end{block}
-}
-%%%%
-\frame
-{
-\begin{block}{Ejemplo}
- Estudiar el condicionamiento del sistema $Ax = b$ con $A=\left(\begin{array}{cc}
-                                                                 1 & 1+\varepsilon\\
-								                                 1-\varepsilon & 1\\
-                                                                \end{array}\right)$ siendo $\varepsilon>0$ en la norma $\|\cdot\|_{\infty}$
-\end{block}
-
-\uncover<2->{
-
-$$
-\|A\|_{\infty} = 2+\varepsilon \qquad \|A^{-1}\|_{\infty} = \dfrac{2+\varepsilon}{\varepsilon^2}
-$$
-}
-
-\uncover<3->{
-luego
-
-$$
-\kappa(A,\infty) = \dfrac{(2+\varepsilon)^2}{\varepsilon^2}>\dfrac{4}{\varepsilon^2}
-$$
-}
-
-\uncover<4->{
-Si $\varepsilon \leq 0.01$ entonces $\kappa(A,\infty)>40000$.  Esto indica que una perturbaci\'on de los datos de $0.01$ puede originar una perturbaci\'on de la soluci\'on del sistema de 40000.}
-
 }
 %%%%%
 \frame{
@@ -625,11 +814,11 @@ Si $\varepsilon \leq 0.01$ entonces $\kappa(A,\infty)>40000$.  Esto indica que u
  \item<1-> Estudiando la sensibilidad de un sistema de ecuaciones a peque\~nas perturbaciones en los coeficientes de la matriz.
  \item<2-> Comparando la soluci\'on de
  $$
- Ax=b \qquad \mbox{ y } \qquad (A+\delta A)(x+\delta x)=b
+ Ax=b \qquad \mbox{ y } \qquad (A+\Delta A)(x+\Delta x)=b
  $$
- \item<3-> De la segunda igualdad, como $Ax=b$, haciendo $\delta x = -A^{-1}\delta A(x+\delta x)$, despreciando el producto $\delta A\cdot\delta x$, resulta que
+ \item<3-> De la segunda igualdad, como $Ax=b$, haciendo $\Delta x = -A^{-1}\Delta A(x+\Delta x)$, despreciando el producto $\Delta A\cdot\Delta x$, resulta que
  $$
- \|\delta x\| \leq \|A^{-1}\|\|\delta A\|\|x\|
+ \|\Delta x\| \leq \|A^{-1}\|\|\Delta A\|\|x\|
  $$
 \end{itemize}
 }
@@ -638,214 +827,289 @@ Si $\varepsilon \leq 0.01$ entonces $\kappa(A,\infty)>40000$.  Esto indica que u
 \begin{itemize}
  \item<1-> Expresi\'on que tambi\'en se puede escribir como
  $$
- \dfrac{\|\delta x\|}{\|x\|} \leq \|A^{-1}\|\|A\|\dfrac{\|\delta A\|}{\|A\|}
+ \dfrac{\|\Delta x\|}{\|x\|} \leq \|A^{-1}\|\|A\|\dfrac{\|\Delta A\|}{\|A\|}
  $$
- \item<2-> As\'i pues, el error relativo que resulta de perturbar ligeramente los coeficientesde la matriz del sistema $Ax=b$ est\'a tambi\'en acotado en t\'erminos del n\'umero de condici\'on de la matriz $A$.
+ \item<2-> As\'i pues, el error relativo que resulta de perturbar ligeramente los coeficientes de la matriz del sistema $Ax=b$ est\'a tambi\'en acotado en t\'erminos del n\'umero de condici\'on de la matriz $A$.
 \end{itemize}
 }
 %%%%%
 \frame{
-\begin{block}{Teorema: Para toda matriz $A$ de rango completo}
-\begin{enumerate}
- \item<1-> Su n\'umero de condici\'on $\kappa(A) \geq 1$.
- \item<2-> $\kappa(A) = \kappa(A^{\dagger})$.
- \item<3-> $\kappa(\alpha A) = \kappa(A)$ para todo escalar $\alpha \neq 0$.
- \item<4-> $\kappa_2(A) = \dfrac{\sigma_n(A)}{\sigma_1(A)}$, donde $\sigma_n$ y $\sigma_1$ son, respectivamente, los valores singulares mayor y menor de $A$.
- \item<5-> $\kappa_2(A) = \dfrac{\displaystyle\max_{i}|\lambda_i(A)|}{\displaystyle\min_{i}|\lambda_i(A)|}$, si $A$ es sim\'etrica.
- \item<6-> $\kappa_2(A^{T}A)=\kappa_2^{2}(A)$
- \item<7-> Su n\'umero $\kappa(A)=1$ si la matriz es la identidad o se trata de una matriz ortogonal.
- \item<8-> Su n\'umero de condici\'on $\kappa_2(A)$ es invariante frente a transformaciones ortogonales.
-\end{enumerate}
-\end{block}
-}
-%%%%
-\frame{
-\begin{itemize}
- \item<1-> Las matrices con n\'umeros de condici\'on peque\~nos (pr\'oximos a la unidad), se dicen 
-bien condicionadas; las que tienen n\'umeros de condici\'on alto, mal condicionadas.
- \item<2-> Los distintos n\'umeros de condici\'on de una matriz $A \in \mathbb{R}^{n\times n}$ 
-asociados con las normas matriciales m\'as habituales cumplen que
- \begin{eqnarray}
-\nonumber  \kappa_2(A)/n & \leq \kappa_1(A)  \leq &n\kappa_2(A)\\
-\nonumber  \kappa_{\infty}(A)/n &\leq  \kappa_2(A) \leq  &n\kappa_{\infty}(A)\\
-\nonumber  \kappa_1(A)/n^{2} & \leq \kappa_{\infty}(A)  \leq & n^{2}\kappa_1(A)
- \end{eqnarray}
-\end{itemize}
-}
-%%%%%
-\frame{
-\frametitle{Ejemplo:}
-Retomando el ejemplo planteado, La matriz
-
-$$
-A=\left[\begin{array}{cc}
-                8 & -5\\
-                4 & 10
-               \end{array}\right]
-$$
-\uncover<2->{
-cuya inversa es
-$$
-A^{-1}=\left[\begin{array}{cc}
-                0.10 & 0.05\\
-                -0.04 & 0.08
-               \end{array}\right]
-$$}
-\uncover<3->{
-tiene un n\'umero de condici\'on
-$$
-\kappa_1(A) = \|A\|_1\|A^{-1}\|_1 = 15 \cdot 0.14 = 2.1
-$$}
-}
-%%%%%
-\frame{
-\frametitle{Ejemplo:}
-\uncover<1->{
-El de la matriz 
-$$
-B=\left[\begin{array}{cc}
-                0.66 & 3.34\\
-                1.99 & 10.01
-               \end{array}\right]
-$$}
-\uncover<2->{
-cuya inversa es
-$$
-B^{-1}=\left[\begin{array}{cc}
-                -250.25 & 83.5\\
-                49.75 & -16.5
-               \end{array}\right]
-$$}
-\uncover<3->{
-es 
-$$\kappa_1(B) = \|B\|_1\|B^{-1}\|_1 = 13.35 \cdot 300 = 4005$$
-tres \'ordenes de magnitud superior.
-}
-}
-%%%%
-\frame{
-\begin{itemize}
- \item Un error que se comete con frecuencia es asimilar el concepto de n\'umero de condici\'on de una matriz con el de 
-su determinante y que, en ese sentido, a mayor determinante, mayor n\'umero de condici\'on; nada m\'as lejos de la 
-realidad.
-\item<2-> Ejemplo 1: Sea $A$ una matriz diagonal de orden 100 definida por
-$$
-a_{11} = 1 ; \quad a_{ii}=0.1, \quad 2\leq i\leq n
-$$
-De esta matriz
-$$
-\|A\|_2 = 1 \qquad \mbox{ y } \qquad \|A^{-1}\|_2 = 10
-$$
-\item<3-> El n\'umero de condici\'on $\kappa_2(A)=10$. Por el contrario, su determinante es 
-$\det(A)=1*(0.1)^{99}=10^{-99}$
-\end{itemize}
-}
-%%%%%
-\frame{
-\begin{itemize}
- \item Ejemplo 2: Sea $A$ una matriz bidiagonal de la forma
- $$
- A=\left[\begin{array}{ccccc}
-          1 & 2 & & & \\
-           & 1 & 2 & & \\
-           & & \ddots & \ddots & \\
-           & & & 1 & 2 \\
-            & & & & 1
-         \end{array}
-\right]
- $$
- su inversa es 
+  \frametitle{Condicionamiento de una Matriz.}
+  Por su definici\'on est\'a claro que el condicionamiento de una matriz depende de la norma elegida. Una propiedad
+  interesante es que el condicionamiento tiene como cota inferior a la unidad. Esto es consecuencia de que la norma
+  inducida de la matriz identidad es siempre 1.
+  \begin{block}{}
   $$
- A^{-1}=\left[\begin{array}{ccccc}
-          1 & -2 & 4 &\cdots &(-2)^{n-1} \\
-           & 1 & -2 & &(-2)^{n-2} \\
-           & & 1 &  & \vdots\\
-           & & & \ddots & \vdots \\
-            & & & & 1
-         \end{array}
-\right]
- $$
-\end{itemize}
+  1 = \|I\| = \|AA^{-1}\| \leq \|A\|\|A^{-1}\|
+  $$
+  \end{block}
 }
-%%%%%
-\frame{
-\begin{itemize}
- \item Sus diversas normas son $\|A\|_{\infty}=\|A\|_1=3$ y $\|A^{-1}\|_{\infty}=\|A^{-1}\|_1= 
-1+2+4+\cdots+2^{n-1}=2^n-1$
-\item<2-> Sus n\'umeros de condici\'on $\kappa_{\infty}(A)=\kappa_1(A)\approx3\cdot2^n$. 
-\item<3-> Mientras qu su determinante es 1. 
-\end{itemize}
-}
-%%%%%
-\frame{
-\frametitle{Ejercicios:}
-Dado el sistema lineal
-$$
- \left\{\begin{array}{rcl}
-         1.01x+0.99y & = & 2\\
-         0.99x+1.01y & = & 2
-        \end{array}\right.
- $$
- Calcule
- \begin{enumerate}
-  \item La soluci\'on exacta del problema.
-  \item La soluci\'on usando solamente dos cifras decimales y redondeo.
-  \item La inversa de la matriz de coeficientes $A^{-1}$ con dos cifras decimales y redondeo.
-  \item El n\'umero de condici\'on de $A$ para el apartado anterior.
-  \item El residuo obtenido en el segundo item.
-
- \end{enumerate}
-
-}
-%%%%%
-\frame{
-\frametitle{Ejercicios:}
-Dado el sistema lineal perturbado
-$$
- \left\{\begin{array}{rcl}
-         1.02x+0.99y & = & 2.01\\
-         0.99x+1.01y & = & 2.02
-        \end{array}\right.
- $$
- Calcule
-\begin{enumerate}
-\item La soluci\'on exacta del problema.
-  \item La soluci\'on usando solamente dos cifras decimales y redondeo.
-  \item La inversa de la matriz de coeficientes $A^{-1}$ con dos cifras decimales y redondeo.
-  \item El n\'umero de condici\'on de $A$ para el apartado anterior.
-  \item El residuo obtenido en el segundo item y el error absoluto.
-\end{enumerate}
+  %%%
+  \frame {   
+  Para cualquier norma subordinada se verifican las siguientes propiedades del condicionamiento de una matriz:
+  
+  \begin{enumerate}
+   \item $cond(I)=1$.
+  \item $cond(A)\geq 1$.
+  \item $cond(A)=cond(A^{-1})$.
+  \item $cond(kA)= cond(A)\quad \forall k \in \mathbb{R}-\{0\}$.
+  \end{enumerate}
+  \uncover<2->{
+  Otra propiedad muy interesante es la que relaciona el condicionamiento con el radio espectral de la matriz del sistema
+  caso de que esta sea sim\'etrica. Si la matriz es sim\'etrica su norma 2, es su radio espectral. Por tanto:
+  
+  $$
+  cond_2(A) = \|A\|_2\|A^{-1}\|_2 = \rho(A)\rho(A^{-1}) = \frac{|\lambda_{\max}|}{|\lambda_{\min}|}
+  $$
+  }
 }
 %%%%
 \frame{
-\frametitle{Ejercicios:}
- La matriz de Hilbert
- $$
- H_n = \left(\dfrac{1}{i+j-1}\right)_{i,j=1}^{n} = \left(\begin{array}{cccc}
-                                                          1 & 1/2 & \cdots & 1/(n-1)\\
-                                                          1/2 & 1/3 & \cdots & 1/n\\
-                                                          \vdots & \vdots & \ddots & \vdots\\
-                                                          1/(n-1) & 1/n & \cdots & 1/(2n-1)
-                                                         \end{array}
-\right)
- $$
- es un ejemplo cl\'asico de una matriz mal condicionada. En MATLAB se puede construir f\'acilmente usando el comando \texttt{hilb(n)}.
-\begin{enumerate}
- \item Escriba un script de MATLAB para calcular los valores de $\kappa_2(H_n)$ para $n = 1, 2, \ldots, 10$. Dibuje los resultados en escala logar\'itmica (comando \texttt{semilogy}).
- \item  Estime la dependencia del n\'umero de condici\'on de la matriz de Hilbert de sus dimensiones. ?`De qu\'e tipo de crecimiento se trata, lineal, exponencial, etc.?
-\end{enumerate}
+  \frametitle{Pr\'actica.}
+  \begin{itemize}
+    \item Considere los dos sistemas de ecuaciones lineales
+    $$
+    Ax=b \to \left[\begin{array}{cc}
+                    8 & -5\\
+                    4 & 10
+                   \end{array}\right]\left[\begin{array}{c}
+                                            x_1\\
+                                            x_2
+                                           \end{array}\right] = \left[\begin{array}{c}
+                                            3\\
+                                            14
+                                           \end{array}\right]
+    $$
+    y
+    $$
+    Bx=c \to \left[\begin{array}{cc}
+                    0.66 & 3.34\\
+                    1.99 & 10.01
+                   \end{array}\right]\left[\begin{array}{c}
+                                            x_1\\
+                                            x_2
+                                           \end{array}\right] = \left[\begin{array}{c}
+                                            4\\
+                                            12
+                                           \end{array}\right]
+    $$
+    La soluci\'on de ambos es el vector $[1, 1]^{T}$
+    \item Si se introduce una perturbaci\'on $[-0.04;-0.06]^{T}$ en el t\'ermino independiente, calcule el error que se genera en la soluci\'on.
+    \item Halle el condicionamiento de cada sistema en norma 2.
+  \end{itemize}
 }
 %%%%%
 \frame{
-\frametitle{Ejercicios:}
-\begin{enumerate}
- \item Para la matriz de Hilbert $H_{10}$ aplique los criterios
- $$
- |\det(H_{10})\det(H_{10}^{-1})-1|, \quad \|(H_{10}^{-1})^{-1}-H_{10}\|_2, \quad \|H_{10}H_{10}^{-1}-I_{10}\|_2
- $$
-para detectar la mala condici\'on de la misma.
-
-\end{enumerate}
-
+  \frametitle{Pr\'actica.}
+  \begin{itemize}
+    \item Estudiar el condicionamiento del sistema $Ax = b$ con $A=\left(\begin{array}{cc}
+      1 & 1+\varepsilon\\
+1-\varepsilon & 1\\
+     \end{array}\right)$ siendo $\varepsilon>0$ en la norma $\|\cdot\|_{\infty}$
+     \item La matriz de Hilbert
+       $$
+       H_n = \left(\dfrac{1}{i+j-1}\right)_{i,j=1}^{n} = \left(\begin{array}{cccc}
+                                                                1 & 1/2 & \cdots & 1/(n-1)\\
+                                                                1/2 & 1/3 & \cdots & 1/n\\
+                                                                \vdots & \vdots & \ddots & \vdots\\
+                                                                1/(n-1) & 1/n & \cdots & 1/(2n-1)
+                                                               \end{array}
+      \right)
+       $$
+      es un ejemplo cl\'asico de una matriz mal condicionada. En MATLAB se puede construir f\'acilmente usando el comando \texttt{hilb(n)}.
+     % \begin{enumerate}
+     Escriba un script de MATLAB para calcular los valores de $\kappa_2(H_n)$ para $n = 1, 2, \ldots, 10$. Dibuje los resultados en escala logar\'itmica (comando \texttt{semilogy}).     
+  \end{itemize}
 }
+%%%%%
+\section{Descomposici\'on de Matrices}
+\frame{
+  \frametitle{Descomposici\'on de Matrices}
+  \begin{itemize}
+    \item Al aplicar el m\'etodo de Gauss al sistema $Ax=b$ se realizan transformaciones elementales para conseguir triangularizar la matriz del sistema.
+    \item<2-> La matriz triangular superior $U$
+    obtenida viene determinada por el producto de un n\'umero finito de transformaciones filas $N_{n-1}N_{n-2}\cdots N_2N_1$ aplicadas a la matriz $A$.
+    \item<3-> Sea $L^{-1} = N_{n-1}N_{n-2}\cdots N_2N_1$, entonces $L^{-1}A = U \Rightarrow A = LU$, ya que el determinante de una transformaci\'on fila es $\pm1$. 
+    \item<4-> Adem\'as $L$ es una matriz triangular inferior con unos en la diagonal.    
+  \end{itemize}
+}
+%%%%
+\begin{frame}
+  \frametitle{Descomposici\'on de Matrices}
+  \begin{itemize}
+    \item La factorizaci\'on es \'unica ya que de existir otra tal que $A=L'U'=LU$ con $L'\neq L$ y $U'\neq U$, se tendr\'ia que $L^{-1}L'=UU'^{-1}$. 
+    \item<2-> Por ser $L$ triangular inferior con unos en la diagonal, el producto $L^{-1}L'$ tambi\'en es una matriz del mismo tipo.
+    \item<3-> An\'alogamente, el producto $UU'^{-1}$ resulta triangular superior.
+    \item<4-> El hecho de que $L^{-1}L'=UU'^{-1}$ dice
+ que $L^{-1}L'=I$.
+\item<5-> Por lo tanto $L^{-1}L'=I$ por lo que $L=L'$ y por tanto $U=U'$, es decir, la factorizaci\'on es \'unica.
+  \end{itemize}
+\end{frame}
+%%%%%
+\frame{
+  \frametitle{Pr\'actica.}
+  \begin{itemize}
+    \item Halle la descomposici\'on $LU$ de la siguiente matriz:
+    \begin{eqnarray}
+      \nonumber A = A^{(0)} = \left(\begin{array}{ccc}
+                                     1 & 2 & 0\\
+                                     -1 & 1 & 3\\
+                                     2 & 1 & -1
+                                    \end{array}\right)
+    \end{eqnarray}
+  \end{itemize}
+}
+%%%%%
+\frame{
+  \frametitle{Descomposici\'on de Matrices}
+  Entonces para resolver el sistema $Ax=b$, sabiendo que $A$ posee descomposici\'on $LU$, debemos hacer lo siguiente:
+\begin{itemize}
+  \item $Ax=b \Rightarrow LUx=b$, llamando $z$ al producto $Ux$ tenemos que:
+  \item<2-> $Lz=b \Rightarrow$ sustituci\'on hacia delante
+  \item<3-> $Ux=z \Rightarrow$ sustituci\'on hacia atr\'as.
+\end{itemize}
+}
+%%%%%%
+\frame{
+  \begin{block}{Definici\'on}    
+      Se dice que una matriz $A$ es diagonalmente dominante si
+     $$
+      |a_{i,i}|>\displaystyle\sum_{j=1,j\neq i}^n|a_{i,j}|\,\,\,\forall i=1,\ldots,n
+     $$
+     \end{block}
+     \uncover<2->{
+      \begin{block}{Teorema}     
+      Si $A$ es estrictamente diagonal dominante entonces $A$ admite una descomposici\'on $LU$ que se
+     obtiene mediante el proceso de eliminaci\'on Gaussiana.
+    \end{block}}
+}
+%%%%%
+\begin{frame}
+  \frametitle{Descomposici\'on de Matrices}
+  \begin{itemize}
+    \item $a_{i,j} =\displaystyle \sum_{p=1}^rl_{i,p}u_{p,j}\,\,\, r=\min(i,j)$
+    \item $a_{k,j} =\displaystyle \sum_{p=1}^kl_{k,p}u_{p,j}\,\,\, j\geq k$
+    \item $a_{i,k} =\displaystyle \sum_{p=1}^kl_{i,p}u_{p,k}\,\,\, i > k$
+  \end{itemize}
+\end{frame}
+%%%%%
+\frame{
+  \frametitle{Descomposici\'on de Matrices}
+  \begin{itemize}
+\item $$\begin{array}{l}
+  \mbox{Diagonal }k=j=1 \Rightarrow a_{1,1} = l_{1,1}u_{1,1}\\[5pt]
+ a_{k,j} = l_{k,1}u_{1,j} + l_{k,2}u_{2,j} + \cdots + l_{k,k}u_{k,j}\\[5pt]
+ \Rightarrow l_{k,k}u_{k,j} = a_{k,j} -l_{k,1}u_{1,j} -l_{k,2}u_{2,j} - \cdots - l_{k,k-1}u_{k-1,j}\\[5pt]
+ \Rightarrow \displaystyle l_{k,k}u_{k,j} = a_{k,j} - \sum_{p=1}^{k-1}l_{k,p}u_{p,j} \mbox{ como } k=j\\[5pt]
+ \Rightarrow l_{k,k}u_{k,k} = a_{k,k} - \displaystyle\sum_{p=1}^{k-1}l_{k,p}u_{p,k}
+\end{array}$$
+\end{itemize}
+}
+%%%%%
+\frame{
+  \frametitle{Descomposici\'on de Matrices}
+  \begin{itemize}
+\item $$
+\begin{array}{l} j>k\\
+ a_{k,j} = l_{k,1}u_{1,j} + l_{k,2}u_{2,j} + \cdots + l_{k,k}u_{k,j}\\[5pt]
+ \Rightarrow l_{k,k}u_{k,j} = a_{k,j} -
+l_{k,1}u_{1,j} -l_{k,2}u_{2,j} - \cdots - l_{k,k-1}u_{k-1,j}\\[5pt]
+\displaystyle\Rightarrow l_{k,k}u_{k,j} = a_{k,j} - \sum_{p=1}^{k-1}l_{k,p}u_{p,j}\\[5pt]
+\Rightarrow u_{k,j} =\displaystyle\frac{a_{k,j}-\displaystyle\sum_{p=1}^{k-1}l_{k,p}u_{p,j}}{l_{k,k}}
+\end{array}$$
+\end{itemize}
+}
+%%%%%
+\frame{
+  \frametitle{Descomposici\'on de Matrices}
+  \begin{itemize}
+\item $$
+\begin{array}{l}
+i>k\\[5pt]
+a_{i,k} = l_{i,1}u_{1,k} + l_{i,2}u_{2,k} + \cdots + l_{i,k}u_{k,k}\\[5pt]
+\Rightarrow l_{i,k}u_{k,k} = a_{i,k} - l_{i,1}u_{1,k} -l_{i,2}u_{2,k} - \cdots - l_{i,k-1}u_{k-1,k}\\[5pt]
+\displaystyle\Rightarrow l_{i,k}u_{k,k} = a_{i,k} - \sum_{p=1}^{k-1}l_{i,p}u_{p,k}\\[5pt]
+\Rightarrow l_{i,k} = \displaystyle\frac{a_{i,k}-\displaystyle\sum_{p=1}^{k-1}l_{i,p}u_{p,k}}{u_{k,k}}
+\end{array}
+$$
+\end{itemize}
+}
+%%%%%%
+\frame{
+  Dadas estas definiciones podemos escribir el algoritmo de factorizaci\'on $LU$
+\scriptsize
+{
+\begin{algorithm}[H]
+ \SetKwInOut{Input}{input}
+ \SetKwInOut{Output}{output}
+ \caption{Algoritmo de factorizaci\'on $LU$.}
+ \Input{$A \in \mathbb{R}^{n \times n}$}
+ \Output{Matriz $L \in \mathbb{R}^{n \times n}$ tal que $L$ es TI y Matriz $U \in \mathbb{R}^{n \times n}$ tal que $U$ es TS.}
+ \For{$k\leftarrow 1$ \KwTo $n$}
+ {
+   \mbox{/*Especificar un valor distinto de cero para $l_{k,k}$ \'o $u_{k,k}$ y calcular}
+   \mbox{el otro a partir de \'el:*/}\\
+   $\displaystyle l_{k,k}u_{k,k} \leftarrow a_{k,k} - \sum_{p=1}^{k-1}l_{k,p}u_{p,k}$\\
+   \For{$j\leftarrow k+1$ \KwTo $n$}
+    {
+      $\displaystyle u_{k,j} \leftarrow \frac{a_{k,j}-\displaystyle\sum_{p=1}^{k-1}l_{k,p}u_{p,j}}{l_{k,k}}$\\
+    }
+    \For{$i \leftarrow k+1$ \KwTo $n$}
+    {
+	$\displaystyle l_{i,k} \leftarrow \frac{a_{i,k}-\displaystyle\sum_{p=1}^{k-1}l_{i,p}u_{p,k}}{u_{k,k}}$\\
+    }	
+ }
+\end{algorithm}}
+}
+%%%%%
+\begin{frame}
+\frametitle{Descomposici\'on de Matrices}
+\begin{itemize}
+\item Si se hace $l_{k,k}=1$, se da paso al algoritmo de Doolittle, haciendo m\'inimas modificaciones al algoritmo $LU$.
+\item<2-> Si se hace $u_{k,k}=1$, se da paso al algoritmo de Crout, haciendo m\'inimas modificaciones al algoritmo $LU$.
+\end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on LU con Pivoteo}
+  \begin{itemize}
+    \item La forma pr\'actica en la que se implementa el m\'etodo de eliminaci\'on Gaussiana suele incorporar los pivoteos, al menos el pivoteo parcial para no producir resultados incorrectos. ?`C\'omo se altera la factorizaci\'on $LU$ si se quiere tener en cuenta el pivoteo?
+    
+    \item<2->Cada una de las transformaciones elementales que se obtienen en la factorizaci\'on $LU$ son de la forma:    
+    $$
+    N_i = I - \alpha_i \otimes e_i^t
+    $$
+    
+    donde   
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on LU con Pivoteo}
+$$
+    \alpha_i = \left(\begin{array}{c}
+                      0\\
+                      \vdots\\
+                      0\\
+                      a_{i+1,i}^{(i)}/a_{i,i}^{(i)}\\
+                      \vdots\\
+                      a_{n,i}^{(i)}/a_{i,i}^{(i)}\\
+                     \end{array}
+    \right)
+    $$    
+    y $e_i$ es el elemento $i$-\'esimo de la base can\'onica de $\mathbb{R}^n$.
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on LU con Pivoteo}
+  \begin{itemize}
+    \item<1->Al utilizar eliminaci\'on Gaussiana con pivoteo en cada paso se introduce una matriz de permutaci\'on (que puede ser la
+    identidad) de modo que:
+    $$
+    N_{n-1}P_{n-1}N_{n-2}\cdots N_1P_1A = U
+    $$
+    \item<2->Estas matrices de permutaci\'on $P_i$ act\'uan siempre permutando dos filas $i,j$ con $j > i$.
+    \item<3->Veamos que definiendo $P = P_{n-1}\cdots P_1$ la eliminaci\'on Gaussiana con pivoteo proporciona la factorizaci\'on $LU$ de $PA$.
+  \end{itemize}
+\end{frame}
 \end{document}
