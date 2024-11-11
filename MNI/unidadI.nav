@@ -81,8 +81,33 @@
 \headcommand {\beamer@framepages {87}{88}}
 \headcommand {\slideentry {5}{0}{10}{89/89}{}{0}}
 \headcommand {\beamer@framepages {89}{89}}
-\headcommand {\beamer@partpages {1}{89}}
-\headcommand {\beamer@subsectionpages {66}{89}}
-\headcommand {\beamer@sectionpages {66}{89}}
-\headcommand {\beamer@documentpages {89}}
-\headcommand {\gdef \inserttotalframenumber {34}}
+\headcommand {\slideentry {5}{0}{11}{90/90}{}{0}}
+\headcommand {\beamer@framepages {90}{90}}
+\headcommand {\slideentry {5}{0}{12}{91/93}{}{0}}
+\headcommand {\beamer@framepages {91}{93}}
+\headcommand {\slideentry {5}{0}{13}{94/95}{}{0}}
+\headcommand {\beamer@framepages {94}{95}}
+\headcommand {\slideentry {5}{0}{14}{96/105}{}{0}}
+\headcommand {\beamer@framepages {96}{105}}
+\headcommand {\beamer@sectionpages {66}{105}}
+\headcommand {\beamer@subsectionpages {66}{105}}
+\headcommand {\sectionentry {6}{Propagaci\'on del Error.}{106}{Propagaci\'on del Error.}{0}}
+\headcommand {\slideentry {6}{0}{1}{106/108}{}{0}}
+\headcommand {\beamer@framepages {106}{108}}
+\headcommand {\slideentry {6}{0}{2}{109/110}{}{0}}
+\headcommand {\beamer@framepages {109}{110}}
+\headcommand {\slideentry {6}{0}{3}{111/111}{}{0}}
+\headcommand {\beamer@framepages {111}{111}}
+\headcommand {\slideentry {6}{0}{4}{112/112}{}{0}}
+\headcommand {\beamer@framepages {112}{112}}
+\headcommand {\slideentry {6}{0}{5}{113/113}{}{0}}
+\headcommand {\beamer@framepages {113}{113}}
+\headcommand {\slideentry {6}{0}{6}{114/114}{}{0}}
+\headcommand {\beamer@framepages {114}{114}}
+\headcommand {\slideentry {6}{0}{7}{115/115}{}{0}}
+\headcommand {\beamer@framepages {115}{115}}
+\headcommand {\beamer@partpages {1}{115}}
+\headcommand {\beamer@subsectionpages {106}{115}}
+\headcommand {\beamer@sectionpages {106}{115}}
+\headcommand {\beamer@documentpages {115}}
+\headcommand {\gdef \inserttotalframenumber {45}}

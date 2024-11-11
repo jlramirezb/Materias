@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  10 NOV 2024 20:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  10 NOV 2024 21:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1112,7 +1112,7 @@ Overfull \hbox (25.90408pt too wide) detected at line 341
 [82
 
 ]
-<./conj_F.jpg, id=2763, 763.85374pt x 120.45pt>
+<./conj_F.jpg, id=2770, 763.85374pt x 120.45pt>
 File: ./conj_F.jpg Graphic file (type jpg)
 <use ./conj_F.jpg>
 Package pdftex.def Info: ./conj_F.jpg  used on input line 477.
@@ -1139,7 +1139,7 @@ Overfull \hbox (53.92691pt too wide) detected at line 532
 []
  []
 
-<./conj_F_ejem.jpg, id=2855, 643.40375pt x 107.40125pt>
+<./conj_F_ejem.jpg, id=2862, 643.40375pt x 107.40125pt>
 File: ./conj_F_ejem.jpg Graphic file (type jpg)
 <use ./conj_F_ejem.jpg>
 Package pdftex.def Info: ./conj_F_ejem.jpg  used on input line 532.
@@ -1166,6 +1166,110 @@ Overfull \hbox (4.13919pt too wide) in paragraph at lines 532--532
 [89
 
 ]
+
+[90
+
+]
+
+[91
+
+]
+
+[92
+
+]
+
+[93
+
+]
+
+[94
+
+]
+
+[95
+
+]
+
+[96
+
+]
+
+[97
+
+]
+
+[98
+
+]
+
+[99
+
+]
+
+[100
+
+]
+
+[101
+
+]
+
+[102
+
+]
+
+[103
+
+]
+
+[104
+
+]
+
+[105
+
+]
+
+[106
+
+]
+
+[107
+
+]
+
+[108
+
+]
+
+[109
+
+]
+
+[110
+
+]
+
+[111
+
+]
+
+[112
+
+]
+
+[113
+
+]
+
+[114
+
+]
+
+[115
+
+]
 \tf@nav=\write6
 \openout6 = `unidadI.nav'.
 
@@ -1181,21 +1285,21 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `unidadI.out' has not changed.
-(rerunfilecheck)             Checksum: D18EBB201A7118D94F30975A5FAABBE5;931.
+(rerunfilecheck)             Checksum: 6A480561B118FF1B84BA4224038FCF6B;1093.
  ) 
 Here is how much of TeX's memory you used:
- 23362 strings out of 473583
- 449225 string characters out of 5732336
+ 23432 strings out of 473583
+ 449905 string characters out of 5732336
  1960908 words of memory out of 5000000
- 45577 multiletter control sequences out of 15000+600000
+ 45594 multiletter control sequences out of 15000+600000
  566855 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,16n,123p,442b,828s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,16n,123p,462b,828s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadI.pdf (89 pages, 489689 bytes).
+Output written on unidadI.pdf (115 pages, 558674 bytes).
 PDF statistics:
- 3100 PDF objects out of 3580 (max. 8388607)
- 2655 compressed objects within 27 object streams
- 188 named destinations out of 1000 (max. 500000)
- 1353 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3854 PDF objects out of 4296 (max. 8388607)
+ 3354 compressed objects within 34 object streams
+ 241 named destinations out of 1000 (max. 500000)
+ 1361 words of extra memory for PDF output out of 10000 (max. 10000000)
 

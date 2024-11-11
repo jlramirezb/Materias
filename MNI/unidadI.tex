@@ -559,7 +559,200 @@ $(0.111)_2\times2^{2}$\\\hline
    \end{block}
    \end{itemize}
 \end{frame}
-  
+%%%%
+\frame{
+\frametitle{Ejercicios:}
+ Asumiendo $\beta = 10$, $t = 3$, $L = -3$, $U = 4$, y la aritm\'etica es truncada. Obtener los 
+valores de:
+ 
+ \begin{itemize}
+  \item $fl(0.00009)$
+  \item $fl(3.146)$
+  \item $fl(9996)$
+  \item $fl((100.0 + 0.61) + 0.61)$ y $fl(100.0 + (0.61 + 0.61))$
+  \item $fl(2.34 \times (5.67 + 8.90))$ y $fl((2.34 \times 5.67) + (2.34 \times 8.90))$
+ \end{itemize}
+}
+%%%%%%
+\frame
+{
+  \frametitle{Unidad de Precisi\'on o Redondeo} 
+  \begin{itemize}
+    \item<1-> En la representaci\'on en punto flotante con $n$ d\'igitos en base $\beta$ y exponente $e$, el error relativo en la
+    representaci\'on de un n\'umero real $x$, $x\neq0$ es estimado por:     
+    $$
+    \left|\frac{x-fl(x)}{x}\right|\leq \mu = \left\{\begin{array}{ll}
+      \beta^{1-n} & \mbox{ si se trunca}\\
+      \frac{1}{2}\beta^{1-n} & \mbox{ si se redondea}
+      \end{array}
+    \right.
+    $$     
+    \item<2->El n\'umero $\mu$ (error de redondeo unitario) es una caracter\'istica de la m\'aquina, de su sistema operativo y de la manera en que efect\'ua los c\'alculos. 
+    \item<3-> El \'epsilon de la m\'aquina es importante porque caracteriza la precisi\'on de la m\'aquina, sirve adem\'as como criterio de parada de los algoritmos.
+  \end{itemize}
+}
+%%%%%
+\begin{frame}
+  \frametitle{Unidad de Precisi\'on o Redondeo} 
+  \begin{itemize}
+    \item Otra definici\'on de $\mu \approx \epsilon$ (\'Epsilon de la m\'aquina): $\epsilon$ es el m\'as peque\~no n\'umero positivo de la forma $\epsilon = 2^{-k}$ tal que:
+    $$
+    1.0 + \epsilon \neq 1.0 \mbox{  en la m\'aquina}
+    $$
+    \item<2-> $\epsilon = 2^{-n}$ donde $n$ es la precisi\'on de la m\'aquina. Lo que sucede es que en la aritm\'etica de la m\'aquina llega un momento en que:    
+    $$
+    fl(1.0 + 2^{-k}) = 1.0
+    $$    
+  \end{itemize}
+\end{frame}
+%%%%
+\frame
+{
+  \frametitle{Unidad de Presici\'on o Redondeo.}
+  Algoritmo para calcular $\epsilon$
+  \begin{itemize}
+  \item<1->[1.] $s=1$
+  \item<2->[2.] para $k=1,2,\ldots,100$ hacer
+  \item<3->[3.] \qquad $s= s*0.5$
+  \item<4->[4.] \qquad $t=s+1.0$
+  \item<5->[5.] \qquad si ($t<=1.0$) entonces
+  \item<6->[6.] \qquad\qquad $s=2.0*s$
+  \item<7->[7.] \qquad\qquad salida($k-1$,$s$)
+  \item<8->[8.] \qquad\qquad parar
+  \item<9->[9.] \qquad fsi
+  \item<10->[10.] fpara
+  \end{itemize}
+}
+%%%%%
+\section{Propagaci\'on del Error.}
+\frame
+{
+  \frametitle{Propagaci\'on del Error.}
+  \begin{itemize}
+    \item<1-> Es importante estudiar la propagaci\'on del error en los c\'alculos, ya que los errores se propagan y amplifican al realizar operaciones con dichos datos, hasta el punto de que puede suceder que el resultado carezca de significado.
+    \item<2-> Con el proposito de ilustrar esta situaci\'on, seguidamente se calcula la diferencia entre los n\'umeros
+    $$
+    \begin{array}{l}
+     a= 0.276435\\
+    b=0.2756
+    \end{array}
+    $$
+    \uncover<3->{Si los c\'alculos se realizan en base diez, punto flotante, redondeo correcto a tres d\'igitos de mantisa, los valores aproximados a dichos n\'umeros y el error relativo cometido es
+    $$
+    \begin{array}{lcl}
+     \tilde a= 0.276 &  & |r_a|=1.57\times10^{-3}\\
+    \tilde b=0.276 &  & |r_b|=1.45\times10^{-3}
+    \end{array}
+    $$}
+  \end{itemize}
+}
+%%%%
+\frame
+{\frametitle{Propagaci\'on del Error}
+\begin{itemize}
+  \item Si ahora se calcula la diferencia entre los valores exactos y la diferencia entre los aproximados se obtiene
+  $$
+  \begin{array}{l}
+   a-b= 0.000835\\
+  \tilde a-\tilde b=0.0
+  \end{array}
+  $$
+  \uncover<2->{
+  \item<2->Debe observa que el error relativo de la diferencia aproximada es del 100\%. Este ejemplo, extraordinariamente sencillo, pone de manifiesto como el error de redondeo de los datos se ha amplificado al realizar una \'unica operaci\'on, hasta generar un resultado carente de significado.
+  }
+\end{itemize}
+}
+%%%%
+\frame
+{
+\frametitle{Propagaci\'on del Error en la Suma}
+
+Denotando por $x$ e $y$ los valores exactos de dos n\'umeros y por $\tilde x$ e $\tilde y$ sus valores aproximados. As\'i mismo, los errores absolutos y relativos de estas cantidades se denotar\'an por $E_x$, $E_y$, $r_x$, $r_y$, respectivamente. Si se representa por $s = x + y$ al valor exacto de la suma y por $\tilde s = \tilde x + \tilde y$ su valor aproximado, entonces el error absoluto de la suma es
+$$
+E_s = s -\tilde s = (x + y) - (\tilde x + \tilde y) = E_x + E_y
+$$
+
+El error relativo vale
+$$
+r_s = \frac{E_s}{s} = \frac{E_x+E_y}{x+y} = \frac{x}{x+y}r_x + \frac{y}{x+y}r_y
+$$
+}
+
+\frame
+{
+\frametitle{Propagaci\'on del Erroren la Resta}
+
+La deducci\'on para la propagaci\'on del error mediante la resta es muy parecida a la anterior. Si se representa por $r = x - y$ al valor exacto de la resta y por $\tilde r =\tilde x -\tilde y$ su valor aproximado, entonces el error absoluto es
+$$
+E_r = r -\tilde r = (x - y) - (\tilde x - \tilde y) = E_x - E_y
+$$
+
+El error relativo vale
+$$
+r_r = \frac{E_r}{r} = \frac{E_x-E_y}{x-y} = \frac{x}{x-y}r_x - \frac{y}{x-y}r_y
+$$
+}
+%%%%
+\frame
+{
+\frametitle{Propagaci\'on del Error en el Producto}
+Si se representa el producto de dos n\'umeros exactos mediante $p = xy$ y el valor aproximado del producto por $\tilde p = \tilde x\tilde y$, el error absoluto del producto se puede calcular como
+
+\begin{eqnarray}
+\nonumber E_p &=& p -\tilde p = (xy) - (\tilde x \tilde y) = xy - (x-E_x) (y- E_y)\\
+\nonumber &=& x E_y + y E_x - E_x E_y \approx xE_y + yE_x
+\end{eqnarray}
+
+
+El error relativo vale
+$$
+r_p = \frac{E_p}{p} = \frac{xE_y+yE_x-ExEy}{xy} = r_x+r_y+r_xr_y \approx r_x+r_y
+$$
+}
+%%%%
+\frame
+{
+\frametitle{Propagaci\'on del Error en la Divisi\'on}
+
+Si se representa el cociente de dos n\'umeros exactos mediante $d = x/y$ y el valor aproximado del producto por $\tilde d = \tilde x/\tilde y$, el error absoluto del cociente se puede calcular como
+
+\begin{eqnarray}
+\nonumber E_d &=& d -\tilde d = \frac{x}{y} - \frac{\tilde x}{\tilde y} =\frac{x}{y} - \frac{x-Ex}{y-Ey}\\
+\nonumber &=& \frac{yE_x-xE_y}{y(y-Ey)} \approx \frac{yE_x-xE_y}{y^2}
+\end{eqnarray}
+
+
+El error relativo vale
+$$
+r_d = \frac{E_d}{d} = \frac{\frac{yE_x-xE_y}{y(y-Ey)}}{\frac{x}{y}} = \frac{yE_x-xE_y}{x(y-E_y)} =  \frac{r_x-r_y}{1-r_y} \approx r_x-r_y
+$$
+}
+%%%%
+\frame
+{
+\frametitle{Propagaci\'on del Error en una Funci\'on}
+
+Sea $z = f(x)$ la imagen mediante la funci\'on $f$ del valor exacto de un n\'umero $x$ y sea $\tilde z = f(\tilde x)$ la imagen de su valor aproximado. Entonces, el error absoluto de la imagen es
+
+\begin{eqnarray}
+\nonumber E_z &=& f(x) -f(\tilde x) = f(x) - f(x-E_x)\\
+\nonumber &=& f(x) - \left[f(x)-f'(x)E_x+f''(x)\frac{E_x^2}{2!}-f'''(x)\frac{E_x^3}{3!}+\cdots\right]\\
+\nonumber &=& f'(x)E_x-f''(x)\frac{E_x^2}{2!}+f'''(x)\frac{E_x^3}{3!}-\cdots \approx f'(x)E_x
+\end{eqnarray}
+
+
+El error relativo vale
+%\small 
+$$
+r_z = \frac{E_z}{z} = \frac{f'(x)E_x-f''(x)\frac{E_x^2}{2!}+f'''(x)\frac{E_x^3}{3!}-\cdots}{f(x)}  \approx  x\frac{f'(x)}{f(x)}r_x 
+$$
+}
+
+
+
+
+
+
 
 
 % \frame
