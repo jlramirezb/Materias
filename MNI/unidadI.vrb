@@ -1,0 +1,9 @@
+\frametitle{Teor\'ia de Errores y Aproximaci\'on.}
+\begin{itemize}
+  \item La aparici\'on de computadores ha hecho posible la soluci\'on de problemas, que por su tama\~no antes eran
+  excluidos.
+  \item<2-> Desafortunadamente los resultados son afectados por el uso de la Aritm\'etica de Precisi\'on Finita.
+  \item<3-> Esperamos tener siempre expresiones verdaderas como $2+2=4$, $3^2=9$, $(\sqrt{5})^2 = 5$, pero en la aritm\'etica de precisi\'on finita $\sqrt{5}$ no tiene un solo n\'umero fijo y finito, que lo representa.
+  \item<4-> En el computador se le da un valor aproximado cuyo cuadrado no es exactamente 5, aunque con toda probabilidad estar\'a lo bastante cerca a \'el para que
+  sea aceptable.
+\end{itemize}

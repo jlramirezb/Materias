@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
+\beamer@sectionintoc {2}{Teor\'ia de Errores y Aproximaci\'on.}{6}{0}{2}
+\beamer@sectionintoc {3}{Sistemas de numeraci\'on en base $\beta $}{37}{0}{3}
+\beamer@sectionintoc {4}{Aproximaci\'on de N\'umeros.}{55}{0}{4}
+\beamer@sectionintoc {5}{Forma Normalizada de un N\'umero}{66}{0}{5}
