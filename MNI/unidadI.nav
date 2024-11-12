@@ -106,8 +106,31 @@
 \headcommand {\beamer@framepages {114}{114}}
 \headcommand {\slideentry {6}{0}{7}{115/115}{}{0}}
 \headcommand {\beamer@framepages {115}{115}}
-\headcommand {\beamer@partpages {1}{115}}
-\headcommand {\beamer@subsectionpages {106}{115}}
 \headcommand {\beamer@sectionpages {106}{115}}
-\headcommand {\beamer@documentpages {115}}
-\headcommand {\gdef \inserttotalframenumber {45}}
+\headcommand {\beamer@subsectionpages {106}{115}}
+\headcommand {\sectionentry {7}{Estabilidad en el An\'alisis Num\'erico}{116}{Estabilidad en el An\'alisis Num\'erico}{0}}
+\headcommand {\slideentry {7}{0}{1}{116/117}{}{0}}
+\headcommand {\beamer@framepages {116}{117}}
+\headcommand {\slideentry {7}{0}{2}{118/118}{}{0}}
+\headcommand {\beamer@framepages {118}{118}}
+\headcommand {\slideentry {7}{0}{3}{119/120}{}{0}}
+\headcommand {\beamer@framepages {119}{120}}
+\headcommand {\slideentry {7}{0}{4}{121/122}{}{0}}
+\headcommand {\beamer@framepages {121}{122}}
+\headcommand {\slideentry {7}{0}{5}{123/124}{}{0}}
+\headcommand {\beamer@framepages {123}{124}}
+\headcommand {\slideentry {7}{0}{6}{125/127}{}{0}}
+\headcommand {\beamer@framepages {125}{127}}
+\headcommand {\slideentry {7}{0}{7}{128/130}{}{0}}
+\headcommand {\beamer@framepages {128}{130}}
+\headcommand {\slideentry {7}{0}{8}{131/131}{}{0}}
+\headcommand {\beamer@framepages {131}{131}}
+\headcommand {\slideentry {7}{0}{9}{132/134}{}{0}}
+\headcommand {\beamer@framepages {132}{134}}
+\headcommand {\slideentry {7}{0}{10}{135/137}{}{0}}
+\headcommand {\beamer@framepages {135}{137}}
+\headcommand {\beamer@partpages {1}{137}}
+\headcommand {\beamer@subsectionpages {116}{137}}
+\headcommand {\beamer@sectionpages {116}{137}}
+\headcommand {\beamer@documentpages {137}}
+\headcommand {\gdef \inserttotalframenumber {55}}

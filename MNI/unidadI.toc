@@ -4,3 +4,4 @@
 \beamer@sectionintoc {4}{Aproximaci\'on de N\'umeros.}{55}{0}{4}
 \beamer@sectionintoc {5}{Forma Normalizada de un N\'umero}{66}{0}{5}
 \beamer@sectionintoc {6}{Propagaci\'on del Error.}{106}{0}{6}
+\beamer@sectionintoc {7}{Estabilidad en el An\'alisis Num\'erico}{116}{0}{7}
