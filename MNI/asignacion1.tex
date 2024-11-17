@@ -1,0 +1,111 @@
+%------------------------------------------------------------------------
+% Prueba Matematica I
+%
+%       Realizado por:
+%       Jose Luis Ramirez
+%       Lennys Bello
+%                                                Actualizado: Noviembre 2007
+% ------------------------------------------------------------------------
+\documentclass[12pt,letterpaper]{article}
+\usepackage[left=3.0cm,top=3.0cm,right=2.0cm,bottom=2.0cm]{geometry}
+%\usepackage[activeacute,spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx, color}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsxtra}
+\usepackage{amsgen}
+\usepackage{amscd}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{latexsym}
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[ht]{3cm}
+\includegraphics[width=2.5cm]{Logouc.jpg}
+\end{minipage}
+\begin{minipage}{10cm}
+\centering\textbf{Universidad de Carabobo.\\
+ Facultad de Ciencias y Tecnolog\'ia.\\
+\'Departamento de Matem\'atica.\\
+ M\'etodos Num\'ericos I.\\
+}
+\end{minipage}
+\begin{minipage}[ht]{4cm}
+\includegraphics[width=2.5cm]{facyt.jpg}
+\end{minipage}
+
+\begin{center}
+\underline{\textbf{Asignaci\'on 1}}\\[7pt]
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+\item El valor de la intersecci\'on, de la recta que pasa por los puntos $(x_0,y_0)$ y $(x_1,y_1)$, con el
+eje $x$ se puede encontrar mediante las expresiones
+
+$$
+x = \frac{x_0y_1-x_1y_0}{y_1-y_0} \qquad \textrm{y} \qquad x = x_0 - y_0\frac{x_1-x_0}{y_1-y_0}
+$$
+
+Muestre que ambas f\'ormulas son algebraicamente correctas.
+
+Usando los puntos $(x_0,y_0)=(1.31;3.24)$ y $(x_1,y_1)=(1.93;4.76)$ y una aritm\'etica de redondeo correcto a
+tres d\'igitos, calcule la intersecci\'on de la recta con el eje $x$ con ambas expresiones. Compare
+los resultados obtenidos con el valor exacto. (Recuerde aplicar redondeo correcto en cada operaci\'on aritm\'etica)
+
+
+
+\item Hallar el \'epsilon de la m\'aquina para un computador personal, usando el agoritmo visto en clase. Para ello use como lenguaje de programaci\'on Matlab. 
+
+\item Determinar el n\'umero positivo $x$ m\'as peque\~no de la forma $x = 2^{-k}$ ($k$ entero no negativo) tal que $10^5 +x \neq 10^{5}$. Note que este enunciado es id\'entico al que define al \'epsilon de la m\'aquina, con la \'unica diferencia que se ha reemplazado la condici\'on $1 + x = 1$ por $10^5 + x = 10^5$. Compare con el resultado obtenido en el enunciado anterior. ?`Qu\'e se puede concluir? Justifique su respuesta.
+
+\item Elabore un algoritmo recursivo en Matlab que permita obtener el valor $\displaystyle x_n=\frac{1}{3^n}$ mediante la f\'ormula definida por:
+
+$$
+x_{n+1} = Ax_n + \left(\frac{1-3A}{9}\right)x_{n-1}
+$$
+
+con los valores iniciales $x_0=1.0$ y $x_1=1/3$. Siendo $A$ un dato de entrada. Muestre como el algoritmo se hace inestable a medida que el valor $A$ es grande, mientras que si $0<A<1$ el algoritmo es estable. Realice diversas pruebas y muestre una tabla donde se compare el valor exacto y su aproximaci\'on, y as\'i mismo calcule y muestre para cada uno su error absoluto y relativo.
+
+\item Suponga que $fl(y)$ es una aproximaci\'on de $y$ con un redondeo a $k$ cifras. Demuestre las cotas para el error absoluto $E_a$ y el error relativo $E_r$ si se usa una t\'ecnica de aproximaci\'on por truncamiento o por redondeo correcto.
+
+\item Escriba un c\'odigo en Matlab que genere mil datos aleatorios de orden $10^{-5}$, y que calcule $a = 10^{12} + x_1 + \cdots
++ x_{1000}$ y $b = x_1 + \cdots + x_{1000} + 10^{12}$ ?`Son $a$ y $b$ iguales? De no ser as\'i, explique por qu\'e y diga cu\'al es el m\'as exacto.
+
+\item Sea $\displaystyle f(x)=\frac{1-\cos(x)}{x^2}$
+\begin{enumerate}
+ \item Demuestre que $0 \leq f(x) \leq 0.5$ para todo $x \in \mathbb{R} - \{0\}$. Adem\'as, demuestre que es posible extender la definici\'on de $f(x)$ a todo $\mathbb{R}$. Luego, grafique la funci\'on en el intervalo $[-3, 3]$.
+\item Eval\'ue la funci\'on $f(x)$ en el punto $x = 1.2 \times 10^{-8}$. ?`Qu\'e observa?, ?`es confiable este resultado?, ?`por qu\'e? Explique.
+\item Usando el hecho de que $\cos(x) = 1-2\sin^2(x/2)$, la funci\'on dada se puede reescribir como $f(x) = \displaystyle\frac{1}{2}\left(\frac{\sin(x/2)}{x/2}\right)^2$ . Eval\'ue de nuevo en el punto $x = 1.2 \times 10^{-8}$, esta vez usando la nueva expresi\'on de $f(x)$. ?`Qu\'e obtuvo? Analice el resultado y explique lo que sucede.
+
+
+\end{enumerate}
+
+% \item Convertir $0.3_{10}$ a binario y hallar su representaci\'on en IEEE precisi\'on simple.
+
+% \item ?`Qu\'e n\'umero decimal representa el siguiente patr\'on de bits en IEEE precisi\'on simple?
+% $$
+% 0\,\, 00001100\,\, 01000000000000000000000
+% $$
+
+% \item Se tiene procesador un NORM-32 que tiene una longitud de palabra de 32 bits (1bit = 1Binary digital), estos se distribuyen de la manera siguiente: donde los dos primeros espacios son reservado para los signos, asign\'andole cero si el signo es positivo y uno si es negativo, los siguientes siete espacios para el exponente y los restantes para la mantisa y dado que un n\'umero real distinto de cero $x = \pm q\times2^{m}$ siempre puede normalizarse de tal manera que $\frac{1}{2}\leq q<1$, podemos suponer que el primer bit en $q$ es 1, y por lo tanto no requiere almacenamiento. Representar y almacenar en punto flotante normalizado $117.125$.
+
+\item Sea $\mathbb{F}$ el sistema de punto flotante caracterizado por $\beta = 2$,(base), $n = 4$(precisi\'on), $m = -1$, $M = 2$, cada n\'umero en el conjunto $\mathbb{F}$ est\'a representado por $\pm(.d_1d_2 \ldots d_n)_{\beta}\beta^{e}$ donde $m \leq e \leq M$
+\begin{enumerate}
+ \item ?`Cu\'al es el n\'umero m\'as peque\~no en valor absoluto del sistema $\mathbb{F}$?
+ \item Demuestre que 3/4 y 5/16 pertenecen al sistema $\mathbb{F}$, pero la suma ``verdadera'' de estos no pertenece a 
+$\mathbb{F}$.
+ \item Suponga que el tipo de error introducido en la representaci\'on de un n\'umero real en el sistema $\mathbb{F}$ es por redondeo. Como queda representado el numero 3/4 + 5/16 en $\mathbb{F}$. esto es:
+ $$
+ \frac{3}{4}\oplus\frac{5}{16} = fl(\frac{3}{4}+\frac{5}{16})
+ $$
+ \item Encuentre el \'epsilon de la m\'aquina.
+\end{enumerate}
+
+\end{enumerate}
+\end{document}

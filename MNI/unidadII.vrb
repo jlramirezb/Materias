@@ -1,0 +1,5 @@
+\frametitle{Motivaci\'on.}
+  \begin{itemize}
+    \item<1-> La determinaci\'on de las ra\'ices de una ecuaci\'on o de un sistema de ecuaciones, es uno de los problemas m\'as antiguos de aproximaci\'on num\'erica que se presenta con frecuencia en la soluci\'on de una gran variedad de problemas en la matem\'atica aplicada.
+    \item En un problema m\'as general, si $f$ es una funci\'on cualquiera, la ecuaci\'on $f(x)=0$ no puede resolverse anal\'iticamente. De hecho, ni siquiera se sabe a priori cu\'antos ceros tiene $f$: ?`varios, uno, ninguno?
+  \end{itemize}
