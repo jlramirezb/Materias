@@ -130,6 +130,131 @@ con $q(\alpha)\neq 0$.
 \uncover<2->{
 Si $f(\alpha)=f'(\alpha)=f''(\alpha)=\cdots=f^{(m-1)}(\alpha)=0$ pero $f^{(m)}(\alpha)\neq0$, entonces la ra\'iz $\alpha$ posee multiplicidad $m$}
 }
+%%%%
+\section{Ratas de Convergencia}
+\frame
+{
+ \frametitle{Ratas de Convergencia}
+Suponiendo que un m\'etodo iterativo produce una sucesi\'on de puntos $x_1, x_2,x_3,\ldots$ a partir de un punto inicial $x_0$. Se
+quiere conocer si converge a la soluci\'on $\alpha$ y cual es la rapidez con que lo hace.
+\begin{block}{Definici\'on}
+  La sucesi\'on $\{x_n\} \subset \mathbb{R}$ converge a $\alpha \in \mathbb{R}$ si
+$$
+\lim_{n\to\infty}|x_n -\alpha|=0
+$$
+Sea $e_n = x_n - \alpha$. Si existen dos constantes $\lambda > 0$ y $r > 0$ tales que
+$$
+\lim_{n \to \infty}\frac{|e_{n+1}|}{|e_n|^{r}}=\lambda
+$$
+se dice que $\{x_n\}$ converge hacia $\alpha$, con orden de convergencia $r$ y $\lambda$ se denomina la constante asint\'otica del
+error..
+\end{block}
+}
+%%%%
+\frame{
+ \frametitle{Ratas de Convergencia}
+Algunos casos de inter\'es
+\begin{itemize}
+ \item<2-> $r=1$: lineal ($\lambda<1$)
+ \item<3-> $r>1$: superlineal
+ \item<4-> $r=2$: cuadr\'atico
+\end{itemize}
+\uncover<5->{
+\begin{center}
+ \begin{tabular}{p{2.7cm}|p{3cm}}
+  Rata de Convergencia & D\'igitos ganados por iteraci\'on\\ \hline
+  lineal & constante\\
+  superlineal & increment\'andose\\
+  cuadr\'atica & doble
+ \end{tabular}
+\end{center}}
+}
+%%%%
+\section{M\'etodo de Bisecci\'on}
+\frame{
+ \frametitle{M\'etodo de Bisecci\'on}
+ \begin{block}{Teorema del valor intermedio de Bolzano.}
+  Supongamos que $f \in C [a, b]$ y que $L$ es cualquier n\'umero
+  entre $f(a)$ y $f(b)$. Entonces existe un n\'umero $c$ en $(a,b)$ tal que $f(c) = L$.
+  \end{block}
+}
+%%%%%
+\frame{
+  \frametitle{M\'etodo de Bisecci\'on}
+  \begin{itemize}
+    \item <1-> Supongamos que $f$ es una funci\'on continua en un intervalo $[a,b]$, y $f(a)\cdot f(b) < 0$. Entonces, por el Teorema de Bolzano, existe al menos un $p \in (a,b)$, tal que $f(p) =0$.
+    \item <2-> Una primera aproximaci\'on de este punto $p*$ puede ser el punto medio:
+    \begin{block}{}
+           $$p_1=\frac{a+b}{2}$$
+    \end{block}
+  \end{itemize}
+}
+%%%%
+\frame{
+  \frametitle{M\'etodo de Bisecci\'on}
+  \begin{itemize}
+  \item<1->Dado que la funci\'on es continua, si $f(a) \cdot f(p_1) < 0$ en el intervalo $[a,p_1]$ habr\'a al menos una soluci\'on de la ecuaci\'on.
+  \item<2-> Y si $f(a)\cdot f(p_1) > 0$ en el intervalo $[p_1,b]$ existir\'a al menos una ra\'iz.
+  \item<3->Por tanto se habr\'a definido un nuevo intervalo $[a_1,b_1]$ en el que existir\'a una soluci\'on. Al que puede aplic\'arsele nuevamente el proceso anterior.
+  \end{itemize}
+}
+%%%%
+\frame{
+ \frametitle{M\'etodo de Bisecci\'on}
+En general, partiendo de un intervalo $[a_j,b_j]$ en el que $f(a_j)\cdot f (b_j) < 0$ se denotar\'a por $p_{j+1}$ al punto medio del intervalo:
+
+\begin{block}{}
+$$p_{j+1} =\frac{a_j + b_j}{2}$$
+\end{block}
+procediendo de la forma siguiente:
+\begin{itemize}
+  \item<1-> Si $f(p_{j+1}) = 0$ se habr\'a obtenido una soluci\'on de la ecuaci\'on: el punto $p_{j+1}$.
+  \item<2-> Si $f(a_j)\cdot f(p_{j+1})<0$ se denotar\'a por: $a_{j+1} = a_j$ y por $b_{j+1} = p_{j+1}$.
+  \item<3-> Si $f(a_j)\cdot f(p_{j+1})>0$ se denotar\'a por: $a_{j+1} = p_{j+1}$ y por $b_{j+1} = b_j$.
+  \item<4-> Al nuevo intervalo $[a_{j+1},b_{j+1}]$ se le vuelve a aplicar el mismo proceso.
+\end{itemize}
+}
+%%%%
+ \frame{
+ \centering
+ \includegraphics[scale=0.35]{bisec.eps}
+ }
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo de Bisecci\'on}
+  \begin{block}{Teorema}
+    Sea $f$ continua en $[a, b]$, tal que $f (a)f (b) < 0$. Si $[a_1 , b_1 ], [a_2 , b_2 ], \ldots , [a_n , b_n ]$, denota
+los intervalos obtenidos por el m\'etodo de bisecci\'on entonces existen
+$$
+\lim_{n \to \infty} a_n \qquad \lim_{n \to \infty}b_n
+$$
+son iguales y convergen a un cero de $f$ . M\'as a\'un, definiendo $c_n =\frac{b_n +a_n}{2}, \, \exists 
+\displaystyle\lim_{n \to \infty} c_n = \alpha$, con $f (\alpha) = 0$ y se verifica
+$$
+|\alpha - c_n| \leq \frac{b-a}{2^n}, \quad \forall n \in \mathbb{N}
+$$
+  \end{block}
+\end{frame}
+%%%%
+\frame{
+  \frametitle{M\'etodo de Bisecci\'on}
+  \begin{block}{Demostraci\'on}
+    \begin{itemize}
+      \item Por definici\'on se tiene que $a\leq a_1 \leq a_2 \leq \cdots a_n \leq \cdots \leq b$ luego $a_n$ es una sucesi\'on creciente y acotada superiormente por lo tanto es convergente. De manera an\'aloga resulta convergente la sucesi\'on $b_n$ por ser decreciente y acotada inferiormente.
+      \item Sean $\displaystyle a^* = \lim_{n \to \infty} a_n$ y $\displaystyle b^* = \lim_{n \to \infty} b_n$ . Se quiere probar que $a^* = b^*$ o lo que es
+      equivalente que $\displaystyle\lim_{n \to \infty} b_n - a_n = 0$. Se observa que
+      $$
+      b_n - a_n = \frac{b_{n-1}-a_{n-1}}{2} = \cdots = \frac{b_1 - a_1}{2^{n-1}}\, \xrightarrow{n \to \infty} \, 0
+      $$
+      
+    \end{itemize}
+    
+    
+  \end{block}
+}
+
+
+
 
 % \section{Teor\'ia de Errores y Aproximaci\'on.}
 % \begin{frame}[fragile]
