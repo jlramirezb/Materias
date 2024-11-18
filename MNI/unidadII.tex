@@ -240,21 +240,126 @@ $$
   \frametitle{M\'etodo de Bisecci\'on}
   \begin{block}{Demostraci\'on}
     \begin{itemize}
-      \item Por definici\'on se tiene que $a\leq a_1 \leq a_2 \leq \cdots a_n \leq \cdots \leq b$ luego $a_n$ es una sucesi\'on creciente y acotada superiormente por lo tanto es convergente. De manera an\'aloga resulta convergente la sucesi\'on $b_n$ por ser decreciente y acotada inferiormente.
-      \item Sean $\displaystyle a^* = \lim_{n \to \infty} a_n$ y $\displaystyle b^* = \lim_{n \to \infty} b_n$ . Se quiere probar que $a^* = b^*$ o lo que es
+      \item<1-> Por definici\'on se tiene que $a\leq a_1 \leq a_2 \leq \cdots a_n \leq \cdots \leq b$ luego $a_n$ es una sucesi\'on creciente y acotada superiormente por lo tanto es convergente. De manera an\'aloga resulta convergente la sucesi\'on $b_n$ por ser decreciente y acotada inferiormente.
+      \item<2-> Sean $\displaystyle a^* = \lim_{n \to \infty} a_n$ y $\displaystyle b^* = \lim_{n \to \infty} b_n$ . Se quiere probar que $a^* = b^*$ o lo que es
       equivalente que $\displaystyle\lim_{n \to \infty} b_n - a_n = 0$. Se observa que
       $$
       b_n - a_n = \frac{b_{n-1}-a_{n-1}}{2} = \cdots = \frac{b_1 - a_1}{2^{n-1}}\, \xrightarrow{n \to \infty} \, 0
       $$
-      
     \end{itemize}
-    
-    
   \end{block}
 }
-
-
-
+%%%%
+\frame{
+  \frametitle{M\'etodo de Bisecci\'on}
+  \begin{block}{Demostraci\'on}
+    \begin{itemize}
+      \item Definiendo $\alpha = a^* = b^*$, falta probar que $f (\alpha) = 0$. Se sabe que $f (a_n )f (b_n ) \leq 0 \, \forall n
+      \in \mathbb{N}$, luego como $f \in C([a, b])$ se tiene que
+      $$
+      \begin{array}{l}
+        \underbrace{\lim_{n \to \infty}f(a_n)}_{f(\alpha)} \underbrace{\lim_{n \to \infty}f(b_n)}_{f(\alpha)} = \displaystyle\lim_{n \to
+      \infty}f(a_n)f(b_n) \leq 0\\
+      \Rightarrow f^2(\alpha) \leq 0 \Rightarrow f(\alpha) = 0
+      \end{array}
+      $$      
+      Adem\'as 
+      $$
+      |\alpha - c_n|\leq \left|\frac{b_n-a_n}{2}\right| = \frac{b_n-a_n}{2} = \frac{b-a}{2^n}
+      $$
+      como se quer\'ia probar.
+      
+    \end{itemize}
+  \end{block}
+}
+%%%%%
+\frame{
+  \frametitle{M\'etodo de Bisecci\'on}
+  \begin{block}{Proposici\'on}
+    \begin{itemize}
+      \item<1-> Si la funci\'on $f(x)$ es continua y estr\'ictamente mon\'otona en el intervalo $[a, b]$ y adem\'as es tal que
+$f(a)\cdot f(b) < 0$, dado un valor real positivo $\delta$ y denotando por $N$ al menor n\'umero natural tal que:
+$$
+N > \frac{\ln\left(\frac{|b-a|}{\delta}\right)}{\ln(2)}
+$$
+se verifica que $N$ iteraciones del proceso de bisecci\'on conducen a un valor $x_{N+1}$ que dista de la soluci\'on de la ecuaci\'on $f (x) = 0$ una magnitud inferior a $\delta$.
+    \end{itemize}
+  \end{block}
+}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo de Bisecci\'on}
+  \small{
+  \begin{algorithm}[H]
+    %\SetLine
+    \SetKwInOut{Input}{input}
+    \SetKwInOut{Output}{output}
+    \caption{Algoritmo de Bisecci\'on.}
+    \Input{$a,b \in \mathbb{R}$, M\'aximo de iteraciones $N$, tolerancia $TOL$.}
+    \Output{Soluci\'on aproximada $p$ tal que $f(p) \approx 0$.}
+    %\BlankLine
+    $i \leftarrow 1$\\
+    \While{$i \leq N$}
+    {
+     $\displaystyle p \leftarrow a + \frac{b-a}{2} = \frac{b+a}{2}$\\
+     $i \leftarrow i +1$\\
+     \If{$|f(p)|<TOL \vee \displaystyle\frac{b-a}{2}<TOL$}
+     {
+       Salida($p$); EXIT\\
+     }
+     \eIf{$f(a)f(p)>0$}
+     {
+       $a \leftarrow p$
+     }
+     {
+       $b \leftarrow p$\\
+     }
+    }
+    \label{Biseccion_alg}
+   \end{algorithm}}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Ejemplo}
+  \begin{itemize}
+    \item<1-> Aplicar el m\'etodo de bisecci\'on para encontrar un cero de $f(x) = x^4 - 2x^3 - 4x^2 + 4x + 4$, en el intervalo $[-2, -1]$
+    \item<2-> Como se observa en la gr\'afica, se satisfacen las hip\'otesis del teorema de Bolzano, por lo tanto se
+    asegura la existencia de una valor $\alpha \in [-2,-1]$ tal que $f(\alpha)=0$.
+    \begin{center}
+      \includegraphics[scale=0.15]{./bisecc_f.eps}
+    \end{center}
+  \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Ejemplo}
+  \scriptsize{
+  \begin{table}[!ht]
+    \begin{center}
+      \begin{tabular}{|c||c||c||c||c||c|}\hline
+      $k$  & $a$ & $p$ & $b$ & $f(p)$ & $\frac{b-a}{2}$\\\hline\hline
+      1 & -2.00000000 & -1.50000000 & -1.00000000 & 0.81250000 & 1.00000000 \\\hline 
+    2 & -1.50000000 & -1.25000000 & -1.00000000 & -0.90234375 & 0.50000000 \\\hline
+    3 & -1.50000000 & -1.37500000 & -1.25000000 & -0.28881836 & 0.25000000 \\\hline
+    4 & -1.50000000 & -1.43750000 & -1.37500000 & 0.19532776 & 0.12500000 \\\hline
+    5 & -1.43750000 & -1.40625000 & -1.37500000 & -0.06266689 & 0.06250000 \\\hline
+    6 & -1.43750000 & -1.42187500 & -1.40625000 & 0.06226259 & 0.03125000 \\\hline
+    7 & -1.42187500 & -1.41406250 & -1.40625000 & -0.00120812 & 0.01562500 \\\hline
+    8 & -1.42187500 & -1.41796875 & -1.41406250 & 0.03027437 & 0.00781250 \\\hline
+    9 & -1.41796875 & -1.41601562 & -1.41406250 & 0.01447008 & 0.00390625 \\\hline
+    10 & -1.41601562 & -1.41503906 & -1.41406250 & 0.00661524 & 0.00195312 \\\hline
+    11 & -1.41503906 & -1.41455078 & -1.41406250 & 0.00269963 & 0.00097656 \\\hline
+    12 & -1.41455078 & -1.41430664 & -1.41406250 & 0.00074477 & 0.00048828 \\\hline
+    13 & -1.41430664 & -1.41418457 & -1.41406250 & -0.00023192 & 0.00024414 \\\hline
+    14 & -1.41430664 & -1.41424561 & -1.41418457 & 0.00025636 & 0.00012207 \\\hline
+    15 & -1.41424561 & -1.41421509 & -1.41418457 & 0.00001220 & 0.00006104 \\\hline
+    16 & -1.41421509 & -1.41419983 & -1.41418457 & -0.00010986 & 0.00003052 \\\hline
+    17 & -1.41421509 & -1.41420746 & -1.41419983 & -0.00004883 & 0.00001526\\\hline
+     \end{tabular}
+     \caption{Resultados Bisecci\'on.}\end{center}
+     \label{tab_bisecc}
+    \end{table}}
+\end{frame}
 
 % \section{Teor\'ia de Errores y Aproximaci\'on.}
 % \begin{frame}[fragile]
