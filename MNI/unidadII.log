@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  18 NOV 2024 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  18 NOV 2024 20:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -763,7 +763,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [16
 
 ]
-<eq2sol.jpg, id=523, 401.5pt x 258.9675pt>
+<eq2sol.jpg, id=529, 401.5pt x 258.9675pt>
 File: eq2sol.jpg Graphic file (type jpg)
 <use eq2sol.jpg>
 Package pdftex.def Info: eq2sol.jpg  used on input line 99.
@@ -895,7 +895,7 @@ Package epstopdf Info: Source file: <bisec.eps>
 (epstopdf)             Command: <repstopdf --outfile=bisec-eps-converted-to.pdf bisec.eps>
 (epstopdf)             \includegraphics on input line 221.
 Package epstopdf Info: Output file is already uptodate.
-<bisec-eps-converted-to.pdf, id=1280, 959.585pt x 693.59125pt>
+<bisec-eps-converted-to.pdf, id=1287, 959.585pt x 693.59125pt>
 File: bisec-eps-converted-to.pdf Graphic file (type pdf)
 <use bisec-eps-converted-to.pdf>
 Package pdftex.def Info: bisec-eps-converted-to.pdf  used on input line 221.
@@ -943,7 +943,7 @@ Package epstopdf Info: Source file: <./bisecc_f.eps>
 (epstopdf)             Command: <repstopdf --outfile=./bisecc_f-eps-converted-to.pdf ./bisecc_f.eps>
 (epstopdf)             \includegraphics on input line 332.
 Package epstopdf Info: Output file is already uptodate.
-<./bisecc_f-eps-converted-to.pdf, id=1549, 1564.84625pt x 1362.08875pt>
+<./bisecc_f-eps-converted-to.pdf, id=1556, 1564.84625pt x 1362.08875pt>
 File: ./bisecc_f-eps-converted-to.pdf Graphic file (type pdf)
 <use ./bisecc_f-eps-converted-to.pdf>
 Package pdftex.def Info: ./bisecc_f-eps-converted-to.pdf  used on input line 332.
@@ -983,6 +983,25 @@ Overfull \vbox (59.66862pt too high) detected at line 332
 [48
 
 ]
+\openout4 = `unidadII.vrb'.
+
+ (./unidadII.vrb)
+
+[49
+
+] (./unidadII.vrb)
+
+[50
+
+] (./unidadII.vrb)
+
+[51
+
+]
+
+[52
+
+]
 \tf@nav=\write6
 \openout6 = `unidadII.nav'.
 
@@ -998,21 +1017,21 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `unidadII.out' has not changed.
-(rerunfilecheck)             Checksum: D422A00B985AE99822C7FC867A567BD0;410.
+(rerunfilecheck)             Checksum: 5C94945CAEF9E300B6CCBBE936FDB2FF;677.
  ) 
 Here is how much of TeX's memory you used:
- 23196 strings out of 473583
- 447017 string characters out of 5732336
+ 23225 strings out of 473583
+ 447514 string characters out of 5732336
  1968908 words of memory out of 5000000
- 45511 multiletter control sequences out of 15000+600000
+ 45525 multiletter control sequences out of 15000+600000
  566262 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,17n,123p,540b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadII.pdf (48 pages, 324874 bytes).
+Output written on unidadII.pdf (52 pages, 340103 bytes).
 PDF statistics:
- 1717 PDF objects out of 1728 (max. 8388607)
- 1452 compressed objects within 15 object streams
- 102 named destinations out of 1000 (max. 500000)
- 772 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1871 PDF objects out of 2073 (max. 8388607)
+ 1579 compressed objects within 16 object streams
+ 111 named destinations out of 1000 (max. 500000)
+ 876 words of extra memory for PDF output out of 10000 (max. 10000000)
 
