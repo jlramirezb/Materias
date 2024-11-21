@@ -1112,4 +1112,50 @@ $$
     \item<3->Veamos que definiendo $P = P_{n-1}\cdots P_1$ la eliminaci\'on Gaussiana con pivoteo proporciona la factorizaci\'on $LU$ de $PA$.
   \end{itemize}
 \end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on LU con Pivoteo}
+  \begin{block}{Teorema}
+    Sea $A \in M_{n\times n}$ regular, entonces existe una matriz de permutación $P$ y dos matrices $L$ y $U$ triangular inferior y superior respectivamente que satisfacen
+    $$
+      PA = LU
+    $$
+    La matriz $L$ tiene todos los elementos de su diagonal iguales a unos (matriz triangular inferior unitaria).
+  \end{block}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on LU con Pivoteo}
+  \begin{block}{Demostraci\'on}
+    Del proceso de eliminaci\'on Gaussiana se tiene $N_{n-1}N_{n-2}\cdots N_1 A = U$, as\'i:  
+    $$
+      A = P_1N_1^{-1}P_2 N_2^{-1} \cdots P_{n-2} N_{n-2}^{-1} P_{n-1} N_{n-1}^{-1}U
+    $$
+  
+    Premultiplicando por $P=P = P_{n-1}\cdots P_1$ se obtiene  
+    $$
+      PA = P_{n-1}P_{n-2}\cdots P_2P_1P_1N_1^{-1}P_2 N_2^{-1} \cdots P_{n-2} N_{n-2}^{-1} P_{n-1} N_{n-1}^{-1}U
+    $$
+  
+    como $P_1P_1=I$ y $P_2N_1^{-1}P_2$ es triangular inferior y $P_{n-1}\cdots P_2 N_1^{-1} P_2 N_2^{-1}\cdots  P_{n-1}N_{n-1}^{-1}$ tambi\'en lo es, se concluye que $PA$ posee descomposici\'on $LU$ como se quer\'ia demostrar.
+  \end{block}
+\end{frame}
+\begin{frame}
+  \frametitle{Factorizaci\'on LU con Pivoteo}
+  \begin{block}{Lema}
+    La matriz $A$ admite una factorizaci\'on $LU$ si y s\'olo si se cumple que $\det(A_k) \neq 0, k = 1,\ldots, n$.
+  \end{block}
+  
+
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on LU con Pivoteo}
+  Por lo tanto para resolver el sistema $Ax=b$ premultiplicando por $P$, queda $PAx=Pb$, y dado que $PA=LU$, entonces:
+  \begin{itemize}
+    \item<2-> $LUx=Pb$, haciendo $z=Ux$
+    \item<3-> $Lz=Pb$, hallando $z$ por sustituci\'on progresiva.
+    \item<4-> $Ux=z$, hallando $x$ por sustituci\'on regresiva.
+  \end{itemize}
+\end{frame}
 \end{document}
