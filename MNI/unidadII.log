@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  18 NOV 2024 20:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  24 NOV 2024 09:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -998,8 +998,49 @@ Overfull \vbox (59.66862pt too high) detected at line 332
 [51
 
 ]
+<regfalsi.png, id=1762, 418.56375pt x 268.00125pt>
+File: regfalsi.png Graphic file (type png)
+<use regfalsi.png>
+Package pdftex.def Info: regfalsi.png  used on input line 386.
+(pdftex.def)             Requested size: 292.99261pt x 187.59958pt.
+
 
 [52
+
+ <./regfalsi.png>]
+\openout4 = `unidadII.vrb'.
+
+ (./unidadII.vrb)
+
+[53
+
+] (./unidadII.vrb)
+
+[54
+
+] (./unidadII.vrb)
+
+[55
+
+] (./unidadII.vrb)
+
+[56
+
+] (./unidadII.vrb)
+
+[57
+
+] (./unidadII.vrb)
+
+[58
+
+] (./unidadII.vrb)
+
+[59
+
+] (./unidadII.vrb)
+
+[60
 
 ]
 \tf@nav=\write6
@@ -1020,18 +1061,27 @@ Package rerunfilecheck Info: File `unidadII.out' has not changed.
 (rerunfilecheck)             Checksum: 5C94945CAEF9E300B6CCBBE936FDB2FF;677.
  ) 
 Here is how much of TeX's memory you used:
- 23225 strings out of 473583
- 447514 string characters out of 5732336
+ 23295 strings out of 473583
+ 448882 string characters out of 5732336
  1968908 words of memory out of 5000000
- 45525 multiletter control sequences out of 15000+600000
+ 45560 multiletter control sequences out of 15000+600000
  566262 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,17n,123p,540b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Navigation61} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Navigation66} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{Navigation67} has been referenced but does not exist, replaced by a fixed one
+
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadII.pdf (52 pages, 340103 bytes).
+Output written on unidadII.pdf (60 pages, 403414 bytes).
 PDF statistics:
- 1871 PDF objects out of 2073 (max. 8388607)
- 1579 compressed objects within 16 object streams
- 111 named destinations out of 1000 (max. 500000)
- 876 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2176 PDF objects out of 2487 (max. 8388607)
+ 1827 compressed objects within 19 object streams
+ 130 named destinations out of 1000 (max. 500000)
+ 1121 words of extra memory for PDF output out of 10000 (max. 10000000)
 

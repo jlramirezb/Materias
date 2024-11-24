@@ -1,13 +1,18 @@
 \frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
   \begin{itemize}
-    \item El m\'etodo de la falsa posici\'on o Regula Falsi, es otra alternativa usada para resolver el problema de encontrar el
-    cero de una funci\'on y difiere del m\'etodo de bisecci\'on en la forma como se consiguen los valores de $c_n$.
-    \item<2-> Sea $f(a)f(b) < 0$ y sea la recta que une los puntos $(a, f (a))$, $(b, f (b))$ cuya pendiente es $m =
-    \frac{f(b)-f(a)}{b-a}$,
-    \item<3-> pero si $(c, 0)$ es el punto de intersecci\'on de la recta con el eje $x$, entonces tambi\'en $m = \frac{0 - f(b)}{c-b}$, obteniendo
-    \begin{block}{}
+    \item<1-> Al igual que para el m\'etodo de bisecci\'on se tienen tres posibilidades:
+      \begin{itemize}
+        \item[i)]<2-> $f (c) = 0$
+        \item[ii)]<3-> $f (a)f (c) < 0$
+        \item[iii)]<4-> $f (c)f (b) < 0$.
+      \end{itemize}
+      \item<5-> Si $f (c) = 0$, entonces $c$ es un cero de $f$.
+      \item<6-> Si $f (a)f (c) < 0$, entonces hay un cero de $f$ en $[a; c]$.
+      \item<7-> Si $f (c)f (b) < 0$, entonces hay un cero de $f$ en $[c; b]$.
+      \item<8-> Lo anterior sugiere un proceso iterativo que se concreta tomando
+      \begin{block}{}
       $$
-        c = \frac{af(b)-bf(a)}{f(b)-f(a)}
+      c_n = \frac{a_nf(b_n)-b_nf(a_n)}{f(b_n)-f(a_n)} \quad\forall n=0,1,2,\ldots
       $$
-    \end{block}
-  \end{itemize}
+      \end{block}
+    \end{itemize}

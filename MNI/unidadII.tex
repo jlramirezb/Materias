@@ -380,8 +380,32 @@ se verifica que $N$ iteraciones del proceso de bisecci\'on conducen a un valor $
 %%%%%%
 \begin{frame}
   \frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
-  
+  \begin{center}
+    \includegraphics[scale=0.7]{regfalsi.png}
+  \end{center}
 \end{frame}
+%%%%%%
+\begin{frame}[fragile]
+  \frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
+  \begin{itemize}
+    \item<1-> Al igual que para el m\'etodo de bisecci\'on se tienen tres posibilidades:
+      \begin{itemize}
+        \item[i)]<2-> $f (c) = 0$  
+        \item[ii)]<3-> $f (a)f (c) < 0$ 
+        \item[iii)]<4-> $f (c)f (b) < 0$.
+      \end{itemize}
+      \item<5-> Si $f (c) = 0$, entonces $c$ es un cero de $f$.
+      \item<6-> Si $f (a)f (c) < 0$, entonces hay un cero de $f$ en $[a; c]$.
+      \item<7-> Si $f (c)f (b) < 0$, entonces hay un cero de $f$ en $[c; b]$.
+      \item<8-> Lo anterior sugiere un proceso iterativo que se concreta tomando
+      \begin{block}{}
+      $$
+      c_n = \frac{a_nf(b_n)-b_nf(a_n)}{f(b_n)-f(a_n)} \quad\forall n=0,1,2,\ldots
+      $$  
+      \end{block}      
+    \end{itemize}  
+\end{frame}
+
 
 % \section{Teor\'ia de Errores y Aproximaci\'on.}
 % \begin{frame}[fragile]
