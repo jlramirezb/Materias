@@ -405,8 +405,178 @@ se verifica que $N$ iteraciones del proceso de bisecci\'on conducen a un valor $
       \end{block}      
     \end{itemize}  
 \end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
+  \begin{block}{Teorema}    
+      Sea $f$ dos veces continuamente diferenciable en $[a,b]$ con $\alpha$ una \'unica ra\'iz en $[a,b]$. Supongamos
+     $f(a)f(b)<0$, $f'(\alpha) \neq 0$, y $f''$ no cambia de signo en $[a,b]$. Si $M = \left|\frac{\omega -
+     \alpha}{2}\right| \max_{x \in [a,b]}\left|\frac{f''(x)}{f'(x)}\right|<1$ con $\omega=a$ o $\omega=b$ seg\'un sea el
+     caso, entonces el m\'etodo de Regula Falsi converge. Esta convergencia es lineal.     
+  \end{block}  
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
+  \begin{block}{Demostraci\'on}
+    \begin{itemize}      
+      \item<1->Suponiendo $f''(x)>0$ en $[a,b]$, es decir, $f$ convexa. Entonces el segmento de recta que une $(x_1,f(x_1))$ y $(x_2,f(x_2))$ est\'a por encima de la gr\'afica de $f$, $\forall a\leq x_1 \leq x_2\leq b$. (Si
+$f''<0$, cambiar $f$ por $-f$ y hacer el mismo razonamiento). 
+\item<2->\textbf{Caso 1:} $f'(\alpha)>0$. Aqu\'i resulta que $c$ siempre verifica que $a<c<\alpha$. En este caso
+$b-\alpha=constante$. Sea $a_n=n$-\'esimo valor de $a$ en el procedimiento y dado que
+$$
+c = b - f(b)\left[\frac{b-a}{f(b)-f(a)}\right]
+$$    \end{itemize}
+  \end{block}
+\end{frame}
+%%%%
+\begin{frame}
+   \frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
+   \begin{itemize}
+     \item<1->se tiene que 
+     \scriptsize{
+     \begin{eqnarray}
+      \nonumber c - \alpha & = &  b - \alpha - f(b)\left[\frac{b-a}{f(b)-f(a)}\right] =
+     \frac{(b-\alpha)(f(b)-f(a))-bf(b)+af(b)}{f(b)-f(a)}\\
+     \nonumber & = & \frac{-\alpha f(b)+\alpha f(a)-bf(a)+af(b)}{f(b)-f(a)} =
+     \frac{(a-\alpha)f(b)-(b-\alpha)f(a)}{f(b)-f(a)}\\
+     \nonumber & = & (a-\alpha)(b-\alpha)\frac{1}{f(b)-f(a)}\left[\frac{f(b)}{b-\alpha}-\frac{f(a)}{a-\alpha}\right]\\
+     \nonumber & = &
+     \displaystyle(a-\alpha)(b-\alpha)\frac{1}{\displaystyle\frac{f(b)-f(a)}{b-a}}\frac{\left[\displaystyle\frac{f(b)}{
+     b-\alpha} -\frac { f(a)}{ a-\alpha } \right]}{ b-a } \\
+     \nonumber c - \alpha & = & \frac{1}{2}(a-\alpha)(b-\alpha)\frac{f''(\eta)}{f'(\xi)}, \quad \eta,\xi \in (a,b) 
+     \end{eqnarray}
+     }
+    \end{itemize}
+ \end{frame}
+ %%%%
+ \begin{frame}
+    \frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
+ \begin{itemize}
+  \item<1-> Por lo tanto resulta que:    
+     $$
+     a_{n+1}-\alpha = \frac{1}{2}(a_n-\alpha)(b-\alpha)\frac{f''(\eta_n)}{f'(\xi_n)}, \quad \eta_n,\xi_n \in (a_n,b)
+     $$    
+  \item<2-> Se tiene as\'i que    
+     $$
+     |\xi_{n+1}| \leq M|\xi_n| \mbox{ con } M = \frac{b-\alpha}{2}\max_{x \in [a,b]}\left|\frac{f''(x)}{f'(x)}\right|
+     $$
+  \item<3-> Por lo tanto $|\xi_{n+1}| \leq M^n|\xi_0|$ y si $M<1$ se puede asegurar que $\lim \xi_n = 0$ y que la convergencia es
+     lineal.
+    \end{itemize}
+ \end{frame}
+ %%%%
+ \begin{frame}
+    \frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
+    \begin{itemize}
+      \item<1->\textbf{Caso 2:} En este caso $c$ siempre satisface
+           $$
+           \alpha < c < b
+           $$
+           y $\alpha -a=constante$. Se obtienen las mismas conclusiones que en el caso 1, pero con
+           $$
+           M = \left|\frac{a-\alpha}{2}\right|\max_{x \in [a,b]}\left|\frac{f''(x)}{f'(x)}\right|
+           $$
+    \end{itemize}
+ \end{frame}
+ %%%%
+ \begin{frame}
+    \frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
+    \small{
+\begin{algorithm}[H]
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \caption{Algoritmo de Regula Falsi.}
+  \Input{$a,b \in \mathbb{R}$, N\'umero m\'aximo de iteraciones $N$, tolerancia $TOL$.}
+  \Output{Soluci\'on aproximada $p$ tal que $f(p) \approx 0$.}
+  $i \leftarrow 1$\\
+  \While{$i \leq N$}
+  {
+   $\displaystyle p \leftarrow b - f(b)\left(\frac{b-a}{f(b)-f(a)}\right)$\\
+   $i \leftarrow i +1$\\
+   \If{$|f(p)|<TOL$}
+   {
+     Salida($p$); EXIT\\
+   }
+   \eIf{$f(a)f(p)>0$}
+   {
+      $a \leftarrow p$\\
+   }
+   {
+     $b \leftarrow p$\\
+   }
+  }
+  \label{RF_alg}
+\end{algorithm}}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
+  Los resultados obtenidos al aplicar el m\'etodo de falsa posici\'on al ejemplo presentado anteriormente son:
+  \scriptsize{
+  \begin{center}
+  \begin{table}[!ht]
+    \begin{center}
+    \begin{tabular}{|c||c||c||c||c|}\hline
+  $k$  & $a$ & $p$ & $b$ & $f(p)$ \\\hline\hline
+  1 & -2.00000000 & -1.07692308 & -1.00000000 & -1.10374287 \\\hline
+2 & -2.00000000 & -1.15467487 & -1.07692308 & -1.09517990 \\\hline
+3 & -2.00000000 & -1.22537135 & -1.15467487 & -0.97314218 \\\hline
+4 & -2.00000000 & -1.28347785 & -1.22537135 & -0.78093935 \\\hline
+5 & -2.00000000 & -1.32725869 & -1.28347785 & -0.57596833 \\\hline
+6 & -2.00000000 & -1.35806966 & -1.32725869 & -0.39853249 \\\hline
+7 & -2.00000000 & -1.37870356 & -1.35806966 & -0.26363401 \\\hline
+8 & -2.00000000 & -1.39205970 & -1.37870356 & -0.16922303 \\\hline
+9 & -2.00000000 & -1.40051361 & -1.39205970 & -0.10652517 \\\hline
+%10 & -2.00000000 & -1.40578848 & -1.40051361 & -0.06623504 \\\hline
+%11 & -2.00000000 & -1.40905028 & -1.40578848 & -0.04086781 \\\hline
+%12 & -2.00000000 & -1.41105602 & -1.40905028 & -0.02509622 \\\hline
+%13 & -2.00000000 & -1.41228514 & -1.41105602 & -0.01536614 \\\hline
+%14 & -2.00000000 & -1.41303675 & -1.41228514 & -0.00939167 \\\hline
+%15 & -2.00000000 & -1.41349577 & -1.41303675 & -0.00573383 \\\hline
+%16 & -2.00000000 & -1.41377588 & -1.41349577 & -0.00349829 \\\hline
+%17 & -2.00000000 & -1.41394673 & -1.41377588 & -0.00213348 \\\hline
+%18 & -2.00000000 & -1.41405091 & -1.41394673 & -0.00130081 \\\hline
+%19 & -2.00000000 & -1.41411442 & -1.41405091 & -0.00079300 \\\hline
+%20 & -2.00000000 & -1.41415313 & -1.41411442 & -0.00048339 \\\hline
+%21 & -2.00000000 & -1.41417673 & -1.41415313 & -0.00029464 \\\hline
+%22 & -2.00000000 & -1.41419111 & -1.41417673 & -0.00017958 \\\hline
+%23 & -2.00000000 & -1.41419988 & -1.41419111 & -0.00010946 \\\hline
+\vdots & \vdots & \vdots & \vdots & \vdots \\\hline
+24 & -2.00000000 & -1.41420522 & -1.41419988 & -0.00006671 \\\hline
+25 & -2.00000000 & -1.41420848 & -1.41420522 & -0.00004066 \\\hline
+26 & -2.00000000 & -1.41421046 & -1.41420848 & -0.00002478 \\\hline
+27 & -2.00000000 & -1.41421167 & -1.41421046 & -0.00001510 \\\hline
+28 & -2.00000000 & -1.41421241 & -1.41421167 & -0.00000921 \\\hline
+ \end{tabular}
+ \caption{Resultados Regula Falsi.}\end{center}
+ \label{tab_regfalsi}
+\end{table}
+  \end{center}}
+\end{frame}
+%%%%
+\section{M\'etodo de Illinois}
+\begin{frame}
+  \frametitle{M\'etodo de Illinois}
+  \begin{itemize}
+    \item<1-> La intenci\'on del m\'etodo es solucionar el problema de los extremos fijos que puede
+    ocurrir en Regula Falsi. 
+    \item<2->Este nuevo m\'etodo sigue el mismo procedimiento
+    de la Regula Falsi.
+    \item<3-> El nuevo punto $x_{i+1}$ se forma obteniendo la ra\'iz
+    buscada $x^* \in (x_i ;x_{i+1})$. 
+    \item<4->En primer lugar se emplea Regula Falsi, es decir,
+    $$
+      x_{i+1} = \frac{x_if_{i-1}-x_{i-1}f_i}{f_{i-1}-f_i}
+    $$  
+    donde se ha usado la notaci\'on
+    $$
+      f_i = f(x_i);\quad \forall i;
+    $$
+  \end{itemize}
+\end{frame}
 
-
+    
 % \section{Teor\'ia de Errores y Aproximaci\'on.}
 % \begin{frame}[fragile]
 %   \frametitle{Teor\'ia de Errores y Aproximaci\'on.}

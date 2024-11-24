@@ -2,3 +2,4 @@
 \beamer@sectionintoc {2}{Ratas de Convergencia}{23}{0}{2}
 \beamer@sectionintoc {3}{M\'etodo de Bisecci\'on}{29}{0}{3}
 \beamer@sectionintoc {4}{M\'etodo de Falsa Posici\'on o Regula Falsi.}{49}{0}{4}
+\beamer@sectionintoc {5}{M\'etodo de Illinois}{71}{0}{5}

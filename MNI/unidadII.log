@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  24 NOV 2024 09:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  24 NOV 2024 14:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/USUARIO/Documents/repo/Materias/MNI/unidadII
+**c:/Users/USUARIO/Documents/repo/Materias/MNI/unidadII.tex
 (c:/Users/USUARIO/Documents/repo/Materias/MNI/unidadII.tex
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
@@ -763,7 +763,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [16
 
 ]
-<eq2sol.jpg, id=529, 401.5pt x 258.9675pt>
+<eq2sol.jpg, id=535, 401.5pt x 258.9675pt>
 File: eq2sol.jpg Graphic file (type jpg)
 <use eq2sol.jpg>
 Package pdftex.def Info: eq2sol.jpg  used on input line 99.
@@ -895,7 +895,7 @@ Package epstopdf Info: Source file: <bisec.eps>
 (epstopdf)             Command: <repstopdf --outfile=bisec-eps-converted-to.pdf bisec.eps>
 (epstopdf)             \includegraphics on input line 221.
 Package epstopdf Info: Output file is already uptodate.
-<bisec-eps-converted-to.pdf, id=1287, 959.585pt x 693.59125pt>
+<bisec-eps-converted-to.pdf, id=1293, 959.585pt x 693.59125pt>
 File: bisec-eps-converted-to.pdf Graphic file (type pdf)
 <use bisec-eps-converted-to.pdf>
 Package pdftex.def Info: bisec-eps-converted-to.pdf  used on input line 221.
@@ -943,7 +943,7 @@ Package epstopdf Info: Source file: <./bisecc_f.eps>
 (epstopdf)             Command: <repstopdf --outfile=./bisecc_f-eps-converted-to.pdf ./bisecc_f.eps>
 (epstopdf)             \includegraphics on input line 332.
 Package epstopdf Info: Output file is already uptodate.
-<./bisecc_f-eps-converted-to.pdf, id=1556, 1564.84625pt x 1362.08875pt>
+<./bisecc_f-eps-converted-to.pdf, id=1562, 1564.84625pt x 1362.08875pt>
 File: ./bisecc_f-eps-converted-to.pdf Graphic file (type pdf)
 <use ./bisecc_f-eps-converted-to.pdf>
 Package pdftex.def Info: ./bisecc_f-eps-converted-to.pdf  used on input line 332.
@@ -998,7 +998,7 @@ Overfull \vbox (59.66862pt too high) detected at line 332
 [51
 
 ]
-<regfalsi.png, id=1762, 418.56375pt x 268.00125pt>
+<regfalsi.png, id=1769, 418.56375pt x 268.00125pt>
 File: regfalsi.png Graphic file (type png)
 <use regfalsi.png>
 Package pdftex.def Info: regfalsi.png  used on input line 386.
@@ -1043,6 +1043,71 @@ Package pdftex.def Info: regfalsi.png  used on input line 386.
 [60
 
 ]
+
+[61
+
+]
+
+[62
+
+]
+
+[63
+
+]
+Overfull \hbox (7.80782pt too wide) in alignment at lines 451--451
+ [][][] []
+ []
+
+
+
+[64
+
+]
+
+[65
+
+]
+
+[66
+
+]
+
+[67
+
+]
+
+[68
+
+]
+
+[69
+
+]
+Overfull \vbox (6.41656pt too high) detected at line 556
+ []
+
+
+
+[70
+
+]
+
+[71
+
+]
+
+[72
+
+]
+
+[73
+
+]
+
+[74
+
+]
 \tf@nav=\write6
 \openout6 = `unidadII.nav'.
 
@@ -1058,30 +1123,21 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `unidadII.out' has not changed.
-(rerunfilecheck)             Checksum: 5C94945CAEF9E300B6CCBBE936FDB2FF;677.
+(rerunfilecheck)             Checksum: EDF3CD6E2F6AF3FE5E7A9A48D6F2AF93;819.
  ) 
 Here is how much of TeX's memory you used:
- 23295 strings out of 473583
- 448882 string characters out of 5732336
- 1968908 words of memory out of 5000000
- 45560 multiletter control sequences out of 15000+600000
+ 23360 strings out of 473583
+ 449933 string characters out of 5732336
+ 1970908 words of memory out of 5000000
+ 45597 multiletter control sequences out of 15000+600000
  566262 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,17n,123p,540b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Navigation61} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{Navigation66} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{Navigation67} has been referenced but does not exist, replaced by a fixed one
-
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadII.pdf (60 pages, 403414 bytes).
+ 128i,17n,123p,544b,750s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on unidadII.pdf (74 pages, 458487 bytes).
 PDF statistics:
- 2176 PDF objects out of 2487 (max. 8388607)
- 1827 compressed objects within 19 object streams
- 130 named destinations out of 1000 (max. 500000)
- 1121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2626 PDF objects out of 2984 (max. 8388607)
+ 2224 compressed objects within 23 object streams
+ 158 named destinations out of 1000 (max. 500000)
+ 1231 words of extra memory for PDF output out of 10000 (max. 10000000)
 
