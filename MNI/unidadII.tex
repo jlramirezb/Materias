@@ -5,6 +5,7 @@
 \usepackage{beamerthemeJuanLesPins}
 \usepackage{verbatim}
 \usepackage{algorithm2e}
+\usepackage{subfigure}
 \usefonttheme{serif}
 \title{Unidad II: Soluci\'on Num\'erica de Ecuaciones No Lineales.}
 \author{Jos\'e Luis Ram\'irez B.}
@@ -575,6 +576,156 @@ $$    \end{itemize}
     $$
   \end{itemize}
 \end{frame}
+%%%%
+\begin{frame}
+  \frametitle{M\'etodo de Illinois}
+  \begin{itemize}
+    \item<1-> A continuación
+    \begin{enumerate}
+      \item[i)] si $f_i\cdot f_{i+1} < 0$ entonces $(x_{i-1}; f_{i-1})$ se reemplaza por $(x_i ; f_i )$ y $x^* \in (x_i ;x_{i+1})$.
+      \item[ii)] si $f_i\cdot f_{i+1} > 0$ entonces $(x_{i-1}; f_{i-1})$ se reemplaza por $(x_{i-1}; f_{i-1}/2)$ y $x^* \in (x_{i-1};x_{i+1})$.
+    \end{enumerate}
+    \item<2-> De esta manera cuando se est\'a en la situación ii), se calcula el siguiente punto de manera similar pero atendiendo a una f\'ormula ligeramente
+    modificada
+    \begin{block}{}
+    $$
+      x_{i+2} = \frac{x_{i+1}\frac{f_{i-1}}{2}-x_{i-1}f_{i+1}}{\frac{f_{i-1}}{2}-f_{i+1}}
+    $$  
+    \end{block}    
+  \end{itemize}    
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{M\'etodo de Illinois}
+  \begin{center}
+    \includegraphics[scale=0.5]{MetIllinois.png}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Algoritmo del M\'etodo de Illinois}
+  \small{ 
+  \begin{algorithm}[H]
+    \SetAlgoLined
+    \KwData{Un intervalo $[a,b]$ tal que $f(a)\cdot f(b) < 0$}
+    \KwResult{Una aproximaci\'on $x$ a la ra\'iz de $f(x)$}
+    $i \leftarrow 1$; $x_{i-1} \leftarrow a$\;
+    $f_{i-1} \leftarrow f(a)$; $x_{i} \leftarrow b$\;
+    $f_{i} \leftarrow f(b)$\;
+    \While{ $|f_i| > \epsilon$ }{
+      $x_{i+1} \leftarrow \frac{x_if_{i-1}-x_{i-1}f_i}{f_{i-1}-f_i}$; $f_{i+1} \leftarrow f(x_{i+1})$\;
+      \If{ $f_{i+1}\cdot f_{i} < 0$ }{
+        $(x_{i-1}; f_{i-1}) \leftarrow (x_{i}; f_{i})$\;
+      }
+      \Else{
+        $(x_{i-1}; f_{i-1}) \leftarrow (x_{i-1}; f_{i-1}/2)$\;
+      }
+      $i \leftarrow i+1$\;
+    }
+    \KwRet $x_i$
+  \end{algorithm}}
+\end{frame}
+%%%%%
+%%%%
+\begin{frame}
+  \frametitle{M\'etodo de Illinois.}
+  Los resultados obtenidos al aplicar el m\'etodo de Illinois al ejemplo presentado anteriormente son:    \begin{center}
+  \begin{table}[!ht]
+    \begin{center}
+    \begin{tabular}{|c||c||c||c||c|}\hline
+  $k$  & $a$ & $p$ & $b$ & $|f(p)|$ \\\hline\hline
+  1 & -2.00000000 & -1.07692307 & -1.07692307 & 1.10374286e+00\\\hline
+  2 & -2.00000000 & -1.22034600 & -1.22034600 & 9.85725880e-01\\\hline
+  3 & -2.00000000 & -1.41316536 & -1.41316536 & 8.36748888e-03\\\hline
+  4 & -1.41316536 & -1.41642075 & -1.41642075 & 1.77379628e-02\\\hline
+  5 & -1.41642075 & -1.41420880 & -1.41420880 & 3.80691452e-05\\\hline
+  6 & -1.41642075 & -1.41421354 & -1.41421354 & 1.72544154-07\\\hline
+ \end{tabular}
+ \caption{Resultados Illinois.}\end{center}
+ \label{tab_illinois}
+\end{table}
+  \end{center}
+\end{frame}
+%%%%
+\section{M\'etodos de Punto Fijo}
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{itemize}
+    \item<1-> El m\'etodo de aproximaciones sucesivas (o de punto fijo) 
+    para determinar una soluci\'on de la ecuaci\'on no lineal $f(x)=0$
+    se basa en el teorema del punto fijo. 
+    \item<2-> Para ello el primer paso que se realiza en este m\'etodo consiste
+    en reescribir la ecuaci\'on $f(x)=0$ en la forma $x = g(x)$.
+    \item<3-> Una vez hecho esto, se escoge alg\'un $x_0$ como aproximaci\'on inicial al punto fijo
+    $x^*$, y se genera una sucesi\'on de aproximaciones mediante las iteraciones:
+    \begin{block}{}
+        $$
+        x_{n+1} = g(x_n), \qquad n=0,1,2,\ldots
+        $$
+    \end{block}
+    donde se espera que la sucesi\'on $\{x_n\}$ converja al punto fijo $x^*$.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{block}{Proposici\'on}
+    Si $f$ es una funci\'on continua y $x_n$ converge, entonces su l\'imite $x^*$ es un punto fijo de $f$.
+  \end{block}
+  \uncover<2->{La prueba de la proposici\'on es la siguiente cadena de igualdades
+  $$
+  f(x^*) = \lim_n f(x_n) = \lim_n x_n = \lim_n x_{n+1} = x^*
+  $$
+  }
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{itemize}
+    \item<1-> Existen m\'ultiples posibilidades para transformar la ecuaci\'on $f(x) = 0$ en otra del tipo $x =
+    g(x)$.
+    \item<2-> Por ejemplo podr\'ia despejarse (de la forma que sea) $x$ de la expresi\'on de la ecuaci\'on $f (x) = 0$.
+    \item<3-> O podr\'ia sumarse la variable $x$ en ambos lados de la ecuaci\'on y designar por $g(x)$ a $(f (x) + x)$:
+    $$
+      0 = f(x) \Leftrightarrow x = f(x) + x = g(x)
+    $$
+  \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+\begin{figure}[ht]
+\centering
+\subfigure[Proceso divergente (Escalera).]{
+	%\rule{4cm}{3cm}   
+	\includegraphics[scale=0.35]{diver.png}
+	\label{PF_div}
+}
+\subfigure[Proceso convergente (Escalera).]{
+	%\rule{4cm}{3cm}
+	\includegraphics[scale=0.35]{conver.png}
+	\label{PF_conv}
+}
+\caption{Proceso de Punto Fijo.}
+\end{figure}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{figure}[ht]
+  \centering
+  \subfigure[Proceso divergente (Oscilante).]{
+    %\rule{4cm}{3cm}
+    \includegraphics[scale=0.35]{diver2.png}
+    \label{PF_div2}
+  }
+  \subfigure[Proceso convergente (Oscilante).]{
+    %\rule{4cm}{3cm}
+    \includegraphics[scale=0.35]{conver2.png}
+    \label{PF_conv2}
+  }
+  \caption{Proceso de Punto Fijo.}
+  \end{figure}
+  \end{frame}
 
     
 % \section{Teor\'ia de Errores y Aproximaci\'on.}
