@@ -725,7 +725,76 @@ $$    \end{itemize}
   }
   \caption{Proceso de Punto Fijo.}
   \end{figure}
-  \end{frame}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{itemize}
+    \item Hallar num\'ericamente una de las ra\'ices de $f(x) = x^2 -x-2 = 0$. Sus ra\'ices exactas son $x_1 = -1$ y $x_2 = 2$.
+     Hallando \'unicamente en el c\'alculo de la ra\'iz $x^* = 2$ tomando como punto de partida $x_0=2.1$ y definiendo $g$ como.
+     \begin{itemize}
+      \item $g_1(x) = x^2-2$
+      \item $g_2(x) = \sqrt{x+2}$
+      \item $g_3(x) = 1+\dfrac{2}{x}$
+      \item $g_4(x) = \dfrac{x^2+2}{2x-1}$
+     \end{itemize}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{center}
+    \small{
+    \begin{tabular}{|c|c|c|c|c|}\hline
+    k & $g_1(x)$ & $g_2(x)$ & $g_3(x)$ & $g_4(x)$ \\\hline\hline 
+    1 & 2.41000000e+00 & 2.02484567 & 1.95238095 & 2.00312500\\\hline
+    2 & 3.80810000e+00 & 2.00620180 & 2.02439024 & 2.00003248\\\hline
+    3 & 1.25016256e+01 & 2.00154985 & 1.98795180 & 2.00000000 \\\hline
+    4 & 1.54290642e+02 & 2.00038742 & 2.00606060 & \\\hline
+    5 & 2.38036024e+04 & 2.00009685 & 1.99697885 & \\\hline
+    6 & 5.66611489e+08 & 2.00002421 & 2.00151285 & \\\hline
+    7 & 3.21048579e+17 & 2.00000605 & 1.99924414 & \\\hline
+    8 & 1.03072190e+35 & 2.00000151 & 2.00037807 & \\\hline
+    9 & 1.06238764e+70 & & 1.99981099 & \\\hline
+    10 & 1.12866751e+140 & & 2.00009450 & \\\hline
+    11 & 1.27389035e+280 & & 1.99995274 & \\\hline
+    12 & & & 2.00002362 & \\\hline
+    13 & & & 1.99998818 & \\\hline
+    14 & & & 2.00000590 & \\\hline
+    15 & & & 1.99999704 & \\\hline
+    \end{tabular}}
+  \end{center}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{block}{Definici\'on:}
+    Una aplicaci\'on $T : X \to X$ con $X \subseteq \mathbb{R}^n$ se denomina contracci\'on sobre $X$ si existe un n\'umero
+real $K$, con $0 < K < 1$, tal que para todo $x, y \in X$
+$$
+\|Tx - Ty\| \leq K \|x - y\|
+$$
+en alguna norma vectorial $\|\cdot\|$.
+  \end{block}
+\end{frame}
+%%%%%ç
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{itemize}
+    \item<1-> Geom\'etricamente esto significa que dos puntos cualesquiera $x, y \in X$ tienen im\'agenes m\'as cercanas que ellos
+    mismos.
+    \item<2-> De ah\'i el nombre de contracci\'on para la aplicaci\'on $T$.    
+    \item<3-> \textbf{Ejemplo:} La funci\'on $g: [1, 3] \to [1, 3]$ definida por $g(x) = \sqrt{x + 2}$ es una contracci\'on
+    en $X = [1, 3]$.
+    \item<-4>Primero verificando que $g(x) \in [1, 3]$ si $x \in [1, 3]$:
+    $$
+    x \in [1,3] \Leftrightarrow 1 \leq x \leq 3 \Leftrightarrow 3 \leq x+2 \leq 5  \Leftrightarrow \sqrt{3} \leq
+    \sqrt{x+2} \leq \sqrt{5}
+    $$
+    
+    Por lo tanto, $g(x) = \sqrt{x + 2} \in [1, 3]$.
+  \end{itemize}
+\end{frame}
 
     
 % \section{Teor\'ia de Errores y Aproximaci\'on.}
