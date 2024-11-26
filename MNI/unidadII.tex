@@ -786,7 +786,7 @@ en alguna norma vectorial $\|\cdot\|$.
     \item<2-> De ah\'i el nombre de contracci\'on para la aplicaci\'on $T$.    
     \item<3-> \textbf{Ejemplo:} La funci\'on $g: [1, 3] \to [1, 3]$ definida por $g(x) = \sqrt{x + 2}$ es una contracci\'on
     en $X = [1, 3]$.
-    \item<-4>Primero verificando que $g(x) \in [1, 3]$ si $x \in [1, 3]$:
+    \item<4->Primero verificando que $g(x) \in [1, 3]$ si $x \in [1, 3]$:
     $$
     x \in [1,3] \Leftrightarrow 1 \leq x \leq 3 \Leftrightarrow 3 \leq x+2 \leq 5  \Leftrightarrow \sqrt{3} \leq
     \sqrt{x+2} \leq \sqrt{5}
@@ -795,8 +795,115 @@ en alguna norma vectorial $\|\cdot\|$.
     Por lo tanto, $g(x) = \sqrt{x + 2} \in [1, 3]$.
   \end{itemize}
 \end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{itemize}
+    \item<1-> Por otro lado, por el teorema del valor medio
+    $$
+    |g(x)-g(y)|= |g'(\eta)||x-y| \quad\mbox{con $\eta$ entre $x$ y $y$}
+    $$
+    y debido a que
+    $$
+    g'(x) = \frac{1}{2\sqrt{x+2}}  \Rightarrow \max_{x\in[1,3]}|g'(x)|=g'(1)= \frac{1}{2\sqrt{3}}
+    $$
+    \item<2->Por lo tanto
+    $$
+    |g(x)-g(y)| \leq \frac{1}{2\sqrt{3}}|x-y|
+    $$
+    Se concluye que $g$ es una contracci\'on con $K = \frac{1}{2\sqrt{3}}<1$.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{block}{Teorema de punto fijo de Banach}
+    Si $X$ es un conjunto cerrado conexo de $\mathbb{R}^n$ y $T$ es una
+contracci\'on sobre $X$, entonces $T$ tiene un \'unico punto fijo en $X$, y dado cualquier punto de comienzo $x_0 \in X$,
+la sucesi\'on generada por iteraci\'on de punto fijo
+$$
+x_{n+1} = Tx_n, \quad n=0,1,2,\ldots
+$$
+converger\'a al punto fijo $x^*$ de $T$.
+  \end{block}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{block}{Demostraci\'on:}
+    Sea $x_0 \in X$, y sea $\{x_n\}$ la sucesi\'on generada. Para cada $m \in
+    \mathbb{N}$, $x_{m+1} - x_m = T x_m - T x_{m-1}$, y por ser $T$ una contracci\'on:
+    $$
+    \|x_{m+1} - x_m\| = \|T x_m - T x_{m-1}\| \leq K\|x_m - x_{m-1}\|
+    $$
+    con $0 < K < 1$. Procediendo recursivamente, se obtiene
+    $$
+    \|x_{m+1} - x_m\| \leq K^m\|x_1 - x_0\| \quad \forall m \in \mathbb{N}  
+    $$
+  \end{block}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{block}{Demostraci\'on:}
+    Utilizando este resultado para toda $n > m$ se obtiene
 
-    
+\begin{eqnarray}
+ \nonumber & & \|x_n - x_m\|  =   \|x_n - x_{n-1} + x_{n-1} - x_{n-2} + \cdots + x_{m+1} - x_m\|\\
+ \nonumber & & \leq \|x_n - x_{n-1}\| + \|x_{n-1} - x_{n-2}\| + \cdots + \|x_{m+1} - x_m\|\\
+ \nonumber & & \leq (K^{n-1} + K^{n-2} + \cdots + K^m)\|x_1 - x_0\|\\
+ \nonumber & & \leq K^m(1 + K + K^2 + \cdots + K^{n-m-1})\|x_1 - x_0\|\\
+ \nonumber & & \leq K^m\frac{1-K^{n-m}}{1-K}\|x_1 - x_0\|
+\end{eqnarray}
+y como $0 < K^{n-m} < 1$, entonces
+$$
+\|x_n - x_m\| \leq K^m\frac{1}{1-K}\|x_1 - x_0\|
+$$
+\end{block}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{block}{Demostraci\'on:}
+    Por lo tanto
+$$
+\lim_{n,m \to \infty} \|x_n - x_m\| \leq \lim_{m \to \infty}K^m\frac{1}{1-K}\|x_1 - x_0\|=0
+$$
+lo cual implica que la sucesi\'on $\{x_n\}$ generada es una sucesi\'on de Cauchy. Como $T$ est\'a
+definida sobre el conjunto cerrado $X$ la sucesi\'on de Cauchy $\{x_n\}$ tiene un l\'imite $x^* \in X$:
+$$
+x^* = \lim_{n \to \infty}x_n
+$$
+\end{block}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{block}{Demostraci\'on:}
+Este l\'imite $x^* \in X$ es un punto fijo de $T$ pues
+\begin{eqnarray}
+\nonumber  \|x^* - T x^*\| & = & \|x^* - x_n + x_n - T x^*\| \\
+\nonumber & \leq & \|x^* - x_n\| + \|x_n - T x^*\| \\
+\nonumber & = & \|x^* - x_n\| + \|T x_{n-1} - Tx^*\|
+\end{eqnarray}
+implica que
+$$
+  \|x^* - Tx^*\| \leq  \|x^* - x_n\| + K \|x_{n-1} - x^*\| \to 0,\mbox{ cuando } n \to \infty.
+$$
+\end{block}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{M\'etodos de Punto Fijo}
+  \begin{block}{Demostraci\'on:}
+    Por lo tanto, $x^* = T x^*$. Adem\'as este es el \'unico punto fijo de $T$ en $X$, pues si hubiese otro, digamos $\eta$,
+entonces
+$$
+\|x^* - \eta\| = \|Tx^* - T\eta\| \leq K \|x^* - \eta\| < \|x^* - \eta\|,
+$$
+lo cual no es posible. Por tanto, $x^*$ es el \'unico punto fijo de $T$ en $X$.
+  \end{block}
+\end{frame} 
 % \section{Teor\'ia de Errores y Aproximaci\'on.}
 % \begin{frame}[fragile]
 %   \frametitle{Teor\'ia de Errores y Aproximaci\'on.}
