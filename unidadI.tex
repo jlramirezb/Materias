@@ -26,27 +26,6 @@
     \item<3-> El objetivo de este tema es desarrollar estrategias num\'ericas que permitan resolver sistemas de ecuaciones relativamente grandes de una manera eficiente.
   \end{itemize}    
 \end{frame}
-% \begin{frame}[fragile]
-%  %\frametitle{Motivaci\'on.}      
-%  La cercha de la figura se carga con una fuerza uniforme repartida sobre el cord\'on superior
-
-%  \begin{center}
-%  %\includegraphics[scale=0.5]{cercha.png}
-% \end{center}
-
-%  El planteamiento del problema conduce a un sistema lineal de ecuaciones de dimensi\'on $n=50$ y en el que la matriz tiene la siguiente estructura
-
-%  \begin{center}
-%  %\includegraphics[scale=0.5]{matriz.png}
-% \end{center}
- 
-%  Al resolver el sistema, se obtiene la deformaci\'on de la estructura
- 
-%  \begin{center}
-%  %\includegraphics[scale=0.5]{cerchadef.png}
-% \end{center}
- 
-% \end{frame}
 %%%%
 \frame
 {
@@ -1158,6 +1137,134 @@ $$
     \item<4-> $Ux=z$, hallando $x$ por sustituci\'on regresiva.
   \end{itemize}
 \end{frame}
+%%%%
+\section{Factorizaci\'on de Cholesky}
+\begin{frame}
+  \frametitle{Factorizaci\'on de Cholesky}
+  \begin{itemize}
+    \item<1-> Una vez visto el m\'etodo de Gauss basado en la factorizaci\'on $LU$ vamos a estudiar otro m\'etodos que se basan en
+    otros tipos de descomposiciones de la matriz del sistema.
+    \item<2-> Es conocido que toda matriz sim\'etrica y definida positiva tiene sus autovalores reales y positivos, adem\'as, en la
+    factorizaci\'on $LU$ todos los pivotes son reales y positivos.
+  \end{itemize}
+  \uncover<3->{
+    \begin{block}{Teorema}
+      Si $A$ es una matriz real, sim\'etrica y positiva definida, entonces tiene una factorizaci\'on
+      \'unica $A=LL^t$ en donde $L$ es una matriz triangular inferior con diagonal positiva.
+    \end{block}
+  }
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on de Cholesky}
+  \begin{block}{Demostraci\'on}
+    Partiendo de que $A=LU$ tenemos que:
+    \small{
+    \begin{eqnarray}
+     LU = A = A^T = (LU)^T = U^T L^T & \Rightarrow & LU = U^T L^T \Rightarrow \nonumber\\
+     LU ( L^T )^{-1} = U^T L^T ( L^T )^{-1} & \Rightarrow & LU ( L^T )^{-1} = U^T\nonumber\\
+    L^{-1}LU ( L^T )^{-1} = L^{-1}U^T & \Rightarrow & U ( L^T )^{-1} = L^{-1}U^T\nonumber\\
+    U ( L^T )^{-1} = D \Rightarrow U ( L^T )^{-1}L^T = DL^T & \Rightarrow & U = DL^T \Rightarrow A=LDL^T\nonumber
+    \end{eqnarray}}
+  \end{block}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on de Cholesky}
+  Sabemos que $A$ es positiva definida por tanto $LDL^t$ es tambi\'en positiva definida
+  \begin{block}{Definici\'on}
+    Una matriz $A_{n\times n}$ es positiva definida si:
+    $$
+    \forall x \in \mathbb{R}^n \mbox{ con } x\neq 0 / x^tAx>0
+    $$
+  \end{block}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on de Cholesky}
+  \begin{itemize}
+    \item<1-> Dado que $A=LDL^T$ entonces $x^T(LDL^T)x > 0$
+    \item<2-> Utilizando la propiedad asociativa del producto de matrices:
+    $$
+    (x^TL)D(L^Tx) > 0
+    $$
+    \item<3-> Definiendo un vector $y = L^Tx$. Como $L$ es no singular (porque $A$ es definida positiva, y la factorización $LDL^T$ existe), la transformaci\'on de $x$ a $y$ es biyectiva. Esto significa que para cada $x$ no nulo existe un $y$ no nulo, y viceversa.
+    \item<4-> La desigualdad se convierte en:
+    $$
+    y^TDy > 0
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on de Cholesky}
+  \begin{itemize}
+    \item<1-> Dado que $D$ es una matriz diagonal, $y^TDy$ se puede expresar como:
+    $$
+    \sum_{i=1}^n y_i^2d_{ii} > 0
+    $$
+    donde $d_{ii}$ son los elementos de la diagonal de $D$ e $y_i$ son las componentes del vector $y$.
+    \item<2-> La suma de t\'erminos de la forma $d_{ii}y_i^2$ (donde $y_i^2$ siempre es no negativo) es estrictamente mayor que cero para cualquier vector $y$ no nulo.
+    \item<3-> Esto solo es posible si todos los $d_{ii}$ son positivos. Si hubiera un $d_{ii} \leq 0$, se podría elegir un vector $y$ donde $y_i$ sea la \'unica componente no nula y la desigualdad no se cumpliría.    
+  \end{itemize}  
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on de Cholesky}
+  \begin{itemize}
+    \item<1-> Por lo anterior todos los elementos de la diagonal de $D$ son positivos, entonces podemos escribir $D=D^{1/2}D^{1/2}$,
+    entonces tenemos que los elementos de $D^{1/2}=\sqrt{d_{i,i}}$ , quedando de esta manera:
+    $$
+      A = LDL^t = LD^{1/2}D^{1/2}L^t = \tilde L\tilde L^t \mbox{ con } \tilde L = LD^{1/2}
+    $$    
+    \item El proceso se\~nalado anteriormente es conocido como factorizaci\'on de Cholesky.
+   \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on de Cholesky}
+  Del producto matricial se pueden establecer las siguientes relaciones:
+  $$
+  \begin{array}{ll}
+   \uncover<1->{a_{k,k} = & l_{k,1}l_{1,k} + l_{k,2}l_{2,k} + \cdots + l_{k,k}l_{k,k} \mbox{ como } l_{i,j}=l_{j,i}}\\[5pt]
+   \uncover<2->{a_{k,k} = & l_{k,1}^2 + l_{k,2}^2 + \cdots + l_{k,k}^2} \\[5pt]
+   \uncover<3->{\Rightarrow l_{k,k}^2 =& a_{k,k} - l_{k,1}^2
+   - \cdots - l_{k,k-1}^2} \\[5pt]
+   \uncover<4->{\Rightarrow l_{k,k} = & \displaystyle\sqrt{a_{k,k} - \displaystyle\sum_{p=1}^{k-1}l_{k,p}^2}}
+  \end{array}
+  $$
+\end{frame}
 %%%
-
+\begin{frame}
+  \frametitle{Factorizaci\'on de Cholesky}
+  $$
+  \begin{array}{ll}   
+  i>k & \\
+   a_{i,k} = & l_{i,1}l_{1,k} + l_{i,2}l_{2,k} + \cdots + l_{i,k}l_{k,k}\\[5pt]
+   \uncover<2->{a_{i,k} = & l_{i,1}l_{k,1} + l_{i,2}l_{k,2} + \cdots + l_{i,k}l_{k,k}}\\ [5pt]
+   \uncover<3->{l_{i,k}l_{k,k} = & a_{i,k} - l_{i,1}l_{k,1} - l_{i,2}l_{k,2} - \cdots - l_{i,k-1}l_{k,k-1}}
+   \\[5pt]
+   \uncover<4->{\Rightarrow l_{i,k} = & \displaystyle\frac{a_{i,k} - \displaystyle\sum_{p=1}^{k-1}l_{i,p}l_{k,p}}{l_{k,k}}}  
+  \end{array}
+  $$
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on de Cholesky}
+  \begin{algorithm}[H] 
+  \SetKwInOut{Input}{input}
+  \SetKwInOut{Output}{output}
+  \caption{Algoritmo de factorizaci\'on de Cholesky.}
+  \Input{$A \in \mathbb{R}^{n \times n}$ sim\'etrica y Positiva Definida.}
+  \Output{Matriz $L \in \mathbb{R}^{n \times n}$ tal que $L$ es triangular inferior de modo que $A=LL^t$.}
+  \For{$k\leftarrow 1$ \KwTo $n$}
+  {
+    $l_{k,k} = \displaystyle\sqrt{a_{k,k} - \displaystyle\sum_{p=1}^{k-1}l_{k,p}^2}$\\
+    \For{$i\leftarrow k+1$ \KwTo $n$}
+    {
+      $l_{i,k} = \displaystyle\frac{a_{i,k} - \displaystyle\sum_{p=1}^{k-1}l_{i,p}l_{k,p}}{l_{k,k}}$\\
+    }
+  } 
+  \end{algorithm}
+\end{frame}
 \end{document}

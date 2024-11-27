@@ -158,8 +158,29 @@
 \headcommand {\beamer@framepages {135}{135}}
 \headcommand {\slideentry {6}{0}{18}{136/139}{}{0}}
 \headcommand {\beamer@framepages {136}{139}}
-\headcommand {\beamer@partpages {1}{139}}
-\headcommand {\beamer@subsectionpages {105}{139}}
 \headcommand {\beamer@sectionpages {105}{139}}
-\headcommand {\beamer@documentpages {139}}
-\headcommand {\gdef \inserttotalframenumber {71}}
+\headcommand {\beamer@subsectionpages {105}{139}}
+\headcommand {\sectionentry {7}{Factorizaci\'on de Cholesky}{140}{Factorizaci\'on de Cholesky}{0}}
+\headcommand {\slideentry {7}{0}{1}{140/142}{}{0}}
+\headcommand {\beamer@framepages {140}{142}}
+\headcommand {\slideentry {7}{0}{2}{143/143}{}{0}}
+\headcommand {\beamer@framepages {143}{143}}
+\headcommand {\slideentry {7}{0}{3}{144/144}{}{0}}
+\headcommand {\beamer@framepages {144}{144}}
+\headcommand {\slideentry {7}{0}{4}{145/148}{}{0}}
+\headcommand {\beamer@framepages {145}{148}}
+\headcommand {\slideentry {7}{0}{5}{149/151}{}{0}}
+\headcommand {\beamer@framepages {149}{151}}
+\headcommand {\slideentry {7}{0}{6}{152/152}{}{0}}
+\headcommand {\beamer@framepages {152}{152}}
+\headcommand {\slideentry {7}{0}{7}{153/156}{}{0}}
+\headcommand {\beamer@framepages {153}{156}}
+\headcommand {\slideentry {7}{0}{8}{157/160}{}{0}}
+\headcommand {\beamer@framepages {157}{160}}
+\headcommand {\slideentry {7}{0}{9}{161/161}{}{0}}
+\headcommand {\beamer@framepages {161}{161}}
+\headcommand {\beamer@partpages {1}{161}}
+\headcommand {\beamer@subsectionpages {140}{161}}
+\headcommand {\beamer@sectionpages {140}{161}}
+\headcommand {\beamer@documentpages {161}}
+\headcommand {\gdef \inserttotalframenumber {80}}
