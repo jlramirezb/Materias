@@ -1148,25 +1148,28 @@ $$
     factorizaci\'on $LU$ todos los pivotes son reales y positivos.
   \end{itemize}
   \uncover<3->{
-    \begin{block}{Teorema}
-      Si $A$ es una matriz real, sim\'etrica y positiva definida, entonces tiene una factorizaci\'on
-      \'unica $A=LL^t$ en donde $L$ es una matriz triangular inferior con diagonal positiva.
-    \end{block}
+    \begin{block}{Proposici\'on (Criterio de Sylvester de matriz definida positiva)}
+    Sea $A$ una matriz real sim\'etrica $n \times n$. Dicha matriz es definida positiva si y s\'olo si todos sus menores principales son positivos.
+  \end{block}
   }
 \end{frame}
 %%%%
 \begin{frame}
   \frametitle{Factorizaci\'on de Cholesky}
-  \begin{block}{Demostraci\'on}
-    Partiendo de que $A=LU$ tenemos que:
-    \small{
-    \begin{eqnarray}
-     LU = A = A^T = (LU)^T = U^T L^T & \Rightarrow & LU = U^T L^T \Rightarrow \nonumber\\
-     LU ( L^T )^{-1} = U^T L^T ( L^T )^{-1} & \Rightarrow & LU ( L^T )^{-1} = U^T\nonumber\\
-    L^{-1}LU ( L^T )^{-1} = L^{-1}U^T & \Rightarrow & U ( L^T )^{-1} = L^{-1}U^T\nonumber\\
-    U ( L^T )^{-1} = D \Rightarrow U ( L^T )^{-1}L^T = DL^T & \Rightarrow & U = DL^T \Rightarrow A=LDL^T\nonumber
-    \end{eqnarray}}
-  \end{block}
+  \begin{block}{Teorema}
+      Si $A$ es una matriz real, sim\'etrica y positiva definida, entonces tiene una factorizaci\'on
+      \'unica $A=LL^t$ en donde $L$ es una matriz triangular inferior con diagonal positiva.
+    \end{block}
+    \uncover<2->{\begin{block}{Demostraci\'on}
+      Partiendo de que $A=LU$ tenemos que:
+      \small{
+      \begin{eqnarray}
+       LU = A = A^T = (LU)^T = U^T L^T & \Rightarrow & LU = U^T L^T \Rightarrow \nonumber\\
+       LU ( L^T )^{-1} = U^T L^T ( L^T )^{-1} & \Rightarrow & LU ( L^T )^{-1} = U^T\nonumber\\
+      L^{-1}LU ( L^T )^{-1} = L^{-1}U^T & \Rightarrow & U ( L^T )^{-1} = L^{-1}U^T\nonumber\\
+      U ( L^T )^{-1} = D \Rightarrow U ( L^T )^{-1}L^T = DL^T & \Rightarrow & U = DL^T \Rightarrow A=LDL^T\nonumber
+      \end{eqnarray}}
+    \end{block}}
 \end{frame}
 %%%%%
 \begin{frame}
