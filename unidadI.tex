@@ -1270,4 +1270,117 @@ $$
   } 
   \end{algorithm}
 \end{frame}
+%%%%
+\section{Factorizaci\'on \it{QR}.}
+\begin{frame}
+  \frametitle{Factorizaci\'on $QR$}
+  \begin{itemize}
+    \item<1-> Al resolver un sistema $Ax = b$ mediante la factorizaci\'on $LU$ (o la de Cholesky), se
+    transforma el sistema en $Ax = LUx = b$ para hacer $Ux = L^{-1}b$ que es un sistema triangular que se resuelve por sustituci\'on regresiva.
+    \item<2-> Sin embargo, la matriz del nuevo sistema es $U = L^{-1}A$ y dado que $L^{-1}$ no es una matriz unitaria (ortogonal en el caso real)
+    el n\'umero de condici\'on de la matriz del sistema ha cambiado pudiendo estar peor condicionada que
+    la matriz $A$ del sistema original.
+  \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on $QR$}
+  \begin{itemize}
+    \item<1-> Se presenta otro tipo de factorizaci\'on $A = QR$ donde $R$ es, al igual que $U$, una matriz triangular superior, pero
+    donde $Q$ va a ser una matriz unitaria.
+    \item<2-> Por lo que el sistema $Ax = b$ lo transformaremos en $Rx = Q^{-1}b = Q^tb$ y, a
+    diferencia del m\'etodo $LU$, el n\'umero de condici\'on de la matriz del sistema no cambia.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on $QR$}
+  \begin{itemize}
+    \item<1-> Dado que  $cond(A) \geq 1$ para cualquier matriz en general, se puede observar que las 
+    transformaciones ortogonales son m\'as estables.
+    \item<2-> En particular, si $A$ es regular, entonces:
+    $$
+    \|A\| = \|Q\|\|R\| \mbox{ y } \|A^{-1}\|=\|R^{-1}\|\|Q^T\|
+    $$
+    \item<3-> Por lo tanto
+    $$
+    cond(A) = cond(QR) = cond(R)
+    $$
+    \item<4-> La Factorizaci\'on $QR$ desacopla  el problema $Ax=b$ en dos 
+    subproblemas, uno de ellos ($Qy=b$) no posee amplificaci\'on del error, mientras que el otro 
+    ($Rx=y$) posee la m\'inima amplificaci\'on del error permitida por el problema original.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Soluci\'on: Factorizaci\'on $QR$}
+  \begin{block}{Teorema:}
+    Sea $A$ una matriz $m \times n$, de rango $n \leq m$. Entonces existe una matriz ortogonal $Q$ de $m \times m$ 
+  ($Q^{-1} = Q^T$) y una matriz triangular superior $R$ de  $m \times n$, cuyas $m-n$ \'ultimas filas son nulas,  tales 
+  que
+  $$
+  A = QR
+  $$
+  \end{block}
+  $$
+  A_{4\times3}=\underbrace{\left(\begin{array}{cccc}
+           \textcolor{red}x & \textcolor{red}x  & \textcolor{red}x & \textcolor{blue}x\\
+           \textcolor{red}x & \textcolor{red}x  & \textcolor{red}x & \textcolor{blue}x\\
+           \textcolor{red}x & \textcolor{red}x  & \textcolor{red}x & \textcolor{blue}x\\
+           \textcolor{red}x & \textcolor{red}x  & \textcolor{red}x & \textcolor{blue}x
+          \end{array}\right)}_{[Q \tilde Q]}\underbrace{\left(\begin{array}{ccc}
+                                                               \textcolor{red}x & \textcolor{red}x & \textcolor{red}x\\
+                                                               \textcolor{red}0 & \textcolor{red}x & \textcolor{red}x\\
+                                                               \textcolor{red}0 & \textcolor{red}0 & \textcolor{red}x\\
+                                                               \textcolor{blue}0 & \textcolor{blue}0 & \textcolor{blue}0\\
+                                                              \end{array}\right)}_{\left[\begin{array}{c}
+                                                                  R\\
+                                                                  0
+                                                                 \end{array}\right]}=QR
+  $$
+  \end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on $QR$}
+  \begin{itemize}
+    \item<1-> Consid\'erese la matriz regular
+    $$
+    A=\left(\begin{array}{cccc}
+             a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+             a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+             \vdots & \vdots & \ddots & \vdots \\
+             a_{n,1} & a_{n,2} & \cdots & a_{n,n}
+             \end{array}\right) = \left(a_1,a_2,\ldots,a_n\right)
+    $$    
+    donde $a_i$ representa a su columna $i$-\'esima.
+    \item<2-> Aplicando Gram-Schmidt existe un sistema ortonormal $\{y_1, y_2, \cdots, y_n\}$ tal que $\mathcal{L}\{y_1, y_2,\cdots, y_k\} =
+    \mathcal{L}\{a_1, a_2, \cdots, a_k\}$, por lo que $y_{k+1} \in \mathcal{L}^{\perp} \{a_1 , a_2 ,\cdots, a_k \}$.
+    \item<3-> Sea $Q$ la matriz cuyas columnas son los vectores $y_i$, $Q=(y_1,y_2,\cdots,y_n)$.    
+  \end{itemize}
+\end{frame}   
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on $QR$}
+  \begin{itemize}
+    \item<1-> Entonces,
+    $$
+    Q^tA = \left(\begin{array}{c}
+                  y_1^t\\
+                  y_2^t\\
+                  \vdots\\
+                  y_n^t
+                 \end{array}\right)
+            \left(\begin{array}{cccc}
+             a_{1} & a_{2} & \cdots & a_{n}
+             \end{array}\right) 
+    $$
+    $$
+    \iff Q^tA = \left(\begin{array}{cccc}
+      \langle a_1,y_1\rangle & \langle a_2,y_1\rangle & \cdots & \langle a_n,y_1\rangle\\
+      \langle a_1,y_2\rangle & \langle a_2,y_2\rangle & \cdots & \langle a_n,y_2\rangle\\
+\vdots & \vdots & \ddots & \vdots\\
+      \langle a_1,y_n\rangle & \langle a_2,y_n\rangle &\cdots & \langle a_n,y_n\rangle
+      \end{array}\right)
+    $$
+  \end{itemize}
+\end{frame}
 \end{document}

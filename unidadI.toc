@@ -5,3 +5,4 @@
 \beamer@sectionintoc {5}{Condicionamiento}{77}{0}{5}
 \beamer@sectionintoc {6}{Descomposici\'on de Matrices}{105}{0}{6}
 \beamer@sectionintoc {7}{Factorizaci\'on de Cholesky}{140}{0}{7}
+\beamer@sectionintoc {8}{Factorizaci\'on \it {QR}.}{163}{0}{8}
