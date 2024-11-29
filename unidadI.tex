@@ -1645,5 +1645,18 @@ $$
     \end{array}\right)
     $$
     con vectores $a_1 =(1, 1, 0)^T$, $a_2 =(1, 0, 1)^T$ y $a_3 =(0, 1, 1)^T$
+    \vspace{1cm}
+
+    Aplicando el procedimiento de Gram-Schmidt se obtienen los siguientes resultados:
+  \end{frame}
+  %%%%
+  \begin{frame}
+    \frametitle{Ejemplo}
+    \begin{eqnarray}
+      \nonumber \hat{q}_1 &=& a_1 =(1, 1, 0)^T\\
+      \nonumber q_1 &=& \frac{\hat{q}_1}{\|\hat{q}_1\|} = \frac{1}{\sqrt{2}}(1, 1, 0)^T = \left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0\right)^T\\
+      \nonumber \hat{q}_2 &=& a_2-\langle a_2,q_1\rangle q_1 =(1,0, 1)^T-\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0\right)^T\\
+      \nonumber &=& \left(\frac{1}{2}, \frac{1}{2}, 1\right)^T
+    \end{eqnarray}
   \end{frame}
 \end{document}
