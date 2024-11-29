@@ -1387,6 +1387,217 @@ $$
 \end{frame}
 %%%%
 \begin{frame}
-  \frametitle{title}
+  \frametitle{Factorizaci\'on $QR$}
+  $$
+Q^tA = R = \left(\begin{array}{cccc}
+         r_{1,1} & r_{1,2} & \cdots & r_{1,n} \\
+         0 & r_{2,2} & \cdots & r_{2,n} \\
+         \vdots & \vdots & \ddots & \vdots \\
+         0 & 0 & \cdots & r_{n,n}
+         \end{array}\right)
+$$
+\uncover<2->{
+Como las columnas de $Q$ constituyen un sistema ortonormal de vectores, $Q$ es unitaria, es decir $Q^t Q = I$, por lo que $A = QR$.}
 \end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Factorizaci\'on $QR$}
+  \begin{block}{Teorema}
+    Sea $A$ una matriz $m\times n$ com $m\geq n$. Suponiendo que $A$ es de rango completo en sus
+columnas. Entonces existe una \'unica matriz ortogonal $Q$ $m \times n$ ($Q^tQ=I_n$) y una \'unica matriz
+triangular superior $R$ $n \times n$ con entradas en la diagonal positivas $r_{i,i}>0$ tal que $A=QR$.
+  \end{block}
+  $$
+A_{4\times3}=\underbrace{\left(\begin{array}{cccc}
+         \textcolor{red}x & \textcolor{red}x  & \textcolor{red}x & \textcolor{blue}x\\
+         \textcolor{red}x & \textcolor{red}x  & \textcolor{red}x & \textcolor{blue}x\\
+         \textcolor{red}x & \textcolor{red}x  & \textcolor{red}x & \textcolor{blue}x\\
+         \textcolor{red}x & \textcolor{red}x  & \textcolor{red}x & \textcolor{blue}x
+        \end{array}\right)}_{[Q \tilde Q]}\underbrace{\left(\begin{array}{ccc}
+                                                             \textcolor{red}x & \textcolor{red}x & \textcolor{red}x\\
+                                                             \textcolor{red}0 & \textcolor{red}x & \textcolor{red}x\\
+                                                             \textcolor{red}0 & \textcolor{red}0 & \textcolor{red}x\\
+                                                             \textcolor{blue}0 & \textcolor{blue}0 & \textcolor{blue}0\\
+                                                            \end{array}\right)}_{\left[\begin{array}{c}
+                                                                R\\
+                                                                0
+                                                               \end{array}\right]}=QR
+$$
+\end{frame}
+%%%%%
+\begin{frame}{Factorizaci\'on $QR$}
+  \begin{itemize}
+   \item Algoritmos para el c\'alculo  de la factorizaci\'on $QR$
+   \begin{itemize}
+    \item<2-> Gram-Schmidt (Num\'ericamente inestable)
+    \item<3-> Gram-Schmidt Modificado
+    \item<4-> Reflexiones de Householder
+    \item<5-> Rotaciones de Givens
+   \end{itemize}
+   \item<6-> Conteo de operaciones: $2mn^2-\frac{2}{3}n^3$
+   \item<7-> Almacenamiento requerido: $mn+\frac{n(n+1)}{2}$
+   \item<8-> Puede requerir pivoteo en el caso de rango deficiente
+  \end{itemize}
+ \end{frame}
+ %%%%%%
+ \begin{frame}{Proceso de Gram-Schmidt}
+ \begin{itemize}
+  \item En l\'ineas generales el proceso de Gram-Schmidt consiste en, dado un conjunto de vectores linealmente independientes, construir un conjunto de vectores ortonormales.
+  \item<2-> Denotando por: $\{a_1,a_2,\ldots,a_n\}$ con $a_i \in \mathbb{R}^{m}$ al conjunto li de entrada y por $\{q_1,q_2,\ldots,q_n\}$ con $q_i \in \mathbb{R}^{m}$ al conjunto de salida.
+  \end{itemize}
+  \uncover<3->{
+ \begin{center}
+  \includegraphics[scale=0.5]{gsproc.png}
+ \end{center}}
+ \end{frame}
+ %%%%%
+ \begin{frame}{Proceso de Gram-Schmidt}
+  \begin{itemize}
+   \item Paso 1: Tomando $\hat q_1= a_1$, se tiene que 
+   \uncover<2->{$$
+   q_1 = \frac{\hat q_1}{\|\hat q_1\|}
+   $$
+   \begin{center}
+  \includegraphics[scale=0.5]{gs_p1.png}
+ \end{center}
+ Se tiene as\'i que el conjunto $\{q_1\}$ es ortonormal.}
+  \end{itemize}
+ \end{frame}
+ %%%%%%%
+ \begin{frame}{Proceso de Gram-Schmidt}
+ \begin{itemize}
+  \item<1-> Paso 2: El objetivo es hallar $q_2$ tal que sea ortogonal a $q_1$, y adem\'as $q_2$ debe ser de tama\~no 1.  Es claro que el \'angulo entre $a_1$ y $a_2$ no necesariamente es de 90.
+  \begin{center}
+  \includegraphics[scale=0.5]{gs_p2_a.png}
+ \end{center}
+ \item<2-> Considerando la proyecci\'on ortogonal de $a_2$ sobre $q_1$. Observese que el vector $\hat q_2=a_2-\alpha q_1$ es ortogonal a $q_1$
+  \begin{center}
+  \includegraphics[scale=0.5]{gs_p2_b.png}
+ \end{center}
+ \end{itemize} 
+ \end{frame}
+ %%%%%%
+ \begin{frame}{Proceso de Gram-Schmidt}
+  \begin{itemize}
+   \item Por lo tanto, $\alpha$ se debe elegir tal que $\hat q_2$ sea ortogonal a $q_1$, es 
+ decir, debe ser tal que $\langle q_1,\hat q_2\rangle$ sea igual a cero:
+   \begin{eqnarray}
+    \nonumber 0 & = & \langle q_1,\hat q_2\rangle = \langle q_1,a_2-\alpha q_1\rangle \\
+   \nonumber  & = & \langle q_1,a_2 \rangle - \langle q_1,\alpha q_1\rangle = \langle q_1,a_2 \rangle - \alpha \langle q_1,q_1\rangle\\
+    \nonumber & = & \langle q_1,a_2 \rangle - \alpha 
+   \end{eqnarray}
+  \item<2-> De donde se obtiene que $\alpha=\langle q_1,a_2\rangle$.  As\'i que
+  $$
+  \hat q_2 = a_2 - \langle q_1,a_2\rangle q_1
+  $$
+  \item<3-> El vector $q_2$ ser\'a la normalizaci\'on de $\hat q_2$, es decir,
+  $$
+  q_2 = \frac{\hat q_2}{\|\hat q_2\|}
+  $$
+  \end{itemize}
+ \end{frame}
+ %%%%%%
+ \begin{frame}{Proceso de Gram-Schmidt}
+  \begin{itemize}
+   \item Paso $j$: Tomando $a_j$ con $3\leq j \leq n$ del conjunto $\{a_1,a_2,\ldots,a_n\}$. El objetivo es hallar $q_j$ de tama\~no 1 tal que $\{q_1,q_2,\ldots,q_{j-1},q_j\}$ tambi\'en sea un conjunto ortonormal.  Del paso anterior se tiene construido al conjunto ortonormal $\{q_1,q_2,\ldots,q_{j-1}\}$
+   \begin{eqnarray}
+   \nonumber \hat q_j &=& a_j - \underbrace{\langle q_1,a_j\rangle}_{r_{1j}}q_1 - \underbrace{\langle q_2,a_j\rangle}_{r_{2j}}q_2 - \cdots - \underbrace{\langle q_{j-1},a_j\rangle}_{r_{j-1,j}}q_{j-1} \\
+   \nonumber q_j &=& \frac{\hat q_j}{\|\hat q_j\|} = \frac{\hat q_j}{r_{jj}}
+   \end{eqnarray}
+  \end{itemize}
+ \end{frame}
+ %%%%%%
+ \begin{frame}{Proceso de Gram-Schmidt}
+  \begin{itemize}
+   \item Se puede observar de las relaciones anteriores que
+   $$
+   \hat q_j = r_{jj}q_j
+   $$
+   \item<2-> Mientras que por otro lado
+   $$
+   a_j = \sum_{i=1}^{j-1}r_{ij}q_i + r_{jj}q_j = \sum_{i=1}^{j}r_{ij}q_i
+   $$
+  \end{itemize}
+ \end{frame}
+ %%%%%%
+ \begin{frame}{Proceso de Gram-Schmidt}
+ \begin{itemize}
+  \item Si se consideran los vectores del conjunto $\{a_1,a_2,\ldots,a_n\}$ son las columnas de la matriz $A\in \mathbb{R}^{m\times n}$ y que adem\'as $\{q_1,q_2,\ldots,q_n\}$ son las columnas de la matriz $Q\in \mathbb{R}^{m \times n}$ entonces esta \'ultima expresi\'on es de mucha utilidad para obtener la factorizaci\'on $QR$ de $A$. Para identificar la matriz triangular $R$ bastan unas pocas observaciones.
+  \item<2-> Para $j=1$
+  $$
+  a_1 = r_{11}q_1 = r_{11}q_1 + 0q_2 + \cdots + 0q_n = Q\left[\begin{array}{c}
+                                                               r_{11}\\
+                                                               0\\
+                                                               \vdots\\
+                                                               0
+                                                              \end{array}\right] = Qr_1
+  $$
+ \end{itemize}
+ \end{frame}
+ %%%%%
+ \begin{frame}{Proceso de Gram-Schmidt}
+ \begin{itemize}
+ \item Para $j=2$
+ \footnotesize
+  $$
+  a_2 = r_{12}q_1 + r_{22}q_2 = r_{12}q_1+ r_{22}q_2 + 0q_3 + \cdots + 0q_n = Q\left[\begin{array}{c}
+                                                               r_{12}\\
+                                                               r_{22}\\
+                                                               0\\
+                                                               \vdots\\
+                                                               0
+                                                              \end{array}\right] = Qr_2
+  $$
+  \normalsize
+  \item Para $j=k$
+  \scriptsize
+  $$
+  a_k = r_{1k}q_1 + \cdots + r_{kk}q_k = r_{1k}q_1+ \cdots + r_{kk}q_k + 0q_{k+1} + \cdots + 0q_n = Q\left[\begin{array}{c}
+                                                               r_{1k}\\
+                                                               \vdots\\
+                                                               r_{kk}\\
+                                                               0\\
+                                                               \vdots\\
+                                                               0
+                                                              \end{array}\right] = Qr_k
+  $$
+  \normalsize
+ \end{itemize}
+ \end{frame}
+ %%%%%
+ \begin{frame}{Proceso de Gram-Schmidt}
+  \begin{itemize}
+   \item Para $j=n$
+   $$
+  a_n = r_{1n}q_1 + \cdots + r_{nn}q_n  = Q\left[\begin{array}{c}
+                                                               r_{1n}\\
+                                                               \vdots\\
+                                                               r_{nn}\\                                                              
+                                                              \end{array}\right] = Qr_n
+  $$
+  \item<2-> Finalmente, si se escriben todas estas expresiones de forma matricial se obtiene que
+  $$
+  A = [a_1 a_2 \cdots a_n] = [Qr_1 Qr_2 \cdots Qr_n] = Q[r_1 r_2 \cdots r_n] = QR
+  $$
+  \end{itemize}
+ \end{frame}
+ %%%%%%
+ \begin{frame}{Algoritmo}
+ \begin{block}{C\'odigo 1}
+ %\scriptsize
+ \texttt{
+ \hspace{-0.25cm}\textcolor{blue}{function} [Q,R]=my\_gram\_schmidt(A)\\
+ m=size(A,1); n=size(A,2); Q=zeros(m,n); R=zeros(n);\\
+ \textcolor{blue}{for} j=1:n\\
+ \hspace{0.25cm} v=A(:,j);\\
+ \hspace{0.25cm} \textcolor{blue}{for} i=1:j-1\\
+ \hspace{0.5cm} R(i,j) = Q(:,i)'*A(:,j);\\
+ \hspace{0.5cm} v = v - R(i,j)*Q(:,i);\\
+ \hspace{0.25cm} \textcolor{blue}{end}\\
+ \hspace{0.25cm} R(j,j) = norm(v);\\
+ \hspace{0.25cm} Q(:,j) = v/R(j,j);\\
+ \textcolor{blue}{end}
+ }
+ \end{block}
+ \end{frame}
 \end{document}
