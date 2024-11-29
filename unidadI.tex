@@ -1600,4 +1600,50 @@ $$
  }
  \end{block}
  \end{frame}
+ %%%%%
+\begin{frame}{Gram Schmidt Modificado}
+  \begin{itemize}
+   \item En la pr\'actica, la p\'erdida de ortogonalidad de los vectores $q_i$ que se van calculando en el proceso de Gram Schmidt es m\'as que evidente, debido a errores de redondeo y de cancelaci\'on si, por ejemplo, alguno de los vectores columna $a_j$ est\'a pr\'oximo al subespacio generado por los vectores anteriores $q_1, \ldots q_{j-1}$.
+   \item<2-> En ese caso, los sumandos de la expresi\'on $a_j - \sum_{i=1}^{j-1}\langle q_i,a_j\rangle q_i$ pueden llegar a ser muy peque\~nos o muy distantes unos de otros, si bien el resultado final puede ser muy peque\~no, por lo que el error num\'erico que se va produciendo es relativamente grande. Al dividir el resultado por su norma (tambi\'en muy peque\~na) los errores se amplificar\'an a\'un m\'as.
+  \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Gram Schmidt Modificado}
+   \begin{itemize}
+    \item En 1966 Rice modific\'o el m\'etodo haciendo que en una etapa $k$, en vez de sustraer del vector $a_k$ sus coeficientes sobre todos los $k-1$ vectores $q_i$ ya calculados, $q_k$ se hace igual a $a_k$ al principio y luego se le van sustrayendo su proyecci\'on en $q_1$, pasando a ser el nuevo $q_k$ el resultado, el cual se proyecta luego en $q_2$, y as\'i sucesivamente en cada uno de los $k-1$ $q_i$ anteriores. 
+    \item<2-> El resultado con esta simple nueva disposici\'on de los c\'alculos es indiscutiblemente mejor num\'ericamente.
+   \end{itemize}
+  \end{frame}
+  %%%%%%%
+  \begin{frame}{Algoritmo}
+  \begin{block}{C\'odigo 2}
+  %\scriptsize
+  \texttt{
+  \hspace{-0.25cm}\textcolor{blue}{function} [Q,R]=my\_gram\_schmidt\_mod(A)\\
+  m=size(A,1); n=size(A,2); Q=zeros(m,n); R=zeros(n);\\
+  \textcolor{blue}{for} j=1:n\\
+  \hspace{0.25cm} v=A(:,j);\\
+  \hspace{0.25cm} \textcolor{blue}{for} i=1:j-1\\
+  \hspace{0.5cm} R(i,j) = Q(:,i)'*v;\\
+  \hspace{0.5cm} v = v - R(i,j)*Q(:,i);\\
+  \hspace{0.25cm} \textcolor{blue}{end}\\
+  \hspace{0.25cm} R(j,j) = norm(v);\\
+  \hspace{0.25cm} Q(:,j) = v/R(j,j);\\
+  \textcolor{blue}{end}
+  }
+  \end{block}
+  \end{frame}
+  %%%%%%%
+  \begin{frame}
+    \frametitle{Ejemplo}
+    Considere la matriz
+    $$
+    A = \left(\begin{array}{ccc}
+      1 & 1 & 0\\
+      1 & 0 & 1\\
+      0 & 1 & 1
+    \end{array}\right)
+    $$
+    con vectores $a_1 =(1, 1, 0)^T$, $a_2 =(1, 0, 1)^T$ y $a_3 =(0, 1, 1)^T$
+  \end{frame}
 \end{document}

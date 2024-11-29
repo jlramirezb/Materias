@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.8)  29 NOV 2024 09:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.8)  29 NOV 2024 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -573,8 +573,7 @@ Package: relsize 2013/03/29 ver 4.1
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box83
-)
-No file unidadI.aux.
+) (./unidadI.aux)
 \openout1 = `unidadI.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -595,6 +594,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -661,6 +661,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 13.
 LaTeX Info: Redefining \pageref on input line 13.
 LaTeX Info: Redefining \nameref on input line 13.
+ (./unidadI.out) (./unidadI.out)
 \@outlinefile=\write5
 \openout5 = `unidadI.out'.
 
@@ -678,9 +679,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./unidadI.nav) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-]
-No file unidadI.toc.
-[2
+] (./unidadI.toc) [2
 
 ]
 \openout4 = `unidadI.vrb'.
@@ -1084,160 +1083,65 @@ Overfull \hbox (25.31068pt too wide) detected at line 902
 ] [187
 
 ]
+<gsproc.png, id=5624, 344.03531pt x 76.78688pt>
+File: gsproc.png Graphic file (type png)
+<use gsproc.png>
+Package pdftex.def Info: gsproc.png  used on input line 1452.
+(pdftex.def)             Requested size: 172.01723pt x 38.39334pt.
+ [188
 
-LaTeX Warning: File `gsproc.png' not found on input line 1452.
-
-
-/home/jramirez/repo/Materias/unidadI.tex:1452: Package pdftex.def Error: File `gsproc.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1452  \end{frame}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[188
+ <./gsproc.png>]
+File: gsproc.png Graphic file (type png)
+<use gsproc.png>
+Package pdftex.def Info: gsproc.png  used on input line 1452.
+(pdftex.def)             Requested size: 172.01723pt x 38.39334pt.
+ [189
 
 ]
-
-LaTeX Warning: File `gsproc.png' not found on input line 1452.
-
-
-/home/jramirez/repo/Materias/unidadI.tex:1452: Package pdftex.def Error: File `gsproc.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1452  \end{frame}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[189
+File: gsproc.png Graphic file (type png)
+<use gsproc.png>
+Package pdftex.def Info: gsproc.png  used on input line 1452.
+(pdftex.def)             Requested size: 172.01723pt x 38.39334pt.
+ [190
 
 ]
+<gs_p1.png, id=5707, 132.495pt x 112.92188pt>
+File: gs_p1.png Graphic file (type png)
+<use gs_p1.png>
+Package pdftex.def Info: gs_p1.png  used on input line 1465.
+(pdftex.def)             Requested size: 66.24733pt x 56.46078pt.
+ [191
 
-LaTeX Warning: File `gsproc.png' not found on input line 1452.
-
-
-/home/jramirez/repo/Materias/unidadI.tex:1452: Package pdftex.def Error: File `gsproc.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1452  \end{frame}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[190
+ <./gs_p1.png>]
+File: gs_p1.png Graphic file (type png)
+<use gs_p1.png>
+Package pdftex.def Info: gs_p1.png  used on input line 1465.
+(pdftex.def)             Requested size: 66.24733pt x 56.46078pt.
+ [192
 
 ]
+<gs_p2_a.png, id=5763, 135.50626pt x 116.68594pt>
+File: gs_p2_a.png Graphic file (type png)
+<use gs_p2_a.png>
+Package pdftex.def Info: gs_p2_a.png  used on input line 1478.
+(pdftex.def)             Requested size: 67.75294pt x 58.34282pt.
+<gs_p2_b.png, id=5764, 313.9228pt x 121.20282pt>
+File: gs_p2_b.png Graphic file (type png)
+<use gs_p2_b.png>
+Package pdftex.def Info: gs_p2_b.png  used on input line 1478.
+(pdftex.def)             Requested size: 156.96101pt x 60.60126pt.
+ [193
 
-LaTeX Warning: File `gs_p1.png' not found on input line 1465.
-
-
-/home/jramirez/repo/Materias/unidadI.tex:1465: Package pdftex.def Error: File `gs_p1.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1465  \end{frame}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[191
-
-]
-
-LaTeX Warning: File `gs_p1.png' not found on input line 1465.
-
-
-/home/jramirez/repo/Materias/unidadI.tex:1465: Package pdftex.def Error: File `gs_p1.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1465  \end{frame}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[192
-
-]
-
-LaTeX Warning: File `gs_p2_a.png' not found on input line 1478.
-
-
-/home/jramirez/repo/Materias/unidadI.tex:1478: Package pdftex.def Error: File `gs_p2_a.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1478  \end{frame}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `gs_p2_b.png' not found on input line 1478.
-
-
-/home/jramirez/repo/Materias/unidadI.tex:1478: Package pdftex.def Error: File `gs_p2_b.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1478  \end{frame}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[193
-
-]
-
-LaTeX Warning: File `gs_p2_a.png' not found on input line 1478.
-
-
-/home/jramirez/repo/Materias/unidadI.tex:1478: Package pdftex.def Error: File `gs_p2_a.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1478  \end{frame}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `gs_p2_b.png' not found on input line 1478.
-
-
-/home/jramirez/repo/Materias/unidadI.tex:1478: Package pdftex.def Error: File `gs_p2_b.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1478  \end{frame}
-                   
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[194
+ <./gs_p2_a.png> <./gs_p2_b.png>]
+File: gs_p2_a.png Graphic file (type png)
+<use gs_p2_a.png>
+Package pdftex.def Info: gs_p2_a.png  used on input line 1478.
+(pdftex.def)             Requested size: 67.75294pt x 58.34282pt.
+File: gs_p2_b.png Graphic file (type png)
+<use gs_p2_b.png>
+Package pdftex.def Info: gs_p2_b.png  used on input line 1478.
+(pdftex.def)             Requested size: 156.96101pt x 60.60126pt.
+ [194
 
 ] [195
 
@@ -1268,6 +1172,18 @@ Overfull \hbox (19.12872pt too wide) detected at line 1566
 
 ] [206
 
+] [207
+
+] [208
+
+] [209
+
+] [210
+
+] [211
+
+] [212
+
 ]
 \tf@nav=\write6
 \openout6 = `unidadI.nav'.
@@ -1279,28 +1195,22 @@ Overfull \hbox (19.12872pt too wide) detected at line 1566
 \openout8 = `unidadI.snm'.
 
  (./unidadI.aux)
-
-Package rerunfilecheck Warning: File `unidadI.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `unidadI.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  7C14AE41FAF66EC892D36F9F5D710E90;1164.
+Package rerunfilecheck Info: File `unidadI.out' has not changed.
+(rerunfilecheck)             Checksum: 7C14AE41FAF66EC892D36F9F5D710E90;1164.
  ) 
 Here is how much of TeX's memory you used:
- 23902 strings out of 478287
- 464175 string characters out of 5849289
- 734914 words of memory out of 5000000
- 41177 multiletter control sequences out of 15000+600000
+ 23860 strings out of 478287
+ 463296 string characters out of 5849289
+ 737939 words of memory out of 5000000
+ 41127 multiletter control sequences out of 15000+600000
  481460 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,18n,122p,451b,787s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,18n,122p,462b,787s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadI.pdf (206 pages, 834198 bytes).
+Output written on unidadI.pdf (212 pages, 885444 bytes).
 PDF statistics:
- 6327 PDF objects out of 7423 (max. 8388607)
- 5779 compressed objects within 58 object streams
- 421 named destinations out of 1000 (max. 500000)
- 1381 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6544 PDF objects out of 7423 (max. 8388607)
+ 5978 compressed objects within 60 object streams
+ 433 named destinations out of 1000 (max. 500000)
+ 1501 words of extra memory for PDF output out of 10000 (max. 10000000)
 
