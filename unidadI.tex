@@ -1654,9 +1654,113 @@ $$
     \frametitle{Ejemplo}
     \begin{eqnarray}
       \nonumber \hat{q}_1 &=& a_1 =(1, 1, 0)^T\\
-      \nonumber q_1 &=& \frac{\hat{q}_1}{\|\hat{q}_1\|} = \frac{1}{\sqrt{2}}(1, 1, 0)^T = \left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0\right)^T\\
-      \nonumber \hat{q}_2 &=& a_2-\langle a_2,q_1\rangle q_1 =(1,0, 1)^T-\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0\right)^T\\
-      \nonumber &=& \left(\frac{1}{2}, \frac{1}{2}, 1\right)^T
+      \uncover<2->{\nonumber q_1 &=& \frac{\hat{q}_1}{\|\hat{q}_1\|} = \frac{1}{\sqrt{2}}(1, 1, 0)^T = \left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0\right)^T}\\
+      \uncover<3->{\nonumber \hat{q}_2 &=& a_2-\langle a_2,q_1\rangle q_1 =(1,0, 1)^T-\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0\right)^T\\
+      \nonumber &=& \left(\frac{1}{2}, -\frac{1}{2}, 1\right)^T}\\
+      \uncover<4->{\nonumber q_2 &=& \frac{\hat{q}_2}{\|\hat{q}_2\|} = \frac{1}{\sqrt{3/2}}\left(\frac{1}{2}, -\frac{1}{2}, 1\right)^T = \left(\frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}\right)^T}
     \end{eqnarray}
   \end{frame}
+  %%%%
+  \begin{frame}
+    \frametitle{Ejemplo}
+    \begin{eqnarray}
+      \nonumber \hat{q}_3 &=& a_3-\langle a_3,q_1\rangle q_1 - \langle a_3,q_2\rangle q_2 = (0, 1, 1)^T-\frac{1}{\sqrt{2}}\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0\right)^T\\
+      \nonumber & &-\frac{1}{\sqrt{6}}\left(\frac{1}{\sqrt{6}}, -\frac{1}{\sqrt{6}}, \frac{2}{\sqrt{6}}\right)^T = \left(-\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)^T\\
+      \uncover<2->{\nonumber q_3 &=& \frac{\hat{q}_3}{\|\hat{q}_3\|} = \left(-\frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}, \frac{1}{\sqrt{3}}\right)^T}
+    \end{eqnarray}
+  \end{frame}
+  %%%%
+  \begin{frame}
+    \frametitle{Ejemplo}
+    Entonces la matriz $Q$ obtenida es
+    $$
+    Q = \left(q_1, q_2, \cdots, q_n\right) = \left(\begin{array}{ccc}
+      \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{6}} & -\dfrac{1}{\sqrt{3}}\\
+      \dfrac{1}{\sqrt{2}} & -\dfrac{1}{\sqrt{6}} & \dfrac{1}{\sqrt{3}}\\
+       0 & \dfrac{2}{\sqrt{6}} & \dfrac{1}{\sqrt{3}}
+    \end{array}\right)
+    $$
+    Mientras que la matriz $R$ obtenida es
+    $$
+    R = \left(\begin{array}{ccc}
+      \langle a_1,q_1\rangle & \langle a_2,q_1\rangle & \langle a_3,q_1\rangle\\
+      0 & \langle a_2,q_2\rangle & \langle a_3,q_2\rangle \\
+      0 & 0 & \langle a_3,q_3\rangle
+    \end{array}\right) = \left(\begin{array}{ccc}
+      \dfrac{2}{\sqrt{2}} & \dfrac{1}{\sqrt{2}} & \dfrac{1}{\sqrt{2}}\\
+       0 & \dfrac{3}{\sqrt{6}} & \dfrac{1}{\sqrt{6}}\\
+       0 & 0 & \dfrac{2}{\sqrt{3}}
+    \end{array}\right)
+    $$
+  \end{frame}      
+%%%%%%%
+\begin{frame}{Ejercicio}
+  \begin{enumerate}
+   \item Implemente la factorizaci\'on $QR$ via Gram Schmidt.
+   \item Ejecute ambos c\'odigos con la matriz
+   $$
+   A = \left[\begin{array}{ccc}
+              -2 & 3 & 1\\
+              1 & -1 & 1\\
+              2 & -1 & 4\\
+              -2 & 2 & 1
+             \end{array}\right]
+   $$
+   \item Escriba en la ventana de comandos
+  \begin{center}
+  \texttt{
+    \begin{tabular}{l}
+     >> Q*R\\
+     >> Q'*Q - eye(3)
+    \end{tabular}}
+   \end{center}
+   \item Realice las mismas comprobaciones para la siquiente matriz
+   $$
+   A = \left[\begin{array}{ccc}
+              1 & 1 & 1\\
+              \epsilon & 0 & 0\\
+              0 & \epsilon & 0\\
+              0 & 0 & \epsilon
+             \end{array}\right], \qquad \epsilon = 10^{-9}
+   $$
+  \end{enumerate}
+ \end{frame}
+ %%%%%
+\begin{frame}{Reflexi\'on de Householder}
+  \begin{itemize}
+    \item La reflexi\'on de Householder es una matriz de la forma $H = I-2uu^t$ donde $\|u\|=1$.
+    \item<2-> Se puede f\'acilmente probar que $H=H^t$ y $HH^t=H^tH=I$, es decir, es una matriz sim\'etrica y ortogonal.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Reflexi\'on de Householder}
+  \textbf{Interpretaci\'on Geom\'etrica en $\mathbb{R}^n$}
+  \begin{itemize}
+   \item Sean $u \in \mathbb{R}^n$ un vector tal que $\|u\|_2=1$ y $H$ la transformaci\'on de Householder asociado a \'el:
+   $$
+   H = I - 2uu^t
+   $$
+   \item<2-> Si $x \in \mathbb{R}^n$ entonces
+   \begin{eqnarray}
+    \nonumber Hx & = & (I - 2uu^t)x = x - 2uu^tx = x-2u\langle x,u\rangle=\\
+      \nonumber & = & x-2u(\|x\|\|u\|\cos(\alpha)) = x-2u(\|x\|\cos(\alpha))=\\
+    \nonumber & = & x-2\lambda u \qquad \mbox{  con  }\qquad \lambda=\|x\|\cos(\alpha)
+    \end{eqnarray}
+    donde $\alpha$ representa el \'angulo que forman los vectores $x$ y $u$.
+  \end{itemize}
+\end{frame}   
+%%%%
+\begin{frame}{Reflexi\'on de Householder}
+  \begin{itemize}
+   \item<1-> Sea $y$ el vector sim\'etrico de $x$ respecto del hiperplano perpendicular a $u$.
+   \begin{center}
+     \includegraphics[scale=0.3]{./reflex.jpg}\\
+     Un vector $x$ y su transformado $y=Hx$.
+   \end{center}   
+   \item<2-> Se puede observar que 
+   $$
+   y + \lambda u = x - \lambda u \Longleftrightarrow y = x-2\lambda u = Hx
+   $$
+  \end{itemize}
+\end{frame}
 \end{document}
