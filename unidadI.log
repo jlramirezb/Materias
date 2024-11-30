@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  29 NOV 2024 21:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  30 NOV 2024 19:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1677,23 +1677,224 @@ Overfull \hbox (16.46165pt too wide) in alignment at lines 1671--1671
 [224
 
 ]
-<./reflex.jpg, id=6888, 655.248pt x 313.6518pt>
+
+[225
+
+]
+
+[226
+
+]
+
+[227
+
+]
+
+[228
+
+]
+
+[229
+
+]
+
+[230
+
+]
+
+[231
+
+]
+
+[232
+
+]
+<./reflex.jpg, id=7152, 655.248pt x 313.6518pt>
 File: ./reflex.jpg Graphic file (type jpg)
 <use ./reflex.jpg>
-Package pdftex.def Info: ./reflex.jpg  used on input line 1765.
+Package pdftex.def Info: ./reflex.jpg  used on input line 1791.
 (pdftex.def)             Requested size: 196.57591pt x 94.09625pt.
 
 
-[225
+[233
 
  <./reflex.jpg>]
 File: ./reflex.jpg Graphic file (type jpg)
 <use ./reflex.jpg>
-Package pdftex.def Info: ./reflex.jpg  used on input line 1765.
+Package pdftex.def Info: ./reflex.jpg  used on input line 1791.
 (pdftex.def)             Requested size: 196.57591pt x 94.09625pt.
 
 
-[226
+[234
+
+]
+
+[235
+
+]
+
+[236
+
+]
+
+[237
+
+]
+
+[238
+
+]
+
+[239
+
+]
+
+[240
+
+]
+
+[241
+
+]
+
+[242
+
+]
+
+[243
+
+]
+
+[244
+
+]
+
+[245
+
+]
+
+[246
+
+]
+
+[247
+
+]
+
+[248
+
+]
+
+[249
+
+]
+
+[250
+
+]
+
+[251
+
+]
+
+[252
+
+]
+
+[253
+
+]
+
+[254
+
+]
+
+[255
+
+]
+
+[256
+
+]
+Overfull \hbox (7.38403pt too wide) detected at line 2055
+\OML/cmm/m/it/8 A \OT1/cmr/m/n/8 = \OML/cmm/m/it/8 QR \OT1/cmr/m/n/8 = [] []
+ []
+
+
+
+[257
+
+]
+
+[258
+
+]
+
+[259
+
+]
+
+[260
+
+]
+
+[261
+
+]
+
+[262
+
+]
+
+[263
+
+]
+Overfull \vbox (0.96336pt too high) detected at line 2120
+ []
+
+
+
+[264
+
+]
+<./rotacion.jpg, id=8075, 493.845pt x 485.815pt>
+File: ./rotacion.jpg Graphic file (type jpg)
+<use ./rotacion.jpg>
+Package pdftex.def Info: ./rotacion.jpg  used on input line 2136.
+(pdftex.def)             Requested size: 98.76724pt x 97.16127pt.
+
+
+[265
+
+ <./rotacion.jpg>]
+File: ./rotacion.jpg Graphic file (type jpg)
+<use ./rotacion.jpg>
+Package pdftex.def Info: ./rotacion.jpg  used on input line 2136.
+(pdftex.def)             Requested size: 98.76724pt x 97.16127pt.
+
+
+[266
+
+]
+File: ./rotacion.jpg Graphic file (type jpg)
+<use ./rotacion.jpg>
+Package pdftex.def Info: ./rotacion.jpg  used on input line 2136.
+(pdftex.def)             Requested size: 98.76724pt x 97.16127pt.
+
+
+[267
+
+]
+
+[268
+
+]
+
+[269
+
+]
+
+[270
 
 ]
 \tf@nav=\write6
@@ -1714,18 +1915,18 @@ Package rerunfilecheck Info: File `unidadI.out' has not changed.
 (rerunfilecheck)             Checksum: 7C14AE41FAF66EC892D36F9F5D710E90;1164.
  ) 
 Here is how much of TeX's memory you used:
- 23891 strings out of 473583
- 456616 string characters out of 5732336
- 1960908 words of memory out of 5000000
- 45834 multiletter control sequences out of 15000+600000
+ 24046 strings out of 473583
+ 458795 string characters out of 5732336
+ 1969908 words of memory out of 5000000
+ 45900 multiletter control sequences out of 15000+600000
  570270 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,18n,123p,478b,791s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,18n,123p,478b,952s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadI.pdf (226 pages, 966524 bytes).
+Output written on unidadI.pdf (270 pages, 1097882 bytes).
 PDF statistics:
- 7156 PDF objects out of 7423 (max. 8388607)
- 6351 compressed objects within 64 object streams
- 461 named destinations out of 1000 (max. 500000)
- 1506 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 8475 PDF objects out of 8907 (max. 8388607)
+ 7547 compressed objects within 76 object streams
+ 550 named destinations out of 1000 (max. 500000)
+ 1679 words of extra memory for PDF output out of 10000 (max. 10000000)
 

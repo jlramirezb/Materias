@@ -1728,9 +1728,35 @@ $$
  %%%%%
 \begin{frame}{Reflexi\'on de Householder}
   \begin{itemize}
-    \item La reflexi\'on de Householder es una matriz de la forma $H = I-2uu^t$ donde $\|u\|=1$.
-    \item<2-> Se puede f\'acilmente probar que $H=H^t$ y $HH^t=H^tH=I$, es decir, es una matriz sim\'etrica y ortogonal.
-  \end{itemize}
+    \item Considerese un espacio vectorial de dimensiones $n$ definido sobre un cuerpo $\mathbb{K}$, y se denotar\'a por $\mathbb{K}^n$ (En general $\mathbb{R}^n$ o $\mathbb{C}^n$).
+    \item<2-> Dado un vector $u \in \mathbb{K}^n$, se define la transformaci\'on $H$ de Householder asociada al vector $u$ a la que viene definida por la matriz:
+  $$
+  H = \begin{cases}
+    I - 2\dfrac{uu^*}{u^*u} & \mbox{ si } u \neq 0\\
+    I \in \mathbb{K}^{n\times n} & \mbox{ si } u = 0
+  \end{cases}
+  $$
+\end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Reflexi\'on de Householder}
+  \begin{block}{Proposici\'on}
+    La transformaci\'on de Householder $H$ asociada al vector $u \in \mathbb{K}^n$ posee las siguientes propiedades:
+    \begin{enumerate}
+      \item<2-> $H$ es herm\'itica ($H^*=H$).
+      \item<3-> $H$ es unitaria ($H^*H = HH^* = I$).
+      \item<4-> $H^2 = I$ o lo que es igual, $H^{-1}=H$.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+%%%%% 
+\begin{frame}{Reflexi\'on de Householder}
+  Demostraci\'on:
+  \begin{enumerate}
+    \item<2-> $H^* = \left(I-2\dfrac{uu^*}{u^*u}\right)^* = \left(I-2\dfrac{u^*u}{u^*u}\right) = I-2\dfrac{uu^*}{u^*u} = I-2\dfrac{(uu^*)^*}{u^*u} = I-2\dfrac{uu^*}{u^*u} = H$.
+    \item<3-> $HH^* = HH = \left(I-2\dfrac{uu^*}{u^*u}\right)\left(I-2\dfrac{uu^*}{u^*u}\right) = I-4\dfrac{uu^*}{u^*u} + 4\dfrac{uu^*uu^*}{(u^*u)^2} = I-4\dfrac{uu^*}{u^*u} + 4\dfrac{u(u^*u)u^*}{(u^*u)^2} = I-4\dfrac{uu^*}{u^*u} + 4\dfrac{uu^*}{u^*u} = I$
+    \item<4-> De los dos puntos anteriores se deduce que $ H^2= HH = HH^* = I$.
+  \end{enumerate}
 \end{frame}
 %%%%%
 \begin{frame}{Reflexi\'on de Householder}
@@ -1762,5 +1788,369 @@ $$
    y + \lambda u = x - \lambda u \Longleftrightarrow y = x-2\lambda u = Hx
    $$
   \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}{Reflexi\'on de Householder}
+  \begin{itemize}
+   \item<1-> Dado un vector $x\neq 0$, es sencillo hallar la reflexi\'on de Householder $H=I-2uu^t$ que anula las entradas de $x$ con excepci\'on de la primera entrada, es decir:  
+$$
+Hx = x - 2(u^tx)u = \left(\begin{array}{cccc}
+                           c & 0 & 0 & \cdots                           
+                          \end{array}\right)^t=ce_1
+$$
+
+\item<2-> Dado que $H$ es ortogonal, $|c|=\|Hx\|=\|x\|$, se puede escribir:
+$$
+u = \frac{1}{2u^tx}(x-ce_1)
+$$
+
+es decir, $u$ debe ser paralelo al vector $\tilde u=x\pm\|x\|e_1$, por lo tanto
+$$
+\displaystyle u = \frac{x \pm \|x\|e_1}{\|x \pm \|x\|e_1\|}
+$$
+\end{itemize}
+\end{frame}
+%%%%
+\begin{frame}{Reflexi\'on de Householder}
+  \begin{itemize}
+    \item Independientemente de la elecci\'on del signo se mantiene que $u$ satisface $Hx=ce_1$ siempre que $\tilde u \neq 0$.
+    \item<2-> empleando la siguiente expresi\'on $\tilde u = x + sign(x_1)\|x\|e_1$ para evitar la cancelaci\'on en la primera componente de $\tilde u$, se obtiene el siguiente resultado:
+    $$
+    \tilde u =\left(\begin{array}{c}
+                     x_1 + sign(x_1)\|x\|\\
+                     x_2\\
+                     \vdots\\
+                     x_n
+                    \end{array}
+    \right) \mbox{ con } u=\frac{\tilde u}{\|\tilde u\|}
+    $$
+    \item<3->El correspondiente vector de Householder es
+$$
+H(x) = I-2uu^t = I - \frac{2\tilde u\tilde u^t}{\|\tilde u\|^2}
+$$    
+  \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}{Reflexi\'on de Householder}
+  \begin{itemize}
+    \item<1-> Dada una matriz $A_{m\times n}$, se puede obtener una matriz triangular superior multiplicando por la izquierda de manera apropiada por
+    matrices de Householder. Asumiendo que ninguna de las columnas de $A$ es completamente cero.
+    \item<2-> Esto puede llevarse a cabo con una matriz de Householder, la cual denotamos por $H(a_1)$. De esta manera:
+    $$
+    A_1 = H(a_1)A = \left(\begin{array}{ccccc}
+                           *&*&*&\cdots&*\\
+                           0&\underline{*}&*&\cdots&*\\                           
+                           \vdots&\vdots&\vdots&& \vdots\\
+                           0&\underline{*}&*&\cdots&*\\    
+                          \end{array}
+    \right)
+    $$    
+    Denotemos $H_1=H(a_1)$ por simplicidad.  
+  \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}{Reflexi\'on de Householder}
+  \begin{itemize}
+    \item<1-> Tomando la segunda columna de $A_1=H(a_1)A$ y obviando la primera primera entrada, para ello consideraremos el vector
+    $\tilde a_2$ de tama\~no $n-1$.    
+    \item<2-> Si $\tilde a_2$ posee elementos no nulos por debajo de la entrada superior, entonces la reflexi\'on  de Householder
+    $H_2=H(\tilde a_2)$ viene dada por la siguiente matriz.    
+    $$
+    H_2 = \left(\begin{array}{c|cccc}
+                 1      & 0 & 0               & \cdots & 0 \\\hline
+                 0      &   &                 &        &\\
+                 \vdots &   & H(\tilde {a_2}) &        &\\
+                 0      &   &                 &        &
+                \end{array}
+     \right)
+    $$
+    \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}{Reflexi\'on de Householder}
+    Y al realizar el producto se obtiene el siguiente resultado    
+    $$
+    A_2 = H_2A_1 = \left(\begin{array}{cccccc}
+                           *&*&*&*&\cdots&*\\
+                           0&*&*&*&\cdots&*\\
+                           0&0&\underline{*}&*&\cdots&*\\
+                           0&0&\underline{*}&*&\cdots&*\\
+                           \vdots&\vdots&\vdots&\vdots&& \vdots\\
+                           0&0&\underline{*}&*&\cdots&*\\
+                          \end{array}
+    \right)
+    $$
+\end{frame}
+%%%%%
+%%%%%
+\begin{frame}{Reflexi\'on de Householder}
+  \begin{itemize}
+    \item<1-> Considerando la siguiente columna de $A_2$ la cual contiene elementos no nulos debajo de la tercera
+    fila. Obviando las dos entradas superiores y considerando al vector $\tilde a_3$ de
+    tama\~no $n-2$ 
+    \item<2-> Se puede obtener el reflector de Householder $H(\tilde a_3)\in
+    \mathbb{R}^{n-2}$, y multiplicando a $A_2$ por la izquierda con
+    $$
+    H_3 = \left(\begin{array}{cc|ccc}
+      1      & 0      & 0 & \cdots           & 0 \\
+      0      & 1      & 0 & \cdots           & 0 \\\hline
+      0      & 0      &   &                  & \\
+      \vdots & \vdots &   &  H(\tilde {a_3}) &\\
+      0      & 0      &   &                  &
+     \end{array}
+\right)
+    $$
+    obteniendo como resultado la mattriz $A_3 = H_3A_2$ triangular superior en sus primeras tres columnas.
+  \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}{Reflexi\'on de Householder}
+  \begin{itemize}
+    \item<1-> A lo sumo en $(n-1)$ pasos se obtiene una matriz triangular superior $R$, producto de la aplicaci\'on de
+    matrices de reflexi\'on de Householder, se tiene entonces que:
+    $$
+    H_{n-1}H_{n-2}\cdots H_2H_1A=R
+    $$
+    \item<2-> Las matrices $H_i$ son matrices ortogonales, por lo tanto:    
+    $$
+    A=QR
+    $$    
+    con    
+    $$
+    Q=H_1H_2\cdots H_{n-2}H_{n-1}
+    $$
+    \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}{Ejemplo:}
+  Hallar la factorizaci\'on $QR$ de $A=\left(\begin{array}{ccc}
+    1 & 2 & 3\\
+    0 & 3 & 2\\
+    2 & 0 & 1
+   \end{array}\right)$ mediante reflexiones de Householder.
+
+   \uncover<2->{
+    La primera columna de $A$ es $a_1=\left(\begin{array}{c}
+    1\\
+    0\\
+    2
+   \end{array}
+\right)$.}
+
+\uncover<3->{Por lo que el correspondiente vector de Householder es   
+$$
+\tilde u = \left(\begin{array}{c}
+1+\sqrt{5}\\
+0\\
+2
+\end{array}\right)
+$$
+
+con norma cuadrada $\|\tilde u\|^2= 10+2\sqrt{5}$}
+\end{frame}
+%%%%%
+%%%%
+\begin{frame}{Ejemplo:}
+  Por lo tanto:
+  $$
+  H_1=H(a_1) = I - \frac{2\tilde u \tilde u^t}{10+2\sqrt{5}} = \left(\begin{array}{ccc}
+                                                                    -\dfrac{1}{\sqrt{5}} & 0 & -\dfrac{2}{\sqrt{5}}\\
+                                                                    0 & 1 & 0\\
+                                                                    -\dfrac{2}{\sqrt{5}} & 0 & \dfrac{1}{\sqrt{5}}
+                                                                   \end{array}\right)
+$$
+
+\uncover<2->{
+por lo que
+$$
+A_1 =H_1A = \displaystyle\left(\begin{array}{ccc}
+                               -\sqrt{5} & -\dfrac{2}{\sqrt{5}} & \sqrt{5}\\
+                               0 & 3 & 2\\
+                               0 & -\dfrac{4}{\sqrt{5}} & \sqrt{5}
+                               \end{array}\right)
+$$}
+\end{frame}
+%%%%%
+\begin{frame}{Ejemplo:}
+El pr\'oximo vector columna es
+$$
+\tilde a_2 = \left(\begin{array}{c}
+                    3\\
+                    -\dfrac{4}{\sqrt{5}}
+                   \end{array}\right)
+$$
+
+cuya norma es $\|\tilde a_2\|= \sqrt{\dfrac{61}{5}}$ \uncover<2->{y el correspondiente vector de Householder es
+$$
+\tilde u = \left(\begin{array}{c}
+                    3+\sqrt{\dfrac{61}{5}}\\
+                    -\dfrac{4}{\sqrt{5}}
+                   \end{array}\right)=\left(\begin{array}{c}
+                   6.492\\
+                   -1.788
+                   \end{array}\right)
+$$
+
+cuya norma cuadrada es $\|\tilde u\|^2= 45.346$.}
+\end{frame}
+%%%%%%
+\begin{frame}{Ejemplo:}
+Por lo tanto:
+$$  
+H_2=H(\tilde a_2) = I - \frac{2\tilde u \tilde u^t}{45.346} = 
+\left(\begin{array}{cc}
+  -0.8589 &  0.5121\\
+  0.5121 &  0.8589 \\
+  \end{array}\right)
+$$
+Por lo que la matriz de Householder $3 \times 3$ es
+$$
+H_2 = \left(\begin{array}{ccc}
+      1 & 0 & 0\\
+      0 & -0.8589 & 0.5122\\
+      0 & 0.5122 & 0.8589
+      \end{array}\right)
+$$
+cuya aplicaci\'on a $A_1$ es
+$$
+A_2 = H_2A_1 = \left(\begin{array}{ccc}
+      -2.2361 & -0.8944 & -2.2361\\
+      0 & -3.4928 & -2.8630\\
+      0 & 0 & -0.8962
+      \end{array}\right)
+$$
+\end{frame}
+%%%%%%
+\begin{frame}{Ejemplo:}
+  Esta es la matriz $R$ de la factorizaci\'on $QR$. Para obtener $Q$ se computa
+  $$
+  Q=H_1H_2 = \left(\begin{array}{ccc}
+    -0.4472 &  -0.4581 & -0.7682\\
+        0 & -0.8589 & 0.5122\\
+  -0.8944 &  0.2290 & 0.3841
+        \end{array}\right)
+  $$
+
+  Por lo tanto la factorizaci\'on $QR$ de $A$ es
+  \scriptsize{
+  $$
+  A = QR = \left(\begin{array}{ccc}
+    -0.4472 &  -0.4581 & -0.7682\\
+        0 & -0.8589 & 0.5122\\
+  -0.8944 &  0.2290 & 0.3841
+        \end{array}\right) \left(\begin{array}{ccc}
+    -2.2361 & -0.8944 & -2.2361\\
+    0 & -3.4928 & -2.8630\\
+    0 & 0 & -0.8962
+        \end{array}\right)
+  $$}
+  \normalsize
+  $$
+  = \left(\begin{array}{ccc}
+    1 &  2 & 3\\
+        0 & 3 & 2\\
+  2 &  0 & 1
+        \end{array}\right)
+  $$
+\end{frame}
+%%%%%
+\begin{frame}{Algoritmo}
+  \begin{block}{C\'odigo}
+%\scriptsize
+\texttt{
+\hspace{-0.25cm}\textcolor{blue}{function} [Q,R]=my\_householder\_QR(A)\\
+m=size(A,1); n=size(A,2); Q=eye(m); R=A; I=eye(m);\\
+\textcolor{blue}{for} j=1:n\\
+\hspace{0.25cm} x = R(j:m,j);\\
+\hspace{0.25cm} v = -sign(x(1))*norm(x)*eye(m-j+1,1)-x;\\
+\hspace{0.25cm} \textcolor{blue}{if} norm(v)>0\\
+\hspace{0.5cm} v = v/norm(v);\\
+\hspace{0.5cm} P = I;\\
+\hspace{0.5cm} P(j:m,j:m) = P(j:m,j:m)-2*v*v';\\
+\hspace{0.5cm} R = P*R;\\
+\hspace{0.5cm} Q = Q*P;\\
+\hspace{0.25cm} \textcolor{blue}{end}\\
+\textcolor{blue}{end}
+}
+\end{block}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Rotaciones de Givens}
+  \begin{itemize}
+    \item La descomposici\'on $QR$ tambi\'en puede ser calculada mediante una serie de rotaciones de Givens.
+    \item<2-> Cada rotaci\'on anula un elemento por debajo de la diagonal de la matriz, para formar la matriz $R$.
+    \item<3-> La concatenaci\'on de todas las matrices de rotaci\'on de Givens conforman la matriz ortogonal $Q$.
+    \item<4-> Al igual que en Householder, la idea es calcular matrices ortogonales $Q_1,Q_2,\ldots,Q_k$ usando rotaciones de Givens tales que: $A^{(1)}=Q_1A$ tiene ceros debajo de la entrada $(1,1)$ en la primera columna.
+    \item<5-> Luego construir $Q_2$ tal que $A^{(2)}=Q_2A^{(1)}$ tenga ceros debajo de la posici\'on $(2,2)$ en la segunda columna y as\'i sucesivamente hasta $A^{(s)}=Q_sA^{(s-1)}$.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Descomposici\'on $QR$}
+  Una matriz de la forma
+
+  \begin{eqnarray}
+  \nonumber\begin{array}{cccccccc}
+    i &  &  j &         &        &        &       & \mbox{columnas}\\
+   \downarrow&   &  \downarrow &         &       &        &       &
+  \end{array}\\
+  \nonumber J(i,j,\theta) =\left(\begin{array}{cccccccc}
+  1 & 0 & 0 & \cdots & \cdots & \cdots & \cdots & 0\\
+  0 & 1 & 0 & \cdots & \cdots & \cdots & \cdots & 0\\
+  \vdots & \vdots & \vdots &  &  &  & \cdots & \vdots\\
+  0 & 0 & 0 & \cdots & c & s & \cdots & 0\\
+  \vdots & \vdots & \vdots &  &  &  & \cdots & \vdots\\
+  0 & 0 & 0 & \cdots & -s & c & \cdots & 0\\
+  \vdots & \vdots & \vdots &  &  &  & \cdots & \vdots\\
+  0 & 0 & 0 & \cdots & \cdots & 0 & \cdots & 1\\
+  \end{array}\right)\begin{array}{c}
+  \\
+  \\
+  \\
+  \leftarrow i\\
+  filas \\ 
+  \leftarrow j\\
+  \\
+  \\
+  \end{array}
+  \end{eqnarray}
+  
+  donde $c^2+s^2=1$ es denominada matriz de Givens, para un cierto $\theta$.
+\end{frame} 
+%%%%%%
+\begin{frame}
+  \frametitle{Rotaciones de Givens}
+  \textbf{Interpretaci\'on Geom\'etrica.}
+  \begin{itemize}
+    \item<2-> La matriz $J(i,j,\theta)$ rota un par de ejes coordenados en \'angulo $\theta$ en el plano $(i,j)$. 
+    \item<3-> La matriz $J(i,j,\theta)$ es comunmente conocida como una rotaci\'on de Givens o rotaci\'on en el plano $(i,j)$.
+     \begin{figure}[h]
+      \begin{center}
+        \includegraphics[scale=0.2]{./rotacion.jpg}
+      \end{center}
+      \caption{Un vector $u$ y su transformado $v$ por rotaci\'on.}
+      \label{rotacion}
+      \end{figure}
+  \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Rotaciones de Givens}
+  \begin{itemize}
+    \item<1-> De la gr\'afica se puede observar que $u=(\cos(\alpha),\sin(\alpha))$ y $v=(\cos(\alpha - \theta),\sin(\alpha-\theta))$.
+    \uncover<2->{    
+    \begin{eqnarray}
+    \nonumber \cos(\alpha - \theta) & = & \cos(\alpha)\cos(-\theta) - \sin(\alpha)\sin(-\theta)\\
+    \nonumber & = & \cos(\alpha)\cos(\theta) -\sin(\alpha)(-\sin(\theta))\\
+    \nonumber & = & \cos(\alpha)\cos(\theta) +\sin(\alpha)\sin(\theta)
+    \end{eqnarray}}
+    \uncover<3->{
+    \begin{eqnarray}
+    \nonumber \sin(\alpha - \theta) & = & \sin(\alpha)\cos(-\theta) + \cos(\alpha)\sin(-\theta)\\
+    \nonumber & = & \sin(\alpha)\cos(\theta) +\cos(\alpha)(-\sin(\theta))\\
+    \nonumber & = & \sin(\alpha)\cos(\theta) -\cos(\alpha)\sin(\theta)
+    \end{eqnarray}}
+  \end{itemize}    
 \end{frame}
 \end{document}
