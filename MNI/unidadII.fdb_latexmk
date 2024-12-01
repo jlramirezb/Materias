@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1733085839.04494 "c:/Users/USUARIO/Documents/repo/Materias/MNI/unidadII.tex" "unidadII.pdf" "unidadII" 1733085851.24587 0
+["pdflatex"] 1733094038.27017 "c:/Users/USUARIO/Documents/repo/Materias/MNI/unidadII.tex" "unidadII.pdf" "unidadII" 1733094051.87166 0
   "MetIllinois.png" 1732474321 21847 01a8f4a818cf6f0b187dcbbef020eccc ""
   "bisec.eps" 1264960744 85344 875c840b83a0a6400695ebbfa1703def ""
   "bisecc_f.eps" 1365951248 69339 c6450a5b3f4b29d972964295fcb830b1 ""
-  "c:/Users/USUARIO/Documents/repo/Materias/MNI/unidadII.tex" 1733085837 49090 a9a86b0a44db0b4a6d7ad394b202794d ""
+  "c:/Users/USUARIO/Documents/repo/Materias/MNI/unidadII.tex" 1733094036 53899 e372793297a74a94f3797b39df512721 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1721766126 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1721761257 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1721761257 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -234,12 +234,14 @@
   "diver2.png" 1732496892 7616 4a8f51ec1779603b2badb4a1fe15c8b7 ""
   "eq2sol.jpg" 1423003128 9314 e1c45fc29bd642ef402daf0365eef089 ""
   "regfalsi.png" 1732453210 35160 b8b1b6fb82a35f2a486060bee5c0d29b ""
-  "unidadII.aux" 1733085850 15077 4f46982e9d9aef8385462d4beac3f57e "pdflatex"
-  "unidadII.nav" 1733085850 8432 b72491c2123176c00d41b615f578e687 "pdflatex"
-  "unidadII.out" 1733085850 1151 3e049a317971bbfa59c116e6b23f2bb7 "pdflatex"
-  "unidadII.tex" 1733085837 49090 a9a86b0a44db0b4a6d7ad394b202794d ""
-  "unidadII.toc" 1733085850 430 84524f19c166b3f15a41df953c4aa058 "pdflatex"
-  "unidadII.vrb" 1733085845 782 bcdf87d8a109535ae2fbdd6e9536a29c "pdflatex"
+  "sec1.EPS" 1265559924 3833341 8e0497ed05ddc90be2719ad9114c7bf2 ""
+  "sec1.eps" 1265559924 3833341 8e0497ed05ddc90be2719ad9114c7bf2 ""
+  "unidadII.aux" 1733094051 16336 28c29af905a204e355ead4e654f32494 "pdflatex"
+  "unidadII.nav" 1733094051 9386 e56f55f21ba7dccbafee2ed008980ca1 "pdflatex"
+  "unidadII.out" 1733094051 1306 aec41cfcca0aabd06e11c01b8abb77d4 "pdflatex"
+  "unidadII.tex" 1733094036 53899 e372793297a74a94f3797b39df512721 ""
+  "unidadII.toc" 1733094051 490 6e7177f6d2f4e7b5d3d888494d9730b4 "pdflatex"
+  "unidadII.vrb" 1733094043 782 bcdf87d8a109535ae2fbdd6e9536a29c "pdflatex"
   (generated)
   "unidadII.aux"
   "unidadII.log"

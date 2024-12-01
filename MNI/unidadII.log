@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  1 DEC 2024 16:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  1 DEC 2024 19:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -614,11 +614,7 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count352
 \l__pdf_internal_box=\box85
-) (./unidadII.aux
-
-LaTeX Warning: Label `PF_alg' multiply defined.
-
-)
+) (./unidadII.aux)
 \openout1 = `unidadII.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -786,7 +782,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [16
 
 ]
-<eq2sol.jpg, id=547, 401.5pt x 258.9675pt>
+<eq2sol.jpg, id=553, 401.5pt x 258.9675pt>
 File: eq2sol.jpg Graphic file (type jpg)
 <use eq2sol.jpg>
 Package pdftex.def Info: eq2sol.jpg  used on input line 100.
@@ -918,7 +914,7 @@ Package epstopdf Info: Source file: <bisec.eps>
 (epstopdf)             Command: <repstopdf --outfile=bisec-eps-converted-to.pdf bisec.eps>
 (epstopdf)             \includegraphics on input line 222.
 Package epstopdf Info: Output file is already uptodate.
-<bisec-eps-converted-to.pdf, id=1305, 959.585pt x 693.59125pt>
+<bisec-eps-converted-to.pdf, id=1311, 959.585pt x 693.59125pt>
 File: bisec-eps-converted-to.pdf Graphic file (type pdf)
 <use bisec-eps-converted-to.pdf>
 Package pdftex.def Info: bisec-eps-converted-to.pdf  used on input line 222.
@@ -966,7 +962,7 @@ Package epstopdf Info: Source file: <./bisecc_f.eps>
 (epstopdf)             Command: <repstopdf --outfile=./bisecc_f-eps-converted-to.pdf ./bisecc_f.eps>
 (epstopdf)             \includegraphics on input line 333.
 Package epstopdf Info: Output file is already uptodate.
-<./bisecc_f-eps-converted-to.pdf, id=1575, 1564.84625pt x 1362.08875pt>
+<./bisecc_f-eps-converted-to.pdf, id=1581, 1564.84625pt x 1362.08875pt>
 File: ./bisecc_f-eps-converted-to.pdf Graphic file (type pdf)
 <use ./bisecc_f-eps-converted-to.pdf>
 Package pdftex.def Info: ./bisecc_f-eps-converted-to.pdf  used on input line 333.
@@ -1021,7 +1017,7 @@ Overfull \vbox (59.66862pt too high) detected at line 333
 [51
 
 ]
-<regfalsi.png, id=1781, 418.56375pt x 268.00125pt>
+<regfalsi.png, id=1787, 418.56375pt x 268.00125pt>
 File: regfalsi.png Graphic file (type png)
 <use regfalsi.png>
 Package pdftex.def Info: regfalsi.png  used on input line 387.
@@ -1139,7 +1135,7 @@ Overfull \vbox (6.41656pt too high) detected at line 557
 [76
 
 ]
-<MetIllinois.png, id=2625, 567.62062pt x 295.85532pt>
+<MetIllinois.png, id=2631, 567.62062pt x 295.85532pt>
 File: MetIllinois.png Graphic file (type png)
 <use MetIllinois.png>
 Package pdftex.def Info: MetIllinois.png  used on input line 603.
@@ -1194,7 +1190,7 @@ Overfull \hbox (11.30579pt too wide) in paragraph at lines 647--647
 [87
 
 ]
-<diver.png, id=2996, 331.2375pt x 295.85532pt>
+<diver.png, id=3002, 331.2375pt x 295.85532pt>
 File: diver.png Graphic file (type png)
 <use diver.png>
 Package pdftex.def Info: diver.png  used on input line 710.
@@ -1204,7 +1200,7 @@ Underfull \hbox (badness 3271) in paragraph at lines 710--710
 []\OT1/cmr/m/n/9 (a) Pro-ceso di-ver-gente (Es-
  []
 
-<conver.png, id=2997, 331.2375pt x 295.85532pt>
+<conver.png, id=3003, 331.2375pt x 295.85532pt>
 File: conver.png Graphic file (type png)
 <use conver.png>
 Package pdftex.def Info: conver.png  used on input line 710.
@@ -1214,7 +1210,7 @@ Package pdftex.def Info: conver.png  used on input line 710.
 [88
 
  <./diver.png> <./conver.png>]
-<diver2.png, id=3032, 331.2375pt x 268.75406pt>
+<diver2.png, id=3038, 331.2375pt x 268.75406pt>
 File: diver2.png Graphic file (type png)
 <use diver2.png>
 Package pdftex.def Info: diver2.png  used on input line 728.
@@ -1224,7 +1220,7 @@ Underfull \hbox (badness 2600) in paragraph at lines 728--728
 []\OT1/cmr/m/n/9 (a) Pro-ceso di-ver-gente (Os-
  []
 
-<conver2.png, id=3033, 331.2375pt x 268.75406pt>
+<conver2.png, id=3039, 331.2375pt x 268.75406pt>
 File: conver2.png Graphic file (type png)
 <use conver2.png>
 Package pdftex.def Info: conver2.png  used on input line 728.
@@ -1447,7 +1443,7 @@ Package epstopdf Info: Source file: <./curva_newton.eps>
 (epstopdf)             Command: <repstopdf --outfile=./curva_newton-eps-converted-to.pdf ./curva_newton.eps>
 (epstopdf)             \includegraphics on input line 1120.
 Package epstopdf Info: Output file is already uptodate.
-<./curva_newton-eps-converted-to.pdf, id=4355, 873.2625pt x 520.94624pt>
+<./curva_newton-eps-converted-to.pdf, id=4362, 873.2625pt x 520.94624pt>
 File: ./curva_newton-eps-converted-to.pdf Graphic file (type pdf)
 <use ./curva_newton-eps-converted-to.pdf>
 Package pdftex.def Info: ./curva_newton-eps-converted-to.pdf  used on input line 1120.
@@ -1509,7 +1505,7 @@ Package epstopdf Info: Source file: <./curva_newton_p1.eps>
 (epstopdf)             Command: <repstopdf --outfile=./curva_newton_p1-eps-converted-to.pdf ./curva_newton_p1.eps>
 (epstopdf)             \includegraphics on input line 1182.
 Package epstopdf Info: Output file is already uptodate.
-<./curva_newton_p1-eps-converted-to.pdf, id=4559, 2219.29124pt x 1322.9425pt>
+<./curva_newton_p1-eps-converted-to.pdf, id=4566, 2219.29124pt x 1322.9425pt>
 File: ./curva_newton_p1-eps-converted-to.pdf Graphic file (type pdf)
 <use ./curva_newton_p1-eps-converted-to.pdf>
 Package pdftex.def Info: ./curva_newton_p1-eps-converted-to.pdf  used on input line 1182.
@@ -1546,7 +1542,7 @@ Package epstopdf Info: Source file: <./curva_newton_p2.eps>
 (epstopdf)             Command: <repstopdf --outfile=./curva_newton_p2-eps-converted-to.pdf ./curva_newton_p2.eps>
 (epstopdf)             \includegraphics on input line 1203.
 Package epstopdf Info: Output file is already uptodate.
-<./curva_newton_p2-eps-converted-to.pdf, id=4618, 1137.24875pt x 678.535pt>
+<./curva_newton_p2-eps-converted-to.pdf, id=4625, 1137.24875pt x 678.535pt>
 File: ./curva_newton_p2-eps-converted-to.pdf Graphic file (type pdf)
 <use ./curva_newton_p2-eps-converted-to.pdf>
 Package pdftex.def Info: ./curva_newton_p2-eps-converted-to.pdf  used on input line 1203.
@@ -1604,13 +1600,111 @@ Overfull \hbox (23.15062pt too wide) in alignment at lines 1241--1241
 [143
 
 ]
-pdfTeX warning (ext4): destination with the same identifier (name{PF_alg}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.1265 \end{frame}
-                  
 
 [144
+
+]
+
+[145
+
+]
+
+[146
+
+]
+
+[147
+
+]
+
+[148
+
+]
+
+[149
+
+]
+Package epstopdf Info: Source file: <sec1.eps>
+(epstopdf)                    date: 2010-02-07 12:25:24
+(epstopdf)                    size: 3833341 bytes
+(epstopdf)             Output file: <sec1-eps-converted-to.pdf>
+(epstopdf)                    date: 2024-12-01 17:31:06
+(epstopdf)                    size: 52636 bytes
+(epstopdf)             Command: <repstopdf --outfile=sec1-eps-converted-to.pdf sec1.eps>
+(epstopdf)             \includegraphics on input line 1309.
+Package epstopdf Info: Output file is already uptodate.
+<sec1-eps-converted-to.pdf, id=4995, 735.74875pt x 484.81125pt>
+File: sec1-eps-converted-to.pdf Graphic file (type pdf)
+<use sec1-eps-converted-to.pdf>
+Package pdftex.def Info: sec1-eps-converted-to.pdf  used on input line 1309.
+(pdftex.def)             Requested size: 257.51591pt x 169.68648pt.
+
+
+[150
+
+ <./sec1-eps-converted-to.pdf>]
+
+[151
+
+]
+
+[152
+
+]
+
+[153
+
+]
+
+[154
+
+]
+
+[155
+
+]
+
+[156
+
+]
+
+[157
+
+]
+
+[158
+
+]
+
+[159
+
+]
+
+[160
+
+]
+Overfull \vbox (14.54536pt too high) detected at line 1416
+ []
+
+
+
+[161
+
+]
+Overfull \vbox (14.54536pt too high) detected at line 1416
+ []
+
+
+
+[162
+
+]
+Overfull \vbox (14.54536pt too high) detected at line 1416
+ []
+
+
+
+[163
 
 ]
 \tf@nav=\write6
@@ -1627,26 +1721,22 @@ l.1265 \end{frame}
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `unidadII.out' has not changed.
-(rerunfilecheck)             Checksum: 3E049A317971BBFA59C116E6B23F2BB7;1151.
+(rerunfilecheck)             Checksum: AEC41CFCCA0AABD06E11C01B8ABB77D4;1306.
  ) 
 Here is how much of TeX's memory you used:
- 23939 strings out of 473583
- 460624 string characters out of 5732336
+ 24042 strings out of 473583
+ 463041 string characters out of 5732336
  1969908 words of memory out of 5000000
- 46020 multiletter control sequences out of 15000+600000
+ 46084 multiletter control sequences out of 15000+600000
  566907 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,17n,123p,544b,825s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadII.pdf (144 pages, 862043 bytes).
+Output written on unidadII.pdf (163 pages, 986406 bytes).
 PDF statistics:
- 5003 PDF objects out of 5155 (max. 8388607)
- 4262 compressed objects within 43 object streams
- 307 named destinations out of 1000 (max. 500000)
- 2151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5720 PDF objects out of 6186 (max. 8388607)
+ 4850 compressed objects within 49 object streams
+ 346 named destinations out of 1000 (max. 500000)
+ 2680 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -167,8 +167,27 @@
 \headcommand {\beamer@framepages {142}{143}}
 \headcommand {\slideentry {7}{0}{12}{144/144}{}{0}}
 \headcommand {\beamer@framepages {144}{144}}
-\headcommand {\beamer@partpages {1}{144}}
-\headcommand {\beamer@subsectionpages {121}{144}}
 \headcommand {\beamer@sectionpages {121}{144}}
-\headcommand {\beamer@documentpages {144}}
-\headcommand {\gdef \inserttotalframenumber {74}}
+\headcommand {\beamer@subsectionpages {121}{144}}
+\headcommand {\sectionentry {8}{M\'etodo de la Secante}{145}{M\'etodo de la Secante}{0}}
+\headcommand {\slideentry {8}{0}{1}{145/146}{}{0}}
+\headcommand {\beamer@framepages {145}{146}}
+\headcommand {\slideentry {8}{0}{2}{147/149}{}{0}}
+\headcommand {\beamer@framepages {147}{149}}
+\headcommand {\slideentry {8}{0}{3}{150/150}{}{0}}
+\headcommand {\beamer@framepages {150}{150}}
+\headcommand {\slideentry {8}{0}{4}{151/153}{}{0}}
+\headcommand {\beamer@framepages {151}{153}}
+\headcommand {\slideentry {8}{0}{5}{154/155}{}{0}}
+\headcommand {\beamer@framepages {154}{155}}
+\headcommand {\slideentry {8}{0}{6}{156/157}{}{0}}
+\headcommand {\beamer@framepages {156}{157}}
+\headcommand {\slideentry {8}{0}{7}{158/160}{}{0}}
+\headcommand {\beamer@framepages {158}{160}}
+\headcommand {\slideentry {8}{0}{8}{161/163}{}{0}}
+\headcommand {\beamer@framepages {161}{163}}
+\headcommand {\beamer@partpages {1}{163}}
+\headcommand {\beamer@subsectionpages {145}{163}}
+\headcommand {\beamer@sectionpages {145}{163}}
+\headcommand {\beamer@documentpages {163}}
+\headcommand {\gdef \inserttotalframenumber {82}}

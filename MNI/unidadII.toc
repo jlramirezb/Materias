@@ -5,3 +5,4 @@
 \beamer@sectionintoc {5}{M\'etodo de Illinois}{71}{0}{5}
 \beamer@sectionintoc {6}{M\'etodos de Punto Fijo}{80}{0}{6}
 \beamer@sectionintoc {7}{M\'etodo de Newton-Raphson}{121}{0}{7}
+\beamer@sectionintoc {8}{M\'etodo de la Secante}{145}{0}{8}

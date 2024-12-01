@@ -1259,10 +1259,160 @@ $$
      }
      
      $x_0  \leftarrow p$\\
-    }
-    \label{PF_alg}
+    }    
    \end{algorithm}
 \end{frame}
 %%%%%
+\section{M\'etodo de la Secante}
+\begin{frame}
+  \frametitle{M\'etodo de la Secante}
+  \begin{itemize}
+    \item<1-> Una de las desventajas del m\'etodo de Newton es que en cada iteraci\'on hay que evaluar tanto a $f(x)$ como a $f'(x)$, para
+    atenuar esa desventaja se propone el m\'etodo de la secante.
+    \item<2-> En el m\'etodo de la secante se parte de dos puntos $(p_0,f(p_0))$ y $(p_1,f(p_1))$, por esos dos
+    puntos pasa una secante que los une y cuya pendiente es    
+    $$
+    m = \frac{f(p_1) - f(p_0)}{p_1 - p_0}
+    $$    
+  \end{itemize}    
+\end{frame}
+%%%%%
+\begin{frame} 
+  \frametitle{M\'etodo de la Secante}
+  \begin{itemize}
+    \item<1-> Dado que esta recta secante corta al eje $x$ en el punto $(p_2 , 0)$, entonces tambi\'en se tiene que
+    $$
+    m = \frac{0 - f(p_1)}{p_2 - p_1}
+    $$
+    \item<2->luego entonces    
+    $$
+    m = \frac{f(p_1) - f(p_0)}{p_1 - p_0} = \frac{0 - f(p_1)}{p_2 - p_1}
+    $$
+    por lo tanto    
+    $$
+    p_2 = p_1 - \frac{f(p_1)(p_1 - p_0)}{f(p_1) - f(p_0)}
+    $$
+    \item<3->Este proceso genera la f\'ormula de iteraci\'on:    
+    $$
+    p_{k+1} = p_k - \frac{f(p_k)(p_k - p_{k-1})}{f(p_k) - f(p_{k-1})}
+    $$
+  \end{itemize}    
+\end{frame} 
+%%%%
+\begin{frame}
+  \frametitle{M\'etodo de la Secante}
+  \begin{itemize}
+    \item<1-> La siguiente imagen muestra un ejemplo de aplicaci\'on del m\'etodo de la secante para encontrar una ra\'iz de una funci\'on.
+    \centering
+\includegraphics[scale=0.35]{sec1.eps}
+  \end{itemize}    
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Convergencia del M\'etodo de la Secante}
+  \begin{block}{Teorema}
+    Sea $x^*$ un cero de $f(x)$ y supongamos que $f''(x^*) \neq 0$, entonces el orden de convergencia del m\'etodo de la secante es
+$p=\frac{1}{2}(1+\sqrt{5})$.
+  \end{block}
+  \uncover<2->{
+  \begin{block}{Demostraci\'on:}
+    \small{
+    Sea $e_k = p_k - x^*, \, k=0,1,2,\ldots$ como
+    $$
+      p_{k+1} = \frac{p_{k-1}f(p_k) - p_kf(p_{k-1})}{f(p_k) - f(p_{k-1})}
+    $$
+    \uncover<3->{
+    $$
+    \begin{array}{rcl}
+      p_{n+1} - x^* & = & \dfrac{p_{n-1}f(p_n) - p_nf(p_{n-1})}{f(p_n) - f(p_{n-1})} -  \dfrac{x^*f(p_n) -
+     x^*f(p_{n-1})}{f(p_n) - f(p_{n-1})} \\
+      & = & \dfrac{(p_{n-1}-x^*)f(p_n) - (p_n - x^*)f(p_{n-1})}{f(p_n) - f(p_{n-1})}
+     \end{array}
+     $$}}
+  \end{block}}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Convergencia del M\'etodo de la Secante}
+  \begin{block}{Demostraci\'on:}
+    De este modo:
+    $$
+    e_{n+1} = \frac{e_{n-1}f(x^*+e_n)-e_nf(e_{n-1}+x^*)}{f(x^*+e_n) - f(e_{n-1}+x^*)}
+    $$
+    \uncover<2->{
+    pero por el desarrollo de Taylor de $f(x^* + e_n)$ y $f(x^* + e_{n-1})$ alrededor de $x^*$ se tiene que
+    $$
+    f(x^*+e_n) = f(x^*) + f'(x^*)e_n + \frac{1}{2}f''(x^*)e_n^2 + \cdots
+    $$
+    $$
+    f(x^*+e_{n-1}) = f(x^*) + f'(x^*)e_{n-1} + \frac{1}{2}f''(x^*)e_{n-1}^2 + \cdots
+    $$}
+  \end{block}
+\end{frame}  
+%%%%%
+\begin{frame}
+  \frametitle{Convergencia del M\'etodo de la Secante}
+  \begin{block}{Demostraci\'on:}
+    pero como $f(x^*) = 0$ entonces,
+    $$
+    e_{n-1}f(x^*+e_n) = f'(x^*)e_ne_{n-1} + \frac{1}{2}f''(x^*)e_n^2e_{n-1} + \cdots
+    $$    
+    $$
+    e_nf(x^*+e_{n-1}) = f'(x^*)e_{n-1}e_n + \frac{1}{2}f''(x^*)e_{n-1}^2e_n + \cdots
+    $$
+    \uncover<2->{
+    adem\'as
+    \small{
+    $$
+    f(x^*+e_n) - f(x^*+e_{n-1}) = f'(x^*)(e_n - e_{n-1}) + \frac{1}{2}f''(x^*)(e_n^2 - e_{n-1}^2) + \cdots
+    $$}}
+  \end{block}
+\end{frame}
+%%%%
+%%%%%
+\begin{frame}
+  \frametitle{Convergencia del M\'etodo de la Secante}
+  \begin{block}{Demostraci\'on:}
+    de modo que
+    $$
+    e_{n+1} = \frac{\frac{1}{2}f''(x^*)e_ne_{n-1}(e_n-e_{n-1}) + \cdots}{f'(x^*)(e_n - e_{n-1})+ \cdots}
+    $$
+    \uncover<2->{
+    para $|e_{n-1}|$ y $|e_n|$ suficientemente peque\~nos se tiene que
+    $$
+    e_{n+1} \approx \frac{f''(x^*)e_ne_{n-1}}{2f'(x^*)}
+    $$}
+    \uncover<3->{as\'i que
+    $$
+    |e_{n+1}| \approx M|e_ne_{n-1}| = M|e_n||e_{n-1}|
+    $$
+    siendo $M=\frac{f''(x^*)}{2f'(x^*)}$}
+  \end{block}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Convergencia del M\'etodo de la Secante}
+  \begin{block}{Demostraci\'on:}
+    Pero se quiere obtener el valor de $p$, para el cual
+    $$
+    |x^* - x_n| = \alpha|x^* - x_{n-1}|^p \Rightarrow |e_n| = \alpha|e_{n-1}|^p
+    $$
+con $\alpha \geq 0,\, p \geq 1$, pero tambi\'en
+$$
+|e_{n+1}| = \alpha|e_{n}|^p = \alpha\left(\alpha|e_{n-1}|^p\right)^p
+$$
+\vspace{-0.25cm}
+\uncover<2->{
+As\'i que:
+$$
+\alpha^{p+1}|e_{n-1}|^{p^2} = M(\alpha|e_{n-1}|^p)|e_{n-1}|= \alpha M\left(|e_{n-1}|^{p+1}\right)
+$$}
+\uncover<3->{
+la cual es v\'alida si $\alpha^p = M$ y $p^2 = p + 1$, de modo que
+$$
+p = \frac{1}{2}(1+\sqrt{5})
+$$}
+  \end{block}
+\end{frame}
 
 \end{document}

@@ -562,6 +562,17 @@ INPUT ./curva_newton_p2-eps-converted-to.pdf
 INPUT ./curva_newton_p2.eps
 INPUT ./curva_newton_p2-eps-converted-to.pdf
 INPUT ./curva_newton_p2-eps-converted-to.pdf
+INPUT ./sec1.EPS
+INPUT ./sec1.EPS
+INPUT ./sec1.EPS
+INPUT ./sec1.EPS
+INPUT ./sec1.EPS
+INPUT ./sec1-eps-converted-to.pdf
+INPUT ./sec1-eps-converted-to.pdf
+INPUT ./sec1.EPS
+INPUT ./sec1-eps-converted-to.pdf
+INPUT ./sec1-eps-converted-to.pdf
+INPUT ./sec1-eps-converted-to.pdf
 OUTPUT unidadII.nav
 OUTPUT unidadII.toc
 OUTPUT unidadII.snm
