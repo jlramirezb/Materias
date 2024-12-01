@@ -2153,4 +2153,483 @@ m=size(A,1); n=size(A,2); Q=eye(m); R=A; I=eye(m);\\
     \end{eqnarray}}
   \end{itemize}    
 \end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Rotaciones de Givens}
+  \begin{itemize}
+    \item<1-> Por lo tanto 
+
+    \begin{eqnarray}
+     \nonumber v & = & \left(\begin{array}{c}
+                        \cos(\alpha - \theta)\\
+                        \sin(\alpha - \theta)
+                        \end{array}\right) = 
+                        \left(\begin{array}{c}
+                        \cos(\alpha)\cos(\theta) +\sin(\alpha)\sin(\theta)\\
+                        \sin(\alpha)\cos(\theta) -\cos(\alpha)\sin(\theta)
+                        \end{array}\right)\\
+    \uncover<2->{\nonumber & = & \left(\begin{array}{cc}
+                           \cos(\theta) & \sin(\theta)\\
+                          -\sin(\theta) & \cos(\theta)
+                          \end{array}\right)\left(\begin{array}{c}
+                        \cos(\alpha)\\
+                        \sin(\alpha)
+                       \end{array}\right) }\\
+    \uncover<3->{\nonumber\Rightarrow v & = &  \left(\begin{array}{cc}
+                           \cos(\theta) & \sin(\theta)\\
+                          -\sin(\theta) & \cos(\theta)
+                          \end{array}\right)u}
+    \end{eqnarray}
+  \end{itemize}
+\end{frame}  
+%%%%
+\begin{frame}
+  \frametitle{Rotaciones de Givens}
+  \begin{itemize}
+    \item<1-> Para la construcci\'on de la matriz $J(i,j,\theta)$, sea 
+    $x=\left(\begin{array}{c}
+      x_1\\
+      x_2
+     \end{array}\right) \in \mathbb{R}^2$
+
+\begin{center}
+\includegraphics[scale=0.35]{./rota2.jpg}\\
+Construcci\'on de la Matriz $J(i,j,\theta)$.
+\end{center}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Rotaciones de Givens}
+  De la figura se pude observar que:
+\begin{eqnarray}
+\nonumber & \cos(\theta) = \dfrac{x_1}{r} \quad\quad \sin(\theta) = \dfrac{x_2}{r}\\
+\nonumber & \cos^2(\theta) + \sin^2(\theta) = 1 \Rightarrow \left(\dfrac{x_1}{r}\right)^2 + \left(\dfrac{x_2}{r}\right)^2 = 1\\
+\nonumber & c = \dfrac{x_1}{\sqrt{x_1^2+x_2^2}}, \quad\quad s=\dfrac{x_2}{\sqrt{x_1^2+x_2^2}} 
+\end{eqnarray}
+\end{frame} 
+%%%%%
+\begin{frame}
+\frametitle{Rotaciones de Givens} 
+\begin{itemize}
+\item<1-> Por lo tanto:
+$$
+J(1,2,\theta) = \left(\begin{array}{cc}
+                       c & s\\
+		                  -s & c
+                      \end{array}\right)
+$$
+
+\item<2->La matriz $J(1,2,\theta)$ es tal que:
+$$
+J(1,2,\theta)x = \left(\begin{array}{c}
+                      *\\
+		                  0
+                      \end{array}\right) \mbox{ es m\'ultiplo de $e_1$ en $\mathbb{R}^2$}
+$$
+\end{itemize}  
+\end{frame} 
+%%%%%%
+\begin{frame}{Rotaciones de Givens}
+  \begin{itemize}
+   \item Rotaciones de Givens pueden ser aplicadas de manera sistem\'atica a un par de filas de la matriz $A$ y as\'i 
+ anular elementos hasta obtener una matriz triangular superior $R$.
+ \item<2-> Elementos por debajo de la subdiagonal pueden ser anulados bajo distinto orden, pero se 
+ deben preservar los 
+ ceros realizados.
+ \item<3-> Cada rotaci\'on debe ser aplicada a todos los elementos de las filas seleccionadas, no solo a las entradas que
+ determinan $c$ y $s$
+ \item<4-> Una vez obtenida la triangular superior, el producto de las matrices de rotaci\'on determina la matriz 
+ ortogonal $Q$ de modo que $QR=A$
+  \end{itemize}
+ \end{frame}
+ %%%%%%%
+ \begin{frame}{Rotaciones de Givens}
+  El c\'alculo de los valores de $c$ y $s$ puede causar overflow o underflow, y para su c\'alculo se comparan los 
+ valores $x_1$ y $x_2$ seleccionados de la siguiente manera
+ \begin{enumerate}
+  \item<2-> Si $|x_2|\geq|x_1|$, entonces
+  $$
+  t = \dfrac{x_1}{x_2}, \qquad s=\dfrac{1}{\sqrt{1+t^2}}, \qquad c=st
+  $$
+  \item<3-> Si $|x_2|<|x_1|$, entonces
+  $$
+  t = \dfrac{x_2}{x_1}, \qquad c=\dfrac{1}{\sqrt{1+t^2}}, \qquad s=ct
+  $$
+ \end{enumerate}
+ \end{frame}
+%%%%%
+\begin{frame}{Rotaciones de Givens} 
+  \begin{itemize}
+   \item<1->Ejemplo: Sea $x=\left(\begin{array}{c}
+    1\\
+    1/2
+   \end{array}\right)$
+   \item<2->En este caso $|x_1|=1 > |x_2|=1/2$ entonces:
+   \small{
+   $$
+   t=\dfrac{x_2}{x_1}=\dfrac{1/2}{1}=1/2, \quad c=\dfrac{1}{\sqrt{1+1/4}}=\dfrac{2\sqrt{5}}{5}, \quad s=ct=\dfrac{2\sqrt{5}}{5}\cdot\dfrac{1}{2}=\dfrac{1}{\sqrt{5}}
+   $$}
+   \item<3->As\'i
+$$
+J(1,2,\theta) = \left(\begin{array}{cc}
+                       \dfrac{2}{\sqrt{5}} & \dfrac{1}{\sqrt{5}}\\
+		      -\dfrac{1}{\sqrt{5}} & \dfrac{2}{\sqrt{5}}
+                      \end{array}\right)=\dfrac{1}{\sqrt{5}}\left(\begin{array}{cc}
+                       2 & 1\\
+		      -1 & 2
+                      \end{array}\right)
+$$
+\item<4-> Efectivamente
+$$
+J(1,2,\theta)x = \frac{1}{\sqrt{5}}\left(\begin{array}{cc}
+                       2 & 1\\
+		      -1 & 2
+                      \end{array}\right)\left(\begin{array}{c}
+                       1\\
+		      1/2
+                      \end{array}\right)=\frac{1}{\sqrt{5}}\left(\begin{array}{c}
+                       5/2\\
+		      0
+                      \end{array}\right)=\left(\begin{array}{c}
+                       \frac{\sqrt{5}}{2}\\
+		      0
+                      \end{array}\right)
+$$
+\end{itemize}
+\end{frame}
+%%%%%%%
+\begin{frame}{Algoritmo}
+  \begin{block}{C\'odigo}
+  %\scriptsize
+  \texttt{
+  \hspace{-0.25cm}\textcolor{blue}{function} [c,s]=givcero(x)\\
+  \textcolor{blue}{if} abs(x(2))>abs(x(1))\\
+  \hspace{0.25cm} t = x(1)/x(2);\\
+  \hspace{0.25cm} s = 1/sqrt(1+t*t);\\
+  \hspace{0.25cm} c = s*t;\\
+  \textcolor{blue}{else}\\
+  \hspace{0.25cm} t = x(2)/x(1);\\
+  \hspace{0.25cm} c = 1/sqrt(1+t*t);\\
+  \hspace{0.25cm} s = c*t;\\
+  \textcolor{blue}{end}
+  }
+  \end{block}
+  \end{frame}
+  %%%%%%%
+  \begin{frame}{Ejercicio}
+  Halle las constantes $c$ y $s$ de la matriz de Givens que al premultiplicarla por el vector
+  $$
+  x = \left(\begin{array}{c}
+             3\\
+             5
+            \end{array}
+  \right)
+  $$
+  produce un cero en la segunda componente del vector $x$.
+   
+  \end{frame}
+  %%%%%%%
+\begin{frame}{Premultiplicaci\'on de una matriz por una de Givens}
+  \begin{itemize}
+   \item Cuando una matriz $A$ se premultiplica por una matriz de Givens $G(i,j,\theta)$ el \'unico efecto es en las filas 
+  $i$ y $j$ de la matriz $A$. Las nuevas filas son una combinaci\'on lineal de las anteriores.
+  \item <2-> La fila $i$ es $c$ veces la fila $i$ m\'as $s$ veces la fila $j$
+  \item <3-> La fila $j$ es $-s$ veces la fila $i$ m\'as $c$ veces la fila $j$
+  \end{itemize}  
+  \end{frame}
+  %%%%%%%
+  \begin{frame}{Algoritmo}
+  \uncover<1->{
+  Dada una matriz $A$ de orden $m \times n$, las constantes $c$ y $s$ y los \'indices $i$ y $j$ tal que $1\leq i<j\leq 
+  m$, entonces el siguiente algoritmo superpone $A$ con $G(i,j,\theta)A$}
+  \begin{block}{C\'odigo}
+  %\scriptsize
+  \texttt{
+  \hspace{-0.25cm}\textcolor{blue}{function} [A]=givmult(A,i,j,c,s)\\
+   a1 = A(i,:);\\
+   a2 = A(j,:);\\
+   A(i,:) = c*a1 + s*a2;\\
+   A(j,:) = -s*a1 + c*a2;}
+  \end{block}
+  \end{frame}
+  %%%%%%%
+  \begin{frame}{Descomposici\'on $QR$ basada en Givens}
+   Sea $A$ una matriz $A \in \mathbb{R}^{m \times n}$. Se aplica una rotaci\'on a las filas $m$ y $m-1$ para hacer cero 
+  al elemento $(m,1)$
+  $$
+  A=\left(\begin{array}{ccccc}
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+          \end{array}\right) \to G^1_{m-1,m}A = \begin{array}{r}
+                                               \\
+                                               \\
+                                               \\
+                                               \\
+                                               \to\\
+                                               \to
+                                              \end{array}\left(\begin{array}{ccccc}
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           0 & x & x & x & x\\
+          \end{array}\right)
+  $$
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Descomposici\'on $QR$ basada en Givens}
+   Se contin\'ua con las filas $m-1$ y $m-2$ para hacer cero al elemento $(m-1,1)$
+   \footnotesize
+   $$
+  G^1_{m-1,m}A=\left(\begin{array}{ccccc}
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           0 & x & x & x & x\\
+          \end{array}\right) \to G^1_{m-2,m}A = \begin{array}{r}
+                                               \\
+                                               \\
+                                               \\
+                                               \to\\
+                                               \to\\
+                                               \\
+                                              \end{array}\left(\begin{array}{ccccc}
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           x & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+          \end{array}\right)
+  $$
+  \normalsize
+  \uncover<2->{
+  Se contin\'ua el proceso sobre la columna 1 hasta llegar a las filas 1 y 2
+  $$
+  G^1_{1,2}\cdots G^1_{m-2,m-1}G^1_{m-1,m}A = \begin{array}{r}
+                                               \to\\
+                                               \to\\
+                                               \\
+                                               \\
+                                               \\
+                                               \\
+                                              \end{array}\left(\begin{array}{ccccc}
+           x & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+          \end{array}\right)
+  $$}
+  \end{frame}
+  %%%%%
+  \begin{frame}{Descomposici\'on $QR$ basada en Givens}
+  Se sigue con la columna 2, empezando desde abajo hasta la diagonal
+  \footnotesize
+  $$
+  G^1_{1,2}\cdots G^1_{m-1,m}A =\left(\begin{array}{ccccc}
+           x & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+          \end{array}\right)\Rightarrow\begin{array}{r}
+                                               \\
+                                               \\
+                                               \\
+                                               \\
+                                               \to\\
+                                               \to
+                                              \end{array}\left(\begin{array}{ccccc}
+           x & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & 0 & x & x & x\\
+          \end{array}\right)
+  $$ 
+  $$
+  \Rightarrow \cdots \Rightarrow G^2_{2,3}\cdots G^1_{m-1,m}A\begin{array}{r}
+                                               \\
+                                               \to\\
+                                               \to\\
+                                               \\
+                                               \\
+                                               \\
+                                               \end{array}\left(\begin{array}{ccccc}
+           x & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & 0 & x & x & x\\
+           0 & 0 & x & x & x\\
+           0 & 0 & x & x & x\\
+           0 & 0 & x & x & x\\
+          \end{array}\right)
+  $$
+  \end{frame}
+  %%%%%%%
+  \begin{frame}{Descomposici\'on $QR$ basada en Givens}
+  El proceso se repite para cada una de las columnas hasta la \'ultima
+  $$
+  G^n_{m-1,m}\cdots G^1_{m-1,m}A = \left(\begin{array}{ccccc}
+           x & x & x & x & x\\
+           0 & x & x & x & x\\
+           0 & 0 & x & x & x\\
+           0 & 0 & 0 & x & x\\
+           0 & 0 & 0 & 0 & x\\
+           0 & 0 & 0 & 0 & 0\\
+          \end{array}\right)
+  $$
+  Obteniendo as\'i $R=Q^{T}A$, donde $Q^{T}$ es el producto de todas las matrices de rotaci\'on.
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Descomposici\'on $QR$ basada en Givens}
+  \begin{block}{C\'odigo}
+  % %\scriptsize
+  \texttt{
+  \hspace{-0.25cm}\textcolor{blue}{function} [Q,R]=qr\_Giv(A)\\
+  m=size(A,1); n=size(A,2); Q=eye(m);\\
+  \textcolor{blue}{for} j=1:n\\
+  \hspace{0.25cm} \textcolor{blue}{for} i=m:-1:j+1\\
+  \hspace{0.5cm} [c,s] = givcero([A(i-1,j),A(i,j)]);\\
+  \hspace{0.5cm} A = givmult(A,i-1,i,c,s);\\
+  \hspace{0.5cm} Q = givmult(Q,i-1,i,c,s);\\
+  \hspace{0.25cm} \textcolor{blue}{end}\\
+  \textcolor{blue}{end}\\
+  Q = Q'; R = A;}
+  \end{block}
+  \end{frame}
+  %%%%%%%
+  \begin{frame}{Ejemplo}
+    \begin{itemize}
+      \item Ejemplo: Hallar la factorizaci\'on $QR$ de $A=\left(\begin{array}{ccc}
+      1 & 2 & 3\\
+      0 & 3 & 2\\
+      2 & 0 & 1
+     \end{array}\right)$ mediante rotaciones de Givens.
+
+      \item<2->Se define matriz $J(1,3,\theta)$ que aplicado a $A$ anula la entrada $(3,1)$ 
+$$
+J(1,3,\theta) = \left(\begin{array}{ccc}
+                  c & 0 & s\\
+                  0 & 1 & 0\\
+                  -s & 0 & c
+                \end{array}\right)
+$$
+\item<3->donde, dado que $|A(3,1)|>|A(1,1)| \Rightarrow t=\frac{A(1,1)}{A(3,1)}=\frac{1}{2}$.
+\begin{eqnarray}
+\nonumber s=\frac{1}{\sqrt{1+t^2}}=\frac{1}{\sqrt{1+1/4}}=\frac{2}{\sqrt{5}}\\
+\nonumber c=st=\frac{2}{\sqrt{5}}\cdot\frac{1}{2}=\frac{1}{\sqrt{5}}
+\end{eqnarray}
+ \end{itemize}
+\end{frame}
+%%%%%%
+  \begin{frame}{Ejemplo}
+    \begin{itemize}
+      \item As\'i 
+      $$
+      J(1,3,\theta) = \left(\begin{array}{ccc}
+                      \frac{1}{\sqrt{5}} & 0 & \frac{2}{\sqrt{5}}\\
+                      0 & 1 & 0\\
+                      -\frac{2}{\sqrt{5}} & 0 & \frac{1}{\sqrt{5}}
+                    \end{array}\right)
+      $$
+      \uncover<2->{      
+      $$
+      A_1 = J(1,3,\theta)A = \left(\begin{array}{ccc}
+                            \frac{1}{\sqrt{5}} & 0 & \frac{2}{\sqrt{5}}\\
+                            0 & 1 & 0\\
+                            -\frac{2}{\sqrt{5}} & 0 & \frac{1}{\sqrt{5}}
+                          \end{array}\right)\left(\begin{array}{ccc}
+                            1 & 2 & 3\\
+                            0 & 3 & 2\\
+                            2 & 0 & 1
+                          \end{array}\right)
+      $$}
+      \uncover<3->{      
+      $$
+      =\left(\begin{array}{ccc}
+        2.2361 &   0.8944  &  2.2361\\
+          0  &  3.0000 &   2.0000\\
+          0  & -1.7889 &  -2.2361
+      \end{array}\right)
+      $$}      
+    \end{itemize}
+  \end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Ejemplo}
+  \begin{itemize}
+    \item En este caso $Q_1=J(1,3,\theta)$, luego dado que $|A_1(3,2)|<|A_1(2,2)| \Rightarrow t=\frac{A_1(3,2)}{A_1(2,2)}=\frac{-1.7889}{3}=-0.5963$
+
+  \item<2->Por lo tanto
+  \begin{eqnarray}
+  \nonumber c=\frac{1}{\sqrt{1+t^2}}=\frac{1}{\sqrt{1+(0.5963)^2}}=0.8589\\
+  \nonumber s=ct=0.8589\cdot(-0.5963)=-0.5121
+  \end{eqnarray}
+  
+  \item<3->As\'i 
+  $$
+  J(2,3,\theta) = \left(\begin{array}{ccc}
+                  1 & 0 & 0\\
+                  0 & 0.8589 & -0.5121\\
+                  0 & -0.5121 & 0.8589
+                \end{array}\right)
+  $$
+\end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Ejemplo}
+    \begin{eqnarray}
+      \nonumber A_2 & = & J(2,3,\theta)A_1 = \\
+      \nonumber & = &\left(\begin{array}{ccc}
+                    1 & 0 & 0\\
+                      0 & 0.8589 & -0.5121\\
+                      0 & -0.5121 & 0.8589
+                    \end{array}\right)\left(\begin{array}{ccc}
+                      2.2361 &   0.8944  &  2.2361\\
+                          0  &  3.0000 &   2.0000\\
+                          0  & -1.7889 &  -2.2361
+                  \end{array}\right)\\
+      \nonumber & = &\left(\begin{array}{ccc}
+              2.2361 &   0.8944 & 2.2361\\
+        0  &  3.4928  &  2.8630\\
+        0  &  0.0000 &  -0.8963
+              \end{array}\right) = R
+      \end{eqnarray}
+      
+      En este caso $Q_2=J(2,3,\theta)$.      
+\end{frame}
+%%%%
+\begin{frame}
+  \frametitle{Ejemplo}
+  La matriz $Q$ viene dada por $Q=Q_1^TQ_2^T$
+      
+  \begin{eqnarray}
+  \nonumber Q &=& \left(\begin{array}{ccc}
+               0.4472  & 0 &  -0.8944\\
+               0 & 1.0000 &       0\\
+              0.8944 & 0 &   0.4472
+            \end{array}\right)\left(\begin{array}{ccc} 
+    1.0000 &  0 & 0\\
+           0  &  0.8589 & 0.5121\\
+           0  & -0.5121 & 0.8589
+  \end{array}\right)\\
+  \nonumber &=& \left(\begin{array}{ccc}
+  0.4472  &  0.4581 &  -0.7682\\
+           0 &   0.8589 &   0.5121\\
+      0.8944 &  -0.2290 &   0.3841
+  \end{array}\right)
+  \end{eqnarray}   
+\end{frame}   
 \end{document}

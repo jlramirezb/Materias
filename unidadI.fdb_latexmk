@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1733007904.51934 "c:/Users/USUARIO/Documents/repo/Materias/unidadI.tex" "unidadI.pdf" "unidadI" 1733007922.93722 0
-  "c:/Users/USUARIO/Documents/repo/Materias/unidadI.tex" 1733007887 84147 7b6ac24de30f3d6522ff011057190bc4 ""
+["pdflatex"] 1733023895.24374 "c:/Users/USUARIO/Documents/repo/Materias/unidadI.tex" "unidadI.pdf" "unidadI" 1733023915.88605 0
+  "c:/Users/USUARIO/Documents/repo/Materias/unidadI.tex" 1733023874 101317 bf15a9dd2327e2c6cc64a333a61199c6 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1721766126 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1721761257 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1721761257 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -238,13 +238,14 @@
   "gs_p2_b.png" 1732902497 14612 0a6c68b55934126c7ad3e518d5024993 ""
   "gsproc.png" 1732902497 18180 5a9d7f89f49e0d4fc1a7f05048cebaa1 ""
   "reflex.jpg" 1732928635 43430 567fca561c5a650ebe92b2597528a09e ""
+  "rota2.jpg" 1337092148 7721 8b80c3d49872abdea9dfa057df0063ca ""
   "rotacion.jpg" 1337052840 10190 2c7e61611ffb0440151278f89f503401 ""
-  "unidadI.aux" 1733007922 20443 bc18a5f7775fa9272313d6e8a9e49f62 "pdflatex"
-  "unidadI.nav" 1733007922 13905 7b34be68957dc2a086aeaafca14ce327 "pdflatex"
-  "unidadI.out" 1733007922 1164 7c14ae41faf66ec892d36f9f5d710e90 "pdflatex"
-  "unidadI.tex" 1733007887 84147 7b6ac24de30f3d6522ff011057190bc4 ""
-  "unidadI.toc" 1733007922 469 fa5f94a0cb2a30e6e9441c3cb7e1c830 "pdflatex"
-  "unidadI.vrb" 1733007907 550 c69ac42207963134a02109238cec6db0 "pdflatex"
+  "unidadI.aux" 1733023915 23236 6132f4443081d4d57be3b3a6468e89a9 "pdflatex"
+  "unidadI.nav" 1733023915 15942 cd7ffb2b8781a0e307db54774c9a6b75 "pdflatex"
+  "unidadI.out" 1733023915 1164 7c14ae41faf66ec892d36f9f5d710e90 "pdflatex"
+  "unidadI.tex" 1733023874 101317 bf15a9dd2327e2c6cc64a333a61199c6 ""
+  "unidadI.toc" 1733023915 469 fa5f94a0cb2a30e6e9441c3cb7e1c830 "pdflatex"
+  "unidadI.vrb" 1733023898 550 c69ac42207963134a02109238cec6db0 "pdflatex"
   (generated)
   "unidadI.aux"
   "unidadI.log"

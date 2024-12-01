@@ -473,6 +473,11 @@ INPUT ./rotacion.jpg
 INPUT ./rotacion.jpg
 INPUT ./rotacion.jpg
 INPUT ./rotacion.jpg
+INPUT ./rota2.jpg
+INPUT ./rota2.jpg
+INPUT ./rota2.jpg
+INPUT ./rota2.jpg
+INPUT ./rota2.jpg
 OUTPUT unidadI.nav
 OUTPUT unidadI.toc
 OUTPUT unidadI.snm
