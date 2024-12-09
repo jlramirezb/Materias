@@ -21,8 +21,8 @@
 \end{figure}
  \vspace{-2,5cm}
 Universidad de Carabobo \\ Facultad Experimental de Ciencias y
-Tecnolog\'{\i}a \\ Maestr\'ia en Matem\'atica Aplicada\\ Asignatura:
-\'Algebra Lineal Num\'erica\\
+Tecnolog\'{\i}a \\ Departamento de Matem\'aticas\\ Asignatura:
+M\'etodos Num\'ericos II|\\
 \vspace{1cm} {\it\bf\large Tarea Computacional I}\\
 \end{center}
 
@@ -203,6 +203,22 @@ la misma gr\'afica tanto para $n=10$ y $n=400$.
 soluci\'on del sistema m\'as r\'apido?. Muestre una tabla comparativa de los tiempos de ejecuci\'on 
 para cada valor de $n$. Los resultados coinciden con la complejidad computacional de cada 
 algoritmo? 
+\end{enumerate}
+\item Sea $A$ la matriz definida por los elementos $a_{i,j}$ tales que
+$$
+a_{i,j} = \frac{1}{i+j-1}
+$$
+
+\begin{enumerate}
+ \item Elabore en matlab una funci\'on que tenga como par\'ametro de entrada un valor $n$ y como par\'ametro de salida la matriz $A$.
+ \item En un \textit{script} defina un ciclo con el contador $k = 2 : 25$, y genere la matriz de orden $k \times k$ seg\'un la rutina
+anterior y calcule su factorizaci\'on $QR$. De ser el resultado totalmente preciso, se deber\'ia tener que $QQ^t =I_k$. Para medir
+la precisi\'on del algoritmo, calcule el valor $err(k)= \|I_k - QQ^t \|$. Al salir del ciclo debe tener todos los valores del error
+almacenados en el vector $err$.
+\item Aplique el item anterior obteniendo la factorizaci\'on $QR$ mediante Gram-Schmidt, Householder y Givens. Obteniendo de esta manera
+tres vectores de errores (uno por cada m\'etodo).
+\item Refleje gr\'aficamente los resultados obtenidos, para mayor claridad agregue una leyenda al gr\'afico e interprete los resultados
+obtenidos.
 \end{enumerate}
 
 \end{enumerate}
