@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1733023895.24374 "c:/Users/USUARIO/Documents/repo/Materias/unidadI.tex" "unidadI.pdf" "unidadI" 1733023915.88605 0
-  "c:/Users/USUARIO/Documents/repo/Materias/unidadI.tex" 1733023874 101317 bf15a9dd2327e2c6cc64a333a61199c6 ""
+["pdflatex"] 1733678264.33215 "c:/Users/USUARIO/Documents/repo/Materias/unidadI.tex" "unidadI.pdf" "unidadI" 1733678285.65983 0
+  "c:/Users/USUARIO/Documents/repo/Materias/unidadI.tex" 1733678260 107497 343473ab693185ef07a09f9c688f6924 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1721766126 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1721761257 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1721761257 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -45,6 +45,7 @@
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb" 1721761258 36094 798f80770b3b148ceedd006d487db67c ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1721761258 35752 024fb6c41858982481f6968b5fc26508 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1721761258 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1721761258 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1721761258 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1721761258 32762 7fee39e011c23b3589931effd97b9702 ""
   "c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1721761258 32726 39f0f9e62e84beb801509898a605dbd5 ""
@@ -240,12 +241,12 @@
   "reflex.jpg" 1732928635 43430 567fca561c5a650ebe92b2597528a09e ""
   "rota2.jpg" 1337092148 7721 8b80c3d49872abdea9dfa057df0063ca ""
   "rotacion.jpg" 1337052840 10190 2c7e61611ffb0440151278f89f503401 ""
-  "unidadI.aux" 1733023915 23236 6132f4443081d4d57be3b3a6468e89a9 "pdflatex"
-  "unidadI.nav" 1733023915 15942 cd7ffb2b8781a0e307db54774c9a6b75 "pdflatex"
-  "unidadI.out" 1733023915 1164 7c14ae41faf66ec892d36f9f5d710e90 "pdflatex"
-  "unidadI.tex" 1733023874 101317 bf15a9dd2327e2c6cc64a333a61199c6 ""
-  "unidadI.toc" 1733023915 469 fa5f94a0cb2a30e6e9441c3cb7e1c830 "pdflatex"
-  "unidadI.vrb" 1733023898 550 c69ac42207963134a02109238cec6db0 "pdflatex"
+  "unidadI.aux" 1733678285 24887 0cf57103cbf139f5216551ebcfb0e1dc "pdflatex"
+  "unidadI.nav" 1733678285 17097 027bc9e4d60d82d997633d2e92faeb0f "pdflatex"
+  "unidadI.out" 1733678285 1340 f230ce6d1090a0309ae22919f7968a85 "pdflatex"
+  "unidadI.tex" 1733678260 107497 343473ab693185ef07a09f9c688f6924 ""
+  "unidadI.toc" 1733678285 533 2c2df64206e25f47bbb5db4489861f90 "pdflatex"
+  "unidadI.vrb" 1733678266 550 c69ac42207963134a02109238cec6db0 "pdflatex"
   (generated)
   "unidadI.aux"
   "unidadI.log"

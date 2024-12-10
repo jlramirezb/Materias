@@ -1,0 +1,227 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsfonts,amssymb,amsthm,amsmath,color,graphicx,bm,fancyhdr}
+\usepackage[left=1cm,right=1cm,bottom=1cm,top=1cm]{geometry}
+\pretolerance=2000 \tolerance=3000 \linespread{1.0}
+\pagestyle{fancy}
+\newcommand{\er}{\ensuremath{I\!\!R}}
+\newcommand{\sen}{\ensure{sen}}
+
+\pagestyle{empty}
+\begin{document}
+
+%\textcolor{blue}
+
+\begin{center}
+
+\begin{figure}[!h]
+\includegraphics[scale=0.2]{LogoUC.jpg}
+  \label{fig:hoo}
+   \hspace{14cm}\includegraphics[scale=0.6]{LogoFaCyT.jpg}
+\end{figure}
+ \vspace{-2,5cm}
+Universidad de Carabobo \\ Facultad Experimental de Ciencias y
+Tecnolog\'{\i}a \\ Departamento de Matem\'aticas\\ Asignatura:
+M\'etodos Num\'ericos II|\\
+\vspace{1cm} {\it\bf\large Tarea Computacional I}\\
+\end{center}
+
+\begin{enumerate}
+
+\item Implementaci\'on de la Factorizaci\'on $LU$
+
+Implementar cada una de los siguientes algoritmos del \'Algebra Lineal en MATLAB empleando solo 
+comandos b\'asicos (no emplear las funciones intr\'insecas que posee MATLAB). Debe usar las 
+cabeceras de funci\'on dada para cada una.
+
+\begin{enumerate}
+   \item Factorizaci\'on $LU$ sin pivoteo, sin embargo el algoritmo debe verificar por pivote cero 
+y finalizar emitiendo el respectivo mensaje de error. El c\'odigo debe retornar las matrices $L$ y 
+$U$ como una sola matriz con la idea de ahorrar espacio en memoria.
+
+\begin{tt}
+function LU = LUFactorization(A)\\
+\% Uso: LU = LUFactorization(A)\\
+\% Computa la factorizaci\'on LU de la matriz A\\
+\% y retorna la matriz factorizada
+\end{tt}
+
+\item Sustituci\'on Progresiva. Esta rutina debe tomar como dato de entrada la matriz resultante de 
+la Factorizaci\'on $LU$ de la parte ({\it a})
+
+\begin{tt}
+   function y = ForwardSubstitution(LU, b)\\
+\% Uso: y = ForwardSubstitution(LU, b)\\
+\% Lleva a cabo substituci\'on progresiva usando la parte\\ 
+\% triangular inferior unitaria de la matriz LU.
+\end{tt}
+
+\item Sustituci\'on Regresiva. Esta rutina debe tomar como dato de entrada la matriz resultante de 
+la Factorizaci\'on $LU$ de la parte ({\it a})
+
+\begin{tt}
+function x = BackwardSubstitution(LU, y)
+\% Uso: y = ForwardSubstitution(LU, b)\\
+\% Lleva a cabo substituci\'on regresiva usando la parte\\ 
+\% triangular superior de la matriz LU.
+\end{tt}
+
+\item Use el archivo {\tt Verify.m} para probar sus c\'odigos. Seleccione un entero $n$ entre 100 y 
+200, ejecute {\tt VerifyLU(n)}  e indique para $n$ el error obtenido.
+
+\end{enumerate}
+
+\item Tridiagonal $LU$
+
+Considere la siguiente matriz tridiagonal
+$$
+A_t = \left(\begin{array}{ccccccc}
+               b_1 & c_1 & 0 & & \cdots & 0 & 0 \\
+               a_2 & b_2 & c_2 & & & 0 & 0 \\
+               0 & a_3 & b_2 & c_2 & & 0 & 0 \\
+                &  & \ddots &\ddots &\ddots &  &  \\
+                 & &  & \ddots &\ddots &\ddots &   \\
+                0 & 0 & 0 & & a_{n-1} & b_{n-1} & c_{n-1} \\
+                0 & 0 & 0 & &  & a_{n} & b_{n} 
+            \end{array}\right)_{n \times n}
+$$
+Tales sistemas pueden encontrarse en distintas aplicaciones como por ejemplo Interpolaci\'on por 
+Splines. Asumiendo que no hay necesidad de pivoteo, entonces los factores de $A_t=LU$ tienen la 
+forma
+$$
+L = \left(\begin{array}{cccccc}
+             1 & 0 &  & \cdots & 0 & 0 \\
+             l_2 & 1 & 	0 &  & 0 & 0\\
+             0 & l_3 & 1 &  & & 0\\
+             & & \ddots & \ddots & & \\
+             0 & 0  & & & 1 & 0\\
+             0 & 0 & & & l_n & 1             
+          \end{array}\right) \qquad
+U = \left(\begin{array}{cccccc}
+             d_1 & u_1 &  & \cdots & 0 & 0 \\
+             0 & d_2 & 	u_2 &  &  & 0\\
+             0 & 0 & d_3 & u_3 & & \\
+             & &  & \ddots & \ddots &  \\
+             0 & 0  & & & d_{n-1} & u_{n-1}\\
+             0 & 0 & & & 0 & d_n             
+          \end{array}\right)
+$$
+\begin{enumerate}
+   \item Derive la relaci\'on de recurrencia para $l_i$, $d_i$ y $u_i$ en t\'erminos de $a_i$, 
+$b_i$ y $c_i$. Explique su trabajo.
+
+
+\item Implemente la rutina que permita resolver $A_tx=b$ usando la descomposici\'on $LU$ derivada 
+en su trabajo. La rutina debe tomar como argumentos 4 arreglos unidimensionales, tres 
+correspondientes a las diagonales de $A_t$ y el otro correspondiente al vector de t\'erminos 
+independientes.
+\begin{tt}
+   function x = TriDiagonalSolve(a, b, c, k)\\
+\% Uso: x = TriDiagonalSolve(a, b, c, k)\\
+\% Resuelve el sistema Ax = k, donde\\
+\% A es una matriz tridiagonal. Los vectores columna\\
+\% a, b, c describen las entradas  de lasdiagonales de\\ 
+\% la matriz. a(1) y c(n) son ignorados.
+\end{tt}
+
+\item ?`C\'ual es la complejidad computacional de su algoritmo?, Explique.
+
+\item Use el archivo {\tt VerifyTridiagonalLU.m} para probar sus c\'odigos. Seleccione un entero 
+$n$ entre 1000 y 2000, ejecute {\tt VerifyTridiagonalLU(n)}  e indique para $n$ el error obtenido.
+\end{enumerate}
+
+\item Sistemas Lineales para Ecuaciones en Diferencia. 
+
+Sistemas de ecuaciones lineales frecuentemente se generan ecuaciones diferenciales en 
+computaci\'on. Considere el siguiente problema de ecuaciones diferenciales:
+\begin{eqnarray}
+   u'' = f(t)
+   u(0) = 0
+   u(1) = 0
+\end{eqnarray}
+
+con 
+$$
+f(t) = 16\pi\cos(8\pi t^2)-256\pi^2t^2\sin(8\pi t^2), \qquad t \in [0,1]
+$$
+
+La soluci\'on exacta a este problema est\'a dada por $u(t) = \sin(8\pi t^2)$. Aproximando la 
+soluci\'on exacta $u$ a este sistema en un n\'umero discreto de puntos, se puede construir una 
+aproximaci\'on $\{v_i\}_{i=0}^N$ tal que $v_0=u_0=0$ cuando $t_0=0$ y $v_N=u_N=0$ cuando $t_N=1$. 
+Aplicando una aproximaci\'on en Diferencia Finitas dada por:
+$$
+u_i'' \approx \dfrac{v_{i-1}-2v_i+v_{i+1}}{h^2}
+$$
+donde $h$ representa el tama\~no de paso ($h=1/N$). Se define el tiempo en cada punto como $t_i = 
+i/N$. Con esta aproximaci\'on se genera un sistema tridiagonal $(N-1)\times(N-1)$ de la forma:
+$$
+\left(\begin{array}{cccccc}
+         -2 & 1 & 0 & \cdots & 0 & 0\\
+         1 & -2 & 1 & \cdots & 0 & 0\\
+         0 & 1 & -2 & \cdots & 0 & 0\\
+         \vdots & \vdots & \vdots & \ddots & \vdots& \vdots \\
+         0 & 0 & 0 & \cdots & -2 & 1\\
+         0 & 0 & 0 & \cdots & 1 & -2
+      \end{array}\right)\left(\begin{array}{c}
+                                 v_1\\
+                                 v_2\\
+                                 v_3\\
+                                 \vdots\\
+                                 v_{N-2}\\
+                                 v_{N-1}
+                              \end{array}\right) = h^2\left(\begin{array}{c}
+                                 f(t_1)\\
+                                 f(t_2)\\
+                                 f(t_3)\\
+                                 \vdots\\
+                                 f(t_{N-2})\\
+                                 f(t_{N-1})
+                              \end{array}\right)-\left(\begin{array}{c}
+                                 v_0\\
+                                 0\\
+                                 0\\
+                                 \vdots\\
+                                 0\\
+                                 v_{N}
+                              \end{array}\right)
+$$
+donde $v_0$ y $v_N$ son definidos en el problema. Sea $n=N-1$ el \'umero de inc\'ognitas en el 
+sistema lineal
+\begin{enumerate}
+   \item Resolver este sistema usando la descomposici\'on $LU$ y Sustituci\'on progresiva y 
+regresiva con $n=10, 100, 200, 400,800$. Determine el cantidad de tiempo computacional requerido 
+para cada $n$ (Use {\tt tic} y {\tt toc} para este prop\'osito y {\tt format long} para ver la 
+cantidad de d\'igitos suficientes). Compare los resultados en cada paso con la soluci\'on exacta en 
+la misma gr\'afica tanto para $n=10$ y $n=400$. Explique que observa.
+
+\item  Resolver este sistema usando la descomposici\'on $LU$ para sistemas tridiagonales con $n=10, 
+100, 200, 400, 800$. Determine el cantidad de tiempo computacional requerido 
+para cada $n$. Compare los resultados en cada paso con la soluci\'on exacta en 
+la misma gr\'afica tanto para $n=10$ y $n=400$.
+
+\item Compare los resultados obtenidos en los dos items anteriores. ?`C\'ual algoritmo provee una 
+soluci\'on del sistema m\'as r\'apido?. Muestre una tabla comparativa de los tiempos de ejecuci\'on 
+para cada valor de $n$. Los resultados coinciden con la complejidad computacional de cada 
+algoritmo? 
+\end{enumerate}
+\item Sea $A$ la matriz definida por los elementos $a_{i,j}$ tales que
+$$
+a_{i,j} = \frac{1}{i+j-1}
+$$
+
+\begin{enumerate}
+ \item Elabore en matlab una funci\'on que tenga como par\'ametro de entrada un valor $n$ y como par\'ametro de salida la matriz $A$.
+ \item En un \textit{script} defina un ciclo con el contador $k = 2 : 25$, y genere la matriz de orden $k \times k$ seg\'un la rutina
+anterior y calcule su factorizaci\'on $QR$. De ser el resultado totalmente preciso, se deber\'ia tener que $QQ^t =I_k$. Para medir
+la precisi\'on del algoritmo, calcule el valor $err(k)= \|I_k - QQ^t \|$. Al salir del ciclo debe tener todos los valores del error
+almacenados en el vector $err$.
+\item Aplique el item anterior obteniendo la factorizaci\'on $QR$ mediante Gram-Schmidt, Householder y Givens. Obteniendo de esta manera
+tres vectores de errores (uno por cada m\'etodo).
+\item Refleje gr\'aficamente los resultados obtenidos, para mayor claridad agregue una leyenda al gr\'afico e interprete los resultados
+obtenidos.
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+

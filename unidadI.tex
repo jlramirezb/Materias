@@ -2632,4 +2632,145 @@ $$
   \end{array}\right)
   \end{eqnarray}   
 \end{frame}   
+%%%%%%
+\section{Sistemas Sobredeterminados}
+\begin{frame}{Problemas Sobredeterminados}
+\begin{itemize}
+ \item<1-> Dada  una matriz $A$ real de orden $m \times n$ y un vector $ b \in \mathbb{R}^m$, si $m>n$ se dice que el 
+sistema $Ax=b$ es sobredeterminado.
+\item<2-> Se dice que $\tilde x\in \mathbb{R}^n$ es una soluci\'on en el sentido de m\'inimos cuadrados del sistema 
+$Ax=b$ si se verifica que:
+\uncover<3->{
+$$
+\|b-A\tilde x\| \leq \|b-Ax\|, \qquad \forall x \in \mathbb{R}^n
+$$}
+\uncover<4->{
+lo que equivale  a que $\tilde x$ es un m\'inimo de la funci\'on real de $n$ variables:
+$$
+x \in \mathbb{R}^n \mapsto f(x) = \sum_{j=1}^n(b_j-(Ax)_j)^2
+$$}
+\end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Sistemas Sobredeterminados}
+Geom\'etricamente, se busca la mejor aproximaci\'on en norma eucl\'idea del vector $b$ al subespacio vectorial 
+$col(A)$. El teorema de la mejor aproximaci\'on establece que la soluci\'on de m\'inimos cuadrados siempre existe y es 
+la proyecci\'on ortogonal de $b$ sobre $col(A)$. As\'i:
+\uncover<2->{
+\begin{block}{}
+ $$
+b-A\tilde x \perp col(A) \Leftrightarrow A^T(b-A\tilde x)=0 \Leftrightarrow A^TA\tilde x = A^Tb
+$$
+\end{block}}
+\end{frame}
+%%%%%%
+\begin{frame}{}
+ Este \'ultimo resultado se puede obtener sin necesidad de argumentos geom\'etricos. De por s\'i, la soluci\'on de 
+m\'inimos cuadrados $\tilde x$ es un m\'inimo de $f$ y por lo tanto el gradiente de esta funci\'on debe anularse en 
+$\tilde x$
+\uncover<2->{
+\begin{block}{}
+\begin{eqnarray}
+ f(x)  & = & \|b-Ax\|_2^2 = (b-Ax)^T(b-Ax) \nonumber\\
+ & = & x^TA^TAx - 2x^TA^Tb+b^Tb  \Rightarrow \nabla f(x) =2(A^TAx-A^Tb)\nonumber
+\end{eqnarray}\end{block}}
+\end{frame}
+%%%%%
+\begin{frame}{}
+ \begin{block}{Teorema: Ecuaciones normales de Gauss}
+ Sea $A$ una matriz real $m \times n$ y $b \in \mathbb{R}^m$. Las siguientes afirmaciones son equivalentes:
+ \begin{itemize}
+  \item<2-> $\tilde x$ es una soluci\'on en el sentido de los m\'inimos cuadrados del sistema $Ax=b$
+  \item<3-> $\tilde x$ es soluci\'on del sistema $A^TAx=A^Tb$ (ecuaciones normales de Gauss)
+  \item<4-> $b-A\tilde x$ es ortogonal a $col(A)$
+  \end{itemize}
+ \end{block}
+\end{frame}
+%%%%%%
+\begin{frame}{}
+ \begin{itemize}
+  \item Las ecuaciones normales tienen soluci\'on \'unica  s\'i y s\'olo si todas las columnas de $A$ son $l.i.$; es 
+decir, si $rango(A) = n$.
+  \item<2-> En este caso, adem\'as, la matriz $A^TA$ es \textcolor{red}{sim\'etrica y definida positiva}, de donde, las 
+ecuaciones normales tienen soluci\'on \'unica  y se pueden utilizar los m\'etodos  estudiados para estas matrices, en 
+particular, el \textcolor{red}{m\'etodo de Cholesky}.
+ \end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}
+ Para resolver las ecuaciones normales se puede proceder del siguiente modo:
+ \begin{enumerate}
+  \item<2-> Calcular la matriz $A^TA$ y el vector $A^Tb$.
+  \item<3-> Obtener la matriz $L$ de la factorizaci\'on de Cholesky: $A^TA = LL^T$.
+  \item<4-> Resolver el sistema triangular inferior $Ly = A^Tb$.
+  \item<5-> Resolver el sistema triangular superior $L^Tx = y$.
+ \end{enumerate}
+\end{frame}
+%%%%%%
+\begin{frame}{Ejercicio:}
+La solubilidad del $NO_3K$ respecto de la temperatura medida se representa en la tabla
+\begin{center}
+ \begin{tabular}{c|ccccc}
+ T & 40 & 60 & 80 & 100 & 120 \\\hline
+ s & 27 & 39 & 50 & 60 & 69
+\end{tabular}
+\end{center}
+\begin{itemize}
+ \item Encontrar una relaci\'on parab\'olica entre $s$ y $T$ usando el procedimiento anterior.
+ \item Realice una peque\~na variaci\'on de $+0.1$ en $s_5$ y observe los nuevos resultados.
+\end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{}
+\begin{itemize}
+ \item Desde el punto de vista computacional, resolver el problema de m\'inimos cuadrados con las ecuaciones normales 
+es eficiente: para formar $A^TA$ y $A^Tb$ se necesitan aproximadamente $mn^2/2$ operaciones y resolver los dos sistemas 
+triangulares implica aproximadamente $n^2$ operaciones.
+\item<2-> Desafortunadamente, el uso de las ecuaciones normales presenta el problema de estabilidad num\'erica, dado 
+que el n\'umero de condici\'on de la matriz $A^TA$ es el cuadrado del n\'umero de condici\'on de $A$. Consecuentemente, 
+la matriz de la ecuaci\'on normal est\'a seriamente mal condicionada si la matriz A misma est\'a ligeramente mal 
+condicionada.
+\item<3-> El mal condicionamiento de la matriz de la ecuaci\'on normal asociada puede conducir no solo a una 
+aproximaci\'on no precisa de la soluci\'on calculada de las  ecuaciones normales, sino tambi\'en a una perdida de 
+informaci\'on cuando el rango num\'erico de $A$ es marginal.
+\end{itemize}
+\end{frame}
+%%%%%%%
+\begin{frame}{}
+  \begin{itemize}
+   \item<1-> Una soluci\'on \'optima de las ecuaciones normales se obtiene de la siguiente manera:
+   \item<2-> Se desea resolver el siguiente problema de m\'inimos cuadrados:
+   \begin{block}{}        
+   $$A^tAx = A^tb$$
+  \end{block}
+   \item<3-> Si las columnas de $A$ son independientes, la soluci\'on de las ecuaciones normales es \'unica, como se puede ver aplicando la factorizaci\'on $QR$ a $A$.
+   \begin{block}{}
+   \begin{eqnarray}
+    \nonumber (QR)^t(QR)x &=& (QR)^tb\\
+    \nonumber R^tQ^tQRx &=& R^tQ^tb\\
+    \nonumber Rx &=& Q^tb
+  \end{eqnarray}
+   \end{block}
+  \end{itemize}
+\end{frame}
+%%%%%%%
+\begin{frame}{Ejercicio}
+  Sea el conjunto de datos dado en la siguiente tabla
+  \scriptsize{
+  $$  
+  \begin{array}{c|ccccccccccc}
+   t & 0.0 & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 1.0\\\hline
+   y & 0.000 & 0.112 & 0.223 & 0.329 & 0.428 & 0.520 & 0.604 & 0.678 & 0.742 & 0.797 & 0.843
+  \end{array}
+  $$}
+  \begin{enumerate}
+   \item Encuentre y grafique la mejor recta, la mejor par\'abola y la mejor c\'ubica que ajuste a los datos dados, y encuentre el m\'aximo error cometido en cada caso.
+   \item Encuentre un ajuste usando la ecuaci\'on
+   $$
+   y(t) = c_1 + e^{-t^{2}}(c_2+c_3z+c_4z^{2}+c_5z^{3})
+   $$
+   donde $z=\frac{1}{1+t}$. ?`Cu\'al es el m\'aximo error cometido?. Comp\'arela gr\'aficamente con la c\'ubica obtenida en el paso anterior.
+  \end{enumerate}
+  \end{frame}
+  
 \end{document}
