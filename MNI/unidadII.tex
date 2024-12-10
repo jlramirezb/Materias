@@ -1414,5 +1414,120 @@ p = \frac{1}{2}(1+\sqrt{5})
 $$}
   \end{block}
 \end{frame}
+%%%%
+\section{Aceleraci\'on de la convergencia de los m\'etodos iterativos: m\'etodo $\Delta^2$ de Aitken}
+\frame{
+\frametitle{Aceleraci\'on de la convergencia de los m\'etodos iterativos: m\'etodo $\Delta^2$ de Aitken}
+Cuando el m\'etodo de resoluci\'on de ecuaciones no lineales que se est\'e empleando para resolver una ecuaci\'on
+no lineal no posea convergencia, puede utilizarse la estrategia conocida con el nombre de m\'etodo delta-dos
+($\Delta^2$) de A. C. Aitken para mejorar su velocidad de convergencia. 
+\begin{block}{Definici\'on}
+ Dada una sucesi\'on $\{x_i\}_i^{\infty}$ se denomina diferencia progresiva de primer orden en el punto $x_i$, y
+se denota por $\Delta x_i$, al valor:
+$$
+\Delta x_i = x_{i+1} - x_i \qquad i\geq 0
+$$
+\end{block}
+}
+\frame
+{
+An\'alogamente se define la diferencia progresiva de orden $m$ en el punto $x_i$, y se denota por $\Delta^m x_i$, mediante:
+$$
+\Delta^m x_i = \Delta(\Delta^{m-1} x_i) \qquad i\geq0,m\geq2
+$$
+En concreto la diferencia progresiva de orden 2 ser\'a, seg\'un la definici\'on anterior:
+$$
+\Delta^2 x_i = \Delta(\Delta x_i) = \Delta x_{i+1} - \Delta x_i = x_{i+2} -2x_{i+1} +x_i, \qquad i\geq 0
+$$
+\begin{block}{Teorema}
+ Sea $\{x_i\}_{i=0}^{\infty}$ una sucesi\'on convergente hacia $x^*$, y sea $\{y_i\}_{i=0}^{\infty}$ una nueva sucesi\'on generada a partir de la primera mediante:
+$$
+y_i = x_i - \frac{(\Delta x_i)^2}{\Delta^2x_i} = \frac{x_ix_{i+2}-x_{i+1}^2}{x_{i+2} -2x_{i+1} +x_i}, \qquad i\geq0
+$$
+entonces la sucesi\'on $\{y_i\}_{i=0}^\infty$ converge hacia $x^*$. 
+\end{block}
+}
 
+% %%%%
+\begin{frame}[fragile]
+Dada la ecuaci\'on $x = g(x)$, el indicador de precisi\'on $tol$, un valor m\'aximo de iteraciones a realizar ($maxiter$) y un punto $p_0$ 
+\small
+\begin{verbatim}
+ Entrada: g,p0,tol,maxiter
+ Salida: Solucion aproximada o mensaje de error
+     p1=g(p0)
+     Mientras (i <= maxiter)
+           p2=g(p1)
+           p=p2 - (p2-p1)^2/(p2-2p1+p0)           
+           i = i + 1;
+           si |p-p0| < tol entonces
+              salida(p)
+              PARAR
+           fsi
+           p0=p1
+           p1=p2
+     fmientras
+ salida: “fracaso busqueda # max de iters excedido”
+\end{verbatim}
+\end{frame}
+% %%%%
+\section{M\'etodo de Steffensen}
+\frame
+{
+\frametitle{M\'etodo de Steffensen}
+Todo lo anterior puede utilizarse para elaborar un algoritmo que mejore la velocidad de convergencia de los m\'etodos de
+orden de convergencia inferior a 2. Este algoritmo conocido tambi\'en con el nombre de m\'etodo de Steffensen,
+se muestra a continuaci\'on:
+}
+%%%%
+\begin{frame}[fragile]
+Dada la ecuaci\'on $x = g(x)$, el indicador de precisi\'on $tol$, un valor m\'aximo de iteraciones a realizar
+($maxiter$) y un punto $p_0$ 
+
+\small
+\begin{verbatim}
+ Entrada: g,p0,tol,maxiter
+ Salida: Solucion aproximada o mensaje de error
+     Mientras (i <= maxiter)
+           p1=g(p0)
+           p2=g(p1)
+           p=p2 - (p2-p1)^2/(p2-2p1+p0)
+           i = i + 1;
+           si |p-p0| < tol entonces
+              salida(p)
+              PARAR
+           fsi
+           p0=p
+     fmientras
+ salida: “fracaso busqueda # max de iters excedido”
+\end{verbatim}
+\end{frame}
+% %%%%
+\frame{
+\frametitle{Caracter\'isticas}
+\begin{itemize}
+ \item<1-> El m\'etodo es visto como m\'etodo de punto fijo $x= g (x)$ donde $g$ es indeterminada para $x= \alpha$ (punto fijo).
+ \item<2-> Se puede calcular su orden de convergencia calculando $g'(\alpha)$. Pero el c\'alculo directo lleva a una indeterminaci\'on del tipo $0/0$ y se procede a resolver por otras t\'ecnicas. 
+ \item<3-> Se usa un punto inicial $x_0$, luego se calcula $x_1$ a partir de una iteraci\'on representada por $g(x_0)$ y luego $x_2$ calculado a partir de otra iteraci\'on $g(x_1)$
+\end{itemize}
+}
+% %%%%
+\frame{
+\frametitle{Ventajas}
+ 
+\begin{itemize}
+ \item<1-> Presenta una convergencia r\'apida hacia la ra\'iz y no requiere de evaluaci\'on de las derivadas.
+ \item<2-> El proceso de iteraci\'on solo necesita un punto inicial $x_0$
+ \item<3-> Se usa para acelerar la funci\'on de orden lineal, ya que converge la misma en una cuadr\'atica
+\end{itemize}
+}
+%%%%
+\frame{
+\frametitle{Desventajas}
+\begin{itemize}
+ \item<1-> Requiere que $g'(\alpha) \neq 0$, condici\'on que es equivalente a requerir que la multiplicidad de la ra\'iz sea uno. Como consecuencia se puede esperar que el m\'etodo acelere de cuadr\'atico a la convergencia lineal.
+ \item<2-> La debilidad fundamental del m\'etodo es la elecci\'on del valor inicial $x_0$. Si el valor no se aproxima a la soluci\'on, el m\'etodo puede fallar y la secuencia de los valores divergen al infinito.
+ \item<3-> Tarda mucho a la hora de realizar las evaluaciones por medio de programas de c\'omputo.
+\end{itemize}
+}
 \end{document}

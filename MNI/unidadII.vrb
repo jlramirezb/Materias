@@ -1,18 +1,20 @@
-\frametitle{M\'etodo de Falsa Posici\'on o Regula Falsi.}
-  \begin{itemize}
-    \item<1-> Al igual que para el m\'etodo de bisecci\'on se tienen tres posibilidades:
-      \begin{itemize}
-        \item[i)]<2-> $f (c) = 0$
-        \item[ii)]<3-> $f (a)f (c) < 0$
-        \item[iii)]<4-> $f (c)f (b) < 0$.
-      \end{itemize}
-      \item<5-> Si $f (c) = 0$, entonces $c$ es un cero de $f$.
-      \item<6-> Si $f (a)f (c) < 0$, entonces hay un cero de $f$ en $[a; c]$.
-      \item<7-> Si $f (c)f (b) < 0$, entonces hay un cero de $f$ en $[c; b]$.
-      \item<8-> Lo anterior sugiere un proceso iterativo que se concreta tomando
-      \begin{block}{}
-      $$
-      c_n = \frac{a_nf(b_n)-b_nf(a_n)}{f(b_n)-f(a_n)} \quad\forall n=0,1,2,\ldots
-      $$
-      \end{block}
-    \end{itemize}
+Dada la ecuaci\'on $x = g(x)$, el indicador de precisi\'on $tol$, un valor m\'aximo de iteraciones a realizar
+($maxiter$) y un punto $p_0$
+
+\small
+\begin{verbatim}
+ Entrada: g,p0,tol,maxiter
+ Salida: Solucion aproximada o mensaje de error
+     Mientras (i <= maxiter)
+           p1=g(p0)
+           p2=g(p1)
+           p=p2 - (p2-p1)^2/(p2-2p1+p0)
+           i = i + 1;
+           si |p-p0| < tol entonces
+              salida(p)
+              PARAR
+           fsi
+           p0=p
+     fmientras
+ salida: “fracaso busqueda # max de iters excedido”
+\end{verbatim}
