@@ -1,0 +1,118 @@
+%------------------------------------------------------------------------
+% Prueba Matematica I
+%
+%       Realizado por:
+%       Jose Luis Ramirez
+%       Lennys Bello
+%                                                Actualizado: Noviembre 2007
+% ------------------------------------------------------------------------
+\documentclass[12pt,letterpaper]{article}
+\usepackage[left=1.0cm,top=1.0cm,right=1.0cm,bottom=1.0cm]{geometry}
+%\usepackage[activeacute,spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx, color}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsxtra}
+\usepackage{amsgen}
+\usepackage{amscd}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{latexsym}
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[ht]{3cm}
+\includegraphics[width=2.5cm]{Logouc.jpg}
+\end{minipage}
+\begin{minipage}{10cm}
+\centering\textbf{Universidad de Carabobo.\\
+ Facultad de Ciencias y Tecnolog\'ia.\\
+\'Departamento de Matem\'atica.\\
+ M\'etodos Num\'ericos I.\\
+}
+\end{minipage}
+\begin{minipage}[ht]{4cm}
+\includegraphics[width=2.5cm]{facyt.jpg}
+\end{minipage}
+
+\begin{center}
+\underline{\textbf{Asignaci\'on 2}}\\[7pt]
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+
+\item Aplique el m\'etodo de bisecci\'on, encuentre una ra\'iz de:
+$$
+f(x) = x^8 - 36x^7 + 546x^6 - 4536x^5 + 22449x^4 - 67284x^3 + 118124x^
+2 - 109584x + 40320
+$$
+en el intervalo $[5.5; 6.5]$. Cambie -36 por -36,001 y repita el ejercicio y comente los resultados.
+
+\item Reescriba el algoritmo de bisecci\'on si se modifica as\'i: Se secciona en tres el intervalo de estudio en cada
+iteraci\'on (donde se encuentra la ra\'iz), se elige de los tres subintervalos el que contiene la ra\'iz y se asigna
+como aproximaci\'on el punto medio de este. Aplique su algoritmo al problema anterior y compare los
+resultados obtenidos, comente acerca de ello.
+
+\item Demuestre que al usar el M\'etodo de Newton-Raphson, para aproximar el reciproco de
+un n\'umero $S$, $S > 0$ se obtiene la f\'ormula iterativa $x_{k+1} = x_k(2 - S\cdot x_k); k = 0; 1; \ldots$. Calcular $1/17$ usando el algoritmo.
+
+\item La suma de dos n\'umeros $a$ y $b$ es 21.2. Si a cada n\'umero se le a\~nade la ra\'iz cuadrada de s\'i mismo (es
+decir, $a + \sqrt{a}$), el producto de las dos sumas es 170.73. Usando el M\'etodo de Newton o el de la Secante, determine
+los dos n\'umeros dentro de una tolerancia de $10^{-4}$. Considere $x_0 = 0$ y/o $x_1 = 1$ como valores
+iniciales. Ayuda: Conforme un sistema de dos ecuaciones con dos inc\'ognitas y red\'uzcalo a una ecuaci\'on
+con una inc\'ognita.
+
+\item \begin{enumerate}
+    \item Use el M\'etodo de Newton para hallar el m\'inimo de la siguiente funci\'on polin\'omica
+    $$
+    f(x) = 230x^4 + 18x^3 + 9x^2 - 221x - 9
+    $$    
+    Asigne el resultado a la variable $x_N$. Determine las funciones necesarias a mano.
+    \item Use el M\'etodo de la Secante para aproximar las ra\'ices de $f(x)$ sobre los intervalos $[-2, x_N]$ y
+    $[x_N, 2]$ (use los extremos de estos intervalos como aproximaciones iniciales). Indique la utilidad de
+    hallar el m\'inimo de la funci\'on para dividir el int\'ervalo.
+\end{enumerate}
+
+\item Estudiemos la aplicaci\'on de la iteraci\'on de punto fijo al c\'alculo de las ra\'ices de la funci\'on
+$$
+f(x) = -x^2 + x + \sin(x + 0.15)
+$$
+Para ello:
+ \begin{enumerate}
+  \item Dibuje la gr\'afica de $f$ y localice la ra\'iz de menor valor absoluto.Aplique la iteraci\'on de punto fijo a $g(x) = x - f(x)$ para aproximar esa ra\'iz con tolerancia=$10^{-15}$. Dibuje la
+ gr\'afica de los valores $x^{(k)}$. ?`Hay convergencia despu\'es de 100 iteraciones?
+
+ \item Aplique el siguiente esquema de iteraci\'on para diversos valores de $\alpha \in (-1,1)$ 
+ $$
+ g(x) = x - \alpha f(x)
+ $$
+ para mejorar las propiedades de convergencia. Vuelva a aplicar la iteraci\'on de punto fijo y compare los resultados.
+
+ \item Estudie si la misma iteraci\'on de punto fijo permite hallar la menor ra\'iz en m\'odulo de $f$.
+
+ \item Aplique el algoritmo $\Delta^2$ de Aitken para acelerar la convergencia de la sucesi\'on de aproximaciones obtenida.
+Compare la velocidad de convergencia en cada caso.
+ \end{enumerate}
+\item Considere la ecuaci\'on:
+\begin{equation}\label{eq1}
+ 2x^3 = 3x+4
+\end{equation}
+
+\begin{enumerate}
+ \item Demostrar que la funci\'on $f(x) = 2x^3 - 3x - 4$ tiene una \'unica ra\'iz real $\alpha$ en $(1,2)$.
+ \item ?`Se puede usar bisecci\'on para hallar una aproximaci\'on a $\alpha$?
+ \item Convertir el problema de calcular la ra\'iz $\alpha$ de la ecuaci\'on (\ref{eq1}) en un problema de P.F. en el intervalo $[1,2]$. Ensayar por lo menos cuatro funciones de iteraci\'on en $[1,2]$.
+ \item Demostrar que la funci\'on  $g(x) = \sqrt[3]{\dfrac{3x+4}{2}}$  es una funci\'on de iteraci\'on para el problema. Demuestre que:
+ \begin{enumerate}
+  \item $1 < \sqrt[3]{\dfrac{7}{2}}\leq g(x) \leq \sqrt[3]{5} < 2 \quad \forall x \in [1,2]$
+  \item $\dfrac{1}{\sqrt[3]{200}} \leq g'(x) \leq \dfrac{1}{\sqrt[3]{98}} \quad \forall x \in [1,2]$
+  \item $g(x)$ cumple las hip\'otesis del T.P.F. en $[1,2]$. Concluir. Calcular 3 iteraciones de P.F.
+ \end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{document}
