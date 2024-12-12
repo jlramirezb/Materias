@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsfonts,amssymb,amsthm,amsmath,color,graphicx,bm,fancyhdr}
+\usepackage[left=1cm,right=1cm,bottom=1cm,top=1cm]{geometry}
+\pretolerance=2000 \tolerance=3000 \linespread{1.0}
+\pagestyle{fancy}
+\newcommand{\er}{\ensuremath{I\!\!R}}
+\newcommand{\sen}{\ensure{sen}}
+
+
+\begin{document}
+
+    \thispagestyle{empty}
+
+    %\textcolor{blue}
+
+    \begin{center}
+        \begin{figure}[!h]
+        \hspace{2cm}
+        \includegraphics[scale=1]{LogoUC.jpg}
+        \label{fig:hoo}
+        \hspace{11cm}\includegraphics[scale=0.3]{FaCyT.jpg}
+        \end{figure}
+        \vspace{-2,5cm}
+        Universidad de Carabobo \\ Facultad Experimental de Ciencias y
+        Tecnolog\'{\i}a \\ Departamento de Matem\'{a}ticas\\ Asignatura:
+        M\'etodos Num\'ericos I\\
+        \vspace{1cm} {\it\bf\large Parcial I}\\
+    \end{center}
+
+    \begin{enumerate}
+        \item Demostrar que si el n\'umero conocido $\tilde x$ aproxima al desconocido $x$ con $|x - \tilde x|<\varepsilon$, 
+        entonces $\displaystyle\frac{1}{\tilde x}$ aproxima a $\displaystyle\frac{1}{x}$ con
+        $$
+        |Error \, relativo| < \displaystyle\frac{\varepsilon}{|\tilde x|}
+        $$
+        \begin{flushright}
+         {\small \it (valor: 3 pts)}
+        \end{flushright}
+
+        \item ?`Con cuantas cifras significativas se puede decir que $p^*$ aproxima a 3000 si se sabe que $2999 < p^*<3001$? 
+        Razone su respuesta. 
+        \begin{flushright}
+         {\small \it (valor: 3 pts)}
+        \end{flushright}
+
+        \item Sea $x_A = -0.9989$. Suponga que dispone de un computador hipot\'etico que utiliza aritm\'etica decimal de 
+redondeo correcto a 4 d\'igitos. Considere las expresiones equivalentes
+$$
+u_A = (1-x_A^2)(1+x_A^2) \mbox{ y } v_A = 1-x_A^4
+$$
+\begin{enumerate}
+ \item ?`Qu\'e valor calcular\'ia dicho computador para $u_A$ y $v_A$?
+ \item ?`Cu\'al de los valores obtenidos en ($a$) es m\'as exacto?
+\end{enumerate}
+\begin{flushright}
+ {\small \it (valor: 3 pts)}
+\end{flushright}
+
+\item Sea $I_{n}={\displaystyle \int_{0}^{1}\frac{x^{n}}{x+4}dx}$
+
+\begin{enumerate}
+\item Probar que $I_{0}=\ln(5/4)$, que $0\leq I_{n}\leq I_{0}$ y que se
+verifica $I_{n+1}+4I_{n}=\frac{1}{n+1}$. Es decir, $I_{n+1}=-4I_{n}+\frac{1}{n+1}$.
+\begin{flushright}
+ {\small \it (valor: 3 pts)}
+\end{flushright}
+\item Con la ecuaci\'on $I_{n+1}=-4I_{n}+1/(n+1)$, $I_{0}=\ln(5/4)$
+se pretende calcular $I_{n}$, sin embargo al representar en la m\'aquina
+$I_{0}$ se almacena $\tilde{I_{0}}=I_{0}-\varepsilon_{0}$ (con lo
+que se generar\'a una sucesi\'on $\tilde{I_{n}}\diagup\tilde{I}_{n+1}=-4\tilde{I_{n}}+1/(n+1)$).
+Suponiendo que ese es el \'unico error que se comete en el proceso,
+calcule el error $\varepsilon_{n}$ en el paso $n$ ($\varepsilon_{n}=I_{n}-\tilde{I_{n}}$)
+en funci\'on de $n$ y $\varepsilon_{0}$
+\begin{flushright}
+ {\small \it (valor: 3 pts)}
+\end{flushright}
+\item Si $\varepsilon_{0}\approx10^{-6}$ y $n=12$, estime $\varepsilon_{12}$.
+?`Qu\'e opina de este m\'etodo num\'erico para calcular $I_{12}$?
+\begin{flushright}
+ {\small \it (valor: 2 pts)}
+\end{flushright}
+\end{enumerate}
+
+\item Si se utiliza la estrategia de redondeo correcto, ?`cu\'al es el n\'umero de m\'aquina del 
+sistema $F(4, -10, 10, 10)$ que se obtiene del n\'umero que aproxima al n\'umero $\pi$?. ?`Y cu\'al 
+ser\'ia el n\'umero de m\'aquina que aproximar\'ia a $\pi^4$?. Esta 
+m\'aquina solo realiza las operaciones elementales $+,-,\times,\div$
+\begin{flushright}
+ {\small \it (valor: 3 pts)}
+\end{flushright}
+    \end{enumerate}
+\end{document}
