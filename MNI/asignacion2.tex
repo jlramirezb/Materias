@@ -114,5 +114,35 @@ Compare la velocidad de convergencia en cada caso.
   \item $g(x)$ cumple las hip\'otesis del T.P.F. en $[1,2]$. Concluir. Calcular 3 iteraciones de P.F.
  \end{enumerate}
 \end{enumerate}
+\item Diversos cables, como los de tel\'efono, l\'ineas el\'ectricas o TV por cable, suelen colgarse de postes de servicios p\'ublicos.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Screenshot_219.png}
+    \caption{Cable colgando de un poste.}
+\end{figure}
+El cable tiene un peso uniforme $w$ (en Newtons/metro) por unidad de longitud. A partir del equilibrio de fuerzas en las direcciones 
+$x$ y $y$, se puede derivar la siguiente ecuaci\'on diferencial para la altura 
+$y$ del cable en cada punto $x$:
+$$
+\dfrac{d^2y}{dx^2} = \dfrac{w}{T}\sqrt{1+\left(\dfrac{dy}{dx}\right)^2}
+$$
+Donde $T$ es la fuerza de tensi\'on a lo largo del cable (en Newtons).
+
+La soluci\'on de esta ecuaci\'on diferencial es:
+$$
+y = \dfrac{T}{w}\cosh\left(\dfrac{wx}{T}\right) + y_{min}-\dfrac{T}{w}
+$$
+Donde $\cosh(x)$ es el coseno hiperb\'olico ($cosh(x) = \dfrac{e^x + e^{-x}}{2}$).
+\begin{itemize}
+    \item Debe escribir un script en Matlab para calcular la tensi\'on de tensi\'on 
+    $T$ en un cable tendido entre dos postes de altura 
+    $y$ en las posiciones $-x$ y $+x$ en la dirección horizontal. El programa debe garantizar que el cable est\'e a una altura m\'inima de 
+    $y_{min}$ por encima del suelo.
+    \item Despu\'es de calcular esta tensi\'on, usa la ecuaci\'on dada para dibujar un gr\'afico de los valores de la altura del cable entre los dos postes.
+    \item No es necesario verificar la validez de las entradas.
+    \item No necesita usar la ecuaci\'on diferencial dada en la introducci\'on para resolver la tarea.
+    \item Pruebe su programa con diferentes entradas. Ejemplo: para $x=50$, $y=15$, $y_{min}=8$ y 
+    $w=8$, la tensi\'on $T$ debe ser aproximadamente 1258.
+\end{itemize}
 \end{enumerate}
 \end{document}

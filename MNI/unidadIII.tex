@@ -1,0 +1,328 @@
+\documentclass{beamer}
+\mode<presentation>
+\usepackage{amssymb,textcomp}
+%\usepackage{beamerthemesplit}
+\usepackage{beamerthemeJuanLesPins}
+\usepackage{verbatim}
+\usepackage{algorithm2e}
+\usefonttheme{serif}
+\title{Unidad III: Aproximaci\'on de funciones.}
+\author{Jos\'e Luis Ram\'irez B.}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+
+\section{Introducci\'on}
+\begin{frame}[fragile]
+  \frametitle{Motivaci\'on.} 
+  \begin{itemize}
+   \item<1-> En este tema se da una posible respuesta a una situaci\'on
+bastante natural en el \'ambito cient\'ifico.
+    \item<2-> Se Investiga un fen\'omeno que se est\'a desarrollando, se desea estudiarlo, y junto
+con los modelos previos con que se cuente, se pueden tomar
+muestras experimentales.
+    \item<3-> Se tiene una serie de datos a partir de
+mediciones sobre el mismo.
+    \item<4-> Se desea extraer informaci\'on de esos datos.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}[fragile]
+  \frametitle{Motivaci\'on.}
+  Esencialmente podemos tratarlo con:
+\begin{itemize}
+ \item<2-> T\'ecnicas estad\'isticas (que continuar\'an observando el fen\'omeno de un modo discreto, es decir, sobre ese conjunto finito de mediciones).
+ \item<3-> o bien ``intentando recrear/reconstruir el fen\'omeno en su totalidad'' (en un dominio continuo de espacio, tiempo o cualquier otra magnitud), con la funci\'on que represente ``lo mejor posible'' esos datos.
+\end{itemize}
+\end{frame}
+%%%%%
+%%%%
+\frame
+{
+  \frametitle{Motivaci\'on.}
+Las t\'ecnicas que utilizan funciones continuas y se consideran en este curso son de dos tipos:
+\begin{itemize}
+ \item<2-> Interpolaci\'on: c\'alculo de funciones que pasan (``interpolan'' es el t\'ermino matem\'atico) exactamente por los puntos dados.
+ \item<3-> Curvas de ajuste: c\'alculo de funciones aproximadas a los datos que tenemos (en alg\'un sentido, para cierta distancia)
+\end{itemize}
+}
+%%%%%
+\frame{
+%\footnotesize
+\frametitle{Resultados Fundamentales}
+\begin{block}{Polinomio de grado $n$:}
+ $$p_n(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\,(a_n \neq 0)$$
+\end{block}
+ 
+\uncover<2->
+{\begin{block}{Teorema:}
+Si $p_n$ es un polinomio de grado $n \geq 1$, entonces $p_n(x) = 0$ tiene al menos una ra\'iz (posiblemente compleja).
+\end{block}}
+}
+%%%
+\frame{
+  \frametitle{Resultados Fundamentales}
+\uncover<1->{
+\begin{block}{Teorema:}
+Sea $p_n$ un polinomio de grado $n \geq 1$, entonces existen constantes $x_1, x_2,\ldots,x_k$, posiblemente complejas, y enteros positivos $m_1, m_2, \ldots, m_k$, tales que $m_1 + m_2 + \ldots + m_k = n$ verificando:
+$$
+p_n(x) = a_n(x - x_1)^{m_1}(x - x_2)^{m_2}\cdots(x - x_k)^{m_k}
+$$
+\end{block}}
+\uncover<2->{
+\begin{block}{Teorema:}
+Sean $p_n$ y $q_n$ dos polinomios de grado menor o igual que $n$. Si existen $x_1, x_2, \ldots, x_k,$ con $k > n$, n\'umeros distintos tales que $p_n(x_i) = q_n(x_i)$, $i = 1,\ldots , k$, entonces $p_n(x) = q_n(x)$ para todo $x$.
+\end{block}}
+}
+%%%%
+%%%%
+\frame{  
+\frametitle{Evaluaci\'on de polinomios}
+\vspace{-0.5cm}
+\footnotesize{
+\begin{block}{$p_n(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$}
+Se necesitan menos operaciones para evaluarlo en un punto $x_0$ si se escribe:
+$$
+p_n(x) = a_0 + x(a_1 + x(\cdots(a_{n-2} + x(a_{n-1} + xa_n))\cdots))
+$$
+\end{block}}
+
+\footnotesize{
+\begin{block}{Algoritmo de Horner para evaluar $p_n(x_0)$}
+\uncover<2->{
+$$
+\begin{array}{lr}
+b_{n-1} = a_n\\
+b_k = a_{k+1}+x_0b_{k+1} & k=n-2,\ldots,1,0,-1
+\end{array}
+$$
+entonces: $p_n(x_0) = b_{-1}$}
+
+\uncover<3->{
+Adem\'as, si se llama
+$$
+q_{n-1}(x) = b_{n-1}x^{n-1}+b_{n-2}x^{n-2}+\cdots+b_1x+b_0
+$$
+se tiene que:
+$$
+p_n(x) = (x-x_0)q_{n-1}(x)+b_{-1}
+$$
+y por lo tanto
+$$
+p'_n(x_0) = q_{n-1}(x_0)
+$$}
+\end{block}}
+}
+%%%%
+\frame{
+\frametitle{Evaluaci\'on de polinomios}
+\textquestiondown Por qu\'e es Importante el Algoritmo de Horner?
+\begin{itemize}
+ \item<2-> Eficiencia: Es m\'as eficiente que calcular las potencias de 
+ $x_0$ y multiplicar por los coeficientes de forma individual (se usa 
+ menos memoria y tiempo de c\'omputo).
+ \item<3-> Estabilidad: Reduce errores de redondeo en c\'alculos num\'ericos.
+ \item<4-> Derivadas: Permite obtener informaci\'on sobre la derivada del polinomio 
+ en el mismo punto.
+ \item<5-> Divisi\'on Sint\'etica: Est\'a relacionado con el m\'etodo de divisi\'on sint\'etica
+ para polinomios, lo que lo hace muy \'util en el campo del \'algebra y el an\'alisis num\'erico.
+\end{itemize}
+}
+%%%%
+\frame{
+\frametitle{Evaluaci\'on de polinomios}
+En Resumen:
+\begin{itemize}
+\item El algoritmo de Horner es una herramienta poderosa para evaluar polinomios y 
+tambi\'en para obtener informaci\'on sobre su derivada.
+\item Es un m\'etodo eficiente, estable y muy utilizado en diversos campos de las matem\'aticas y la inform\'atica.
+\end{itemize} 
+}
+%%%%%
+\frame{
+\frametitle{Ejemplo: Polinomio de Grado 3}
+
+Tenemos el polinomio:
+$$
+p_3(x) = 2x^3 - 3x^2 + 4x - 1
+$$
+Y queremos evaluarlo en $x_0 = 2$ y tambi\'en calcular $p'_3(2)$.
+}
+\frame{
+\frametitle{Ejemplo: Polinomio de Grado 3}
+\begin{enumerate}
+\item[1.] Aplicaci\'on del Algoritmo de Horner para $p_3(2)$
+
+Recordemos que el algoritmo es:
+\begin{block}{}
+$$
+\begin{array}{l}  
+b_{n-1} = a_n\\
+b_k = a_{k+1} + x_0 \cdot b_{k+1} \text{ para }k = n-2, ..., 1, 0, -1\\
+p_n(x_0) = b_{-1}
+\end{array}
+$$
+\end{block}
+\begin{itemize}
+  \item<2-> Inicializaci\'on:\\
+$b_2 = a_3 = 2$ (coeficiente de $x^3$)
+\item<3-> Iteraci\'on:\\
+$b_1 = a_2 + x_0 \cdot b_2 = -3 + 2 \cdot 2 = 1$ (coeficiente de $x^2$)\\
+$b_0 = a_1 + x_0 \cdot b_1 = 4 + 2 \cdot 1 = 6$ (coeficiente de $x^1$)\\
+$b_{-1} = a_0 + x_0 \cdot b_0 = -1 + 2 \cdot 6 = 11$ (t\'ermino independiente)
+\item<4-> Resultado:\\
+$p_3(2) = b_{-1} = 11$
+\end{itemize}
+\end{enumerate}
+}
+%%%%%
+\frame{
+\frametitle{Ejemplo: Polinomio de Grado 3}
+\begin{enumerate}
+\item[2.] Obtención del Polinomio Cociente $q_2(x)$\\
+Con los valores de $b$ que obtuvimos (excepto $b_{-1}$), podemos formar el polinomio cociente de grado 2:
+$$
+q_2(x) = b_2 x^2 + b_1 x + b_0 = 2x^2 + 1x + 6
+$$
+\item[3.]<2-> Relaci\'on entre $p_3(x)$, $q_2(x)$ y $b_{-1}$\\
+El polinomio $p_3(x)$ se puede expresar como:\\
+$p_3(x) = (x - x_0) \cdot q_2(x) + b_{-1}$\\
+$p_3(x) = (x - 2) \cdot (2x^2 + x + 6) + 11$
+\end{enumerate}
+}
+%%%%%
+\frame{
+\frametitle{Ejemplo: Polinomio de Grado 3}
+\begin{enumerate}
+\item[4.]<1-> Aplicaci\'on del Algoritmo de Horner a $q_2(x)$ para obtener $q_2(2) = p'_3(2)$
+
+Aplicando el algoritmo de Horner para evaluar el polinomio $q_2(x)$ en $x_0 = 2$. Los coeficientes de $q_2(x)$ son: $b_2=2$, $b_1=1$, $b_0=6$
+
+Llamemos a los nuevos coeficientes $c_i$:
+\begin{itemize}
+\item<2->Inicializaci\'on:\\
+$c_1 = b_2 = 2$
+\item<3->Iteraci\'on:\\
+$c_0 = b_1 + x_0 \cdot c_1 = 1 + 2 \cdot 2 = 5$\\
+$c_{-1} = b_0 + x_0 \cdot c_0 = 6 + 2 \cdot 5 = 16$
+\item<4-> Resultado:\\
+$q_2(2) = c_{-1} = 16$
+\end{itemize}
+\end{enumerate}
+}
+%%%%
+\frame{
+\frametitle{Ejemplo: Polinomio de Grado 3}
+\begin{enumerate}
+\item[5.]<1-> Derivada $p'_3(2)$\\
+Se tiene que\\
+$p'_3(2) = q_2(2) = 16$
+\end{enumerate}
+En resumen:
+\begin{itemize}
+\item<2-> $p_3(2) = 11$
+\item<3-> $q_2(x) = 2x^2 + x + 6$
+\item<4-> $p_3(x) = (x - 2) * (2x^2 + x + 6) + 11$
+\item<5-> $p'_3(2) = q_2(2) = 16$
+\end{itemize}
+}
+%%%%%
+\frame{
+\frametitle{Ejemplo: Polinomio de Grado 3}
+{\bf Comprobaci\'on de la Derivada}
+
+Derivando el polinomio $p_3(x)$ y evalu\'andolo en $x = 2$.
+\begin{block}{}
+$$
+\begin{array}{l}
+p_3(x) = 2x^3 - 3x^2 + 4x - 1\\
+p'_3(x) = 6x^2 - 6x + 4
+\end{array}
+$$
+\end{block}
+\uncover<2->{
+Evaluando en x = 2:
+$$
+p'_3(2) = 6(2^2) - 6(2) + 4 = 6(4) - 12 + 4 = 24 - 12 + 4 = 16
+$$
+}
+}
+%%%%
+\section{Interpolaci\'on}
+\subsection{Taylor}
+\frame{
+\frametitle{Problema de interpolaci\'on de Taylor}
+\uncover<1->
+{
+\begin{block}{Problema de interpolaci\'on de Taylor}
+Dados un entero $n$ no negativo, un punto $x_0 \in \mathbb{R}$ y los valores $f(x_0),f'(x_0),\ldots,f^{(n)}(x_0)$ de una funci\'on y sus $n$ primeras derivadas en $x_0$, encontrar un polinomio $P(x)$ de grado $\leq n$ tal que
+$$
+P(x_0) = f(x_0), P'(x_0) = f'(x_0),\ldots, P^{(n)}(x_0) = f^{(n)}(x_0).
+$$
+\end{block}}
+\uncover<2->{
+\begin{block}{Teorema:}
+El problema de interpolaci\'on de Taylor tiene soluci\'on \'unica, que se denomina polinomio de Taylor de grado $\leq n$ de la funci\'on $f$ en el punto $x_0$:
+\footnotesize{
+$$
+P(x) = f(x_0)+f'(x_0)(x-x_0)+f''(x_0)\frac{(x-x_0)^2}{2!}+\cdots+f^{(n)}(x_0)\frac{(x-x_0)^n}{n!}
+$$}
+\end{block}}
+}
+%%%%
+\frame{
+\frametitle{Problema de interpolaci\'on de Taylor}
+\uncover<1->{
+\begin{block}{Teorema:}
+Para $n > 1$ sea $f(x)$ una funci\'on $n$ veces derivable en $x_0$. El polinomio de Taylor $P(x)$ verifica que:
+$$
+\lim_{x \to x_0}\frac{f(x)-P(x)}{(x-x_0)^n}=0
+$$
+con la notaci\'on $o$ peque\~na de Landau $f(x) - P(x) = o((x - x_0)^n)$ para $x \to x_0$. Adem\'as, $P(x)$ es el \'unico polinomio de grado $\leq n$ con esta propiedad.
+\end{block}}
+}
+%%%%
+\frame{
+\frametitle{Problema de interpolaci\'on de Taylor}
+\begin{itemize}
+ \item Error del polinomio interpolador de Taylor
+\uncover<2->{
+\begin{block}{Teorema:}
+Sean $x$ y $x_0$ dos n\'umeros reales distintos y $f(x)$ una funci\'on con $n$ derivadas continuas en un intervalo conteniendo a $x$ y $x_0$, en el que tambi\'en existe $f^{(n+1)}$. Entonces existe un punto $\xi$ entre $x$ y $x_0$ tal que:
+$$
+f(x)-P(x) = f^{(n+1)}(\xi)\frac{(x-x_0)^{n+1}}{(n+1)!}
+$$
+\end{block}}
+\end{itemize}
+}
+%%%%
+\frame{
+\frametitle{Problema de interpolaci\'on de Taylor}
+\begin{block}{Colorario:}
+Adem\'as de las hip\'otesis del teorema supongase que para cada $t$ entre $x$ y $x_0$ se verifica que $|f^{(n+1)}(t)| \leq K_{n+1}$ constante, entonces:
+$$
+|f(x)-P(x)| \leq \frac{|x-x_0|^{(n+1)}K_{n+1}}{(n+1)!}
+$$
+\end{block}
+}
+%%%%
+\frame{
+\frametitle{Ejemplo:}
+A continuaci\'on se muestran las gr\'aficas de la funci\'on $f(x) = \sin(x)$ y de su polinomio de Taylor de orden 1 al 9 en el cero. Se puede comprobar que la aproximaci\'on es m\'as exacta a medida que se aumenta el orden.
+\begin{center}
+\includegraphics[scale=0.28]{taylorsin.eps}
+\end{center}
+}
+%%%%
+\frame{
+\frametitle{Ejemplo:}
+El hecho de que la funci\'on seno y su polinomio de Taylor se parezcan tanto como se quiera, con s\'olo aumentar el grado del polinomio lo suficiente, no es algo que le ocurra a todas las funciones. Para la funci\'on arctan la situaci\'on no es tan buena:
+\begin{center}
+\includegraphics[scale=0.28]{tayloratan.eps}
+\end{center}
+}
+\end{document}

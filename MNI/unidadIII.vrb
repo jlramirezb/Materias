@@ -1,0 +1,6 @@
+\frametitle{Motivaci\'on.}
+  Esencialmente podemos tratarlo con:
+\begin{itemize}
+ \item<2-> T\'ecnicas estad\'isticas (que continuar\'an observando el fen\'omeno de un modo discreto, es decir, sobre ese conjunto finito de mediciones).
+ \item<3-> o bien ``intentando recrear/reconstruir el fen\'omeno en su totalidad'' (en un dominio continuo de espacio, tiempo o cualquier otra magnitud), con la funci\'on que represente ``lo mejor posible'' esos datos.
+\end{itemize}
