@@ -325,4 +325,35 @@ El hecho de que la funci\'on seno y su polinomio de Taylor se parezcan tanto com
 \includegraphics[scale=0.28]{tayloratan.eps}
 \end{center}
 }
+%%%%%
+\begin{frame}
+  \frametitle{Ejemplo:}
+  \begin{itemize}
+    \item Se  desea aproximar la funci\'on $f(x)=e^x$ mediante el polinomio de Taylor centrado en $x_0=0$ de orden 5 y hallar el error obtenido en la estimaci\'on para $x=1.5$ 
+   
+    \item El polinomio de Taylor de grado 5 viene dada por la siguiente expresi\'on
+    \begin{block}{}
+    \scriptsize{
+    $$
+    \begin{array}{c}
+      P_5(x) = 1+1(x-0)+\dfrac{1}{2!}(x-0)^2+\dfrac{1}{3!}(x-0)^3+\dfrac{1}{4!}(x-0)^4+\dfrac{1}{5!}(x-0)^5\\[10pt]
+      P_5(x) = 1+x+\dfrac{1}{2!}x^2+\dfrac{1}{3!}x^3+\dfrac{1}{4!}(x-0)^4+\dfrac{1}{5!}x^5
+    \end{array}
+    $$}
+    \end{block}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle[short title]{Ejemplo:}
+  Con la expresi\'on del residuo se calcula el error de Truncamiento:
+  \begin{block}{}
+    $$
+    R_5(x) = \dfrac{f^{(6)}(\xi)}{6!}(x-x_0)^6=\dfrac{f^{(6)}(\xi)}{6!}x^6 = \dfrac{e^\xi}{6!}x^6
+    $$
+    $$
+    R_5(x)=\dfrac{e^\xi}{6!}x^6
+    $$
+  \end{block}
+\end{frame}
 \end{document}
