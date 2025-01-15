@@ -54,8 +54,14 @@
 \headcommand {\beamer@framepages {52}{52}}
 \headcommand {\slideentry {2}{1}{8}{53/53}{Taylor}{0}}
 \headcommand {\beamer@framepages {53}{53}}
-\headcommand {\beamer@partpages {1}{53}}
-\headcommand {\beamer@subsectionpages {44}{53}}
-\headcommand {\beamer@sectionpages {44}{53}}
-\headcommand {\beamer@documentpages {53}}
-\headcommand {\gdef \inserttotalframenumber {24}}
+\headcommand {\slideentry {2}{1}{9}{54/56}{Taylor}{0}}
+\headcommand {\beamer@framepages {54}{56}}
+\headcommand {\slideentry {2}{1}{10}{57/58}{Taylor}{0}}
+\headcommand {\beamer@framepages {57}{58}}
+\headcommand {\slideentry {2}{1}{11}{59/61}{Taylor}{0}}
+\headcommand {\beamer@framepages {59}{61}}
+\headcommand {\beamer@partpages {1}{61}}
+\headcommand {\beamer@subsectionpages {44}{61}}
+\headcommand {\beamer@sectionpages {44}{61}}
+\headcommand {\beamer@documentpages {61}}
+\headcommand {\gdef \inserttotalframenumber {27}}

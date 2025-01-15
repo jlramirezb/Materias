@@ -356,4 +356,57 @@ El hecho de que la funci\'on seno y su polinomio de Taylor se parezcan tanto com
     $$
   \end{block}
 \end{frame}
+%%%%%
+\begin{frame}
+\frametitle{Ejemplo:}
+ \begin{itemize}
+   \item Ahora, vamos a aproximar $f(1.5) = e^{1.5}$ usando $P_5(1.5)$:\\
+   $P_5(1.5) = 1 + 1.5 + \dfrac{(1.5)^2}{2} + \dfrac{(1.5)^3}{6} + \dfrac{(1.5)^4}{24} + \dfrac{(1.5)^5}{120}$
+ \item<2-> Obtenemos:\\
+   $P_5(1.5) \approx 4.462$
+ \item<3-> C\'alculo del error en $x = 1.5$\\
+ El error en la aproximaci\'on de Taylor est\'a dado por el t\'ermino del resto. La forma del resto para el polinomio de Taylor de orden $n$ es:\\
+ $$
+ R_n(x) = \dfrac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}
+ $$ 
+ \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+\frametitle{Ejemplo:}
+ \begin{itemize}
+   \item<1-> En nuestro caso, $n = 5$, $x = 1.5$, $x_0 = 0$, y la derivada de orden 6 (o cualquiera) de $e^x$ es $e^x$.\\
+   Por lo tanto:
+   $$
+   \begin{array}{l}
+   R_5(1.5) = \dfrac{e^\xi \cdot (1.5 - 0)^6}{6!}\\[10pt]
+   R_5(1.5) = \dfrac{e^\xi \cdot 1.5^6}{720} 
+   \end{array}
+   $$
+   Donde $\xi$ es un n\'umero entre 0 y 1.5.
+   \item<2-> Para maximizar el error, tomamos el mayor valor posible de $e^\xi$ en el intervalo [0, 1.5]. Este valor es cuando $c=1.5$.\\
+Por lo tanto
+$$
+R_5(1.5) = e^{1.5} \cdot \dfrac{(1.5)^6}{720} \approx 0.0708
+$$
+ \end{itemize}
+\end{frame}
+%%%%
+\frame{
+\frametitle{Ejemplo:}
+ \begin{itemize}
+   \item<1-> C\'alculo del Valor Real y el Error Exacto
+
+   \item<2-> El valor real de $e^{1.5}$ es aproximadamente 4.481689.
+   
+   \item<3-> El error exacto es:
+   $$
+   \begin{array}{l}
+   \text{Error} = |e^{1.5} - P_5(1.5)|\\[10pt]
+   \text{Error} = |4.481689 - 4.462 |\\[10pt]
+   \text{Error} = 0.019689
+   \end{array}
+   $$
+  \end{itemize}
+}
 \end{document}
