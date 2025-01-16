@@ -409,4 +409,58 @@ $$
    $$
   \end{itemize}
 }
+%%%%
+\subsection{Lagrange}
+\frame
+{
+\frametitle{Interpolaci\'on}
+\begin{itemize}
+ \item<1-> Nos centraremos ahora en el problema de obtener, a partir de una tabla de parejas $(x,f(x))$ definida en un cierto intervalo $[a,b]$, el valor de la funci\'on para cualquier $x$ perteneciente a dicho intervalo.
+ 
+ \item<2-> Supongamos que se dispone de las siguientes parejas de datos:
+$$
+\begin{array}{|c|c|c|c|c|c|}\hline
+  \textbf{x} & x_0 & x_1 & x_2 & \cdots & x_n\\\hline
+  \textbf{y} & y_0 & y_1 & y_2 & \cdots & y_n\\\hline
+ \end{array}
+$$
+\end{itemize}
+}
+%%%%
+\frame
+{
+  \begin{itemize}
+    \item El objetivo es hallar una funci\'on continua lo m\'as sencilla posible tal que:
+    \begin{block}{}
+    $$
+      \widetilde{f}(x_k) = y_k = f(x_k) \quad\forall k = 0,\ldots,n
+    $$
+    \end{block}
+    en donde $x_k$ y $f(x_k)$ son datos conocidos.
+
+    \item<2->Se dice entonces que la funci\'on $\widetilde{f}(x)$ , es una funci\'on interpolante de los datos representados en la tabla.
+    \uncover<3->{\begin{block}{Observaci\'on:}
+      En general, trabajaremos con $f$ = polinomios de grado $\leq n$
+      $$
+      P(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0
+      $$
+      polinomio algebraico
+      \end{block}}
+\end{itemize}
+}
+%%%%
+\frame
+{
+\begin{figure}
+ \includegraphics[scale=0.37]{img1.eps}
+ \caption{Datos de iterpolaci\'on y curva interpolante.}
+\end{figure}
+}
+%%%
+\frame
+{
+\begin{block}{Teorema de Weierstrass:}
+Sea $f$ continua sobre $[a,b]$, dado $\varepsilon > 0 \quad \exists P(x)$ polinomio tal que $\mid f(x)-P(x)\mid < \varepsilon \quad \forall x\in [a,b]$.
+\end{block}
+}
 \end{document}

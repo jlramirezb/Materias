@@ -60,8 +60,18 @@
 \headcommand {\beamer@framepages {57}{58}}
 \headcommand {\slideentry {2}{1}{11}{59/61}{Taylor}{0}}
 \headcommand {\beamer@framepages {59}{61}}
-\headcommand {\beamer@partpages {1}{61}}
 \headcommand {\beamer@subsectionpages {44}{61}}
-\headcommand {\beamer@sectionpages {44}{61}}
-\headcommand {\beamer@documentpages {61}}
-\headcommand {\gdef \inserttotalframenumber {27}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{62}{Lagrange}}
+\headcommand {\slideentry {2}{2}{1}{62/63}{Lagrange}{0}}
+\headcommand {\beamer@framepages {62}{63}}
+\headcommand {\slideentry {2}{2}{2}{64/66}{Lagrange}{0}}
+\headcommand {\beamer@framepages {64}{66}}
+\headcommand {\slideentry {2}{2}{3}{67/67}{Lagrange}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\slideentry {2}{2}{4}{68/68}{Lagrange}{0}}
+\headcommand {\beamer@framepages {68}{68}}
+\headcommand {\beamer@partpages {1}{68}}
+\headcommand {\beamer@subsectionpages {62}{68}}
+\headcommand {\beamer@sectionpages {44}{68}}
+\headcommand {\beamer@documentpages {68}}
+\headcommand {\gdef \inserttotalframenumber {31}}
