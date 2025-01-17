@@ -267,10 +267,10 @@ $$
 \uncover<2->{
 \begin{block}{Teorema:}
 El problema de interpolaci\'on de Taylor tiene soluci\'on \'unica, que se denomina polinomio de Taylor de grado $\leq n$ de la funci\'on $f$ en el punto $x_0$:
-\footnotesize{
-$$
+\[
+\textstyle
 P(x) = f(x_0)+f'(x_0)(x-x_0)+f''(x_0)\frac{(x-x_0)^2}{2!}+\cdots+f^{(n)}(x_0)\frac{(x-x_0)^n}{n!}
-$$}
+\]
 \end{block}}
 }
 %%%%
@@ -575,7 +575,7 @@ $$}
     $$
     \begin{array}{l}
     L_k(x_k) = 1,\quad L_k(x_j) =0 \mbox{ si $j \neq k$}\\
-    \textstyle \Rightarrow p_n(x_k) = 0 + 0 + \cdots + f(x_k) + \cdots + 0 = f(x_k) \quad \forall k=0,1,\ldots,n
+    \text{\small $\Rightarrow p_n(x_k) = 0 + 0 + \cdots + f(x_k) + \cdots + 0 = f(x_k) \quad \forall k=0,1,\ldots,n$}
     \end{array}
     $$
   \end{itemize}
@@ -586,12 +586,53 @@ $$}
   \begin{itemize}
     \item La unicidad puede demostrarse como sigue:
     
-    \item Supongase que $p_n(x)$ y $q_n(x)$ son dos polinomios de grado $\leq n$ que interpolan a $f(x)$ en los $n+1$ 
+    \item<2-> Supongase que $p_n(x)$ y $q_n(x)$ son dos polinomios de grado $\leq n$ que interpolan a $f(x)$ en los $n+1$ 
     puntos distintos $x_k,\quad k = 0,\ldots, n$, es decir
     $$
     p_n(x_k) = q_n(x_k) = f(x_k), \qquad k=0,1 \ldots,n
     $$
-    Entonces, $r_n(x) = p_n(x)-q_n(x)$ es un polinomio de grado $\leq n$ con $n+1$ raices $x_0, x_1, \ldots, x_n$. Pero cualquier polinomio de grado $n$ con un n\'umero de raices mayor a $n$ debe ser constante e igual a cero. Por lo tanto $r_n (x) \equiv 0, \forall x$, y en consecuencia $p_n (x) = q_n (x), \forall x \in [a, b]$.
+    \uncover<3->{
+    Entonces, $r_n(x) = p_n(x)-q_n(x)$ es un polinomio de grado $\leq n$ con $n+1$ raices $x_0, x_1, \ldots, x_n$. Pero cualquier polinomio de grado $n$ con un n\'umero de raices mayor a $n$ debe ser constante e igual a cero. Por lo tanto $r_n (x) \equiv 0, \forall x$, y en consecuencia $p_n (x) = q_n (x), \forall x \in [a, b]$.}
   \end{itemize}
 \end{frame}
-\end{document}
+%%%%
+\frame
+{
+\frametitle{Polinomio interpolador de Lagrange}
+Si $x_0,\ldots,x_n$ son $n+1$ n\'umeros reales distintos y $f$ es una funci\'on real definida sobre ellos, entonces existe un \'unico polinomio $P_n(x)$ de grado menor o igual a $n$ tal que
+$f(x_k)=P(x_k)\quad \forall k=0,\ldots,n$.
+
+\uncover<2->{
+  \begin{block}{Teorema}
+  
+    Si $f \in \mathcal{C}^{n+1} [a, b]$ y $p_n(x)$ es el polinomio de interpolaci\'on en $n+1$ puntos distintos $x_0 = a, 
+    x_1 , \ldots , x_n = b$, entonces para cada $x \in [a, b]$ existe $\xi(x) \in I[x_0 , x_1 , . . . , x_n , x]$ (el 
+    intervalo cerrado m\'as peque\~no que contiene $x_0 , x_1 , \ldots , x_n , x$) tal que
+    $$
+   f(x) - p_n(x) = \dfrac{f^{(n+1)}(\xi(x))}{(n+1)!}w(x) \qquad \mbox{con } w(x) = \prod_{j=0}^n(x-x_j)
+   $$
+   \end{block}
+}
+}
+%%%%%%
+\frame{
+  \frametitle{Polinomio interpolador de Lagrange}
+  \underline{Demostraci\'on:} Si $x = x_k$ para alg\'un $0 \leq k \leq n$, la igualdad se satisface trivialmente 
+pues ambos lados son iguales a cero. As\'i que supongase que $x \neq x_k , k = 0, 1, \ldots , n$, y sea 
+$$
+F(t) = f(t)-p_n(t) - \dfrac{f(x)-p_n(x)}{w(x)}w(t), \qquad t \in [a,b]
+$$
+
+Claramente $F(t)$ est\'a bien definida pues $w(x) \neq 0$ ya que $x \neq x_k , \forall k$. Adem\'as $F(t)$ es de
+clase $\mathcal{C}^{n+1} [a,b]$ y tiene al menos $n + 2$ ceros, a saber $x_0 , x_1 , \ldots, x_n , x$. Luego $F'(t)$ 
+tiene al menos $n + 1$ ceros, $F''(t)$ tiene al menos $n$ ceros, as\'i sucesivamente, y $F^{(n+1)}(t)$ tiene al menos 
+un cero en $[a,b]$ que ser\'a denotado por $\xi(x)$. Por lo tanto
+$$
+0 = F^{(n+1)}(\xi(x)) = f^{(n+1)}(\xi(x)) - 0 -\dfrac{f(x)-p_n(x)}{w(x)}(n+1)!
+$$
+Se concluye que
+$$
+f(x) - p_n(x) = \dfrac{f^{(n+1)}(\xi(x))}{(n+1)!}w(x)	
+$$
+}
+   \end{document}
