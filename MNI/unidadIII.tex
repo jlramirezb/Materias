@@ -463,4 +463,135 @@ $$
 Sea $f$ continua sobre $[a,b]$, dado $\varepsilon > 0 \quad \exists P(x)$ polinomio tal que $\mid f(x)-P(x)\mid < \varepsilon \quad \forall x\in [a,b]$.
 \end{block}
 }
+%%%%%
+\frame
+{
+\frametitle{Polinomio interpolador de Lagrange}
+\begin{itemize}
+\item Si se escribe $P(x) = a_0 + a_1x + \cdots + a_nx^n$. As\'i, $P(x)$ ser\'a soluci\'on del problema si, y s\'olo si, el S.E.L:
+\begin{block}{}
+$$
+\left(
+\begin{array}{ccccc}
+ 1 & x_0 & x_0^2 & \cdots & x_0^n\\
+ 1 & x_1 & x_1^2 & \cdots & x_1^n\\
+ 1 & x_2 & x_2^2 & \cdots & x_2^n\\
+ 1 & \vdots & \vdots & \ddots & \vdots\\
+ 1 & x_n & x_n^2 & \cdots & x_n^n\\
+\end{array}\right)
+\left(
+\begin{array}{c}
+ a_0\\
+ a_1\\
+ a_2\\
+ \vdots\\
+ a_n\\
+\end{array}\right) =
+\left(
+\begin{array}{c}
+ y_0\\
+ y_1\\
+ y_2\\
+ \vdots\\
+ y_n\\
+\end{array}
+\right)
+$$
+\end{block}
+admite soluci\'on.
+
+\item<2-> que se denomina sistema cuadrado de Vandermonde. La matriz $A$ del sistema se denomina matriz de Vandermonde y es no-singular si los puntos $x_0, x_1, \ldots , x_n$ son diferentes. Esta matriz es mal condicionada a medida que $n$ aumenta.
+\end{itemize}
+}
+%%%%%
+\begin{frame}
+  \frametitle{Polinomio interpolador de Lagrange}
+  \begin{itemize}
+    \item Llamando $A$ a la matriz de coeficientes del sistema; se tiene que el problema de interpolaci\'on admite una \'unica soluci\'on si, y s\'olo si, los nodos de interpolaci\'on son distintos. Para ello basta con probar que $\det(A) = \prod_{i>j}(x_i-x_j)$ y, por lo tanto, $\det(A) \neq 0 \Leftrightarrow x_i \neq x_j$.
+    \item<2-> El m\'etodo de Lagrange para interpolaci\'on polinomial resulta de resolver este sistema para obtener los coeficientes pero lo hace de una forma m\'as sencilla y sistem\'atica. 
+  \end{itemize}
+\end{frame}
+%%%%%
+\frame{
+\frametitle{Interpolaci\'on de Lagrange}
+Para calcular el polinomio interpolador $P(x)$ asociado a una tabla de datos $(x_i, y_i)$ con $i =0,\ldots,n$ se puede plantear una simplificaci\'on previa: se construyen polinomios $l_i(x)$ de grado $n$ que valgan 1 en el nodo $x_i$ y 0 en el resto.
+
+\begin{block}{}
+$$
+l_i(x_k) = \delta_{ik}=\left\{
+\begin{array}{ccc}
+ 1 & \textrm{si} & i=k\\
+ 0 & \textrm{si} & i\neq k
+\end{array}
+\right.
+$$
+\end{block}
+\uncover<2->{Si se escribe el polinomio factorizado para que tenga en
+cada nodo $x_j$ (con $j \neq i$) una ra\'iz, el candidato es:
+\begin{block}{}
+$$
+(x - x_0)(x - x_1)\cdots (x - x_{i-1})(x - x_{i+1}) \cdots (x - x_n) = \prod_{j=0,j\neq i}^n(x - x_j)
+$$
+\end{block}}
+}
+%%%
+\frame
+{\frametitle{Polinomio interpolador de Lagrange}
+Lo \'unico que no se consigue es que en $x_i$ valga 1, para ello hay que ``normalizar'' la funci\'on anterior.
+
+\uncover<2->{As\'i, finalmente la f\'ormula de interpolaci\'on de Lagrange es:
+\begin{block}{}
+$$
+P(x) = \sum_{k=0}^n y_kl_k(x), \quad l_k(x) = \prod_{j=0,j\neq k}^n\frac{x - x_j}{x_k - x_j}, k=0,\ldots,n
+$$
+\end{block}
+Los polinomios $l_k(x)$ reciben el nombre de polinomios de Lagrange.}
+}
+%%%%%
+\begin{frame}
+  \frametitle{Interpolaci\'on de Lagrange}
+\begin{block}{Teorema:}
+  Sean $x_0, x_1, \ldots , x_n$, $n + 1$ n\'umeros diferentes, y sea $f$ una funci\'on tal que
+sus valores se obtengan a partir de los n\'umeros dados $(f(x_0), f(x_1), \ldots , f(x_n))$, entonces
+existe un \'unico polinomio $p_n(x)$ de grado $n$, que cumple con la propiedad
+$$
+f(x_k) = p_n(x_k) \text{ para cada }k = 0,1, \ldots , n
+$$
+y este polinomio est\'a dado por la siguiente expresi\'on
+\small{
+$$
+p_n(x) = f(x_0)L_0(x) + f(x_1)L_1(x) + \cdots + f(x_n)L_n(x) = \sum_{k=0}^nf(x_k)L_k(x)
+$$}
+\end{block}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Interpolaci\'on de Lagrange}
+  Demostraci\'on:
+  \begin{itemize}
+    \item Se tiene que $p_n(x)=L_0(x)f(x_0)+L_1(x)f(x_1)+\cdots+L_n(x)f(x_n)$ ya que $L_k(x)$ 
+    son polinomios de grado menor o igual a $n$ esto implica que $p(x)$ es un polinomio de grado menor o igual a $n$.
+    \item<2-> Adem\'as
+    $$
+    \begin{array}{l}
+    L_k(x_k) = 1,\quad L_k(x_j) =0 \mbox{ si $j \neq k$}\\
+    \textstyle \Rightarrow p_n(x_k) = 0 + 0 + \cdots + f(x_k) + \cdots + 0 = f(x_k) \quad \forall k=0,1,\ldots,n
+    \end{array}
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Interpolaci\'on de Lagrange}
+  \begin{itemize}
+    \item La unicidad puede demostrarse como sigue:
+    
+    \item Supongase que $p_n(x)$ y $q_n(x)$ son dos polinomios de grado $\leq n$ que interpolan a $f(x)$ en los $n+1$ 
+    puntos distintos $x_k,\quad k = 0,\ldots, n$, es decir
+    $$
+    p_n(x_k) = q_n(x_k) = f(x_k), \qquad k=0,1 \ldots,n
+    $$
+    Entonces, $r_n(x) = p_n(x)-q_n(x)$ es un polinomio de grado $\leq n$ con $n+1$ raices $x_0, x_1, \ldots, x_n$. Pero cualquier polinomio de grado $n$ con un n\'umero de raices mayor a $n$ debe ser constante e igual a cero. Por lo tanto $r_n (x) \equiv 0, \forall x$, y en consecuencia $p_n (x) = q_n (x), \forall x \in [a, b]$.
+  \end{itemize}
+\end{frame}
 \end{document}
