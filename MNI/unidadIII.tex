@@ -617,22 +617,195 @@ $f(x_k)=P(x_k)\quad \forall k=0,\ldots,n$.
 %%%%%%
 \frame{
   \frametitle{Polinomio interpolador de Lagrange}
-  \underline{Demostraci\'on:} Si $x = x_k$ para alg\'un $0 \leq k \leq n$, la igualdad se satisface trivialmente 
-pues ambos lados son iguales a cero. As\'i que supongase que $x \neq x_k , k = 0, 1, \ldots , n$, y sea 
+  \underline{Demostraci\'on:} 
+  \begin{itemize}
+    \item<2-> Si $x = x_k$ para alg\'un $0 \leq k \leq n$, la igualdad se satisface trivialmente 
+pues ambos lados son iguales a cero. 
+\item<3->As\'i que supongase que $x \neq x_k , k = 0, 1, \ldots , n$, y sea 
 $$
 F(t) = f(t)-p_n(t) - \dfrac{f(x)-p_n(x)}{w(x)}w(t), \qquad t \in [a,b]
 $$
-
-Claramente $F(t)$ est\'a bien definida pues $w(x) \neq 0$ ya que $x \neq x_k , \forall k$. Adem\'as $F(t)$ es de
+\item<4->Claramente $F(t)$ est\'a bien definida pues $w(x) \neq 0$ ya que $x \neq x_k , \forall k$. Adem\'as $F(t)$ es de
 clase $\mathcal{C}^{n+1} [a,b]$ y tiene al menos $n + 2$ ceros, a saber $x_0 , x_1 , \ldots, x_n , x$. Luego $F'(t)$ 
 tiene al menos $n + 1$ ceros, $F''(t)$ tiene al menos $n$ ceros, as\'i sucesivamente, y $F^{(n+1)}(t)$ tiene al menos 
-un cero en $[a,b]$ que ser\'a denotado por $\xi(x)$. Por lo tanto
+un cero en $[a,b]$ que ser\'a denotado por $\xi(x)$. 
+\end{itemize}
+}
+%%%%%
+\frame{
+\frametitle{Polinomio interpolador de Lagrange}
+\begin{itemize}
+\item Por lo tanto
 $$
 0 = F^{(n+1)}(\xi(x)) = f^{(n+1)}(\xi(x)) - 0 -\dfrac{f(x)-p_n(x)}{w(x)}(n+1)!
 $$
+\uncover<2->{  
 Se concluye que
+\begin{block}{}
 $$
 f(x) - p_n(x) = \dfrac{f^{(n+1)}(\xi(x))}{(n+1)!}w(x)	
+$$}
+\end{block}
+\end{itemize}
+}
+%%%
+\frame
+{
+\frametitle{Ejemplo:}
+Sea la funci\'on $f:x\rightarrow2xe^{-(4x+2)}$ definida en $[0.2, 1]$
+\begin{enumerate}
+ \item<2-> Calcular y representar gr\'aficamente los polinomios de base de Lagrange asociados al soporte $\{0.2, 1.0\}$.
+ \item<3-> Hallar el polinomio $P(x)$ que interpola $f(x)$ en el sentido de Lagrange sobre el soporte $\{0.2, 1\}$.
+ \item<4-> Obtener la expresi\'on del error de interpolaci\'on.
+ \item<5-> Hallar una cota de error v\'alida en todo $(0.2, 1)$.
+\end{enumerate}
+}
+%%%
+\frame
+{
+\frametitle{Ejemplo:}
+
+$$
+\begin{array}{cc}
+ l_0(x)=\frac{x-x_1}{x_0-x_1}=\frac{1-x}{0.8} & l_1(x)=\frac{x-x_0}{x_1-x_0}=\frac{x-0.2}{0.8}\\
+ \includegraphics[scale=0.25]{soporte1.eps} & \includegraphics[scale=0.25]{soporte2.eps}
+\end{array}
 $$
 }
-   \end{document}
+%%%%
+\frame
+{
+\frametitle{Ejemplo:}
+\begin{eqnarray}
+ P_1(x) & =& f(x_0)l_0(x) + f(x_1)l_1(x) = \nonumber\\
+& &(0.4)e^{-2.8}\left(\frac{1-x}{0.8}\right) + 2e^{-6}\left(\frac{x-0.2}{0.8}\right)\nonumber\\
+\Rightarrow P_1(x) &\approx& -0.02420815088x +0.02916565523\nonumber
+\end{eqnarray}
+
+\begin{center}
+\includegraphics[scale=0.23]{approx.eps}
+\end{center}
+}
+%%%
+\frame
+{
+\frametitle{Expresi\'on del error}
+Aplicamos la expresi\'on:
+\begin{eqnarray}
+ E(x)  =  f(x) - P_1(x) & = & \frac{f''(\xi_x)}{2!}\prod_{j=0}^1(x-x_j)\nonumber\\
+E(x)  =  f(x) - P_1(x) & = & \frac{(-16+32\xi_x)e^{-(4\xi_x+2)}}{2!}(x-0.2)(x-1)\nonumber\\
+E(x)  =  f(x) - P_1(x) & = & \frac{(-16+32\xi_x)e^{-(4\xi_x+2)}}{2}(x^2-1.2x+0.2)\nonumber
+\end{eqnarray}
+}
+%%%%
+\frame
+{
+\frametitle{Cota de error}
+$$
+\mid E(x)\mid  =  \mid f(x) - P_1(x)\mid  =  \frac{\displaystyle\max_{x\in[0.2,1]}\mid f''(x)\mid}{2!}\displaystyle\max_{x\in[0.2,1]}\left|\prod_{j=0}^1(x-x_j)\right|
+$$
+\uncover<2->{Obteniendo $g(x)=f''(x)=(-16+32x)e^{-(4x+2)}$, nos interesa $\max|f''(x)| $}
+
+\uncover<3->{Dado que la funci\'on $g(x)$ es continua en $[0.2, 1]$, su mayor valor absoluto en $[0.2, 1]$ ser\'a el mayor de los siguientes:}
+\begin{itemize}
+ \item<4-> Valor de $|g(x)|$ en las abscisas de $[0.2, 1]$ para las que $g'(x) = 0$.
+ \item<5-> Valor de $|g(0.2)|$.
+ \item<6-> Valor de $|g(1)|$.
+\end{itemize}
+}
+%%%%
+\frame
+{
+\frametitle{Cota de error}
+Valor de $|g(x)|$ en las abscisas para las que $g'(x) = 0$.
+
+\uncover<2->{$$
+g(x) = (-16+32x)e^{-(4x+2)}\Rightarrow g'(x) = (96-128x)e^{-(4x+2)}
+$$}
+
+\uncover<3->{$$
+g'(x)=0 \Rightarrow (96-128x)e^{-(4x+2)}=0 \Rightarrow x^*=\frac{96}{128}=0.75
+$$}
+
+\uncover<4->{de donde $|g(0.75)|\approx0.0539$}
+}
+%%%%
+\frame
+{
+\frametitle{Cota de error}
+Valor de $g(x)$ en los extremos del intervalo $[ 0.2, 1 ]$.
+\uncover<2->{
+$$g(0.2) \approx -0.5838 = 0.5838$$
+$$g(1) \approx 0.0397 = 0.0397$$}
+
+\uncover<3->{\begin{center}
+\includegraphics[scale=0.23]{gder.eps}
+\end{center}}
+}
+%%%%
+\frame
+{
+\frametitle{Cota de error}
+Se busca ahora $\displaystyle\max_{x\in[0.2,1]}|(x-0.2)(x-1)|$
+
+Llamamos $q(x)=(x - 0.2)(x - 1) = x^2 - 1.2x + 0.2$
+
+\uncover<2->{$q(x)$ es un polinomio de segundo grado que se anula en los puntos $0.2$ y $1$, luego, necesariamente, tendr\'a alg\'un
+extremo en el intervalo $[ 0.2, 1]$.}
+
+\uncover<3->{\begin{center}
+\includegraphics[scale=0.23]{parabola.eps}
+\end{center}}
+}
+%%%
+\frame
+{
+\frametitle{Cota de error}
+El m\'aximo de $|q(x)|$ se alcanzar\'a en los puntos que se obtienen resolviendo la ecuaci\'on $q'(x) = 0$:
+
+\uncover<2->{
+$$
+q'(x) = 0 = 2x - 1.2
+$$}
+
+\uncover<3->{
+de donde se obtiene $x = 0.6$ como abscisa en la que se encuentra el m\'aximo de $q(x)$}
+
+\uncover<4->{
+$$q(0.6) = -0.16 \Rightarrow |q(0.6)| = 0.16$$}
+}
+%%%
+\frame
+{
+\frametitle{Cota de error}
+Teniendo en cuenta los resultados obtenidos, una cota de error vendr\'a dada por:
+
+$$
+|E(x)| = |f(x)-P_1(x)| \leq \frac{0.5838}{2}(0.16) = 0.046704
+$$
+}
+%%%%
+\frame
+{
+\frametitle{Cota de error}
+La cota del error obtenida es una cota ``te\'orica''. Si se representa el valor absoluto del error exacto: $|E(x) | = | f(x) - P(x)|$ se obtiene la siguiente figura:
+
+\uncover<2->{\begin{center}
+\includegraphics[scale=0.23]{error.eps}
+\end{center}}
+
+\uncover<3->{El error m\'aximo real que se comete es del orden de 0.0026, mucho menor que la cota te\'orica $0.046702$.}
+}
+%%%%
+\frame
+{
+\frametitle{Desventajas:}
+\begin{enumerate}
+ \item<1-> El polinomio no viene expandido.
+ \item<2-> La interpolaci\'on para otro valor de $x$ necesita la misma cantidad de c\'alculos adicionales, ya que no se pueden utilizar partes de la aplicaci\'on previa.
+ \item<3-> La incorporaci\'on de un nuevo nodo obliga a rehacer todos los c\'alculos.
+ \item<4-> La evaluaci\'on del error no es f\'acil.
+\end{enumerate}
+}
+%%%%%
+\end{document}
