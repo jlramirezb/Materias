@@ -1,0 +1,204 @@
+\documentclass{beamer}
+\mode<presentation>
+\usepackage{amssymb,textcomp}
+%\usepackage{beamerthemesplit}
+\usepackage{beamerthemeJuanLesPins}
+\usepackage{verbatim}
+\usepackage{algorithm2e}
+\usefonttheme{serif}
+\title{M\'etodos Iterativos para la Resoluci\'on Num\'erica de Sistemas de Ecuacionesl Lineales.}
+\author{Jos\'e Luis Ram\'irez B.}
+\date{\today}
+\begin{document}
+\frame{\titlepage}
+%\section[Introducci\'on]{}
+\frame{\tableofcontents}
+\section{Introducci\'on}
+\begin{frame}{Problemas de los m\'etodos directos para la resoluci\'on de (SL).}
+  \begin{itemize}
+   \item<1-> El m\'etodo de Gauss y sus variantes se conocen con el nombre de m\'etodos
+   directos: se ejecutan un n\'umero finito de pasos y dan a lugar a una soluci\'on
+   que ser\'ia exacta si no fuese por los errores de redondeo.
+   \item <2->Cuando el tama\~no de la matriz $A$ es grande ($n >> 100$), la propagaci\'on del error de redondeo es tambi\'en grande, y los
+  resultados obtenidos pueden diferir de los exactos.
+  \end{itemize}
+\end{frame}
+  %%%%%%%
+  \frame{
+    \frametitle{Problemas de los m\'etodos directos para la resoluci\'on de (SL).}
+    \begin{itemize}
+      \item Muchas de las matrices que aparecen en (SL) poseen la mayor\'ia de sus elementos nulos. Estas matrices reciben el nombre de matrices dispersas o sparse.
+      \begin{enumerate}
+      \item<2-> Si los elementos no nulos est\'an distribuidos alrededor de la diagonal principal, son de aplicaci\'on todav\'ia los m\'etodos directos que conservan la estructura diagonal, como $LU$.
+      \item<3-> Si no ocurre lo anterior, al aplicar m\'etodos directos se produce un fen\'omeno de llenado. Entonces, si no se realiza una adaptaci\'on de los m\'etodos directos los resultados no van a ser, en general, buenos.
+      \end{enumerate}
+    \end{itemize}
+  }
+  %%%%%%
+  \section{M\'etodos Iterativos}
+  \begin{frame}{M\'etodos Iterativo}
+  \begin{itemize}
+  \item<1-> Un m\'etodo iterativo que da resoluci\'on al sistema $Ax = b$ es aquel que genera, a partir de un vector inicial $x^{(0)}$, una sucesi\'on de vectores $x^{(1)},x^{(2)}, \ldots$.
+  \item<2-> El m\'etodo se dir\'a que es consistente con el sistema $Ax = b$, si el l\'imite de dicha sucesi\'on, en caso de existir, es
+  soluci\'on del sistema.
+  \item<3-> Se dir\'a que el m\'etodo es convergente si la sucesi\'on generada por cualquier vector inicial $x^{(0)}$ es convergente a la soluci\'on del sistema.
+  \item<4-> El vector $r^{(k)} = b-Ax^{(k)}$ es el vector residual obtenido en la $k$-\'esima iteraci\'on.
+  \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{M\'etodos Iterativo}
+  Si un m\'etodo es convergente es consistente, sin embargo, el rec\'iproco no es cierto.
+  \uncover<2->{
+  \begin{block}{Ejemplo:}
+  El m\'etodo $x^{(n+1)} = 2x^{(n)} - A^{-1}b$ es consistente con el sistema $Ax = b$ pero no es convergente. En efecto:
+  \end{block}}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{M\'etodos Iterativo}
+  \begin{eqnarray}
+  x^{(n+1)}-x & = & 2x^{(n)}-A^{-1}b-x = 2x^{(n)}-2x-A^{-1}b+x \nonumber\\
+  & = & 2(x^{(n)}-x)-(A^{-1}b-x)\nonumber
+  \end{eqnarray}
+  y como $A^{-1}b = x$, se tiene que:
+  \begin{block}{}
+  $$
+  x^{(n+1)}-x = 2(x^{(n)}-x)
+  $$
+  \end{block}
+  \uncover<2->{
+  Si existe \textcolor{red}{$\displaystyle\lim_{n \to \infty} x^{(n)} = x^*$}, se tiene que:
+  \begin{block}{}
+  $$
+  x^* - x=2(x^* - x) \Rightarrow x^* - x =0 \Rightarrow x^* = x
+  $$
+  \end{block}
+  es decir, el l\'imite es soluci\'on del sistema $Ax = b$, por lo que el m\'etodo es consistente.}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{M\'etodos Iterativo}
+  Sin embargo, de $x^{(n+1)} - x = 2(x^{(n)} - x)$ se obtiene que:
+  \begin{block}{}
+  $$
+  \|x^{(n+1)}-x\| = 2\|x^{(n)}-x\|
+  $$
+  \end{block}
+  es decir, el vector $x^{(n+1)}$ dista el doble de lo que distaba $x^{(n)}$, por lo que el m\'etodo no puede ser convergente.
+  \end{frame}  
+  %%%%
+  \section{Refinamiento Iterativo}
+  \begin{frame}{Refinamiento Iterativo}
+    \begin{itemize}
+      \item Al resolver un sistema de ecuaciones $Ax = b$ utilizando un m\'etodo num\'erico
+      se obtiene una aproximaci\'on $\tilde x$ de la verdadera soluci\'on del sitema.
+      \item<2-> La exactitud de dicha soluci\'on depende de errores inherentes a los c\'alculos realizados.
+      \item<3-> Sea $x$ la soluci\'on exacta del sistema y $\tilde x$ es la aproximaci\'on, por lo tanto cuando se sustituye $\tilde x$ en el sistema se obtiene:
+      \begin{block}{}
+      $$
+      A\tilde x \approx b
+      $$
+      \end{block}
+      esto significa que al realizar la resta $b - A\tilde x \neq 0$      
+    \end{itemize}
+  \end{frame}
+  %%%%%
+  \begin{frame}{Refinamiento Iterativo}
+    \begin{itemize}      
+      \item Definiendo a esta diferencia $r$ (residuo), as\'i $r = b - A\tilde x$.
+      \item<2-> La soluci\'on deseada es
+      de la forma $\tilde x + z$ tal que al sustituir en el sistema de ecuaciones se obtenga
+      $$
+      A(\tilde x + z) = b
+      $$
+      y desarrollando se obtiene
+      \begin{eqnarray}
+        \uncover<3->{\nonumber A(\tilde x + z) & = & b}\\
+        \uncover<4->{\nonumber A\tilde x + Az & = & b}\\
+        \uncover<5->{\nonumber Az & = & b - A\tilde x}\\
+        \uncover<6->{\nonumber Az & = & r}
+      \end{eqnarray}
+      \item<7-> Una vez que obtenida $z$ se puede
+      crear una mejor aproximación $\tilde x + z$ de la soluci\'on.
+    \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}
+    \frametitle{Ejemplo:}
+    Al resolver el sistema Ax = b donde
+    $$
+    A = \left[\begin{array}{ccc}
+      60 & 30 & 20\\
+      30 & 20 & 15\\
+      20 & 15 & 12
+    \end{array}\right] \quad \text{ y } \quad b = \left[\begin{array}{c}
+      110\\
+      65\\
+      47
+    \end{array}\right]
+    $$
+    suponiendo que una soluci\'on aproximada es $b = \left[\begin{array}{c}
+      0.9\\
+      0.8\\
+      1.2
+    \end{array}\right]$
+  \end{frame}
+  %%%%%%
+  \begin{frame}
+    \frametitle{Ejemplo:}
+    \begin{itemize}
+    \item Aplicando un paso de refinamiento iterativo tomando $tol = 10^{-5}$, se tendr\'ia que:
+    $$
+    x^{(0)} = \left[\begin{array}{c}
+      0.9\\
+      0.8\\
+      1.2
+    \end{array}\right]
+    $$
+    \item<2-> Calculando el residuo $r^{(0)} = b - Ax^{(0)} = \left[\begin{array}{c}
+      8\\
+      4\\
+      2.6
+    \end{array}\right]$
+    \item<3->Verificando criterio de parada $\|r^{(0)}\|_{\infty} = 8 > tol$
+  \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}
+    \frametitle{Ejemplo:}
+    \begin{itemize}
+      \item Obteniendo $z$ resolviendo el sistema $Az = r$ se obtiene $z =\left[\begin{array}{c}
+        0.1\\
+        0.2\\
+        -0.2
+      \end{array}\right]$
+      \item<2->Generando la nueva aproximaci\'on
+      $$
+      x^{(1)} = x^{(0)} + z = \left[\begin{array}{c}
+        0.9\\
+        0.8\\
+        1.2
+      \end{array}\right] + \left[\begin{array}{c}
+        0.1\\
+        0.2\\
+        -0.2
+      \end{array}\right] = \left[\begin{array}{c}
+        1\\
+        1\\
+        1
+      \end{array}\right]
+      $$
+      \item<3-> Calculando el residuo $r^{(0)} = b - Ax^{(0)} = \left[\begin{array}{c}
+        8\\
+        4\\
+        2.6
+      \end{array}\right]$
+    \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{M\'etodos Iterativo}
+    Un m\'etodos iterativo es estacionarios cuando la transici\'on de $x^{(k)}$ a $x^{(k+1)}$ no depende de la historia anterior:
+     \begin{itemize}
+      \item \textbf{M\'etodos Estacionarios:} $x^{(k+1)} = f(x^{(k)})$
+      \item \textbf{M\'etodos no Estacionarios:} $x^{(k+1)} = f(x^{(k)},x^{(k-1)},x^{(k-2)},\ldots)$
+     \end{itemize}
+    \end{frame}
+\end{document}
