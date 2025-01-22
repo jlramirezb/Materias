@@ -186,12 +186,187 @@
         1
       \end{array}\right]
       $$
-      \item<3-> Calculando el residuo $r^{(0)} = b - Ax^{(0)} = \left[\begin{array}{c}
-        8\\
-        4\\
-        2.6
+      \item<3-> Calculando el residuo $r^{(1)} = b - Ax^{(1)} = \left[\begin{array}{c}
+        -0.14210854715202\\
+        0\\
+        0
+      \end{array}\right]\times 10^{-13}$
+    \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}
+    \frametitle{Ejemplo:}
+    \begin{itemize}
+      \item Verificando criterio de parada $\|r^{(1)}\|_{\infty} = 0.14210854715202\times 10^{-13} < tol$
+      \item<2->Seg\'un el criterio de parada la mejor aproximaci\'on es $x=\left[\begin{array}{c}
+        1\\
+        1\\
+        1
       \end{array}\right]$
     \end{itemize}
+  \end{frame}
+  %%%%%%}
+  \begin{frame}
+    \frametitle{Refinamiento Iterativo}
+    \begin{itemize}
+      \item Si suponemos que la soluci\'on aproximada al sistema lineal $A x = b$ se determina usando aritm\'etica de $t$ d\'igitos, se puede demostrar que el vector residual $r$ para la aproximaci\'on $\tilde x$ tiene la propiedad
+      $$
+       \|r\| = 10^{-t}\|A\|\|\tilde x\|
+      $$
+      \item<2-> De esta ecuaci\'on aproximada, se puede obtener una estimaci\'on del n\'umero de condici\'on efectivo para la aritm\'etica de $t$ d\'igitos, sin la necesidad de invertir la matriz $A$.
+    \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}
+    \frametitle{Refinamiento Iterativo}
+    \begin{itemize}
+      \item La aproximaci\'on del n\'umero de condici\'on $\kappa(A)$ a $t$ d\'igitos viene de considerar el sistema lineal $A z = r$.
+      \item<2-> De hecho $\tilde z$, la soluci\'on aproximada de $A z = r$, satisface que      
+      $$
+       \tilde z \approx A^{-1}r = A^{-1}(b-A\tilde x) = A^{-1}b - A^{-1}A\tilde x = x - \tilde x
+      $$
+      \item<3-> as\'i que $\tilde z$ es una estimaci\'on del error cometido al aproximar la soluci\'on del sistema original.      
+      \begin{eqnarray}
+       \nonumber \|\tilde z\| & \approx & \|x-\tilde x\|=\|A^{-1}r\| \leq \|A^{-1}\|\|r\|\\
+       \nonumber & \approx & \|A^{-1}\|\left(10^{-t}\|A\|\|\tilde x\|\right) = 10^{-t}\|\tilde x\|\kappa(A)
+      \end{eqnarray}
+      \item<4-> Esto proporciona una aproximaci\'on para el n\'umero de condici\'on involucrado en la soluci\'on del sistema $A x = b$ usando $t$ d\'igitos:
+      $$
+       \kappa(A) \approx 10^t\frac{\|\tilde z\|}{\|\tilde x\|}
+      $$      
+    \end{itemize}
+  \end{frame}      
+  %%%%%%
+  \begin{frame}
+    \frametitle{Ejemplo:}
+    \begin{itemize}
+      \item<1->El sistema lineal $A x = b$ dado por
+      $$
+      \left(\begin{array}{ccc}
+          3.333 & 15920 & -10.333\\
+          2.222 & 16.71 & 9.612\\
+          1.5611 & 5.1791 & 1.6852
+        \end{array}\right)\left(\begin{array}{c}
+        x_1\\
+        x_2\\
+        x_3
+        \end{array}\right)=\left(\begin{array}{c}
+        15913\\
+        28.544\\
+        8.4254
+        \end{array}\right)
+      $$      
+      tiene la soluci\'on exacta $x = (1, 1, 1)^t$
+      \item<2-> Usando eliminaci\'on Gaussiana y aritm\'etica de redondeo de 5 d\'igitos a
+      $$
+      \left(\begin{array}{ccc|c}
+             3.333 & 15920 & -10.333 & 15913\\
+             0 & -10596 & 16.501 &-10580\\
+             0 & 0 & -5.079 & -4.7
+            \end{array}\right)
+      $$
+      
+      La soluci\'on aproximada a este sistema es
+      
+      $$
+      \tilde x = (1.2001; 0.99991; 0.92538)^t
+      $$
+      \end{itemize}
+\end{frame}
+  %%%%%%
+  \begin{frame}
+    \frametitle{Ejemplo:}
+    \begin{itemize}
+      \item El vector residual correspondiente a $\tilde x$ calculado con doble precisi\'on (y luego redondeado a cinco d\'igitos) es 
+      \small{
+      \begin{eqnarray}
+       \nonumber r & = & b - A \tilde x =\\
+       \nonumber   & = & \left(\begin{array}{c}
+            15913\\
+            28.544\\
+            8.4254
+            \end{array}\right) - \left(\begin{array}{ccc}
+             3.333 & 15920 & -10.333\\
+             2.222 & 16.71 & 9.612\\
+             1.5611 & 5.1791 & 1.6852
+            \end{array}\right)\left(\begin{array}{c}
+            1.2001\\
+            0.99991\\
+            0.92538
+            \end{array}\right)\\
+      \nonumber & = & \left(\begin{array}{c}
+            -0.0051818\\
+            0.27413\\
+            -0.18616
+            \end{array}\right)
+      \end{eqnarray}}
+      
+      \item<2-> as\'i que 
+       $$
+       \|r\|_{\infty} = 0.27413
+       $$
+      \end{itemize}
+    \end{frame}
+  %%%%%%
+  \begin{frame}
+    \frametitle{Ejemplo:}
+    \begin{itemize}
+      \item<1-> La estimaci\'on del n\'umero de condici\'on se obtiene resolviendo primero el sistema $A z = r$:      
+      $$
+      \left(\begin{array}{ccc}
+             3.333 & 15920 & -10.333\\
+             2.222 & 16.71 & 9.612\\
+             1.5611 & 5.1791 & 1.6852
+            \end{array}\right)\left(\begin{array}{c}
+            z_1\\
+            z_2\\
+            z_3
+            \end{array}\right)=\left(\begin{array}{c}
+          -0.0051818\\
+          0.27413\\
+          -0.18616
+            \end{array}\right)
+      $$
+      \item <2-> La soluci\'on $z = (-0.20008; 8.9989 \times 10^{-5}; 0.074607)^t$ Usando la estimaci\'on del n\'umero de condici\'on      
+       $$
+       \kappa(A) \approx 10^5\frac{\|\tilde z\|_{\infty}}{\|\tilde x\|_{\infty}} = \frac{10^5(0.20008)}{1.2001} = 16672
+       $$
+      \end{itemize}
+    \end{frame}
+  %%%%%%
+  \begin{frame}
+    \frametitle{Ejemplo:}
+    \begin{itemize}
+      \item<1-> Se ha usado la estimaci\'on $\tilde z \approx x - \tilde x$, donde $\tilde z$ es la soluci\'on aproximada al sistema $A z = r$.
+      \item<2-> A partir de este resultado, se genera la nueva aproximaci\'on $\tilde x + \tilde z$.
+      \item<3-> Este proceso puede ser repetido para refinar la soluci\'on sucesivamente hasta alcanzar convergencia.
+    \end{itemize}
+  \end{frame}
+  %%%%%  
+  \begin{frame}    
+    \frametitle{Algoritmo}
+    \small
+\begin{algorithm}[H]
+ \SetKwInOut{Input}{input}
+ \SetKwInOut{Output}{output}
+ \caption{Algoritmo de Refinamiento Iterativo.}
+ \Input{$A \in \mathbb{R}^{n \times n}$, $b \in \mathbb{R}^n$, N\'umero m\'aximo de iteraciones $N$, tolerancia $TOL$.}
+ \Output{Soluci\'on aproximada $x\in\mathbb{R}^n$.}
+ \BlankLine
+ Resolver $Ax=b$\\
+ \For{$k\leftarrow 1$ \KwTo $N$}
+ {
+  $r=b-Ax$\\
+  Resolver $Ay=r$ (usando eliminaci\'on Gaussiana en el mismo orden que en el paso 1).\\
+  Calcular $K(A) = 10^t\displaystyle\frac{\|y\|}{\|x\|}$ (solo se calcula la primera vez).\\
+  $x=x+y$\\
+  \If{$\|y\|<TOL$}
+  {
+    salida $x$\\
+    parar
+  }
+ }
+\end{algorithm}
   \end{frame}
   %%%%%%
   \begin{frame}{M\'etodos Iterativo}
