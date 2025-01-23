@@ -269,7 +269,7 @@
       La soluci\'on aproximada a este sistema es
       
       $$
-      \tilde x = (1.2001; 0.99991; 0.92538)^t
+      \tilde x^{(0)} = (1.2001; 0.99991; 0.92538)^t
       $$
       \end{itemize}
 \end{frame}
@@ -280,7 +280,7 @@
       \item El vector residual correspondiente a $\tilde x$ calculado con doble precisi\'on (y luego redondeado a cinco d\'igitos) es 
       \small{
       \begin{eqnarray}
-       \nonumber r & = & b - A \tilde x =\\
+       \nonumber r^{(0)} & = & b - A \tilde x^{(0)} =\\
        \nonumber   & = & \left(\begin{array}{c}
             15913\\
             28.544\\
@@ -303,7 +303,7 @@
       
       \item<2-> as\'i que 
        $$
-       \|r\|_{\infty} = 0.27413
+       \|r^{(0)}\|_{\infty} = 0.27413
        $$
       \end{itemize}
     \end{frame}
@@ -311,7 +311,7 @@
   \begin{frame}
     \frametitle{Ejemplo:}
     \begin{itemize}
-      \item<1-> La estimaci\'on del n\'umero de condici\'on se obtiene resolviendo primero el sistema $A z = r$:      
+      \item<1-> La estimaci\'on del n\'umero de condici\'on se obtiene resolviendo primero el sistema $A z^{(0)} = r$:      
       $$
       \left(\begin{array}{ccc}
              3.333 & 15920 & -10.333\\
@@ -327,12 +327,35 @@
           -0.18616
             \end{array}\right)
       $$
-      \item <2-> La soluci\'on $z = (-0.20008; 8.9989 \times 10^{-5}; 0.074607)^t$ Usando la estimaci\'on del n\'umero de condici\'on      
+      \item <2-> La soluci\'on $z^{(0)} = (-0.20008; 8.9989 \times 10^{-5}; 0.074607)^t$ Usando la estimaci\'on del n\'umero de condici\'on      
        $$
-       \kappa(A) \approx 10^5\frac{\|\tilde z\|_{\infty}}{\|\tilde x\|_{\infty}} = \frac{10^5(0.20008)}{1.2001} = 16672
+       \kappa(A) \approx 10^5\frac{\|\tilde z^{(0)}\|_{\infty}}{\|\tilde x^{(0)}\|_{\infty}} = \frac{10^5(0.20008)}{1.2001} = 16672
        $$
       \end{itemize}
-    \end{frame}
+    \end{frame}  
+  %%%%%%
+  \begin{frame}
+    \frametitle{Ejemplo:}
+    \begin{itemize}
+      \item Calculado $\tilde z^{(0)}$ se puede generar la nueva aproximaci\'on $\tilde x^{(1)}$
+      $$
+      \tilde x^{(1)} = \tilde x^{(0)} + \tilde z^{(0)} = (1.0000; 1.0000; 0.99999)^t
+      $$
+      \item<2-> y el error real en esta aproximaci\'on es
+      $$
+      \|x - \tilde x^{(1)}\|\infty = 1.0 \times 10^{-5}
+      $$
+      \item<3-> calculando $r^{(1)} = b - A \tilde x^{(1)}$, y resolviendo el sistema $A z^{(1)} = r^{(1)}$, se obteniene
+      $$
+      \tilde z^{(1)} = (-2.7003 \times 10^{-8}; 1.2973 \times 10^{-8}; 9.9817 \times 10^{-6})^t
+      $$
+      \item<4-> Puesto que $\|\tilde z^{(1)}\| \leq 10^{-5}$, se concluye que
+      $$
+      \tilde x^{(2)}= \tilde x^{(1)} + \tilde z^{(1)} = (1.0000; 1.0000; 1.0000)^t
+      $$      
+      es suficientemente preciso.
+    \end{itemize}
+  \end{frame}
   %%%%%%
   \begin{frame}
     \frametitle{Ejemplo:}
@@ -368,7 +391,8 @@
  }
 \end{algorithm}
   \end{frame}
-  %%%%%%
+  %%%%%%  
+  \section{M\'etodos Iterativos de Punto Fijo}
   \begin{frame}{M\'etodos Iterativo}
     Un m\'etodos iterativo es estacionarios cuando la transici\'on de $x^{(k)}$ a $x^{(k+1)}$ no depende de la historia anterior:
      \begin{itemize}

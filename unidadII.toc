@@ -1,3 +1,4 @@
 \beamer@sectionintoc {1}{Introducci\'on}{3}{0}{1}
 \beamer@sectionintoc {2}{M\'etodos Iterativos}{8}{0}{2}
 \beamer@sectionintoc {3}{Refinamiento Iterativo}{17}{0}{3}
+\beamer@sectionintoc {4}{M\'etodos Iterativos de Punto Fijo}{56}{0}{4}
