@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  21 JAN 2025 21:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  26 JAN 2025 14:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -924,6 +924,241 @@ Overfull \hbox (3.49023pt too wide) detected at line 335
 [52
 
 ]
+
+[53
+
+]
+
+[54
+
+]
+Overfull \hbox (2.10071pt too wide) in alignment at lines 421--421
+ [][][] []
+ []
+
+
+
+[55
+
+]
+Overfull \hbox (2.10071pt too wide) in alignment at lines 421--421
+ [][][] []
+ []
+
+
+
+[56
+
+]
+Overfull \hbox (2.10071pt too wide) in alignment at lines 421--421
+ [][][] []
+ []
+
+
+
+[57
+
+]
+Overfull \hbox (2.10071pt too wide) in alignment at lines 421--421
+ [][][] []
+ []
+
+
+
+[58
+
+]
+Overfull \hbox (2.10071pt too wide) in alignment at lines 421--421
+ [][][] []
+ []
+
+
+
+[59
+
+]
+Overfull \hbox (2.10071pt too wide) in alignment at lines 421--421
+ [][][] []
+ []
+
+
+
+[60
+
+]
+Overfull \hbox (2.10071pt too wide) in alignment at lines 421--421
+ [][][] []
+ []
+
+
+
+[61
+
+]
+
+[62
+
+]
+
+[63
+
+]
+
+[64
+
+]
+
+[65
+
+]
+
+[66
+
+]
+
+[67
+
+]
+
+[68
+
+]
+
+[69
+
+]
+
+[70
+
+]
+
+[71
+
+]
+
+[72
+
+]
+
+[73
+
+]
+
+[74
+
+]
+
+[75
+
+]
+
+[76
+
+]
+
+[77
+
+]
+
+[78
+
+]
+
+[79
+
+]
+
+[80
+
+]
+
+[81
+
+]
+
+[82
+
+]
+
+[83
+
+]
+
+[84
+
+]
+
+[85
+
+]
+<descomA.png, id=2833, 365.11406pt x 79.04532pt>
+File: descomA.png Graphic file (type png)
+<use descomA.png>
+Package pdftex.def Info: descomA.png  used on input line 583.
+(pdftex.def)             Requested size: 182.55658pt x 39.52255pt.
+
+
+[86
+
+ <./descomA.png>]
+File: descomA.png Graphic file (type png)
+<use descomA.png>
+Package pdftex.def Info: descomA.png  used on input line 583.
+(pdftex.def)             Requested size: 182.55658pt x 39.52255pt.
+
+
+[87
+
+]
+
+[88
+
+]
+
+[89
+
+]
+
+[90
+
+]
+
+[91
+
+]
+
+[92
+
+]
+
+[93
+
+]
+
+[94
+
+]
+
+[95
+
+]
+Overfull \hbox (22.05994pt too wide) detected at line 716
+\OML/cmm/m/it/10 M \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 D \OT1/cmr/m/n/10 = []  \OML/cmm/m/it/10 L \OT1/cmr/m/n/10 = []  \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = []
+ []
+
+
+
+[96
+
+]
+
+[97
+
+]
+
+[98
+
+]
 \tf@nav=\write6
 \openout6 = `unidadII.nav'.
 
@@ -939,21 +1174,21 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `unidadII.out' has not changed.
-(rerunfilecheck)             Checksum: 75698B7A8239585118F3E33B11246FE2;401.
+(rerunfilecheck)             Checksum: 55EE34F5814816F203B642A2BD811560;766.
  ) 
 Here is how much of TeX's memory you used:
- 23120 strings out of 473583
- 444490 string characters out of 5732336
- 1947908 words of memory out of 5000000
- 45432 multiletter control sequences out of 15000+600000
+ 23325 strings out of 473583
+ 448200 string characters out of 5732336
+ 1961908 words of memory out of 5000000
+ 45543 multiletter control sequences out of 15000+600000
  566262 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,439b,765s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadII.pdf (52 pages, 283854 bytes).
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on unidadII.pdf (98 pages, 458937 bytes).
 PDF statistics:
- 1718 PDF objects out of 1728 (max. 8388607)
- 1506 compressed objects within 16 object streams
- 108 named destinations out of 1000 (max. 500000)
- 469 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3337 PDF objects out of 3580 (max. 8388607)
+ 2874 compressed objects within 29 object streams
+ 202 named destinations out of 1000 (max. 500000)
+ 1336 words of extra memory for PDF output out of 10000 (max. 10000000)
 

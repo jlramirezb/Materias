@@ -369,11 +369,418 @@
 \end{algorithm}
   \end{frame}
   %%%%%%
-  \begin{frame}{M\'etodos Iterativo}
-    Un m\'etodos iterativo es estacionarios cuando la transici\'on de $x^{(k)}$ a $x^{(k+1)}$ no depende de la historia anterior:
-     \begin{itemize}
-      \item \textbf{M\'etodos Estacionarios:} $x^{(k+1)} = f(x^{(k)})$
-      \item \textbf{M\'etodos no Estacionarios:} $x^{(k+1)} = f(x^{(k)},x^{(k-1)},x^{(k-2)},\ldots)$
+  \section{M\'etodos Iterativos de Punto Fijo}
+  \begin{frame}{Esquemas de Punto Fijo}
+    Supongase un (SL) $Ax = b$, se busca una matriz $T \in \mathcal{M}_n$ y un vector $c \in \mathbb{R}^{n}$, de forma que la matriz $I - T$ sea inversible y que la \'unica soluci\'on del sistema lineal
+\begin{block}{}
+$$
+ \underbrace{x=Tx+c}_{(I-T)x=c}
+ $$
+\end{block}
+es la soluci\'on  de $Ax=b$.
+\end{frame}    
+%%%%%%
+\begin{frame}{Esquemas de Punto Fijo}
+  Considerando $x^{(0)} \in \mathbb{R}^{n}$ un vector arbitrario, se construye una sucesi\'on de vectores $\{x\}_{k=0}^{\infty}$ dada por
+  \begin{block}{}
+   $$
+   x^{(k+1)} = Tx^{(k)}+c; \qquad k \in \mathbb{N}\cup \{0\}
+   $$
+  \end{block}
+  y se pretende que la sucesi\'on $\{x\}_k$ converja a la soluci\'on del sistema lineal.
+  \end{frame}
+  %%%%%%  
+  \begin{frame}{Esquemas de Punto Fijo}
+    \begin{block}{Definici\'on}
+    El m\'etodo iterativo $x^{(k+1)} = Tx^{(k)} + c$ es convergente si existe un vector $x \in \mathbb{R}^n$ tal que:
+    $$
+    \lim_{k\rightarrow\infty}x^{(k)} = x
+    $$
+    para cualquier vector inicial $x^{(0)} \in \mathbb{R}^n$. En ese caso,
+    $$
+    x = Tx + c
+    $$
+    \end{block}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{Criterio de Convergencia}
+    El error en cada iteraci\'on se puede medir, por tanto como:
+    \uncover<2->{
+    \begin{block}{}
+    $$
+    e^{(k)} = x^{(k)} - x
+    $$
+    \end{block}}
+    \uncover<3->{Se tiene que:}
+    \begin{eqnarray}
+    \uncover<4->{e^{(k)} = x^{(k)} - x & = & (Tx^{(k-1)} + c) - (Tx + c) = T(x^{(k-1)} - x) =\nonumber\\}
+    \uncover<5->{&&Te^{(k-1)} =  \cdots = T^ke^{(0)}\nonumber\\}
+    \uncover<6->{&&\Rightarrow e^{(k)} = T^ke^{(0)}\nonumber}
+    \end{eqnarray}
+    \uncover<7->{De ese modo, el error en las iteraciones depende de las potencias sucesivas de la matriz $T$, lo que dar\'a el criterio para la convergencia del M\'etodo Iterativo.}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{Criterio de Convergencia}
+    \begin{itemize}
+    \item<1-> Se mostr\'o por inducci\'on que
+    $$
+    e^{(k)} = T^ke^{(0)}
+    $$
+    \item<2-> Entonces $e^{(k)} \to 0$ para todo $e^{(0)}$ si y s\'olo si $ T^k \to 0$.
+    \begin{block}{}
+    $$
+     \lim_{k \to \infty}\|e^{(k)} \| \to 0 \quad sii \quad \lim_{k \to \infty}\|T^k\| \to 0
+     $$
+    \end{block}
+    \item<3-> Si $T$ es una matriz diagonalizable, exiten matrices $P$ y $\Lambda$, tales que $T=P\Lambda P^{-1}$, donde $\Lambda$ es una matriz diagonal con los autovalores de $T$ en la diagonal.
+    \begin{eqnarray}
+     T & = & P \Lambda P^{-1}\nonumber\\
+     T^{k} & = & P \Lambda P^{-1}P \Lambda P^{-1}\cdots P \Lambda P^{-1}\nonumber\\
+     T^{k} & = & P \Lambda^{k} P^{-1}\nonumber
+    \end{eqnarray}
+    \end{itemize}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{Criterio de Convergencia}
+    \begin{itemize}
+     \item<1-> Donde
+     $$
+     \Lambda^{k} = \left(\begin{array}{cccc}
+                          \lambda_1^{k} & & & \\
+                          & \lambda_2^{k} & & \\
+                          & & \ddots & \\
+                          & & & \lambda_n^{k}
+                         \end{array}\right)
+     $$
+     \item<2-> De esta manera
+     \begin{block}{}
+     \begin{eqnarray}
+        \lim_{k \to \infty}\|T^{k}\| \to 0 & \Rightarrow & \lim_{k \to \infty}\|P \Lambda^{k} P^{-1}\| \to 0 \Rightarrow \lim_{k \to \infty}\|\Lambda^{k}\| \to 0\nonumber\\
+         & \Rightarrow & \lim_{k \to \infty}|\lambda_i^{k}| \to 0 \Rightarrow |\lambda_i|<1\quad i=1,2,\ldots,n\nonumber
+     \end{eqnarray}
+     \end{block}
+    \end{itemize}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{Criterio de Convergencia}
+    \begin{itemize}
+     \item Si la magnitud de todos los autovalores de la matriz de iteraci\'on $T$ son menores que 1, entonces el esquema iterativo es convergente.
+     \uncover<2->{\begin{block}{Teorema}
+                   Un esquema iterativo definido por $x^{(k+1)} = Tx^{(k)}+c$ es convergente si y s\'olo si $\rho(T) < 1$.
+                  \end{block}}
+     \item<3-> Es m\'as sencillo calcular la norma de una matriz que el c\'alculo de sus autovalores
+     $$
+     \left.\begin{array}{lcl}
+            Tx & = & \lambda x \\
+            \|Tx\| & = & |\lambda|\|x\|\\
+            \|Tx\| & \leq & \|T\|\|x\|
+           \end{array}\right\} \Rightarrow |\lambda|\|x\| \leq \|T\|\|x\| \Rightarrow |\lambda| \leq \|T\|
+     $$
+     \uncover<4->{Por lo que una condici\'on suficiente para la convergencia es: \textcolor{red}{$\|T\| < 1$}}
+    \end{itemize}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{Tasa de Convergencia}
+    \begin{itemize}
+    \item<1-> En el dise\~no de un m\'etodo iterativo, adem\'as de asegurar la consistencia y convergencia del m\'etodo, es importante el concepto de velocidad de convergencia.
+    \item<2-> Supongase que se tiene una aproximaci\'on de la soluci\'on, $x^{(k)}$ con $q$ cifras significativas,
+    $$
+    \|e^{(k)}\| \leq \frac{1}{2}10^{-q}\|x\|
+    $$
+    \item<3-> y se desea saber cu\'antas iteraciones m\'as se tienen que hacer para obtener $m$ cifras correctas m\'as. Interesa, por lo tanto, saber cu\'antas iteraciones $N$ hay que hacer para que,
+    $$
+    \|e^{(k+N)}\| \leq \frac{1}{2}10^{-(q+m)}\|x\|
+    $$
+    es decir
+    \begin{block}{}
+     $$
+    \|e^{(k+N)}\| \leq 10^{-m}\|e^{(k)}\|
+    $$
+    \end{block}
+    \end{itemize}
+    \end{frame}
+    %%%%%
+    \begin{frame}{Tasa de Convergencia}
+    \begin{itemize}
+     \item<1-> Esto permitir\'a dar informaci\'on sobre la velocidad con que la sucesi\'on de aproximaciones $x^{(k)}$ se acerca a la soluci\'on.
+     \item<2-> Se sabe que $e^{(k+N)} = T^{N}e^{(k)}$, que tomando norma es
+     $$
+     \|e^{(k+N)}\| \leq \|T^{N}\|\|e^{(k)}\|
+     $$
+     \item<3-> De manera que para conseguir las $m$ cifras significativas es suficiente exigir que $\|T^{N}\| \leq 10^{-m}$ o, equivalentemente
+     $$
+     -\log_{10}\|T^{N}\| \geq m
+     $$
+     \item<4-> As\'i, para conseguir $m$ cifras significativas es suficiente hacer $N$ iteraciones con
+     $$
+     N \geq \frac{m}{R}
+     $$
+    \end{itemize}
+    \end{frame}
+    %%%%%%%
+    \begin{frame}{Tasa de Convergencia}
+    \begin{itemize}
+     \item Donde $R$ se define como:
+     $$
+     R = -\frac{1}{N}\log_{10}\|T^{N}\| = -\log_{10}\left(\|T^{N}\|^{1/N}\right)
+     $$
+     \item El par\'ametro $R$ se puede interpretar como la velocidad de convergencia: cuanto mayor es $R$ menos iteraciones hay que hacer para incrementar la precisi\'on en la aproximaci\'on.
+     \item Se puede comprobar que
+     $$
+     \lim_{N \to \infty}\|T^{N}\|^{1/N} = \rho(T)
+     $$
+     por lo tanto, la velocidad asint\'otica de convergencia del m\'etodo es
+     $$
+     R_{\infty} = \log_{10}\left(\frac{1}{\rho(T)}\right)
+     $$
      \end{itemize}
     \end{frame}
-\end{document}
+    %%%%%%
+    \begin{frame}{Tasa de Convergencia}
+    \begin{itemize}
+     \item<1-> El radio espectral hace el papel del factor asint\'otico de convergencia del m\'etodo.
+     \item<2-> Para $\rho(T) \simeq 0$, la velocidad de convergencia $R_{\infty}$ es muy grande y el m\'etodo tiene una convergencia muy r\'apida.
+     \item<3-> Para $\rho(T) = 1 - \varepsilon$, con $\varepsilon \simeq 0$ positivo, la velocidad de convergencia es positiva pero peque\~na y el m\'etodo converge pero lo hace lentamente.
+     \item<4-> En cambio, si $\rho(T) > 1$ la velocidad de convergencia es negativa por lo que la convergencia no est\'a asegurada.
+    \end{itemize}
+    \end{frame}
+    %%%%%   
+    \begin{frame}{Construcci\'on de los M\'etodos}
+      Considerando la descomposici\'on
+      $$
+      A = M-N, \quad M \mbox{ regular }
+      $$
+      \uncover<2->{
+      El sistema $Ax=b$ se puede escribir en la forma
+      $$
+      Mx = Nx+b,\mbox{ es decir, } x = M^{-1}Nx + M^{-1}b
+      $$
+      lo que sugiere el esquema iterativo}
+      \uncover<3->{
+      \begin{block}{}
+      $$
+      x^{(k+1)}=M^{-1}Nx^{(k)} + M^{-1}b
+      $$
+      \end{block}
+      donde $T=M^{-1}N$ y $c=M^{-1}b=(I-T)A^{-1}b$, por lo que el m\'etodo as\'i construido es consistente con el sistema.}
+      \end{frame}
+      %%%%%
+      \begin{frame}{Construcci\'on de los M\'etodos}
+      \begin{itemize}
+       \item El esquema anterior tamb\'en es esquivalente a
+      \begin{block}{}
+       $$
+       x^{(k+1)} = x^{(k)} + M^{-1}(b-Ax^{(k)})
+       $$
+      \end{block}
+      donde $r^{(k)} = b-Ax^{(k)}$ es el residual de la $k$-\'esima iteraci\'on y $M$ es un precondicionador del sistema.
+      \item<2-> En lo sucesivo se considera la descomposici\'on aditiva de la matriz $A$ como
+      \begin{center}
+      \includegraphics[scale=0.5]{descomA.png}
+      \end{center}
+      donde $L_A$ es la parte triangular inferior de la matriz sin incluir la diagonal, $D_A$ es la diagonal de $A$, y $U_A$ es la parte triangular superior sin incluir la diagonal.
+      \end{itemize}
+      \end{frame}
+      %%%%%%
+      \subsection{M\'etodo de Jacobi}      
+      \begin{frame}{M\'etodo de Jacobi}
+      \begin{itemize}
+       \item Se basa en una descomposici\'on de la matriz $A$ del tipo $A = M - N$ , con $M = D$, parte diagonal de la matriz $A$, y $N = L + U$
+       \item<2-> Obliga a resolver un sistema diagonal en cada paso.
+       \item <3-> De esta manera queda que $A=D-L-U=D-(L+U)$, por lo tanto el sistema se transforma en:       
+       $$
+       Ax=b \Leftrightarrow (D-(L+U))x=b \Leftrightarrow Dx=(L+U)x + b
+       $$
+       \end{itemize}
+      \end{frame}
+      %%%%%%
+      \begin{frame}{M\'etodo de Jacobi}
+      \begin{itemize}
+        \item<1-> As\'i, se calcula la soluci\'on del sistema, como el l\'imite de la sucesi\'on $\{x^{(k)}\}_{k \in N}$ donde se define el t\'ermino $(k+1)$-\'esimo como:
+       
+       $$
+       x^{(k+1)}= D^{-1}(L+U)x^{(k)} + D^{-1}b
+       $$
+       
+       siendo as\'i su matriz de iteraci\'on:
+       
+       $$
+       T=D^{-1}(L+U)
+       $$
+       
+       Entonces el sistema ha sido escrito como un proceso iterativo de la forma
+       $$
+       x^{(n+1)}= Tx^{(n)}+c .
+       $$
+      \end{itemize}
+      \end{frame}
+      %%%%%%       
+      \begin{frame}{M\'etodo de Jacobi}
+      \begin{itemize}
+       \item<1-> Dado un sistema de ecuaciones:
+       $$
+       \left\{\begin{array}{c}
+               a_{1,1}x_1 + a_{1,2}x_2 + \cdots + a_{1,i}x_i + \cdots + a_{1,n}x_n = b_1\\
+         a_{2,1}x_1 + a_{2,2}x_2 + \cdots + a_{2,i}x_i + \cdots + a_{2,n}x_n = b_2\\
+                   \vdots\\
+         a_{i,1}x_1 + a_{i,2}x_2 + \cdots + a_{i,i}x_i + \cdots + a_{i,n}x_n = b_i\\
+                   \vdots\\
+         a_{n,1}x_1 + a_{n,2}x_2 + \cdots + a_{n,i}x_i + \cdots + a_{n,n}x_n = b_n
+              \end{array}
+       \right.
+       $$
+      \end{itemize}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{M\'etodo de Jacobi}
+    \begin{itemize}
+      \item<1->Si $a_{i,i}\neq 0$ para todo $i=1,\ldots,n$, entonces despejando $x_i$ de la $i$-\'esima ecuaci\'on, obtenemos el sistema equivalente       
+       $$
+       x_i = -\sum_{j=1,j\neq i}^n\left(\frac{a_{i,j}}{a_{i,i}}\right)x_j + \frac{b_i}{a_{i,i}}, \qquad i=1,\ldots,n
+       $$       
+       \item<2->Conocido $x^{(k-1)}$, se calcula la aproximaci\'on $x^{(k)}$, mediante la f\'ormula:       
+       $$
+       x_i^{(k)} = \displaystyle\frac{b_i-\displaystyle\sum_{j=1,j\neq i}^na_{i,j}x_j^{(k-1)}}{a_{i,i}}, \qquad i=1,\ldots,n
+       $$       
+       que es llamada f\'ormula escalar de iteraci\'on del m\'etodo de Jacobi.
+      \end{itemize}
+      \end{frame}     
+      %%%%%%
+      \begin{frame}{Ejemplo:}      
+      Resolver el sistema de ecuaciones
+      $$
+\left(\begin{array}{ccc}
+       4 & 1 & 0\\
+       1 & 4 & 1\\
+       0 & 1 & 4
+      \end{array}\right)\left(\begin{array}{c}
+      x_1\\
+      x_2\\
+      x_3
+      \end{array}\right)=\left(\begin{array}{c}
+      -3\\
+      10\\
+      1
+      \end{array}\right)
+      $$
+      cuya soluci\'on es el vector
+
+$$
+\left(\begin{array}{c}
+      x_1\\
+      x_2\\
+      x_3
+      \end{array}\right)=\left(\begin{array}{c}
+      -1.5\\
+      3\\
+      -0.5
+      \end{array}\right)
+$$
+      y tomando como vector inicial $x^{(0)} = \left(\begin{array}{c}
+      -1\\
+      4\\
+      -1
+      \end{array}\right)$
+      \end{frame}
+      %%%%%%
+      \begin{frame}{Ejemplo:}
+        Procedamos a realizar la descomposici\'on de la matriz del sistema:
+        \small{
+        $$
+        M=D=\left(\begin{array}{ccc}
+               4 & 0 & 0\\
+               0 & 4 & 0\\
+               0 & 0 & 4
+              \end{array}\right) \quad L=\left(\begin{array}{ccc}
+               0 & 0 & 0\\
+               -1 & 0 & 0\\
+               0 & -1 & 0
+              \end{array}\right) \quad U=\left(\begin{array}{ccc}
+               0 & -1 & 0\\
+               0 & 0 & -1\\
+               0 & 0 & 0
+              \end{array}\right)
+        $$}           
+        con        
+        $$
+        N=L+U
+        $$
+        Para comprobar si estamos convergiendo a la soluci\'on tomaremos elvalor de la norma del residuo $r^{(k)} = b - Ax^{(k)}$.
+        $$        
+        r^{(0)}	=b-Ax^{(0)} = \left(\begin{array}{c}
+        -3\\
+        -4\\
+        1
+        \end{array}\right) \Rightarrow \|r^{(0)}\|_\infty = 4
+        $$
+      \end{frame}   
+      %%%%%%
+      \begin{frame}{Ejemplo:}     
+        El primero paso del esquema vendr\'ia dado por:
+        $$
+        Dx^{(1)} = N x^{(0)} + b = (L + U )x^{(0)} + b
+        $$
+        $$
+\left(\begin{array}{ccc}
+       4 & 0 & 0\\
+       0 & 4 & 0\\
+       0 & 0 & 4
+      \end{array}\right)x^{(1)}=\left(\begin{array}{ccc}
+       0 & -1 & 0\\
+       -1 & 0 & -1\\
+       0 & -1 & 0
+      \end{array}\right)\left(\begin{array}{c}
+      -1\\
+      4\\
+      -1
+      \end{array}\right)+\left(\begin{array}{c}
+      -3\\
+      10\\
+      1
+      \end{array}\right)
+      $$
+      Y al resolver el sistema diagonal:
+$$
+x^{(1)} = \left(\begin{array}{c}
+      -1.75\\
+      3\\
+      -0.75
+      \end{array}\right)
+$$
+Con vector residual
+$$
+r^{(1)} = \left(\begin{array}{c}
+      1\\
+      0.5\\
+      1
+      \end{array}\right) \Rightarrow \|r^{(1)}\|_\infty = 1
+$$
+      \end{frame}
+      %%%%%%
+      \begin{frame}{Ejemplo:}
+        Por tanto, el residuo ha disminuido. Si seguimos iterando:
+        \begin{eqnarray}
+          \nonumber x^{(2)} = \left(\begin{array}{c}
+               -1.5\\
+               3.125\\
+               -0.5
+               \end{array}\right) \quad \|r^{(2)}\|_\infty=0.5 \\
+          \nonumber x^{(3)} = \left(\begin{array}{c}
+               -1.5312\\
+               3.0000\\
+               -0.50312
+               \end{array}\right) \quad \|r^{(3)}\|_\infty=0.125\\
+               \nonumber x^{(4)} = \left(\begin{array}{c}
+                -1.5\\
+                3.0156\\
+                -0.5
+                \end{array}\right) \quad \|r^{(4)}\|_\infty=0.0625 \\
+           \nonumber x^{(5)} = \left(\begin{array}{c}
+                -1.5039\\
+                3.0000\\
+                -0.5039
+                \end{array}\right) \quad \|r^{(5)}\|_\infty=1.5625e-02
+         \end{eqnarray}
+      \end{frame}        
+
+      \end{document}
