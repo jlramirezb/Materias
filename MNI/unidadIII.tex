@@ -1518,8 +1518,93 @@ x_k = x_0 + kh,\qquad k=0,1,\ldots,n
 $$
 \item<2-> Planteando el cambio de variables
 $$
-x=x_0+th \quad\text{con }t\in(0)
+x=x_0+th \quad\text{con }t\in(0,n)
+$$
+\item<3-> Obtenemos entonces que
+$$
+x-x_1 = (t-1)h; \quad x-x_2=(t-2)h; \quad \ldots \quad; x-x_{n-1} = (t-n+1)h 
 $$
 \end{itemize}
+}
+% %%%%
+\frame{
+\frametitle{Interpolaci\'on de Newton con puntos igualmente espaciados}
+\begin{block}{Definici\'on: Diferencia Finita Progresiva}
+  Se define como diferencia finita progresiva de una funci\'on $f(x)$ en un punto $x_0$, y
+  se
+  representa $\Delta f (x_0)$ a la diferencia:
+  $$
+  \Delta f(x_0) = f(x_1) - f(x_0)
+  $$
+\end{block}
+\uncover<2->{
+  Del mismo modo se puede definir la de
+segundo orden:
+$$
+\Delta^2f(x_0) = \Delta f(x_1) - \Delta f(x_0) = f(x_2) -2f(x_1) + f(x_0)
+$$
+
+En general:
+$$
+\Delta^k f(x_0) = \Delta^{k-1}f(x_1) - \Delta^{k-1}f(x_0)
+$$
+}}
+% %%%%
+\frame{
+\frametitle{Interpolaci\'on de Newton con puntos igualmente espaciados}
+\begin{itemize}
+\item<1-> La relaci\'on entre las diferencias finitas progresivas y las diferencias divididas viene dada por:
+{\small
+\begin{eqnarray}
+ \nonumber f[x_0,x_1] & = & \dfrac{f(x_1) - f(x_0)}{x_1 - x_0} = \dfrac{\Delta f(x_0)}{h} \Rightarrow \Delta f(x_0) =
+hf[x_0,x_1]\\
+\nonumber f[x_0,x_1,x_2] & = & \dfrac{f[x_1,x_2] - f[x_0,x_1]}{x_2 - x_0} = \dfrac{\Delta f(x_1) - \Delta f(x_0)}{2h^2}\\
+\nonumber&\Rightarrow& \Delta^2 f(x_0) = 2h^2f[x_0,x_1,x_2]
+\end{eqnarray}}
+En general
+$$
+\Delta^nf(x_0) = n!h^nf[x_0,x_1,\ldots,x_n]
+$$
+\end{itemize}
+}
+% %%%%
+\frame{
+\frametitle{Interpolaci\'on de Newton con puntos igualmente espaciados}
+\begin{itemize}
+\item<1-> A partir de la f\'ormula de Newton con diferencias divididas y de la relaci\'on entre estas \'ultimas y las diferencias finitas
+progresivas se tiene:
+\end{itemize}
+\footnotesize{
+$$
+ P_n(x) = f[x_0] + f[x_0,x_1] (x - x_0 ) 
+ $$
+ $$
+ + f[x_0,x_1,x_2](x - x_0 )(x - x_1 ) + \cdots + f[x_0,x_1,\ldots,x_n](x - x_0 )(x -
+x_1 ) \cdots (x - x_{n-1} )
+$$}
+\normalsize
+\begin{itemize}
+\item<2-> A partir del cambio de variable $x = x_0 + th$ se tiene que
+\end{itemize}
+\footnotesize{
+\uncover<2->{$$
+P_n(x_0+th) = Q_n(t)
+$$
+$$
+=f(x_0)+\dfrac{\Delta f(x_0)}{h}th +\dfrac{\Delta^2
+f(x_0)}{2!h^2}t(t-1)h^2+\cdots+\dfrac{\Delta^nf(x_0)}{n!h^n}t(t-1)\cdots(t-n+1)h^n
+$$
+$$
+= f(x_0)+\Delta f(x_0)t +\dfrac{\Delta^2f(x_0)}{2!}t(t-1)+\cdots+\dfrac{\Delta^nf(x_0)}{n!}t(t-1)\cdots(t-n+1)
+$$
+$$
+= \sum_{k=0}^n\dfrac{\Delta^kf(x_0)}{k!}t(t-1)\cdots(t-k+1)=\sum_{k=0}^n\Delta^kf(x_0)\binom{t}{k}
+$$
+}}}
+% %%%%
+\frame{
+\frametitle{Ejemplo:}
+Construir el polinomio $P$ de grado $\leq 3$ que en los puntos $-1/2; 0; 1/2; 1$
+tome los valores $-4; 3; 13/2; 8$.
 }
 \end{document}
