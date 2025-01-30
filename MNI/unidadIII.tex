@@ -1490,4 +1490,36 @@ puede crecer ``r\'apido'' (extrapolaci\'on)
 \item<5-> Puntos de interpolaci\'on igualmente espaciados a menudo conducen a resultados err\'oneos en los extremos.
 \end{itemize}
 }
+% %%%%
+\frame{
+\frametitle{Interpolaci\'on de Newton con puntos igualmente espaciados}
+\begin{itemize}
+\item<1-> Sea $f$ una funci\'on definida en algunos puntos $x_0,\ldots, x_n$. Denotando por $y_0, \ldots, y_n$ sus valores correspon-
+dientes. Recordamos la f\'ormula de Newton para el polinomio interpolante que tiene valores
+$y_i = f(xi)$ en los puntos $x_i$:
+$$
+P(x) = \sum_{k=0}^n \mathcal{F}[x_0,\ldots,x_k]\prod_{j=0}^{k-1}(x - x_k )
+$$
+\item<2-> Las diferencias divididas $\mathcal{F}[x_0,\ldots,x_k]$ se definen de manera recursiva:
+\small{
+$$
+\mathcal{F}[x_i]=f(x_i)=y_i,\qquad\mathcal{F}[x_i,\ldots,x_j] = \dfrac{\mathcal{F}[x_{i+1},\ldots,x_j]-\mathcal{F}[x_i,\ldots,x_{j-1}]}{x_j-x_i}
+$$}
+\end{itemize}
+}
+% %%%%%
+\frame{
+\frametitle{Interpolaci\'on de Newton con puntos igualmente espaciados}
+\begin{itemize}
+\item<1-> Considerando el caso particular
+cuando los puntos $x_0,\ldots,x_n$ son equidistantes:
+$$
+x_k = x_0 + kh,\qquad k=0,1,\ldots,n
+$$
+\item<2-> Planteando el cambio de variables
+$$
+x=x_0+th \quad\text{con }t\in(0)
+$$
+\end{itemize}
+}
 \end{document}
