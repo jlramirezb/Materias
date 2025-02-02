@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  29 JAN 2025 23:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  1 FEB 2025 19:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3665,6 +3665,38 @@ Overfull \hbox (6.11281pt too wide) has occurred while \output is active
 [226
 
 ]
+
+
+Overfull \hbox (6.11281pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[227
+
+]
+
+
+Overfull \hbox (6.11281pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[228
+
+]
+Overfull \hbox (6.11281pt too wide) in paragraph at lines 1632--1632
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (6.11281pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[229
+
+]
 \tf@nav=\write6
 \openout6 = `unidadIII.nav'.
 
@@ -3683,18 +3715,18 @@ Package rerunfilecheck Info: File `unidadIII.out' has not changed.
 (rerunfilecheck)             Checksum: 77D797B6E90701F7E58D245A5E878769;492.
  ) 
 Here is how much of TeX's memory you used:
- 24020 strings out of 473583
- 463424 string characters out of 5732336
- 1974908 words of memory out of 5000000
- 45959 multiletter control sequences out of 15000+600000
+ 24028 strings out of 473583
+ 463507 string characters out of 5732336
+ 1976908 words of memory out of 5000000
+ 45961 multiletter control sequences out of 15000+600000
  569665 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,17n,123p,444b,953s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadIII.pdf (226 pages, 1124449 bytes).
+Output written on unidadIII.pdf (229 pages, 1134566 bytes).
 PDF statistics:
- 7264 PDF objects out of 7423 (max. 8388607)
- 6341 compressed objects within 64 object streams
- 459 named destinations out of 1000 (max. 500000)
+ 7346 PDF objects out of 7423 (max. 8388607)
+ 6418 compressed objects within 65 object streams
+ 465 named destinations out of 1000 (max. 500000)
  2926 words of extra memory for PDF output out of 10000 (max. 10000000)
 

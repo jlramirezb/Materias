@@ -202,10 +202,12 @@
 \headcommand {\beamer@framepages {223}{223}}
 \headcommand {\slideentry {2}{3}{29}{224/225}{Newton}{0}}
 \headcommand {\beamer@framepages {224}{225}}
-\headcommand {\slideentry {2}{3}{30}{226/226}{Newton}{0}}
-\headcommand {\beamer@framepages {226}{226}}
-\headcommand {\beamer@partpages {1}{226}}
-\headcommand {\beamer@subsectionpages {152}{226}}
-\headcommand {\beamer@sectionpages {44}{226}}
-\headcommand {\beamer@documentpages {226}}
-\headcommand {\gdef \inserttotalframenumber {97}}
+\headcommand {\slideentry {2}{3}{30}{226/228}{Newton}{0}}
+\headcommand {\beamer@framepages {226}{228}}
+\headcommand {\slideentry {2}{3}{31}{229/229}{Newton}{0}}
+\headcommand {\beamer@framepages {229}{229}}
+\headcommand {\beamer@partpages {1}{229}}
+\headcommand {\beamer@subsectionpages {152}{229}}
+\headcommand {\beamer@sectionpages {44}{229}}
+\headcommand {\beamer@documentpages {229}}
+\headcommand {\gdef \inserttotalframenumber {98}}

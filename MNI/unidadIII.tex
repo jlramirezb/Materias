@@ -1604,7 +1604,38 @@ $$
 % %%%%
 \frame{
 \frametitle{Ejemplo:}
-Construir el polinomio $P$ de grado $\leq 3$ que en los puntos $-1/2; 0; 1/2; 1$
+\begin{itemize}
+\item<1-> Construir el polinomio $P$ de grado $\leq 3$ que en los puntos $-1/2; 0; 1/2; 1$
 tome los valores $-4; 3; 13/2; 8$.
+\item<2-> Construyendo la tabla de diferencias divididas se obtiene:
+$$
+\begin{array}{|c|c|c|c|c|}
+\hline
+x & \Delta^0 f(x) = f(x) & \Delta f(x) & \Delta^2 f(x) & \Delta^3 f(x)\\\hline
+-1/2 & \color{red}-4 & &  &\\ \hline
+0 & 3 & \color{red}7 &  &  \\ \hline
+1/2 & 13/2 & 7/2 & \color{red}-7/2 &  \\ \hline
+1 & 8 & 3/2 & -2 & \color{red}3/2  \\ \hline
+\end{array}
+$$
+\item<3-> El polinomio $Q_n(t)$ viene dado por:
+\footnotesize{
+\begin{eqnarray}
+\nonumber Q_n(t) = P\left(\frac{-1}{2} + \frac{t}{2}\right) & = & \sum_{k=0}^n\Delta^kf(x_0)\binom{t}{k}\\
+\nonumber& = & -4 + 7t - \dfrac{7}{2}\dfrac{t(t-1)}{2} + \dfrac{3}{2}\dfrac{t(t-1)(t-2)}{6}\\
+\nonumber& = & -4 + \dfrac{37t}{4} - \frac{5t^2}{2}+\dfrac{t^3}{4}
+\end{eqnarray}
+}
+\end{itemize}
+}
+% %%%%%
+\frame{
+\frametitle{Ejemplo:}
+\begin{itemize}
+\item<1-> El polinomio $P(x)$ viene dado por:
+$$
+P(x) = Q(2x+1) = 3+10x-7x^2+2x^3
+$$
+\end{itemize}
 }
 \end{document}
