@@ -206,8 +206,20 @@
 \headcommand {\beamer@framepages {226}{228}}
 \headcommand {\slideentry {2}{3}{31}{229/229}{Newton}{0}}
 \headcommand {\beamer@framepages {229}{229}}
-\headcommand {\beamer@partpages {1}{229}}
-\headcommand {\beamer@subsectionpages {152}{229}}
-\headcommand {\beamer@sectionpages {44}{229}}
-\headcommand {\beamer@documentpages {229}}
-\headcommand {\gdef \inserttotalframenumber {98}}
+\headcommand {\slideentry {2}{3}{32}{230/230}{Newton}{0}}
+\headcommand {\beamer@framepages {230}{230}}
+\headcommand {\slideentry {2}{3}{33}{231/231}{Newton}{0}}
+\headcommand {\beamer@framepages {231}{231}}
+\headcommand {\beamer@subsectionpages {152}{231}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{232}{Interpolaci\'on de Chebyshev}}
+\headcommand {\slideentry {2}{4}{1}{232/232}{Interpolaci\'on de Chebyshev}{0}}
+\headcommand {\beamer@framepages {232}{232}}
+\headcommand {\slideentry {2}{4}{2}{233/236}{Interpolaci\'on de Chebyshev}{0}}
+\headcommand {\beamer@framepages {233}{236}}
+\headcommand {\slideentry {2}{4}{3}{237/242}{Interpolaci\'on de Chebyshev}{0}}
+\headcommand {\beamer@framepages {237}{242}}
+\headcommand {\beamer@partpages {1}{242}}
+\headcommand {\beamer@subsectionpages {232}{242}}
+\headcommand {\beamer@sectionpages {44}{242}}
+\headcommand {\beamer@documentpages {242}}
+\headcommand {\gdef \inserttotalframenumber {103}}
