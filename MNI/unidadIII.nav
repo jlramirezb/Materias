@@ -218,8 +218,14 @@
 \headcommand {\beamer@framepages {233}{236}}
 \headcommand {\slideentry {2}{4}{3}{237/242}{Interpolaci\'on de Chebyshev}{0}}
 \headcommand {\beamer@framepages {237}{242}}
-\headcommand {\beamer@partpages {1}{242}}
-\headcommand {\beamer@subsectionpages {232}{242}}
-\headcommand {\beamer@sectionpages {44}{242}}
-\headcommand {\beamer@documentpages {242}}
-\headcommand {\gdef \inserttotalframenumber {103}}
+\headcommand {\slideentry {2}{4}{4}{243/243}{Interpolaci\'on de Chebyshev}{0}}
+\headcommand {\beamer@framepages {243}{243}}
+\headcommand {\beamer@subsectionpages {232}{243}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{244}{Splines}}
+\headcommand {\slideentry {2}{5}{1}{244/244}{Splines}{0}}
+\headcommand {\beamer@framepages {244}{244}}
+\headcommand {\beamer@partpages {1}{244}}
+\headcommand {\beamer@subsectionpages {244}{244}}
+\headcommand {\beamer@sectionpages {44}{244}}
+\headcommand {\beamer@documentpages {244}}
+\headcommand {\gdef \inserttotalframenumber {105}}
