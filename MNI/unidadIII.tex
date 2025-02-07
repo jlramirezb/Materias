@@ -1738,8 +1738,23 @@ polinomios valen: $T(x'_k) = (-1)^k$
   \frametitle{Ejemplo:}
 }
 %%%%%
-\subsection{Splines}
+\subsection{Interpolaci\'on a trozos}
 \frame{
-  \frametitle{Splines}
-}
+  \frametitle{Interpolaci\'on a trozos}
+\begin{itemize}
+\item $S(x)$ En un polinomio interpolador de grado $n$ es posible tener $n-1$ extremos relativos, lo cual trae como consecuencia que tenga
+muchas oscilaciones o fluctuaciones al pasar por los puntos dados.
+\item<2-> Una alternativa para evitar dichas fluctuaciones es generar polinomios $S_k(x)$ que solo interpolen dos nodos consecutivos y luego unirlos en sus extremos.
+\item<3-> El conjunto $\{S_k(x)\}$ forman
+una curva polinomial a trozos o spline que se denota $S(x)$.
+\end{itemize}
+\uncover<4->{
+\begin{figure}[ht]
+  \begin{center}
+    \includegraphics[scale=0.25]{splines.png}
+  \caption{Interpolaci\'on a Trozos.}
+  \end{center}
+\end{figure}
+}}
+
 \end{document}

@@ -4,4 +4,4 @@
 \beamer@subsectionintoc {2}{2}{Lagrange}{62}{0}{2}
 \beamer@subsectionintoc {2}{3}{Newton}{152}{0}{2}
 \beamer@subsectionintoc {2}{4}{Interpolaci\'on de Chebyshev}{232}{0}{2}
-\beamer@subsectionintoc {2}{5}{Splines}{244}{0}{2}
+\beamer@subsectionintoc {2}{5}{Interpolaci\'on a trozos}{244}{0}{2}

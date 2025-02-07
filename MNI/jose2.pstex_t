@@ -1,0 +1,31 @@
+\begin{picture}(0,0)%
+\includegraphics{jose2.pstex}%
+\end{picture}%
+\setlength{\unitlength}{2279sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(10643,4593)(1696,-6115)
+\put(2521,-6046){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(x_0,y_0)$}%
+}}}}
+\put(1711,-4201){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(x_1,y_1)$}%
+}}}}
+\put(7021,-4156){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(x_3,y_3)$}%
+}}}}
+\put(8371,-1681){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(x_5,y_5)$}%
+}}}}
+\put(5266,-3976){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(x_2,y_2)$}%
+}}}}
+\put(6121,-2356){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(x_4,y_4)$}%
+}}}}
+\put(9631,-2446){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(x_6,y_6)$}%
+}}}}
+\put(9676,-3571){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(x_7,y_7)$}%
+}}}}
+\put(11926,-3346){\makebox(0,0)[lb]{\smash{{\SetFigFont{7}{8.4}{\rmdefault}{\mddefault}{\updefault}{\color[rgb]{0,0,0}$(x_8,y_8)$}%
+}}}}
+\end{picture}%

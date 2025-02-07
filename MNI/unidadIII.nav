@@ -221,11 +221,11 @@
 \headcommand {\slideentry {2}{4}{4}{243/243}{Interpolaci\'on de Chebyshev}{0}}
 \headcommand {\beamer@framepages {243}{243}}
 \headcommand {\beamer@subsectionpages {232}{243}}
-\headcommand {\beamer@subsectionentry {0}{2}{5}{244}{Splines}}
-\headcommand {\slideentry {2}{5}{1}{244/244}{Splines}{0}}
-\headcommand {\beamer@framepages {244}{244}}
-\headcommand {\beamer@partpages {1}{244}}
-\headcommand {\beamer@subsectionpages {244}{244}}
-\headcommand {\beamer@sectionpages {44}{244}}
-\headcommand {\beamer@documentpages {244}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{244}{Interpolaci\'on a trozos}}
+\headcommand {\slideentry {2}{5}{1}{244/247}{Interpolaci\'on a trozos}{0}}
+\headcommand {\beamer@framepages {244}{247}}
+\headcommand {\beamer@partpages {1}{247}}
+\headcommand {\beamer@subsectionpages {244}{247}}
+\headcommand {\beamer@sectionpages {44}{247}}
+\headcommand {\beamer@documentpages {247}}
 \headcommand {\gdef \inserttotalframenumber {105}}
