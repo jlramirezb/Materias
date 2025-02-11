@@ -1756,5 +1756,150 @@ una curva polinomial a trozos o spline que se denota $S(x)$.
   \end{center}
 \end{figure}
 }}
+%%%%%
+\frame{
+  \frametitle{Interpolaci\'on Lineal a trozos}
+\begin{itemize}
+\item<1-> Sean $(x_0,y_0), (x_1,y_1), (x_2,y_2),\ldots,(x_k,y_k),(x_{k+1},y_{k+1}),\ldots,(x_n,y_n)$, los puntos por los cuales debe pasar el polinomio interpolador
+\item<2-> El polinomio m\'as simple que se puede construir es el polinomio de grado uno, el cual produce una l\'inea poligonal.
 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.45]{inter_lin_troz.png}
+\end{center}
+\caption{Interpolaci\'on Lineal a Trozos.}
+\end{figure}
+\end{itemize}
+}
+%%%%%
+\frame{
+\frametitle{Interpolaci\'on Lineal a trozos}
+\begin{itemize}
+\item Por los polinomios interpoladores de Lagrange se puede determinar cada uno de los segmentos que forman est\'a l\'inea poligonal.
+\item<2-> Si $S_k(x)$ es el k-\'esimo segmento que une los puntos $(x_k,y_k),(x_{k+1},y_{k+1})$ se tiene entonces que
+$$
+S_k(x) = y_k\dfrac{x-x_{k+1}}{x_k-x_{k+1}}+y_{k+1}\dfrac{x-x_k}{x_{k+1}-x_k}
+$$
+o tambi\'en
+$$
+S_k(x) = y_k + d_k(x-x_k), \qquad d_k=\dfrac{y_{k+1}-y_k}{x_{k+1}-x_k}
+$$
+\end{itemize}
+}
+%%%%%
+\frame{
+\frametitle{Interpolaci\'on Lineal a trozos}
+\begin{itemize}
+\item<1-> Que es la ecuaci\'on de la recta que pasa por los puntos dados, luego entonces,
+$$
+S(x) = \left\{\begin{array}{ll}
+               S_0(x) = y_0 + d_0(x-x_0), & x \in [x_0,x_1]\\
+               S_1(x) = y_1 + d_1(x-x_1), & x \in [x_1,x_2]\\
+               \vdots & \vdots\\
+               S_k(x) = y_k + d_k(x-x_k), & x \in [x_k,x_{k+1}]\\
+               \vdots & \vdots\\
+               S_{n-1}(x) = y_{n-1} + d_{n-1}(x-x_{n-1}), & x \in [x_{n-1},x_n]\\
+              \end{array}
+\right.
+$$
+\end{itemize}
+}
+%%%%
+\frame{
+\frametitle{Interpolaci\'on Lineal Segmentaria}
+\begin{block}{Evaluaci\'on}
+ \begin{itemize}
+  \item Localizar el intervalo tal que $x \in [x_i, x_{i+1}]$. (Algoritmo de localizaci\'on).
+  \item<2-> $S_i(x) = y_i+(x-x_i)\dfrac{y_{i+1}-y_i}{x_{i+1}-x_i}$, $x_i\leq x\leq x_{i+1}$, $i=0,\ldots,n-1$
+ \end{itemize}
+\end{block}
+
+\uncover<3->{
+\begin{block}{Error}
+ Si $y_i = f(x_i)$ con $f \in \mathcal{C}^2[a,b]$:
+ $$
+ |S(x)-f(x)| \leq \dfrac{1}{8}h^2\max_{x \in [x_0,x_n]}|f''(x)| = O(h^2)
+ $$
+donde $h$ es la distancia m\'axima entre dos nodos adyacentes.
+\end{block}}
+
+\uncover<4->{
+\begin{block}{Derivada}
+ \begin{eqnarray}
+  S'(x) = \dfrac{y_{i+1}-y_i}{x_{i+1}-x_i} && x_i<x<x_{i+1}, i=0,1,\ldots,n-1\nonumber\\
+  |S'(x)-f'(x)| = O(h) && x\neq x_i,x_0<x<x_n\nonumber
+ \end{eqnarray}
+\end{block}
+}}
+%%%%
+\frame{
+\frametitle{Funci\'on de Runge $f(x) = \dfrac{1}{1+x^2}$}
+\begin{block}{$S(x)$ interpolante lineal segmentaria determinado en $n + 1$ nodos equidistantes}
+\begin{minipage}{5cm}
+ \begin{center}
+  \includegraphics[scale=0.3]{linear_seg.eps}
+ \end{center}
+\end{minipage}
+\begin{minipage}{6.5cm}
+$$
+x_j = -5+j\dfrac{10}{n}, j=0,1,\ldots,n
+$$
+\begin{center}
+\begin{tabular}{|c|c|}\hline
+ $n$ & $\|f-S\|_{\infty}$\\\hline
+ 50 & 9.33e-03\\\hline
+100 & 2.46e-03\\\hline
+200 &  6.22e-04\\\hline
+400 &  1.50e-04\\\
+800 &  3.75e-05\\\hline
+1600 &  9.37e-06\\\hline
+3200 & 2.34e-06\\\hline
+6400 &  5.86e-07\\\hline
+\end{tabular}
+ \end{center}
+\end{minipage}
+\end{block}
+}
+%%%%
+\frame{
+\frametitle{Funci\'on de Runge $f(x) = \dfrac{1}{1+x^2}$}
+\begin{block}{Error del interpolante lineal segmentaria 5 nodos.}
+ \begin{center}
+  \includegraphics[scale=0.35]{err_L4.eps}
+ \end{center}
+\end{block}
+}
+%%%%
+\frame{
+\frametitle{Funci\'on de Runge $f(x) = \dfrac{1}{1+x^2}$}
+\begin{block}{Error del interpolante lineal segmentaria 11 nodos.}
+ \begin{center}
+  \includegraphics[scale=0.35]{err_L10.eps}
+ \end{center}
+\end{block}
+}
+%%%%
+\frame{
+\frametitle{Interpolaci\'on de Lagrange vs segmentaria}
+\begin{block}{Coste de evaluaci\'on en un punto}
+ \begin{itemize}
+  \item Lagrange: se incrementa con el n\'umero de datos.
+  \item<2-> Segmentaria: no crece con el n\'umero de nodos.
+ \end{itemize}
+\end{block}
+\uncover<3->{
+\begin{block}{Convergencia uniforme}
+ \begin{itemize}
+  \item Lagrange: no est\'a garantizado.
+  \item<4-> Segmentaria: si
+ \end{itemize}
+\end{block}}
+\uncover<5->{
+\begin{block}{Derivabilidad}
+ \begin{itemize}
+  \item Lagrange: Indefinidamente derivable.
+  \item<6-> Segmentaria: S\'olo continua.
+\end{itemize}
+\end{block}}
+}
 \end{document}
