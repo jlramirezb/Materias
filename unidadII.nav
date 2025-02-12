@@ -98,8 +98,20 @@
 \headcommand {\beamer@framepages {101}{101}}
 \headcommand {\slideentry {4}{1}{8}{102/102}{M\'etodo de Jacobi}{0}}
 \headcommand {\beamer@framepages {102}{102}}
-\headcommand {\beamer@partpages {1}{102}}
-\headcommand {\beamer@subsectionpages {92}{102}}
-\headcommand {\beamer@sectionpages {56}{102}}
-\headcommand {\beamer@documentpages {102}}
-\headcommand {\gdef \inserttotalframenumber {43}}
+\headcommand {\slideentry {4}{1}{9}{103/104}{M\'etodo de Jacobi}{0}}
+\headcommand {\beamer@framepages {103}{104}}
+\headcommand {\slideentry {4}{1}{10}{105/106}{M\'etodo de Jacobi}{0}}
+\headcommand {\beamer@framepages {105}{106}}
+\headcommand {\slideentry {4}{1}{11}{107/109}{M\'etodo de Jacobi}{0}}
+\headcommand {\beamer@framepages {107}{109}}
+\headcommand {\slideentry {4}{1}{12}{110/110}{M\'etodo de Jacobi}{0}}
+\headcommand {\beamer@framepages {110}{110}}
+\headcommand {\beamer@subsectionpages {92}{110}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{111}{M\'etodo de Gauss-Seidel}}
+\headcommand {\slideentry {4}{2}{1}{111/113}{M\'etodo de Gauss-Seidel}{0}}
+\headcommand {\beamer@framepages {111}{113}}
+\headcommand {\beamer@partpages {1}{113}}
+\headcommand {\beamer@subsectionpages {111}{113}}
+\headcommand {\beamer@sectionpages {56}{113}}
+\headcommand {\beamer@documentpages {113}}
+\headcommand {\gdef \inserttotalframenumber {48}}

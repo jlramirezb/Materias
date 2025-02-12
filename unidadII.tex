@@ -805,5 +805,91 @@ $$
                 \end{array}\right) \quad \|r^{(5)}\|_\infty=1.5625e-02
          \end{eqnarray}
       \end{frame}        
-
-      \end{document}
+      %%%%%%
+      \begin{frame}
+      \frametitle{M\'etodo de Jacobi}
+      \begin{itemize} 
+      \item<1-> El siguiente teorema de convergencia se refiere a un tipo de matrices.
+      \end{itemize}
+      \uncover<2->{
+      \begin{block}{Teorema}
+      Supongamos que una matriz $A$ sea diagonal estrictamente dominante:
+      $$|a_{i,i}| >\sum_{j \neq i}|a_{i,j}|,\quad i = 1,\ldots, n$$
+      Entonces, el m\'etodo de Jacobi converge para esta matriz.
+      \end{block}}
+      \end{frame}
+      %%%%%%
+      \begin{frame}
+      \frametitle{M\'etodo de Jacobi}
+      \begin{itemize}
+      \item<1-> La demostraci\'on es sencilla:
+      \end{itemize}
+      \uncover<2->{
+        \begin{eqnarray}
+          \nonumber & T = M^{-1}N = D^{-1}(L+U) &\\[5pt]
+          \nonumber & =  -\left(\begin{array}{cccc}
+          \frac{1}{a_{1,1}} & 0 & \cdots & 0\\
+          0 & \frac{1}{a_{2,2}} & \cdots & 0\\
+          \vdots & & \ddots & \vdots\\
+          0 & 0 & \cdots & \frac{1}{a_{n.n}}
+  \end{array}\right)\left(\begin{array}{cccc}
+      0 & a_{1,2} & \cdots & a_{1,n}\\
+      a_{2,1} & 0 & \cdots & a_{2,n}\\
+      \vdots & & \ddots & \vdots\\
+      a_{n,1} & a_{n,2} & \cdots & 0
+  \end{array}\right) &\\[5pt]
+    \nonumber & = -\left(\begin{array}{cccc}
+    0 & \frac{a_{1,2}}{a_{1,1}} & \cdots & \frac{a_{1,n}}{a_{1,1}}\\
+    \frac{a_{2,1}}{a_{2,2}} & 0 & \cdots & \frac{a_{2,n}}{a_{2,2}}\\
+    \vdots & & \ddots & \vdots\\
+    \frac{a_{n,1}}{a_{n,n}} & \frac{a_{n,2}}{a_{n,n}} & \cdots & 0
+  \end{array}\right) &
+  \end{eqnarray}} 
+  \end{frame}       
+  %%%%%%
+  \begin{frame}
+  \frametitle{M\'etodo de Jacobi}
+  \begin{itemize}
+  \item<1-> Si calculamos la norma de esta matriz:
+  $$
+  \|T\|_{\infty} = \max_{i=1,n}\frac{\sum_{j\neq i}|a_{i,j}|}{|a_{i,i}|}
+  $$
+  \item<2-> Este cociente es siempre inferior a la unidad al ser la matriz diagonal estrictamente dominante, por tanto:
+  $$
+  \|T\|_{\infty} <1
+  $$
+  \item<3->Pero al ser esta una norma inducida, se tiene tambi\'en que $\rho(T) < 1$, y por tanto el m\'etodo es convergente.
+  \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}
+  \frametitle{M\'etodo de Jacobi}
+  \begin{center}  
+  \begin{figure}[h]            
+    \begin{algorithm}[H]     
+     \SetKwInOut{Input}{input}
+     \SetKwInOut{Output}{output}
+     \caption{M\'etodo de Jacobi.}
+     \Input{$A \in \mathbb{R}^{n \times n}$, $b \in \mathbb{R}^n$, $x^{(0)} \in \mathbb{R}^n$,$M \in \mathbb{R}$ .}
+     \Output{$\tilde x \in \mathbb{R}^n$ soluci\'on aproximada de $Ax=b$.}     
+     \For{$k \leftarrow 1$ \KwTo $M$}
+     {
+      \For{$i \leftarrow 1$ \KwTo $n$}
+      {
+        $u_i \leftarrow \displaystyle\frac{b_i-\displaystyle\sum_{j=1,j\neq i}^na_{i,j}x_j}{a_{i,i}}$\\
+      }
+      Actualizar $x$ con $u$\\
+     }    
+    \end{algorithm}
+    \end{figure}
+  \end{center}
+  \end{frame}
+  \subsection{M\'etodo de Gauss-Seidel}
+  \begin{frame}{M\'etodo de Gauss-Seidel}
+  \begin{itemize}
+    \item<1-> En el m\'etodo de Jacobi cada componente $x_i^{(k+1)}$ se calcula utilizando las componentes de la aproximaci\'on anterior, $x^{(k)}$.
+ \item<2-> Sin embargo, a la hora de calcular la componente $x_i^{(k+1)}$ ya se han calculado previamente las componentes anteriores, $x_1^{(k+1)}, x_2^{(k+1)},\ldots, x_{i-1}^{(k+1)}$.
+ \item<3-> En el m\'etodo de Gauss-Seidel se aprovechan estas $i-1$ componentes para el c\'alculo de $x_i^{(k+1)}$.
+ \end{itemize}
+  \end{frame}
+\end{document}
