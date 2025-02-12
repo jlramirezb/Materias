@@ -1943,6 +1943,27 @@ $$
  \nonumber S'_k(x) & = & b_k + 2c_k(x - x_k) + 3d_k(x - x_k)^2\\
  \nonumber S''_k(x) & = & 2c_k + 6d_k(x - x_k)
 \end{eqnarray}
+\item<5-> El significado de los otros coeficientes es obviamente 
+$$
+S'_k(x_k) = b_k,\qquad S''_k(x_k) = 2c_k 
+$$
+\end{itemize}
+}
+%%%%
+\frame{
+\frametitle{Interpolaci\'on C\'ubica o Splines C\'ubicos}
+\begin{itemize}
+\item<1-> Las condiciones de continuidad de las funciones $S_k(x)$ y sus derivadas primera y segunda en los $n - 1$ puntos de interpolaci\'on intermedios $x_{k+1} , k = 0,\ldots, n - 2$ (las condiciones de continuidad
+no se aplican a los extremos) dan
+\begin{eqnarray}
+ \nonumber a_{k+1} & = & a_k + b_k(x_{k+1} - x_k) + c_k(x_{k+1} - x_k)^2 + d_k(x_{k+1} - x_k)^3\\
+ \nonumber b_{k+1} & = & b_k + 2c_k(x_{k+1} - x_k) + 3d_k(x_{k+1} - x_k)^2\\
+ \nonumber 2c_{k+1} & = & 2c_k + 6d_k(x_{k+1} - x_k)
+\end{eqnarray}
+\item<2-> Esto nos da un total de $3(n-1)$ ecuaciones, para determinar los $3n$ coeficientes $b_k$, $c_k$ y $d_k$. 
+\item <3-> Una condici\'on adicional es que el \'ultimo spline pase por el \'ultimo punto: $S_{n-1}(x_n) = y_n$.
+\item<4-> Se requieren por lo tanto dos condiciones adicionales para poder determinar todos los coeficientes. 
+
 \end{itemize}
 }
 \end{document}
