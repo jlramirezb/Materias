@@ -1902,4 +1902,47 @@ $$
 \end{itemize}
 \end{block}}
 }
+%%%%
+\frame{
+\frametitle{Interpolaci\'on C\'ubica o Splines C\'ubicos}
+\begin{itemize}
+\item<1-> El spline c\'ubico es el spline m\'as empleado, debido a que proporciona un excelente ajuste a los puntos tabulados y su c\'alculo no es excesivamente complejo.
+\item<2-> Es posible construir una funci\'on c\'ubica $S_k(x)$ en cada intervalo $[x_k,x_{k+1}]$, tal que la curva a trozos $y = S(x)$ sea
+dos veces diferenciable y $S(x)$ sea continua en $[x_0,x_n]$, lo primero implica que $y = f (x)$ no tiene esquinas y lo
+segundo que $S(x)$ tiene un radio de curvatura definido.
+\end{itemize}
+}
+%%%%
+\frame{
+\frametitle{Interpolaci\'on C\'ubica o Splines C\'ubicos}
+Sea $f : [a, b] \to \mathbb{R}$ y sean $a = x_0 < x_1 < \cdots < x_n = b$. Un spline c\'ubico $S(x)$ para $f(x)$ es una funci\'on
+que satisface:
+\begin{enumerate}
+\item<2-> $S_k(x)$ es un polinomio c\'ubico en cada intervalo $[x_k,x_{k+1}],\, \forall k=0,1,\ldots,n-1$.
+ \item<3-> $S_k(x_k) = f(x_k),\, k = 0, 1, \ldots, n$
+ \item<4-> $S_k(x_{k+1}) = S_{k+1}(x_{k+1}),\, k = 0, 1,\ldots , n - 2$
+ \item<5-> $S'_k(x_{k+1}) = S'_{k+1}(x_{k+1}),\, k = 0, 1,\ldots , n - 2$
+ \item<6-> $S''_k(x_{k+1}) = S''_{k+1}(x_{k+1}),\, k = 0, 1,\ldots , n - 2$
+\end{enumerate}
+}
+%%%%
+\frame{
+\frametitle{Interpolaci\'on C\'ubica o Splines C\'ubicos}
+\begin{itemize}
+\item<1-> Considerse los polinomios c\'ubicos
+$$
+S_k(x) = a_k + b_k(x - x_k) + c_k (x - x_k)^2 + d_k (x - x_k)^3 \quad \forall k=0,1,\ldots,n-1
+$$
+\item<2-> Esto nos da un total de $4n$ inc\'ognitas a determinar.
+\item<3-> Las condiciones de interpolaci\'on generan $n+1$ ecuaciones
+$$
+S(x_k)=y_k \Rightarrow S_k(x_{k}) = a_k = y_k
+$$
+\item<4-> las dos primeras derivadas vienen dadas por
+\begin{eqnarray}
+ \nonumber S'_k(x) & = & b_k + 2c_k(x - x_k) + 3d_k(x - x_k)^2\\
+ \nonumber S''_k(x) & = & 2c_k + 6d_k(x - x_k)
+\end{eqnarray}
+\end{itemize}
+}
 \end{document}
