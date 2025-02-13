@@ -892,4 +892,85 @@ $$
  \item<3-> En el m\'etodo de Gauss-Seidel se aprovechan estas $i-1$ componentes para el c\'alculo de $x_i^{(k+1)}$.
  \end{itemize}
   \end{frame}
+  %%%%%%
+  \begin{frame}{Esquema de Gauss-Seidel}
+  \begin{itemize}
+    \item<1-> En este m\'etodo, usando la misma descomposici\'on de $A$ que en Jacobi, el problema se transforma en:
+
+    $$
+    Ax = b \Leftrightarrow (D - L -U)x = b \Leftrightarrow (D - L) x =Ux + b
+    $$
+    
+    \item<2->y el vector soluci\'on se calcula como el l\'imite de la sucesi\'on definida por    
+    $$
+    x^{(k+1)} = (D-L)^{-1}Ux^{(k)}+(D-L)^{-1}b
+    $$
+    
+    \item<3-> siendo as\'i su matriz de iteraci\'on    
+    $$
+    T = (D-L)^{-1}U
+    $$
+    \item<4->El m\'etodo obliga a resolver un sistema triangular por sustituci\'on hacia adelante en cada paso. Por tanto, cada paso es m\'as complicado que en el m\'etodo de Jacobi, pero la velocidad de convergencia es superior en cierto tipo de matrices.
+  \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Esquema de Gauss-Seidel}
+  \begin{itemize}
+    \item Si del sistema $Ax=b$ se despeja $x_1$ de la primera ecuaci\'on, y usando el vector $x^{(0)}$ se calcula la aproximaci\'on $x_1^{(1)}$ mediante la f\'ormula:
+    {\small
+    $$
+    x_1^{(1)} = \displaystyle\frac{b_1-\displaystyle\sum_{j=2}^na_{1,j}x_j^{(0)}}{a_{1,1}}, 
+    $$}
+    \item<2-> En general, para $i=2,\ldots,n-1$, se calcula la aproximaci\'on $x_i^{(1)}$ mediante la f\'ormula:
+    {\small
+    $$
+    x_i^{(1)} = \displaystyle\frac{b_i- \displaystyle \sum_{j=1}^{i-1}a_{i,j}x_j^{(1)} - \displaystyle \sum_{j=i+1}^na_{i,j}x_j^{(0)}}{a_{i,i}}
+    $$}
+    \item<3-> Finalmente para $i=n$, se calcula la aproximaci\'on $x_n^{(1)}$ mediante la f\'ormula:
+    {\small
+    $$
+    x_n^{(1)} = \displaystyle\frac{b_n- \displaystyle \sum_{j=1}^{n-1}a_{n,j}x_j^{(1)}}{a_{n,n}}
+    $$}
+  \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Esquema de Gauss-Seidel}
+    De esta manera, el m\'etodo de Gauss-Seidel se puede resumir en el siguiente esquema:
+  \begin{block}{}
+  $$
+  x_i^{(k+1)} = \dfrac{1}{a_{ii}}\left(b_i-\sum_{j=1}^{i-1}a_{ij}x_j^{(k+1)}-\sum_{j=i+1}^{n}a_{ij}x_j^{(k)}\right)
+  $$
+ \end{block}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Ejemplo:}
+    Aplicando el m\'etodo de Gauss-Seidel en el ejemplo dado en Jacobi, se tiene que:
+    $$
+    M=D-L, \qquad \qquad N=U
+    $$    
+    por lo tanto    
+    $$
+    Mx^{(1)} = Nx^{(0)}+b = Ux^{(0)}+b
+    $$    
+    Por lo que hay que resolver el sistema triangular superior    
+    $$
+    \left(\begin{array}{ccc}
+           4 & 0 & 0\\
+           1 & 4 & 0\\
+           0 & 1 & 4
+          \end{array}\right)x^{(1)} = \left(\begin{array}{ccc}
+          0 & -1 & 0\\
+           0 & 0 & -1\\
+           0 & 0 & 0
+          \end{array}\right)\left(\begin{array}{c}
+          -1 \\
+           4\\
+           -1
+          \end{array}\right)+\left(\begin{array}{c}
+          -3 \\
+           10\\
+           1
+          \end{array}\right)
+    $$
+  \end{frame}    
 \end{document}

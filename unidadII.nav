@@ -110,8 +110,16 @@
 \headcommand {\beamer@subsectionentry {0}{4}{2}{111}{M\'etodo de Gauss-Seidel}}
 \headcommand {\slideentry {4}{2}{1}{111/113}{M\'etodo de Gauss-Seidel}{0}}
 \headcommand {\beamer@framepages {111}{113}}
-\headcommand {\beamer@partpages {1}{113}}
-\headcommand {\beamer@subsectionpages {111}{113}}
-\headcommand {\beamer@sectionpages {56}{113}}
-\headcommand {\beamer@documentpages {113}}
-\headcommand {\gdef \inserttotalframenumber {48}}
+\headcommand {\slideentry {4}{2}{2}{114/117}{M\'etodo de Gauss-Seidel}{0}}
+\headcommand {\beamer@framepages {114}{117}}
+\headcommand {\slideentry {4}{2}{3}{118/120}{M\'etodo de Gauss-Seidel}{0}}
+\headcommand {\beamer@framepages {118}{120}}
+\headcommand {\slideentry {4}{2}{4}{121/121}{M\'etodo de Gauss-Seidel}{0}}
+\headcommand {\beamer@framepages {121}{121}}
+\headcommand {\slideentry {4}{2}{5}{122/122}{M\'etodo de Gauss-Seidel}{0}}
+\headcommand {\beamer@framepages {122}{122}}
+\headcommand {\beamer@partpages {1}{122}}
+\headcommand {\beamer@subsectionpages {111}{122}}
+\headcommand {\beamer@sectionpages {56}{122}}
+\headcommand {\beamer@documentpages {122}}
+\headcommand {\gdef \inserttotalframenumber {52}}
