@@ -972,5 +972,108 @@ $$
            1
           \end{array}\right)
     $$
-  \end{frame}    
+    Y se tiene que resolver el sistema triangular inferior:
+
+$$
+\left(\begin{array}{ccc}
+       4 & 0 & 0\\
+       1 & 4 & 0\\
+       0 & 1 & 4
+      \end{array}\right)x^{(1)} = \left(\begin{array}{c}
+      -6.1875 \\
+       10.5469\\
+       1.0000
+      \end{array}\right)
+$$
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Ejemplo:}
+    por sustituci\'on progresiva, obteniendo
+
+    $$
+    x^{(1)} = \left(\begin{array}{c}
+          -1.7500 \\
+           3.1875\\
+           -0.5469
+          \end{array}\right) \qquad \|r^{(1)}\|_{\infty} = 0.8125
+    $$
+        
+    Por tanto, el residuo ha disminuido. Si seguimos iterando:
+    
+    \begin{eqnarray}
+    \nonumber x^{(2)} = \left(\begin{array}{c}
+          -1.5469 \\
+           3.0234\\
+           -0.5059
+          \end{array}\right) & \|r^{(2)}\|_{\infty} = 0.1641\\
+    \nonumber x^{(5)} = \left(\begin{array}{c}
+          -1.5001 \\
+           3.0000\\
+           -0.5000
+          \end{array}\right) & \|r^{(5)}\|_{\infty} = 0.0003
+    \end{eqnarray}
+    
+    El residuo en el quinto paso es inferior al correspondiente en el m\'etodo de Jacobi, $0.0003$ frente a $0.01$.
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Esquema de Gauss-Seidel}
+  \begin{itemize}
+    \item<1-> Respecto a la convergencia enunciamos un resultado equivalente al ya referido en el m\'etodo de Jacobi.
+    \item<2->El siguiente teorema de convergencia se refiere a un tipo de matrices.
+    \begin{block}{Teorema}
+      Supongamos que una matriz $A$ sea diagonal estrictamente dominante:
+$$
+|a_{i,i}| >\sum_{j \neq i}|a_{i,j}|,\quad i = 1,\ldots, n
+$$
+Entonces, el m\'etodo de Gauss-Seidel converge para esta matriz.
+    \end{block}
+  \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Esquema de Gauss-Seidel}
+  \begin{itemize}
+    \item<1-> La matriz de iteraci\'on $T$ de Gauss-Seidel viene dada por:
+    $$
+    T=(D-L)^{-1}U
+    $$    
+    \item<2-> Para determinar el radio espectral de $T$, calcularemos primero los valores propios, es decir, las ra\'ices del polinomio caracter\'istico
+\begin{eqnarray}
+\nonumber p(\lambda) & =  & \det(\lambda I - T) = 0\\
+\nonumber  & = & \det(\lambda I - (D-L)^{-1}U)\\
+ \nonumber & = & \det(\lambda  (D-L)^{-1}(D-L) - (D-L)^{-1}U)\\
+ \nonumber & = & \det((D-L)^{-1}(\lambda (D-L)-U))\\
+\nonumber  & = & \det((D-L)^{-1})\det\left(\lambda(D - L-\frac{U}{\lambda})\right)\\
+ \nonumber & = & \lambda^N\det((D-L)^{-1})\det\left(D - L-\frac{U}{\lambda}\right)
+\end{eqnarray}
+\end{itemize}
+\end{frame}
+  %%%%%%  
+  \begin{frame}{Esquema de Gauss-Seidel}
+  \begin{itemize}
+  \item<1-> de donde $p(\lambda) = 0$ si $\lambda = 0$ o bien si $\det\left(D - L-\frac{U}{\lambda}\right)=0$
+  \item <2->Se quiere demostrar que todas las ra\'ices de $p(\lambda) = 0$ verifican $|\lambda| < 1$.
+  \item<3->Supongamos por reducci\'on al absurdo que existe al menos una ra\'iz $\lambda$ tal que $|\lambda| \geq 1$.
+  \item<4->Entonces por una parte $\det\left(D - L-\frac{U}{\lambda}\right)=0$ y por otra parte como $A = D - L - U$ es estrictamente diagonal dominante, lo ser\'a tambi\'en $D - L-\frac{U}{\lambda}$ si $|\lambda| \geq 1$.
+  \item<5->Por lo tanto $D - L-\frac{U}{\lambda}$ es no singular en contradicci\'on con $\det\left(D - L-\frac{U}{\lambda}\right) = 0$.
+  \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Esquema de Gauss-Seidel}
+    \begin{figure}[h]                  
+      \begin{algorithm}[H]       
+       \SetKwInOut{Input}{input}
+       \SetKwInOut{Output}{output}
+       \caption{M\'etodo de Gauss-Seidel.}
+       \Input{$A \in \mathbb{R}^{n \times n}$, $b \in \mathbb{R}^n$, $x^{(0)} \in \mathbb{R}^n$,$M \in \mathbb{R}$ .}
+       \Output{$\tilde x \in \mathbb{R}^n$ soluci\'on aproximada de $Ax=b$.}       
+       \For{$k \leftarrow 1$ \KwTo $M$}
+       {
+        \For{$i \leftarrow 1$ \KwTo $n$}
+        {
+          $x_i \leftarrow \displaystyle\frac{b_i-\displaystyle\sum_{j=1,j\neq i}^na_{i,j}x_j}{a_{i,i}}$\\
+        }
+       }      
+      \end{algorithm}
+      \end{figure}
+  \end{frame}
 \end{document}

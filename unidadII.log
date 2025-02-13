@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  12 FEB 2025 20:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  12 FEB 2025 21:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1210,6 +1210,50 @@ Overfull \hbox (3.94159pt too wide) detected at line 739
 [122
 
 ]
+
+[123
+
+]
+
+[124
+
+]
+
+[125
+
+]
+
+[126
+
+]
+
+[127
+
+]
+
+[128
+
+]
+
+[129
+
+]
+
+[130
+
+]
+
+[131
+
+]
+
+[132
+
+]
+
+[133
+
+]
 \tf@nav=\write6
 \openout6 = `unidadII.nav'.
 
@@ -1228,18 +1272,18 @@ Package rerunfilecheck Info: File `unidadII.out' has not changed.
 (rerunfilecheck)             Checksum: 822C3819A8FF2F590B0055D7F2D39055;944.
  ) 
 Here is how much of TeX's memory you used:
- 23408 strings out of 473583
- 449426 string characters out of 5732336
+ 23440 strings out of 473583
+ 449747 string characters out of 5732336
  1970908 words of memory out of 5000000
- 45575 multiletter control sequences out of 15000+600000
+ 45585 multiletter control sequences out of 15000+600000
  565061 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,439b,766s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadII.pdf (122 pages, 593588 bytes).
+Output written on unidadII.pdf (133 pages, 625836 bytes).
 PDF statistics:
- 4125 PDF objects out of 4296 (max. 8388607)
- 3573 compressed objects within 36 object streams
- 251 named destinations out of 1000 (max. 500000)
- 1446 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4476 PDF objects out of 5155 (max. 8388607)
+ 3885 compressed objects within 39 object streams
+ 273 named destinations out of 1000 (max. 500000)
+ 1506 words of extra memory for PDF output out of 10000 (max. 10000000)
 
