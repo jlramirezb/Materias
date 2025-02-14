@@ -1076,4 +1076,36 @@ Entonces, el m\'etodo de Gauss-Seidel converge para esta matriz.
       \end{algorithm}
       \end{figure}
   \end{frame}
+  %%%%%%
+  \subsection{M\'etodo de SOR}
+  \begin{frame}{M\'etodos de Relajaci\'on}
+    \begin{itemize}
+     \item<1-> La rapidez en la convergencia depende del radio de convergencia que, a su vez, depende del m\'etodo empleado.
+     \item<2-> Ser\'ia conveniente buscar el m\'etodo con el menor radio de convergencia que resuelva un sistema dado para acelerar la convergencia.
+     \item<3-> La relajaci\'on representa una ligera modificaci\'on del m\'etodo iterativo y \'esta permite mejorar la convergencia en algunos casos.
+     \item<4-> Despu\'es de que se calcula cada nuevo valor de $x$, \'ese valor se modifica mediante un promedio ponderado de los resultados de las iteraciones anterior y actual.
+     $$
+     x^{(k+1)} = \omega x^{(k+1)} + (1-\omega)x^{(k)}
+     $$
+    \end{itemize}
+    \end{frame}
+%%%%%%%
+  \begin{frame}{M\'etodo de de Sobrerelajaci\'on Sucesiva (SOR)}
+  \begin{itemize}
+    \item<1-> Este m\'etodo fue ideado para acelerar la convergencia del m\'etodo de Gauss-Seidel. La idea del m\'etodo es que para producir un nuevo valor $x_i$ se ponderan los valores $x_i^k$ actuales, obtenidos por Gauss-Seidel, y $x_i^{k-1}$.
+
+    \uncover<2->{$$
+    A=\frac{1}{\omega}D - \frac{1-\omega}{\omega}D - L - U = \frac{1}{\omega}(D-\omega L) - \left(\frac{1-\omega}{\omega}D+U\right)=M-N
+    $$}
+    
+    \uncover<3->{El sistema se transforma entonces en:}
+    $$
+    \begin{array}{l}
+    \uncover<4->{\displaystyle \frac{1}{\omega}(D-\omega L)x = \left(\frac{1-\omega}{\omega}D+U\right)x+b\\}
+    \uncover<5->{(D-\omega L)x = \left((1-\omega)D+\omega U\right)x + \omega b\\}
+     \uncover<6->{x=(D-\omega L)^{-1}\left((1-\omega)D+\omega U\right)x + \omega(D-\omega L)^{-1}b \\}
+    \end{array}
+    $$
+  \end{itemize}
+  \end{frame}
 \end{document}

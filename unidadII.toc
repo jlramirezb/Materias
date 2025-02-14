@@ -4,3 +4,4 @@
 \beamer@sectionintoc {4}{M\'etodos Iterativos de Punto Fijo}{56}{0}{4}
 \beamer@subsectionintoc {4}{1}{M\'etodo de Jacobi}{92}{0}{4}
 \beamer@subsectionintoc {4}{2}{M\'etodo de Gauss-Seidel}{111}{0}{4}
+\beamer@subsectionintoc {4}{3}{M\'etodo de SOR}{134}{0}{4}

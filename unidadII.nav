@@ -128,8 +128,14 @@
 \headcommand {\beamer@framepages {128}{132}}
 \headcommand {\slideentry {4}{2}{10}{133/133}{M\'etodo de Gauss-Seidel}{0}}
 \headcommand {\beamer@framepages {133}{133}}
-\headcommand {\beamer@partpages {1}{133}}
 \headcommand {\beamer@subsectionpages {111}{133}}
-\headcommand {\beamer@sectionpages {56}{133}}
-\headcommand {\beamer@documentpages {133}}
-\headcommand {\gdef \inserttotalframenumber {57}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{134}{M\'etodo de SOR}}
+\headcommand {\slideentry {4}{3}{1}{134/137}{M\'etodo de SOR}{0}}
+\headcommand {\beamer@framepages {134}{137}}
+\headcommand {\slideentry {4}{3}{2}{138/143}{M\'etodo de SOR}{0}}
+\headcommand {\beamer@framepages {138}{143}}
+\headcommand {\beamer@partpages {1}{143}}
+\headcommand {\beamer@subsectionpages {134}{143}}
+\headcommand {\beamer@sectionpages {56}{143}}
+\headcommand {\beamer@documentpages {143}}
+\headcommand {\gdef \inserttotalframenumber {59}}
