@@ -146,8 +146,25 @@
 \headcommand {\beamer@framepages {150}{150}}
 \headcommand {\slideentry {4}{3}{8}{151/154}{M\'etodo de SOR}{0}}
 \headcommand {\beamer@framepages {151}{154}}
-\headcommand {\beamer@partpages {1}{154}}
-\headcommand {\beamer@subsectionpages {134}{154}}
 \headcommand {\beamer@sectionpages {56}{154}}
-\headcommand {\beamer@documentpages {154}}
-\headcommand {\gdef \inserttotalframenumber {65}}
+\headcommand {\beamer@subsectionpages {134}{154}}
+\headcommand {\sectionentry {5}{M\'etodos Iterativos no Estacionarios}{155}{M\'etodos Iterativos no Estacionarios}{0}}
+\headcommand {\slideentry {5}{0}{1}{155/157}{}{0}}
+\headcommand {\beamer@framepages {155}{157}}
+\headcommand {\beamer@subsectionpages {155}{157}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{158}{M\'etodo del Descenso m\'as R\'apido}}
+\headcommand {\slideentry {5}{1}{1}{158/159}{M\'etodo del Descenso m\'as R\'apido}{0}}
+\headcommand {\beamer@framepages {158}{159}}
+\headcommand {\slideentry {5}{1}{2}{160/160}{M\'etodo del Descenso m\'as R\'apido}{0}}
+\headcommand {\beamer@framepages {160}{160}}
+\headcommand {\slideentry {5}{1}{3}{161/162}{M\'etodo del Descenso m\'as R\'apido}{0}}
+\headcommand {\beamer@framepages {161}{162}}
+\headcommand {\slideentry {5}{1}{4}{163/163}{M\'etodo del Descenso m\'as R\'apido}{0}}
+\headcommand {\beamer@framepages {163}{163}}
+\headcommand {\slideentry {5}{1}{5}{164/164}{M\'etodo del Descenso m\'as R\'apido}{0}}
+\headcommand {\beamer@framepages {164}{164}}
+\headcommand {\beamer@partpages {1}{164}}
+\headcommand {\beamer@subsectionpages {158}{164}}
+\headcommand {\beamer@sectionpages {155}{164}}
+\headcommand {\beamer@documentpages {164}}
+\headcommand {\gdef \inserttotalframenumber {71}}

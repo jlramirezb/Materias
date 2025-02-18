@@ -1173,4 +1173,76 @@ La matriz $T_{\omega}$ recibe el nombre de matriz de relajaci\'on.
  \item<4-> Si $\omega <1$ se dice que se trata de un m\'etodo de sub-relajaci\'on, y pueden servir para alcanzar la convergencia, cuando el m\'etodo de Gauss-Seidel no converge.
 \end{itemize}
 }
+%%%%%
+\section{M\'etodos Iterativos no Estacionarios}
+\begin{frame}{M\'etodos Iterativos no Estacionarios}
+\begin{itemize} 
+  \item<1-> Hacen uso de informaci\'on evaluada en cada iteraci\'on, esto permite obtener la soluci\'on de modo din\'amico.
+ \item<2-> Suelen ser m\'as eficientes que los m\'etodos estacionarios.
+ \item<3-> Un ejemplo de m\'etodo iterativo no estacionario es el m\'etodo de Gradiente Conjugado.
+\end{itemize}
+\end{frame}
+%%%%%
+\subsection{M\'etodo del Descenso m\'as R\'apido}
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+\begin{itemize}
+  \item<1-> El m\'etodo del descenso m\'as r\'apido es un m\'etodo iterativo no estacionario.
+  \item<2-> El m\'etodo que se plantea es v\'alido para sistemas de ecuaciones lineales $Ax=b$, donde la matriz de coeficientes $A$ es
+  sim\'etrica y positiva definida, es decir, para matrices tales que $A=A^T$ y $x^TAx>0$ cualquiera sea el vector $x \neq 0$.
+\end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  \begin{block}{Lema}
+    Si $A$ es sim\'etrica y positiva definida, el problema de resolver el sistema $Ax=b$ es equivalente al de minimizar la forma cuadr\'atica
+$$
+q(x) = \langle x,Ax\rangle - 2\langle x,b \rangle
+$$
+donde $\langle x,y\rangle = x^Ty$ representa el producto escalar de los vectores $x$ y $y$.
+  \end{block}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  \textbf{Demostraci\'on}. Sea $v$ una direcci\'on (rayo unidimensional), interesa ver como se comporta la forma cuadr\'atica $q$ para
+vectores de la forma $x+tv$, donde $t$ es un escalar.
+
+\uncover<2->{
+Tomando en cuenta que $A$ es sim\'etrica
+
+\begin{eqnarray}
+ \nonumber q(x+tv) & = & \langle x+tv,A(x+tv) \rangle - 2 \langle x+tv,b \rangle \\
+\nonumber & = & \langle x,Ax \rangle + 2t\langle x,Av \rangle + t^2\langle v,Av \rangle - 2\langle x,b \rangle - 2t\langle v,b \rangle \\
+\nonumber & = & q(x) + 2t\langle v,Ax \rangle -2t \langle v,b \rangle + t^2\langle v,Av \rangle
+\end{eqnarray}
+
+$$
+ q(x+tv) = q(x) + 2t\langle v,Ax-b \rangle + t^2\langle v,Av \rangle
+$$}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  Esta es una ecuaci\'on de segundo grado en $t$ con coeficiente de $t^2$ positivo, que posee un m\'inimo que se puede obtener igualando a cero la derivada
+  $$
+  \frac{d}{dt}q(x+tv) = 2\langle v,Ax-b\rangle + 2t\langle v,Av\rangle
+  $$
+
+  es decir, en el punto
+
+  $$
+  \hat t = \frac{\langle v,b-Ax\rangle}{\langle v,Av\rangle}
+  $$
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  
+El valor m\'inimo que toma la forma cuadr\'atica sobre el rayo viene dado por
+
+\begin{eqnarray}
+\nonumber  q(x+\hat t v) & = & q(x) + \hat t\left(2\langle v,Ax-b \rangle + \hat t\langle v,Av \rangle\right)\\
+\nonumber & = & q(x) + \hat t\left(2\langle v,Ax-b \rangle + \langle v,b-Ax \rangle\right)\\
+\nonumber & = & q(x) - \hat t\langle v,b-Ax \rangle\\
+\nonumber & = & q(x) - \frac{\langle v,b-Ax \rangle^2}{\langle v,Av\rangle}
+\end{eqnarray}
+\end{frame}
+
 \end{document}

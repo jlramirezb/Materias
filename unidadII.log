@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.8)  18 FEB 2025 09:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.8)  18 FEB 2025 13:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -874,7 +874,7 @@ Overfull \hbox (7.521pt too wide) in alignment at lines 309--309
 ] [89
 
 ]
-<descomA.png, id=2894, 365.11406pt x 79.04532pt>
+<descomA.png, id=2907, 365.11406pt x 79.04532pt>
 File: descomA.png Graphic file (type png)
 <use descomA.png>
 Package pdftex.def Info: descomA.png  used on input line 606.
@@ -1049,6 +1049,26 @@ Overfull \hbox (2.15134pt too wide) detected at line 1110
 
 ] [154
 
+] [155
+
+] [156
+
+] [157
+
+] [158
+
+] [159
+
+] [160
+
+] [161
+
+] [162
+
+] [163
+
+] [164
+
 ]
 \tf@nav=\write6
 \openout6 = `unidadII.nav'.
@@ -1061,21 +1081,21 @@ Overfull \hbox (2.15134pt too wide) detected at line 1110
 
  (./unidadII.aux)
 Package rerunfilecheck Info: File `unidadII.out' has not changed.
-(rerunfilecheck)             Checksum: A95999DD0496AA8095689A283DA2EE4A;1077.
+(rerunfilecheck)             Checksum: C04F17D7F6E8EF088BAE93B56724CDCD;1537.
  ) 
 Here is how much of TeX's memory you used:
- 23529 strings out of 478287
- 458002 string characters out of 5849289
- 748915 words of memory out of 5000000
- 40930 multiletter control sequences out of 15000+600000
+ 23576 strings out of 478287
+ 458680 string characters out of 5849289
+ 749518 words of memory out of 5000000
+ 40955 multiletter control sequences out of 15000+600000
  476251 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,122p,432b,764s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadII.pdf (154 pages, 680542 bytes).
+Output written on unidadII.pdf (164 pages, 707990 bytes).
 PDF statistics:
- 4965 PDF objects out of 5155 (max. 8388607)
- 4475 compressed objects within 45 object streams
- 316 named destinations out of 1000 (max. 500000)
- 1550 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5274 PDF objects out of 6186 (max. 8388607)
+ 4765 compressed objects within 48 object streams
+ 338 named destinations out of 1000 (max. 500000)
+ 1602 words of extra memory for PDF output out of 10000 (max. 10000000)
 
