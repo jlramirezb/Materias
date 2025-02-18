@@ -1101,11 +1101,76 @@ Entonces, el m\'etodo de Gauss-Seidel converge para esta matriz.
     \uncover<3->{El sistema se transforma entonces en:}
     $$
     \begin{array}{l}
-    \uncover<4->{\displaystyle \frac{1}{\omega}(D-\omega L)x = \left(\frac{1-\omega}{\omega}D+U\right)x+b\\}
-    \uncover<5->{(D-\omega L)x = \left((1-\omega)D+\omega U\right)x + \omega b\\}
+    \uncover<4->{\displaystyle \frac{1}{\omega}(D-\omega L)x = \left(\frac{1-\omega}{\omega}D+U\right)x+b\\[5pt]}
+    \uncover<5->{(D-\omega L)x = \left((1-\omega)D+\omega U\right)x + \omega b\\[5pt]}
      \uncover<6->{x=(D-\omega L)^{-1}\left((1-\omega)D+\omega U\right)x + \omega(D-\omega L)^{-1}b \\}
     \end{array}
     $$
   \end{itemize}
   \end{frame}
+  %%%%%%
+  \begin{frame}{M\'etodo de de Sobrerelajaci\'on Sucesiva (SOR)}
+  \begin{itemize}    
+    \item<1-> Porv lo tanto el esquema de iteraci\'on se puede escribir como:
+     $$
+      x^{(k+1)} = (D - \omega L)^{-1}\left(\left(1 - \omega\right)D + \omega U\right)x^{(k)} + \omega\left(D - \omega L\right)^{-1}b
+    $$
+    \item<2-> La matriz de iteraci\'on $T$ es:
+    $$
+    T=(D-\omega L)^{-1}\left((1-\omega)D+\omega U\right)
+    $$
+    \item<3-> La soluci\'on se calcula como el l\'imite de la sucesi\'on definida por:
+    $$
+    x^{(k+1)} = (D-\omega L)^{-1}\left((1-\omega)D+\omega U\right)x^{(k)} + \omega(D-\omega L)^{-1}b
+    $$    
+  \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{M\'etodo de de Sobrerelajaci\'on Sucesiva (SOR)}
+    El esquema de SOR de forma general se puede escribir como:
+    $$
+    x_i^{(k+1)} = \frac{\omega}{a_{i,i}}\left(b_i - \sum_{j=1}^{i-1}a_{i,j}x_j^{(k+1)} -\sum_{j=i+1}^{n}a_{i,j}x_j^{(k)} \right) + (1-\omega)x_i^{(k)}
+    $$
+\end{frame}
+  %%%%%%
+  \begin{frame}{M\'etodo de de Sobrerelajaci\'on Sucesiva (SOR)}
+    \begin{block}{Teorema}
+      Para toda matriz $A$, el radio espectral de la matriz del m\'etodo de relajaci\'on S.O.R. es superior o igual a $|\omega - 1|$ en consecuencia una condici\'on necesaria para que el m\'etodo sea convergente es $0 < \omega < 2$.
+    \end{block}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{M\'etodo de de Sobrerelajaci\'on Sucesiva (SOR)}
+    Los valores propios de la matriz $T_{\omega}$ del m\'etodo de relajaci\'on verifican la relaci\'on
+
+\begin{eqnarray}
+ \nonumber \prod_{i=1}^n\lambda_i(T_{\omega}) & = & \det(T_\omega) = \det\left((D-\omega L)^{-1}((1-\omega)D+\omega U)\right)\\
+\nonumber & = & \frac{\det\left((1-\omega)D+\omega U\right)}{\det\left(D-\omega L\right)} = \frac{\det\left(\omega(\frac{1-\omega}{\omega}D + U)\right)}{\det\left(\omega(\frac{1}{\omega}D - L)\right)}\\
+\nonumber & = & \frac{\det\left(\frac{1-\omega}{\omega}D + U\right)}{\det\left(\frac{1}{\omega}D - L\right)} = \frac{\left(\frac{1-\omega}{\omega}\right)^n\prod a_{i,i}}{\left(\frac{1}{\omega}\right)^n\prod a_{i,i}} = (1-\omega)^n
+\end{eqnarray}
+\end{frame}
+%%%%%%
+\begin{frame}{M\'etodo de de Sobrerelajaci\'on Sucesiva (SOR)}
+por otro lado se tiene que
+$$
+\rho(T_{\omega}) \geq |\lambda_i|
+$$
+lo que implica que
+$$
+\rho^n(T_{\omega}) \geq \prod_{i=1}^n|\lambda_i|=|1-\omega|^n
+$$
+por lo tanto
+$$
+\rho(T_{\omega}) \geq |1-\omega|
+$$
+\end{frame}  
+%%%%%
+\frame
+{
+La matriz $T_{\omega}$ recibe el nombre de matriz de relajaci\'on.
+\begin{itemize}
+ \item<2-> Si $\omega = 1$ la matriz se reduce a la matriz de iteraci\'on de Gauss-Seidel.
+ \item<3-> Si $\omega > 1$ se dice que se trata de un m\'etodo de sobre-relajaci\'on, y son utilizados para acelerar la convergencia del m\'etodo de Gauss-Seidel.
+ \item<4-> Si $\omega <1$ se dice que se trata de un m\'etodo de sub-relajaci\'on, y pueden servir para alcanzar la convergencia, cuando el m\'etodo de Gauss-Seidel no converge.
+\end{itemize}
+}
 \end{document}
