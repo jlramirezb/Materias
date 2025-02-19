@@ -1902,4 +1902,20 @@ $$
 \end{itemize}
 \end{block}}
 }
+%%%%%%
+\frame{
+\frametitle{Interpolaci\'on Segmentaria C\'ubica}
+\begin{itemize}
+\item La interpolaci\'on segmentaria c\'ubica utiliza polinomios de tercer grado para cada subintervalo entre los puntos de datos.
+\item<2-> Cada polinomio c\'ubico se ajusta de manera que no solo pase por los puntos de datos, sino que tambi\'en asegure que las primeras y segundas derivadas sean continuas en los puntos de uni\'on.
+\item<3-> Esto resulta en una curva suave y continua que no presenta las oscilaciones que pueden ocurrir con polinomios de grado m\'as alto.
+\item<4-> La forma general de un polinomio c\'ubico en el intervalo $[x_i, x_{i+1}]$ es:
+$$
+S_i(x) = a_i + b_i(x - x_i) + c_i(x - x_i)^2 + d_i(x - x_i)^3
+$$
+\item<5-> Los coeficientes $a_i, b_i, c_i, d_i$ se determinan imponiendo condiciones de continuidad y suavidad en los puntos de uni\'on.
+\end{itemize}
+}
+%%%%%%%
+
 \end{document}
