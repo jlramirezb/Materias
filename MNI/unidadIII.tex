@@ -1919,7 +1919,22 @@ $$
 %%%%%%%
 \begin{frame}
   \frametitle{Interpolaci\'on Segmentaria C\'ubica}
-  
+  onsiderse los polinomios c\'ubicos
+$$
+S_k(x) = a_k + b_k(x - x_k) + c_k (x - x_k)^2 + d_k (x - x_k)^3 \quad \forall k=0,1,\ldots,n-1
+$$
+
+las dos primeras derivadas vienen dadas por
+\begin{eqnarray}
+ \nonumber S'_k(x) & = & b_k + 2c_k(x - x_k) + 3d_k(x - x_k)^2\\
+ \nonumber S''_k(x) & = & 2c_k + 6d_k(x - x_k)
+\end{eqnarray}
+
+La condici\'on de que los splines pasen por los puntos de interpolaci\'on da 
+$$
+S_k(x_k) = a_k = y_k
+$$
+lo que dice que los coeficientes $a_k$ son los valores de la funci\'on interpolada en los nodos. 
 
   
 
