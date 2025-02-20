@@ -7,3 +7,4 @@
 \beamer@subsectionintoc {4}{3}{M\'etodo de SOR}{134}{0}{4}
 \beamer@sectionintoc {5}{M\'etodos Iterativos no Estacionarios}{155}{0}{5}
 \beamer@subsectionintoc {5}{1}{M\'etodo del Descenso m\'as R\'apido}{158}{0}{5}
+\beamer@subsectionintoc {5}{2}{Gradiente Conjugado}{179}{0}{5}

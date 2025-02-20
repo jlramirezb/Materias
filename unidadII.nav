@@ -177,8 +177,16 @@
 \headcommand {\beamer@framepages {174}{177}}
 \headcommand {\slideentry {5}{1}{12}{178/178}{M\'etodo del Descenso m\'as R\'apido}{0}}
 \headcommand {\beamer@framepages {178}{178}}
-\headcommand {\beamer@partpages {1}{178}}
 \headcommand {\beamer@subsectionpages {158}{178}}
-\headcommand {\beamer@sectionpages {155}{178}}
-\headcommand {\beamer@documentpages {178}}
-\headcommand {\gdef \inserttotalframenumber {78}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{179}{Gradiente Conjugado}}
+\headcommand {\slideentry {5}{2}{1}{179/180}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {179}{180}}
+\headcommand {\slideentry {5}{2}{2}{181/184}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {181}{184}}
+\headcommand {\slideentry {5}{2}{3}{185/185}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {185}{185}}
+\headcommand {\beamer@partpages {1}{185}}
+\headcommand {\beamer@subsectionpages {179}{185}}
+\headcommand {\beamer@sectionpages {155}{185}}
+\headcommand {\beamer@documentpages {185}}
+\headcommand {\gdef \inserttotalframenumber {81}}

@@ -1309,7 +1309,7 @@ $$
   \begin{table}[ht]
     \begin{center}
      \begin{tabular}{|c|c|c|}\hline
-     Operaci\'on vectorial & Nro. Oper. Elem. & Operaci\'on m\'as costo\\\hline
+     Operaci\'on vectorial & Nro. Oper. Elem. & Operaci\'on m\'as costosa\\\hline
      $r^{(k)} \leftarrow b-Ax^{(k)}$ & $2n^2$ & $Ax^{(k)}$\\[5pt]
     $t_k \leftarrow \displaystyle\frac{\langle r^{(k)},r^{(k)}\rangle}{\langle r^{(k)},Ar^{(k)}\rangle}$ & $2n^2+3n-1 $ & $Ar^{(k)}$\\[10pt]
     $x^{(k+1)} \leftarrow x^{(k)}+t_kr^{(k)}$ & $2n$ & $t_kr^{(k)}$\\\hline
@@ -1355,4 +1355,42 @@ las iteraciones del m\'etodo son $Ax^{(k)}$ y $Ar^{(k)}$.
     \end{algorithm}
     \end{figure}
 \end{frame}
+%%%%%
+\subsection{Gradiente Conjugado}
+\begin{frame}{M\'etodo del Gradiente Conjugado}
+  \begin{itemize}
+   \item Es un m\'etodo iterativo para minimizar funciones cuadr\'aticas convexas de la forma
+   $$
+   f(x) = \dfrac{1}{2}x^{T}Ax-x^{T}b
+   $$
+   donde $x,b \in \mathbb{R}^{n}$ y $A \in \mathbb{R}^{n \times n}$ es una matriz sim\'etrica positiva definida.
+   \item<2-> Es un m\'etodo de descenso de gradiente que utiliza direcciones conjugadas.
+  \end{itemize}
+ \end{frame}
+ %%%%%%%
+ \begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}  
+  \begin{itemize}
+   \item<1-> Se plantea modificar el m\'etodo del descenso eligiendo una direcci\'on distinta al gradiente en la segunda iteraci\'on: la direcci\'on que une $x^{(1)}$ con la
+   soluci\'on exacta $x^*$.
+   \item<2->El problema es c\'omo determinar esta nueva direcci\'on sin conocer la soluci\'on exacta del sistema.
+   \item<3->Sea $v_*^{(1)}$ al vector que une $x^{(1)}$ con $x^*$:   
+   $$
+   v_*^{(1)} = x^* - x^{(1)} = x^* - x^{(0)} - t_0v^{(0)}
+   $$
+   \item<4->En donde $v^{(0)}$ es la primera direcci\'on de descenso, $v^{(0)} = r^{(0)}$.
+  \end{itemize}
+\end{frame}
+%%%%%%%
+\begin{frame}
+\frametitle{M\'etodo del Gradiente Conjugado}
+\begin{block}{Definici\'on}
+  Sea $P = \{p_0 , \ldots , p_k \}$ un conjunto de vectores no nulos, sea $A \in M_n(\mathbb{R}^n)$ sim\'etrica y definida positiva. Se dice que $P$ es un conjunto conjugado con respecto a $A$ si
+  $$
+  \langle p_i, p_j\rangle_A = p^t_i Ap_j = 0
+  \text{ para toda } i \neq j
+  $$
+\end{block}
+\end{frame}
+
 \end{document}
