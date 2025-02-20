@@ -1439,12 +1439,12 @@ las iteraciones del m\'etodo son $Ax^{(k)}$ y $Ar^{(k)}$.
     $$
     \alpha_{i-1} = -\displaystyle\frac{(v^{(i-1)})^TAr^{(i)}}{(v^{(i-1)})^TAv^{(i-1)}}
     $$
-    \item<3->El m\'etodo del gradiente conjugado se puede resumir en el siguiente esquema:
   \end{itemize}
 \end{frame}
 %%%%%
 \begin{frame}
   \frametitle{M\'etodo del Gradiente Conjugado}
+  El m\'etodo del gradiente conjugado se puede resumir en el siguiente esquema:\\[10pt]
   \small
   \begin{columns}
     \column{0.5\textwidth}
@@ -1473,5 +1473,199 @@ las iteraciones del m\'etodo son $Ax^{(k)}$ y $Ar^{(k)}$.
     \end{array}
     $$}
   \end{columns}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  \begin{itemize}
+    \item<1->A partir del esquema del m\'etodo del gradiente conjugado se puede dise\~nar un algoritmo que resuelva el sistema $Ax = b$ con $A$ de dimensi\'on $n$ sim\'etrica y definida positiva:
+    \vspace{-0.35cm}
+    \begin{figure}[h]
+    \begin{algorithm}[H]
+     \SetKwInOut{Input}{input}
+     \SetKwInOut{Output}{output}
+     \caption{M\'etodo del Gradiente Conjugado. Versi\'on provisional.}
+     \Input{$A \in \mathbb{R}^{n \times n}$, $b \in \mathbb{R}^n$, $x^{(0)} \in \mathbb{R}^n$,$M \in \mathbb{N}$.}
+     \Output{$\tilde x \in \mathbb{R}^n$ soluci\'on aproximada de $Ax=b$.}
+    $v^{(0)}=r^{(0)} \leftarrow b -Ax^{(0)}$\\
+     \For{$i \leftarrow 0$ \KwTo $M$}
+     {
+    $t_i = \displaystyle\frac{(r^{(i)})^T\cdot v^{(i)}}{(v^{(i)})^TAv^{(i)}}$\\
+    $x^{(i+1)} = x^{(i)} + t_iv^{(i)}$\\
+    $r^{(i+1)} = b -Ax^{(i+1)}$\\
+    $\alpha_i = -\displaystyle\frac{(r^{(i+1)})^TAv^{(i)}}{(v^{(i)})^TAv^{(i)}}$\\
+    $v^{(i+1)}=r^{(i+1)}+\alpha_iv^{(i)}$\\
+    }
+    \end{algorithm}
+    \end{figure}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}{\bf Propiedades del M\'etodo del Gradiente Conjugado}
+  \begin{block}{Proposici\'on 1}Cada direcci\'on de descenso del m\'etodo del gradiente conjugado es conjugada, respecto a la matriz $A$, con todas las direcciones de descenso calculadas anteriormente:
+    $$
+     (v^{(i)})^tAv^{(j)} = 0 \quad 0\leq j<i
+    $$
+  \end{block} 
+  \uncover<2->{
+  \begin{block}{Proposici\'on 2}
+    Los gradientes de $f$ $(f(x) = \frac{1}{2}x^tAx - b^tx)$ en los puntos generados en el m\'etodo del gradiente conjugado son ortogonales a las direcciones de descenso de las
+    iteraciones anteriores:
+    $$
+    r^{(i)}\cdot v^{(j)} = 0 \quad 0\leq j<i
+    $$
+  \end{block}}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  \begin{block}{Proposici\'on 3}
+    Si se utiliza aritm\'etica exacta al realizar las operaciones, el m\'etodo del gradiente conjugado alcanza la soluci\'on exacta del sistema $Ax = b$ en no m\'as de $n$ iteraciones:
+    $$
+    \exists k\leq n \quad / \quad r^{(k)}=0
+    $$
+  \end{block}
+  \uncover<2->{
+  \begin{block}{Proposici\'on 4}
+    $$
+    r^{(i)}\cdot v^{(i)} = r^{(i)}\cdot r^{(i)}
+    $$
+    Dem. $r^{(i)}\cdot v^{(i)} = r^{(i)}\cdot (r^{(i)}+\alpha_{i-1}v^{(i-1)}) \overbrace{=}^{\mbox{Prop. 2}} r^{(i)}\cdot r^{(i)}$
+  \end{block}}
+  \uncover<3->{
+  \begin{block}{Proposici\'on 5}
+    $$
+    r^{(i)}\cdot r^{(j)} = 0 \quad 0 \leq j<i
+    $$    
+  \end{block}}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  \begin{itemize}
+    \item El problema, al igual que en el caso del
+    descenso, son los productos matriz por vector.
+    \item<2-> Utilizando las propiedades vistas se puede modificar el algoritmo para conseguir que en cada iteraci\'on solamente haya que realizar un producto matriz vector.
+  \end{itemize}  
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  \begin{enumerate}
+    \item Modificaci\'on del t\'ermino   
+   $$
+    \alpha_i = -\displaystyle\frac{(r^{(i+1)})^tAv^{(i)}}{(v^{(i)})^tAv^{(i)}}
+   $$   
+   Despejando $Av^{(i)}$ de $r^{(i+1)} = r^{(i)} - t_iAv^{(i)}$ se obtiene:   
+   $$
+   Av^{(i)} = \frac{1}{t_i}(r^{(i)}-r^{(i+1)})
+   $$   
+   e introduciendo $Av^{(i)}$ en $\alpha_i$ se obtiene:
+   $$
+   \alpha_i = -\frac{\frac{1}{t_i}(r^{(i+1)})^t(r^{(i)}-r^{(i+1)})}{\frac{1}{t_i}(v^{(i)})^t(r^{(i)}-r^{(i+1)})} 
+   $$
+   $$
+= -\frac{r^{(i+1)}\cdot r^{(i)} -r^{(i+1)}\cdot r^{(i+1)} }{v^{(i)}\cdot r^{(i)} -v^{(i)}\cdot r^{(i+1)}} = \frac{r^{(i+1)}\cdot r^{(i+1)}}{r^{(i)}\cdot r^{(i)}}
+   $$
+   
+   En donde $r^{(i+1)}\cdot r^{(i)} = 0$ por la prop. 5, $v^{(i)}\cdot r^{(i+1)}=0$ por la prop. 2 y
+   $v^{(i)}\cdot r^{(i)} = r^{(i)}\cdot r^{(i)}$ por la prop. 4.
+  \end{enumerate}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  \begin{enumerate}
+    \item Modificaci\'on del t\'ermino
+    $$
+     r^{(i+1)} = b -Ax^{(i+1)}
+    $$
+    
+    De la igualdad 
+    $$
+    r^{(k)} = r^{(k-1)} -t_{k-1}Ar^{(k-1)} 
+    $$
+    y tomando como direcci\'on de descenso $v^{(i)}$ en vez de $r^{(i)}$ se obtiene:    
+    $$
+     r^{(i+1)} = r^{(i)} - t_iAv^{(i)}
+    $$
+  \end{enumerate}
+\end{frame}
+%%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  \begin{enumerate}
+    \item Modificaci\'on del t\'ermino
+    $$
+     t_i = \displaystyle\frac{(r^{(i)})^t\cdot v^{(i)}}{(v^{(i)})^tAv^{(i)}}
+    $$
+    De nuevo utilizando la prop. 4:
+    $$
+    t_i = \displaystyle\frac{(r^{(i)})^t\cdot r^{(i)}}{(v^{(i)})^tAv^{(i)}}
+    $$
+  \end{enumerate}
+  \begin{itemize}
+    \item<2-> Por tanto para calcular $\alpha_i$ ya no es necesario realizar ning\'un producto matriz vector y para calcular $r^{(i+1)}$ y $t_i$ basta con un solo producto matriz vector ($Av^{(i)}$) que es el mismo en ambos casos.
+    \item<3-> Estas modificaciones permiten construir un nuevo algoritmo
+    del gradiente conjugado.
+  \end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  \begin{figure}[h]    
+    \begin{algorithm}[H]     
+     \SetKwInOut{Input}{input}
+     \SetKwInOut{Output}{output}
+     \caption{M\'etodo del Gradiente Conjugado. Versi\'on final.}
+     \Input{$A \in \mathbb{R}^{n \times n}$, $b \in \mathbb{R}^n$, $x \in \mathbb{R}^n$,$M \in \mathbb{N}$.}
+     \Output{$\tilde x \in \mathbb{R}^n$ soluci\'on aproximada de $Ax=b$.}
+    $r \leftarrow b -Ax$\\
+    $v \leftarrow r$\\
+    $\beta \leftarrow r^Tr$\\
+     \For{$i \leftarrow 1$ \KwTo $M$}
+     {
+    $z\leftarrow Av$\\
+    $t\leftarrow \displaystyle\frac{\beta}{v^Tz}$\\
+    $x\leftarrow x+tv$\\
+    $r\leftarrow r-tz$\\
+    $\gamma \leftarrow \beta$\\
+    $\beta \leftarrow r^Tr$\\
+    $\alpha \leftarrow \displaystyle-\frac{\beta}{\gamma}$\\
+    $v\leftarrow r+\alpha v$\\
+    }
+    \end{algorithm}
+    \end{figure}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{Ejemplo:}
+  $$
+  \left(\begin{array}{cc}
+    2 & -1\\
+    -1 & 2\end{array}\right)\left(\begin{array}{c}
+    x_1\\
+    x_2\end{array}\right) = \left(\begin{array}{c}
+    1\\
+    0\end{array}\right)
+  $$
+  \begin{itemize}
+    \item<1->Iniciando con $x_0 = [0,0]^t$
+    \item<2->$v_0 = r_0 = b-Ax_0 = [1,0]^t$
+    \item<3->$t_0=\dfrac{r_0^tr_0}{v_0^tAv_0} = \dfrac{1}{2}$, $x_1=x_0+t_0v_0=\left(\begin{array}{c}
+      0\\
+      0\end{array}\right)+\frac{1}{2}\left(\begin{array}{c}
+        1\\
+        0\end{array}\right) = \left(\begin{array}{c}
+          1/2\\
+          0\end{array}\right)$
+    \item<4->$r_1=r_0+t_0v_0=\left(\begin{array}{c}
+      1\\
+      0\end{array}\right)+\frac{1}{2}\left(\begin{array}{c}
+        1/2\\
+        0\end{array}\right)$
+    \item<5->El m\'etodo del gradiente conjugado es un m\'etodo iterativo para resolver sistemas de ecuaciones lineales.
+  \end{itemize}
 \end{frame}
 \end{document}
