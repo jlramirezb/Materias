@@ -1445,21 +1445,33 @@ las iteraciones del m\'etodo son $Ax^{(k)}$ y $Ar^{(k)}$.
 %%%%%
 \begin{frame}
   \frametitle{M\'etodo del Gradiente Conjugado}
-  $$
-\begin{array}{r}
-v^{(0)} = r^{(0)} = b - Ax^{(0)}\\
-t_0 = \displaystyle\frac{r^{(0)}\cdot v^{(0)}}{(v^{(0)})^TAv^{(0)}}\\
-x^{(1)} = x^{(0)} + t_0v^{(0)}\\
-r^{(1)} = b -Ax^{(1)}\\
-\alpha_0 = -\displaystyle\frac{(v^{(0)})^TAr^{(1)}}{(v^{(0)})^TAv^{(0)}}\\
-v^{(1)}=r^{(1)}+\alpha_0r^{(0)}\\
-\vdots\\
-t_i = \displaystyle\frac{r^{(i)}\cdot v^{(i)}}{(v^{(i)})^TAv^{(i)}}\\
-x^{(i+1)} = x^{(i)} + t_iv^{(i)}\\
-r^{(i+1)} = b -Ax^{(i+1)}\\
-\alpha_i = -\displaystyle\frac{(v^{(i)})^TAr^{(i+1)}}{(v^{(i)})^TAv^{(i)}}\\
-v^{(i+1)}=r^{(i+1)}+\alpha_iv^{(i)}\\
-\end{array}
-$$
+  \small
+  \begin{columns}
+    \column{0.5\textwidth}
+    $$
+    \begin{array}{l}
+    v^{(0)} = r^{(0)} = b - Ax^{(0)}\\[5pt]
+    t_0 = \displaystyle\frac{r^{(0)}\cdot v^{(0)}}{(v^{(0)})^tAv^{(0)}}\\[10pt]
+    x^{(1)} = x^{(0)} + t_0v^{(0)}\\[5pt]
+    r^{(1)} = b -Ax^{(1)}\\[5pt]
+    \alpha_0 = -\displaystyle\frac{(v^{(0)})^tAr^{(1)}}{(v^{(0)})^tAv^{(0)}}\\[10pt]
+    v^{(1)}=r^{(1)}+\alpha_0r^{(0)}\\[5pt]
+    \vdots
+    \end{array}
+    $$
+    \uncover<2->{
+    \column{0.5\textwidth}
+    \vspace{-1cm}
+    $$
+    \begin{array}{l}
+    \vdots\\
+    t_i = \displaystyle\frac{r^{(i)}\cdot v^{(i)}}{(v^{(i)})^tAv^{(i)}}\\[10pt]
+    x^{(i+1)} = x^{(i)} + t_iv^{(i)}\\[5pt]
+    r^{(i+1)} = b -Ax^{(i+1)}\\[5pt]
+    \alpha_i = -\displaystyle\frac{(v^{(i)})^tAr^{(i+1)}}{(v^{(i)})^tAv^{(i)}}\\[10pt]
+    v^{(i+1)}=r^{(i+1)}+\alpha_iv^{(i)}
+    \end{array}
+    $$}
+  \end{columns}
 \end{frame}
 \end{document}
