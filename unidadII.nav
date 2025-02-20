@@ -177,42 +177,44 @@
 \headcommand {\beamer@framepages {174}{177}}
 \headcommand {\slideentry {5}{1}{12}{178/178}{M\'etodo del Descenso m\'as R\'apido}{0}}
 \headcommand {\beamer@framepages {178}{178}}
-\headcommand {\beamer@subsectionpages {158}{178}}
-\headcommand {\beamer@subsectionentry {0}{5}{2}{179}{Gradiente Conjugado}}
-\headcommand {\slideentry {5}{2}{1}{179/180}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {179}{180}}
-\headcommand {\slideentry {5}{2}{2}{181/184}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {181}{184}}
-\headcommand {\slideentry {5}{2}{3}{185/185}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {185}{185}}
-\headcommand {\slideentry {5}{2}{4}{186/187}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {186}{187}}
-\headcommand {\slideentry {5}{2}{5}{188/190}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {188}{190}}
-\headcommand {\slideentry {5}{2}{6}{191/192}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {191}{192}}
-\headcommand {\slideentry {5}{2}{7}{193/194}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {193}{194}}
-\headcommand {\slideentry {5}{2}{8}{195/195}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {195}{195}}
-\headcommand {\slideentry {5}{2}{9}{196/197}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {196}{197}}
-\headcommand {\slideentry {5}{2}{10}{198/200}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {198}{200}}
-\headcommand {\slideentry {5}{2}{11}{201/202}{Gradiente Conjugado}{0}}
+\headcommand {\slideentry {5}{1}{13}{179/186}{M\'etodo del Descenso m\'as R\'apido}{0}}
+\headcommand {\beamer@framepages {179}{186}}
+\headcommand {\beamer@subsectionpages {158}{186}}
+\headcommand {\beamer@subsectionentry {0}{5}{2}{187}{Gradiente Conjugado}}
+\headcommand {\slideentry {5}{2}{1}{187/188}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {187}{188}}
+\headcommand {\slideentry {5}{2}{2}{189/192}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {189}{192}}
+\headcommand {\slideentry {5}{2}{3}{193/193}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {193}{193}}
+\headcommand {\slideentry {5}{2}{4}{194/195}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {194}{195}}
+\headcommand {\slideentry {5}{2}{5}{196/198}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {196}{198}}
+\headcommand {\slideentry {5}{2}{6}{199/200}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {199}{200}}
+\headcommand {\slideentry {5}{2}{7}{201/202}{Gradiente Conjugado}{0}}
 \headcommand {\beamer@framepages {201}{202}}
-\headcommand {\slideentry {5}{2}{12}{203/203}{Gradiente Conjugado}{0}}
+\headcommand {\slideentry {5}{2}{8}{203/203}{Gradiente Conjugado}{0}}
 \headcommand {\beamer@framepages {203}{203}}
-\headcommand {\slideentry {5}{2}{13}{204/204}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {204}{204}}
-\headcommand {\slideentry {5}{2}{14}{205/207}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {205}{207}}
-\headcommand {\slideentry {5}{2}{15}{208/208}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {208}{208}}
-\headcommand {\slideentry {5}{2}{16}{209/215}{Gradiente Conjugado}{0}}
-\headcommand {\beamer@framepages {209}{215}}
-\headcommand {\beamer@partpages {1}{215}}
-\headcommand {\beamer@subsectionpages {179}{215}}
-\headcommand {\beamer@sectionpages {155}{215}}
-\headcommand {\beamer@documentpages {215}}
-\headcommand {\gdef \inserttotalframenumber {94}}
+\headcommand {\slideentry {5}{2}{9}{204/205}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {204}{205}}
+\headcommand {\slideentry {5}{2}{10}{206/208}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {206}{208}}
+\headcommand {\slideentry {5}{2}{11}{209/210}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {209}{210}}
+\headcommand {\slideentry {5}{2}{12}{211/211}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {211}{211}}
+\headcommand {\slideentry {5}{2}{13}{212/212}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {212}{212}}
+\headcommand {\slideentry {5}{2}{14}{213/215}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {213}{215}}
+\headcommand {\slideentry {5}{2}{15}{216/216}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {216}{216}}
+\headcommand {\slideentry {5}{2}{16}{217/223}{Gradiente Conjugado}{0}}
+\headcommand {\beamer@framepages {217}{223}}
+\headcommand {\beamer@partpages {1}{223}}
+\headcommand {\beamer@subsectionpages {187}{223}}
+\headcommand {\beamer@sectionpages {155}{223}}
+\headcommand {\beamer@documentpages {223}}
+\headcommand {\gdef \inserttotalframenumber {95}}

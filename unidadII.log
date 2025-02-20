@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  20 FEB 2025 18:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  20 FEB 2025 19:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1539,11 +1539,6 @@ Overfull \hbox (2.76381pt too wide) in paragraph at lines 1322--1322
 [194
 
 ]
-Overfull \hbox (20.00003pt too wide) in paragraph at lines 1502--1502
- []$ 
- []
-
-
 
 [195
 
@@ -1576,6 +1571,11 @@ Overfull \hbox (20.00003pt too wide) in paragraph at lines 1502--1502
 [202
 
 ]
+Overfull \hbox (20.00003pt too wide) in paragraph at lines 1563--1563
+ []$ 
+ []
+
+
 
 [203
 
@@ -1628,6 +1628,38 @@ Overfull \hbox (20.00003pt too wide) in paragraph at lines 1502--1502
 [215
 
 ]
+
+[216
+
+]
+
+[217
+
+]
+
+[218
+
+]
+
+[219
+
+]
+
+[220
+
+]
+
+[221
+
+]
+
+[222
+
+]
+
+[223
+
+]
 \tf@nav=\write6
 \openout6 = `unidadII.nav'.
 
@@ -1643,21 +1675,21 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `unidadII.out' has not changed.
-(rerunfilecheck)             Checksum: 1804F0C97941711F88E1DC51E6446B0D;1695.
+(rerunfilecheck)             Checksum: 86F57E0DD61562963775A7078E3C9048;1695.
  ) 
 Here is how much of TeX's memory you used:
- 23788 strings out of 473583
- 455573 string characters out of 5732336
+ 23806 strings out of 473583
+ 455759 string characters out of 5732336
  1982908 words of memory out of 5000000
- 45765 multiletter control sequences out of 15000+600000
+ 45767 multiletter control sequences out of 15000+600000
  565061 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,22n,123p,439b,766s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadII.pdf (215 pages, 887481 bytes).
+Output written on unidadII.pdf (223 pages, 913347 bytes).
 PDF statistics:
- 7159 PDF objects out of 7423 (max. 8388607)
- 6253 compressed objects within 63 object streams
- 441 named destinations out of 1000 (max. 500000)
+ 7396 PDF objects out of 7423 (max. 8388607)
+ 6477 compressed objects within 65 object streams
+ 457 named destinations out of 1000 (max. 500000)
  2131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

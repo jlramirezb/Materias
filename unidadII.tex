@@ -1356,6 +1356,67 @@ las iteraciones del m\'etodo son $Ax^{(k)}$ y $Ar^{(k)}$.
     \end{figure}
 \end{frame}
 %%%%%
+\begin{frame}
+  \frametitle{Ejemplo:}
+  $$
+  \left(\begin{array}{cc}
+    2 & -1\\
+    -1 & 2\end{array}\right)\left(\begin{array}{c}
+    x_1\\
+    x_2\end{array}\right) = \left(\begin{array}{c}
+    1\\
+    0\end{array}\right)
+  $$
+  \small{
+  \begin{itemize}
+    \item<1->Iniciando con $x_0 = [0,0]^t$
+    \item<2->$r_0 = b-Ax_0 = [1,0]^t$
+    \item<3->$t_0=\dfrac{r_0^tr_0}{r_0^tAr_0} = \frac{1}{2}$, $x_1=x_0+t_0r_0=\left(\begin{array}{c}
+      0\\
+      0\end{array}\right)+\frac{1}{2}\left(\begin{array}{c}
+        1\\
+        0\end{array}\right) = \left(\begin{array}{c}
+          1/2\\
+          0\end{array}\right)$
+    \item<4->$r_1=r_0-t_0Ar_0=\left(\begin{array}{c}
+      1\\
+      0\end{array}\right)-\frac{1}{2}\left(\begin{array}{c}
+        2\\
+        -1\end{array}\right) = \left(\begin{array}{c}
+          0\\
+          1/2\end{array}\right)$
+    \item<5->$t_1=\dfrac{r_1^tr_1}{r_1^tAr_1} = \frac{1}{2}$, $x_2=x_1+t_1r_1=\left(\begin{array}{c}
+      1/2\\
+      0\end{array}\right)+\frac{1}{2}\left(\begin{array}{c}
+        0\\
+        1/2\end{array}\right) = \left(\begin{array}{c}
+          1/2\\
+          1/4\end{array}\right)$
+    \item<6->$r_2=r_1-t_1Ar_1=\left(\begin{array}{c}
+      0\\
+      1/2\end{array}\right)-\frac{1}{2}\left(\begin{array}{c}
+        -1/2\\
+        1\end{array}\right) = \left(\begin{array}{c}
+          1/4\\
+          0\end{array}\right)$
+          %%%%
+    \item<7->$t_2=\dfrac{r_2^tr_2}{r_2^tAr_2} = \frac{1}{2}$, $x_3=x_2+t_2r_2=\left(\begin{array}{c}
+      1/2\\
+      1/4\end{array}\right)+\frac{1}{2}\left(\begin{array}{c}
+        1/4\\
+        0\end{array}\right) = \left(\begin{array}{c}
+          5/8\\
+          1/4\end{array}\right)$
+    \item<8->$r_3=r_2-t_2Ar_2=\left(\begin{array}{c}
+      1/4\\
+      0\end{array}\right)-\frac{1}{2}\left(\begin{array}{c}
+        1/2\\
+        -1/4\end{array}\right) = \left(\begin{array}{c}
+          0\\
+          1/8\end{array}\right)$
+  \end{itemize}}	
+\end{frame}
+%%%%%
 \subsection{Gradiente Conjugado}
 \begin{frame}{M\'etodo del Gradiente Conjugado}
   \begin{itemize}
