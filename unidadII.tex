@@ -1650,22 +1650,45 @@ las iteraciones del m\'etodo son $Ax^{(k)}$ y $Ar^{(k)}$.
     1\\
     0\end{array}\right)
   $$
+  \small{
   \begin{itemize}
     \item<1->Iniciando con $x_0 = [0,0]^t$
     \item<2->$v_0 = r_0 = b-Ax_0 = [1,0]^t$
-    \item<3->$t_0=\dfrac{r_0^tr_0}{v_0^tAv_0} = \dfrac{1}{2}$, $x_1=x_0+t_0v_0=\left(\begin{array}{c}
+    \item<3->$t_0=\dfrac{r_0^tr_0}{v_0^tAv_0} = \frac{1}{2}$, $x_1=x_0+t_0v_0=\left(\begin{array}{c}
       0\\
       0\end{array}\right)+\frac{1}{2}\left(\begin{array}{c}
         1\\
         0\end{array}\right) = \left(\begin{array}{c}
           1/2\\
           0\end{array}\right)$
-    \item<4->$r_1=r_0+t_0v_0=\left(\begin{array}{c}
+    \item<4->$r_1=r_0-t_0Av_0=\left(\begin{array}{c}
       1\\
-      0\end{array}\right)+\frac{1}{2}\left(\begin{array}{c}
+      0\end{array}\right)-\frac{1}{2}\left(\begin{array}{c}
         1/2\\
-        0\end{array}\right)$
-    \item<5->El m\'etodo del gradiente conjugado es un m\'etodo iterativo para resolver sistemas de ecuaciones lineales.
-  \end{itemize}
+        0\end{array}\right) = \left(\begin{array}{c}
+          0\\
+          1/2\end{array}\right)$, $\quad r_1^t\cdot r_0 =0$
+    \item<5->$\beta_0 =\dfrac{r_1^tr_1}{r_0^tr_0} = \frac{1}{4}$, $v_1=r_1+\beta_0v_0 = \left(\begin{array}{c}
+      0\\
+      1/2\end{array}\right)+\frac{1}{4}\left(\begin{array}{c}
+        1\\
+        0\end{array}\right) = \left(\begin{array}{c}
+          1/4\\
+          1/2\end{array}\right)$
+    \item<6->$t_1=\dfrac{r_1^tr_1}{v_1^tAv_1} = \frac{2}{3}$, $x_2=x_1+t_1v_1=\left(\begin{array}{c}
+      1/2\\
+      0\end{array}\right)+\frac{2}{3}\left(\begin{array}{c}
+        1/4\\
+        1/2\end{array}\right) = \left(\begin{array}{c}
+          2/3\\
+          1/3\end{array}\right)$
+    \item<7->$r_2=r_1-t_1Av_1=\left(\begin{array}{c}
+      0\\
+      1/2\end{array}\right)-\frac{2}{3}\left(\begin{array}{c}
+        0\\
+        3/4\end{array}\right) = \left(\begin{array}{c}
+          0\\
+          0\end{array}\right)$
+  \end{itemize}}	
 \end{frame}
 \end{document}
