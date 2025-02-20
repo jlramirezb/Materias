@@ -1392,5 +1392,74 @@ las iteraciones del m\'etodo son $Ax^{(k)}$ y $Ar^{(k)}$.
   $$
 \end{block}
 \end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  \begin{block}{Proposici\'on}
+    Los vectores $v^{(0)}$ y $v_*^{(1)}$ son conjugados respecto a la matriz $A$.    
+  \end{block}
+  \uncover<2->{
+  Para su demostraci\'on basta comprobar que $(v^{(0)})^TAv_*^{(1)}=0$:
 
+  \begin{eqnarray}
+   \nonumber (v^{(0)})^tAv_*^{(1)} & = & (v^{(0)})^t A (x^* - x^{(0)} - t_0v^{(0)}) \\
+   \nonumber &=& (v^{(0)})^t \left( \underbrace{\overbrace{Ax^*}^{b}-Ax^{(0)}}_{v^{(0)}} -  t_0Av^{(0)}\right)\\
+   \nonumber & = & (v^{(0)})^Tv^{(0)} - t_0(v^{(0)})^tAv^{(0)}\\
+   \nonumber& =& (v^{(0)})^tv^{(0)} - \frac{(r^{(0)})^tv^{(0)}}{(v^{(0)})^tAv^{(0)}}(v^{(0)})^tAv^{(0)}\\
+   \nonumber & = & (v^{(0)})^tv^{(0)} - (v^{(0)})^tv^{(0)} = 0
+  \end{eqnarray}}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  \begin{itemize}
+    \item<1->Por otro lado $v^{(1)}_*$ se puede expresar como combinaci\'on lineal de $r^{(1)}$ y $v^{(0)}$:
+    $$
+    v^{(1)}_* = \beta_1r^{(1)}+\beta_2v^{(0)}
+    $$
+    \item<2-> No es preciso obtener el vector $v^{(1)}_*$, basta con determinar su direcci\'on, para ello se realiza lo siguiente:
+    $$
+    v^{(1)} = \frac{1}{\beta_1}v^{(1)}_* = r^{(1)} + \frac{\beta_2}{\beta_1}v^{(0)} = r^{(1)} + \alpha_0v^{(0)} 
+    $$
+    \item<3->En donde $\alpha_0$ se puede obtener f\'acilmente a partir de la proposici\'on vista anteriormente.:
+    $$
+    (v^{(0)})^tAv^{(1)} = (v^{(0)})^tA( r^{(1)} + \alpha_0v^{(0)} ) = 0 \Rightarrow \alpha_0=-\frac{(v^{(0)})^tAr^{(1)}}{(v^{(0)})^tAv^{(0)}}
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  \begin{itemize}
+    \item<1->la direcci\'on de descenso en la iteraci\'on $i$ ser\'a una combinaci\'on lineal del residuo en la iteraci\'on $i$ y de la direcci\'on de descenso en la iteraci\'on $i - 1$:
+    $$
+    v^{(i)} = r^{(i)} + \alpha_{i-1}v^{(i-1)}
+    $$
+    \item<2->con
+    $$
+    \alpha_{i-1} = -\displaystyle\frac{(v^{(i-1)})^TAr^{(i)}}{(v^{(i-1)})^TAv^{(i-1)}}
+    $$
+    \item<3->El m\'etodo del gradiente conjugado se puede resumir en el siguiente esquema:
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+  \frametitle{M\'etodo del Gradiente Conjugado}
+  $$
+\begin{array}{r}
+v^{(0)} = r^{(0)} = b - Ax^{(0)}\\
+t_0 = \displaystyle\frac{r^{(0)}\cdot v^{(0)}}{(v^{(0)})^TAv^{(0)}}\\
+x^{(1)} = x^{(0)} + t_0v^{(0)}\\
+r^{(1)} = b -Ax^{(1)}\\
+\alpha_0 = -\displaystyle\frac{(v^{(0)})^TAr^{(1)}}{(v^{(0)})^TAv^{(0)}}\\
+v^{(1)}=r^{(1)}+\alpha_0r^{(0)}\\
+\vdots\\
+t_i = \displaystyle\frac{r^{(i)}\cdot v^{(i)}}{(v^{(i)})^TAv^{(i)}}\\
+x^{(i+1)} = x^{(i)} + t_iv^{(i)}\\
+r^{(i+1)} = b -Ax^{(i+1)}\\
+\alpha_i = -\displaystyle\frac{(v^{(i)})^TAr^{(i+1)}}{(v^{(i)})^TAv^{(i)}}\\
+v^{(i+1)}=r^{(i+1)}+\alpha_iv^{(i)}\\
+\end{array}
+$$
+\end{frame}
 \end{document}
