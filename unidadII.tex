@@ -1244,5 +1244,115 @@ El valor m\'inimo que toma la forma cuadr\'atica sobre el rayo viene dado por
 \nonumber & = & q(x) - \frac{\langle v,b-Ax \rangle^2}{\langle v,Av\rangle}
 \end{eqnarray}
 \end{frame}
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  \begin{itemize}
+    \item Al pasar de $x$ a $x+\hat tv$ siempre hay una reducci\'on en el valor de $q$ excepto si $v \perp b-Ax$, es decir, si $\langle v,b-Ax\rangle=0$.
+    \item<2->Si $x$ no es una soluci\'on del sistema $Ax=b$ existen muchos vectores $v$ tales que $\langle v,b-Ax\rangle\neq0$
+y por tanto $ x$ no minimiza a la forma cuadr\'atica $q$.
+\item<3->Por el contrario, si $Ax=b$, no existe ning\'un rayo que emane de $x$ sobre el que $q$ tome un valor menor de $q(x)$, es decir, $x$ minimiza el valor de $q$.
+\end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  \begin{itemize}
+    \item<1->Esto permite sugerir un m\'etodo para resolver el sistema $Ax=b$ procediendo a minimizar la forma cuadr\'atica $q$ a trav\'es de una sucesi\'on de rayos.
+    \item<2->En el paso $k$ del algoritmo, se tienen los vectores $x^{(0)},x^{(1)},x^{(2)},\ldots,x^{(k)}$, los cuales permiten buscar una direcci\'on apropiada $v^{(k)}$ y el siguiente punto de la sucesi\'on viene dado por
+$$
+x^{(k+1)} = x^{(k)} + t_kv^{(k)}
+$$
 
+\item<3->donde 
+$$
+ t_k = \frac{\langle v^{(k)},b-Ax^{(k)}\rangle}{\langle v^{(k)},Av^{(k)}\rangle}
+$$
+\end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  \begin{itemize}
+    \item<1->Gr\'aficamente, si $\|v^{(k)}\|=1$, $t_k$ mide la distancia que nos movemos de $x^{(k)}$ para obtener $x^{(k+1)}$.
+  \end{itemize}
+  \begin{figure}[h]
+    \begin{center}
+      \includegraphics[scale=0.25]{./paso_descenso.jpg}
+    \end{center}
+    \caption{Paso de $x^{(k)}$ a $x^{(k+1)}$.}    
+    \end{figure}
+\end{frame}    
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  \begin{itemize}
+    \item Tomando $v^{(k)}$ como el gradiente negativo de $q$ en $x^{(k)}$, es decir, la direcci\'on del residuo $r^{(k)}=b-Ax^{(k)}$ se obtiene el denominado m\'etodo del descenso m\'as r\'apido. 
+  \end{itemize}
+\begin{figure}[h]
+\begin{algorithm}[H] 
+ \SetKwInOut{Input}{input}
+ \SetKwInOut{Output}{output}
+ \caption{M\'etodo del Descenso m\'as R\'apido.}
+ \Input{$A \in \mathbb{R}^{n \times n}$, $b \in \mathbb{R}^n$, $x^{(0)} \in \mathbb{R}^n$,$M \in \mathbb{Z}$ .}
+ \Output{$\tilde x \in \mathbb{R}^n$ soluci\'on aproximada de $Ax=b$.} 
+ \For{$k \leftarrow 1$ \KwTo $M$}
+ {
+   $r^{(k)} \leftarrow b-Ax^{(k)}$\\
+   $t_k \leftarrow \displaystyle\frac{\langle r^{(k)},r^{(k)}\rangle}{\langle r^{(k)},Ar^{(k)}\rangle}$\\
+   $x^{(k+1)} \leftarrow x^{(k)}+t_kr^{(k)}$
+ }
+\end{algorithm}
+\end{figure}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  \begin{itemize}
+    \item<1->Analizando el costo operacional del algoritmo, se llega a que: 
+  \end{itemize}
+  \begin{table}[ht]
+    \begin{center}
+     \begin{tabular}{|c|c|c|}\hline
+     Operaci\'on vectorial & Nro. Oper. Elem. & Operaci\'on m\'as costo\\\hline
+     $r^{(k)} \leftarrow b-Ax^{(k)}$ & $2n^2$ & $Ax^{(k)}$\\[5pt]
+    $t_k \leftarrow \displaystyle\frac{\langle r^{(k)},r^{(k)}\rangle}{\langle r^{(k)},Ar^{(k)}\rangle}$ & $2n^2+3n-1 $ & $Ar^{(k)}$\\[10pt]
+    $x^{(k+1)} \leftarrow x^{(k)}+t_kr^{(k)}$ & $2n$ & $t_kr^{(k)}$\\\hline
+    \end{tabular}
+    \caption{Costo de Operaciones. Algoritmo de Descenso.}
+    \end{center}
+    \end{table}
+    Se comprueba que las dos operaciones que determinan el ``costo'' de cada una de
+las iteraciones del m\'etodo son $Ax^{(k)}$ y $Ar^{(k)}$.
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  \begin{itemize}
+    \item<1->La primera se puede evitar si se toma en cuenta que:
+    $$
+     r^{(k)} = b - Ax^{(k)} = b- A(x^{(k-1)}+t_{k-1}r^{(k-1)}) = 
+     $$
+     $$
+     =b - Ax^{(k-1)} - t_{k-1}Ar^{(k-1)} = r^{(k-1)} - t_{k-1}Ar^{(k-1)}
+    $$
+    \item<2->Por lo tanto, salvo en la iteraci\'on inicial, no es necesario calcular el producto $Ax^{(k)}$
+    \item<3->basta calcular $Ar^{(k)}$ y utilizarlo en la siguiente iteraci\'on.
+    \item <4->Se puede introducir una ligera modificaci\'on en el algoritmo para conseguir un algoritmo de descenso m\'as eficiente.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo del Descenso m\'as R\'apido}
+  \begin{figure}[h]    
+    \begin{algorithm}[H]     
+     \SetKwInOut{Input}{input}
+     \SetKwInOut{Output}{output}
+     \caption{M\'etodo del Descenso m\'as R\'apido. Versi\'on eficiente.}
+     \Input{$A \in \mathbb{R}^{n \times n}$, $b \in \mathbb{R}^n$, $x^{(0)} \in \mathbb{R}^n$,$M \in \mathbb{Z}$ .}
+     \Output{$\tilde x \in \mathbb{R}^n$ soluci\'on aproximada de $Ax=b$.}     
+    $r^{(0)} \leftarrow b -Ax^{(0)}$\\
+     \For{$k \leftarrow 1$ \KwTo $M$}
+     {
+       $b \leftarrow Ar^{(k)}$\\
+       $t_k \leftarrow \displaystyle\frac{\langle r^{(k)},r^{(k)}\rangle}{\langle r^{(k)},b\rangle}$\\
+       $x^{(k+1)} \leftarrow x^{(k)}+t_kr^{(k)}$  \\
+       $r^{(k+1)} \leftarrow r^{(k)}-t_kb$
+    }    
+    \end{algorithm}
+    \end{figure}
+\end{frame}
 \end{document}
