@@ -884,6 +884,32 @@ $$
     \end{figure}
   \end{center}
   \end{frame}
+  %%%%%%
+  \begin{frame}
+  \frametitle{Ejemplo}
+  Sea el sistema de ecuaciones lineales:
+  $$
+  \left\{\begin{array}{c}
+          10x_1 + x_2 + 2x_3 = 3\\
+          4x_1 + 6x_2 - x_3 = 9\\
+          -2x_1 + 3x_2 + 8x_3 = 51
+         \end{array}
+  \right.
+  $$
+  \begin{itemize}
+  \item<2-> Antes de proceder en la soluci\'on respectiva, se observa que los elementos ubicados en la diagonal
+  principal cumplen satisfactoriamente con el criterio de convergencia o diagonal dominante.
+  \item<3->Dado lo anterior, las ecuaciones de recurrencia para el m\'etodo de Jacobi son:
+  $$
+  \begin{array}{l}
+  x_1^{(k+1)} = \displaystyle\frac{3-x_2^{(k)}-2x_3^{(k)}}{10}\\
+  x_2^{(k+1)} = \displaystyle\frac{9-4x_1^{(k)}+x_3^{(k)}}{6}\\
+  x_3^{(k+1)} = \displaystyle\frac{51+2x_1^{(k)}-3x_2^{(k)}}{8}
+  \end{array}
+  $$
+  \end{itemize}
+  \end{frame}
+  %%%%%%
   \subsection{M\'etodo de Gauss-Seidel}
   \begin{frame}{M\'etodo de Gauss-Seidel}
   \begin{itemize}
