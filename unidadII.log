@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.8)  21 FEB 2025 07:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.8)  21 FEB 2025 11:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -679,9 +679,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./unidadII.nav) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-]
-No file unidadII.toc.
-[2
+] (./unidadII.toc) [2
 
 ]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
@@ -876,7 +874,7 @@ Overfull \hbox (7.521pt too wide) in alignment at lines 309--309
 ] [89
 
 ]
-<descomA.png, id=2877, 365.11406pt x 79.04532pt>
+<descomA.png, id=2913, 365.11406pt x 79.04532pt>
 File: descomA.png Graphic file (type png)
 <use descomA.png>
 Package pdftex.def Info: descomA.png  used on input line 606.
@@ -993,47 +991,17 @@ Overfull \hbox (3.94159pt too wide) detected at line 739
 
 ] [140
 
-]
-Overfull \hbox (2.15134pt too wide) detected at line 1136
-\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
- []
+] [141
 
-[141
+] [142
 
-]
-Overfull \hbox (2.15134pt too wide) detected at line 1136
-\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
- []
+] [143
 
-[142
+] [144
 
-]
-Overfull \hbox (2.15134pt too wide) detected at line 1136
-\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
- []
+] [145
 
-[143
-
-]
-Overfull \hbox (2.15134pt too wide) detected at line 1136
-\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
- []
-
-[144
-
-]
-Overfull \hbox (2.15134pt too wide) detected at line 1136
-\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
- []
-
-[145
-
-]
-Overfull \hbox (2.15134pt too wide) detected at line 1136
-\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
- []
-
-[146
+] [146
 
 ] [147
 
@@ -1045,17 +1013,47 @@ Overfull \hbox (2.15134pt too wide) detected at line 1136
 
 ] [151
 
-] [152
+]
+Overfull \hbox (2.15134pt too wide) detected at line 1272
+\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
+ []
 
-] [153
+[152
 
-] [154
+]
+Overfull \hbox (2.15134pt too wide) detected at line 1272
+\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
+ []
 
-] [155
+[153
 
-] [156
+]
+Overfull \hbox (2.15134pt too wide) detected at line 1272
+\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
+ []
 
-] [157
+[154
+
+]
+Overfull \hbox (2.15134pt too wide) detected at line 1272
+\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
+ []
+
+[155
+
+]
+Overfull \hbox (2.15134pt too wide) detected at line 1272
+\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
+ []
+
+[156
+
+]
+Overfull \hbox (2.15134pt too wide) detected at line 1272
+\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ []\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 L \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 U \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 D \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 !L\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ [] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 M \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 N
+ []
+
+[157
 
 ] [158
 
@@ -1089,22 +1087,11 @@ Overfull \hbox (2.15134pt too wide) detected at line 1136
 
 ] [173
 
-]
-<./paso_descenso.jpg, id=5349, 725.71124pt x 397.485pt>
-File: ./paso_descenso.jpg Graphic file (type jpg)
-<use ./paso_descenso.jpg>
-Package pdftex.def Info: ./paso_descenso.jpg  used on input line 1308.
-(pdftex.def)             Requested size: 181.42737pt x 99.371pt.
- [174
+] [174
 
- <./paso_descenso.jpg>] [175
+] [175
 
-]
-Overfull \hbox (2.76381pt too wide) in paragraph at lines 1348--1348
- [] 
- []
-
-[176
+] [176
 
 ] [177
 
@@ -1122,11 +1109,22 @@ Overfull \hbox (2.76381pt too wide) in paragraph at lines 1348--1348
 
 ] [184
 
-] [185
+]
+<./paso_descenso.jpg, id=5690, 725.71124pt x 397.485pt>
+File: ./paso_descenso.jpg Graphic file (type jpg)
+<use ./paso_descenso.jpg>
+Package pdftex.def Info: ./paso_descenso.jpg  used on input line 1444.
+(pdftex.def)             Requested size: 181.42737pt x 99.371pt.
+ [185
 
-] [186
+ <./paso_descenso.jpg>] [186
 
-] [187
+]
+Overfull \hbox (2.76381pt too wide) in paragraph at lines 1484--1484
+ [] 
+ []
+
+[187
 
 ] [188
 
@@ -1164,12 +1162,7 @@ Overfull \hbox (2.76381pt too wide) in paragraph at lines 1348--1348
 
 ] [205
 
-]
-Overfull \hbox (20.00003pt too wide) in paragraph at lines 1589--1589
- []$ 
- []
-
-[206
+] [206
 
 ] [207
 
@@ -1191,7 +1184,12 @@ Overfull \hbox (20.00003pt too wide) in paragraph at lines 1589--1589
 
 ] [216
 
-] [217
+]
+Overfull \hbox (20.00003pt too wide) in paragraph at lines 1725--1725
+ []$ 
+ []
+
+[217
 
 ] [218
 
@@ -1211,6 +1209,28 @@ Overfull \hbox (20.00003pt too wide) in paragraph at lines 1589--1589
 
 ] [226
 
+] [227
+
+] [228
+
+] [229
+
+] [230
+
+] [231
+
+] [232
+
+] [233
+
+] [234
+
+] [235
+
+] [236
+
+] [237
+
 ]
 \tf@nav=\write6
 \openout6 = `unidadII.nav'.
@@ -1222,28 +1242,22 @@ Overfull \hbox (20.00003pt too wide) in paragraph at lines 1589--1589
 \openout8 = `unidadII.snm'.
 
  (./unidadII.aux)
-
-Package rerunfilecheck Warning: File `unidadII.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `unidadII.out':
-(rerunfilecheck)             Before: 4EC425015B7251F78BFDDFCB333EAB4B;766
-(rerunfilecheck)             After:  2E05B2F0CFFF4C3AB53EEE2BF6B66495;1695.
+Package rerunfilecheck Info: File `unidadII.out' has not changed.
+(rerunfilecheck)             Checksum: 5CD4DDA13C0C01909706BA81A7FCA53D;1695.
  ) 
 Here is how much of TeX's memory you used:
- 23775 strings out of 478287
- 461420 string characters out of 5849289
- 773278 words of memory out of 5000000
- 41029 multiletter control sequences out of 15000+600000
+ 23862 strings out of 478287
+ 463335 string characters out of 5849289
+ 774179 words of memory out of 5000000
+ 41092 multiletter control sequences out of 15000+600000
  476251 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,22n,122p,432b,764s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadII.pdf (226 pages, 917612 bytes).
+Output written on unidadII.pdf (237 pages, 947798 bytes).
 PDF statistics:
- 7208 PDF objects out of 7423 (max. 8388607)
- 6533 compressed objects within 66 object streams
- 463 named destinations out of 1000 (max. 500000)
- 2085 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7552 PDF objects out of 8907 (max. 8388607)
+ 6862 compressed objects within 69 object streams
+ 485 named destinations out of 1000 (max. 500000)
+ 2131 words of extra memory for PDF output out of 10000 (max. 10000000)
 
