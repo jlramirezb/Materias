@@ -1,6 +1,4 @@
 \beamer@sectionintoc {1}{Introducción}{2}{0}{1}
-\beamer@subsectionintoc {1}{1}{¿Qué es LaTeX?}{2}{0}{1}
-\beamer@subsectionintoc {1}{2}{Historia de LaTeX}{3}{0}{1}
 \beamer@sectionintoc {2}{Estructura Básica}{4}{0}{2}
 \beamer@subsectionintoc {2}{1}{Documento Mínimo}{4}{0}{2}
 \beamer@subsectionintoc {2}{2}{Paquetes}{5}{0}{2}
