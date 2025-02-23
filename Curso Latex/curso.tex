@@ -1,6 +1,19 @@
 \documentclass[12]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+%\usetheme{Madrid}
+%\usetheme{JuanLesPins}
+%\usetheme{Montpellier}
+%\usetheme{Berkeley}
+\usetheme{PaloAlto}
+\usefonttheme{serif}
 
-\title{Curso de LaTeX}
+\title{Curso de \LaTeX}
 %\author{Nombre del Autor}
 \date{\today}
 
@@ -8,20 +21,53 @@
 
 \frame{\titlepage}
 
+\frame{\tableofcontents}
 \section{Introducción}
-\begin{frame}{¿Qué es LaTeX?}
+\begin{frame}{¿Qu\'e es \LaTeX?}
   \begin{itemize}
-    \item LaTeX es un sistema de preparación de documentos.
-    \item Utilizado para la creación de documentos científicos y técnicos.
+    \item \LaTeX es un sistema de preparaci\'on de documentos.
+    \item<2-> Utilizado para la creaci\'on de documentos cient\'ificos y t\'ecnicos.
   \end{itemize}
 \end{frame}
 %%%%%%%
-\begin{frame}{?`Por qu\'e es LaTeX?}
+\begin{frame}{?`Qu\'e se necesita?}
   \begin{itemize}
-    \item Logra magn\'ificos documentos. Especialmente los matem\'aticos
-    \item Fu\'e creado por cient\'ificos, para cient\'ificos. Una amplia y activa comunidad
-    \item Es de gran alcance, se puede extender mediante el uso de paquetes para publicaciones cient\'ificas, presentaciones, etc.
-
+    \item A diferencia de muchos programas inform\'aticos, \LaTeX no es una \'unica aplicaci\'on que lo ``contenga todo'' en un solo lugar.
+    \item<2-> En cambio, consta de programas separados que trabajan en conjunto.
+    \item<3-> Podemos dividirlos en dos elementos que realmente se necesitan:
+    \begin{itemize}
+      \item<4-> Un sistema TeX.
+      \item<5-> Un editor de texto.
+    \end{itemize}
+  \end{itemize}  
+\end{frame}
+%%%%%%%
+\begin{frame}{Sistema \LaTeX}
+  \begin{itemize}
+    \item El n\'ucleo del trabajo con \LaTeX es tener disponible un sistema TeX. 
+    \item Un sistema TeX es un conjunto de programas y archivos necesarios para que LaTeX funcione.
+    \item Existen dos sistemas TeX principales: MiKTeX y TeX Live. Ambos disponibles para Windows, macOS y Linux.
+    \item MiKTeX tiene un fuerte respaldo en Windows; en macOS, TeX Live está incluido en una colecci\'on m\'as grande llamada MacTeX.
+    \item Cada sistema tiene sus ventajas, y quizás quieras consultar más consejos del LaTeX Project.    
+  \end{itemize}
+\end{frame}
+%%%%%%%
+\begin{frame}{Editor de Texto}
+  \begin{itemize}
+    \item Los archivos de LaTeX son archivos de texto plano con extensión \texttt{.tex}, por lo que pueden editarse con cualquier editor de texto.
+    \item<2-> Sin embargo, es conveniente utilizar un editor dise\~nado para trabajar con LaTeX, ya que ofrecen funciones como:
+    \begin{itemize}
+      \item<3-> Compilaci\'on de archivos con un solo clic.
+      \item<4-> Visores de PDF integrados.
+      \item<5-> Resaltado de sintaxis.
+    \end{itemize}
+    \item<6-> Existen muchos editores de LaTeX, entre los que podemos enumerar.
+    \begin{itemize}
+      \item<7-> TeXworks, est\'a incluido en TeX Live y MiKTeX para Windows y Linux
+      \item<8-> TeXShop, incluido en MacTeX.
+      \item<9-> Winedt, un editor comercial para Windows.
+      \item<10-> Overleaf, un editor en l\'inea.
+    \end{itemize}    
   \end{itemize}
 \end{frame}
 
