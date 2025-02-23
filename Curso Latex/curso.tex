@@ -1,4 +1,4 @@
-\documentclass[12]{beamer}
+\documentclass[12pt]{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{graphicx}
@@ -6,12 +6,13 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
-%\usetheme{Madrid}
+\usetheme{Madrid}
 %\usetheme{JuanLesPins}
 %\usetheme{Montpellier}
 %\usetheme{Berkeley}
-\usetheme{PaloAlto}
+%\usetheme{PaloAlto}
 \usefonttheme{serif}
+\usepackage{verbatim}
 
 \title{Curso de \LaTeX}
 %\author{Nombre del Autor}
@@ -19,20 +20,25 @@
 
 \begin{document}
 
-\frame{\titlepage}
+\begin{frame}
+\titlepage
+\end{frame}
 
-\frame{\tableofcontents}
+\begin{frame}
+\tableofcontents
+\end{frame}
+
 \section{Introducción}
-\begin{frame}{¿Qu\'e es \LaTeX?}
+\begin{frame}{¿Qué es \LaTeX?}
   \begin{itemize}
-    \item \LaTeX es un sistema de preparaci\'on de documentos.
-    \item<2-> Utilizado para la creaci\'on de documentos cient\'ificos y t\'ecnicos.
+    \item \LaTeX es un sistema de preparación de documentos.
+    \item<2-> Utilizado para la creación de documentos científicos y técnicos.
   \end{itemize}
 \end{frame}
-%%%%%%%
-\begin{frame}{?`Qu\'e se necesita?}
+
+\begin{frame}{¿Qué se necesita?}
   \begin{itemize}
-    \item A diferencia de muchos programas inform\'aticos, \LaTeX no es una \'unica aplicaci\'on que lo ``contenga todo'' en un solo lugar.
+    \item A diferencia de muchos programas informáticos, \LaTeX no es una única aplicación que lo "contenga todo" en un solo lugar.
     \item<2-> En cambio, consta de programas separados que trabajan en conjunto.
     \item<3-> Podemos dividirlos en dos elementos que realmente se necesitan:
     \begin{itemize}
@@ -41,81 +47,99 @@
     \end{itemize}
   \end{itemize}  
 \end{frame}
-%%%%%%%
+
 \begin{frame}{Sistema \LaTeX}
   \begin{itemize}
-    \item El n\'ucleo del trabajo con \LaTeX es tener disponible un sistema TeX. 
+    \item El núcleo del trabajo con \LaTeX es tener disponible un sistema TeX. 
     \item Un sistema TeX es un conjunto de programas y archivos necesarios para que LaTeX funcione.
     \item Existen dos sistemas TeX principales: MiKTeX y TeX Live. Ambos disponibles para Windows, macOS y Linux.
-    \item MiKTeX tiene un fuerte respaldo en Windows; en macOS, TeX Live está incluido en una colecci\'on m\'as grande llamada MacTeX.
-    \item Cada sistema tiene sus ventajas, y quizás quieras consultar más consejos del LaTeX Project.    
+    \item MiKTeX tiene un fuerte respaldo en Windows; en macOS, TeX Live está incluido en una colección más grande llamada MacTeX.
   \end{itemize}
 \end{frame}
-%%%%%%%
+
 \begin{frame}{Editor de Texto}
   \begin{itemize}
-    \item Los archivos de LaTeX son archivos de texto plano con extensión \texttt{.tex}, por lo que pueden editarse con cualquier editor de texto.
-    \item<2-> Sin embargo, es conveniente utilizar un editor dise\~nado para trabajar con LaTeX, ya que ofrecen funciones como:
+    \item Los archivos de \LaTeX son archivos de texto plano con extensión \texttt{.tex}, por lo que pueden editarse con cualquier editor de texto.
+    \item<2-> Sin embargo, es conveniente utilizar un editor diseñado para trabajar con LaTeX, ya que ofrecen funciones como:
     \begin{itemize}
-      \item<3-> Compilaci\'on de archivos con un solo clic.
+      \item<3-> Compilación de archivos con un solo clic.
       \item<4-> Visores de PDF integrados.
       \item<5-> Resaltado de sintaxis.
     \end{itemize}
     \item<6-> Existen muchos editores de LaTeX, entre los que podemos enumerar.
     \begin{itemize}
-      \item<7-> TeXworks, est\'a incluido en TeX Live y MiKTeX para Windows y Linux
+      \item<7-> TeXworks, está incluido en TeX Live y MiKTeX para Windows y Linux
       \item<8-> TeXShop, incluido en MacTeX.
       \item<9-> Winedt, un editor comercial para Windows.
-      \item<10-> Overleaf, un editor en l\'inea.
+      \item<10-> Overleaf, un editor en línea.
     \end{itemize}    
   \end{itemize}
+\end{frame}
+
+\begin{frame}{Editor de Texto}  
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.8\textwidth]{Editores.png}
+      \caption{Distintos editores de LaTeX.}
+      \label{fig:ejemplo_imagen}
+    \end{figure}
 \end{frame}
 
 \section{Estructura Básica}
 \subsection{Documento Mínimo}
 \begin{frame}{Documento Mínimo}
   \begin{itemize}
-    \item \textbackslash documentclass\{article\}
-    \item \textbackslash begin\{document\}
-    \item \textbackslash end\{document\}
+    \item La estructura básica de un documento es la siguiente:
+    \begin{center}
+    \begin{minipage}{0.5\textwidth}    
+    \begin{block}{}
+       % Cambia el ancho aquí
+        \texttt{\textbackslash documentclass\{article\}\\
+        \textbackslash begin\{document\}\\
+         \hspace{1cm}Hello World!\\
+        \textbackslash end\{document\}}
+      \end{block}
+      \end{minipage}
+    \end{center}
+    \item<2-> El comando \texttt{\textbackslash documentclass} indica el tipo de documento que se va a crear.
+    \item<3-> El \emph{argumento} en llaves \texttt{\{} \texttt{\}} le dice a \LaTeX qué tipo de documento estamos creando: en este ejemplo, \texttt{article}.
+    \item<4-> Un signo de porcentaje \texttt{\%} comienza un \emph{comentario} --- \LaTeX ignorará el resto de la línea.
   \end{itemize}
 \end{frame}
-
-\subsection{Paquetes}
-\begin{frame}{Paquetes}
+%%%%%%
+\begin{frame}{\texttt{\textbackslash documentclass}}
   \begin{itemize}
-    \item \textbackslash usepackage\{nombre\_del\_paquete\}
-    \item Añaden funcionalidad extra a LaTeX.
-  \end{itemize}
-\end{frame}
-
-\section{Elementos Básicos}
-\subsection{Texto}
-\begin{frame}{Texto}
-  \begin{itemize}
-    \item Formato de texto: \textbf{negrita}, \textit{cursiva}, \underline{subrayado}.
-    \item Listas: \begin{itemize}
-      \item Item 1
-      \item Item 2
+    \item \texttt{\textbackslash documentclass} es un comando que le dice a \LaTeX qué tipo de documento estamos creando.
+    \item<2-> Algunos tipos de documentos comunes son:
+    \begin{itemize}
+      \item \texttt{article}: Artículos de revistas, presentaciones, informes cortos, documentación, invitaciones, etc.
+      \item<3-> \texttt{report}: Informes más largos que contienen varios capítulos, libros pequeños, tesis, etc.
+      \item<4-> \texttt{book}: Libros.
+      \item<5-> \texttt{letter}: Cartas.
+      \item<6-> \texttt{beamer}: Presentaciones.
     \end{itemize}
   \end{itemize}
 \end{frame}
-
-\subsection{Matemáticas}
-\begin{frame}{Matemáticas}
+%%%%%%
+\begin{frame}{\texttt{\textbackslash documentclass}}
   \begin{itemize}
-    \item Fórmulas en línea: \( E = mc^2 \)
-    \item Fórmulas en display: \[ E = mc^2 \]
+    \item<1-> El comando \texttt{\textbackslash documentclass} posee conjuntos de opciones que van entre corchetes \texttt{[ ]}. Algunas de ellas son:
+    \begin{itemize}
+      \item \texttt{10pt, 11pt, 12pt}: Tamaño de la fuente.
+      \item<2-> \texttt{a4paper, letterpaper, legalpaper}: Tamaño del papel.
+      \item<3-> \texttt{twocolumn}: Dos columnas.
+      \item<4-> \texttt{twoside, oneside}: Impresión a doble o una cara.
+    \end{itemize}
+    \item<5-> Por ejemplo, \texttt{\textbackslash documentclass[12pt,a4paper]\{article\}} indica que el documento será un artículo con fuente
+    de 12 puntos y tamaño de papel A4.
   \end{itemize}
 \end{frame}
-
-\section{Conclusión}
-\subsection{Resumen}
-\begin{frame}{Resumen}
+%%%%%%
+\begin{frame}{Paquetes}
   \begin{itemize}
-    \item LaTeX es una herramienta poderosa para la creación de documentos.
-    \item Permite un control preciso sobre el formato y la presentación.
-  \end{itemize}
+    \item<1-> Los paquetes son archivos que contienen comandos y entornos adicionales para \LaTeX.
+    \item<2-> Se cargan en el preámbulo del documento con el comando \texttt{\textbackslash usepackage}.
+    \item<3-> Por ejemplo, el paquete \texttt{geometry} permite cambiar el tamaño de la fuente y el margen del documento.
+  \end{itemize}    
 \end{frame}
-
 \end{document}

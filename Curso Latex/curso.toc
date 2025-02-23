@@ -1,10 +1,4 @@
 \babel@toc {spanish}{}\relax 
 \beamer@sectionintoc {1}{Introducción}{3}{0}{1}
-\beamer@sectionintoc {2}{Estructura Básica}{21}{0}{2}
-\beamer@subsectionintoc {2}{1}{Documento Mínimo}{21}{0}{2}
-\beamer@subsectionintoc {2}{2}{Paquetes}{22}{0}{2}
-\beamer@sectionintoc {3}{Elementos Básicos}{23}{0}{3}
-\beamer@subsectionintoc {3}{1}{Texto}{23}{0}{3}
-\beamer@subsectionintoc {3}{2}{Matemáticas}{24}{0}{3}
-\beamer@sectionintoc {4}{Conclusión}{25}{0}{4}
-\beamer@subsectionintoc {4}{1}{Resumen}{25}{0}{4}
+\beamer@sectionintoc {2}{Estructura Básica}{22}{0}{2}
+\beamer@subsectionintoc {2}{1}{Documento Mínimo}{22}{0}{2}
