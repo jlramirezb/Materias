@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  23 FEB 2025 22:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  23 FEB 2025 22:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -769,7 +769,7 @@ LaTeX Info: Redefining \% on input line 1.
 [23
 
 ]
-<Editores.png, id=690, 730.22812pt x 331.2375pt>
+<Editores.png, id=702, 730.22812pt x 331.2375pt>
 File: Editores.png Graphic file (type png)
 <use Editores.png>
 Package pdftex.def Info: Editores.png  used on input line 85.
@@ -931,6 +931,34 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 [58
 
 ]
+
+[59
+
+]
+
+[60
+
+]
+
+[61
+
+]
+
+[62
+
+]
+
+[63
+
+]
+
+[64
+
+]
+
+[65
+
+]
 \tf@nav=\write6
 \openout6 = `curso.nav'.
 
@@ -953,21 +981,21 @@ L3 programming layer <2024-05-27>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `curso.out' has not changed.
-(rerunfilecheck)             Checksum: 5A659BC20511D2433170B8A0A34FFC5B;757.
+(rerunfilecheck)             Checksum: E7412694E66B5BDCBC696C2FD6C239DA;918.
  ) 
 Here is how much of TeX's memory you used:
- 23534 strings out of 473583
- 451358 string characters out of 5732336
+ 23584 strings out of 473583
+ 452293 string characters out of 5732336
  1941908 words of memory out of 5000000
- 45823 multiletter control sequences out of 15000+600000
+ 45857 multiletter control sequences out of 15000+600000
  568907 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,570b,893s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on curso.pdf (58 pages, 425313 bytes).
+Output written on curso.pdf (65 pages, 443746 bytes).
 PDF statistics:
- 1740 PDF objects out of 2073 (max. 8388607)
- 1589 compressed objects within 16 object streams
- 124 named destinations out of 1000 (max. 500000)
- 276 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1962 PDF objects out of 2073 (max. 8388607)
+ 1788 compressed objects within 18 object streams
+ 140 named destinations out of 1000 (max. 500000)
+ 358 words of extra memory for PDF output out of 10000 (max. 10000000)
 

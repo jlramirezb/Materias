@@ -183,4 +183,57 @@
     \item<7-> Forzar un salto de línea: {\color{blue}\texttt{\textbackslash\textbackslash}}. 
   \end{itemize}
 \end{frame}
+%%%%%%
+\section{Listas}
+\begin{frame}{Dando Formato al texto}
+  El entorno {\color{blue}\texttt{itemize}} crea listas con viñetas (listas sin numerar).
+  \begin{center}
+    \begin{minipage}{0.5\textwidth} 
+  \begin{block}{}
+    \texttt{\textbackslash begin\{itemize\}\\
+      \textbackslash item Elemento 1\\
+      \textbackslash item Elemento 2\\
+      \textbackslash item Elemento 3\\
+    \textbackslash end\{itemize\}}
+  \end{block}
+  \end{minipage}
+  \end{center}
+  \begin{itemize}
+    \item Elemento 1
+    \item Elemento 2
+    \item Elemento 3
+  \end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{Dando Formato al texto}
+  El entorno {\color{blue}\texttt{enumerate}} crea listas numeradas.
+  \begin{center}
+    \begin{minipage}{0.5\textwidth} 
+  \begin{block}{}
+    \texttt{\textbackslash begin\{enumerate\}\\
+      \textbackslash item Elemento 1\\
+      \textbackslash item Elemento 2\\
+      \textbackslash item Elemento 3\\
+    \textbackslash end\{enumerate\}}
+  \end{block}
+  \end{minipage}
+  \end{center}
+  \begin{enumerate}
+    \item Elemento 1
+    \item Elemento 2
+    \item Elemento 3
+  \end{enumerate}
+\end{frame}
+%%%%%%
+\section{Secciones}
+\begin{frame}{Secciones}
+  LaTeX puede dividir/estructurar documentos en múltiples niveles jerárquicos, dependiendo del tipo de documento con el que se trabaje.
+  \begin{itemize}
+    \item<1-> {\color{blue}\texttt{\textbackslash section\{texto\}}}: Secci\'on.
+    \item<2-> {\color{blue}\texttt{\textbackslash subsection\{texto\}}}: Subsecci\'on.
+    \item<3-> {\color{blue}\texttt{\textbackslash subsubsection\{texto\}}}: Subsubsecci\'on.
+    \item <4-> {\color{blue}\texttt{\textbackslash paragraph\{texto\}}}: Párrafo.
+    \item <5-> {\color{blue}\texttt{\textbackslash subparagraph\{texto\}}}: Subpárrafo.
+  \end{itemize}
+\end{frame}
 \end{document}

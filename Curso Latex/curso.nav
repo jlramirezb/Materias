@@ -40,8 +40,20 @@
 \headcommand {\beamer@subsectionentry {0}{2}{4}{52}{Dando Formato al texto}}
 \headcommand {\slideentry {2}{4}{1}{52/58}{Dando Formato al texto}{0}}
 \headcommand {\beamer@framepages {52}{58}}
-\headcommand {\beamer@partpages {1}{58}}
-\headcommand {\beamer@subsectionpages {52}{58}}
 \headcommand {\beamer@sectionpages {25}{58}}
-\headcommand {\beamer@documentpages {58}}
-\headcommand {\gdef \inserttotalframenumber {14}}
+\headcommand {\beamer@subsectionpages {52}{58}}
+\headcommand {\sectionentry {3}{Listas}{59}{Listas}{0}}
+\headcommand {\slideentry {3}{0}{1}{59/59}{}{0}}
+\headcommand {\beamer@framepages {59}{59}}
+\headcommand {\slideentry {3}{0}{2}{60/60}{}{0}}
+\headcommand {\beamer@framepages {60}{60}}
+\headcommand {\beamer@sectionpages {59}{60}}
+\headcommand {\beamer@subsectionpages {59}{60}}
+\headcommand {\sectionentry {4}{Secciones}{61}{Secciones}{0}}
+\headcommand {\slideentry {4}{0}{1}{61/65}{}{0}}
+\headcommand {\beamer@framepages {61}{65}}
+\headcommand {\beamer@partpages {1}{65}}
+\headcommand {\beamer@subsectionpages {61}{65}}
+\headcommand {\beamer@sectionpages {61}{65}}
+\headcommand {\beamer@documentpages {65}}
+\headcommand {\gdef \inserttotalframenumber {17}}
