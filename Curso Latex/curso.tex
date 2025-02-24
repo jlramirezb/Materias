@@ -19,26 +19,25 @@
 \date{\today}
 
 \begin{document}
-
 \begin{frame}
 \titlepage
 \end{frame}
-
+%%%%%%
 \begin{frame}
 \tableofcontents
 \end{frame}
-
+%%%%%%
 \section{Introducción}
 \begin{frame}{¿Qué es \LaTeX?}
   \begin{itemize}
-    \item \LaTeX es un sistema de preparación de documentos.
+    \item \LaTeX{} es un sistema de preparación de documentos.
     \item<2-> Utilizado para la creación de documentos científicos y técnicos.
   \end{itemize}
 \end{frame}
-
+%%%%%%
 \begin{frame}{¿Qué se necesita?}
   \begin{itemize}
-    \item A diferencia de muchos programas informáticos, \LaTeX no es una única aplicación que lo "contenga todo" en un solo lugar.
+    \item A diferencia de muchos programas informáticos, \LaTeX{} no es una única aplicación que lo ``contenga todo'' en un solo lugar.
     \item<2-> En cambio, consta de programas separados que trabajan en conjunto.
     \item<3-> Podemos dividirlos en dos elementos que realmente se necesitan:
     \begin{itemize}
@@ -47,26 +46,26 @@
     \end{itemize}
   \end{itemize}  
 \end{frame}
-
+%%%%%%
 \begin{frame}{Sistema \LaTeX}
   \begin{itemize}
-    \item El núcleo del trabajo con \LaTeX es tener disponible un sistema TeX. 
-    \item Un sistema TeX es un conjunto de programas y archivos necesarios para que LaTeX funcione.
-    \item Existen dos sistemas TeX principales: MiKTeX y TeX Live. Ambos disponibles para Windows, macOS y Linux.
-    \item MiKTeX tiene un fuerte respaldo en Windows; en macOS, TeX Live está incluido en una colección más grande llamada MacTeX.
+    \item<1-> El núcleo del trabajo con \LaTeX{} es tener disponible un sistema TeX. 
+    \item<2-> Un sistema TeX es un conjunto de programas y archivos necesarios para que \LaTeX{} funcione.
+    \item<3-> Existen dos sistemas TeX principales: MiKTeX y TeX Live. Ambos disponibles para Windows, macOS y Linux.
+    \item<4-> MiKTeX tiene un fuerte respaldo en Windows; en macOS, TeX Live está incluido en una colección más grande llamada MacTeX.
   \end{itemize}
 \end{frame}
-
+%%%%%%
 \begin{frame}{Editor de Texto}
   \begin{itemize}
-    \item Los archivos de \LaTeX son archivos de texto plano con extensión \texttt{.tex}, por lo que pueden editarse con cualquier editor de texto.
+    \item Los archivos de \LaTeX{} son archivos de texto plano con extensión {\color{blue}\texttt{.tex}}, por lo que pueden editarse con cualquier editor de texto.
     \item<2-> Sin embargo, es conveniente utilizar un editor diseñado para trabajar con LaTeX, ya que ofrecen funciones como:
     \begin{itemize}
       \item<3-> Compilación de archivos con un solo clic.
       \item<4-> Visores de PDF integrados.
       \item<5-> Resaltado de sintaxis.
     \end{itemize}
-    \item<6-> Existen muchos editores de LaTeX, entre los que podemos enumerar.
+    \item<6-> Existen muchos editores de \LaTeX{}, entre los que podemos enumerar.
     \begin{itemize}
       \item<7-> TeXworks, está incluido en TeX Live y MiKTeX para Windows y Linux
       \item<8-> TeXShop, incluido en MacTeX.
@@ -75,25 +74,25 @@
     \end{itemize}    
   \end{itemize}
 \end{frame}
-
+%%%%%%
 \begin{frame}{Editor de Texto}  
     \begin{figure}
       \centering
       \includegraphics[width=0.8\textwidth]{Editores.png}
-      \caption{Distintos editores de LaTeX.}
+      \caption{Distintos editores de \LaTeX.}
       \label{fig:ejemplo_imagen}
     \end{figure}
 \end{frame}
-
+%%%%%%
 \section{Estructura Básica}
 \subsection{Documento Mínimo}
 \begin{frame}{Documento Mínimo}
   \begin{itemize}
     \item La estructura básica de un documento es la siguiente:
     \begin{center}
-    \begin{minipage}{0.5\textwidth}    
-    \begin{block}{}
-       % Cambia el ancho aquí
+    \begin{minipage}{0.5\textwidth}          
+    \begin{block}{}       
+       \color{blue}
         \texttt{\textbackslash documentclass\{article\}\\
         \textbackslash begin\{document\}\\
          \hspace{1cm}Hello World!\\
@@ -101,45 +100,87 @@
       \end{block}
       \end{minipage}
     \end{center}
-    \item<2-> El comando \texttt{\textbackslash documentclass} indica el tipo de documento que se va a crear.
-    \item<3-> El \emph{argumento} en llaves \texttt{\{} \texttt{\}} le dice a \LaTeX qué tipo de documento estamos creando: en este ejemplo, \texttt{article}.
-    \item<4-> Un signo de porcentaje \texttt{\%} comienza un \emph{comentario} --- \LaTeX ignorará el resto de la línea.
+    \item<2-> El comando {\color{blue}\texttt{\textbackslash documentclass}} indica el tipo de documento que se va a crear.
+    \item<3-> El \emph{argumento} en llaves {\color{blue}\texttt{\{} \texttt{\}}} le dice a \LaTeX{} qué tipo de documento estamos creando: en este ejemplo, {\color{blue}\texttt{article}}.
+    \item<4-> Un signo de porcentaje {\color{blue}\texttt{\%}} comienza un \emph{comentario} --- \LaTeX{} ignorará el resto de la línea.
   \end{itemize}
 \end{frame}
 %%%%%%
 \begin{frame}{\texttt{\textbackslash documentclass}}
   \begin{itemize}
-    \item \texttt{\textbackslash documentclass} es un comando que le dice a \LaTeX qué tipo de documento estamos creando.
+    \item {\color{blue}\texttt{\textbackslash documentclass}} es un comando que le dice a \LaTeX{} qué tipo de documento estamos creando.
     \item<2-> Algunos tipos de documentos comunes son:
     \begin{itemize}
-      \item \texttt{article}: Artículos de revistas, presentaciones, informes cortos, documentación, invitaciones, etc.
-      \item<3-> \texttt{report}: Informes más largos que contienen varios capítulos, libros pequeños, tesis, etc.
-      \item<4-> \texttt{book}: Libros.
-      \item<5-> \texttt{letter}: Cartas.
-      \item<6-> \texttt{beamer}: Presentaciones.
+      \item {\color{blue}\texttt{article}}: Artículos de revistas, presentaciones, informes cortos, documentación, invitaciones, etc.
+      \item<3-> {\color{blue}\texttt{report}}: Informes más largos que contienen varios capítulos, libros pequeños, tesis, etc.
+      \item<4-> {\color{blue}\texttt{book}}: Libros.
+      \item<5-> {\color{blue}\texttt{letter}}: Cartas.
+      \item<6-> {\color{blue}\texttt{beamer}}: Presentaciones.
     \end{itemize}
   \end{itemize}
 \end{frame}
 %%%%%%
 \begin{frame}{\texttt{\textbackslash documentclass}}
   \begin{itemize}
-    \item<1-> El comando \texttt{\textbackslash documentclass} posee conjuntos de opciones que van entre corchetes \texttt{[ ]}. Algunas de ellas son:
+    \item<1-> El comando {\color{blue}\texttt{\textbackslash documentclass}} posee conjuntos de opciones que van entre corchetes {\color{blue}\texttt{[ ]}}. Algunas de ellas son:
     \begin{itemize}
-      \item \texttt{10pt, 11pt, 12pt}: Tamaño de la fuente.
-      \item<2-> \texttt{a4paper, letterpaper, legalpaper}: Tamaño del papel.
-      \item<3-> \texttt{twocolumn}: Dos columnas.
-      \item<4-> \texttt{twoside, oneside}: Impresión a doble o una cara.
+      \item {\color{blue}\texttt{10pt, 11pt, 12pt}}: Tamaño de la fuente.
+      \item<2-> {\color{blue}\texttt{a4paper, letterpaper, legalpaper}}: Tamaño del papel.
+      \item<3-> {\color{blue}\texttt{twocolumn}}: Dos columnas.
+      \item<4-> {\color{blue}\texttt{twoside, oneside}}: Impresión a doble o una cara.
     \end{itemize}
-    \item<5-> Por ejemplo, \texttt{\textbackslash documentclass[12pt,a4paper]\{article\}} indica que el documento será un artículo con fuente
+    \item<5-> Por ejemplo, {\color{blue}\texttt{\textbackslash documentclass[12pt,a4paper]\{article\}}} indica que el documento será un artículo con fuente
     de 12 puntos y tamaño de papel A4.
   \end{itemize}
 \end{frame}
 %%%%%%
+\subsection{Paquetes}
 \begin{frame}{Paquetes}
   \begin{itemize}
-    \item<1-> Los paquetes son archivos que contienen comandos y entornos adicionales para \LaTeX.
-    \item<2-> Se cargan en el preámbulo del documento con el comando \texttt{\textbackslash usepackage}.
-    \item<3-> Por ejemplo, el paquete \texttt{geometry} permite cambiar el tamaño de la fuente y el margen del documento.
-  \end{itemize}    
+    \item<1->Los paquetes son archivos que contienen comandos y entornos adicionales para \LaTeX.
+    \item<2-> Se cargan en el preámbulo del documento después del comando {\color{blue}\texttt{\textbackslash documentclass}}.
+    \item<3-> El comando {\color{blue}\texttt{\textbackslash usepackage[]\{\}}} permite cargar un complemento (plugin), que añade nuevas funcionalidades.
+    \end{itemize}    
+\end{frame}  
+%%%%%%
+\begin{frame}{Paquetes}
+  \begin{itemize}
+    \item<1-> Existen numerosos complementos (por ejemplo, para mostrar imágenes, crear tablas, dibujar fórmulas químicas, generar cuadrículas de sudoku, etc.).
+
+    {\color{red} Ejemplos}:
+    \begin{itemize}
+      \item<2-> {\color{blue}\texttt{\textbackslash usepackage[utf8]\{inputenc\}}}: Carga el paquete inputenc con la opción utf8 (esto es para la codificación de caracteres).
+      \item<3-> {\color{blue}\texttt{\textbackslash usepackage[T1]\{fontenc\}}}: Especifica que se está utilizando el paquete de fuentes T1.
+      \item<4-> {\color{blue}\texttt{\textbackslash usepackage[spanish]\{babel\}}}: Carga el paquete babel, que se encarga de la tipografía con el idioma español.
+      \item<5-> {\color{blue}\texttt{\textbackslash usepackage\{graphicx\}}}: Carga el paquete que permite incluir imágenes externas en el documento.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+%%%%%%
+\subsection{Entornos}
+\begin{frame}{Entornos}
+  \begin{itemize}
+    \item<1-> Los entornos definen un ``bloque'': todo el texto dentro de este bloque se transformará según la función del entorno.
+    \item<2-> Un entorno siempre comienza con {\color{blue}\texttt{\textbackslash begin\{\}}} y termina con {\color{blue}\texttt{\textbackslash end\{\}}}. Dentro de las {\color{blue}\{ \}} se especifica el nombre del entorno.
+    \item<3-> El entorno {\color{blue}\texttt{document}} es obligatorio: lo que está dentro constituye el contenido del documento. Fuera del bloque document, se encuentran comandos que modifican las características del documento o cómo se imprime (por ejemplo, paquetes o comandos globales).
+    \item <4-> Todos los demás entornos son opcionales y se usan según sea necesario.
+    
+    {\color{red}Ejemplo}:
+    El entorno {\color{blue}\texttt{itemize}} crea listas con viñetas (listas sin numerar). Por lo tanto, una lista con viñetas se crea cada vez que se llama al comando {\color{blue}\texttt{\textbackslash item}}.
+  \end{itemize}
+\end{frame}
+%%%%%%
+\subsection{Dando Formato al texto}
+\begin{frame}{Dando Formato al texto}
+  \LaTeX{} tiene comandos para dar formato al texto.
+  \begin{itemize}
+    \item<1-> {\color{blue}\texttt{\textbackslash textbf\{texto\}}}: \textbf{Texto en negrita}.
+    \item <2-> {\color{blue}\texttt{\textbackslash textit\{texto\}}}: \textit{Texto en cursiva}.
+    \item <3-> {\color{blue}\texttt{\textbackslash underline\{texto\}}}: \underline{Texto subrayado}.
+    \item <4-> {\color{blue}\texttt{\textbackslash texttt\{texto\}}}: \texttt{Texto en fuente de máquina de escribir}.
+    \item <5-> {\color{blue}\texttt{\textbackslash color\{nombre color\}}}: \color{green}{Texto en color}.
+    \item<6-> Formato de tamaño de fuente: {\color{blue}\texttt{\textbackslash tiny}}, {\color{blue}\texttt{\textbackslash scriptsize}}, {\color{blue}\texttt{\textbackslash footnotesize}}, {\color{blue}\texttt{\textbackslash small}}, {\color{blue}\texttt{\textbackslash normalsize}}, {\color{blue}\texttt{\textbackslash large}}, {\color{blue}\texttt{\textbackslash Large}}, {\color{blue}\texttt{\textbackslash LARGE}}, {\color{blue}\texttt{\textbackslash huge}}, {\color{blue}\texttt{\textbackslash Huge}}.
+    \item<7-> Forzar un salto de línea: {\color{blue}\texttt{\textbackslash\textbackslash}}. 
+  \end{itemize}
 \end{frame}
 \end{document}

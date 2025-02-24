@@ -1,4 +1,7 @@
 \babel@toc {spanish}{}\relax 
 \beamer@sectionintoc {1}{Introducción}{3}{0}{1}
-\beamer@sectionintoc {2}{Estructura Básica}{22}{0}{2}
-\beamer@subsectionintoc {2}{1}{Documento Mínimo}{22}{0}{2}
+\beamer@sectionintoc {2}{Estructura Básica}{25}{0}{2}
+\beamer@subsectionintoc {2}{1}{Documento Mínimo}{25}{0}{2}
+\beamer@subsectionintoc {2}{2}{Paquetes}{40}{0}{2}
+\beamer@subsectionintoc {2}{3}{Entornos}{48}{0}{2}
+\beamer@subsectionintoc {2}{4}{Dando Formato al texto}{52}{0}{2}
