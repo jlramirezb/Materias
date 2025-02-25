@@ -2101,4 +2101,194 @@ los $c_k$.
 depende la calidad del ajuste.
 \end{itemize}
 }
+%%%%%%%
+\frame{
+\frametitle{Interpolaci\'on Segmentaria C\'ubica}
+\begin{center}
+  \bf Condiciones Naturales
+\end{center}
+\begin{block}{Teorema}
+  Sea $f(x)$ una funci\'on definida en $[x_0, x_n]$. Entonces existe un \'unico $S(x)$ spline interpolante c\'ubico para $f(x)$ en $[x_0, x_n]$ tal que $S''(x_0) = 0$ y $S''(x_n) = 0$.
+\end{block}
+\begin{align*}
+  c_n = S''(x_n)/2 = 0 &\to c_n = 0\\
+  S''(x_0) = 2c_0 = 0 &\to c_0 = 0
+\end{align*}
+\begin{itemize}
+  \item<2-> El coeficiente $c_n$ no pertenece a ninguno de los splines en $[x_0, x_n]$, sino a un spline arbitrario que comienza en el extremo $x_n$, pero la introducci\'on de $S_n(x)$ permite extender las ecuaciones para los coeficientes $c_k$ con una ecuaci\'on adicional
+  $$
+  h_{n-2} c_{n-2} + 2(h_{n-2} + h_{n-1})c_{n-1} = v_{n-1}
+  $$
+\end{itemize}
+}
+%%%%%%%
+\frame{
+\frametitle{Interpolaci\'on Segmentaria C\'ubica}
+\begin{itemize}
+\item<1-> La condici\'on $c_0 = 0$ permite eliminar la primera columna de la matriz del sistema.
+\item<2-> Con estas dos modificaciones, el sistema de ecuaciones queda de la forma:
+\end{itemize}
+\uncover<2->{
+\footnotesize{
+$$
+\left[\begin{array}{cccccc}
+  2(h_0+h_1) & h_1 & 0 & 0 & \cdots & 0\\
+  h_1 & 2(h_1+h_2) & h_2 & 0 & \cdots & 0\\
+  0 & h_2 & 2(h_2+h_3) & h_3 &  \cdots & 0\\
+  0 & 0 & h_3 & 2(h_3+h_4) & \cdots & 0\\
+  \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+  0 & 0  & \cdots & h_{n-3} & 2(h_{n-3}+h_{n-2}) & h_{n-2}\\
+  0 & 0  & 0 & \cdots & h_{n-2} & 2(h_{n-2}+h_{n-1})\\
+ \end{array}\right]
+$$
+$$
+\left[\begin{array}{c}
+  c_1\\
+  c_2\\
+  c_3\\
+  \vdots\\
+  c_{n-2}\\
+  c_{n-1}
+ \end{array}\right] = \left[\begin{array}{c}
+  v_1\\
+  v_2\\
+  v_3\\
+  \vdots\\
+  v_{n-2}\\
+  v_{n-1}
+ \end{array}\right]
+$$}
+que es un sistema de $n - 1$ ecuaciones con $n - 1$ inc\'ognitas.}
+}
+%%%%
+\frame
+{
+\frametitle{Ejemplo:}
+Aproximar la funci\'on $f(x)=\frac{1}{1+x^2}$, empleando interpolaci\'on sobre el soporte formado por los puntos:
+\scriptsize
+$$
+(-4.0, 0.05882352941), (-2.0, 0.2), (0.0, 1.0), (1.0, 0.5), (2.0, 0.2), (4.0, 0.05882352941)
+$$
+\normalsize
+\uncover<2->{Polinomio de Interpolaci\'on de Lagrange
+$$
+1.0 -0.3764x - 0.2470x^2 + 0.1176x^3 + 0.01176x^4 - 0.005882x^5
+$$}
+}
+%%%%
+\frame
+{
+$$
+\begin{array}{cc}
+\includegraphics[scale=0.23]{lagrange.eps} & \includegraphics[scale=0.23]{errorlagrange.eps}\\
+\textcolor{red}{\frac{1}{1+x^2}} \text{ vs }\textcolor{blue}{P_5(x)} & |E(x)|=|f(x)-P_5(x)| 
+\end{array}
+$$
+}
+%%%%
+\frame
+{
+Spline c\'ubico
+$$
+S(x) = \left\{
+\begin{array}{ll}
+2.502 + 2.052x + 0.5403x^2 + 0.04503x^3 & x<-2.0\\
+1.0 - 0.2020x - 0.5866x^2 - 0.1428x^3 & x<0.0\\
+1.0 - 0.2020x - 0.5866x^2 + 0.2887x^3 & x<1.0\\
+1.359 - 1.279x + 0.4911x^2 - 0.07051x^3 & x<2.0\\
+0.8859 - 0.5699x + 0.1361x^2 - 0.01134x^3 & x\geq 2.0
+\end{array}\right. 
+$$
+}
+%%%%
+\frame
+{
+$$
+\begin{array}{cc}
+\includegraphics[scale=0.23]{spline.eps} & \includegraphics[scale=0.23]{errorspline.eps}\\
+\textcolor{red}{\frac{1}{1+x^2}} \text{ vs }\textcolor{blue}{S(x)} & |E(x)|=|f(x)-S(x)| 
+\end{array}
+$$
+}
+%%%
+\frame
+{
+\frametitle{Condiciones Sobre la Derivada}
+\begin{block}{Teorema}
+Sea $f(x)$ una funci\'on definida en $[x_0,x_n]$. Entonces existe un \'unico $S(x)$ spline c\'ubico interpolante para $f(x)$ en $[x_0,x_n]$, tal que:
+$$
+                S'(x_0) =  f'(x_0)      \text{  y  }           S'(x_n) = f'(x_n).
+$$
+\end{block}
+
+\begin{eqnarray}
+2h_0c_0 + h_0c_1 & = & \frac{3}{h_0}(a_1 - a_0 ) - 3f'(x_0)\nonumber\\
+h_{n-1}c_{n-1} + 2h_{n-1}c_n & = & 3f'(x_n) - \frac{3}{h_{n-1}} (a_n - a_{n-1})\nonumber
+\end{eqnarray}
+}
+%%%%
+\frame
+{
+\frametitle{Condiciones Sobre la Derivada}
+A\~nadiendo al sistema de ecuaciones que determina los $c_k$ las dos ecuaciones adicionales, se tiene que los $c_k$ vienen dados por la soluci\'on de un sistema de $n + 1$ ecuaciones con $n + 1$ inc\'ognitas:
+{\scriptsize
+$$
+ \left[\begin{array}{cccccc}
+       2h_0 & h_0 & 0 & 0 & \cdots & 0\\
+       h_0 & 2(h_0+h_1) & h_1 & 0 & \cdots & 0\\
+       0 & h_1 & 2(h_1+h_2) & h_2 &  \cdots & 0\\
+       0 & 0 & h_2 & 2(h_2+h_3) & \cdots & 0\\
+       \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\
+       0 & 0  & \cdots & h_{n-2} & 2(h_{n-2}+h_{n-1}) & h_{n-1}\\
+       0 & 0  & 0 &\cdots & h_{n-1} & 2h_{n-1}\\
+      \end{array}\right]$$
+      $$\left[\begin{array}{c}
+                               c_0\\
+                               c_1\\
+                               c_2\\
+                               \vdots\\
+                               c_{n-1}\\
+                               c_n
+                              \end{array}\right] = \left[\begin{array}{c}
+                               v_0\\
+                               v_1\\
+                               v_2\\
+                               \vdots\\
+                               v_{n-1}\\
+                               v_n
+                              \end{array}\right]
+$$}
+con
+\begin{eqnarray}
+\nonumber v_0 & = & 3\left(\dfrac{a_1 - a_0}{h_0}-f'_0\right)\\
+\nonumber v_n & = & 3\left(f'_n -\dfrac{a_n - a_{n-1}}{h_{n-1}}\right)
+\end{eqnarray}
+}
+%%%%
+\frame
+{
+  \frametitle{Ejemplo:}
+Spline c\'ubico
+$$
+S(x) = \left\{
+\begin{array}{ll}
+2.765 + 2.452x + 0.7255x^2 + 0.07040x^3 & x<-2.0\\
+1.0 - 0.1964x - 0.5988x^2 - 0.1503x^3 & x<0.0\\
+1.0 - 0.1964x - 0.5988x^2 + 0.2952x^3 & x<1.0\\
+1.374 - 1.318x + 0.5232x^2 - 0.07875x^3 & x<2.0\\
+0.7472 - 0.3784x + 0.05319x^2 - 0.0004064x^3 & x\geq 2.0
+\end{array}\right. 
+$$
+}
+%%%%
+\frame
+{
+  \frametitle{Ejemplo:}
+$$
+\begin{array}{cc}
+\includegraphics[scale=0.23]{splineder.eps} & \includegraphics[scale=0.23]{errorsplineder.eps}\\
+\textcolor{red}{\frac{1}{1+x^2}} \text{ vs }\textcolor{blue}{S(x)} & |E(x)|=|f(x)-S(x)| 
+\end{array}
+$$
+}
 \end{document}

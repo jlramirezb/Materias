@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  24 FEB 2025 19:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  24 FEB 2025 20:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2371,6 +2371,155 @@ Overfull \hbox (3.35481pt too wide) detected at line 2092
 [299
 
 ]
+
+[300
+
+]
+
+[301
+
+]
+Overfull \hbox (5.00084pt too wide) detected at line 2162
+[]
+ []
+
+
+
+[302
+
+]
+Overfull \hbox (5.00084pt too wide) detected at line 2162
+[]
+ []
+
+
+
+[303
+
+]
+
+[304
+
+]
+
+[305
+
+]
+Package epstopdf Info: Source file: <lagrange.eps>
+(epstopdf)                    date: 2010-03-20 18:21:04
+(epstopdf)                    size: 68402 bytes
+(epstopdf)             Output file: <lagrange-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-24 20:34:29
+(epstopdf)                    size: 12557 bytes
+(epstopdf)             Command: <repstopdf --outfile=lagrange-eps-converted-to.pdf lagrange.eps>
+(epstopdf)             \includegraphics on input line 2187.
+Package epstopdf Info: Output file is already uptodate.
+<lagrange-eps-converted-to.pdf, id=9622, 557.08125pt x 557.08125pt>
+File: lagrange-eps-converted-to.pdf Graphic file (type pdf)
+<use lagrange-eps-converted-to.pdf>
+Package pdftex.def Info: lagrange-eps-converted-to.pdf  used on input line 2187.
+(pdftex.def)             Requested size: 128.12599pt x 128.12599pt.
+Package epstopdf Info: Source file: <errorlagrange.eps>
+(epstopdf)                    date: 2010-03-20 18:21:28
+(epstopdf)                    size: 58468 bytes
+(epstopdf)             Output file: <errorlagrange-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-24 20:34:32
+(epstopdf)                    size: 9738 bytes
+(epstopdf)             Command: <repstopdf --outfile=errorlagrange-eps-converted-to.pdf errorlagrange.eps>
+(epstopdf)             \includegraphics on input line 2187.
+Package epstopdf Info: Output file is already uptodate.
+<errorlagrange-eps-converted-to.pdf, id=9623, 557.08125pt x 557.08125pt>
+File: errorlagrange-eps-converted-to.pdf Graphic file (type pdf)
+<use errorlagrange-eps-converted-to.pdf>
+Package pdftex.def Info: errorlagrange-eps-converted-to.pdf  used on input line 2187.
+(pdftex.def)             Requested size: 128.12599pt x 128.12599pt.
+
+
+[306
+
+ <./lagrange-eps-converted-to.pdf> <./errorlagrange-eps-converted-to.pdf>]
+
+[307
+
+]
+Package epstopdf Info: Source file: <spline.eps>
+(epstopdf)                    date: 2010-03-20 18:23:22
+(epstopdf)                    size: 59019 bytes
+(epstopdf)             Output file: <spline-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-24 20:34:35
+(epstopdf)                    size: 9788 bytes
+(epstopdf)             Command: <repstopdf --outfile=spline-eps-converted-to.pdf spline.eps>
+(epstopdf)             \includegraphics on input line 2212.
+Package epstopdf Info: Output file is already uptodate.
+<spline-eps-converted-to.pdf, id=9683, 557.08125pt x 557.08125pt>
+File: spline-eps-converted-to.pdf Graphic file (type pdf)
+<use spline-eps-converted-to.pdf>
+Package pdftex.def Info: spline-eps-converted-to.pdf  used on input line 2212.
+(pdftex.def)             Requested size: 128.12599pt x 128.12599pt.
+Package epstopdf Info: Source file: <errorspline.eps>
+(epstopdf)                    date: 2010-03-20 18:23:36
+(epstopdf)                    size: 62253 bytes
+(epstopdf)             Output file: <errorspline-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-24 20:34:38
+(epstopdf)                    size: 10454 bytes
+(epstopdf)             Command: <repstopdf --outfile=errorspline-eps-converted-to.pdf errorspline.eps>
+(epstopdf)             \includegraphics on input line 2212.
+Package epstopdf Info: Output file is already uptodate.
+<errorspline-eps-converted-to.pdf, id=9684, 557.08125pt x 557.08125pt>
+File: errorspline-eps-converted-to.pdf Graphic file (type pdf)
+<use errorspline-eps-converted-to.pdf>
+Package pdftex.def Info: errorspline-eps-converted-to.pdf  used on input line 2212.
+(pdftex.def)             Requested size: 128.12599pt x 128.12599pt.
+
+
+[308
+
+ <./spline-eps-converted-to.pdf> <./errorspline-eps-converted-to.pdf>]
+
+[309
+
+]
+
+[310
+
+]
+
+[311
+
+]
+Package epstopdf Info: Source file: <splineder.eps>
+(epstopdf)                    date: 2010-03-20 19:38:06
+(epstopdf)                    size: 69702 bytes
+(epstopdf)             Output file: <splineder-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-24 20:46:49
+(epstopdf)                    size: 12879 bytes
+(epstopdf)             Command: <repstopdf --outfile=splineder-eps-converted-to.pdf splineder.eps>
+(epstopdf)             \includegraphics on input line 2293.
+Package epstopdf Info: Output file is already uptodate.
+<splineder-eps-converted-to.pdf, id=9809, 557.08125pt x 557.08125pt>
+File: splineder-eps-converted-to.pdf Graphic file (type pdf)
+<use splineder-eps-converted-to.pdf>
+Package pdftex.def Info: splineder-eps-converted-to.pdf  used on input line 2293.
+(pdftex.def)             Requested size: 128.12599pt x 128.12599pt.
+Package epstopdf Info: Source file: <errorsplineder.eps>
+(epstopdf)                    date: 2010-03-20 19:38:38
+(epstopdf)                    size: 59696 bytes
+(epstopdf)             Output file: <errorsplineder-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-02-24 20:46:52
+(epstopdf)                    size: 9809 bytes
+(epstopdf)             Command: <repstopdf --outfile=errorsplineder-eps-converted-to.pdf errorsplineder.eps>
+(epstopdf)             \includegraphics on input line 2293.
+Package epstopdf Info: Output file is already uptodate.
+<errorsplineder-eps-converted-to.pdf, id=9810, 557.08125pt x 557.08125pt>
+File: errorsplineder-eps-converted-to.pdf Graphic file (type pdf)
+<use errorsplineder-eps-converted-to.pdf>
+Package pdftex.def Info: errorsplineder-eps-converted-to.pdf  used on input line 2293.
+(pdftex.def)             Requested size: 128.12599pt x 128.12599pt.
+
+
+[312
+
+ <./splineder-eps-converted-to.pdf> <./errorsplineder-eps-converted-to.pdf>]
 \tf@nav=\write6
 \openout6 = `unidadIII.nav'.
 
@@ -2389,18 +2538,18 @@ Package rerunfilecheck Info: File `unidadIII.out' has not changed.
 (rerunfilecheck)             Checksum: 25A1F5B2FD8F5C2361332B2D3F866AF1;868.
  ) 
 Here is how much of TeX's memory you used:
- 24346 strings out of 473583
- 469931 string characters out of 5732336
- 1997908 words of memory out of 5000000
- 46137 multiletter control sequences out of 15000+600000
+ 24442 strings out of 473583
+ 472128 string characters out of 5732336
+ 2001908 words of memory out of 5000000
+ 46207 multiletter control sequences out of 15000+600000
  569362 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,17n,123p,444b,953s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on unidadIII.pdf (299 pages, 1528566 bytes).
+Output written on unidadIII.pdf (312 pages, 1617750 bytes).
 PDF statistics:
- 9689 PDF objects out of 10688 (max. 8388607)
- 8425 compressed objects within 85 object streams
- 607 named destinations out of 1000 (max. 500000)
- 4177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 10095 PDF objects out of 10688 (max. 8388607)
+ 8783 compressed objects within 88 object streams
+ 633 named destinations out of 1000 (max. 500000)
+ 4303 words of extra memory for PDF output out of 10000 (max. 10000000)
 
