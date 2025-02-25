@@ -2291,4 +2291,64 @@ $$
 \end{array}
 $$
 }
+%%%%
+\frame
+{
+\frametitle{Ajuste de curvas usando m\'inimos cuadrados.} 
+\begin{itemize}
+\item<1-> Supongase que existe una relaci\'on funcional $y=f(x)$ entre dos cantidades $x$ e $y$, con $f$ desconocida y se conocen valores
+$y_k$ que aproximan a $f(x_k)$, es decir:
+$$
+f(x_k)=y_k+E_k, \qquad  k=0,1,\ldots,n
+$$
+con $E_k$ desconocido.
+\item<2-> Se trata de recuperar la funci\'on $f$ a partir de los datos aproximados $y_k$, $k=0,1,\ldots,M$.
+\item<3-> Este problema se conoce como un
+problema de ``ajuste de datos'' o ``Ajuste de curvas'' (caso discreto).
+\item<4->Inicialmente se estudiar\'a el caso en el que $f$ es una funci\'on polin\'omica.
+$$
+\left. \begin{array}{rcl}
+        \|\cdot\|_{\infty} \leftarrow E & = & \max_{i=0,\ldots,n}|y_i - p(x_i)|\\
+        \|\cdot\|_{1} \leftarrow E & = & \sum_{i=0}^n|y_i - p(x_i)|\\
+        \|\cdot\|_{1} \leftarrow E & = & \sum_{i=0}^n|y_i - p(x_i)|^2
+       \end{array}
+\right\} \mbox{ Hallar el m\'inimo $E$}
+$$
+\end{itemize}
+}
+%%%%
+\frame
+{
+\frametitle{Ajuste de curvas usando m\'inimos cuadrados.}
+\begin{itemize}
+\item<1-> Se buscan aproximaciones de funciones de modo tal que:
+$$
+\sum_{i=0}^M(f(x_i) - p_n(x_i))^2 \mbox{ sea m\'inimo.}
+$$
+\item<2->En este tipo de aproximaci\'on no necesariamente la funci\'on aproximante pasa por los nodos.
+\item<3->En principio $p(x)$ ser\'a una funci\'on lineal, es decir, se desea hallar la recta que mejor se ajuste a un conjunto de datos dados.
+\end{itemize}
+}
+%%%%
+\frame
+{
+\frametitle{Ajuste de curvas usando m\'inimos cuadrados.}
+\begin{itemize}
+\item<1-> La ecuaci\'on punto-pendiente de una recta viene dada por la siguiente ecuaci\'on: $f(x_i)=ax_i+b$, de modo tal que $E$ se
+convierte en una funci\'on de dos variables $E(a,b)$.
+$$
+E(a,b) = E = \sum_{i=0}^M(y_i - b - ax_i)^2
+$$
+\item<2-> Esta funci\'on es continuamente diferenciable, o sea, $E$ es diferenciable y las derivadas parciales son continuas, adem\'as
+$E(a,b) \geq 0$, o sea:
+$$
+\exists a,b \in \mathbb{R} \mbox{ t.q. } E(a,b) \leq E(a',b')\forall a',b' \in \mathbb{R}
+$$
+\item<3->Por la definici\'on anterior
+$$
+\exists \min_{a,b \in \mathbb{R}}E(a,b) \mbox{ y adem\'as } \underbrace{\dfrac{\partial E(a,b)}{\partial a} = 0 = \dfrac{\partial
+E(a,b)}{\partial b}}_{\mbox{Ecuaciones Normales}}
+$$
+\end{itemize}
+}
 \end{document}
