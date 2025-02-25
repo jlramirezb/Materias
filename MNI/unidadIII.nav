@@ -288,8 +288,12 @@
 \headcommand {\beamer@framepages {317}{319}}
 \headcommand {\slideentry {2}{5}{33}{320/322}{Interpolaci\'on a trozos}{0}}
 \headcommand {\beamer@framepages {320}{322}}
-\headcommand {\beamer@partpages {1}{322}}
-\headcommand {\beamer@subsectionpages {244}{322}}
-\headcommand {\beamer@sectionpages {44}{322}}
-\headcommand {\beamer@documentpages {322}}
-\headcommand {\gdef \inserttotalframenumber {137}}
+\headcommand {\slideentry {2}{5}{34}{323/324}{Interpolaci\'on a trozos}{0}}
+\headcommand {\beamer@framepages {323}{324}}
+\headcommand {\slideentry {2}{5}{35}{325/326}{Interpolaci\'on a trozos}{0}}
+\headcommand {\beamer@framepages {325}{326}}
+\headcommand {\beamer@partpages {1}{326}}
+\headcommand {\beamer@subsectionpages {244}{326}}
+\headcommand {\beamer@sectionpages {44}{326}}
+\headcommand {\beamer@documentpages {326}}
+\headcommand {\gdef \inserttotalframenumber {140}}

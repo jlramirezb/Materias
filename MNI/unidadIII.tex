@@ -2351,4 +2351,78 @@ E(a,b)}{\partial b}}_{\mbox{Ecuaciones Normales}}
 $$
 \end{itemize}
 }
+%%%%
+\frame
+{
+\frametitle{Ajuste de curvas usando m\'inimos cuadrados.}
+\begin{itemize}
+\item<1-> Derivando $E(a,b)$ con respecto a $a$ y $b$ se obtiene:
+$$
+\left\{\begin{array}{l}
+        \dfrac{\partial E(a,b)}{\partial a} = 0 = 2\displaystyle\sum_{i=0}^M(y_i - b - ax_i)(-x_i)\\
+        \dfrac{\partial E(a,b)}{\partial b} = 0 = 2\displaystyle\sum_{i=0}^M(y_i - b - ax_i)(-1)
+       \end{array}\right.
+$$
+\item<2-> Quedando que
+$$
+\left\{\begin{array}{lrl}
+  \displaystyle\sum_{i=0}^M(bx_i+ax_i^2) & = & \displaystyle\sum_{i=0}^My_ix_i\\
+  \displaystyle \sum_{i=0}^M(b+ax_i) & = & \displaystyle\sum_{i=0}^My_i
+ \end{array}\right.
+$$
+\end{itemize}
+}
+%%%%
+\frame
+{
+\frametitle{Ajuste de curvas usando m\'inimos cuadrados.}
+\begin{itemize}
+\item<1-> Separando t\'erminos y sacando las constantes fuera de las sumatorias se obtiene:
+$$
+\left\{\begin{array}{lrl}
+  b\displaystyle\sum_{i=0}^Mx_i + a\displaystyle\sum_{i=0}^Mx_i^2 & = & \displaystyle\sum_{i=0}^My_ix_i\\
+  b\displaystyle\sum_{i=0}^M1 + a\displaystyle\sum_{i=0}^Mx_i & = & \displaystyle\sum_{i=0}^My_i
+ \end{array}\right.
+$$
+\item<2-> Resolviendo el sistema de ecuaciones se obtiene:
+$$
+\begin{array}{rcl}
+b  & = & \dfrac{\displaystyle\sum_{i=0}^Mx_i\displaystyle\sum_{i=0}^My_ix_i
+-\displaystyle\sum_{i=0}^My_i\displaystyle\sum_{i=0}^Mx_i^2 }{\left(\displaystyle\sum_{i=0}^Mx_i\right)^2
+-(M+1)\displaystyle\sum_{i=0}^Mx_i^2}\\
+ a & = & \dfrac{\displaystyle\sum_{i=0}^Mx_i\displaystyle\sum_{i=0}^My_i
+-(M+1)\displaystyle\sum_{i=0}^My_ix_i}{\left(\displaystyle\sum_{i=0}^Mx_i\right)^2
+-(M+1)\displaystyle\sum_{i=0}^Mx_i^2}
+\end{array}
+$$
+\end{itemize}
+}
+%%%%
+\frame
+{
+\frametitle{Ejemplo}
+Dados los siguientes puntos obtener el polinomio de primer grado por M\'inimos Cuadrados.
+$$
+\begin{array}{|c||c|c|c|c|}\hline
+k & 0 & 1 & 2 & 3\\\hline\hline
+x & 0 & 2 & 3 & 5\\\hline
+y & -1 & 0 & 2 & 1\\\hline
+\end{array}
+$$
+A continuaci\'on, se calcular\'an todos los coeficiente del sistema de ecuaciones.
+$$
+\begin{array}{|c||c|c|c||c|c|}\hline
+  k & & x_k & x_k^2 & y_k & x_ky_k\\\hline\hline
+  0 & 1 & 0 & 0 & -1 & 0\\\hline
+  1 & 1 & 2 & 4 & 0 & 0\\\hline
+  2 & 1 & 3 & 9 & 2 & 6\\\hline
+  3 & 1 & 5 & 25 & 1 & 5\\\hline
+  \Sigma & 4 & 10 & 38 & 2 & 11\\\hline
+\end{array}
+$$
+Que el sistema de ecuaciones:
+$$
+\begin{array}{rcl}
+  
+}
 \end{document}
