@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.8)  25 FEB 2025 13:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.11.8)  26 FEB 2025 11:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -573,8 +573,7 @@ Package: relsize 2013/03/29 ver 4.1
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count334
 \l__pdf_internal_box=\box83
-)
-No file unidadIII.aux.
+) (./unidadIII.aux)
 \openout1 = `unidadIII.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -595,6 +594,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -661,6 +661,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 13.
 LaTeX Info: Redefining \pageref on input line 13.
 LaTeX Info: Redefining \nameref on input line 13.
+ (./unidadIII.out) (./unidadIII.out)
 \@outlinefile=\write5
 \openout5 = `unidadIII.out'.
 
@@ -678,9 +679,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./unidadIII.nav) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-No file unidadIII.toc.
-[2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./unidadIII.toc) [2
 
 ]
 \openout4 = `unidadIII.vrb'.
@@ -800,7 +799,7 @@ Package epstopdf Info: Source file: <taylorsin.eps>
 (epstopdf)             Command: <repstopdf --outfile=taylorsin-eps-converted-to.pdf taylorsin.eps>
 (epstopdf)             \includegraphics on input line 319.
 Package epstopdf Info: Output file is already uptodate.
-<taylorsin-eps-converted-to.pdf, id=1634, 557.08125pt x 557.08125pt>
+<taylorsin-eps-converted-to.pdf, id=1671, 557.08125pt x 557.08125pt>
 File: taylorsin-eps-converted-to.pdf Graphic file (type pdf)
 <use taylorsin-eps-converted-to.pdf>
 Package pdftex.def Info: taylorsin-eps-converted-to.pdf  used on input line 319.
@@ -817,7 +816,7 @@ Package epstopdf Info: Source file: <tayloratan.eps>
 (epstopdf)             Command: <repstopdf --outfile=tayloratan-eps-converted-to.pdf tayloratan.eps>
 (epstopdf)             \includegraphics on input line 327.
 Package epstopdf Info: Output file is already uptodate.
-<tayloratan-eps-converted-to.pdf, id=1663, 557.08125pt x 557.08125pt>
+<tayloratan-eps-converted-to.pdf, id=1701, 557.08125pt x 557.08125pt>
 File: tayloratan-eps-converted-to.pdf Graphic file (type pdf)
 <use tayloratan-eps-converted-to.pdf>
 Package pdftex.def Info: tayloratan-eps-converted-to.pdf  used on input line 327.
@@ -864,7 +863,7 @@ Package epstopdf Info: Source file: <img1.eps>
 (epstopdf)             Command: <repstopdf --outfile=img1-eps-converted-to.pdf img1.eps>
 (epstopdf)             \includegraphics on input line 458.
 Package epstopdf Info: Output file is already uptodate.
-<img1-eps-converted-to.pdf, id=2175, 853.1875pt x 261.97874pt>
+<img1-eps-converted-to.pdf, id=2210, 853.1875pt x 261.97874pt>
 File: img1-eps-converted-to.pdf Graphic file (type pdf)
 <use img1-eps-converted-to.pdf>
 Package pdftex.def Info: img1-eps-converted-to.pdf  used on input line 458.
@@ -937,7 +936,7 @@ Package epstopdf Info: Source file: <soporte1.eps>
 (epstopdf)             Command: <repstopdf --outfile=soporte1-eps-converted-to.pdf soporte1.eps>
 (epstopdf)             \includegraphics on input line 672.
 Package epstopdf Info: Output file is already uptodate.
-<soporte1-eps-converted-to.pdf, id=3096, 557.08125pt x 557.08125pt>
+<soporte1-eps-converted-to.pdf, id=3131, 557.08125pt x 557.08125pt>
 File: soporte1-eps-converted-to.pdf Graphic file (type pdf)
 <use soporte1-eps-converted-to.pdf>
 Package pdftex.def Info: soporte1-eps-converted-to.pdf  used on input line 672.
@@ -951,7 +950,7 @@ Package epstopdf Info: Source file: <soporte2.eps>
 (epstopdf)             Command: <repstopdf --outfile=soporte2-eps-converted-to.pdf soporte2.eps>
 (epstopdf)             \includegraphics on input line 672.
 Package epstopdf Info: Output file is already uptodate.
-<soporte2-eps-converted-to.pdf, id=3097, 557.08125pt x 557.08125pt>
+<soporte2-eps-converted-to.pdf, id=3132, 557.08125pt x 557.08125pt>
 File: soporte2-eps-converted-to.pdf Graphic file (type pdf)
 <use soporte2-eps-converted-to.pdf>
 Package pdftex.def Info: soporte2-eps-converted-to.pdf  used on input line 672.
@@ -968,7 +967,7 @@ Package epstopdf Info: Source file: <approx.eps>
 (epstopdf)             Command: <repstopdf --outfile=approx-eps-converted-to.pdf approx.eps>
 (epstopdf)             \includegraphics on input line 685.
 Package epstopdf Info: Output file is already uptodate.
-<approx-eps-converted-to.pdf, id=3128, 557.08125pt x 557.08125pt>
+<approx-eps-converted-to.pdf, id=3163, 557.08125pt x 557.08125pt>
 File: approx-eps-converted-to.pdf Graphic file (type pdf)
 <use approx-eps-converted-to.pdf>
 Package pdftex.def Info: approx-eps-converted-to.pdf  used on input line 685.
@@ -1007,7 +1006,7 @@ Package epstopdf Info: Source file: <gder.eps>
 (epstopdf)             Command: <repstopdf --outfile=gder-eps-converted-to.pdf gder.eps>
 (epstopdf)             \includegraphics on input line 738.
 Package epstopdf Info: Output file is already uptodate.
-<gder-eps-converted-to.pdf, id=3448, 557.08125pt x 557.08125pt>
+<gder-eps-converted-to.pdf, id=3483, 557.08125pt x 557.08125pt>
 File: gder-eps-converted-to.pdf Graphic file (type pdf)
 <use gder-eps-converted-to.pdf>
 Package pdftex.def Info: gder-eps-converted-to.pdf  used on input line 738.
@@ -1056,7 +1055,7 @@ Package epstopdf Info: Source file: <parabola.eps>
 (epstopdf)             Command: <repstopdf --outfile=parabola-eps-converted-to.pdf parabola.eps>
 (epstopdf)             \includegraphics on input line 750.
 Package epstopdf Info: Output file is already uptodate.
-<parabola-eps-converted-to.pdf, id=3531, 557.08125pt x 557.08125pt>
+<parabola-eps-converted-to.pdf, id=3566, 557.08125pt x 557.08125pt>
 File: parabola-eps-converted-to.pdf Graphic file (type pdf)
 <use parabola-eps-converted-to.pdf>
 Package pdftex.def Info: parabola-eps-converted-to.pdf  used on input line 750.
@@ -1115,7 +1114,7 @@ Package epstopdf Info: Source file: <error.eps>
 (epstopdf)             Command: <repstopdf --outfile=error-eps-converted-to.pdf error.eps>
 (epstopdf)             \includegraphics on input line 783.
 Package epstopdf Info: Output file is already uptodate.
-<error-eps-converted-to.pdf, id=3745, 557.08125pt x 557.08125pt>
+<error-eps-converted-to.pdf, id=3780, 557.08125pt x 557.08125pt>
 File: error-eps-converted-to.pdf Graphic file (type pdf)
 <use error-eps-converted-to.pdf>
 Package pdftex.def Info: error-eps-converted-to.pdf  used on input line 783.
@@ -1306,7 +1305,7 @@ Package epstopdf Info: Source file: <seno.eps>
 (epstopdf)             Command: <repstopdf --outfile=seno-eps-converted-to.pdf seno.eps>
 (epstopdf)             \includegraphics on input line 1365.
 Package epstopdf Info: Output file is already uptodate.
-<seno-eps-converted-to.pdf, id=5924, 557.08125pt x 557.08125pt>
+<seno-eps-converted-to.pdf, id=5957, 557.08125pt x 557.08125pt>
 File: seno-eps-converted-to.pdf Graphic file (type pdf)
 <use seno-eps-converted-to.pdf>
 Package pdftex.def Info: seno-eps-converted-to.pdf  used on input line 1365.
@@ -1320,7 +1319,7 @@ Package epstopdf Info: Source file: <errorseno.eps>
 (epstopdf)             Command: <repstopdf --outfile=errorseno-eps-converted-to.pdf errorseno.eps>
 (epstopdf)             \includegraphics on input line 1365.
 Package epstopdf Info: Output file is already uptodate.
-<errorseno-eps-converted-to.pdf, id=5925, 557.08125pt x 557.08125pt>
+<errorseno-eps-converted-to.pdf, id=5958, 557.08125pt x 557.08125pt>
 File: errorseno-eps-converted-to.pdf Graphic file (type pdf)
 <use errorseno-eps-converted-to.pdf>
 Package pdftex.def Info: errorseno-eps-converted-to.pdf  used on input line 1365.
@@ -1343,7 +1342,7 @@ Package epstopdf Info: Source file: <seno4.eps>
 (epstopdf)             Command: <repstopdf --outfile=seno4-eps-converted-to.pdf seno4.eps>
 (epstopdf)             \includegraphics on input line 1417.
 Package epstopdf Info: Output file is already uptodate.
-<seno4-eps-converted-to.pdf, id=6092, 557.08125pt x 557.08125pt>
+<seno4-eps-converted-to.pdf, id=6125, 557.08125pt x 557.08125pt>
 File: seno4-eps-converted-to.pdf Graphic file (type pdf)
 <use seno4-eps-converted-to.pdf>
 Package pdftex.def Info: seno4-eps-converted-to.pdf  used on input line 1417.
@@ -1357,7 +1356,7 @@ Package epstopdf Info: Source file: <errorseno4.eps>
 (epstopdf)             Command: <repstopdf --outfile=errorseno4-eps-converted-to.pdf errorseno4.eps>
 (epstopdf)             \includegraphics on input line 1417.
 Package epstopdf Info: Output file is already uptodate.
-<errorseno4-eps-converted-to.pdf, id=6093, 557.08125pt x 557.08125pt>
+<errorseno4-eps-converted-to.pdf, id=6126, 557.08125pt x 557.08125pt>
 File: errorseno4-eps-converted-to.pdf Graphic file (type pdf)
 <use errorseno4-eps-converted-to.pdf>
 Package pdftex.def Info: errorseno4-eps-converted-to.pdf  used on input line 1417.
@@ -1463,7 +1462,7 @@ Package epstopdf Info: Source file: <rungeinter.eps>
 (epstopdf)             Command: <repstopdf --outfile=rungeinter-eps-converted-to.pdf rungeinter.eps>
 (epstopdf)             \includegraphics on input line 1652.
 Package epstopdf Info: Output file is already uptodate.
-<rungeinter-eps-converted-to.pdf, id=7026, 718.685pt x 433.62pt>
+<rungeinter-eps-converted-to.pdf, id=7059, 718.685pt x 433.62pt>
 File: rungeinter-eps-converted-to.pdf Graphic file (type pdf)
 <use rungeinter-eps-converted-to.pdf>
 Package pdftex.def Info: rungeinter-eps-converted-to.pdf  used on input line 1652.
@@ -1480,7 +1479,7 @@ Package epstopdf Info: Source file: <rungecheby.eps>
 (epstopdf)             Command: <repstopdf --outfile=rungecheby-eps-converted-to.pdf rungecheby.eps>
 (epstopdf)             \includegraphics on input line 1663.
 Package epstopdf Info: Output file is already uptodate.
-<rungecheby-eps-converted-to.pdf, id=7065, 718.685pt x 433.62pt>
+<rungecheby-eps-converted-to.pdf, id=7098, 718.685pt x 433.62pt>
 File: rungecheby-eps-converted-to.pdf Graphic file (type pdf)
 <use rungecheby-eps-converted-to.pdf>
 Package pdftex.def Info: rungecheby-eps-converted-to.pdf  used on input line 1663.
@@ -1528,7 +1527,7 @@ Overfull \vbox (12.19908pt too high) detected at line 1707
 ] [243
 
 ]
-<splines.png, id=7472, 1113.15875pt x 494.84875pt>
+<splines.png, id=7503, 1113.15875pt x 494.84875pt>
 File: splines.png Graphic file (type png)
 <use splines.png>
 Package pdftex.def Info: splines.png  used on input line 1758.
@@ -1573,7 +1572,7 @@ Overfull \vbox (20.84773pt too high) detected at line 1758
 [247
 
 ]
-<inter_lin_troz.png, id=7580, 704.6325pt x 227.34938pt>
+<inter_lin_troz.png, id=7610, 704.6325pt x 227.34938pt>
 File: inter_lin_troz.png Graphic file (type png)
 <use inter_lin_troz.png>
 Package pdftex.def Info: inter_lin_troz.png  used on input line 1773.
@@ -1627,7 +1626,7 @@ Package epstopdf Info: Source file: <linear_seg.eps>
 (epstopdf)             Command: <repstopdf --outfile=linear_seg-eps-converted-to.pdf linear_seg.eps>
 (epstopdf)             \includegraphics on input line 1862.
 Package epstopdf Info: Output file is already uptodate.
-<linear_seg-eps-converted-to.pdf, id=7938, 557.08125pt x 398.48875pt>
+<linear_seg-eps-converted-to.pdf, id=7968, 557.08125pt x 398.48875pt>
 File: linear_seg-eps-converted-to.pdf Graphic file (type pdf)
 <use linear_seg-eps-converted-to.pdf>
 Package pdftex.def Info: linear_seg-eps-converted-to.pdf  used on input line 1862.
@@ -1649,7 +1648,7 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
 (epstopdf)             \includegraphics on input line 1871.
 Package epstopdf Info: Output file is already uptodate.
-<err_L4-eps-converted-to.pdf, id=7979, 557.08125pt x 557.08125pt>
+<err_L4-eps-converted-to.pdf, id=8010, 557.08125pt x 557.08125pt>
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
 Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 1871.
@@ -1666,7 +1665,7 @@ Package epstopdf Info: Source file: <err_L10.eps>
 (epstopdf)             Command: <repstopdf --outfile=err_L10-eps-converted-to.pdf err_L10.eps>
 (epstopdf)             \includegraphics on input line 1880.
 Package epstopdf Info: Output file is already uptodate.
-<err_L10-eps-converted-to.pdf, id=8021, 557.08125pt x 557.08125pt>
+<err_L10-eps-converted-to.pdf, id=8051, 557.08125pt x 557.08125pt>
 File: err_L10-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L10-eps-converted-to.pdf>
 Package pdftex.def Info: err_L10-eps-converted-to.pdf  used on input line 1880.
@@ -1795,7 +1794,7 @@ Package epstopdf Info: Source file: <lagrange.eps>
 (epstopdf)             Command: <repstopdf --outfile=lagrange-eps-converted-to.pdf lagrange.eps>
 (epstopdf)             \includegraphics on input line 2187.
 Package epstopdf Info: Output file is already uptodate.
-<lagrange-eps-converted-to.pdf, id=9461, 557.08125pt x 557.08125pt>
+<lagrange-eps-converted-to.pdf, id=9492, 557.08125pt x 557.08125pt>
 File: lagrange-eps-converted-to.pdf Graphic file (type pdf)
 <use lagrange-eps-converted-to.pdf>
 Package pdftex.def Info: lagrange-eps-converted-to.pdf  used on input line 2187.
@@ -1809,7 +1808,7 @@ Package epstopdf Info: Source file: <errorlagrange.eps>
 (epstopdf)             Command: <repstopdf --outfile=errorlagrange-eps-converted-to.pdf errorlagrange.eps>
 (epstopdf)             \includegraphics on input line 2187.
 Package epstopdf Info: Output file is already uptodate.
-<errorlagrange-eps-converted-to.pdf, id=9462, 557.08125pt x 557.08125pt>
+<errorlagrange-eps-converted-to.pdf, id=9493, 557.08125pt x 557.08125pt>
 File: errorlagrange-eps-converted-to.pdf Graphic file (type pdf)
 <use errorlagrange-eps-converted-to.pdf>
 Package pdftex.def Info: errorlagrange-eps-converted-to.pdf  used on input line 2187.
@@ -1828,7 +1827,7 @@ Package epstopdf Info: Source file: <spline.eps>
 (epstopdf)             Command: <repstopdf --outfile=spline-eps-converted-to.pdf spline.eps>
 (epstopdf)             \includegraphics on input line 2212.
 Package epstopdf Info: Output file is already uptodate.
-<spline-eps-converted-to.pdf, id=9521, 557.08125pt x 557.08125pt>
+<spline-eps-converted-to.pdf, id=9551, 557.08125pt x 557.08125pt>
 File: spline-eps-converted-to.pdf Graphic file (type pdf)
 <use spline-eps-converted-to.pdf>
 Package pdftex.def Info: spline-eps-converted-to.pdf  used on input line 2212.
@@ -1842,7 +1841,7 @@ Package epstopdf Info: Source file: <errorspline.eps>
 (epstopdf)             Command: <repstopdf --outfile=errorspline-eps-converted-to.pdf errorspline.eps>
 (epstopdf)             \includegraphics on input line 2212.
 Package epstopdf Info: Output file is already uptodate.
-<errorspline-eps-converted-to.pdf, id=9522, 557.08125pt x 557.08125pt>
+<errorspline-eps-converted-to.pdf, id=9552, 557.08125pt x 557.08125pt>
 File: errorspline-eps-converted-to.pdf Graphic file (type pdf)
 <use errorspline-eps-converted-to.pdf>
 Package pdftex.def Info: errorspline-eps-converted-to.pdf  used on input line 2212.
@@ -1865,7 +1864,7 @@ Package epstopdf Info: Source file: <splineder.eps>
 (epstopdf)             Command: <repstopdf --outfile=splineder-eps-converted-to.pdf splineder.eps>
 (epstopdf)             \includegraphics on input line 2293.
 Package epstopdf Info: Output file is already uptodate.
-<splineder-eps-converted-to.pdf, id=9644, 557.08125pt x 557.08125pt>
+<splineder-eps-converted-to.pdf, id=9674, 557.08125pt x 557.08125pt>
 File: splineder-eps-converted-to.pdf Graphic file (type pdf)
 <use splineder-eps-converted-to.pdf>
 Package pdftex.def Info: splineder-eps-converted-to.pdf  used on input line 2293.
@@ -1879,7 +1878,7 @@ Package epstopdf Info: Source file: <errorsplineder.eps>
 (epstopdf)             Command: <repstopdf --outfile=errorsplineder-eps-converted-to.pdf errorsplineder.eps>
 (epstopdf)             \includegraphics on input line 2293.
 Package epstopdf Info: Output file is already uptodate.
-<errorsplineder-eps-converted-to.pdf, id=9645, 557.08125pt x 557.08125pt>
+<errorsplineder-eps-converted-to.pdf, id=9675, 557.08125pt x 557.08125pt>
 File: errorsplineder-eps-converted-to.pdf Graphic file (type pdf)
 <use errorsplineder-eps-converted-to.pdf>
 Package pdftex.def Info: errorsplineder-eps-converted-to.pdf  used on input line 2293.
@@ -1922,116 +1921,13 @@ Overfull \vbox (6.00003pt too high) detected at line 2399
 
 [326
 
+] [327
+
+] [328
+
+] [329
+
 ]
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2427: LaTeX Error: \begin{array} on input line 2427 ended by \end{beamer@framepauses}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2427 }
-        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2427: Missing $ inserted.
-<inserted text> 
-                $
-l.2427 }
-        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2427: Missing } inserted.
-<inserted text> 
-                }
-l.2427 }
-        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2427: Missing \cr inserted.
-<inserted text> 
-                \cr 
-l.2427 }
-        
-I'm guessing that you meant to end an alignment here.
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2427: Missing $ inserted.
-<inserted text> 
-                $
-l.2427 }
-        
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2427: Missing } inserted.
-<inserted text> 
-                }
-l.2427 }
-        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2427: Extra }, or forgotten $.
-\endbeamer@frameslide ...amer@framepauses}\egroup 
-                                                  \ifx \beamer@frametitle \@...
-l.2427 }
-        
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2427: LaTeX Error: \begin{beamer@framepauses} on input line 2427 ended by \end{beamer@frameslide}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2427 }
-        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2427: Missing $ inserted.
-<inserted text> 
-                $
-l.2427 }
-        
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2427: Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.2427 }
-        
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-Overfull \hbox (10.0pt too wide) detected at line 2427
-[][]
- []
-
 \tf@nav=\write6
 \openout6 = `unidadIII.nav'.
 
@@ -2041,78 +1937,23 @@ Overfull \hbox (10.0pt too wide) detected at line 2427
 \tf@snm=\write8
 \openout8 = `unidadIII.snm'.
 
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2428: LaTeX Error: \begin{beamer@frameslide} on input line 2427 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2428 \end{document}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-(./unidadIII.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `unidadIII.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `unidadIII.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  25A1F5B2FD8F5C2361332B2D3F866AF1;868.
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2428: You can't use `\end' in internal vertical mode.
-\enddocument ...cument/end}\deadcycles \z@ \@@end 
-                                                  
-l.2428 \end{document}
-                     
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2428: LaTeX Error: \begin{beamer@frameslide} on input line 2427 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2428 \end{document}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-/home/jramirez/repo/Materias/MNI/unidadIII.tex:2428: Missing } inserted.
-<inserted text> 
-                }
-l.2428 \end{document}
-                     
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-)
-! Emergency stop.
-<*> /home/jramirez/repo/Materias/MNI/unidadIII
-                                              
-*** (job aborted, no legal \end found)
-
- 
+ (./unidadIII.aux)
+Package rerunfilecheck Info: File `unidadIII.out' has not changed.
+(rerunfilecheck)             Checksum: 25A1F5B2FD8F5C2361332B2D3F866AF1;868.
+ ) 
 Here is how much of TeX's memory you used:
- 24429 strings out of 478287
- 477497 string characters out of 5849289
- 810073 words of memory out of 5000000
- 41448 multiletter control sequences out of 15000+600000
+ 24503 strings out of 478287
+ 479306 string characters out of 5849289
+ 810319 words of memory out of 5000000
+ 41508 multiletter control sequences out of 15000+600000
  480552 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,17n,122p,437b,947s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 128i,17n,122p,437b,948s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on unidadIII.pdf (329 pages, 1667199 bytes).
+PDF statistics:
+ 10423 PDF objects out of 10688 (max. 8388607)
+ 9223 compressed objects within 93 object streams
+ 667 named destinations out of 1000 (max. 500000)
+ 4303 words of extra memory for PDF output out of 10000 (max. 10000000)
+

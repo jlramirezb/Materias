@@ -2420,9 +2420,29 @@ $$
   \Sigma & 4 & 10 & 38 & 2 & 11\\\hline
 \end{array}
 $$
-Que el sistema de ecuaciones:
+Quedando el sistema de ecuaciones:
 $$
-\begin{array}{rcl}
-  
+\left\{\begin{array}{rcl}  
+  4b+ 10a & = & 2\\
+  10b + 38a & = & 11
+\end{array}\right.
+$$
 }
+%%%%
+\begin{frame}
+  \frametitle{Ejemplo}
+  \begin{itemize}
+    \item Resolviendo el sistema, se obtiene que $b = -\frac{17}{26}$ y $a = \frac{6}{13}$. Con estos valores se arma el polinomio resultante de grado 1:
+  $$
+  p(x) = \frac{6}{13}x - \frac{17}{26}
+  $$
+  \item<2->A continuación se verificará cuán próximos son los puntos a los valores dados:  
+  \begin{align*}
+    p(x_0) =p(0) = -\frac{17}{26} \approx -0.6538 & \Rightarrow E = |p(x_0)-y_0|=\\
+    p(x_1) = p(2) = \frac{7}{26} \approx 0.2692& \Rightarrow E = |p(x_1)-y_1|=0.3461\\
+    p(x_2) = p(3) = \frac{19}{26} \approx 0.7307& \Rightarrow E = |p(x_2)-y_2|=\\
+    p(x_3) = p(5) = \frac{43}{26} \approx 1.6538& \Rightarrow E = |p(x_3)-y_3|=
+  \end{align*}            
+\end{itemize}
+\end{frame}
 \end{document}
