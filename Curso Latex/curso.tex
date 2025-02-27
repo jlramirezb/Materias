@@ -341,26 +341,55 @@ Sea \$y = m x + b\$ \ldots & Sea $y = m x + b$ \ldots\\\hline
     \item<1-> Use el signo \texttt{\^} para indicar superíndices y el
     guión bajo \texttt{\_} para marcar subíndices.
 
-    \begin{tabular}{ll}
-      \$y = c\_2 x\^2 + c\_1 x + c\_0\$ & $y = c_2 x^2 + c_1 x + c_0$
+    \begin{tabular}{|l|l|}\hline
+      \texttt{\$y = c\_2 x\texttt{\^}2 + c\_1 x + c\_0\$} & $y = c_2 x^2 + c_1 x + c_0$\\\hline
     \end{tabular}
     \vskip 2ex
     
   \item Utilice las llaves \texttt{\{} \texttt{\}} para
     agrupar superíndices y subíndices.
-    \begin{tabular}{ll}
-\$F\_n = \F_n-1 + F\_n-2\$     \% oops!
-      
-\$F\_n = F\_{n-1} + F\_{n-2}$ \% ok!
-    \end{exampletwouptiny}
+    \begin{tabular}{|l|l|}\hline      
+\texttt{\$F\_n = F\_n-1 + F\_n-2\$ \% oops!} & $F_n = F_n-1 + F_n-2$\\ 
+\texttt{\$F\_n = F\_\{n-1\} + F\_\{n-2\}\$ \% ok!} & $F_n = F_{n-1} + F_{n-2}$\\\hline
+    \end{tabular}
     \vskip 2ex
     
   \item Hay comandos para letras Griegas y notación común.
-    \begin{tabular}
-$\mu = A e^{Q/RT}$
-      
-$\Omega = \sum_{k=1}^{n} \omega_k$
+    \begin{tabular}{|l|l|}\hline
+      \texttt{\$\textbackslash mu = A e\^\{Q/RT\}\$} & $\mu = A e^{Q/RT}$\\
+      \texttt{\$\textbackslash Omega = \textbackslash sum\_\{k=1\}\texttt{\^}n \textbackslash omega\_k\$} & $\Omega = \sum_{k=1}^{n} \omega_k$\\\hline
     \end{tabular}
+  \end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}[fragile]{Tipografía Matemática:Entornos}
+  \begin{itemize}
+  \item {\color{blue}\texttt{equation}} es un \emph{entorno}.
+  \item Un comando puede producir diferentes salidas en diferentes contextos.
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      Podemos escribir
+$ \Omega = \sum_{k=1}^{n} \omega_k $
+en nuestro texto, o podemos escribir
+\begin{equation}
+  \Omega = \sum_{k=1}^{n} \omega_k
+\end{equation}
+para mostrarlo en un entorno diferente.
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      $ \Omega = \sum_{k=1}^{n} \omega_k $
+\begin{equation}
+  \Omega = \sum_{k=1}^{n} \omega_k
+\end{equation}
+    \end{column}
+  \end{columns}    
+    \vskip 2ex
+  \item Note como el $\Sigma$ es más grande en el entorno
+    \bftt{equation}, y como el subíndice y superíndice cambian de
+    posición, a pesar de que utilizamos los mismos comandos.
+    \vskip 1em
+    {\scriptsize Incluso, podríamos haber escrito \bftt{\$...\$} como
+      \cmdbegin{math}\bftt{...}\cmdend{math}.}
   \end{itemize}
 \end{frame}
 \end{document}

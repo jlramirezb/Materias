@@ -1,0 +1,29 @@
+\frametitle{Tipografía Matemática:Entornos}
+\begin{itemize}
+  \item {\color{blue}\texttt{equation}} es un \emph{entorno}.
+  \item Un comando puede producir diferentes salidas en diferentes contextos.
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      Podemos escribir
+$ \Omega = \sum_{k=1}^{n} \omega_k $
+en nuestro texto, o podemos escribir
+\begin{equation}
+  \Omega = \sum_{k=1}^{n} \omega_k
+\end{equation}
+para mostrarlo en un entorno diferente.
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      $ \Omega = \sum_{k=1}^{n} \omega_k $
+\begin{equation}
+  \Omega = \sum_{k=1}^{n} \omega_k
+\end{equation}
+    \end{column}
+  \end{columns}
+    \vskip 2ex
+  \item Note como el $\Sigma$ es más grande en el entorno
+    \bftt{equation}, y como el subíndice y superíndice cambian de
+    posición, a pesar de que utilizamos los mismos comandos.
+    \vskip 1em
+    {\scriptsize Incluso, podríamos haber escrito \bftt{\$...\$} como
+      \cmdbegin{math}\bftt{...}\cmdend{math}.}
+  \end{itemize}
