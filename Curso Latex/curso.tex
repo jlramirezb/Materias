@@ -6,6 +6,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{listings}
 \usetheme{Madrid}
 %\usetheme{JuanLesPins}
 %\usetheme{Montpellier}
@@ -270,9 +271,96 @@
 %%%%%%
 \begin{frame}{Secciones}
   \begin{center}
-    \includegraphics[scale=1]{Secciones.png}  
+    \includegraphics[scale=0.9]{Secciones.png}  
   \end{center}
 \end{frame}
 %%%%%%
+\begin{frame}{Aclaraciones}
+  \begin{itemize}
+    \item Las comillas son un poco complicadas: use el acento invertido \texttt{\`{}} sobre el lado izquierdo y el apóstrofe \texttt{'{}} sobre el lado derecho.
+      
+  \begin{tabular}{ll}
+     Comillas simple: & `texto'.\\  
+   Comillas dobles: & ``texto''.
+  \end{tabular}
+    \item<2-> Algunos caracteres comunes tienen significados especiales en \LaTeX:  
+  \begin{center}
+    \begin{tabular}{cl}
+      \texttt{\%} & Signo de porcentaje \\
+      \texttt{\#} & Signo numeral \\
+      \texttt{\&} & Ampersand                 \\
+      \texttt{\$} & Signo pesos               \\
+    \end{tabular}
+  \end{center}
+    \item<3-> Si son usados, tendremos errores en la compilación. Para usar estos caracteres en la salida, se debe colocar barra invertida al caracter.
+      \begin{center}
+      \begin{minipage}{3.5cm}
+        \begin{block}{}        
+          \textbackslash\$\hspace{10pt}\textbackslash\%\hspace{10pt}\textbackslash\&\hspace{10pt}\textbackslash\#!              
+      \end{block}
+      \end{minipage}
+    \end{center}      
+  \end{itemize}  
+\end{frame}
+%%%%%%
+\begin{frame}{Aclaraciones}
+  \begin{itemize}
+    \item<1-> Los espacios en blanco en el código fuente de \LaTeX{} no tienen ningún efecto en el documento final.
+    \item<2-> \LaTeX{} trata los espacios en blanco como ``espacios en blanco''.
+    \item<3-> Para obtener un espacio en blanco en el documento final, se deben usar comandos especiales.
+    \item<4-> Para obtener un espacio en blanco en el documento final, se deben usar comandos especiales.    
+  \end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{Tipografía Matemática}
+  \begin{itemize}\small{
+    \item<1-> ¿Por qué son especiales los signos pesos \texttt{\textbackslash \$}? Los
+    usamos para marcar contenido  matemático en el texto.\\[1ex]    
+    \begin{tabular}{|p{5cm}|p{5cm}|}\hline
+\color{green}\% no tan bueno: & \\
+Sean a y b tales que c = a - b + 1.&Sean a y b tales que c = a - b + 1.\\
+\color{green}\% mucho mejor: & \\
+Sean \$a\$ y \$b\$ tales que \$c = a - b + 1\$. &
+Sean $a$ y $b$ tales que $c = a - b + 1$.\\\hline
+    \end{tabular}
+  \item Utilice siempre los signos de pesos en pares --- uno para
+    comenzar el contenido matemático, y uno para terminarlo.
+  \item \LaTeX{} maneja el espacio automáticamente; por lo que
+    ignorará los que hayamos puesto.\\[1ex]
+    \begin{center}    
+    \begin{tabular}{|l|l|}\hline
+Sea \$y=mx+b\$ \ldots & Sea $y=mx+b$ \ldots\\[5pt]      
+Sea \$y = m x + b\$ \ldots & Sea $y = m x + b$ \ldots\\\hline
+    \end{tabular}
+    \end{center}}
+  \end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{Tipografía Matemática:Notaci\'on}
+  \begin{itemize}
+    \item<1-> Use el signo \texttt{\^} para indicar superíndices y el
+    guión bajo \texttt{\_} para marcar subíndices.
 
+    \begin{tabular}{ll}
+      \$y = c\_2 x\^2 + c\_1 x + c\_0\$ & $y = c_2 x^2 + c_1 x + c_0$
+    \end{tabular}
+    \vskip 2ex
+    
+  \item Utilice las llaves \texttt{\{} \texttt{\}} para
+    agrupar superíndices y subíndices.
+    \begin{tabular}{ll}
+\$F\_n = \F_n-1 + F\_n-2\$     \% oops!
+      
+\$F\_n = F\_{n-1} + F\_{n-2}$ \% ok!
+    \end{exampletwouptiny}
+    \vskip 2ex
+    
+  \item Hay comandos para letras Griegas y notación común.
+    \begin{tabular}
+$\mu = A e^{Q/RT}$
+      
+$\Omega = \sum_{k=1}^{n} \omega_k$
+    \end{tabular}
+  \end{itemize}
+\end{frame}
 \end{document}
