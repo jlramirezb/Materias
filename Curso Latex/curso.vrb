@@ -1,39 +1,33 @@
-\frametitle{Ejemplos con {\color {green}\texttt {amsmath}}}
+\frametitle{Etiquetas y Referencias Cruzadas}
 \begin{itemize}
-  \item Utilice \texttt{equation*} (``ecuación-asterisco'') para
-    ecuaciones no-numeradas.
-    \begin{tabular}{ll}
-     \begin{minipage}{0.5\textwidth}
-      \color{blue}
-      \textbackslash begin\{equation*\}\\
-      \textbackslash Omega = \textbackslash sum\_\{k=1\}\texttt{\^}\{n\} \textbackslash omega\_k\\
-      \textbackslash end\{equation*\}
-     \end{minipage} &
-     \begin{minipage}{0.6\textwidth}
-     \begin{equation*}
-     \Omega = \sum_{k=1}^{n} \omega_k
-     \end{equation*}
-     \end{minipage}
-    \end{tabular}
-   \item \LaTeX{} trata las letras adyacentes como variables multiplicadas entre sí, lo cual no siempre es lo que se quiere. \texttt{amsmath} define comandos para muchos operadores matemáticos comunes.
-   \begin{tabular}{ll}
-    \begin{minipage}{0.6\textwidth}
-      \color{red}
-        \textbackslash begin\{equation*\} \% bad!\\
-        min\_\{x,y\} (1-x)\texttt{\^}2\\
-        \textbackslash end\{equation*\}\\
-      \color{blue}
-        \textbackslash begin\{equation*\} \% good!\\
-        \textbackslash min\_\{x,y\}\{(1-x)\texttt{\^}2\}\\
-        \textbackslash end \{equation*\}
-    \end{minipage} &
-    \begin{minipage}{0.2\textwidth}
-        \begin{equation*} % bad!
-          min_{x,y} (1-x)^2
-        \end{equation*}
-      \begin{equation*} % good!
-          \min_{x,y}{(1-x)^2}
-      \end{equation*}
-    \end{minipage}
+    \item Utilice {\color{blue}\texttt{label}} y {\color{blue}\texttt{ref}} para la numeración automática.
+    \item El paquete {\color{blue}\texttt{amsmath}} proporciona {\color{blue}\texttt{eqref}} para las referencias de ecuaciones.
+    \end{itemize}
+\begin{tabular}{lc}
+  \begin{minipage}{0.35\linewidth}\color{blue} \tiny
+    \textbackslash documentclass\{article\}\\
+    \textbackslash usepackage\{amsmath\} \% para \textbackslash eqref\\
+
+    \textbackslash begin\{document\}\\
+
+    \textbackslash section\{Introducti\'on\}\\
+    \textbackslash label\{sec:intro\}\\
+
+En la Sección \textbackslash ref\{sec:metodo\},
+hemos \ldots\\
+
+\textbackslash section\{M\'etodo\}\\
+\textbackslash label\{sec:metodo\}\\
+
+\textbackslash begin\{equation\}\\
+\textbackslash label\{eq:euler\}\\
+e\texttt{\^}\{i\textbackslash pi\} + 1 = 0\\
+\textbackslash end\{equation\}\\
+
+Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
+
+\textbackslash end\{document\}
+  \end{minipage} & \begin{minipage}{\textwidth}
+    \includegraphics[scale=0.6]{Referencias.png}
+  \end{minipage}
    \end{tabular}
-  \end{itemize}

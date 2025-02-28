@@ -436,4 +436,67 @@ Sea \$y = m x + b\$ \ldots & Sea $y = m x + b$ \ldots\\\hline
    \end{tabular}
   \end{itemize}
 \end{frame}
+%%%%%%
+\begin{frame}[fragile]{Ejemplos con \texttt{\color{green}amsmath}}
+  \begin{itemize}{\small
+    \item Alinear una secuencia de ecuaciones al signo igual
+      \begin{align*}
+        (x+1)^3 &= (x+1)(x+1)(x+1) \\
+        &= (x+1)(x^2 + 2x + 1) \\
+        &= x^3 + 3x^2 + 3x + 1
+      \end{align*}
+      con el entorno \texttt{align*}.
+    \item El ampersand \texttt{\&} separa la columna izquierda (antes del $=$) de la columna derecha (después del $=$).
+    \begin{center}
+    \begin{minipage}{0.55\textwidth}
+    \begin{block}{}
+\texttt{color{blue}
+\textbackslash begin\{align*\}\\
+(x+1)\texttt{\^}3 \&= (x+1)(x+1)(x+1) \textbackslash\textbackslash\\
+\&= (x+1)(x\texttt{\^}2 + 2x + 1) \textbackslash\textbackslash\\
+\&= x\texttt{\^}3 + 3x\texttt{\^}2 + 3x + 1\\
+\textbackslash end\{align*\}}  
+    \end{block}     
+  \end{minipage}  
+\end{center}
+     \item Una doble barra invertida
+       \texttt{\textbackslash\textbackslash} da comienzo a una nueva línea.
+     }
+\end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}[fragile]{Etiquetas y Referencias Cruzadas}
+  \begin{itemize}
+    \item Utilice {\color{blue}\texttt{label}} y {\color{blue}\texttt{ref}} para la numeración automática.
+    \item El paquete {\color{blue}\texttt{amsmath}} proporciona {\color{blue}\texttt{eqref}} para las referencias de ecuaciones.
+    \end{itemize} 
+\begin{tabular}{lc}
+  \begin{minipage}{0.35\linewidth}\color{blue} \tiny   
+    \textbackslash documentclass\{article\}\\
+    \textbackslash usepackage\{amsmath\} \% para \textbackslash eqref\\
+
+    \textbackslash begin\{document\}\\
+
+    \textbackslash section\{Introducti\'on\}\\
+    \textbackslash label\{sec:intro\}\\
+
+En la Sección \textbackslash ref\{sec:metodo\},
+hemos \ldots\\
+
+\textbackslash section\{M\'etodo\}\\
+\textbackslash label\{sec:metodo\}\\
+
+\textbackslash begin\{equation\}\\
+\textbackslash label\{eq:euler\}\\
+e\texttt{\^}\{i\textbackslash pi\} + 1 = 0\\
+\textbackslash end\{equation\}\\
+
+Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
+
+\textbackslash end\{document\}
+  \end{minipage} & \begin{minipage}{\textwidth}
+    \includegraphics[scale=0.6]{Referencias.png}
+  \end{minipage}
+   \end{tabular}
+\end{frame}
 \end{document}
