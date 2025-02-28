@@ -78,8 +78,10 @@
 \headcommand {\beamer@framepages {97}{102}}
 \headcommand {\slideentry {4}{0}{14}{103/103}{}{0}}
 \headcommand {\beamer@framepages {103}{103}}
-\headcommand {\beamer@partpages {1}{103}}
-\headcommand {\beamer@subsectionpages {61}{103}}
-\headcommand {\beamer@sectionpages {61}{103}}
-\headcommand {\beamer@documentpages {103}}
-\headcommand {\gdef \inserttotalframenumber {30}}
+\headcommand {\slideentry {4}{0}{15}{104/106}{}{0}}
+\headcommand {\beamer@framepages {104}{106}}
+\headcommand {\beamer@partpages {1}{106}}
+\headcommand {\beamer@subsectionpages {61}{106}}
+\headcommand {\beamer@sectionpages {61}{106}}
+\headcommand {\beamer@documentpages {106}}
+\headcommand {\gdef \inserttotalframenumber {31}}

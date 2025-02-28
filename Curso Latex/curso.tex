@@ -567,4 +567,42 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
         \end{minipage}      
   \end{tabular}
 \end{frame}
+%%%%%%
+\begin{frame}{Cambiando la apariecia de la imagen}
+  \begin{itemize}
+    \item También se puede cambiar la escala \texttt{\color{blue}scale} de las imágenes o hacerlas rotar de un ángulo dado con \texttt{\color{blue}angle}.
+    \item<2-> La otra cosa que puede hacer es recortar una imagen con \texttt{\color{blue}clip} y \texttt{\color{blue}trim}.    
+  \end{itemize}
+  \uncover<3->{
+  \begin{tabular}{ll}
+    \scriptsize
+    \begin{minipage}{0.5\textwidth}
+      \begin{block}{}
+        \texttt{\color{blue}
+          \textbackslash usepackage\{graphicx\}\\
+          \textbackslash begin\{document\}\\
+          \textbackslash includegraphics[scale=0.15]\{imagen.png\}\\
+          \textbackslash end\{document\}
+        }
+      \end{block}
+    \end{minipage} &
+    \begin{minipage}{0.3\textwidth}
+      \includegraphics[scale=0.15]{err_L4.eps}
+    \end{minipage}\\
+    \begin{minipage}{0.5\textwidth}
+      \scriptsize
+      \begin{block}{}
+        \texttt{\color{blue}
+          \textbackslash usepackage\{graphicx\}\\
+          \textbackslash begin\{document\}\\
+          \textbackslash includegraphics[angle=45]\{imagen.png\}\\
+          \textbackslash end\{document\}
+        }
+      \end{block}
+    \end{minipage} &
+    \begin{minipage}{0.3\textwidth}
+      \includegraphics[scale=0.1,angle=45]{err_L4.eps}
+    \end{minipage}
+  \end{tabular}}
+\end{frame}
 \end{document}
