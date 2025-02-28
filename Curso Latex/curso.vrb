@@ -1,8 +1,9 @@
 \frametitle{Etiquetas y Referencias Cruzadas}
 \begin{itemize}
-    \item Utilice {\color{blue}\texttt{label}} y {\color{blue}\texttt{ref}} para la numeración automática.
-    \item El paquete {\color{blue}\texttt{amsmath}} proporciona {\color{blue}\texttt{eqref}} para las referencias de ecuaciones.
+    \item<1-> Utilice {\color{blue}\texttt{label}} y {\color{blue}\texttt{ref}} para la numeración automática.
+    \item<2-> El paquete {\color{blue}\texttt{amsmath}} proporciona {\color{blue}\texttt{eqref}} para las referencias de ecuaciones.
     \end{itemize}
+    \uncover<3->{
 \begin{tabular}{lc}
   \begin{minipage}{0.35\linewidth}\color{blue} \tiny
     \textbackslash documentclass\{article\}\\
@@ -30,4 +31,4 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
   \end{minipage} & \begin{minipage}{\textwidth}
     \includegraphics[scale=0.6]{Referencias.png}
   \end{minipage}
-   \end{tabular}
+   \end{tabular}}
