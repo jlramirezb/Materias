@@ -362,34 +362,78 @@ Sea \$y = m x + b\$ \ldots & Sea $y = m x + b$ \ldots\\\hline
   \end{itemize}
 \end{frame}
 %%%%%%
-\begin{frame}[fragile]{Tipografía Matemática:Entornos}
+ \begin{frame}[fragile]{Tipografía Matemática: Entornos}
+   \begin{itemize}
+   \item {\color{blue}\texttt{equation}} es un \emph{entorno}.
+   \item Un comando puede producir diferentes salidas en diferentes contextos.
+   \begin{columns}
+     \begin{column}{0.5\textwidth}
+       Podemos escribir {\color{blue}
+ \texttt{\$\textbackslash Omega = \textbackslash sum\_\{k=1\}\texttt{\^}\{n\} \textbackslash omega\_k\$}}
+ en nuestro texto, o podemos escribir{\color{blue}
+ \textbackslash begin\{equation\}
+   \textbackslash Omega = \textbackslash sum\_\{k=1\}\texttt{\^}\{n\} \textbackslash omega\_k
+ \textbackslash end\{equation\}}
+
+ para mostrarlo en un entorno diferente.
+     \end{column}
+    \begin{column}{0.01\textwidth}
+      \vline
+    \end{column}
+     \begin{column}{0.5\textwidth}
+       Podemos escribir
+       $ \Omega = \sum_{k=1}^{n} \omega_k$
+       en nuestro texto, o podemos escribir
+ \begin{equation}
+   \Omega = \sum_{k=1}^{n} \omega_k
+ \end{equation}
+ para mostrarlo en un entorno diferente.
+     \end{column}
+   \end{columns}    
+     \vskip 2ex
+   \item Note como el $\Sigma$ es más grande en el entorno \texttt{equation}, y como el subíndice y superíndice cambian de
+     posición, a pesar de que utilizamos los mismos comandos.
+   \end{itemize}
+ \end{frame}
+%%%%%%
+\begin{frame}[fragile]{Ejemplos con {\color{green}\texttt{amsmath}}}
   \begin{itemize}
-  \item {\color{blue}\texttt{equation}} es un \emph{entorno}.
-  \item Un comando puede producir diferentes salidas en diferentes contextos.
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-      Podemos escribir
-$ \Omega = \sum_{k=1}^{n} \omega_k $
-en nuestro texto, o podemos escribir
-\begin{equation}
-  \Omega = \sum_{k=1}^{n} \omega_k
-\end{equation}
-para mostrarlo en un entorno diferente.
-    \end{column}
-    \begin{column}{0.5\textwidth}
-      $ \Omega = \sum_{k=1}^{n} \omega_k $
-\begin{equation}
-  \Omega = \sum_{k=1}^{n} \omega_k
-\end{equation}
-    \end{column}
-  \end{columns}    
-    \vskip 2ex
-  \item Note como el $\Sigma$ es más grande en el entorno
-    \bftt{equation}, y como el subíndice y superíndice cambian de
-    posición, a pesar de que utilizamos los mismos comandos.
-    \vskip 1em
-    {\scriptsize Incluso, podríamos haber escrito \bftt{\$...\$} como
-      \cmdbegin{math}\bftt{...}\cmdend{math}.}
+  \item Utilice \texttt{equation*} (``ecuación-asterisco'') para
+    ecuaciones no-numeradas.
+    \begin{tabular}{ll}
+     \begin{minipage}{0.5\textwidth}
+      \color{blue}
+      \textbackslash begin\{equation*\}\\
+      \textbackslash Omega = \textbackslash sum\_\{k=1\}\texttt{\^}\{n\} \textbackslash omega\_k\\
+      \textbackslash end\{equation*\}
+     \end{minipage} &
+     \begin{minipage}{0.6\textwidth}
+     \begin{equation*}
+     \Omega = \sum_{k=1}^{n} \omega_k
+     \end{equation*}
+     \end{minipage}
+    \end{tabular}
+   \item \LaTeX{} trata las letras adyacentes como variables multiplicadas entre sí, lo cual no siempre es lo que se quiere. \texttt{amsmath} define comandos para muchos operadores matemáticos comunes.
+   \begin{tabular}{ll}
+    \begin{minipage}{0.6\textwidth}
+      \color{red}
+        \textbackslash begin\{equation*\} \% bad!\\
+        min\_\{x,y\} (1-x)\texttt{\^}2\\
+        \textbackslash end\{equation*\}\\
+      \color{blue}
+        \textbackslash begin\{equation*\} \% good!\\
+        \textbackslash min\_\{x,y\}\{(1-x)\texttt{\^}2\}\\
+        \textbackslash end \{equation*\} 
+    \end{minipage} &
+    \begin{minipage}{0.2\textwidth}
+        \begin{equation*} % bad!
+          min_{x,y} (1-x)^2
+        \end{equation*}
+      \begin{equation*} % good!
+          \min_{x,y}{(1-x)^2}
+      \end{equation*}
+    \end{minipage}
+   \end{tabular}
   \end{itemize}
 \end{frame}
 \end{document}
