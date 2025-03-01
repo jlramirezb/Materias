@@ -315,7 +315,7 @@
 \begin{frame}{Tipografía Matemática}
    \footnotesize{
      \begin{itemize}
-     \item<1-> ¿Por qué son especiales los signos pesos \texttt{\color{blue}\textbackslash \$}? Los usamos para marcar contenido  matemático en el texto.\\[1ex]    
+     \item<1-> ¿Por qué son especiales los signos pesos \texttt{\color{blue}\$}? Los usamos para marcar contenido  matemático en el texto.\\[1ex]    
      \begin{tabular}{|p{5cm}|p{5cm}|}\hline
  \color{green}\% no tan bueno: & \\
  Sean a y b tales que c = a - b + 1.&Sean a y b tales que c = a - b + 1.\\
@@ -450,7 +450,7 @@
     \begin{center}
     \begin{minipage}{0.55\textwidth}
     \begin{block}{}
-\texttt{color{blue}
+\texttt{\color{blue}
 \textbackslash begin\{align*\}\\
 (x+1)\texttt{\^}3 \&= (x+1)(x+1)(x+1) \textbackslash\textbackslash\\
 \&= (x+1)(x\texttt{\^}2 + 2x + 1) \textbackslash\textbackslash\\
@@ -605,4 +605,102 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
     \end{minipage}
   \end{tabular}}
 \end{frame}
+%%%%%%
+\begin{frame}{Cambiando la apariecia de la imagen}
+  \begin{itemize}
+    \item<1-> La otra cosa que puede hacer es recortar una imagen con \texttt{\color{blue}clip} y \texttt{\color{blue}trim}.    
+  \end{itemize}
+  \uncover<2->{
+  \begin{tabular}{ll}
+    \scriptsize
+    \begin{minipage}{0.5\textwidth}
+      \begin{block}{}
+        \texttt{\color{blue}
+          \textbackslash usepackage\{graphicx\}\\
+          \textbackslash begin\{document\}\\
+          \textbackslash includegraphics[clip,trim=100 50 50 400]\{imagen.png\}\\
+          \textbackslash end\{document\}        
+        }
+      \end{block}
+    \end{minipage} &
+     \begin{minipage}{0.3\textwidth}
+       \includegraphics[clip,trim=100 50 50 400,scale=0.25]{err_L4.eps}
+     \end{minipage}\\
+     \begin{minipage}{0.5\textwidth}
+       \scriptsize
+       \begin{block}{}
+         \texttt{\color{blue}
+           \textbackslash usepackage\{graphicx\}\\
+           \textbackslash begin\{document\}\\
+           \textbackslash includegraphics[trim=0cm 0cm 0cm 0cm]\{imagen.png\}\\
+           \textbackslash end\{document\}
+         }
+       \end{block}
+     \end{minipage} &
+     \begin{minipage}{0.3\textwidth}
+       \includegraphics[trim=50 50 50 -40,scale=0.25]{err_L4.eps}
+     \end{minipage}
+  \end{tabular}}
+\end{frame}
+%%%%%%
+\begin{frame}{Insertando Tablas}
+  \begin{itemize}
+    \item<1-> El paquete \texttt{\color{blue}array} añade más funcionalidades a las dadas por \LaTeX{} y que no forma parte del núcleo de \LaTeX{}.
+    \item<2-> Para insertar tablas en \LaTeX, se usa el comando \texttt{\color{blue}tabular}.
+    \item<3-> El comando \texttt{\color{blue}tabular} toma un argumento obligatorio, que es el alineamiento de las columnas.
+  \end{itemize}
+  \uncover<4->{  
+  \begin{center}
+    \scriptsize
+    \begin{tabular}{|l|p{0.6\textwidth}|} % Using p for the description column
+      \hline
+      \textbf{Tipo} & \textbf{Descripción} \\ \hline
+      l & columna justificada a la izquierda \\ \hline
+      c & columna centrada \\ \hline
+      r & columna justificada a la derecha \\ \hline
+      p\{width\} & columna con un ancho \texttt{width} fijo; el texto sera automáticamente ajustado a la línea y justificado \\ \hline
+      m\{width\} & como \texttt{p}, pero centrado verticalmente con respecto al resto del texto de la misma fila \\ \hline
+      b\{width\} & como \texttt{p}, pero ajustado verticalmente a la parte baja de la celda \\ \hline
+      w\{align\}\{width\} & imprime el contenido con un ancho \texttt{width} fijo, sobreimprimiendo si el texto es muy largo. Puede elegir el justificado horizontal \texttt{align} usando \texttt{l}, \texttt{c}, or \texttt{r}. \\ \hline
+      W\{align\}\{width\} & como \texttt{w}, pero dando lugar a un mensaje de alerta «overfull box warning» si el texto es demasiado grande. \\ \hline
+    \end{tabular}
+  \end{center}}
+\end{frame}
+%%%%%%
+\begin{frame}{Insertando Tablas}
+  \begin{itemize}
+    \item<1-> Las columnas \texttt{\color{blue}c} y \texttt{\color{blue}l} y \texttt{\color{blue}r} tendrán la anchura de la celda más ancha.
+    \item<2-> Cada columna debe ser declarada, con lo que si se quiere tres columnas centradas, se tendrá que usar \texttt{\color{blue}ccc} en el preámbulo de la tabla. Los espacios son ignorados, con lo que \texttt{\color{blue}c c c} tendrá el mismo efecto.
+    \item <3-> En el cuerpo de la tabla, las columnas se separan usando el símbolo \texttt{\color{blue}\&} y una nueva fila comienza con los símbolos \texttt{\color{blue}\textbackslash\textbackslash}.
+  \end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{Insertando Tablas}
+  \begin{tabular}{ll}
+    \begin{minipage}{0.5\textwidth}
+      \begin{block}{}
+        \texttt{\color{blue}
+          \textbackslash usepackage\{array\}\\
+          \textbackslash begin\{document\}\\
+          \textbackslash begin\{tabular\}\{lll\}\\          
+          Animal  \& Comida \& Tamaño \textbackslash\textbackslash\\
+          perro   \& carne  \& mediano \textbackslash\textbackslash\\
+          caballo \& heno   \& grande  \textbackslash\textbackslash\\
+          rana    \& moscas \& pequeño \textbackslash\textbackslash\\
+          \textbackslash end\{tabular\}\\
+          \textbackslash end\{document\}
+        }
+      \end{block}
+    \end{minipage} &
+    \begin{minipage}{0.5\textwidth}
+      \begin{tabular}{lll}
+        Animal  & Comida & Tamaño \\
+        perro   & carne  & mediano \\
+        caballo & heno   & grande \\
+        rana    & moscas & pequeño \\
+      \end{tabular}
+    \end{minipage}
+    \end{tabular}
+\end{frame}
+%%%%%%
 \end{document}
