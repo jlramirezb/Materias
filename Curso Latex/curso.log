@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  1 MAR 2025 19:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  1 MAR 2025 19:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1737,6 +1737,65 @@ Overfull \hbox (24.00002pt too wide) in paragraph at lines 704--704
 [116
 
 ]
+Overfull \hbox (717.72163pt too wide) in paragraph at lines 741--741
+[][] 
+ []
+
+
+Overfull \hbox (24.00002pt too wide) in paragraph at lines 741--741
+ [] 
+ []
+
+
+
+[117
+
+]
+Overfull \hbox (717.72163pt too wide) in paragraph at lines 741--741
+[][] 
+ []
+
+
+Overfull \hbox (24.00002pt too wide) in paragraph at lines 741--741
+ [] 
+ []
+
+
+
+[118
+
+]
+
+[119
+
+]
+
+[120
+
+]
+
+[121
+
+]
+Underfull \hbox (badness 1057) in paragraph at lines 783--783
+\OT1/cmr/m/n/8 g^^Sene-ro Ca-nis, el cual for-ma
+ []
+
+
+Underfull \hbox (badness 6016) in paragraph at lines 783--783
+\OT1/cmr/m/n/8 ca de pe-que~nos mam^^S^^Pfe-ros
+ []
+
+
+Overfull \hbox (24.00002pt too wide) in paragraph at lines 783--783
+ [] 
+ []
+
+
+
+[122
+
+]
 \tf@nav=\write6
 \openout6 = `curso.nav'.
 
@@ -1762,18 +1821,18 @@ Package rerunfilecheck Info: File `curso.out' has not changed.
 (rerunfilecheck)             Checksum: E7412694E66B5BDCBC696C2FD6C239DA;918.
  ) 
 Here is how much of TeX's memory you used:
- 25256 strings out of 473583
- 477787 string characters out of 5732336
+ 25280 strings out of 473583
+ 478219 string characters out of 5732336
  1958908 words of memory out of 5000000
- 47382 multiletter control sequences out of 15000+600000
+ 47394 multiletter control sequences out of 15000+600000
  571632 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,570b,893s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on curso.pdf (116 pages, 768658 bytes).
+Output written on curso.pdf (122 pages, 790993 bytes).
 PDF statistics:
- 3676 PDF objects out of 4296 (max. 8388607)
- 3252 compressed objects within 33 object streams
- 242 named destinations out of 1000 (max. 500000)
- 1147 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3871 PDF objects out of 4296 (max. 8388607)
+ 3420 compressed objects within 35 object streams
+ 254 named destinations out of 1000 (max. 500000)
+ 1243 words of extra memory for PDF output out of 10000 (max. 10000000)
 

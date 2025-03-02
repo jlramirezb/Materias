@@ -703,4 +703,82 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
     \end{tabular}
 \end{frame}
 %%%%%%
+\begin{frame}{Insertando Tablas}
+  \begin{itemize}
+    \item<1-> Si la columna de una tabla contine mucho texto, se tendrá problemas al colocarlo únicamente con \texttt{\color{blue}l},  \texttt{\color{blue}r} o \texttt{\color{blue}c}.
+  \end{itemize}
+  \uncover<2->{  
+  \begin{center}
+    \scriptsize
+    \begin{tabular}{ll} 
+    \begin{minipage}{0.5\textwidth}
+      \begin{block}{}
+        \texttt{\color{blue}
+          \textbackslash usepackage\{array\}\\
+          \textbackslash begin\{document\}\\
+          \textbackslash begin\{tabular\}\{cl\}\\          
+          Animal  \& Descripción \textbackslash\textbackslash\\
+          perro   \& El perro es un miembro del género Canis, el cual forma parte 
+          de los cánidos derivados del lobo y es uno de los carnívoros terrestres 
+      más abundantes. \textbackslash\textbackslash\\
+          gato \& El gato es una especie doméstica de pequeños mamíferos carnívoros. Es la única especie domesticada de la familia de los félidos y es a menudo llamado gato doméstico, para diferenciarlo de los miembros salvajes de la familia. \textbackslash\textbackslash\\
+          \textbackslash end\{tabular\}\\
+          \textbackslash end\{document\}
+        }
+      \end{block}
+    \end{minipage} &
+    \begin{minipage}{0.5\textwidth}
+      \begin{tabular}{cl}
+        Animal & Descripción \\
+        perro  & El perro es un miembro del género Canis, el cual forma parte 
+                de los cánidos derivados del lobo y es uno de los carnívoros terrestres 
+            más abundantes. \\
+        gato   & El gato es una especie doméstica de pequeños mamíferos carnívoros. Es la única especie domesticada de la familia de los félidos y es a menudo llamado gato doméstico, para diferenciarlo de los miembros salvajes de la familia. \\
+      \end{tabular}
+    \end{minipage}
+    \end{tabular}
+  \end{center}}
+\end{frame}
+%%%%%%
+\begin{frame}{Insertando Tablas}
+  \begin{itemize}
+    \item<1-> El problema, es que el tipo de columna escribe el contenido de la celda en una única fila con el ancho que le corresponde, aunque haya un borde de página de por medio.
+    \item <2-> Para evitar este problema se puede usar la columna \texttt{\color{blue}p\{ancho\}} especificando el ancho como argumento.
+    \item <3-> También se puede usar el comando \texttt{\color{blue}b\{ancho\}},\texttt{\color{blue}m\{ancho\}},\texttt{\color{blue}w\{ancho\}}.
+  \end{itemize}
+  
+\end{frame}  
+%%%%%%
+\begin{frame}{Insertando Tablas}
+    \begin{center}
+      \scriptsize
+      \begin{tabular}{ll} 
+      \begin{minipage}{0.5\textwidth}
+        \begin{block}{}
+          \texttt{\color{blue}
+            \textbackslash usepackage\{array\}\\
+            \textbackslash begin\{document\}\\
+            \textbackslash begin\{tabular\}\{cp\{4cm\}\}\\          
+            Animal  \& Descripción \textbackslash\textbackslash\\
+            perro   \& El perro es un miembro del género Canis, el cual forma parte 
+            de los cánidos derivados del lobo y es uno de los carnívoros terrestres 
+        más abundantes. \textbackslash\textbackslash\\
+            gato \& El gato es una especie doméstica de pequeños mamíferos carnívoros. Es la única especie domesticada de la familia de los félidos y es a menudo llamado gato doméstico, para diferenciarlo de los miembros salvajes de la familia. \textbackslash\textbackslash\\
+            \textbackslash end\{tabular\}\\
+            \textbackslash end\{document\}
+          }
+        \end{block}
+      \end{minipage} &
+      \begin{minipage}{0.5\textwidth}
+        \begin{tabular}{cp{4cm}}
+          Animal & Descripción \\
+          perro  & El perro es un miembro del género Canis, el cual forma parte 
+                  de los cánidos derivados del lobo y es uno de los carnívoros terrestres 
+              más abundantes. \\
+          gato   & El gato es una especie doméstica de pequeños mamíferos carnívoros. Es la única especie domesticada de la familia de los félidos y es a menudo llamado gato doméstico, para diferenciarlo de los miembros salvajes de la familia. \\
+        \end{tabular}
+      \end{minipage}
+      \end{tabular}
+    \end{center}
+\end{frame}
 \end{document}

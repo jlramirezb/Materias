@@ -1,16 +1,14 @@
 \documentclass{article}
-\usepackage[T1]{fontenc}
 \usepackage{array}
-
 \begin{document}
-\begin{tabular}{cl}
-  Animal & Descripción \\
-  perro  & El perro es un miembro del género Canis, el cual forma parte 
-           de los cánidos derivados del lobo y es uno de los carnívoros terrestres 
-		   más abundantes. \\
-  gato   & El gato es una especie doméstica de pequeños mamíferos carnívoros. Es la 
-           única especie domesticada de la familia de los félidos y es a menudo llamado 
-		   gato doméstico, para diferenciarlo de los miembros salvajes de la 
-		   familia. \\
+\begin{tabular}{0.8\textwidth} { 
+  | >{\raggedright\arraybackslash}X 
+  | >{\centering\arraybackslash}X 
+  | >{\raggedleft\arraybackslash}X | }
+ \hline
+ item 11 & item 12 & item 13 \\
+ \hline
+ item 21  & item 22  & item 23  \\
+\hline
 \end{tabular}
 \end{document}
