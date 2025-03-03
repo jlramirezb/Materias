@@ -1,8 +1,13 @@
 \documentclass{article}
 \usepackage{array}
+\usepackage{booktabs}
 \begin{document}
-\begin{tabular}{ccc}
- item 11 & item 12 & item 13 \\
- item 21 & item 22 & item 23 
+\begin{tabular}{|c|c|c|}
+  \toprule[2pt]
+ item 11 & item 12 & item 13 \\\hline
+ item 21 & item 22 & item 23 \\\cline{1-2}
+ item 31 & item 32 & item 33 \\\cmidrule[2pt](r){2-3}
+ item 41 & item 42 & item 43 \\
+  \bottomrule[2pt]
 \end{tabular}
 \end{document}

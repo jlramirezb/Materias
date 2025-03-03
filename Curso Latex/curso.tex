@@ -14,6 +14,7 @@
 %\usetheme{PaloAlto}
 \usefonttheme{serif}
 \usepackage{verbatim}
+\usepackage{booktabs}
 
 \title{Curso de \LaTeX}
 %\author{Nombre del Autor}
@@ -787,7 +788,102 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
     \item<1-> El entorno \texttt{\color{blue}tabular} proporciona flexibilidad adicional; por ejemplo, se puede insertar líneas divisorias entre cada columnam, para separar las columnas.
     \item <2-> Se puede usar el comando \texttt{\color{blue}hline} para insertar una línea horizontal.
     \item <3-> Se puede usar el comando \texttt{\color{blue}cline} para insertar una linea con un estilo diferente.
-    \item <4-> El paquete \texttt{\color{blue}booktabs} proporciona otras opciones para personalizar las tablas.
+    \item <4-> La lineas verticales se definen en cada columna insertando una barra vertical \texttt{\color{blue}|}.
+    \item <5-> El paquete \texttt{\color{blue}booktabs} proporciona otras opciones para personalizar las tablas. No es aconsejable su uso con lineas verticales.
   \end{itemize}  
 \end{frame}
+%%%%%%
+\begin{frame}{Insertando Tablas}
+  \begin{center}
+       \begin{tabular}{ll} 
+         \begin{minipage}{0.5\textwidth}
+           \begin{block}{}
+             \footnotesize
+             \texttt{\color{blue}
+             \textbackslash usepackage\{array\}
+             \textbackslash usepackage\{booktabs\}
+             \textbackslash begin\{document\}
+             \textbackslash begin\{tabular\}\{|c|c|c|\}
+             \textbackslash toprule[2pt]
+              item 11 \& item 12 \& item 13 \textbackslash\textbackslash\textbackslash\textbackslash\textbackslash hline\\
+              item 21 \& item 22 \& item 23 \textbackslash\textbackslash\textbackslash\textbackslash \textbackslash cline{1-2}\\
+              item 31 \& item 32 \& item 33 \textbackslash\textbackslash\textbackslash cmidrule[2pt](r){2-3}\\
+              item 41 \& item 42 \& item 43 \textbackslash\textbackslash
+              \textbackslash bottomrule[2pt]\\
+              \textbackslash end\{tabular\}
+              \textbackslash end\{document\}}
+           \end{block}
+         \end{minipage} &
+       \begin{minipage}{0.5\textwidth}
+        \footnotesize
+    \begin{tabular}{|c|c|c|}
+      \toprule[2pt]
+     item 11 & item 12 & item 13 \\\hline
+     item 21 & item 22 & item 23 \\\cline{1-2}
+     item 31 & item 32 & item 33 \\\cmidrule[2pt](r){2-3}
+     item 41 & item 42 & item 43 \\
+      \bottomrule[2pt]    
+    \end{tabular}    
+       \end{minipage} 
+     \end{tabular}
+  \end{center}
+\end{frame}
+%%%%%%
+\begin{frame}{Entornos Flotantes}
+\begin{itemize}
+  \item<1->Determinados contenidos, como por ejemplo tablas o imágenes, son bloques indivisibles.
+  \item<2->Cuando no hay espacio suficiente en la página, pasan a colocarse en la siguiente página, dejando en la página anterior un espacio vertical vacío poco estético.
+  \item<3->La solución consiste en incluir estos contenidos en un entorno flotante, que se ubicará automáticamente sin dejar espacios vacíos.
+  \item<4->Como estos contenidos pueden aparecer lejos de su posición en el código fuente, para que no estén descontextualizados suelen llevar asociada una leyenda.
+  \item<5->Existen dos entornos flotantes, para figuras y tablas.
+  \begin{itemize}
+    \item <6-> \texttt{\color{blue}figure} para figuras.
+    \item <7-> \texttt{\color{blue}table} para tablas.
+  \end{itemize}
+\end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{Entornos Flotantes - Figuras}
+  \begin{itemize}
+    \item El entorno flotante para figuras es \texttt{\color{blue}figure} tiene el siguiente esqueleto.
+  \end{itemize}
+  \begin{center}
+    \begin{minipage}{0.9\textwidth}
+      \footnotesize
+      \texttt{\color{blue}
+      \textbackslash begin\{figure\}[posición]\\
+      Código de la imagen\\
+      \textbackslash caption\{leyenda\}\\
+      \textbackslash label\{etiqueta\}\\
+      \textbackslash end\{figure\}}
+    \end{minipage}
+  \end{center}
+  \begin{itemize}
+    \item<2-> El argumento posición indica la preferencia de ubicación de la figura(\texttt{\color{blue}h} en el lugar en el que aparece en el código fuente, \texttt{\color{blue}t} arriba, \texttt{\color{blue}b} abajo), intentará ubicar la figura en esa posición salvo que no sea posible.
+    \item<3-> El comando \texttt{\color{blue}label} asigna una etiqueta al entorno flotante para poder referenciarlo
+    \item<4-> Por su parte, el comando \texttt{\color{blue}caption} crea la leyenda de la figura.
+  \end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{Entornos Flotantes - Tablas}
+  \begin{itemize}
+    \item El entorno flotante para tablas es \texttt{\color{blue}table} tiene el siguiente esqueleto.
+  \end{itemize}
+  \begin{center}
+    \begin{minipage}{0.9\textwidth}
+      \footnotesize
+      \texttt{\color{blue}
+      \textbackslash begin\{table\}[posición]\\
+      Código de la tabla\\
+      \textbackslash caption\{leyenda\}\\
+      \textbackslash label\{etiqueta\}\\
+      \textbackslash end\{table\}}
+    \end{minipage}
+  \end{center}
+  \begin{itemize}
+    \item<2-> Las tablas, al igual que las figuras, se enumeran automáticamente
+    \item<3-> y pueden referenciarse después asignándoles una etiqueta con el comando \texttt{\color{blue}label}.
+    \item <4-> Por su parte, el comando \texttt{\color{blue}caption} crea la leyenda de la tabla.
+  \end{itemize}
+\end{frame}  
 \end{document}
