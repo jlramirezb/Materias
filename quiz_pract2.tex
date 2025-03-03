@@ -1,0 +1,200 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsfonts,amssymb,amsthm,amsmath,color,graphicx,bm}
+\usepackage[left=1cm,right=1cm,bottom=2cm,top=2cm]{geometry}
+\usepackage{newlfont}
+\usepackage[latin1]{inputenc}
+\usepackage{float}
+\usepackage{multirow}
+\thispagestyle{empty} \pretolerance=2000 \tolerance=3000
+\linespread{1.3}
+\newcommand{\sen}{\ensure{sen}}
+\newcommand{\ds}{\displaystyle}
+\usepackage[spanish,ruled,vlined]{algorithm2e}
+
+\begin{document}
+
+\begin{tabular}[h]{lr}
+\includegraphics[width=1.5cm,height=1.5cm]{LogoUC.jpg} & \hspace{14cm}
+\includegraphics[width=2cm,height=1.5cm]{LogoFaCyT.jpg}
+\end{tabular}
+
+\vspace{-2.5cm}
+\begin{center}
+{ Universidad de Carabobo \\
+ \vspace{-3mm}
+  Facultad Experimental de Ciencias y Tecnolog\'ia \\
+ \vspace{-3mm}
+Departamento de Matem\'aticas}
+\\
+ \vspace{1cm}
+
+Quiz Pr\'actico II\\
+M\'etodos Num\'ericos II.
+\end{center}
+\vspace{1cm}
+
+\begin{enumerate}
+
+\item Considere el sistema de ecuaciones lineales $Ax = b$, donde $A \in M^{n \times n}(\mathbb{R})$, $x,b
+\in \mathbb{R}^n$. Adem\'as, $A$ y $b$ est\'an definidas por:
+
+$$
+A=\left(\begin{array}{rrrrrr}
+         4      & -1     & 0      & 0      & \cdots & 0\\
+         -1     &  4     & -1     & 0      & \cdots & 0\\
+         0      & -1     & 4      & -1     & \cdots & 0\\
+         \vdots & \vdots & \ddots & \ddots & \ddots & \vdots\\
+         0      & \cdots & 0      & -1     & 4      & -1\\
+         0      & 0      & \cdots & 0      & -1     & 4\\     
+        \end{array}\right)
+$$
+
+y $b_j = \cos(2\pi j/n)$. Resuelva este sistema para $n=10$, $n=100$ y $n=1000$ usando:
+\begin{enumerate}
+ \item Factorizaci\'on de Cholesky.
+ \item Iteraci\'on de Jacobi.
+ \item Iteraci\'on de Gauss-Seidel.
+\end{enumerate}
+Elija el residuo relativo $\|x_{n+1}- x_n\|_2/\|x_n\|_2 \leq 10^{-3}$ como criterio de pararda en los m\'etodos iterativos.
+Elabore un cuadro donde se muestre el tiempo invertido en cada caso. Comente los resultados observados.
+
+\item El perfil de temperaturas $T(x)$ de una barra circular delgada, de radio despreciable y longitud unitaria obedece
+a la ecuaci\'on:
+$$
+\frac{\partial^2T(x)}{\partial x^2} = f(x)
+$$
+donde $f(x) = 10x^2 + 5x + 10,\,\, 0 \leq x \leq 1$ representa la raz\'on de calor radiante a lo largo de la barra y
+$T(0) = 300K$ y $T(1) = 400K$ son las conocidas temperaturas al final de la barra. Una soluci\'on aproximada de esta
+ecuaci\'on puede ser encontrada usando el m\'etodo de diferencias finitas. Considere una partici\'on del intervalo en $n
++ 1$ subintervalos con $n + 2$ puntos denotados por $x_0 = 0, x_1 = h, \ldots, x_i = ih, \ldots, x_{n+1} = 1$ donde
+$h(n + 1) = 1$ y la temperatura en cada punto es denotada por $T_i = T(x_i)$. El esquema de diferencias finitas es dado
+por
+$$
+\frac{\partial^2T(x)}{\partial x^2} \approx \frac{T_{i-1}-2T_i+T_{i+1}}{h^2}
+$$
+\begin{enumerate}
+ \item Establecer el sistema lineal $Ax = b$ que resulta de utilizar el m\'etodo de diferencias finitas.
+ \item Pruebe que la matriz $A$ es diagonal dominante.
+ \item Resuelva el sistema para obtener soluciones correspondientes a $h =\frac{1}{6},h =\frac{1}{11},h =
+\frac{1}{21}, h =\frac{1}{41},h =\frac{1}{61}$, usando el m\'etodo $SOR$ con diferentes valores en el par\'ametro
+$\omega$. Establezca, si es posible, una vinculaci\'on entre \'este y $h$.
+\end{enumerate}
+
+\item En numerosas ocasiones la matriz $A$ del sistema $Ax = b$ es mal condicionada. Una estrategia para resolver
+estos sistemas es encontrar una matriz $P$ tal que $P^{-1}A$ sea bien condicionada y luego resolver el sistema
+equivalente
+$$
+P^{-1}Ax=P^{-1}b
+$$
+La matriz $P$ se denomina precondicionador a la izquierda de $A$. Un requerimiento es que $P$ sea f\'acil de invertir.
+Existen numerosos precondicionadores usados en la pr\'actica, de ellos tomar la diagonal de $A$, es decir:
+$$
+P = D = diag(a_1 ,\ldots, a_n),\qquad \mbox{(Precondicionador de Jacobi)}
+$$
+resulta generalmente efectivo cuando $A$ es sim\'etrica y definida positiva y con elementos diagonales no todos
+iguales. El algoritmo correspondiente al m\'etodo del Gradiente Conjugado Precondicionado es el siguiente:
+
+%\incmargin{1em}
+\RestyleAlgo{boxed}
+%\linesnumbered
+\begin{algorithm}[ht]
+ $x_0$: dato inicial\\
+ $r_0=b-Ax_0$\\
+ Resolver $Pz_0=r_0$\\
+ $p_0=z_0$\\
+ \For{$k\leftarrow 0$ \KwTo $N$}
+ {
+  $\alpha_k=\displaystyle\frac{r_k^tz_k}{p_k^tAp_k}$\\
+  $x_{k+1}=x_k+\alpha_kp_k$\\
+  $r_{k+1}=r_k-\alpha_kAp_k$\\
+  Resolver $Pz_{k+1}=r_{k+1}$\\
+  $\beta_{k+1}=\displaystyle\frac{z_{k+1}^tr_{k+1}}{z_k^tr_k}$\\
+  $p_{k+1}=z_{k+1}+\beta_{k+1}p_k$\\
+ }
+\end{algorithm}
+%\decmargin{1em}
+\begin{enumerate}
+ \item Haga un programa para resolver el problema $Ax = b$ por el m\'etodo del gradiente conjugado precondicionado con
+Jacobi.
+\item Pruebe su programa con la matriz $A$ definida, para $i,j \in \{1,\ldots, n\}$, por
+$$
+A(i,j) = \left\{\begin{array}{ll}
+                 i+j & \mbox{ si } 0<|i-j|<3\\
+                 (i+j)^2 &  \mbox{ si } i=j\\
+                 0 & \mbox{ en cualquier otro caso}
+                \end{array}
+\right.
+$$
+y $b(i)=i$.
+\item Realizar una comparaci\'on en n\'umero de iteraciones de los m\'etodos Gradiente Conjugado y Gradiente Conjugado
+precondicionado para la matriz dada considerando distintos valores de $n$, digamos $n = 5, 10, 20, 30, 50$, etc.
+\end{enumerate}
+
+\item Actualmente google se ha establecido como la p\'agina de b\'usqueda en internet m\'as utlizada. Esto ha sido en gran parte gracias
+al novedoso algoritmo que esta compa\~nia utiliza para, una vez encontradas las p\'aginas que cumplen con el criterio de b\'usqueda de
+un usuario, escoger el orden en que \'estas ser\'an presentadas. Para escoger este orden google asocia a cada p\'agina un n\'umero, llamado
+\textit{pagerank}, que calcula teniendo en cuenta el n\'umero de enlaces desde y hacia cada una de las p\'aginas web en el mundo. El orden
+en que se presentan las p\'aginas depende de su \textit{pagerank} (las de mayor \textit{pagerank} se presentan primero). Para calcular el
+\textit{pagerank} de cada p\'agina web, google crea una matriz $G$ que tiene una fila y una columna por cada p\'agina web, las entradas de
+esta matriz son:
+$$
+G(i,j) = \left\{\begin{array}{ll}
+                  1 & \mbox{si hay un enlace de p\'agina $j$ a p\'agina $i$}\\
+		  0 & \mbox{en caso contrario}
+                \end{array}
+\right.
+$$
+
+El \textit{pagerank} de una p\'agina depende no s\'olo del n\'umero de p\'aginas que contengan enlaces a ella, sino tambi\'en del
+\textit{pagerank} de esas p\'aginas. As\'i una p\'agina que sea referenciada en muchas p\'aginas de poca importancia podr\'a tener menos
+importancia que una que sea referenciada en pocas p\'aginas de mucha importancia. Si $x$ es un vector con el \textit{pagerank} de cada una
+de las p\'aginas web del mundo, google lo encuentra resolviendo el siguiente sistema de ecuaciones lineales
+
+\begin{equation}\label{SEL}
+  Ax=e, \qquad A=I-pGD
+\end{equation}
+
+d\'onde $I$ es la matriz de identidad, $p$ es la probabilidad de que una persona, en su b\'usqueda de alguna informaci\'on en internet,
+siga uno de los enlaces en la p\'agina donde se encuentra y se toma igual a $0.85$, $G$ es la matriz mencionada antes, $D$ es una matriz
+diagonal tal que $D(i,i)$ es el n\'umero de enlaces en la p\'agina $i$ y $e$ es el vector que contiene todas sus entradas iguales a
+1. Encontremos experimentalmente, de entre todos los algoritmos que hemos estudiado para la soluci\'on de sistemas de ecuaciones lineales,
+cu\'al es el m\'as conveniente para resolver este sistema de ecuaciones.
+\begin{enumerate}
+  \item Guarde en su directorio de trabajo el contenido del archivo \texttt{lab2\_m.zip}. En \'el encontrar\'a \texttt{data.mat},
+\texttt{creatematrix\_pagerank.m} y \texttt{mostrarrangos.m}.
+\item Cargue las variables almacenadas en \texttt{data.mat} en Matlab. Para ello debe escribir en los comandos de Matlab
+
+\texttt{$>>$ load data.mat}
+
+\texttt{$>>$ whos}
+
+y observe que la matriz $G$ y el vector $U$ se han cargado en memoria (\'estas eran las variables guardadas en \texttt{data.mat}).
+La matriz $G$ es como la matriz mencionada antes, pero se cre\'a suponiendo que la web est\'a formada s\'olo por 500 p\'aginas. La variable
+$U$ contiene los nombres de estas p\'aginas. Llame ahora a $A$ \texttt{= creatematrix\_pagerank(}$G$\texttt{)} para construir la matriz $A$
+en (\ref{SEL}).
+
+\item Con \texttt{spy(A)} observe la estructura de $A$. ?`Es una matriz dispersa? ?`Es sim\'etrica? ?`Cu\'antas de sus entradas son
+distintas de cero? ?`Ser\'a conveniente para google usar un m\'etodo directo para encontrar el \texttt{pagerank} de cada p\'agina en
+internet? ?`Por qu\'e?
+
+\item Busque una aproximaci\'on a la soluci\'on exacta a este sistema de ecuaciones con los m\'etodos iterativos que usted conoce.
+?`Cu\'ales m\'etodos iterativos le permitieron obtener una aproximaci\'on a la soluci\'on exacta de (\ref{SEL})? ?`Cu\'al tolerancia us\'o?
+?`En cu\'antas iteraciones alcanz\'o cada uno de ellos la precisi\'on requerida? ?`Cu\'al es la diferencia entre las soluciones obtenidas?
+Si alguno de los m\'etodos no le permite obtener una aproximaci\'on con la precisi\'on requerida, ?`a qu\'e se debe esto?
+
+\item Una vez encontrada una aproximaci\'on a la soluci\'on exacta de (\ref{SEL}) usted podr\'a, llamando a la funci\'on
+\texttt{mostrarrangos}, ver un c\'odigo de barras con los rangos de las 10 p\'aginas que tienen mayor \textit{pagerank}, as\'i como una
+lista con sus direcciones, n\'umero de enlaces en y hacia ellas y el \textit{pagerank} de cada una.
+\end{enumerate}
+
+\end{enumerate}
+
+\textbf{NOTA}: Se deben tomar a consideraci\'on las siguientes observaciones.
+\begin{itemize}
+  \item Entregar los archivos .m necesarios para la ejecuci\'on correcta de cada pregunta en funci\'on de lo exigido.
+\item Elaborar cada pregunta por separado y se debe indicar cual es el script principal de la pregunta.
+\item Elaborar un peque\~no documento en latex que contenga los resultados te\'oricos exigidos asi como la definici\'on de las rutinas de cada pregunta, sea organizado.
+\item Subir al classroom los archivos para su evaluaci\'on.
+\end{itemize}
+\end{document}
