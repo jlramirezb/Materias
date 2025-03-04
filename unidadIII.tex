@@ -4,7 +4,7 @@
 %\usepackage{beamerthemesplit}
 \usepackage{beamerthemeJuanLesPins}
 \usepackage{verbatim}
-\usepackage{algorithm2e}
+\usepackage[ruled,vlined]{algorithm2e}
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{subcaption}
@@ -275,26 +275,181 @@
     %%%%%%
     \begin{frame}{Ejemplo:}
       \begin{itemize}
-        \item Se sabe que los autovalores de $A$ y $A^t$ coinciden, por tanto
-        la intersecci\'on de $(R_1\bigcup R_2\bigcup R_3) \bigcap (R_1' \bigcup R_2' \bigcup R_3')$ nos da un refinamiento y se obtienen 3
-        c\'irculos disjuntos: $C_1, C_2$ y $C_3'$. Se puede concluir que $A$ tiene tres autovalores reales y cada uno de ellos est\'a en los
-        intervalos $[-5,-3],[-2,2]$ y $[3,5]$.
+        \item<1-> Se sabe que los autovalores de $A$ y $A^t$ coinciden, por tanto
+        la intersecci\'on de $(R_1\bigcup R_2\bigcup R_3) \bigcap (R_1' \bigcup R_2' \bigcup R_3')$ nos da un refinamiento.
+        \item<2-> Unión de c\'irculos de $A$: 
+        \begin{itemize}
+          \item $R_1: [-7/8,-1/4]$
+          \item $R_2: [3/16,9/16]$
+          \item $R_3: [-7/8,-3/8]$
+        \end{itemize}
+        {\centering Union: $[-7/8,-1/4]\cup[3/16,9/16]$}
+        \item<3-> Unión de c\'irculos de $A^t$:
+        \begin{itemize}
+          \item $R_1': [3/16,9/16]$
+          \item $R_2': [1/8,5/8]$
+          \item $R_3': [3/16,9/16]$
+        \end{itemize}
+        {\centering Union: $[-1,-1/4]\cup[1/8,5/8]$}         
       \end{itemize}
     \end{frame}
     %%%%%%
-    \begin{frame}
-    \begin{eqnarray}
-      R_1 = \{ z \in \mathbb{C} / |z-1|\leq 5\}, \Rightarrow -4 \leq z \leq 6\nonumber\\
-      R_2 = \{ z \in \mathbb{C} / |z-2|\leq 4\}, \Rightarrow -2 \leq z \leq 6\nonumber
-    \end{eqnarray}
-    \begin{eqnarray}
-       & A^t = \left[\begin{array}{cc}
-                                1 & 4 \\
-                                5 & 2
-                             \end{array}\right] &\nonumber\\
-      &C_1 = \{ z \in \mathbb{C} / |z-1|\leq 4\}, \Rightarrow -3 \leq z \leq 5&\nonumber\\
-      &C_2 = \{ z \in \mathbb{C} / |z-2|\leq 5\}, \Rightarrow -3 \leq z \leq 7&\nonumber
-    \end{eqnarray}
+    \begin{frame}{Ejemplo:}
+      \begin{itemize}
+        \item<1-> Intersecci\'on de las uniones: $[-7/8,-1/4]\cup[3/16,9/16]$.
+        \item<2-> Esto significa que todos los autovalores de $A$ y $A^t$ deben estar contenidos en los intervalos $[-7/8,-1/4]$ (negativos) y $[3/16,9/16]$ (positivos).
+        \item<3-> No hay autovalores en los intervalos $[-1,-7/8)$ ni $(9/16,5/8]$.
+        \item<4-> La matriz $A$ no es simétrica , ya que los radios de los discos de $A$ y $A^t$ son diferentes.
+        \item<5-> Todos los autovalores son reales, debido a que los discos están contenidos en la recta real.
+        \item<6-> La matriz es invertible, ya que 0 no está en ningún disco de Gerschgorin.
+      \end{itemize}
     \end{frame}
     %%%%%%
+    \section{M\'etodo de las Potencias}
+    \begin{frame}{M\'etodo de las Potencias}
+      \begin{itemize}
+        \item El objetivo de este m\'etodo es hallar $\lambda_1$ autovalor de $A$ y un autovector $x$ asociado a $\lambda_1$.
+        \item<2-> Supongamos que $A \in \mathbb{R}^{n \times n}$ posee $n$ autovalores $\lambda_1,\lambda_2,\ldots,\lambda_n$ y $n$ autovectores asociados $v^{(1)},v^{(2)},\ldots,v^{(n)}$, tales que:
+        $$
+        |\lambda_1|>|\lambda_2|\geq\cdots\geq|\lambda_n|
+        $$
+        entonces, $|\lambda_1|>|\lambda_j|\forall j=2,\ldots,n$ y $\{v^{(j)}\}$ es un conjunto de vectores linealmente independientes.
+      \end{itemize}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{M\'etodo de las Potencias}
+      \begin{itemize}
+        \item Si $x$ es un vector cualquiera en $\mathbb{R}^n$, el hecho de que $\{v^{(j)}\} \forall j=1,\ldots,n$ sea linealmente independiente, implica
+        que existen constantes $\alpha_1, \alpha_2,\ldots,\alpha_n$ tal que:
+        \begin{align*}
+          x &= \sum_{j=1}^n\alpha_jv^{(j)}\\
+          \uncover<2->{Ax &= \sum_{j=1}^n\alpha_jAv^{(j)} = \sum_{j=1}^n\alpha_j\lambda_jv^{(j)}\\}
+          \uncover<3->{A^2x &= A(Ax) =\sum_{j=1}^n\alpha_j\lambda_jAv^{(j)} = \sum_{j=1}^n\alpha_j\lambda_j^2v^{(j)}\\}
+          \uncover<4->{A^kx &= A^{(k-1)}(Ax) = \sum_{j=1}^n\alpha_j\lambda_j^kv^{(j)}}
+          \end{align*}
+        \end{itemize}
+    \end{frame}    
+    %%%%%%
+    \begin{frame}{M\'etodo de las Potencias}
+      \begin{itemize}
+        \item Dado que
+        $$
+          |\lambda_1|>|\lambda_j|\forall j=2,\ldots,n \Rightarrow \left|\frac{\lambda_j}{\lambda_1}\right|<1 \Rightarrow \left|\frac{\lambda_j}{\lambda_1}\right|^k\xrightarrow{\forall j=2,\ldots,n}0
+          $$
+
+          $$
+          \sum_{j=1}^n\alpha_j\lambda_j^kv^{(j)} = \lambda_1^k\sum_{j=1}^n\alpha_j\left|\frac{\lambda_j}{\lambda_1}\right|^kv^{(j)} \Rightarrow \lim_{k \to \infty}A^kx = \lim_{k \to \infty}\alpha_1\lambda_1^kv^{(1)}
+          $$
+          \item<2-> Esta sucesi\'on converge a cero si $|\lambda_1|<1$ y diverge si $|\lambda_1|>1$ siempre que $\alpha_1\neq 0$.
+          \item<3-> De esta \'ultima expresi\'on se obtiene la manera de escalar las potencias de $A^kx$ para que el l\'imite sea finito y distinto de cero.
+          \end{itemize}
+      \end{frame}
+    %%%%%%
+    \begin{frame}{M\'etodo de las Potencias}
+      \begin{itemize}
+        \item Para escalar las potencias se inicia eligiendo un vector $x^{(0)}$ tal que $x_{p_0}^{(0)}=1=\|x^{(0)}\|_{\infty}$.
+        \item<2-> Sea $y^{(1)}=Ax^{(0)}=\sum_{j=1}^n\alpha_j\lambda_jv^{(j)}$ y sea $\mu^{(1)}=y_{p_0}^{(1)}$, eventualmente $\mu^{(k)}\to \lambda_1$
+        {\small
+        \begin{align*}
+\mu^{(1)} &= y_{p_0}^{(1)} = \frac{y_{p_0}^{(1)}}{x_{p_0}^{(0)}}\\
+& = \displaystyle\frac{\alpha_1\lambda_1v_{p_0}^{(1)}+\displaystyle\sum_{j=2}^n\alpha_j\lambda_jv_{p_0}^{(j)}}{\alpha_1v_{p_0}^{(1)}+\displaystyle\sum_{j=2}^n\alpha_jv_{p_0}^{(j)}} = \lambda_1\left(\displaystyle\frac{\alpha_1v_{p_0}^{(1)}+\displaystyle\sum_{j=2}^n\alpha_j\left|\frac{\lambda_j}{\lambda_1}\right|v_{p_0}^{(j)}}{\alpha_1v_{p_0}^{(1)}+\displaystyle\sum_{j=2}^n\alpha_jv_{p_0}^{(j)}}\right)
+\end{align*}}
+        
+      \end{itemize}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{M\'etodo de las Potencias}
+      \begin{itemize}
+        \item<1-> Sea $p_1$ el entero m\'as peque\~no tal que $|y_{p_1}^{(1)}|=\|y^{(1)}\|_{\infty}$ y sea
+        $$
+        x^{(1)} = \frac{y^{(1)}}{y_{p_1}^{(1)}} = \frac{Ax^{(0)}}{y_{p_1}^{(1)}} \Rightarrow \|x^{(1)}\|_{\infty} = 1 = |x_{p_1}^{(1)}|
+        $$
+        \item<2-> Se define a continaci\'on
+        $$
+        y^{(2)} = Ax^{(1)} = \frac{A^2x^{(0)}}{y_{p_1}^{(1)}}
+        $$
+        \item<3-> Sea
+        $$
+        \mu^{(2)} =  y_{p_1}^{(2)} =  \frac{y_{p_1}^{(2)}}{x_{p_1}^{(1)}} = \frac{\lambda_1^2\left(\displaystyle\frac{\alpha_1v_{p_1}^{(1)}+\sum_{j=2}^n\alpha_j\left|\frac{\lambda_j}{\lambda_1}\right|^2v_{p_1}^{(j)}}{y_{p_1}^{(1)}}\right)}{\lambda_1\left(\displaystyle\frac{\alpha_1v_{p_1}^{(1)}+\sum_{j=2}^n\alpha_j\left|\frac{\lambda_j}{\lambda_1}\right|v_{p_1}^{(j)}}{y_{p_1}^{(1)}}\right)}
+        $$
+      \end{itemize}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{M\'etodo de las Potencias}
+      \begin{itemize}
+        \item As\'i sucesivamente. Los sucesivos vectores $x^{(k)}$, $y^{(k)}$ y los escalares $\mu^{(k)}$ siendo
+        $$
+        y^{(k)} = Ax^{(k-1)}
+        $$        
+        $$
+        \mu^{(k)} = y_{p_{k-1}}^{(k)} = \lambda_1\left(\frac{\alpha_1v_{p_{k-1}}^{(1)}+\sum_{j=2}^n\alpha_j\left|\frac{\lambda_j}{\lambda_1}\right|^kv_{p_{k-1}}^{(j)}}{\alpha_1v_{p_{k-1}}^{(1)}+\sum_{j=2}^n\alpha_j\left|\frac{\lambda_j}{\lambda_1}\right|^{k-1}v_{p_{k-1}}^{(j)}}\right)
+        $$
+        y
+        $$
+        x^{(k)} = \frac{y^{(k)}}{y_{k}^{(k)}} = \frac{A^kx^{(0)}}{y_{p_1}^{(1)} y_{p_2}^{(2)} \cdots y_{p_k}^{(k)}}
+        $$
+        donde $p_k$ es el entero m\'as peque\~no para el cual $|y_{p_k}^{(k)}|=\|y^{(k)}\|_{\infty}$.
+      \end{itemize}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{M\'etodo de las Potencias}
+      \begin{itemize}
+        \item<1-> De esta manera, se tiene que:
+        $$
+        \lim_{k \to \infty}\mu^{(k)} = \lambda_1
+        $$        
+        $$
+        x^{(0)} = \alpha_1v^{(1)} + \alpha_2v^{(2)}+\cdots+\alpha_nv^{(n)}
+        $$
+        \item<2-> Suponiendo que $\alpha_1 \neq 0$ entonces del m\'etodo de la potencia se obtiene $\mu^{(k)}\to\lambda_1$ y $x^{(k)}\to x$  autovector asociado a $\lambda_1$.
+        \item<3-> La velocidad de convergencia del m\'etodo depende de la magnitud del cociente $\frac{\lambda_2}{\lambda_1}$. Cuanto m\'as cercano a 1 sea el cociente m\'as lenta ser\'a la convergencia.
+      \end{itemize}
+    \end{frame}
+    %%%%%%
+    \begin{frame}{M\'etodo de las Potencias}
+\begin{algorithm}[H] 
+  \footnotesize
+ \SetKwInOut{Input}{input}
+ \SetKwInOut{Output}{output}
+ \caption{Algoritmo de Potencia.}
+ \Input{$A \in \mathbb{R}^{n \times n}$, $x \in \mathbb{R}^n$, N\'umero m\'aximo de iteraciones $N$, tolerancia $TOL$.}
+ \Output{autovalor aproximado $\mu$ y autovector asociado $x$ con $\|x\|_{\infty}=1$.} 
+ Hallar $p$  con $1\leq p \leq n$ tal que $|x_p|=\|x\|_{\infty}$\\
+ $x=\dfrac{x}{x_p}$\\
+ \For{$k\leftarrow 1$ \KwTo $N$}
+ {
+  $y \leftarrow Ax$; $\mu \leftarrow y_p$\\
+  Hallar $p$  con $1\leq p \leq n$ tal que $|y_p|=\|y\|_{\infty}$\\
+  \If{$y_p=0$}
+  {
+    Salida $(autovalor,autovector) = (0,x)$;  
+    Seleccionar nuevo $x$ y reiniciar; EXIT
+  }
+  $err \leftarrow \|x-y/y_p\|_{\infty}$; 
+  $x=\dfrac{y}{y_p}$\\
+  \If{$err<TOL$}
+  {
+    Salida ($\mu$,$x$)
+    EXIT
+  }
+ } 
+\end{algorithm}
+  \end{frame}
+    %%%%%%
+    \begin{frame}{Ejemplo}
+      Sea la matriz $A=\left(\begin{array}{ccc}
+        4 & -1& 1\\
+-1 & 3 & -2\\
+1 & -2 & 3\\
+       \end{array}\right)$ y el vector $x^{(0)}=\left(\begin{array}{c}
+        1\\0\\0\\\end{array}\right)$   
+    Se obtienen los siguientes resultados:\\[10pt]
+    {\scriptsize
+    \begin{tabular}{|c|c|c|c|c|c|c|}\hline
+      $k$ & 0 & 1 & 2 & 3 & $\cdots$ & 14\\\hline
+      $x^{(k)}$ & $\left(\begin{array}{c}1\\0\\0\\\end{array}\right)$ & $\left(\begin{array}{c}1\\-0.25\\0.25\\\end{array}\right)$ & $\left(\begin{array}{c}1\\-0.5\\0.5\\\end{array}\right)$ & $\left(\begin{array}{c}1\\-0.70\\0.70\\\end{array}\right)$ & $\cdots$ & $\left(\begin{array}{c}1\\-0.9998\\0.9998\\\end{array}\right)$\\\hline
+      $\mu^{(k)}$ & -- & 4 & 4.5 & 5.0 & $\cdots$ & 5.9993\\\hline
+    \end{tabular}}\\[10pt]
+    Parece que el valor propio dominante va a ser $\lambda = 6$ y su vector propio asociado $(1,-1,1)$.
+  \end{frame}
   \end{document}
