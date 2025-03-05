@@ -2438,11 +2438,199 @@ $$
   $$
   \item<2->A continuación se verificará cuán próximos son los puntos a los valores dados:  
   \begin{align*}
-    p(x_0) =p(0) = -\frac{17}{26} \approx -0.6538 & \Rightarrow E = |p(x_0)-y_0|=\\
-    p(x_1) = p(2) = \frac{7}{26} \approx 0.2692& \Rightarrow E = |p(x_1)-y_1|=0.3461\\
-    p(x_2) = p(3) = \frac{19}{26} \approx 0.7307& \Rightarrow E = |p(x_2)-y_2|=\\
-    p(x_3) = p(5) = \frac{43}{26} \approx 1.6538& \Rightarrow E = |p(x_3)-y_3|=
+    p(x_0) =p(0) = -\frac{17}{26} \approx -0.6538 & \Rightarrow E = |p(x_0)-y_0|=0.3462\\
+    p(x_1) = p(2) = \frac{7}{26} \approx 0.2692& \Rightarrow E = |p(x_1)-y_1|=0.2692\\
+    p(x_2) = p(3) = \frac{19}{26} \approx 0.7307& \Rightarrow E = |p(x_2)-y_2|=1.2692\\
+    p(x_3) = p(5) = \frac{43}{26} \approx 1.6538& \Rightarrow E = |p(x_3)-y_3|=0.6538
   \end{align*}            
 \end{itemize}
 \end{frame}
+%%%%
+\frame
+{
+\frametitle{M\'inimos Cuadrados}
+\begin{itemize}
+\item<1-> Si se hace
+$$
+\left\{\begin{array}{lcl}
+        b+ax_0 & = & y_0\\
+        b+ax_1 & = & y_1\\
+        b+ax_2 & = & y_2\\
+        & \vdots &\\
+        b+ax_M & = & y_M\\
+       \end{array}
+\right.
+$$
+\item<2->Se construye el sistema lineal
+$$
+\underbrace{\left(\begin{array}{cc}
+       1 & x_0\\
+       1 & x_1\\
+       1 & x_2\\
+       \vdots\vdots\\
+       1 & x_M
+      \end{array}
+\right)}_{A}\underbrace{\left(\begin{array}{c}
+              b\\
+              a
+             \end{array}
+\right)}_{x} = \underbrace{\left(\begin{array}{c}
+                 y_0\\
+                 y_1\\
+                 y_2\\
+                 \vdots\\
+                 y_M
+                \end{array}
+\right)}_{b}
+$$
+
+\item<3-> El cual es un sistema sobredeterminado si $M>2$, este se puede resolver mediante el sistema $A^tAx=A^tb \equiv EN$. Este nuevo
+sistema es sim\'etrico y positivo definido y se puede demostrar que posee soluci\'on \'unica.
+\end{itemize}
+}
+%%%%
+\frame
+{
+\frametitle{M\'inimos Cuadrados}
+\begin{itemize}
+  \item Ajuste de datos ahora en t\'erminos de un polinomio $P_n(x)$ de grado $n<M$.
+  \item<2-> Sea $P_n(x) = \sum_{k=0}^na_kx^k$
+  $$
+  E=E(a_0,a_1,\ldots,a_n) = \sum_{i=0}^M(y_i - P_n(x_i))^2 = \sum_{i=0}^M(y_i^2 -2y_iP_n(x_i)+P_n^2(x_i))
+  $$
+  $E\geq 0$ y es continuamente diferenciable $\exists \min E$ y se alcanza donde:
+  $$
+  \dfrac{\partial E}{\partial a_j} = 0 \quad \forall j=0,\ldots,n
+  $$
+  $$
+EN = \left\{\begin{array}{l}
+             \dfrac{\partial E}{\partial a_0} = 0\\[10pt]
+             \dfrac{\partial E}{\partial a_1} = 0\\
+             \vdots\\
+             \dfrac{\partial E}{\partial a_n} = 0
+            \end{array}\right.
+$$
+\end{itemize}
+}
+%%%%
+\frame{
+\frametitle{M\'inimos Cuadrados}
+\begin{itemize}
+  \item<1-> Desarrollando queda:
+\begin{eqnarray}
+ \nonumber E & = & \sum_{i=0}^My_i^2 - 2\underbrace{\sum_{i=0}^M\left(y_i\sum_{k=0}^na_kx_i^k\right)}_{A} + 
+\underbrace{\sum_{i=0}^M\left(\sum_{k=0}^na_kx_i^k\right)^2}_{B}\\
+\nonumber A & = & \sum_{i=0}^M\left(y_i\sum_{k=0}^na_kx_i^k\right) = \sum_{i=0}^M\sum_{k=0}^na_ky_ix_i^k = \\
+\nonumber & = & \sum_{k=0}^n\sum_{i=0}^Ma_ky_ix_i^k = \sum_{k=0}^n\left(a_k\sum_{i=0}^My_ix_i^k\right)\\
+\nonumber \dfrac{\partial A}{\partial a_j} & = & \sum_{i=0}^My_ix_i^j
+\end{eqnarray}
+\end{itemize}}
+%%%%
+\frame{
+\frametitle{M\'inimos Cuadrados}
+\begin{itemize}
+  \item<1-> Desarrollando $B$
+\begin{eqnarray}
+  \nonumber B & = & \sum_{i=0}^M\left(\sum_{k=0}^na_kx_i^k\right)^2 = 
+  \sum_{i=0}^M\sum_{j=0}^n\sum_{k=0}^na_jx_i^ja_kx_i^k\\
+  \nonumber& =&  \sum_{i=0}^M\sum_{j=0}^n\sum_{k=0}^na_ja_kx_i^{j+k} = 
+  \sum_{i=0}^M\left(\sum_{k=0}^n(a_kx_i^k)^2+\sum_{j=0}^n\sum_{\substack{k=0\\k \neq j}}^na_ja_kx_i^{j+k}\right)\\
+  \nonumber \dfrac{\partial B}{\partial a_j} & = &  2\sum_{k=0}^n\left(a_k\sum_{i=0}^Mx_i^{j+k}\right)\\
+  \nonumber 0 = \dfrac{\partial E}{\partial a_j} & = & -2\sum_{i=0}^My_ix_i^j + 
+  2\sum_{k=0}^n\left(a_k\sum_{i=0}^Mx_i^{j+k}\right) \forall j=0,\ldots,n
+\end{eqnarray}
+\end{itemize}} 
+%%%%
+\frame{
+\frametitle{M\'inimos Cuadrados}
+\begin{itemize}
+  \item<1->De esta manera las ecuaciones normales vienen definidas por 
+  $$
+  EN \equiv \left\{\sum_{k=0}^n\left(a_k\sum_{i=0}^Mx_i^{j+k}\right) = \sum_{i=0}^My_ix_i^j \qquad \forall j=0,\ldots,n 
+  \right.
+  $$
+  \item<2->Generando as\'i el siguiente sistema de ecuaciones lineales
+  \item   
+  $$
+  \left\{\begin{array}{l}
+          a_0(M+1) + a_1\displaystyle\sum_{i=0}^Mx_i^1+\cdots+a_n\displaystyle\sum_{i=0}^Mx_i^n =\displaystyle 
+  \sum_{i=0}^My_i\\
+          a_0\displaystyle\sum_{i=0}^Mx_i^1 + 
+  a_1\displaystyle\sum_{i=0}^Mx_i^2+\cdots+a_n\displaystyle\sum_{i=0}^Mx_i^{n+1} = \displaystyle\sum_{i=0}^My_ix_i\\
+          \vdots\\
+          a_0\displaystyle\sum_{i=0}^Mx_i^n + 
+  a_1\displaystyle\sum_{i=0}^Mx_i^{n+1}+\cdots+a_n\displaystyle\sum_{i=0}^Mx_i^{n+n} = \displaystyle\sum_{i=0}^My_ix_i^n\\
+         \end{array}
+  \right.
+  $$  
+\end{itemize}}
+%%%%
+\frame{
+\frametitle{Aproximaci\'on de Exponencial de M\'inimos Cuadrados}
+\begin{itemize}
+  \item<1-> En este caso la funci\'on aproximante es:
+  $$
+  y = be^{ax} \qquad \mbox{ o } \qquad y=bx^a
+  $$
+  \item<2-> En general para cualquier funci\'on aproximante:
+  $$
+  0 \leq E =\sum_{i=0}^M(y_i - y(x_i))^2 \quad \mbox{ fijando } x_0,x_1,\ldots,x_M
+  $$
+  \item<3-> Si $\exists \dfrac{\partial y}{\partial j}\forall j=0,\ldots,n$ y son continuas $ \Rightarrow \exists \min E$.
+  \end{itemize}
+}
+%%%%
+\frame{
+\frametitle{Aproximaci\'on de Exponencial de M\'inimos Cuadrados}  
+\begin{itemize}
+  \item<1-> Para el caso de las ecuaciones normales para $y=be^{ax}$.  
+  $$
+  E = \sum_{i=0}^M\left(y_i - be^{ax_i}\right)^2 = \sum_{i=0}^My_i^2-2b\sum_{i=0}^M\left(yie^{ax_i}\right) + 
+  b^2\sum_{i=0}^M\left(e^{2ax_i}\right)
+  $$   
+  $$
+  \left\{\begin{array}{l}
+          \dfrac{\partial E}{\partial a}=0\\
+          \dfrac{\partial E}{\partial b}=0\\
+         \end{array}\right. \Rightarrow \left\{
+         \begin{array}{lcl}
+          -2b\displaystyle\sum_{i=0}^M\left(y_ix_ie^{ax_i}\right) + 2b^2\displaystyle\sum_{i=0}^M\left(x_ie^{2ax_i}\right) 
+  & = & 0\\
+          -2\displaystyle\sum_{i=0}^M\left(y_ie^{ax_i}\right) + 2b\displaystyle\sum_{i=0}^M\left(e^{2ax_i}\right) & = & 
+  0\\
+         \end{array}\right.
+  $$  
+  $$
+  \left\{\begin{array}{l}
+          b\displaystyle\sum_{i=0}^M\left(x_ie^{2ax_i}\right) - \displaystyle\sum_{i=0}^M\left(y_ix_ie^{ax_i}\right) =0\\
+          b\displaystyle\sum_{i=0}^M\left(e^{2ax_i}\right) - \displaystyle\sum_{i=0}^M\left(y_ie^{ax_i}\right) =0
+         \end{array}\right.  
+  \left\{\begin{array}{l}
+          \displaystyle\sum_{i=0}^M\left(y_ix_ie^{ax_i}\right) =b\displaystyle\sum_{i=0}^M\left(x_ie^{2ax_i}\right)\\
+           \displaystyle\sum_{i=0}^M\left(y_ie^{ax_i}\right) =b\displaystyle\sum_{i=0}^M\left(e^{2ax_i}\right)
+         \end{array}\right.
+         $$
+         {\rightarrowfill Sistema de Ecuaciones No Lineales}
+    \end{itemize}
+}
+%%%%
+\frame{
+\frametitle{Aproximaci\'on de Exponencial de M\'inimos Cuadrados}
+\begin{itemize}
+  \item<1-> Suponiendo $y=be^{ax}>0$ y $b>0$
+  $$
+  \ln(y) = \ln(b) + \ln(e^{ax}) \Rightarrow \ln(y) = \ln(b)+ax
+  $$
+  se trabaja como si el problema fuera lineal, de este modo se obtiene:
+  \begin{eqnarray}
+  \nonumber \ln(b) & = & \dfrac{\displaystyle\sum_{i=0}^Mx_i\displaystyle\sum_{i=0}^M\ln(y_i)x_i
+  -\displaystyle\sum_{i=0}^M\ln(y_i)\displaystyle\sum_{i=0}^Mx_i^2 }{\left(\displaystyle\sum_{i=0}^Mx_i\right)^2
+  -(M+1)\displaystyle\sum_{i=0}^Mx_i^2}\\
+  \nonumber a & = & 
+  \dfrac{\displaystyle\sum_{i=0}^Mx_i\displaystyle\sum_{i=0}^M\ln(y_i) -(M+1)\displaystyle\sum_{i=0}^M\ln(y_i)x_i}{
+  \left(\displaystyle\sum_{i=0}^Mx_i\right)^2
+  -(M+1)\displaystyle\sum_{i=0}^Mx_i^2}
+  \end{eqnarray}
+\end{itemize}  
+}
 \end{document}
