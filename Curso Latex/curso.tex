@@ -902,13 +902,36 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
     \begin{block}{}
       \footnotesize
       \texttt{\color{blue}
-      \textbackslash begin\{thebibliography\}\{99\} --> para poder incluir hasta 999 citas\\
-      \textbackslash bibitem\{ref1\} Titulo, autor, año, etc\ldots\\
-       \textbackslash bibitem\{ref2\} Titulo, autor, año, etc\ldots\\
+      \textbackslash begin\{thebibliography\}\{99\} --> para poder incluir hasta 99 citas\\
+      \textbackslash bibitem[NuevaMarca]\{ref1\} Titulo, autor, año, etc\ldots\\
+       \textbackslash bibitem[NuevaMarca]\{ref2\} Titulo, autor, año, etc\ldots\\
         \ldots\\
         \textbackslash end\{thebibliography\}}
     \end{block}
-    \item Para citar referencias en el texto del documento, se utiliza el comando \texttt{\color{blue}cite\{etiqueta\}}, donde etiqueta se debe corresponder con la etiqueta de la entrada bibitem a referenciar.
+    \item<2-> Para citar referencias en el texto del documento, se utiliza el comando \texttt{\color{blue}cite\{etiqueta\}}, donde etiqueta se debe corresponder con la etiqueta de la entrada bibitem a referenciar.
+  \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}{Uso de Bibliograf\'ia}
+  \begin{itemize}
+    \item Este procedimiento lleva a una lista de citas ordenada numéricamente por el orden que ocupan dentro de la lista y no por el orden en el que fueron citadas a lo largo del documento.
+    \item<2-> Ésto implica entonces la necesidad de llevar a cabo tal ordenación manualmente.
+    \item<3-> El argumento optativo {\bf NuevaMarca} puede utilizarse para cambiar la marca estándar ([1], [2], etc..) por un texto
+    cualquiera.
+    \item<4-> Para cambiar el título estándar de la sección de referencias bibliográficas (References en \LaTeX{} inglés, y Referencias si se emplea la opción \texttt{\color{blue}spanish} de \texttt{\color{blue}babel}) se debe renombrar la variable \texttt{\color{blue}refname} del modo siguiente:
+    
+    \texttt{\color{blue}\textbackslash renewcommand\{\textbackslash refname\}\{Bibliografía\}}
+
+    (si deseamos Bibliografía en el título, por ejemplo).
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Uso de Bibliograf\'ia}
+  \begin{itemize}
+    \item <1->En caso de utilizar babel, es muy
+    importante tener en cuenta que tal comando se debe ejecutar después de \texttt{\color{blue}\textbackslash begin\{document\}}.
+    \item<2-> Se debe tener también en cuenta que, en el caso de utilizar la clase book, el comando \texttt{\color{blue}\textbackslash refname} pasa a convertirse en \texttt{\color{blue}\textbackslash bibname}.
+    \item<3-> A diferencia de cualquier otro tipo de sección, la de bibliografía no es incluída en la tabla de contenidos que se obtiene a través del comando \texttt{\color{blue}tableofcontents}.
   \end{itemize}
 \end{frame}
 \end{document}
