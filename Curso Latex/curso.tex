@@ -186,7 +186,7 @@
   \end{itemize}
 \end{frame}
 %%%%%%
-\section{Listas}
+\subsection{Listas}
 \begin{frame}{Dando Formato al texto}
   El entorno {\color{blue}\texttt{itemize}} crea listas con viñetas (listas sin numerar).
   \begin{center}
@@ -227,7 +227,7 @@
   \end{enumerate}
 \end{frame}
 %%%%%%
-\section{Secciones}
+\subsection{Secciones}
 \begin{frame}{Secciones}
   LaTeX puede dividir/estructurar documentos en múltiples niveles jerárquicos, dependiendo del tipo de documento con el que se trabaje.
   \begin{itemize}
@@ -313,6 +313,7 @@
   \end{itemize}
 \end{frame}
 %%%%%
+\section{Matemática en \LaTeX}
 \begin{frame}{Tipografía Matemática}
    \footnotesize{
      \begin{itemize}
@@ -336,6 +337,7 @@
 }   
 \end{frame}
 %%%%%%
+\subsection{notación}
 \begin{frame}{Tipografía Matemática:Notaci\'on}
   \begin{itemize}
     \item<1-> Use el signo \texttt{\^} para indicar superíndices y el
@@ -362,6 +364,7 @@
   \end{itemize}
 \end{frame}
 %%%%%%
+\subsection{Entornos Matem\'aticos}
  \begin{frame}[fragile]{Tipografía Matemática: Entornos}
    \begin{itemize}
    \item {\color{blue}\texttt{equation}} es un \emph{entorno}.
@@ -465,6 +468,7 @@
 \end{itemize}}
 \end{frame}
 %%%%%%
+\section{Etiquetas y Referencias}
 \begin{frame}[fragile]{Etiquetas y Referencias Cruzadas}
   \begin{itemize}
     \item<1-> Utilice {\color{blue}\texttt{label}} y {\color{blue}\texttt{ref}} para la numeración automática.
@@ -501,6 +505,7 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
    \end{tabular}}
 \end{frame}
 %%%%%%
+\section{Im\'agenes}
 \begin{frame}{Usando Im\'agenes}
   \begin{itemize}
     \item Para importar im\'agenes en \LaTeX, se usa el paquete \texttt{\color{blue}graphicx},
@@ -644,6 +649,7 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
   \end{tabular}}
 \end{frame}
 %%%%%%
+\section{Tablas}
 \begin{frame}{Insertando Tablas}
   \begin{itemize}
     \item<1-> El paquete \texttt{\color{blue}array} añade más funcionalidades a las dadas por \LaTeX{} y que no forma parte del núcleo de \LaTeX{}.
@@ -829,6 +835,7 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
   \end{center}
 \end{frame}
 %%%%%%
+\section{Flotantes}
 \begin{frame}{Entornos Flotantes}
 \begin{itemize}
   \item<1->Determinados contenidos, como por ejemplo tablas o imágenes, son bloques indivisibles.
@@ -886,4 +893,22 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
     \item <4-> Por su parte, el comando \texttt{\color{blue}caption} crea la leyenda de la tabla.
   \end{itemize}
 \end{frame}  
+%%%%%
+\section{Bibliograf\'ia}
+\begin{frame}{Uso de Bibliograf\'ia}
+  \begin{itemize}
+    \item Para incluir referencias de bibliograf\'ia en un documento se utiliza el entorno \texttt{\color{blue}thebibliography},
+    con la siguiente sintaxis:
+    \begin{block}{}
+      \footnotesize
+      \texttt{\color{blue}
+      \textbackslash begin\{thebibliography\}\{99\} --> para poder incluir hasta 999 citas\\
+      \textbackslash bibitem\{ref1\} Titulo, autor, año, etc\ldots\\
+       \textbackslash bibitem\{ref2\} Titulo, autor, año, etc\ldots\\
+        \ldots\\
+        \textbackslash end\{thebibliography\}}
+    \end{block}
+    \item Para citar referencias en el texto del documento, se utiliza el comando \texttt{\color{blue}cite\{etiqueta\}}, donde etiqueta se debe corresponder con la etiqueta de la entrada bibitem a referenciar.
+  \end{itemize}
+\end{frame}
 \end{document}
