@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  2 MAR 2025 20:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  6 MAR 2025 17:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -813,7 +813,7 @@ LaTeX Info: Redefining \% on input line 1.
 [23
 
 ]
-<Editores.png, id=702, 730.22812pt x 331.2375pt>
+<Editores.png, id=750, 730.22812pt x 331.2375pt>
 File: Editores.png Graphic file (type png)
 <use Editores.png>
 Package pdftex.def Info: Editores.png  used on input line 87.
@@ -1018,7 +1018,7 @@ Overfull \vbox (3.01071pt too high) detected at line 271
 [67
 
 ]
-<Secciones.png, id=1951, 252.945pt x 205.5178pt>
+<Secciones.png, id=2000, 252.945pt x 205.5178pt>
 File: Secciones.png Graphic file (type png)
 <use Secciones.png>
 Package pdftex.def Info: Secciones.png  used on input line 277.
@@ -1217,13 +1217,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 
  []
 
-<Referencias.png, id=2616, 348.55219pt x 123.46124pt>
+<Referencias.png, id=2660, 348.55219pt x 123.46124pt>
 File: Referencias.png Graphic file (type png)
 <use Referencias.png>
 Package pdftex.def Info: Referencias.png  used on input line 34.
 (pdftex.def)             Requested size: 209.1329pt x 74.0773pt.
 )
-Overfull \hbox (143.24556pt too wide) in paragraph at lines 34--502
+Overfull \hbox (143.24556pt too wide) in paragraph at lines 34--506
 [][][][][][]  
  []
 
@@ -1281,7 +1281,7 @@ File: Referencias.png Graphic file (type png)
 Package pdftex.def Info: Referencias.png  used on input line 34.
 (pdftex.def)             Requested size: 209.1329pt x 74.0773pt.
 )
-Overfull \hbox (143.24556pt too wide) in paragraph at lines 34--502
+Overfull \hbox (143.24556pt too wide) in paragraph at lines 34--506
 [][][][][][]  
  []
 
@@ -1339,7 +1339,7 @@ File: Referencias.png Graphic file (type png)
 Package pdftex.def Info: Referencias.png  used on input line 34.
 (pdftex.def)             Requested size: 209.1329pt x 74.0773pt.
 )
-Overfull \hbox (143.24556pt too wide) in paragraph at lines 34--502
+Overfull \hbox (143.24556pt too wide) in paragraph at lines 34--506
 [][][][][][][]  
  []
 
@@ -1348,7 +1348,7 @@ Overfull \hbox (143.24556pt too wide) in paragraph at lines 34--502
 [92
 
 ]
-Overfull \hbox (2.02733pt too wide) in paragraph at lines 527--527
+Overfull \hbox (2.02733pt too wide) in paragraph at lines 532--532
 []\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 includegraphics\OMS/cmsy/m/n/12 f\OT1/cmtt/m/n/12 imagen.png\OMS/cmsy/m/n/12 g  
  []
 
@@ -1359,19 +1359,19 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 527.
+(epstopdf)             \includegraphics on input line 532.
 Package epstopdf Info: Output file is already uptodate.
-<err_L4-eps-converted-to.pdf, id=2710, 557.08125pt x 557.08125pt>
+<err_L4-eps-converted-to.pdf, id=2753, 557.08125pt x 557.08125pt>
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 527.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 532.
 (pdftex.def)             Requested size: 111.41428pt x 111.41428pt.
 
 
 [93
 
  <./err_L4-eps-converted-to.pdf>]
-Overfull \hbox (2.02733pt too wide) in paragraph at lines 527--527
+Overfull \hbox (2.02733pt too wide) in paragraph at lines 532--532
 []\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 includegraphics\OMS/cmsy/m/n/12 f\OT1/cmtt/m/n/12 imagen.png\OMS/cmsy/m/n/12 g  
  []
 
@@ -1382,18 +1382,18 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 527.
+(epstopdf)             \includegraphics on input line 532.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 527.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 532.
 (pdftex.def)             Requested size: 111.41428pt x 111.41428pt.
 
 
 [94
 
 ]
-Overfull \hbox (2.02733pt too wide) in paragraph at lines 527--527
+Overfull \hbox (2.02733pt too wide) in paragraph at lines 532--532
 []\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 includegraphics\OMS/cmsy/m/n/12 f\OT1/cmtt/m/n/12 imagen.png\OMS/cmsy/m/n/12 g  
  []
 
@@ -1404,18 +1404,18 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 527.
+(epstopdf)             \includegraphics on input line 532.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 527.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 532.
 (pdftex.def)             Requested size: 111.41428pt x 111.41428pt.
 
 
 [95
 
 ]
-Overfull \hbox (2.02733pt too wide) in paragraph at lines 527--527
+Overfull \hbox (2.02733pt too wide) in paragraph at lines 532--532
 []\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 includegraphics\OMS/cmsy/m/n/12 f\OT1/cmtt/m/n/12 imagen.png\OMS/cmsy/m/n/12 g  
  []
 
@@ -1426,18 +1426,18 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 527.
+(epstopdf)             \includegraphics on input line 532.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 527.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 532.
 (pdftex.def)             Requested size: 111.41428pt x 111.41428pt.
 
 
 [96
 
 ]
-Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
+Overfull \hbox (0.29321pt too wide) in paragraph at lines 543--543
 []\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 includegraphics[height=0.5\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 textheight]\OMS/cmsy/m/n/12 f\OT1/cmtt/m/n/12 imagen.png\OMS/cmsy/m/n/12 g[]\OT1/cmr/m/n/12 .[][][][][]  
  []
 
@@ -1446,7 +1446,7 @@ Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
 [97
 
 ]
-Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
+Overfull \hbox (0.29321pt too wide) in paragraph at lines 543--543
 []\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 includegraphics[height=0.5\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 textheight]\OMS/cmsy/m/n/12 f\OT1/cmtt/m/n/12 imagen.png\OMS/cmsy/m/n/12 g[]\OT1/cmr/m/n/12 .[][][][][]  
  []
 
@@ -1455,7 +1455,7 @@ Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
 [98
 
 ]
-Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
+Overfull \hbox (0.29321pt too wide) in paragraph at lines 543--543
 []\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 includegraphics[height=0.5\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 textheight]\OMS/cmsy/m/n/12 f\OT1/cmtt/m/n/12 imagen.png\OMS/cmsy/m/n/12 g[]\OT1/cmr/m/n/12 .[][][][][]  
  []
 
@@ -1464,7 +1464,7 @@ Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
 [99
 
 ]
-Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
+Overfull \hbox (0.29321pt too wide) in paragraph at lines 543--543
 []\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 includegraphics[height=0.5\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 textheight]\OMS/cmsy/m/n/12 f\OT1/cmtt/m/n/12 imagen.png\OMS/cmsy/m/n/12 g[]\OT1/cmr/m/n/12 .[][][][][]  
  []
 
@@ -1473,7 +1473,7 @@ Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
 [100
 
 ]
-Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
+Overfull \hbox (0.29321pt too wide) in paragraph at lines 543--543
 []\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 includegraphics[height=0.5\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 textheight]\OMS/cmsy/m/n/12 f\OT1/cmtt/m/n/12 imagen.png\OMS/cmsy/m/n/12 g[]\OT1/cmr/m/n/12 .[][][][][]  
  []
 
@@ -1482,7 +1482,7 @@ Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
 [101
 
 ]
-Overfull \hbox (0.29321pt too wide) in paragraph at lines 538--538
+Overfull \hbox (0.29321pt too wide) in paragraph at lines 543--543
 []\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 includegraphics[height=0.5\OMS/cmsy/m/n/12 n\OT1/cmtt/m/n/12 textheight]\OMS/cmsy/m/n/12 f\OT1/cmtt/m/n/12 imagen.png\OMS/cmsy/m/n/12 g[]\OT1/cmr/m/n/12 .[][][][][][]  
  []
 
@@ -1498,11 +1498,11 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 570.
+(epstopdf)             \includegraphics on input line 575.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 570.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 575.
 (pdftex.def)             Requested size: 34.06903pt x 34.06096pt.
 Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
@@ -1511,14 +1511,14 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 570.
+(epstopdf)             \includegraphics on input line 575.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 570.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 575.
 (pdftex.def)             Requested size: 119.2431pt x 119.24294pt.
 
-Overfull \hbox (75.10228pt too wide) in paragraph at lines 570--570
+Overfull \hbox (75.10228pt too wide) in paragraph at lines 575--575
 [][]  
  []
 
@@ -1534,11 +1534,11 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 608.
+(epstopdf)             \includegraphics on input line 613.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 608.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 613.
 (pdftex.def)             Requested size: 83.55858pt x 83.55858pt.
 Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
@@ -1547,11 +1547,11 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 608.
+(epstopdf)             \includegraphics on input line 613.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 608.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 613.
 (pdftex.def)             Requested size: 55.71138pt x 55.71138pt.
 
 
@@ -1565,11 +1565,11 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 608.
+(epstopdf)             \includegraphics on input line 613.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 608.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 613.
 (pdftex.def)             Requested size: 83.55858pt x 83.55858pt.
 Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
@@ -1578,11 +1578,11 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 608.
+(epstopdf)             \includegraphics on input line 613.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 608.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 613.
 (pdftex.def)             Requested size: 55.71138pt x 55.71138pt.
 
 
@@ -1596,11 +1596,11 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 608.
+(epstopdf)             \includegraphics on input line 613.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 608.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 613.
 (pdftex.def)             Requested size: 83.55858pt x 83.55858pt.
 Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
@@ -1609,11 +1609,11 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 608.
+(epstopdf)             \includegraphics on input line 613.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 608.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 613.
 (pdftex.def)             Requested size: 55.71138pt x 55.71138pt.
 
 
@@ -1627,11 +1627,11 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 645.
+(epstopdf)             \includegraphics on input line 650.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 645.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 650.
 (pdftex.def)             Requested size: 101.62935pt x 26.3481pt.
 Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
@@ -1640,19 +1640,19 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 645.
+(epstopdf)             \includegraphics on input line 650.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 645.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 650.
 (pdftex.def)             Requested size: 114.17622pt x 136.76059pt.
 
-Overfull \hbox (11.9665pt too wide) in paragraph at lines 645--645
+Overfull \hbox (11.9665pt too wide) in paragraph at lines 650--650
 [][] 
  []
 
 
-Overfull \vbox (6.43796pt too high) detected at line 645
+Overfull \vbox (6.43796pt too high) detected at line 650
  []
 
 
@@ -1667,11 +1667,11 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 645.
+(epstopdf)             \includegraphics on input line 650.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 645.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 650.
 (pdftex.def)             Requested size: 101.62935pt x 26.3481pt.
 Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
@@ -1680,19 +1680,19 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)                    date: 2025-03-01 10:20:59
 (epstopdf)                    size: 24433 bytes
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
-(epstopdf)             \includegraphics on input line 645.
+(epstopdf)             \includegraphics on input line 650.
 Package epstopdf Info: Output file is already uptodate.
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
-Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 645.
+Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 650.
 (pdftex.def)             Requested size: 114.17622pt x 136.76059pt.
 
-Overfull \hbox (11.9665pt too wide) in paragraph at lines 645--645
+Overfull \hbox (11.9665pt too wide) in paragraph at lines 650--650
 [][] 
  []
 
 
-Overfull \vbox (6.43796pt too high) detected at line 645
+Overfull \vbox (6.43796pt too high) detected at line 650
  []
 
 
@@ -1701,9 +1701,9 @@ Overfull \vbox (6.43796pt too high) detected at line 645
 
 ]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 669.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 675.
 
-Overfull \vbox (1.48051pt too high) detected at line 669
+Overfull \vbox (1.48051pt too high) detected at line 675
  []
 
 
@@ -1711,7 +1711,7 @@ Overfull \vbox (1.48051pt too high) detected at line 669
 [109
 
 ]
-Overfull \vbox (1.48051pt too high) detected at line 669
+Overfull \vbox (1.48051pt too high) detected at line 675
  []
 
 
@@ -1719,7 +1719,7 @@ Overfull \vbox (1.48051pt too high) detected at line 669
 [110
 
 ]
-Overfull \vbox (1.48051pt too high) detected at line 669
+Overfull \vbox (1.48051pt too high) detected at line 675
  []
 
 
@@ -1727,7 +1727,7 @@ Overfull \vbox (1.48051pt too high) detected at line 669
 [111
 
 ]
-Overfull \vbox (1.48051pt too high) detected at line 669
+Overfull \vbox (1.48051pt too high) detected at line 675
  []
 
 
@@ -1747,7 +1747,7 @@ Overfull \vbox (1.48051pt too high) detected at line 669
 [115
 
 ]
-Overfull \hbox (24.00002pt too wide) in paragraph at lines 705--705
+Overfull \hbox (24.00002pt too wide) in paragraph at lines 711--711
 [][]  
  []
 
@@ -1756,12 +1756,12 @@ Overfull \hbox (24.00002pt too wide) in paragraph at lines 705--705
 [116
 
 ]
-Overfull \hbox (717.72163pt too wide) in paragraph at lines 742--742
+Overfull \hbox (717.72163pt too wide) in paragraph at lines 748--748
 [][] 
  []
 
 
-Overfull \hbox (24.00002pt too wide) in paragraph at lines 742--742
+Overfull \hbox (24.00002pt too wide) in paragraph at lines 748--748
  [] 
  []
 
@@ -1770,12 +1770,12 @@ Overfull \hbox (24.00002pt too wide) in paragraph at lines 742--742
 [117
 
 ]
-Overfull \hbox (717.72163pt too wide) in paragraph at lines 742--742
+Overfull \hbox (717.72163pt too wide) in paragraph at lines 748--748
 [][] 
  []
 
 
-Overfull \hbox (24.00002pt too wide) in paragraph at lines 742--742
+Overfull \hbox (24.00002pt too wide) in paragraph at lines 748--748
  [] 
  []
 
@@ -1796,17 +1796,17 @@ Overfull \hbox (24.00002pt too wide) in paragraph at lines 742--742
 [121
 
 ]
-Underfull \hbox (badness 1057) in paragraph at lines 784--784
+Underfull \hbox (badness 1057) in paragraph at lines 790--790
 \OT1/cmr/m/n/8 g^^Sene-ro Ca-nis, el cual for-ma
  []
 
 
-Underfull \hbox (badness 6016) in paragraph at lines 784--784
+Underfull \hbox (badness 6016) in paragraph at lines 790--790
 \OT1/cmr/m/n/8 ca de pe-que~nos mam^^S^^Pfe-ros
  []
 
 
-Overfull \hbox (24.00002pt too wide) in paragraph at lines 784--784
+Overfull \hbox (24.00002pt too wide) in paragraph at lines 790--790
  [] 
  []
 
@@ -1835,7 +1835,7 @@ Overfull \hbox (24.00002pt too wide) in paragraph at lines 784--784
 [127
 
 ]
-Overfull \hbox (24.00002pt too wide) in paragraph at lines 830--830
+Overfull \hbox (24.00002pt too wide) in paragraph at lines 836--836
  [] 
  []
 
@@ -1904,6 +1904,42 @@ Overfull \hbox (24.00002pt too wide) in paragraph at lines 830--830
 [143
 
 ]
+
+[144
+
+]
+
+[145
+
+]
+
+[146
+
+]
+
+[147
+
+]
+
+[148
+
+]
+
+[149
+
+]
+
+[150
+
+]
+
+[151
+
+]
+
+[152
+
+]
 \tf@nav=\write6
 \openout6 = `curso.nav'.
 
@@ -1926,21 +1962,21 @@ L3 programming layer <2024-05-27>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `curso.out' has not changed.
-(rerunfilecheck)             Checksum: E7412694E66B5BDCBC696C2FD6C239DA;918.
+(rerunfilecheck)             Checksum: 7448815554090C51A18060959CC014AF;1884.
  ) 
 Here is how much of TeX's memory you used:
- 25409 strings out of 473583
- 480147 string characters out of 5732336
+ 25473 strings out of 473583
+ 480927 string characters out of 5732336
  1958908 words of memory out of 5000000
- 47477 multiletter control sequences out of 15000+600000
+ 47515 multiletter control sequences out of 15000+600000
  571632 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,570b,893s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on curso.pdf (143 pages, 843034 bytes).
+Output written on curso.pdf (152 pages, 873790 bytes).
 PDF statistics:
- 4450 PDF objects out of 5155 (max. 8388607)
- 3962 compressed objects within 40 object streams
- 296 named destinations out of 1000 (max. 500000)
- 1279 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4758 PDF objects out of 5155 (max. 8388607)
+ 4244 compressed objects within 43 object streams
+ 322 named destinations out of 1000 (max. 500000)
+ 1409 words of extra memory for PDF output out of 10000 (max. 10000000)
 
