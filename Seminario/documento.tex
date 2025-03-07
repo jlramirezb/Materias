@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[style=numeric]{biblatex}
+
+\addbibresource{biblio.bib}
+\title{Aprendizaje Profundo en el Análisis de Datos Asociados al Estudio de Lagos. \\ Caso de Estudio: Lago de Valencia}
+\author{José Ramírez}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+El aprendizaje profundo es una herramienta poderosa en diversas áreas, incluyendo el análisis de datos hidrológicos \autocite{ayus2023}. Este enfoque utiliza redes neuronales de múltiples capas ocultas para extraer patrones complejos y representaciones de datos, permitiendo realizar predicciones y clasificaciones con alta precisión \cite{bentivoglio2022}. En el contexto del análisis de datos de lagos, el aprendizaje profundo ofrece nuevas perspectivas para la modelación de variables clave, como pueden ser nivel del agua, precipitación, datos de temperatura, curvas de borde, etc. \cite{higham2019}.
+
+Tradicionalmente, el análisis de datos de lagos se ha basado en métodos estadísticos y modelos numéricos, sin embargo, estos enfoques pueden tener limitaciones cuando se trata de grandes volúmenes de datos o de la modelación de fenómenos no lineales \cite{ayus2023,higham2019}. Aquí es donde el aprendizaje profundo muestra su potencial, ya que puede aprender automáticamente las características relevantes de los datos, sin necesidad de una ingeniería manual de las mismas \cite{bentivoglio2022}.
+
+La relación entre el aprendizaje profundo y el análisis de datos de lagos se puede observar en las siguientes áreas:
+\begin{itemize}[label=\textbullet]
+    \item \textbf{Modelación del nivel del agua:} Las redes neuronales recurrentes pueden estimar futuros niveles de agua basándose en el análisis de series temporales históricas, lo que es fundamental para la prevención de inundaciones \cite{ayus2023}.
+    \item \textbf{Modelado hidrológico:} El aprendizaje profundo permite construir modelos hidrológicos más precisos y eficientes \cite{bentivoglio2022}. Las redes neuronales profundas pueden descubrir patrones ocultos en los datos hidrológicos y, por lo tanto, mejorar el rendimiento de la modelación \cite{bentivoglio2022}.
+    \item \textbf{Clasificación de imágenes de inundaciones:} Las redes neuronales son especialmente útiles para analizar imágenes satelitales para mapear la extensión de inundaciones en áreas lacustres \cite{bentivoglio2022}. Esto es esencial para la respuesta a emergencias y la evaluación de riesgos \cite{bentivoglio2022}.
+    \item \textbf{Análisis de la susceptibilidad a inundaciones:} Las técnicas de aprendizaje profundo pueden identificar áreas propensas a inundaciones en función de factores físicos y ambientales \cite{bentivoglio2022}. Esto puede ayudar en la planificación \cite{bentivoglio2022}.
+\end{itemize}
+
+En el estudio realizado en \cite{ayus2023} se compara el rendimiento de modelos de aprendizaje automático y aprendizaje profundo para estimar el nivel del agua en el lago Jezioro Kosno en Polonia.
+
+El aprendizaje profundo ha demostrado ser una herramienta prometedora para mejorar la precisión y eficiencia del análisis de datos de lagos. Su capacidad para procesar grandes volúmenes de datos y modelar fenómenos complejos lo convierte en un activo valioso para la gestión sostenible de los recursos hídricos y la prevención de desastres naturales \cite{bentivoglio2022}. A medida que la tecnología continúa evolucionando, se espera que las aplicaciones del aprendizaje profundo en el análisis de datos de lagos se expandan y proporcionen soluciones más innovadoras \cite{bentivoglio2022,higham2019}.
+
+Dado que el aprendizaje profundo ha demostrado ser útil para el análisis y la predicción de niveles de agua en lagos \cite{ayus2023}, el Lago de Valencia, que experimenta fluctuaciones en sus niveles debido a factores climáticos y actividades humanas, podría beneficiarse enormemente de estas técnicas. El aprendizaje profundo puede modelar las series temporales de datos del nivel del agua y otros datos relevantes, como la precipitación, para realizar estimaciones precisas y así permitir una mejor gestión del agua y la prevención de inundaciones. En resumen, un análisis profundo del Lago de Valencia con aprendizaje profundo permitiría entender mejor su comportamiento, estimar los niveles de agua y mitigar los riesgos asociados a las inundaciones, contribuyendo así a la gestión sostenible de este importante cuerpo de agua.
+
+
+\section{Objetivo Principal}
+Analizar datos relacionados a variables de lagos, empleando herramientas del Aprendizaje Profundo, utilizando datos provenientes del Lago de Valencia para realizar estimaciones a corto y mediano plazo.
+
+\section{Objetivos Específicos}
+\begin{itemize}
+    \item Desarrollar modelos de aprendizaje profundo para la estimación de distintas variables del Lago de Valencia.
+    \item Analizar la influencia de variables hidrometeorológicas en el comportamiento del Lago de Valencia mediante modelos de aprendizaje profundo.
+    \item Evaluar el rendimiento de diferentes arquitecturas de aprendizaje profundo en el análisis de datos del Lago de Valencia.
+\end{itemize}
+
+\subsection{Actividades}
+A continuaci\'on \cite{bentivoglio2022} ah puess aqui 
+se presenta un conjunto de actividades que se llevarán a cabo para cumplir con los objetivos planteados:
+\begin{enumerate}
+    \item \textbf{Recopilación y Preparación de Datos:}
+    \begin{itemize}
+        \item Recopilar datos históricos del Lago de Valencia, incluyendo niveles de agua, precipitación, temperatura, entre otros.
+        \item Realizar la limpieza y preprocesamiento de los datos, incluyendo la gestión de valores faltantes y la normalización de los datos.
+        \item Dividir los datos en conjuntos de entrenamiento, validación y prueba.
+    \end{itemize}
+    \item \textbf{Desarrollo de Modelos de Aprendizaje Profundo:}
+    \begin{itemize}
+        \item Diseñar y entrenar modelos de redes neuronales recurrentes (RNN), como LSTM o GRU, para la estimación de niveles de agua.
+        \item Explorar el uso de redes neuronales convolucionales (CNN) para el análisis de imágenes satelitales del lago.
+        \item Implementar modelos híbridos que combinen diferentes arquitecturas de aprendizaje profundo.
+    \end{itemize}
+    \item \textbf{Análisis de Influencia de Variables:}
+    \begin{itemize}
+        \item Utilizar técnicas de análisis de sensibilidad para determinar la influencia de las variables hidrometeorológicas en el comportamiento del lago.
+        \item Incorporar variables adicionales, como datos de uso del suelo y actividades humanas, en los modelos.
+        \item Analizar la correlación entre las variables y el nivel del agua.
+    \end{itemize}
+    \item \textbf{Evaluación y Comparación de Modelos:}
+    \begin{itemize}
+        \item Evaluar el rendimiento de los modelos utilizando métricas apropiadas, como el error cuadrático medio (MSE) y el error absoluto medio (MAE).
+        \item Comparar el rendimiento de diferentes arquitecturas de aprendizaje profundo.
+        \item Realizar ajustes y optimizaciones en los modelos para mejorar su precisión.
+    \end{itemize}
+    \item \textbf{Generación de Estimaciones:}
+    \begin{itemize}
+        \item Utilizar los modelos entrenados para generar estimaciones a corto y mediano plazo del nivel del agua.
+        \item Analizar la incertidumbre asociada a las estimaciones.
+    \end{itemize}
+\end{enumerate}
+
+\printbibliography
+
+\end{document}
