@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  6 MAR 2025 17:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  6 MAR 2025 23:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -813,7 +813,7 @@ LaTeX Info: Redefining \% on input line 1.
 [23
 
 ]
-<Editores.png, id=750, 730.22812pt x 331.2375pt>
+<Editores.png, id=756, 730.22812pt x 331.2375pt>
 File: Editores.png Graphic file (type png)
 <use Editores.png>
 Package pdftex.def Info: Editores.png  used on input line 87.
@@ -1018,7 +1018,7 @@ Overfull \vbox (3.01071pt too high) detected at line 271
 [67
 
 ]
-<Secciones.png, id=2000, 252.945pt x 205.5178pt>
+<Secciones.png, id=2006, 252.945pt x 205.5178pt>
 File: Secciones.png Graphic file (type png)
 <use Secciones.png>
 Package pdftex.def Info: Secciones.png  used on input line 277.
@@ -1217,7 +1217,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--34
 
  []
 
-<Referencias.png, id=2660, 348.55219pt x 123.46124pt>
+<Referencias.png, id=2666, 348.55219pt x 123.46124pt>
 File: Referencias.png Graphic file (type png)
 <use Referencias.png>
 Package pdftex.def Info: Referencias.png  used on input line 34.
@@ -1361,7 +1361,7 @@ Package epstopdf Info: Source file: <err_L4.eps>
 (epstopdf)             Command: <repstopdf --outfile=err_L4-eps-converted-to.pdf err_L4.eps>
 (epstopdf)             \includegraphics on input line 532.
 Package epstopdf Info: Output file is already uptodate.
-<err_L4-eps-converted-to.pdf, id=2753, 557.08125pt x 557.08125pt>
+<err_L4-eps-converted-to.pdf, id=2759, 557.08125pt x 557.08125pt>
 File: err_L4-eps-converted-to.pdf Graphic file (type pdf)
 <use err_L4-eps-converted-to.pdf>
 Package pdftex.def Info: err_L4-eps-converted-to.pdf  used on input line 532.
@@ -1940,6 +1940,102 @@ Overfull \hbox (24.00002pt too wide) in paragraph at lines 836--836
 [152
 
 ]
+Overfull \hbox (43.55136pt too wide) in paragraph at lines 953--953
+[][]\OT1/cmtt/m/n/10 @TipoDeRegistro\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Etiqueta,CampoA=\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Contenido\OMS/cmtt/m/n/10 g\OT1/cmtt/m/n/10 ,CampoB=\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Contenido\OMS/cmtt/m/n/10 g\OT1/cmtt/m/n/10 ,etc..\OMS/cmtt/m/n/10 g[]  
+ []
+
+
+
+[153
+
+]
+Overfull \hbox (43.55136pt too wide) in paragraph at lines 953--953
+[][]\OT1/cmtt/m/n/10 @TipoDeRegistro\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Etiqueta,CampoA=\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Contenido\OMS/cmtt/m/n/10 g\OT1/cmtt/m/n/10 ,CampoB=\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Contenido\OMS/cmtt/m/n/10 g\OT1/cmtt/m/n/10 ,etc..\OMS/cmtt/m/n/10 g[]  
+ []
+
+
+
+[154
+
+]
+Overfull \hbox (43.55136pt too wide) in paragraph at lines 953--953
+[][]\OT1/cmtt/m/n/10 @TipoDeRegistro\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Etiqueta,CampoA=\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Contenido\OMS/cmtt/m/n/10 g\OT1/cmtt/m/n/10 ,CampoB=\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Contenido\OMS/cmtt/m/n/10 g\OT1/cmtt/m/n/10 ,etc..\OMS/cmtt/m/n/10 g[]  
+ []
+
+
+
+[155
+
+]
+Overfull \hbox (43.55136pt too wide) in paragraph at lines 953--953
+[][]\OT1/cmtt/m/n/10 @TipoDeRegistro\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Etiqueta,CampoA=\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Contenido\OMS/cmtt/m/n/10 g\OT1/cmtt/m/n/10 ,CampoB=\OMS/cmtt/m/n/10 f\OT1/cmtt/m/n/10 Contenido\OMS/cmtt/m/n/10 g\OT1/cmtt/m/n/10 ,etc..\OMS/cmtt/m/n/10 g[]  
+ []
+
+
+
+[156
+
+]
+Overfull \vbox (1.84402pt too high) detected at line 986
+ []
+
+
+
+[157
+
+]
+
+[158
+
+]
+
+[159
+
+]
+
+[160
+
+]
+
+[161
+
+]
+
+[162
+
+]
+
+[163
+
+]
+
+[164
+
+]
+
+[165
+
+]
+
+[166
+
+]
+
+[167
+
+]
+
+[168
+
+]
+
+[169
+
+]
+
+[170
+
+]
 \tf@nav=\write6
 \openout6 = `curso.nav'.
 
@@ -1962,21 +2058,21 @@ L3 programming layer <2024-05-27>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `curso.out' has not changed.
-(rerunfilecheck)             Checksum: 7448815554090C51A18060959CC014AF;1884.
+(rerunfilecheck)             Checksum: 62C9B1E7245EE0D292FFB8323679872B;2182.
  ) 
 Here is how much of TeX's memory you used:
- 25473 strings out of 473583
- 480927 string characters out of 5732336
+ 25529 strings out of 473583
+ 481703 string characters out of 5732336
  1958908 words of memory out of 5000000
- 47515 multiletter control sequences out of 15000+600000
+ 47534 multiletter control sequences out of 15000+600000
  571632 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,19n,123p,570b,893s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on curso.pdf (152 pages, 873790 bytes).
+Output written on curso.pdf (170 pages, 924222 bytes).
 PDF statistics:
- 4758 PDF objects out of 5155 (max. 8388607)
- 4244 compressed objects within 43 object streams
- 322 named destinations out of 1000 (max. 500000)
- 1409 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5263 PDF objects out of 6186 (max. 8388607)
+ 4715 compressed objects within 48 object streams
+ 359 named destinations out of 1000 (max. 500000)
+ 1453 words of extra memory for PDF output out of 10000 (max. 10000000)
 
