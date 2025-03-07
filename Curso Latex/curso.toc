@@ -15,3 +15,4 @@
 \beamer@sectionintoc {6}{Tablas}{109}{0}{6}
 \beamer@sectionintoc {7}{Flotantes}{129}{0}{7}
 \beamer@sectionintoc {8}{Bibliograf\'ia}{144}{0}{8}
+\beamer@subsectionintoc {8}{1}{Bases de datos de referencias bibliográficas}{153}{0}{8}

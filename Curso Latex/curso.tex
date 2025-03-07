@@ -511,7 +511,7 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
     \item Para importar im\'agenes en \LaTeX, se usa el paquete \texttt{\color{blue}graphicx},
      que añade el comando \texttt{\color{blue}includegraphics} a \LaTeX{}.
     \item<2-> El comando \texttt{\color{blue}includegraphics} toma un argumento obligatorio, que es el nombre del archivo de la imagen.
-    \item<3-> Se puede insertar ficheros EPS, PNG, JPG y PDF. Si dispone de varias versiones de la imagen entonces se puede escribir la extensión.
+    \item<3-> Se puede insertar archivos EPS, PNG, JPG y PDF. Si dispone de varias versiones de la imagen entonces se puede escribir la extensión.
   \end{itemize}
   \uncover<4->{
   \begin{tabular}{ll}
@@ -935,5 +935,92 @@ Por \textbackslash eqref\{eq:euler\}, Tenemos \ldots\\
   \end{itemize}
 \end{frame}
 %%%%%%
+\subsection{Bases de datos de referencias bibliográficas}
+\begin{frame}{Bases de datos de referencias bibliográficas}
+  \begin{itemize}
+    \item<1-> Una forma más organizada de trabajar, es construir una base de datos bibliográfica y emplear posteriormente
+    el programa BibTex para construir nuestra sección de referencias.
+    \item<2->La base de datos bibliográfica consiste en uno (ó varios) archivos de extensión .bib, que contienen registros  con toda la información bibliográfica.
+    \item<3-> La sintaxis básica de un registro es:
+    
+    \texttt{\footnotesize\color{blue}@TipoDeRegistro\{Etiqueta,CampoA=\{Contenido\},CampoB=\{Contenido\},etc..\}}
+    
+    donde TipoDeRegistro denota qué clase de documento referenciamos, y Etiqueta va a ser la
+    etiqueta que debemos emplear como argumento del comando \texttt{\color{blue}cite} para citar la referencia en el documento.
+    \item<4-> Posteriormente, se debe especificar una serie de campos, algunos
+    obligatorios, y otros optativos, con la información de título, autores, año de publicación, etc...
+  \end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{Bases de datos de referencias bibliográficas}
+  \begin{itemize}
+    \item<1-> En el siguiente ejemplo se muestra el contenido de un archivo .bib
+    de bibliografía típico:
+    \begin{block}{}
+      \texttt{
+      \scriptsize
+      \color{blue}      
+      @article\{Thomas2008,\\
+  author  = \{Thomas, Christine M. and Liu, Tianbiao and Hall, Michael B.
+             and Darensbourg, Marcetta Y.\},\\
+  title   = \{Series of Mixed Valent \{Fe(II)Fe(I)\} Complexes That Model the
+             \{H(OX)\} State of [\{FeFe\}]Hydrogenase: Redox Properties,
+             Density-Functional Theory Investigation, and Reactivity with
+             Extrinsic \{CO\}\},\\
+  journal = \{Inorg. Chem.\},\\
+  year    = \{2008\},\\
+  volume  = \{47\},\\
+  number  = \{15\},\\
+  pages   = \{7009-7024\},\\
+  doi     = \{10.1021/ic800654a\},\\
+\}\\
+@book\{Graham1995,\\
+  author    = \{Ronald L. Graham and Donald E. Knuth and Oren Patashnik\},\\
+  title     = \{Concrete Mathematics\},\\
+  publisher = \{Addison-Wesley\},\\
+  year      = \{1995\},\\
+\}\\
+      }
+    \end{block}
+  \end{itemize}
+\end{frame}
+%%%%%%%
+\begin{frame}{Bases de datos de referencias bibliográficas}
+  \begin{itemize}
+    \item<1-> Una vez construido el archivo .bib (que debe estar colocado en el directorio del documento), se colocan a lo largo del documento los diversos comandos
+    \texttt{\color{blue}cite}.
+    \item<2-> La sección de biliografía puede construirse automáticamente colocando
+    en el lugar adecuado (generalmente, al final) los comandos:
+    
+    \texttt{\color{blue}bibliography\{NombreArchivo\}} y \texttt{\color{blue}bibliographystyle\{style\}}
 
+    %\bibliography{NombreFichero} \bibliographystyle{style}
+    \item<3->El primero tiene como argumento el nombre del archivo (sin incluir extensión) y se encarga de construir la lista de referencias bibliográficas.
+    \item<4->El segundo, especifica el estilo bibliográfico a emplear para construir las referencias.
+    \end{itemize}
+  \end{frame}
+  %%%%
+  \begin{frame}{Bases de datos de referencias bibliográficas}
+    \begin{itemize}
+      \item<1-> Existen cuatro estilos
+      estándar disponibles en LATEX:
+      \begin{itemize}
+        \item<2-> \texttt{\color{blue}unsrt}: Las entradas se numeran, y aparecen en la lista según el orden en el que son citadas a lo
+        largo del documento
+        \item<3-> \texttt{\color{blue}plain}: Análogo a unsrt, pero las entradas son ordenadas alfabéticamente. El orden es
+        autor, después año, y por último título.
+        \item<4-> \texttt{\color{blue}alpha}: Las referencias se identifican con el nombre de autor y año de publicación. Se ordenan por etiqueta, autor, año y título.
+        \item<5-> \texttt{\color{blue}abbrv}: Como plain, pero con los nombres de autores, y revistas abreviados.        
+      \end{itemize}
+    \end{itemize}
+  \end{frame}
+  %%%%
+  \begin{frame}{Bases de datos de referencias bibliográficas}
+    \begin{itemize}
+      \item<1-> La compilación del documento se efectúa entonces primero ejecutando latex archivo.tex,
+      \item<2-> Posteriormente se ejecuta bibtex archivo (lo cual genera la lista de bibliografía en un archivo auxiliar)
+      \item<3-> Finalmente se termina con una segunda compilación en latex del documento fuente (que incluye en el mismo la lista de referencias).
+      \item<4-> El paquete \texttt{\color{blue}biblatex} permite la incorporación de bases de datos de referencias bibliográficas y extendiendo la funcionalidad de \LaTeX.
+    \end{itemize}
+  \end{frame}
 \end{document}
