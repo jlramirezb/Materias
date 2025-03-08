@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  8 MAR 2025 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  8 MAR 2025 15:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -821,7 +821,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [14
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 67--67
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 70--70
  [][][][]  
  []
 
@@ -835,7 +835,16 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [15
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 75--75
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[16
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 83--83
  [][][][]  
  []
 
@@ -846,7 +855,62 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
  [][][][]  
  []
 
-[16
+[17
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[18
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 108--108
+ [][][][]  
+ []
+
+
+Overfull \vbox (2.99301pt too high) detected at line 108
+ []
+
+
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[19
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 123--123
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[20
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 131--131
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[21
 
 ]
 \tf@nav=\write6
@@ -864,21 +928,21 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `UmidadIV.out' has not changed.
-(rerunfilecheck)             Checksum: 6E87B7C9E4A66C2DF51FF417060F763F;258.
+(rerunfilecheck)             Checksum: 13D1EC3D2F6B8C08DF4937AB3CCC8414;425.
  ) 
 Here is how much of TeX's memory you used:
- 21909 strings out of 473583
- 423985 string characters out of 5732336
- 1940908 words of memory out of 5000000
- 44310 multiletter control sequences out of 15000+600000
- 564199 words of font info for 59 fonts, out of 8000000 for 9000
+ 21969 strings out of 473583
+ 425392 string characters out of 5732336
+ 1949908 words of memory out of 5000000
+ 44360 multiletter control sequences out of 15000+600000
+ 565447 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,443b,844s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on UmidadIV.pdf (16 pages, 145858 bytes).
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on UmidadIV.pdf (21 pages, 192953 bytes).
 PDF statistics:
- 533 PDF objects out of 1000 (max. 8388607)
- 469 compressed objects within 5 object streams
- 36 named destinations out of 1000 (max. 500000)
- 115 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 725 PDF objects out of 1000 (max. 8388607)
+ 625 compressed objects within 7 object streams
+ 46 named destinations out of 1000 (max. 500000)
+ 247 words of extra memory for PDF output out of 10000 (max. 10000000)
 

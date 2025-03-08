@@ -56,17 +56,73 @@
   \end{itemize}
 \end{frame}
 %%%%%
-    
-
-\section{Tema 1}
-\begin{frame}{Tema 1}
+\section{Diferenciaci\'on Num\'erica}
+\begin{frame}{Diferenciaci\'on Num\'erica}
     \begin{itemize}
-        \item Contenido del tema 1
-        \item Explicación
+        \item<1-> La diferenciaci\'on num\'erica puede calcularse usando la definici\'on de derivada
+        \begin{block}{}
+          $$
+          f'(x_0) = \lim_{h\rightarrow0}\frac{f(x_0+h)-f(x_0)}{h}
+          $$
+        \end{block}
+        \item<2-> Tomando una $h$ peque\~na. Si $h > 0$ se llama f\'ormula de diferencia progresiva, si $h < 0$ se llama f\'ormula de diferencia regresiva.
     \end{itemize}
 \end{frame}
-
-\section{Tema 2}
+%%%%%%
+\begin{frame}{Diferenciaci\'on Num\'erica}
+  \begin{itemize}
+    \item Para calcular la aproximaci\'on num\'erica de la derivada en un punto, se puede generar una sucesi\'on $\{h_k\}$, tal que $h_k \to 0$ y se calcula el cociente
+    \begin{block}{}
+      $$
+      D_k = \dfrac{f(x_0+h_k)-f(x_0)}{h_k} = \dfrac{f_k-f_0}{h_k}
+      $$
+    \end{block}
+    \item<2-> Generando entonces una sucesi\'on $D_1, D_2, D_3,\ldots, D_n$ y tomando a $D_n$ como la aproximaci\'on deseada, el problema est\'a en conocer cual valor de $h_k$ garantiza una buena aproximaci\'on
+    \item Si se toma un valor muy grande de $h_k$ la aproximaci\'on no es aceptable y si $h_k$ es muy peque\~no la diferencia $f(x + h_k) - f(x) \approx 0$ ocurre una p\'erdida de d\'igitos significativos
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Diferenciaci\'on Num\'erica}
+  \begin{itemize}
+    \item La siguiente tabla muestra los cocientes $D_k$ para aproximar la derivada de $f(x) = \sin(x)$ en $x = 2$ cuyo valor con nueve cifras significativas es $f'(2) = -0.416146837$.
+  \end{itemize}
+  \begin{table}[!ht]
+    \small
+    \begin{center}
+      \begin{tabular}{|c||c||c||c|}\hline
+      $h_k$  & $f_k$ & $f_k-f$ & $\frac{f_k-f}{h_k}$ \\\hline\hline
+    $10^{-1}$ & 0.8632093666 & -0.0460880602 & -0.4608806018\\
+    $10^{-2}$ & 0.9050905633 & -0.0042068635 & -0.4206863500\\
+    $10^{-3}$ & 0.9088808254 & -0.0004166014 & -0.4166014159\\
+    $10^{-4}$ & 0.9092558076 & -0.0000416192 & -0.4161923007\\
+    $10^{-5}$ & 0.9092932653 & -0.0000041615 & -0.4161513830\\
+    $10^{-6}$ & 0.9092970107 & -0.0000004161 & -0.4161472913\\
+    $10^{-7}$ & 0.9092973852 & -0.0000000416 & -0.4161468814\\
+    $10^{-8}$ & 0.9092974227 & -0.0000000042 & -0.4161468392\\
+    $10^{-9}$ & 0.9092974264 & -0.0000000004 & -0.4161468947\\
+    $10^{-10}$& 0.9092974268 & -0.0000000000 & -0.4161471168\\\hline
+    \end{tabular}
+     \caption{Aproximaci\'on del $(\sin(2))'=cos(2)$.}
+     \end{center}     
+    \end{table}    
+\end{frame}
+%%%%%
+\begin{frame}{Diferenciaci\'on Num\'erica}
+  \begin{itemize}
+    \item ?`Cu\'an buena es esta aproximaci\'on de la derivada? Por el Teorema de Taylor se sabe que:
+    $$
+    f(x_0+h) = f(x_0) + f'(x_0)h + \frac{f''(\xi_h)h^2}{2} 
+    $$         
+    donde $\xi_h$ est\'a entre $x_0$ y $x_0+h$.
+    \item Despejando ahora a $f'(x_0)$ en esta f\'ormula se tiene que:
+    $$
+    f'(x_0) = \frac{f(x_0+h)-f(x_0)}{h} - \frac{hf''(\xi_h)}{2}
+    $$
+    \item Esta f\'ormula nos dice que se aproxima a $f'(x_0)$ con un error proporcional a $h$, es decir, $f'(x_0) \approx O(h)$.    
+  \end{itemize}
+\end{frame}
+%%%%%
+\section{Integraci\'on Num\'erica}
 \begin{frame}{Tema 2}
     \begin{itemize}
         \item Contenido del tema 2

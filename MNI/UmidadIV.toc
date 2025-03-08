@@ -1,3 +1,3 @@
 \beamer@sectionintoc {1}{Introducción}{4}{0}{1}
-\beamer@sectionintoc {2}{Tema 1}{15}{0}{2}
-\beamer@sectionintoc {3}{Tema 2}{16}{0}{3}
+\beamer@sectionintoc {2}{Diferenciaci\'on Num\'erica}{15}{0}{2}
+\beamer@sectionintoc {3}{Integraci\'on Num\'erica}{21}{0}{3}
