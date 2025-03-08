@@ -1,0 +1,77 @@
+\documentclass[12pt]{beamer}
+\mode<presentation>
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amssymb,textcomp}
+%\usepackage{beamerthemesplit}
+\usepackage{beamerthemeBoadilla}
+\usefonttheme{serif}
+\title{Unidad IV: Diferenciaci\'on e Integraci\'on Num\'erica}
+\author{Prof. Jos\'e Luis Ram\'irez}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Contenido}
+  \tableofcontents
+\end{frame}
+
+\section{Introducción}
+\begin{frame}{Motivaci\'on}
+  El flujo de calor en la interfaz suelo-aire puede calcularse con la ley de Faraday
+  \begin{block}{}
+    $$
+    q = -k\rho C \frac{dT}{dz}
+    $$
+  \end{block}
+  
+  Donde $q =$ flujo de calor, $k =$ coeficiente de difusividad t\'ermica, $\rho =$ la densidad del suelo, $C =$ calor espec\'ifico del suelo.
+\end{frame}
+%%%%%%
+\begin{frame}{Motivaci\'on}
+  \begin{itemize}
+    \item Las situaciones en las cuales se requiere el uso de la diferenciaci\'on num\'erica, ocurren cuando el conjunto de datos est\'a dado en la forma discreta y cuando la funci\'on que se va a derivar es complicada, por lo que la derivaci\'on anal\'itica es dif\'icil, cuando no imposible.
+    \item<2-> Entonces, las soluciones num\'ericas son preferibles a las anal\'iticas, siempre que la funci\'on sea f\'acil de evaluar.
+    \item<3-> Problemas que han sido estudiados, involucran en cierto modo el c\'alculo de la derivada de una funci\'on evaluada en un punto, como por ejemplo:
+    \begin{enumerate}
+      \item<4-> Interpolaci\'on C\'ubica de Trazador Sujeto.
+      \item<5-> M\'etodo de Newton-Raphson.
+      \item<6-> Ecuaciones Diferenciales.
+    \end{enumerate}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Motivaci\'on}
+    Hay distintas razones por la que la integraci\'on num\'erica se realiza.
+    \begin{itemize}
+    \item<2-> El integrando $f(x)$ puede ser conocido solamente en ciertos puntos, tales como: obtenidos por muestreo. Algunos sistemas encajados y otras aplicaciones inform\'aticas pueden necesitar la integraci\'on num\'erica por esta raz\'on.    
+    \item<3-> Un f\'ormula para el integrando puede ser conocido, pero puede ser dif\'icil o imposible de encontrar su antiderivada. Un ejemplo de tal integrando es $f(x) = e^{-x^2}$, cuya antiderivada no se puede escribir en forma elemental.    
+    \item<4-> Puede ser posible encontrar una antiderivada simb\'olicamente, pero puede ser m\'as f\'acil computar una aproximaci\'on num\'erica que computar la antiderivada. \'Ese puede ser el caso si la antiderivada se da como una serie o producto infinita, o si su evaluaci\'on requiere una funci\'on especial la cu\'al no est\'a disponible.
+  \end{itemize}
+\end{frame}
+%%%%%
+    
+
+\section{Tema 1}
+\begin{frame}{Tema 1}
+    \begin{itemize}
+        \item Contenido del tema 1
+        \item Explicación
+    \end{itemize}
+\end{frame}
+
+\section{Tema 2}
+\begin{frame}{Tema 2}
+    \begin{itemize}
+        \item Contenido del tema 2
+        \item Explicación $a$
+    \end{itemize}
+\end{frame}
+\end{document}
+
