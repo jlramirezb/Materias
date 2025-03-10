@@ -452,4 +452,52 @@
     \end{tabular}}\\[10pt]
     Parece que el valor propio dominante va a ser $\lambda = 6$ y su vector propio asociado $(1,-1,1)$.
   \end{frame}
-  \end{document}
+  %%%%%
+  \subsection{M\'etodo de la Potencia Inversa}
+  \begin{frame}{M\'etodo de la Potencia Inversa}
+    \begin{block}{Teorema:}
+      Si $\lambda$ es un autovalor de la matriz $A$ entonces $\lambda^{-1}$ es autovalor
+      de $A^{-1}$
+      \end{block}
+      \uncover<2->{
+Demostraci\'on:
+
+Por ser $\lambda$ un autovalor de $A$ y sea $x$ el autovector asociado, se
+cumple que
+$$
+Ax = \lambda x \Rightarrow x = A^{-1}\lambda x \Rightarrow \lambda^{-1}x = A^{-1}x
+$$
+por lo tanto $\lambda^{-1}$ es autovalor de $A^{-1}$.}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo de la Potencia Inversa}
+  \begin{itemize}
+    \item Consideraremos que los autovalores de $A$ ($A$ matriz invertible) pueden ser ordenados de manera que se cumpla:
+    $$
+    0 < |\lambda_n| < |\lambda_{n-1}| \leq \cdots \leq |\lambda_2| \leq |\lambda_1|
+    $$
+    \item<2-> Por el teorema anterior se puede verificar que tambi\'en se cumplir\'a:
+    $$
+    |\lambda_n^{-1}| > |\lambda_{n-1}^{-1}| \geq \cdots \geq |\lambda_2^{-1}| \geq |\lambda_1^{-1}| > 0
+    $$
+    \item<3-> Por lo que si aplicamos el m\'etodo de la potencia a $A^{-1}$, obtendremos el
+    valor $\frac{1}{|\lambda_n|}$; y así obtener el valor de $\lambda_n$, el menor valor propio de $A$.
+  \end{itemize}
+  \end{frame}  
+  %%%%%%
+  \begin{frame}{Consideraciones}
+    \begin{itemize}
+      \item<1-> Calcular la inversa de $A$ es muy costoso, por lo tanto en su lugar se 
+      resolver\'a un sistema lineal de la manera siguiente:
+      \item<2-> la iteraci\'on del m\'etodo de la potencia aplicado a la matriz $A^{-1}$ tiene la forma:
+      $$
+      z^{(k)} = A^{-1}q^{(k-1)} 
+      $$
+      \item<3-> pero esto es equivalente a resolver el sistema lineal 
+      $$
+      Az^{(k)} = q^{(k-1)}
+      $$
+    \end{itemize}    
+  \end{frame}
+  %%%%%%      
+\end{document}
