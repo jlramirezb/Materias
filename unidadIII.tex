@@ -488,14 +488,14 @@ por lo tanto $\lambda^{-1}$ es autovalor de $A^{-1}$.}
   \begin{frame}{Consideraciones}
     \begin{itemize}
       \item<1-> Calcular la inversa de $A$ es muy costoso, por lo tanto en su lugar se 
-      resolver\'a un sistema lineal de la manera siguiente:
-      \item<2-> la iteraci\'on del m\'etodo de la potencia aplicado a la matriz $A^{-1}$ tiene la forma:
+      resolver\'a un sistema lineal de la  siguiente manera:
+      \item<2-> La iteraci\'on del m\'etodo de la potencia aplicado a la matriz $A^{-1}$ tiene la forma:
       $$
-      z^{(k)} = A^{-1}q^{(k-1)} 
+      y^{(k)} = A^{-1}x^{(k-1)} 
       $$
-      \item<3-> pero esto es equivalente a resolver el sistema lineal 
+      \item<3-> Lo cual es equivalente a resolver el sistema lineal 
       $$
-      Az^{(k)} = q^{(k-1)}
+      Ay^{(k)} = x^{(k-1)}
       $$
     \end{itemize}    
   \end{frame}
