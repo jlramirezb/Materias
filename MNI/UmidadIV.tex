@@ -5,6 +5,7 @@
 \usepackage{amssymb,textcomp}
 %\usepackage{beamerthemesplit}
 \usepackage{beamerthemeBoadilla}
+
 \usefonttheme{serif}
 \title{Unidad IV: Diferenciaci\'on e Integraci\'on Num\'erica}
 \author{Prof. Jos\'e Luis Ram\'irez}
@@ -298,7 +299,175 @@ f'(x_2) & = \frac{f(x_2-2h)-4f(x_2-h)+3f(x_2)}{2h} + \frac{f'''(\xi)}{3}h^2\nonu
   \end{itemize}
 \end{frame}
 %%%%%
-\section{Integraci\'on Num\'erica}
+\subsection{Extrapolaci\'on de Richardson}
+\begin{frame}{Extrapolaci\'on de Richardson}
+  \begin{itemize}
+    \item El proceso de obtener una estimaci\'on mejorada para el valor de Integrales, Derivadas, Ecuaciones Diferenciales, etc., con base
+    en dos o m\'as aplicaciones de una f\'ormula, empleando diferentes longitudes de intervalo, se denomina Extrapolaci\'on.
+    \item<2-> Uno de los m\'os conocidos es el de Extrapolaci\'on de Richardson o Aproximaci\'on diferida al l\'imite.
+    \item<3-> Supongase que $G(h)$ es una expresi\'on que aproxima a una cantidad $G$
+    \item<4-> entonces se tiene que $G - G(h) = E_T$ , donde $E_T$ es
+    el error de truncamiento que se comete al aproximar a $G$ por $G(h)$.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Extrapolaci\'on de Richardson}
+  \begin{itemize}
+    \item<1-> Suponiendo:
+    $$
+    E_T = c_1 h + c_2 h^2 + c_3 h^3 + c_4 h^4 + \cdots,
+    $$
+    luego
+    $$
+     G = G(h) + c_1 h + c_2 h^2 + c_3 h^3 + c_4 h^4 + \cdots \qquad h>0
+    $$
+    \item<2-> Tomando $h=\dfrac{h}{2}$, entonces
+    $$
+    G = G\left(\dfrac{h}{2}\right) + c_1 \dfrac{h}{2} + c_2 \dfrac{h^2}{4} + c_3 \dfrac{h^3}{8} + c_4 \dfrac{h^4}{16} + \cdots
+    \qquad h>0 
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Extrapolaci\'on de Richardson}
+  \begin{itemize}
+    \item<1-> Si se multiplica por 2 a la \'ultima ecuaci\'ony se le resta $G$, entonces
+    \small{
+    $$
+    2G-G = 2G\left(\dfrac{h}{2}\right)+ c_1 h + c_2 \dfrac{h^2}{2} + c_3\dfrac{h^3}{4} + \cdots
+    - G(h) - c_1 h - c_2 h^2 - c_3 h^3 - \cdots 
+    $$}
+    \item<2-> o sea que:
+    $$
+    G = 2G\left(\dfrac{h}{2}\right)- G(h)- c_2 \dfrac{h^2}{2} - c_3 \dfrac{3h^3}{4} - c_4\dfrac{7h^4}{8} - \cdots
+    $$
+    \item<3-> luego
+    $$
+    G = \left[G\left(\dfrac{h}{2}\right)+\left(G\left(\dfrac{h}{2}\right)-G(h)\right)\right]- c_2 \dfrac{h^2}{2} - c_3 
+    \dfrac{3h^3}{4} - c_4\dfrac{7h^4}{8} - \cdots
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Extrapolaci\'on de Richardson}
+  \begin{itemize}
+    \item Para simplificar los c\'alculos denotese $G(h) \equiv G_1(h)$, la expresi\'on para $O(h^2)$, es entonces
+    $$
+    G = G_2(h) - c_2 \dfrac{h^2}{2} - c_3\dfrac{3h^3}{4} - c_4\dfrac{7h^4}{8} - \cdots
+    $$
+    donde $G_2(h) = G_1\left(\dfrac{h}{2}\right)+\left(G_1\left(\dfrac{h}{2}\right)-G_1(h)\right)$
+  \end{itemize}  
+\end{frame}
+%%%%%
+\begin{frame}{Extrapolaci\'on de Richardson}
+  \begin{itemize}
+    \item Al igual que antes reemplazamos  $h$ por $\dfrac{h}{2}$, se tiene que
+    $$
+     G = G_2\left(\dfrac{h}{2}\right) - c_2 \dfrac{h^2}{8} - c_3\dfrac{3h^3}{32} - c_4\dfrac{7h^4}{128} - \cdots
+    $$
+    \item<2-> Restando cuatro veces esta ecuaci\'on a la original se obtiene:
+    $$
+    4G-G = 4G_2\left(\dfrac{h}{2}\right) -G_2(h)- c_2 \dfrac{h^2}{2} - c_3\dfrac{3h^3}{8} - \cdots + 
+    c_2 \dfrac{h^2}{2} + c_3\dfrac{3h^3}{4} + \cdots
+    $$  
+    \item<3-> o sea que
+    $$
+    3G = 4G_2\left(\dfrac{h}{2}\right) -G_2(h)+ c_3\dfrac{3h^3}{8} + c_4\dfrac{21h^4}{32} + \cdots
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Extrapolaci\'on de Richardson}
+  \begin{itemize}
+    \item luego
+    $$
+    G = \left[G_2\left(\dfrac{h}{2}\right)+\dfrac{G_2\left(\dfrac{h}{2}\right)-G_2(h)}{3}\right]+ c_3\dfrac{h^3}{8} + 
+    c_4\dfrac{7h^4}{32} + \cdots
+    $$
+    \item<2-> Denotando
+    $$
+    G_3(h) = G_2\left(\dfrac{h}{2}\right)+\dfrac{G_2\left(\dfrac{h}{2}\right)-G_2(h)}{3}
+    $$
+    se tiene la expresi\'on para $O(h^3)$ dada por    
+    $$
+     G = G_3(h) + c_3\dfrac{h^3}{8} + c_4\dfrac{7h^4}{32} + \cdots
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Extrapolaci\'on de Richardson}
+  \begin{itemize}
+    \item reemplazando $h$ por $\dfrac{h}{2}$, se tiene que
+    $$
+      G = G_3\left(\dfrac{h}{2}\right) + \dfrac{h^3}{64}c_3 + \dfrac{7h^4}{512}c_4 + \cdots
+    $$
+    \item<2-> Restando ocho veces esta ecuaci\'on a la ecuaci\'on original se tiene que 
+    $$
+    7G = 8G_3\left(\dfrac{h}{2}\right) -G_3(h)- c_4\dfrac{7h^4}{64} - \cdots 
+    $$
+    \item<3-> o sea que
+    $$
+    7G = 7G_3\left(\dfrac{h}{2}\right)+G_3\left(\dfrac{h}{2}\right) -G_3(h)- c_4\dfrac{7h^4}{64} - \cdots 
+    $$    
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Extrapolaci\'on de Richardson}
+  \begin{itemize}
+    \item Por lo tanto
+    $$
+    G=\left[G_3\left(\dfrac{h}{2}\right)+\dfrac{G_3\left(\dfrac{h}{2}\right)-G_3(h)}{7}\right] - c_4\dfrac{7h^4}{64} - 
+    \cdots
+    $$
+    \item<2-> As\'i que 
+      $$
+      G_4(h) = G_3\left(\dfrac{h}{2}\right)+\dfrac{G_3\left(\dfrac{h}{2}\right)-G_3(h)}{7}
+      $$
+      genera una aproximaci\'on $O(h^4)$ dada por
+      $$
+      G = G_4(h)- c_4\dfrac{7h^4}{64} - \cdots
+      $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Extrapolaci\'on de Richardson}
+  \begin{itemize}
+    \item Continuando con este proceso, la aproximaci\'on $O(h^n)$ es
+    $$
+    G = \left[G_{n-1}\left(\dfrac{h}{2}\right)+ \dfrac{G_{n-1}\left(\dfrac{h}{2}\right)-G_{n-1}(h)}{2^{n-1}-1}\right] + 
+    \sum_{j=1}^{n-1}c_jh^j + O(h^n)
+    $$
+    \item<2-> donde
+    $$
+    G = G_n(h) + \sum_{j=1}^{n-1}c_jh^j + O(h^n)
+    $$
+    siendo
+    $$
+    G_n(h) = \left[G_{n-1}\left(\dfrac{h}{2}\right)+ \dfrac{G_{n-1}\left(\dfrac{h}{2}\right)-G_{n-1}(h)}{2^{n-1}-1}\right]
+    $$    
+  \end{itemize}
+\end{frame}
+%%%%&
+\begin{frame}{Extrapolaci\'on de Richardson}
+  \begin{itemize}
+    \item La siguiente tabla muestra el uso de la Extrapolaci\'on de Richardson obtener una aproximaci\'on de orden 5, empleando 5 aproximaciones de orden 1
+  \end{itemize}
+    \begin{table}            
+      \begin{center}
+        \begin{tabular}{||l|llll||}\hline
+          $O(h)$ & $O(h^2)$ & $O(h^3)$ & $O(h^4)$ & $O(h^5)$ \\\hline
+          $G_1(h)$ &&&&\\
+          $G_1(h/2)$ & $G_2(h)$ &&&\\
+          $G_1(h/4)$ & $G_2(h/2)$ & $G_3(h)$ &&\\
+          $G_1(h/8)$ & $G_2(h/4)$ & $G_3(h/2)$ & $G_4(h)$ &\\
+          $G_1(h/16)$ & $G_2(h/8)$ & $G_3(h/4)$ & $G_4(h/2)$ & $G_5(h)$ \\\hline
+          $\uparrow$ {\color{red}Medidas} & \multicolumn{1}{c}{$\uparrow$} & \multicolumn{2}{c}{\color{red}Extrapolaciones} & \multicolumn{1}{c||}{$\uparrow$} \\\hline
+        \end{tabular}
+      \end{center}
+    \end{table}
+\end{frame}
+%%%%%
+\subsection{Integraci\'on Num\'erica}
 \begin{frame}{Tema 2}
     \begin{itemize}
         \item Contenido del tema 2

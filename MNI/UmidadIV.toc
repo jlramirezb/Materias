@@ -1,3 +1,4 @@
 \beamer@sectionintoc {1}{Introducción}{4}{0}{1}
 \beamer@sectionintoc {2}{Diferenciaci\'on Num\'erica}{15}{0}{2}
-\beamer@sectionintoc {3}{Integraci\'on Num\'erica}{53}{0}{3}
+\beamer@subsectionintoc {2}{1}{Extrapolaci\'on de Richardson}{53}{0}{2}
+\beamer@subsectionintoc {2}{2}{Integraci\'on Num\'erica}{76}{0}{2}
