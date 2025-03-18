@@ -499,5 +499,346 @@ por lo tanto $\lambda^{-1}$ es autovalor de $A^{-1}$.}
       $$
     \end{itemize}    
   \end{frame}
-  %%%%%%      
+  %%%%%%     
+  \begin{frame}{M\'etodo de la Potencia Inversa}
+    \begin{itemize}
+      \item Por lo tanto la iteraci\'on del m\'etodo de la potencia inversa es como sigue:
+      \item<2-> Dado $x^{(0)}$ vector inicial tal que $\|x^{(0)}\|_2 = 1$
+      \begin{eqnarray}
+         \mbox{Se resuelve } Az^{(k)} & = & x^{(k-1)}\nonumber\\
+         x^{(k)} & = & \frac{z^{(k)}}{\|z^{(k)}\|}\nonumber\\
+         \lambda^{(k)} & = & (x^{(k)})^tAx^{(k)}\nonumber
+      \end{eqnarray}
+      \item<3-> As\'i $\lambda^{(k)}$ es el autovalor dominante de $A^{-1}$ y por lo tanto 
+      $\dfrac{1}{\lambda^{(k)}}$ es el menor autovalor en m\'odulo de $A$.      
+    \end{itemize}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Ejemplo}
+    \begin{itemize}
+      \item
+    \end{itemize}
+    \end{frame}
+  %%%%%%
+  \begin{frame}{M\'etodo de la Potencia Trasladada}
+    \begin{itemize}
+      \item<1-> Un m\'etodo para acelerar la convergencia es el m\'etodo de la potencia trasladada que consiste en aplicar el m\'etodo de la potencia a la matriz $(A - \alpha I)$ en lugar de a la matriz $A$.
+      \uncover<2->{
+      \begin{block}{Teorema:}
+        Si $\lambda$ es autovalor de una matriz $A$ asociado a un autovector $v$ y $\alpha$ una
+     constante cualquiera se verifica que $\lambda-\alpha$ es un autovalor de $A - \alpha I$ asociado 
+     al mismo autovector $v$.
+      \end{block}}
+    \end{itemize} 
+    \uncover<3->{{\textbf Demostraci\'on}:
+
+    Se sabe por hip\'otesis que $Av = \lambda v$, por lo tanto
+    \begin{eqnarray}
+       Av = \lambda v &\Rightarrow& Av-\alpha v = \lambda v - \alpha v \nonumber\\
+      & \Rightarrow& (A-\alpha I)v = (\lambda-\alpha)v\nonumber
+    \end{eqnarray}}       
+  \end{frame}
+  %%%%%%
+  \begin{frame}{M\'etodo de la Potencia Trasladada}
+    \begin{itemize}
+      \item Mediante un desplazamiento $\alpha$, es posible hacer que 
+      $$
+      \left|\dfrac{\lambda_2-\alpha}{\lambda_1-\alpha}\right|<\left|\dfrac{\lambda_2}{\lambda_1}\right|
+      $$
+      y que, por lo tanto, la convergencia se acelere
+      \item<2-> Una vez obtenido el autovalor $\mu$ de $A-\alpha I$, el autovalor de $A$ se obtiene de la siguiente manera
+      $$
+      \lambda = \mu + \alpha
+      $$
+      \item<3->Esta t\'ecnica puede ser aplicada bien sea con el m\'etodo de las potencias o el m\'etodo de potencia inversa. En este \'ultimo caso se obtiene un valor aproximado de $\mu=(\lambda_k - \alpha)^{-1}$ y se puede recuperar $\lambda_k$ mediante la expresi\'on $\lambda_k = \mu^{-1}+\alpha$.
+      \end{itemize}
+    \end{frame}
+  %%%%%%
+  \begin{frame}{Ejemplo}
+  $$
+A=\left(\begin{array}{ccc}
+  5 & 1 & -1\\\
+  0 & 6 & 1\\
+  1 & 0 & -5\end{array}\right)
+  $$
+  Autovalores: $-4.88959806$, $4.81228115$, $6.07731691$\\
+  Tomando $x^0=(1,1,1)^t$. Para diferentes valores de $\alpha$, se obtiene lo siguiente para una tolerancia de $10^{-8}$ y un m\'aximo de 200 iteraciones.
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}\hline
+      $\alpha$ & Iters & Valor obtenido & Valor final & $\|Av-\lambda v\|$\\\hline
+      -6 & 109 & 12.07731699 & 6.07731699 &   1.18171325e-07\\\hline
+      4 & 14 &  -8.88959806 & -4.88959806 & 2.43544003e-08\\\hline
+      7 &  11 & -11.88959806 & -4.88959806 & 2.36718243e-09\\\hline
+      5.5 & 8 & -10.38959806 & -4.88959806 & 1.46884304e-09\\\hline
+    \end{tabular}
+  \end{center}
+  \end{frame}
+  %%%%%%
+  \begin{frame}{Potencia Trasladada}
+    \begin{itemize}
+      \item Los resultados anteriores se pueden resumir en la siguiente tabla
+\end{itemize}    
+      \begin{table}[ht]
+      \begin{center}
+      \label{resum_potencia}
+       \begin{tabular}{|p{3cm}|l|p{3cm}|}\hline
+       \textbf{M\'etodo} & \textbf{Ecuaci\'on} & \textbf{Valor computado}\\\hline
+        Potencia & $x^{(k+1)}=Ax^{(k)}$  & m\'aximo valor propio $\lambda_1$\\\hline
+        Potencia inversa & $Ax^{(k+1)}=x^{(k)}$ & m\'inimo valor propio $\lambda_n$\\\hline
+        Potencia con desplazamiento & $x^{(k+1)}=(A-\alpha I)x^{(k)}$ & valor propio m\'as alejado de $\alpha$\\\hline
+        Potencia inversa con desplazamiento & $(A-\alpha I)x^{(k+1)}=x^{(k)}$ & valor propio m\'as cercano a $\alpha$\\\hline
+      \end{tabular}
+      \caption{Resumen M\'etodos de Potencias.}
+      \end{center}
+      \end{table}
+  \end{frame}
+  %%%%%%
+\section{Factorizaci\'on QR}
+\begin{frame}{Descomposici\'on $QR$}
+La descomposici\'on $QR$ de una matriz $A$ cuadrada es tal que:
+\begin{block}{}
+    $$
+    A = QR
+    $$
+\end{block}
+\begin{itemize}
+   \item<2-> $Q$ es una matriz ortogonal ($Q^tQ=I$)
+   \item<3-> $R$ es una matriz triangular superior.
+   \item<4-> Si $A$ es no singular, entonces  esta factorizaci\'on es \'unica.
+\end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}
+\begin{block}{Definici\'on:}
+   Se dice que dos matrices $A$ y $B$ de tama\~no $n \times n$ son similares, si existe una matriz 
+no singular $S$ de tama\~no $n \times n$ tal que $A = S^{-1}BS$. Se dice entonces que $A$  es 
+similar a $B$ y por lo tanto $B$ es similar a $A$; mientras que $S$ es una transformaci\'on de 
+similitud. $A$ es unitariamente similar a $B$ si $S$ es unitaria.
+\end{block}
+\end{frame}
+%%%%%%
+\begin{frame}
+ \begin{block}{Proposici\'on:}
+ Sup\'ongase que $A$ y $B$  son matrices similares, es decir $A=S^{-1}BS$, entonces las siguientes
+ propiedades se satisfacen
+ \begin{itemize}
+    \item<2-> $A$ y $B$ poseen los mismos autovalores. De hecho $P_A(\lambda) \equiv P_B(\lambda)$.
+\item<3-> $Ax = \lambda x \Rightarrow B(P^{-1}x) = \lambda(P^{-1}x)$.
+\item<4-> $Bw = \lambda w \to B(Pw) = \lambda(Pw)$.
+ \end{itemize}
+ \end{block}
+\end{frame}
+%%%%%%
+\begin{frame}
+\begin{block}{Teorema:}
+Supongamos que $A$ y $B$ son matrices similares y que $\lambda$ es autovalor de $A$ con autovector 
+$x$ asociado. Etonces $\lambda$ es tambien autovector de $B$, y si $A=S^{-1}BS$ entonces $Sx$ es 
+autovector asociado a $\lambda$  para la matriz $B$.
+\end{block}
+\end{frame}
+%%%%%%%
+\begin{frame}{Demostraci\'on:}
+Dado que $A$ es similar a $B$, entonces:
+$$
+S^{-1}BS = A
+$$
+\uncover<2->{
+Supongamos $x \neq 0$, entonces
+$$
+S^{-1}BSx = Ax = \lambda x
+$$}
+\uncover<3->{
+Al multiplicar en la izquierda por la matriz $S$, obtenemos:
+$$
+BSx = \lambda Sx
+$$
+Puesto que $x \neq 0$ y $S$ es no singular $Sx \neq 0$.Por tanto, $Sx$ es un autovector de $B$
+asociado al autovalor $\lambda$.} 
+\end{frame}
+%%%%%%%
+\begin{frame}{Algoritmo $QR$}
+Dada una matriz cuadrada $A$, se puede hallar su factorizaci\'on $QR$, donde $Q$ es ortogonal y $R$ 
+triangular superior.
+
+Algoritmo para hallar los autovalores:
+\uncover<2->{
+\begin{block}{}
+ {\bf Inicio}: $A^0 = A = QR \mbox{ (n\'otese que $R=Q^tA$)}$
+
+$A^{1} = RQ = Q^tAQ \mbox{ ($A$ y $A^1$ son similares)}$
+ 
+\end{block}} 
+ \uncover<3->{
+\begin{block}{}
+ 
+{\bf Factorizar:} $A^1 = Q^1R^1$
+
+$A^2 = R^1Q^1 = Q^{1t}Q^tAQQ^1 \mbox{ (similar a $A^1$ y $A$)}$
+
+\end{block}} 
+ \uncover<4->{
+\begin{block}{}
+ 
+{\bf General}: Dado $A^m$
+
+{\bf Factorizar}: $A^m = Q^mR^m$
+
+$A^{m+1} = R^mQ^m (\mbox{ (similar a $A^m,\ldots,A^1,A$)}$
+ 
+\end{block}}
+\end{frame}
+%%%%%%%%
+\begin{frame}{Algoritmo $QR$}
+
+{\bf Nota:} Si los autovalores de $A$ satisfacen que:
+$$
+|\lambda_1|>|\lambda_2|>\cdots>|\lambda_n|
+$$
+Entonces, las iteraciones $A^m$  convergen  a una matriz triangular superior que posee sobre la 
+diagonal los autovalores de $A$
+$$
+A^m \to \left[\begin{array}{cccc}
+                 \lambda_1 & u & \cdots & u\\
+                 0 & \lambda_2 & \cdots & u\\
+                 \vdots & \ddots & \ddots & \vdots\\
+                 0 & 0 & \cdots & \lambda_n
+              \end{array}\right]
+$$
+\end{frame}
+%%%%%%%%
+\begin{frame}{Algoritmo $QR$}
+
+{\bf ?`C\'omo se calculan los autovectores?}
+\begin{itemize}
+   \item<2-> Notese que $A^m = Q^{(m-1)t}\cdots Q^{(1)t}Q^tAQQ^{(1)}\cdots Q^{(m-1)}$
+   \item<3-> Sea $Q^* = QQ^{(1)}\cdots Q^{(m-1)}$
+   \item<4-> Entonces $A^m = Q^{*t}AQ^*$
+\end{itemize}
+
+\uncover<5->{
+Si $A^m$ llegar\'a a ser diagonal, los autovectores de $A^m$ son $e_1$, $e_2$, $\ldots$, $e_n$. 
+Dado que $A^m$ y $A$ son matrices similares, los autovectores de $A$ son $(Q^{*t})^{-1}e_i=Q^*$, es 
+decir {\bf los autovectores de  $A$ son las columnas de $Q^*$}.}
+
+\uncover<6->{
+\begin{block}{}
+   Si $A$ es una matriz sim\'etrica ($A=A^t$),entonces los autovectores de $A$ son las columnas de 
+$Q^*$.  
+\end{block}
+}
+
+\end{frame}
+%%%%%%%%
+\begin{frame}{Tridiagonalizaci\'on}
+\begin{itemize}
+   \item<1-> Para que el algoritmo $QR$ sea eficaz, la matriz sim\'etrica debe poseer una forma 
+tridiagonal.
+\item<2-> Por ello, este algoritmo es un proceso de dos fases.
+\item<3-> A la matriz $A$ se le apli
+a una fase 1 que consiste en la tridiagonalizaci\'on de la 
+matriz.
+\item<4-> Luego se aplica una fase 2 que es diagonalizar la matriz obtenida en la fase 1.
+\end{itemize}
+\end{frame}
+%%%%%%%%
+\begin{frame}{Tridiagonalizaci\'on}
+\centering
+\includegraphics[scale=0.6]{trid.jpg}
+\end{frame}
+%%%%%%%%
+\begin{frame}{Tridiagonalizaci\'on}
+\begin{itemize}
+   \item Dado que la matriz $T$ es tambi\'en sim\'etrica, lo cual se asegura debido a las 
+transformaciones de similitud realizadas, entonces aplicar el m\'etodo $QR$ es m\'as econ\'omico.
+\item<2-> Solo se almacena la diagonal principal y la subdiagonal. 
+\item<3-> Y diagonalizar la matriz, consiste entonces en anular los $n - 1$ elementos de la 
+subdiagonal, es decir, la factorizaci\'on $QR$ de una matriz tridiagonal consiste en $n - 1$ 
+transformaciones de Givens.
+\end{itemize}
+\end{frame}
+%%%%%%
+\subsection{Aceleraci\'on}
+\begin{frame}{Aceleraci\'on de la convergencia del M\'etodo $QR$}
+\begin{itemize}
+   \item Para que la diagonalizaci\'on de la matriz tridiagonal obtenida se realice de una forma
+m\'as acelerada, se emplean t\'ecnicas conocidas como desplazamiento de la matriz de coeficientes. 
+\item<2-> La idea consiste en aplicar la factorizaci\'on $QR$ a la matriz $T - \sigma I$, en vez de 
+aplicarla solo a la matriz $T$, siendo $\sigma$ un valor que cambia el espectro entero de la 
+matriz a $\lambda_i - \sigma$.
+\item<3-> Si $A$ es la matriz original y $A_i$ es la matriz actual en la iteraci\'on $i$, se 
+selecciona un es
+alar $\sigma$, para hallar la factorizaci\'on $QR$ de $A_i - \sigma I$, y luego 
+devolver el desplazamiento realizado para definir la matriz $A_{i+1}$.
+\item<4-> Si el escalar $\sigma$ es seleccionado de modo tal que es muy cercano a un autovalor de
+ $A$, esta t\'ecnica acelerar\'a la rapidez de convergencia del m\'etodo.
+\end{itemize}
+\end{frame}
+%%%%%%%
+\begin{frame}{Aceleraci\'on de la convergencia del M\'etodo $QR$}
+\begin{itemize}
+   \item Se calcula la factorizaci\'on $QR$ de la matriz $A_i - \sigma I$
+   \begin{block}{}
+   $$
+      (A_i - \sigma I) = Q_iR_i
+      $$
+   \end{block}
+\item<2-> Luego se reversa el desplazamiento realizado, y se tiene que:
+\begin{block}{}
+$$
+   A_{i+1} = R_iQ_i + \sigma I
+   $$
+\end{block}
+\end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}
+\begin{itemize}
+   \item Comprobando que el desplazamiento realizado preserva la similitud, multiplicando la \'ultima ecuaci\'on por $Q$ se tiene:
+$$
+A_{i+1} = R_iQ_i + \sigma I \Rightarrow Q_i A_{i+1} = Q_i R_i Q_i + \sigma Q_iI
+$$ 
+ \item<2-> Se tiene que $Q_i R_i = A_i - \sigma I$, incorporando esta ecuaci\'on queda que:
+$$
+ Q_i A_{i+1} = (A_i - \sigma I)Q_i + \sigma Q_i I \Rightarrow Q_i A_{i+1} = A_i Q_i - \sigma Q_i + 
+\sigma Q_i
+$$ 
+ \item<3-> Multiplicando por $Q^t$ por el lado derecho llegamos a que:
+ $$
+Q_i A_{i+1} Q^t_i = A_i Q_i Q^t_i - \sigma Q_i Q^t_i + \sigma Q_i Q^t_i
+ $$
+ \item<4-> Cancelando los dos t\'erminos similares de la derecha, y dado que $Q^tQ = QQ^t = I$
+ se llega a que:
+ $$
+Q_iA_{i+1} Q^t_i = A_i
+$$
+\end{itemize}
+\end{frame}
+%%%%%%%
+\begin{frame}{Aceleraci\'on de la convergencia del M\'etodo $QR$}
+Existen diversas estrategias de desplazamientos, entre las cuales tenemos la de desplazamiento simple y desplazamiento impl\'icito, que pueden ser aplicados al m\'etodo $QR$.
+\begin{itemize}
+   \item<2-> {\bf Desplazamiento Simple}: esta t\'ecnica est\'a basada en el hecho de que un desplazamiento causado por un autovalor provoca una deflaci\'on, por lo tanto es sugerido seleccionar el desplazamiento $\sigma_k$ como un autovalor aproximado. Se puede seleccionar el elemento $(k, k)$ de la matriz $A^{(k)}$ como valor de desplazamiento.
+\item<3-> {\bf Desplazamiento Impl\'icito}: se busca el autovalor de la matriz $2 \times 2$ m\'as 
+cercano al elemento de la diagonal, la diferencia radica en llevar a cabo la transformaci\'on $QR$ 
+sin substraer el desplazamiento de los elementos de la diagonal, como es llevado a cabo en los 
+desplazamientos anteriores.
+\end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}{Criterio de Parada}
+\begin{itemize}
+   \item<1-> El algoritmo $QR$ presenta un proceso iterativo para hallar los autovalores de una 
+matriz $A$, pero 
+en el proceso se debe indicar cual es el criterio a seguir, para indicar que se ha hallado un 
+autovalor.
+\item<2-> Un criterio que se emplea en muchas de las implementaciones del algoritmo $QR$, es el propuesto por Wilkinson, en el que se compara el elemento de la subdiagonal con los elementos vecinos de la diagonal. De esta manera, en la iteraci\'on $k$, el elemento $a^{(k)}_{i,i-1}$ es
+colocado en cero si se cumple que
+$$
+a^{(k)}_{i,i-1} \leq u\left(|a^{(k)}_{i-1,i-1}|+|a^{(k)}_{i,i}|\right)
+$$
+\item<3-> El criterio dado es escencialmente una prueba heur\'istica, ya que a pesar
+de ser utilizada y cuyo comportamiento ha sido el correcto, no hay una teor\'ia matem\'atica
+que la sostenga.
+\end{itemize}
+\end{frame}
 \end{document}

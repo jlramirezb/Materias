@@ -96,12 +96,13 @@
 \headcommand {\beamer@framepages {90}{91}}
 \headcommand {\slideentry {2}{1}{19}{92/93}{Extrapolaci\'on de Richardson}{0}}
 \headcommand {\beamer@framepages {92}{93}}
+\headcommand {\beamer@sectionpages {15}{93}}
 \headcommand {\beamer@subsectionpages {53}{93}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{94}{Integraci\'on Num\'erica}}
-\headcommand {\slideentry {2}{2}{1}{94/94}{Integraci\'on Num\'erica}{0}}
+\headcommand {\sectionentry {3}{Integraci\'on Num\'erica}{94}{Integraci\'on Num\'erica}{0}}
+\headcommand {\slideentry {3}{0}{1}{94/94}{}{0}}
 \headcommand {\beamer@framepages {94}{94}}
 \headcommand {\beamer@partpages {1}{94}}
 \headcommand {\beamer@subsectionpages {94}{94}}
-\headcommand {\beamer@sectionpages {15}{94}}
+\headcommand {\beamer@sectionpages {94}{94}}
 \headcommand {\beamer@documentpages {94}}
 \headcommand {\gdef \inserttotalframenumber {46}}
