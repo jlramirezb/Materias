@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  16 MAR 2025 21:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  20 MAR 2025 13:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -926,7 +926,7 @@ Package epstopdf Info: Source file: <ejem1.eps>
 (epstopdf)             Command: <repstopdf --outfile=ejem1-eps-converted-to.pdf ejem1.eps>
 (epstopdf)             \includegraphics on input line 139.
 Package epstopdf Info: Output file is already uptodate.
-<ejem1-eps-converted-to.pdf, id=689, 1348.03625pt x 739.76375pt>
+<ejem1-eps-converted-to.pdf, id=695, 1348.03625pt x 739.76375pt>
 File: ejem1-eps-converted-to.pdf Graphic file (type pdf)
 <use ejem1-eps-converted-to.pdf>
 Package pdftex.def Info: ejem1-eps-converted-to.pdf  used on input line 139.
@@ -1078,7 +1078,7 @@ Package epstopdf Info: Source file: <ejem2.eps>
 (epstopdf)             Command: <repstopdf --outfile=ejem2-eps-converted-to.pdf ejem2.eps>
 (epstopdf)             \includegraphics on input line 202.
 Package epstopdf Info: Output file is already uptodate.
-<ejem2-eps-converted-to.pdf, id=1031, 1348.03625pt x 739.76375pt>
+<ejem2-eps-converted-to.pdf, id=1037, 1348.03625pt x 739.76375pt>
 File: ejem2-eps-converted-to.pdf Graphic file (type pdf)
 <use ejem2-eps-converted-to.pdf>
 Package pdftex.def Info: ejem2-eps-converted-to.pdf  used on input line 202.
@@ -1818,7 +1818,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [93
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 615--615
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 619--619
  [][][][]  
  []
 
@@ -1830,6 +1830,116 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
  []
 
 [94
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[95
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[96
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 630--630
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[97
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[98
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[99
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 646--646
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[100
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[101
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[102
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 659--659
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[103
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 674--674
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[104
 
 ]
 \tf@nav=\write6
@@ -1847,21 +1957,21 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `UmidadIV.out' has not changed.
-(rerunfilecheck)             Checksum: 3A9B437A43D183CE27A34BF78751A9B1;627.
+(rerunfilecheck)             Checksum: B88B1EE8DF05BF4265DC0AFDE2CEF29F;782.
  ) 
 Here is how much of TeX's memory you used:
- 22280 strings out of 473583
- 430104 string characters out of 5732336
+ 22312 strings out of 473583
+ 430428 string characters out of 5732336
  1949908 words of memory out of 5000000
- 44522 multiletter control sequences out of 15000+600000
+ 44533 multiletter control sequences out of 15000+600000
  569640 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,443b,844s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on UmidadIV.pdf (94 pages, 439088 bytes).
+Output written on UmidadIV.pdf (104 pages, 464671 bytes).
 PDF statistics:
- 2807 PDF objects out of 2984 (max. 8388607)
- 2544 compressed objects within 26 object streams
- 193 named destinations out of 1000 (max. 500000)
- 409 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3084 PDF objects out of 3580 (max. 8388607)
+ 2804 compressed objects within 29 object streams
+ 214 named destinations out of 1000 (max. 500000)
+ 417 words of extra memory for PDF output out of 10000 (max. 10000000)
 

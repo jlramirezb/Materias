@@ -609,9 +609,70 @@ $$
 \section{Integraci\'on Num\'erica}
 \begin{frame}{Integraci\'on Num\'erica}
     \begin{itemize}
-        \item Contenido del tema 2
-        \item Explicación $a$
+        \item Dada una funci\'on $f$ definida sobre un intervalo $[a,b]$, se desea calcular
+        $$
+        I(f) = \int_a^bf(x)dx
+        $$
+        \item<2-> La cuadratura o integraci\'on num\'erica consiste en obtener f\'ormulas aproximadas para calcular la integral $I(f)$ de $f$.
+        \item<3->Estos m\'etodos son de gran utilidad cuando la integral no se puede calcular por m\'etodos anal\'iticos.        
     \end{itemize}
 \end{frame}
+%%%%%
+\begin{frame}{Integraci\'on v\'ia Interpolaci\'on Polinomial}
+  \begin{itemize}
+    \item Una estrategia \'util para calcular el valor num\'erico de la integral dada consiste en reemplazar $f$ por otra funci\'on $g$, f\'acil de integrar, que aproxima a $f$ de forma adecuada.
+    \item<2->Si $f \approx g$, se deduce que:
+    $$
+    \int_a^bf(x)dx \approx \int_a^bg(x)dx
+    $$
+    \item<3-> Los polinomios son buenos candidatos para el papel de $g$. De hecho, $g$ puede ser un polinomio que interpola a $f$ en cierto conjunto de nodos.    
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Integraci\'on v\'ia Interpolaci\'on Polinomial}
+  \begin{itemize}
+    \item Sup\'ongase que se desea calcular la integral $I(f)$. Dado una serie de nodos, $x_0,x_1,\ldots,x_n$ en el intervalo
+    $[a,b]$ se inicia un proceso de interpolaci\'on de Lagrange.
+    \item<2-> El polinomio de grado menor o igual a $n$ que interpola a
+    $f$ en los nodos es:
+    $$
+    p(x)=\sum_{i=0}^nf(x_i)L_i(x)
+    $$
+    \item<3-> La integral se puede escribir entonces como:
+    $$
+    \int_a^bf(x)dx \approx \int_a^bp(x)dx =   \sum_{i=0}^n\int_a^bf(x_i)L_i(x)dx
+    $$    
+  \end{itemize}
+\end{frame} 
+%%%%%
+\begin{frame}{Integraci\'on v\'ia Interpolaci\'on Polinomial}
+  \begin{itemize}
+    \item Es decir, tenemos una f\'ormula general que se puede emplear para cualquier $f$ y que tiene la forma:
+    $$
+    \int_a^bf(x)dx \approx \sum_{i=0}^nA_if(x_i)
+    $$    
+    en donde
+    $$
+    A_i=\int_a^bL_i(x)dx
+    $$
+    \end{itemize}
+\end{frame}
+%%%%%
+\subsection{Regla del Trapecio}
+\begin{frame}{Regla del Trapecio}
+  \begin{itemize}
+    \item Empleando un polinomio de grado $n = 1$ y tomamos como nodos $x_0 = a$ y $x_1 = b$, se tiene el caso m\'as sencillo posible, en donde los polinomios de interpolaci\'on son:
+    \begin{eqnarray}
+     L_0(x) & = & \frac{b-x}{b-a}\nonumber\\
+     L_1(x) & = & \frac{x-a}{b-a}\nonumber
+    \end{eqnarray}
+    por lo que:
+    $$
+    A_0 = \int_a^bL_0(x)dx = \frac{b-a}{2} = \int_a^bL_1(x)dx = A_1
+    $$    
+  \end{itemize}
+\end{frame}
+%%%%%
+
 \end{document}
 
