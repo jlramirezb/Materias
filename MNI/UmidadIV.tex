@@ -666,13 +666,66 @@ $$
      L_0(x) & = & \frac{b-x}{b-a}\nonumber\\
      L_1(x) & = & \frac{x-a}{b-a}\nonumber
     \end{eqnarray}
-    por lo que:
+    \item<2-> por lo que:
     $$
     A_0 = \int_a^bL_0(x)dx = \frac{b-a}{2} = \int_a^bL_1(x)dx = A_1
     $$    
   \end{itemize}
 \end{frame}
 %%%%%
-
+\begin{frame}{Regla del Trapecio}
+  \begin{itemize}
+    \item La f\'ormula de cuadratura correspondiente, tomando $h=b-a$, es:
+    $$
+    \int_a^bf(x)dx \approx \frac{b-a}{2}[f(a)+f(b)] = \dfrac{h}{2}\left(f(a)+f(b)\right)
+    $$    
+    \begin{center}
+     \begin{figure}
+     \includegraphics[scale=0.25]{trapz.eps}
+    \end{figure}
+    \end{center}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Regla del Trapecio}
+  \begin{itemize}
+    \item Se tiene entonces que:
+    $$
+    I = \int_a^bf(x)dx = \dfrac{h}{2}(f(a)+f(b)) + E
+    $$
+    donde el error de la integraci\'on num\'erica $E$ ser\'a:
+    \begin{align*}
+      E = \int_a^b\epsilon(x)dx  &= \int_a^b \dfrac{f''(\xi)}{2}(x-a)(x-b)\\
+      &= \dfrac{1}{2}\int_a^bf''(\xi_x)(x-a)(x-b)dx  
+    \end{align*}    
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Regla del Trapecio}
+  \begin{block}{Teorema del Valor Medio Ponderado para Integrales}
+    Sea $f \in C[a,b]$, $g$ integrable en $[a,b]$ y $g$ no cambia de signo en $[a,b]$, entonces $\exists c \in (a,b)$ tal que
+    $$
+    \int_a^bf(x)g(x)dx = f(c)\int_a^bg(x)dx
+    $$
+    \end{block}
+  \end{frame}
+  %%%%%
+  \begin{frame}{Regla del Trapecio}
+    \begin{itemize}
+      \item <1-> $f''(\xi_x)$ es continua en el intervalo $[a,b]$ y $g(x)=(x-a)(x-b)$ es integrable en $[a,b]$ y no cambia de signo en $[a,b]$.
+      \item<2->Por tanto se puede aplicar TVMP, quedando:
+      \small{
+      $$
+      E = \int_a^b\epsilon(x)dx = \int_a^b \dfrac{f''(\xi_x)}{2}(x-a)(x-b) = \dfrac{f''(\xi)}{2}\int_a^b(x-a)(x-b)dx       
+      $$}
+      \item<3->Integrando la expresi\'on anterior, se concluye que:
+      $$
+      E = -\dfrac{h^3}{12}f''(\xi) \Rightarrow |E| \leq \left|\dfrac{h^3}{12}M_2\right|
+      $$
+      siendo $M_2$ el valor m\'aximo que alcance la derivada segunda de la funci\'on en el intervalo dado $[a, b]$.
+      \item<4-> Por tanto, se trata de una f\'ormula exacta para polinomios de orden uno.
+    \end{itemize}
+  \end{frame}
+  %%%%%
 \end{document}
 
