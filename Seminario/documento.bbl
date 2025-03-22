@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -18,8 +18,8 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global}
-    \entry{ayus2023}{article}{}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{ayus2023}{article}{}{}
       \name{author}{3}{}{%
         {{hash=cba6bfb27dff5612daf574ac25d38165}{%
            family={Ayus},
@@ -39,10 +39,12 @@
       }
       \strng{namehash}{ab138074fe08d0f7a158a575dab863ae}
       \strng{fullhash}{ab138074fe08d0f7a158a575dab863ae}
+      \strng{fullhashraw}{ab138074fe08d0f7a158a575dab863ae}
       \strng{bibnamehash}{ab138074fe08d0f7a158a575dab863ae}
       \strng{authorbibnamehash}{ab138074fe08d0f7a158a575dab863ae}
       \strng{authornamehash}{ab138074fe08d0f7a158a575dab863ae}
       \strng{authorfullhash}{ab138074fe08d0f7a158a575dab863ae}
+      \strng{authorfullhashraw}{ab138074fe08d0f7a158a575dab863ae}
       \field{sortinit}{A}
       \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
@@ -60,7 +62,7 @@
       \verb https://api.semanticscholar.org/CorpusID:256917065
       \endverb
     \endentry
-    \entry{bentivoglio2022}{article}{}
+    \entry{bentivoglio2022}{article}{}{}
       \name{author}{4}{}{%
         {{hash=5a2fa891ccfdc278d04f2c893a291a09}{%
            family={Bentivoglio},
@@ -85,10 +87,12 @@
       }
       \strng{namehash}{ff5b0c3d4f3141c37a787ff6145e4a2c}
       \strng{fullhash}{f903499893176614ce0b014f253b7efe}
+      \strng{fullhashraw}{f903499893176614ce0b014f253b7efe}
       \strng{bibnamehash}{ff5b0c3d4f3141c37a787ff6145e4a2c}
       \strng{authorbibnamehash}{ff5b0c3d4f3141c37a787ff6145e4a2c}
       \strng{authornamehash}{ff5b0c3d4f3141c37a787ff6145e4a2c}
       \strng{authorfullhash}{f903499893176614ce0b014f253b7efe}
+      \strng{authorfullhashraw}{f903499893176614ce0b014f253b7efe}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
@@ -110,7 +114,7 @@
       \verb https://hess.copernicus.org/articles/26/4345/2022/
       \endverb
     \endentry
-    \entry{higham2019}{article}{}
+    \entry{higham2019}{article}{}{}
       \name{author}{2}{}{%
         {{hash=794dc0781d5c862fe8d567e564bdbd1a}{%
            family={Higham},
@@ -128,10 +132,12 @@
       }
       \strng{namehash}{e17027d1dfcef26462d04886515cd994}
       \strng{fullhash}{e17027d1dfcef26462d04886515cd994}
+      \strng{fullhashraw}{e17027d1dfcef26462d04886515cd994}
       \strng{bibnamehash}{e17027d1dfcef26462d04886515cd994}
       \strng{authorbibnamehash}{e17027d1dfcef26462d04886515cd994}
       \strng{authornamehash}{e17027d1dfcef26462d04886515cd994}
       \strng{authorfullhash}{e17027d1dfcef26462d04886515cd994}
+      \strng{authorfullhashraw}{e17027d1dfcef26462d04886515cd994}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}

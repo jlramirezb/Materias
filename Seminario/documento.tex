@@ -7,7 +7,7 @@
 
 \addbibresource{biblio.bib}
 \title{Aprendizaje Profundo en el Análisis de Datos Asociados al Estudio de Lagos. \\ Caso de Estudio: Lago de Valencia}
-\author{José Ramírez}
+\author{José Luis Ramírez}
 \date{}
 
 \begin{document}
@@ -19,6 +19,59 @@ El aprendizaje profundo es una herramienta poderosa en diversas áreas, incluyen
 
 Tradicionalmente, el análisis de datos de lagos se ha basado en métodos estadísticos y modelos numéricos, sin embargo, estos enfoques pueden tener limitaciones cuando se trata de grandes volúmenes de datos o de la modelación de fenómenos no lineales \cite{ayus2023,higham2019}. Aquí es donde el aprendizaje profundo muestra su potencial, ya que puede aprender automáticamente las características relevantes de los datos, sin necesidad de una ingeniería manual de las mismas \cite{bentivoglio2022}.
 
+En el estudio realizado en \cite{ayus2023} se compara el rendimiento de modelos de aprendizaje automático y aprendizaje profundo para estimar el nivel del agua en el lago Jezioro Kosno en Polonia.
+
+El aprendizaje profundo ha demostrado ser una herramienta prometedora para mejorar la precisión y eficiencia del análisis de datos de lagos. Su capacidad para procesar grandes volúmenes de datos y modelar fenómenos complejos lo convierte en un activo valioso para la gestión sostenible de los recursos hídricos y la prevención de desastres naturales \cite{bentivoglio2022}. A medida que la tecnología continúa evolucionando, se espera que las aplicaciones del aprendizaje profundo en el análisis de datos de lagos se expandan y proporcionen soluciones más innovadoras \cite{bentivoglio2022,higham2019}.
+
+Dado que el aprendizaje profundo ha demostrado ser útil para el análisis y la predicción de niveles de agua en lagos \cite{ayus2023}, el Lago de Valencia, que experimenta fluctuaciones en sus niveles debido a factores climáticos y actividades humanas, podría beneficiarse enormemente de estas técnicas. El aprendizaje profundo puede modelar las series temporales de datos como series de nivel, precipitación, datos de temperatura, etc. En resumen, un análisis profundo del Lago de Valencia con aprendizaje profundo permitiría entender mejor su comportamiento, estimar datos relevantes y mitigar riesgos asociados a las inundaciones, contribuyendo así a la gestión sostenible de este importante cuerpo de agua.
+
+\section{Objetivos}
+
+\subsection{Objetivo Principal}
+Aplicar herramientas de Aprendizaje Profundo en el analisis de datos de serie relacionados a variables provenientes del Lago de Valencia y poder realizar estimaciones sobre ellos a corto y mediano plazo.
+
+\subsection{Objetivos Específicos}
+\begin{itemize}
+    \item Desarrollar modelos de aprendizaje profundo para la estimación de distintas variables del Lago de Valencia.
+    \item Analizar la influencia de variables hidrometeorológicas en el comportamiento del Lago de Valencia mediante modelos de aprendizaje profundo.
+    \item Evaluar el rendimiento de diferentes arquitecturas de aprendizaje profundo en el análisis de datos del Lago de Valencia.
+\end{itemize}
+
+\subsection{Actividades}
+A continuaci\'on se presenta un conjunto de actividades que se llevarán a cabo para cumplir con los objetivos planteados:
+\begin{enumerate}
+    \item \textbf{Recopilación y Preparación de Datos:}
+    \begin{itemize}
+        \item Estudio bibliogr\'afico sobre las herramientas de Aprendizaje Profundo.
+        \item Recopilar datos históricos del Lago de Valencia, incluyendo niveles de agua, precipitación, temperatura, entre otros.
+        \item Realizar la limpieza y preprocesamiento de los datos, incluyendo la gestión de valores faltantes y la normalización de los datos.
+        \item Dividir los datos en conjuntos de entrenamiento, validación y prueba.
+    \end{itemize}
+    \item \textbf{Desarrollo de Modelos de Aprendizaje Profundo:}
+    \begin{itemize}
+        \item Diseñar y entrenar modelos de redes neuronales, para la estimación de datos de lagos.        
+        \item Implementar modelos adecuados de aprendizaje profundo, para los datos obtenidos del Lago de Valencia.
+    \end{itemize}
+    \item \textbf{Análisis de Influencia de Variables:}
+    \begin{itemize}
+        \item Utilizar técnicas de análisis de sensibilidad para determinar la influencia de las variables hidrometeorológicas en el comportamiento del lago.
+        \item Analizar la correlación entre las variables y el nivel del agua.
+    \end{itemize}
+    \item \textbf{Generación de Estimaciones:}
+    \begin{itemize}
+        \item Utilizar los modelos entrenados para generar estimaciones en funci\'on de los datos obtenidos.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Limitaciones}
+Las limitaciones y dificultades de aplicar el aprendizaje profundo al estudio del Lago de Valencia pueden agruparse en las siguientes categorías:
+\begin{itemize}
+    \item \textbf{Disponibilidad y calidad de los datos:} Este es un factor crítico, ya que la efectividad del aprendizaje profundo depende en gran medida de la cantidad y calidad de los datos disponibles. Las principales dificultades incluyen la falta de datos históricos extensos y confiables, la presencia de valores faltantes e inconsistencias, y la variabilidad espacial de los datos.
+    \item \textbf{Complejidad del modelado:} Los sistemas hidrológicos son intrínsecamente complejos y no lineales, lo que dificulta la creación de modelos precisos y generalizables. La selección y el diseño de arquitecturas de aprendizaje profundo apropiadas, el ajuste de hiperparámetros y la necesidad de grandes volúmenes de datos para el entrenamiento son desafíos importantes. Además, la interpretabilidad de los modelos de "caja negra" y las limitaciones inherentes a la predicción a largo plazo también son factores a considerar.
+    \item \textbf{Recursos computacionales y experiencia:} El entrenamiento de modelos de aprendizaje profundo requiere recursos computacionales significativos, como hardware especializado y tiempo de procesamiento. También se necesita experiencia especializada para preprocesar los datos, diseñar y entrenar los modelos, y evaluar su rendimiento.
+\end{itemize}
+
+\section{Marco Te\'orico}
 La relación entre el aprendizaje profundo y el análisis de datos de lagos se puede observar en las siguientes áreas:
 \begin{itemize}[label=\textbullet]
     \item \textbf{Modelación del nivel del agua:} Las redes neuronales recurrentes pueden estimar futuros niveles de agua basándose en el análisis de series temporales históricas, lo que es fundamental para la prevención de inundaciones \cite{ayus2023}.
@@ -27,57 +80,6 @@ La relación entre el aprendizaje profundo y el análisis de datos de lagos se p
     \item \textbf{Análisis de la susceptibilidad a inundaciones:} Las técnicas de aprendizaje profundo pueden identificar áreas propensas a inundaciones en función de factores físicos y ambientales \cite{bentivoglio2022}. Esto puede ayudar en la planificación \cite{bentivoglio2022}.
 \end{itemize}
 
-En el estudio realizado en \cite{ayus2023} se compara el rendimiento de modelos de aprendizaje automático y aprendizaje profundo para estimar el nivel del agua en el lago Jezioro Kosno en Polonia.
-
-El aprendizaje profundo ha demostrado ser una herramienta prometedora para mejorar la precisión y eficiencia del análisis de datos de lagos. Su capacidad para procesar grandes volúmenes de datos y modelar fenómenos complejos lo convierte en un activo valioso para la gestión sostenible de los recursos hídricos y la prevención de desastres naturales \cite{bentivoglio2022}. A medida que la tecnología continúa evolucionando, se espera que las aplicaciones del aprendizaje profundo en el análisis de datos de lagos se expandan y proporcionen soluciones más innovadoras \cite{bentivoglio2022,higham2019}.
-
-Dado que el aprendizaje profundo ha demostrado ser útil para el análisis y la predicción de niveles de agua en lagos \cite{ayus2023}, el Lago de Valencia, que experimenta fluctuaciones en sus niveles debido a factores climáticos y actividades humanas, podría beneficiarse enormemente de estas técnicas. El aprendizaje profundo puede modelar las series temporales de datos del nivel del agua y otros datos relevantes, como la precipitación, para realizar estimaciones precisas y así permitir una mejor gestión del agua y la prevención de inundaciones. En resumen, un análisis profundo del Lago de Valencia con aprendizaje profundo permitiría entender mejor su comportamiento, estimar los niveles de agua y mitigar los riesgos asociados a las inundaciones, contribuyendo así a la gestión sostenible de este importante cuerpo de agua.
-
-
-\section{Objetivo Principal}
-Analizar datos relacionados a variables de lagos, empleando herramientas del Aprendizaje Profundo, utilizando datos provenientes del Lago de Valencia para realizar estimaciones a corto y mediano plazo.
-
-\section{Objetivos Específicos}
-\begin{itemize}
-    \item Desarrollar modelos de aprendizaje profundo para la estimación de distintas variables del Lago de Valencia.
-    \item Analizar la influencia de variables hidrometeorológicas en el comportamiento del Lago de Valencia mediante modelos de aprendizaje profundo.
-    \item Evaluar el rendimiento de diferentes arquitecturas de aprendizaje profundo en el análisis de datos del Lago de Valencia.
-\end{itemize}
-
-\subsection{Actividades}
-A continuaci\'on \cite{bentivoglio2022} ah puess aqui 
-se presenta un conjunto de actividades que se llevarán a cabo para cumplir con los objetivos planteados:
-\begin{enumerate}
-    \item \textbf{Recopilación y Preparación de Datos:}
-    \begin{itemize}
-        \item Recopilar datos históricos del Lago de Valencia, incluyendo niveles de agua, precipitación, temperatura, entre otros.
-        \item Realizar la limpieza y preprocesamiento de los datos, incluyendo la gestión de valores faltantes y la normalización de los datos.
-        \item Dividir los datos en conjuntos de entrenamiento, validación y prueba.
-    \end{itemize}
-    \item \textbf{Desarrollo de Modelos de Aprendizaje Profundo:}
-    \begin{itemize}
-        \item Diseñar y entrenar modelos de redes neuronales recurrentes (RNN), como LSTM o GRU, para la estimación de niveles de agua.
-        \item Explorar el uso de redes neuronales convolucionales (CNN) para el análisis de imágenes satelitales del lago.
-        \item Implementar modelos híbridos que combinen diferentes arquitecturas de aprendizaje profundo.
-    \end{itemize}
-    \item \textbf{Análisis de Influencia de Variables:}
-    \begin{itemize}
-        \item Utilizar técnicas de análisis de sensibilidad para determinar la influencia de las variables hidrometeorológicas en el comportamiento del lago.
-        \item Incorporar variables adicionales, como datos de uso del suelo y actividades humanas, en los modelos.
-        \item Analizar la correlación entre las variables y el nivel del agua.
-    \end{itemize}
-    \item \textbf{Evaluación y Comparación de Modelos:}
-    \begin{itemize}
-        \item Evaluar el rendimiento de los modelos utilizando métricas apropiadas, como el error cuadrático medio (MSE) y el error absoluto medio (MAE).
-        \item Comparar el rendimiento de diferentes arquitecturas de aprendizaje profundo.
-        \item Realizar ajustes y optimizaciones en los modelos para mejorar su precisión.
-    \end{itemize}
-    \item \textbf{Generación de Estimaciones:}
-    \begin{itemize}
-        \item Utilizar los modelos entrenados para generar estimaciones a corto y mediano plazo del nivel del agua.
-        \item Analizar la incertidumbre asociada a las estimaciones.
-    \end{itemize}
-\end{enumerate}
 
 \printbibliography
 
