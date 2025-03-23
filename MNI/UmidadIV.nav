@@ -139,8 +139,12 @@
 \headcommand {\beamer@framepages {128}{129}}
 \headcommand {\slideentry {3}{2}{9}{130/132}{Regla de Simpson}{0}}
 \headcommand {\beamer@framepages {130}{132}}
-\headcommand {\beamer@partpages {1}{132}}
-\headcommand {\beamer@subsectionpages {113}{132}}
-\headcommand {\beamer@sectionpages {94}{132}}
-\headcommand {\beamer@documentpages {132}}
-\headcommand {\gdef \inserttotalframenumber {63}}
+\headcommand {\slideentry {3}{2}{10}{133/135}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {133}{135}}
+\headcommand {\slideentry {3}{2}{11}{136/136}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {136}{136}}
+\headcommand {\beamer@partpages {1}{136}}
+\headcommand {\beamer@subsectionpages {113}{136}}
+\headcommand {\beamer@sectionpages {94}{136}}
+\headcommand {\beamer@documentpages {136}}
+\headcommand {\gdef \inserttotalframenumber {65}}
