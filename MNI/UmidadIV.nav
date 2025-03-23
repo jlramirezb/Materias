@@ -119,8 +119,28 @@
 \headcommand {\beamer@framepages {108}{108}}
 \headcommand {\slideentry {3}{1}{5}{109/112}{Regla del Trapecio}{0}}
 \headcommand {\beamer@framepages {109}{112}}
-\headcommand {\beamer@partpages {1}{112}}
 \headcommand {\beamer@subsectionpages {104}{112}}
-\headcommand {\beamer@sectionpages {94}{112}}
-\headcommand {\beamer@documentpages {112}}
-\headcommand {\gdef \inserttotalframenumber {54}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{113}{Regla de Simpson}}
+\headcommand {\slideentry {3}{2}{1}{113/115}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {113}{115}}
+\headcommand {\slideentry {3}{2}{2}{116/118}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {116}{118}}
+\headcommand {\slideentry {3}{2}{3}{119/120}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {119}{120}}
+\headcommand {\slideentry {3}{2}{4}{121/123}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {121}{123}}
+\headcommand {\slideentry {3}{2}{5}{124/125}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {124}{125}}
+\headcommand {\slideentry {3}{2}{6}{126/126}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {126}{126}}
+\headcommand {\slideentry {3}{2}{7}{127/127}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {127}{127}}
+\headcommand {\slideentry {3}{2}{8}{128/129}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {128}{129}}
+\headcommand {\slideentry {3}{2}{9}{130/132}{Regla de Simpson}{0}}
+\headcommand {\beamer@framepages {130}{132}}
+\headcommand {\beamer@partpages {1}{132}}
+\headcommand {\beamer@subsectionpages {113}{132}}
+\headcommand {\beamer@sectionpages {94}{132}}
+\headcommand {\beamer@documentpages {132}}
+\headcommand {\gdef \inserttotalframenumber {63}}

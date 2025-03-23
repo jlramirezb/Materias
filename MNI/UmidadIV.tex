@@ -727,5 +727,156 @@ $$
     \end{itemize}
   \end{frame}
   %%%%%
+  \subsection{Regla de Simpson}
+  \begin{frame}{Regla de Simpson}
+    \begin{itemize}
+      \item Otra forma de obtener una estimaci\'on m\'as exacta de un integral es con el uso de polinomios de orden superior.
+      \item<2-> Aplicando Taylor en los punto $x_0=a$, $x_1=(a+b)/2$, $x_2=b$, y denotando $h$ al espaciado entre los extremos y el punto medio.
+      \scriptsize
+      $$
+      f(x) = f(x_1) + f'(x_1)(x-x_1) + \frac{f''(x_1)}{2}(x-x_1)^2 + \frac{f'''(x_1)}{6}(x-x_1)^3 + \frac{f^{(4)}(\xi_x)}{24}(x-x_1)^4
+      $$
+      \item<3-> \normalsize
+      Integrando $f(x)$ en el intervalo $[a,b]$ queda:
+      $$
+      \int_a^bf(x)dx = 2hf(x_1) + f''(x_1)\frac{h^3}{3} + \underbrace{\frac{1}{24}\int_a^bf^{(4)}(\xi_x)(x-x_1)^4dx}_E
+      $$      
+    \end{itemize}    
+  \end{frame}
+%%%%%
+\begin{frame}{Regla de Simpson}
+  \begin{itemize}
+    \item Por el teorema del valor medio ponderado existe $\xi \in [a, b]$, tal que
+    $$
+    \dfrac{1}{24}\int_{a}^{b}f^{(4)}(\xi_x)(x-x_1)^4dx = \dfrac{f^{(4)}(\xi)}{24}\int_{a}^{b}(x-x_1)^4dx
+    $$
+    \item<2->as\'i
+    $$
+    \int_{a}^{b}(x-x_1)^4dx = \left.\dfrac{(x-x_1)^5}{5}\right|_{a}^{b}
+    $$
+    \item<3->
+    ahora si $x_1 - a = h$, $b - x_1 = h$, entonces
+    $$
+    \int_{a}^{b}(x-x_1)^4dx = \dfrac{h^5f^{(4)}(\xi)}{60}
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Regla de Simpson}
+  \begin{itemize}
+    \item Entonces la integral queda:
+    $$
+    \int_{a}^{b}f(x)dx = 2hf(x_1) + h^3\dfrac{f''(x_1)}{3} + \dfrac{h^5f^{(4)}(\xi)}{60}
+    $$
+    \item<2-> conocida la aproximaci\'on de $f''(x_1)$ mediante el m\'etodo de Taylor expandida alrededor de $x_1$
+    $$
+    f''(x_1) = \frac{f(x_1+h) - 2f(x_1) + f(x_1-h)}{h^2} - \frac{h^2}{12}f^{(4)}(\xi_1)
+    $$
+    sustituyendo dicha f\'ormula en $\displaystyle\int_a^bf(x)dx$
+  \end{itemize}
+  \end{frame}
+%%%%%
+\begin{frame}{Regla de Simpson}
+  \begin{itemize}
+    \item se obtiene
+    \footnotesize{
+    $$
+    \int_a^bf(x)dx = 2f(x_1)h + \frac{(f(a)-2f(x_1)+f(b))h}{3} - \frac{f^{(4)}(\xi_1)h^5}{36} + \frac{f^{(4)}(\xi)h^5}{60}
+    $$}
+    \item<2->de modo que
+      $$
+      \int_{a}^{b}f(x)dx = 2hf(x_1) + \dfrac{h}{3}\left[f(a) - 2f(x_1) + f(b)\right] - 
+      \dfrac{h^5}{12}\left[\dfrac{f^{(4)}(\xi_1)}{3} - \dfrac{f^{(4)}(\xi)}{5}\right]
+      $$
+      \item<3->Se puede tomar $\xi_1 = \xi$ porque ambas f\'ormulas provienen del mismo desarrollo de Taylor alrededor de $x_1$. Por lo tanto:
+      $$
+      \int_{a}^{b}f(x)dx = \dfrac{h}{3}\left[f(a) + 4f\left(\dfrac{a+b}{2}\right) + f(b)\right] - \dfrac{h^5f^{(4)}(\xi)}{90}
+      $$       
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Regla de Simpson 3/8}
+  \begin{itemize}
+    \item Otra regla para aproximar num\'ericamente la integral es, la regla
+    $\frac{3}{8}$ de Simpson.
+    \item<2-> sea
+    \scriptsize{
+    \begin{align*}
+      f(x) \approx & f(x_0)\dfrac{(x-x_1)(x-x_2)(x-x_3)}{(x_0-x_1)(x_0-x_2)(x_0-x_3)}+ f(x_1)\dfrac{(x-x_0)(x-x_2)(x-x_3)}{(x_1-x_0)(x_1-x_2)(x_1-x_3)}\\
+      & + f(x_2)\dfrac{(x-x_0)(x-x_1)(x-x_3)}{(x_2-x_0)(x_2-x_1)(x_2-x_3)}+ f(x_3)\dfrac{(x-x_0)(x-x_1)(x-x_2)}{(x_3-x_0)(x_3-x_1)(x_3-x_2)}
+    \end{align*}}    
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Regla de Simpson 3/8}
+  \begin{itemize}
+    \item Integrando en el intervalo $[x_0,x_3]$
+  \end{itemize}
+  \footnotesize{
+  \begin{align*}
+      \int_{x_0}^{x_3}f(x)dx \approx & \dfrac{f(x_0)}{(x_0-x_1)(x_0-x_2)(x_0-x_3)}\int_{x_0}^{x_3}(x-x_1)(x-x_2)(x-x_3)dx\\
+      & + \dfrac{f(x_1)}{(x_1-x_0)(x_1-x_2)(x_1-x_3)}\int_{x_0}^{x_3}(x-x_0)(x-x_2)(x-x_3)dx\\
+      & + \dfrac{f(x_2)}{(x_2-x_0)(x_2-x_1)(x_2-x_3)}\int_{x_0}^{x_3}(x-x_0)(x-x_1)(x-x_3)dx\\
+      & + \dfrac{f(x_3)}{(x_3-x_0)(x_3-x_1)(x_3-x_2)}\int_{x_0}^{x_3}(x-x_0)(x-x_1)(x-x_2)dx            
+    \end{align*}} 
+\end{frame}
+%%%%%
+\begin{frame}{Regla de Simpson 3/8}
+  \begin{itemize}
+    \item Tomando la sustituci\'on $x = x_0 + uh$ y como $x_i = x_0 + ih$, $i = 1; 2; 3$,
+    entonces $x_3 = x_0 + 3h$, luego si $x = x_0$, se tiene que $u = 0$ y si $x = x_3$,
+    entonces $x_3 = x_0 + uh$, o sea que $x_0 + 3h = x_0 + uh$, de modo que $u = 3$,
+    adem\'as $dx = hdu$,
+    $$
+    \begin{array}{l}
+    x - x_1 = x-x_0-h = uh - h, h = h(u-1),\\
+    x - x_2 = x-x_0-2h = uh-2h = h(u-2),\\
+    x-x_3 = x-x0-3h = uh-3h = h(u-3) \text{ y} \\ 
+    x_k - x_j = (k - j)h
+    \end{array}
+    $$    
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{Regla de Simpson 3/8}
+  \begin{itemize}
+    \item De este modo
+  \end{itemize}{
+    \footnotesize{
+    \begin{align*}
+        \int_{x_0}^{x_3}f(x)dx \approx & \dfrac{f(x_0)}{(-h)(-2h)(-3h)}\int_{0}^{3}h(u-1)h(u-2)h(u-3)hdu \\
+        & + \dfrac{f(x_1)}{(h)(-h)(-2h)}\int_{0}^{3}uhh(u-2)h(u-3)hdu\\
+        & + \dfrac{f(x_2)}{(2h)(h)(-h)}\int_{0}^{3}uhh(u-1)(u-3)hdu \\
+        & + \dfrac{f(x_3)}{(3h)(2h)(h)}\int_{0}^{3}uhh(u-1)h(u-2)hdu
+    \end{align*}}}
+    \begin{itemize}
+      \item<2-> luego
+    \end{itemize}
+    \uncover<2->{
+    \footnotesize{
+    \begin{align*}
+        \int_{x_0}^{x_3}f(x) \approx & \dfrac{-h^4f(x_0)}{6h^3}\int_{0}^{3}(u^3-6u^2+11u-6)du + \dfrac{h^4f(x_1)}{2h^3}\int_{0}^{3}(u^3-5u^2+6u)du\\
+        & + \dfrac{-h^4f(x_2)}{2h^3}\int_{0}^{3}(u^3-4u^2+3u)du + \dfrac{h^4f(x_3)}{6h^3}\int_{0}^{3}(u^3-3u^2+2u)du        
+    \end{align*}}}
+\end{frame}
+%%%%%
+\begin{frame}{Regla de Simpson 3/8}
+  \begin{itemize}
+    \item De este modo
+    $$
+    \int_{x_0}^{x_3}f(x)dx \approx -\dfrac{hf(x_0)}{6}\dfrac{-9}{4} + \dfrac{hf(x_1)}{2}\dfrac{9}{4} - \dfrac{hf(x_2)}{2}\dfrac{-9}{4} + \dfrac{hf(x_3)}{6}\dfrac{9}{4}
+    $$
+    \item<2->luego
+    $$
+    \int_{x_0}^{x_3} \approx \dfrac{3hf(x_0)}{8} + \dfrac{9hf(x_1)}{8} + \dfrac{9hf(x_2)}{8} + \dfrac{3hf(x_3)}{8}
+    $$
+    \item<3-> as\'i que 
+    $$
+    \int_{x_0}^{x_3}f(x)dx \approx \dfrac{3}{8}\left[f(x_0)+3f(x_1)+3f(x_2)+f(x_3)\right]
+    $$
+    es la llamada regla de los $\dfrac{3}{8}$ de Simpson.
+  \end{itemize}
+\end{frame}
+%%%%%
 \end{document}
 
