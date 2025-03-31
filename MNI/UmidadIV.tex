@@ -1379,5 +1379,80 @@ siendo $h=\frac{b-a}{n+2}$, y denotando $E$ el error de integraci\'on.
   \end{itemize}
 \end{frame}
 %%%%%
+\begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
+  \textbf{F\'ormulas Cerradas}\\
+  $n=1$. F\'ormula del trapecio
+\begin{center}
+  \begin{tikzpicture}[scale=1.2]
+
+    % Eje principal
+    \draw[thick] (0,0) -- (8,0);
+  
+    % Marcas en el eje
+    \foreach \x in {0, 1.5, 3, 5, 7, 8} {
+      \draw (\x,0.1) -- (\x,-0.1);
+    }
+  
+    % Nodos
+    \node[above] at (0,0.2) {$a$};
+    \node[below] at (0,-0.2) {$x_0$};
+    \node[below] at (1.5,-0.2) {$x_1$};
+    \node[below] at (3,-0.2) {$x_2$};
+    \node[below] at (5,-0.2) {$x_{N-2}$};
+    \node[below] at (6.5,-0.2) {$x_{N-1}$};
+    \node[below] at (8,-0.2) {$x_{N}$};
+    \node[above] at (8,0.2) {$b$};
+  
+    % Intervalos I_i
+    \node[above] at (0.75,0.1) {$I_1$};
+    \node[above] at (2.25,0.1) {$I_2$};
+    \node[above] at (6,0.1) {$I_{N-1}$};
+    \node[above] at (7.5,0.1) {$I_N$};
+    
+  
+    % Flecha y etiqueta para h
+    \draw[<->] (0,-0.65) -- (1.5,-0.65);
+    \node[below] at (0.65,-0.7) {$h = \dfrac{b-a}{N}$};  
+  \end{tikzpicture}
+\end{center}
+\begin{itemize}
+  \item<2-> La f\'ormula del trapecio viene dada por
+  $$
+  \int_{x_0}^{x_1}f(x)dx = \dfrac{h}{2}\left(f(x_0)+f(x_1)\right)-\dfrac{h^3f''(\xi)}{12}
+  $$
+\end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
+\begin{itemize}
+  \item Subdiviendo $N$ veces el intervalo $[a,b]$, resulta:
+\end{itemize}
+\uncover<1->{
+  {\scriptsize
+  \begin{align*}
+    \int_{a}^{b}f(x)dx & = \int_{x_0}^{x_1}f(x)dx + \int_{x_1}^{x_2}f(x)dx + \cdots + \int_{x_{N-1}}^{x_N}f(x)dx\\
+    & = \dfrac{h}{2}\left(f(x_0)+f(x_1)\right)+\dfrac{h}{2}\left(f(x_1)+f(x_2)\right)+\cdots+\dfrac{h}{2}\left(f(x_{N-1})+f(x_N)\right)+ R(f)\\
+    & = \dfrac{h}{2}\left[f(x_0)+2f(x_1)+2f(x_2)+\cdots+2f(x_{N-1})+f(x_N)\right]+ R(f)  
+  \end{align*}}}
+  \begin{itemize}
+    \item El error cometido será:
+    $$
+    R(f) = \sum_{i=1}^{N}R_i(f) = \sum_{i=1}^{N}-\dfrac{h^{3}f''(\xi_i)}{12} = -\dfrac{h^3}{12}\sum_{i=1}^{N}f''(\xi_i)
+    $$
+  \end{itemize}  
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
+  \begin{itemize}
+    \item El valor de $h$ en las fórmulas cerradas es $h=\frac{b-a}{N\cdot n}$ y en particular para la regla del trapecio compuesta será $h=\frac{b-a}{N}$, por lo que el error resulta:
+    $$
+    R(f) = -N\dfrac{h^3}{12}f''(\xi)=-\dfrac{(b-a)h^2}{12}f''(\xi)
+    $$
+    \item<2-> La formula compuesta del trapecio es por lo tanto:
+    $$
+      \int_{a}^{b}f(x)dx = \dfrac{h}{2}\left[f(x_0)+f(x_N)+2\sum_{i=1}^{N-1}f(x_i)\right]- \dfrac{(b-a)h^2}{12}f''(\xi)
+    $$
+  \end{itemize}
+\end{frame}
 \end{document}
 
