@@ -5,6 +5,9 @@
 \usepackage{amssymb,textcomp}
 %\usepackage{beamerthemesplit}
 \usepackage{beamerthemeBoadilla}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{amsmath}
 
 \usefonttheme{serif}
 \title{Unidad IV: Diferenciaci\'on e Integraci\'on Num\'erica}
@@ -831,7 +834,7 @@ $$
     \begin{array}{l}
     x - x_1 = x-x_0-h = uh - h, h = h(u-1),\\
     x - x_2 = x-x_0-2h = uh-2h = h(u-2),\\
-    x-x_3 = x-x0-3h = uh-3h = h(u-3) \text{ y} \\ 
+    x-x_3 = x-x_0-3h = uh-3h = h(u-3) \text{ y} \\ 
     x_k - x_j = (k - j)h
     \end{array}
     $$    
@@ -892,8 +895,421 @@ $$
 %%%%%
 \begin{frame}{F\'ormulas de Newton-C\^otes}
   \begin{itemize}
-    \item 4
+    \item Las fórmulas de cuadratura de Newton-Cotes son fórmulas de cuadratura de tipo interpolatorio obtenidas
+    para nodos igualmente espaciados.
+    \item<2-> Tal como se ha explicado de forma general cada una de estas fórmulas
+    se calcula integrando el polinomio interpolador correspondiente.
+    \item<3-> Existen dos tipos de fórmulas, las cerradas y las abiertas.
+    \item<4-> Las fórmulas cerradas son aquellas en las que los extremos del intervalo de integración son dos de los nodos utilizados para la obtención de la fórmula, es decir, a y b son dos de los nodos utilizados para calcular el
+    polinomio interpolador que posteriormente será integrado.
+    \item<5-> Las fórmulas abiertas son aquellas en las que los extremos del intervalo de integración no forman parte de la fórmula.
   \end{itemize}
 \end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Cerradas de Newton-C\^otes}
+  \begin{itemize}
+    \item Tal como se ha explicado, la integral definida entre $a$ y $b$ se puede expresar como: $\int_a^bf(x)dx =\int_{a}^{b}p(x)dx+R(f)$, de manera que se aproxima la integral definida mediante la integral del
+    polinomio interpolador que pasa por $n+1$ puntos igualmente espaciados en el intervalo $[a,b]$.
+    \item<2->El error cometido se calcula integrando el error del polinomio interpolador en el mismo intervalo.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Cerradas de Newton-C\^otes}
+  \begin{itemize}
+    \item<1->Para simplificar el cálculo y poder generalizarlo a cualquier intervalo $^[a,b]$, se realiza un cambio de variable,
+    tal como se hizo en el tema de interpolación para realizar el cálculo del polinomio interpolador por el
+    método de Newton mediante diferencias finitas.
+    \begin{center}
+      \begin{tikzpicture}
+          % Dibujo de la línea principal
+          \draw[thick] (0,0) -- (10,0);
+          
+          % Etiquetas de los puntos principales
+          \node[above] at (0,0.1) {$x_0$};
+          \node[above] at (2,0.1) {$x_1$};
+          \node[above] at (4,0.1) {$x_2$};
+          \node[above] at (8,0.1) {$x_{n-1}$};
+          \node[above] at (10,0.1) {$x_n$};
+          \node[above] at (0,0.5) {$a$};
+          \node[above] at (10,.5) {$b$};
+          
+          % División del intervalo
+          \draw (0,-0.2) -- (0,0.2);
+          \draw (2,-0.2) -- (2,0.2);
+          \draw (4,-0.2) -- (4,0.2);
+          \draw (8,-0.2) -- (8,0.2);
+          \draw (10,-0.2) -- (10,0.2);
+          
+          % Flechas indicando la distancia h
+          \draw[<->] (0,-0.7) -- (2,-0.7) node[midway,below] {$h$};
+          \draw[<->] (2,-0.7) -- (4,-0.7) node[midway,below] {$h$};
+          
+          % Punto x intermedio
+          \node[above] at (6,0.1) {$x$};
+          \draw (6,-0.2) -- (6,0.2);
+          % Ecuación
+          \node at (5,-1.5) {$x = x_0 + t \cdot h$};
+          % Segunda línea con índices enteros
+          \draw[thick] (0,-2) -- (10,-2);
+          \node[below] at (0,-2.1) {$0$};
+          \node[below] at (2,-2.1) {$1$};
+          \node[below] at (4,-2.1) {$2$};
+          \node[below] at (6,-2.1) {$t$};
+          \node[below] at (8,-2.1) {$n-1$};
+          \node[below] at (10,-2.1) {$n$};
+          
+          % Flechas indicando la distancia 1
+          \draw[<->] (0,-2.7) -- (2,-2.7) node[midway,below] {$1$};
+          \draw[<->] (2,-2.7) -- (4,-2.7) node[midway,below] {$1$};
+          
+          % División del intervalo
+          \draw (0,-2.2) -- (0,-1.8);
+          \draw (2,-2.2) -- (2,-1.8);
+          \draw (4,-2.2) -- (4,-1.8);
+          \draw (6,-2.2) -- (6,-1.8);
+          \draw (8,-2.2) -- (8,-1.8);
+          \draw (10,-2.2) -- (10,-1.8);
+      
+      \end{tikzpicture}
+      \end{center}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Cerradas de Newton-C\^otes}
+  \begin{itemize}
+    \item En el gráfico se puede ver que la distancia entre nodos viene determinada por el valor $h=\frac{b-a}{n}$ y la
+    relación entre la variable $x$ y la variable $t$ permite calcular $dx = h\cdot dt$.
+    \item<2-> Realizando este cambio de variable se tiene lo siguiente:
+    $$
+    \int_a^bf(x)dx = \int_0^nq(t)hdt+R(f) \Rightarrow \int_0^nq(t)hdt 
+    $$
+    \item<3-> Se debe calcular por tanto la integral
+    $$
+    \int_0^nq(t)hdt = h\int_{0}^{n}q(t)dt
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Cerradas de Newton-C\^otes}
+  \begin{itemize}
+    \item Siendo
+    \small{
+    $$
+    q(t) = \sum_{i=0}^{n}\Delta^if(x_0)\binom{t}{i}\Rightarrow h\int_{0}^{n}q(t)dt = h\sum_{i=0}^{n}\Delta^if(x_0)\int_{0}^{n}\binom{t}{i}dt    
+    $$}
+    \item<2-> Así las fórmulas de integración de Newton C\^otes cerradas se obtienen integrando los polinomios interpoladores de Newton mediante diferencias finitas.
+    \item<3-> En cuanto al error en la integral, éste se calcula a partir del error cometido al sustituir la función $f (x)$ por el polinomio $p(x)$. En el tema de interpolación se estudio el error cometido mediante la expresión
+    $$
+    e(x) = \dfrac{f^{(n+1)}(\xi)}{(n+1)!}\Pi(x)
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Cerradas de Newton-C\^otes}
+  \begin{itemize}
+    \item El error en el cálculo de la integral será por tanto
+    $$
+    R(f) = \int_{a}^{b}\dfrac{f^{(n+1)}(\xi)}{(n+1)!}\Pi(x)dx
+    $$
+    \item<2-> Al realizar este estudio. Aparecen dos situaciones distintas, en función del valor que toma $n$.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Cerradas de Newton-C\^otes}
+  \begin{itemize}
+    \item Para valores de $n$ impar, se realiza el cálculo mediante el cambio de variable anteriormente explicado
+    $$
+    R(f) = \int_{a}^{b}\dfrac{f^{(n+1)}(\xi)}{(n+1)!}\Pi(x)dx = \dfrac{f^{(n+1)}(\xi)}{(n+1)!}\int_{a}^{b}\Pi(x)dx
+    $$
+    \item<2-> Basta saber que $\Pi(x) = (x-x_0)(x-x_1)(x-x_2)\cdots(x-x_n)$ y que realizando el cambio de variable $x = x_0 + th$, resulta:
+    $$
+    (x-x_0)(x-x_1)(x-x_2)\cdots(x-x_n) = (ht)h(t-1)h(t-2)\cdots h(t-n)
+    $$
+    \item<3-> Por lo tanto:
+    \footnotesize{
+    $$
+    R(f) = \dfrac{f^{(n+1)}(\xi)}{(n+1)!}\int_{a}^{b}h^{n+1}t(t-1)(t-2)\cdots (t-n)hdt = K\dfrac{f^{(n+1)}(\xi)}{(n+1)!}h^{n+2}
+    $$}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Cerradas de Newton-C\^otes}
+  \begin{itemize}
+    \item En el caso de fórmulas en las que $n$ es par, si se realiza de la misma forma el cálculo,
+    $$
+    R(f) = \int_{a}^{b}\dfrac{f^{(n+1)}(\xi)}{(n+1)!}\Pi(x)dx = \dfrac{f^{(n+1)}(\xi)}{(n+1)!}\int_{a}^{b}\Pi(x)dx
+    $$
+    El resultado de la integral es cero.
+    \item<2-> La integral se anula ya que se trata de integrar un polinomio que tiene $n+1$ raíces distintas, igualmente
+    espaciadas en el intervalo $[a,b]$
+      \begin{center}  
+  \begin{tikzpicture}[scale=0.5]
+    \begin{scope}[xshift=3cm]
+    % Eje x
+    \draw[->] (-4,0) -- (3,0);
+    
+    % Etiquetas del eje x
+    \foreach \x/\label in {-3/x_0, -1/x_1, 1/x_2}
+      \node[below] at (\x,0) {$\label$};
+    
+    % Gráfico de la función
+    \draw[blue!70!black] plot[smooth, samples=100, domain=-3.5:1.5] (\x, {0.5*(\x+3)*(\x+1)*(\x-1)});
+    \end{scope}
+  
+    \begin{scope}[xshift=12cm]
+      % Eje x
+      \draw[->] (-5,0) -- (5,0);
+      
+      % Etiquetas del eje x    
+      \foreach \x/\label in {-4/x_0, -2/x_1, 0/x_2, 2/x_3, 4/x_4}
+        \node[below] at (\x,0) {$\label$};
+      
+      % Gráfico de la función
+      \draw[blue!70!black] plot[smooth, samples=100, domain=-4.1:4.1] (\x, {0.03*(\x+4)*(\x+2)*(\x)*(\x-2)*(\x-4)});
+    \end{scope}
+  \end{tikzpicture}
+\end{center}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Cerradas de Newton-C\^otes}
+  \begin{itemize}
+    \item Esto quiere decir que las fórmulas de integración de Newton Cotes en las que $n$ es par, son de orden $n+1$, puesto que el error no es función de $f^{(n+1)}(  \xi)$, sino que será función de $f^{(n+2)}(\xi)$.
+    \item<2-> El error no está en un polinomio de grado $n+1$ ($\Pi(x)$) sino en un polinomio de grado $n + 2$.
+    \item<3-> Este polinomio es $x\cdot\Pi(x)$.
+    \item<4->El error se calcula mediante la expresión :
+    $$
+    R(f) = \int_{a}^{b}\dfrac{f^{(n+2)}(\xi)}{(n+2)!}x\cdot\Pi(x)dx 
+    $$    
+  \end{itemize}      
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Cerradas de Newton-C\^otes}
+  \begin{itemize}
+    \item<1-> Para realizar este cálculo se procede mediante el cambio de variable ya utilizado $x = x_0 + ht$, con lo que la
+    expresión resultante es:
+    \small{
+    \begin{align*}
+      R(f)  = & \int_{0}^{n}\dfrac{f^{(n+2)}(\xi)}{(n+2)!}\left(x_0+ht\right)\left[(ht)h(t-1)h(t-2)\cdots h(t-n)\right]hdt \\
+       = & \dfrac{f^{(n+2)}(\xi)}{(n+2)!}\int_{0}^{n}(x_0)[(ht)h(t-1)h(t-2)\cdots h(t-n)]hdt + \\
+      & \dfrac{f^{(n+2)}(\xi)}{(n+2)!}\int_{0}^{n}(ht)h(t-1)h(t-2)\cdots h(t-n)hdt\\     
+      = & 0 + \dfrac{f^{(n+2)}(\xi)}{(n+2)!}h^{n+3}\int_{0}^{n}t^2(t-1)\cdots(t-n)dt
+    \end{align*}}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Cerradas de Newton-C\^otes}
+  En la siguiente tabla se detallan las constantes y la expresi\'on del error correspondientes a varios 
+\'ordenes diferentes:
+\begin{center}
+\begin{tabular}{|c|c|c|c|}\hline
+ $n$ & $\alpha$ & $w_j,\quad j=0,1,\ldots,n$ & $E$\\\hline
+ 1 & $\frac{1}{2}$ &  1 \quad 1 & $-\frac{h^3}{12}f''(\xi)$\\\hline 
+ 2 & $\frac{1}{3}$ &  1 \quad 4 \quad 1 & $-\frac{h^5}{90}f^{(4)}(\xi)$\\\hline 
+ 3 & $\frac{3}{8}$ &  1 \quad 3 \quad 3 \quad 1 & $-\frac{3h^5}{80}f^{(4)}(\xi)$\\\hline 
+ 4 & $\frac{2}{45}$ &  7 \quad 32 \quad 12 \quad 32 \quad 7& $-\frac{8h^7}{945}f^{(6)}(\xi)$\\\hline 
+ 5 & $\frac{5}{288}$ &  19 \quad 75 \quad 50 \quad 50 \quad 75 \quad 19 & $-\frac{275h^7}{12096}f^{(6)}(\xi)$\\\hline 
+ 6 & $\frac{1}{140}$ &  41 \quad 216 \quad 27 \quad 272 \quad 27 \quad 216 \quad 41 &
+$-\frac{9h^9}{1400}f^{(8)}(\xi)$\\\hline 
+\end{tabular}
+\end{center}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Abiertas de Newton-C\^otes}
+  \begin{itemize}
+    \item Las fórmulas abiertas son aquellas en que los extremos del intervalo de integración no forman parte de la
+    fórmula.
+    \item<2->El proceso de cálculo de las fórmulas abiertas es idéntico al de las fórmulas cerradas, salvo en dos
+    cuestiones.
+    \item<3->En primer lugar, dado que no interviene los extremos del intervalo en la fórmula, se puede comenzar trabajando con una fórmula en que solo intervenga un nodo ($n=0$).
+    \item<4-> Por otro lado, dado que los
+    extremos del intervalo no forman parte de la fórmula, al realizar el cambio de variable para integrar el polinomio interpolador, los extremos del intervalo no serán 0 y n como veremos más adelante.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Abiertas de Newton-C\^otes}
+  \begin{itemize}
+    \item Para realizar el cálculo de las fórmulas, se cambia a la variable $t$. Los nodos está igualmente espaciados y
+    separados una distancia $h$.
+    \item<2-> De forma general, el valor de $h$ se calcula como $h=\frac{b-a}{n+2}$ debido a que los extremos del intervalo no forman parte de la fórmula.
+    \item<3-> Como el extremo inferior del intervalo no forma parte de la fórmula de integración, $x_0$ es por tanto $a + h$.
+    \item<4-> Por tanto en la variable $t$ el intervalo de integración va desde $-1$ hasta $n+1$.
+  \end{itemize}
+  \begin{center}  
+    \uncover<4->{
+  \begin{tikzpicture}[scale=0.7]
+    % Eje horizontal superior
+    \draw (0,0) -- (11,0);
+    
+    % Marcas en el eje superior
+    \foreach \x/\label in {0/a, 2/x_0, 4/x_1, 7/x, 9/x_n, 11/b}
+      \draw (\x,0.1) -- (\x,-0.1) node[below] {$\label$};
+    
+    % Flechas para h
+    \draw[<->] (0.1,-0.5) -- (1.7,-0.5) node[midway,below] {$h$};
+    \draw[<->] (2.3,-0.5) -- (3.7,-0.5) node[midway,below] {$h$};
+    
+    % Ecuación
+    \node at (5,-1.25) {$x = x_0 + t \cdot h$};
+    
+    % Eje horizontal inferior
+    \draw (0,-2) -- (11,-2);
+    
+    % Marcas en el eje inferior
+    \foreach \x/\label in {0/-1, 2/0, 4/1, 7/t, 9/n, 11/n+1}
+      \draw (\x,-1.9) -- (\x,-2.1) node[below] {$\label$};
+    
+    % Flechas para 1
+    \draw[<->] (0.3,-2.5) -- (1.7,-2.5) node[midway,below] {1};
+    \draw[<->] (2.2,-2.5) -- (3.8,-2.5) node[midway,below] {1};
+  \end{tikzpicture}}
+\end{center}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Abiertas de Newton-C\^otes}
+  \begin{itemize}
+    \item En cuanto a la expresión del error cometido al realizar el cálculo de la integral, sucede lo mismo que en las
+    formulas cerradas.
+    \item Al tratarse de nodos igualmente espaciados, las fórmulas de integración con $n$ par, son de orden $n+1$ mientras que las formulas de integración con $n$ impar son de orden $n$.
+    \item El cálculo se realiza de la
+    misma manera que se realizó para las fórmulas cerradas, salvo que los extremos del intervalo de integración
+    son $-1$ y $n+1$.
+    \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Abiertas de Newton-C\^otes}
+  Para $n=0$ (F\'ormula del Punto Medio)
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+      % Eje horizontal
+      \draw (0,0) -- (10,0);
+      
+      % Marcas en el eje
+      \draw (0,0.2) -- (0,-0.2) node[above] at (0,0.3){$a$};
+      \draw (5,0.2) -- (5,-0.2) node[above] at (5,0.3){$x_0$};
+      \draw (10,0.2) -- (10,-0.2) node[above] at (10,0.3){$b$};
+      
+      % Flecha para h
+      \draw[<->, blue] (0, -0.5) -- (5, -0.5);
+      
+      % Ecuación para h
+      \node at (2.5, -1.2) {$h = \dfrac{b-a}{2}$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+    \item Solamente hay un nodo, por tanto el polinomio interpolador que se obtiene es una constante $q(t) = f (x_0)$.
+    \item<2-> Tal como se aprecia en el gráfico, el valor de $h$ es $\frac{b-a}{2}$
+    . En general, para cualquier fórmula abierta, $h=\frac{b-a}{n+2}$.
+    \item<3->La fórmula de integración se obtiene como:
+    $$
+    I = \int_{-1}^{1}q(t)hdt = h\int_{-1}^{1}f(x_0)dt = \left.hf(x_0)t\right|_{-1}^1 = 2hf(x_0)
+    $$    
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Abiertas de Newton-C\^otes}
+  \begin{itemize}
+    \item El error en la fórmula se calcula como en las fórmulas en las que $n$ es par:
+    \begin{align*}
+      R(f) & = \int_{a}^{b}\dfrac{f''(\xi)}{2!}x\Pi(x)dx = \dfrac{f''(\xi)}{2!}\int_{a}^{b}x(x-x_0)dx\\
+      & = \dfrac{f''(\xi)}{2}\int_{-1}^{1}(x_0+th)(th)hdt\\
+      & = \dfrac{f''(\xi)}{2}h^2\int_{-1}^{1}(x_0)tdt + \dfrac{f''(\xi)}{2}h^3\int_{-1}^{1}t^2dt\\
+      & = \dfrac{f''(\xi)}{2}h^3\int_{-1}^{1}t^2dt
+    \end{align*}
+    \item<2-> Por lo tanto:
+    $$
+    R(f) = \left.\dfrac{f''(\xi)}{2}h^3\dfrac{t^3}{3}\right|_{-1}^1 = \dfrac{h^3f''(\xi)}{3}
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Abiertas de Newton-C\^otes}
+Para $n=1$
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  % Eje horizontal
+  \draw (0,0) -- (9,0);
+  
+  % Marcas en el eje
+  \draw (0,0.2) -- (0,-0.2) node[above] at (0,0.3){$a$} node[below] at (0,-0.2){$-1$};
+  \draw (3,0.2) -- (3,-0.2) node[above] at (3,0.3){$x_0$} node[below] at (3,-0.2){$0$};
+  \draw (6,0.2) -- (6,-0.2) node[above] at (6,0.3){$x_1$} node[below] at (6,-0.2){$1$};
+  \draw (9,0.2) -- (9,-0.2) node[above] at (9,0.3){$b$} node[below] at (9,-0.2){$2$};
+  
+  % Flecha para h
+  \draw[<->, blue] (0, -0.9) -- (3, -0.9);
+  
+  % Ecuación para h
+  \node at (1.5, -1.65) {$h = \dfrac{b-a}{3}$};
+\end{tikzpicture}
+\end{center}
+\begin{itemize}
+  \item El polinomio interpolador en este caso, en variable $t$ es:
+  $$
+    q(t) = f(x_0)\binom{t}{0}+\Delta f(x_0)\binom{t}{1} = f(x_0)+\left(f(x_1)-f(x_0)\right)t
+  $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Abiertas de Newton-C\^otes}
+  \begin{itemize}
+    \item La fórmula de integración resulta por tanto:
+    \begin{align*}
+      I  & = \int_{-1}^{2}\left(f(x_0)+\left(f(x_1)-f(x_0)\right)t\right)hdt\\
+      & = h\left.f(x_0)t+\left(f(x_1)-f(x_0)\right)\dfrac{t^2}{2}\right|_{-1}^{2} = \dfrac{3h}{2}\left(f(x_1)+f(x_0)\right)
+    \end{align*}
+    \item<2-> El error de la fórmula se obtiene como:
+    $$
+    R(f) = \int_{a}^{b}\dfrac{f''(\xi)}{2!}\Pi(x)dx = \dfrac{f''(\xi)}{2}\int_{a}^{b}(x-x_0)(x-x_1)dx
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Abiertas de Newton-C\^otes}
+  \begin{itemize}
+    \item Haciendo el cambio de variable resulta:
+    \small{
+    $$
+    R(f) = \dfrac{f''(\xi)}{2}\int_{-1}^{2}hth(t-1)hdt = \dfrac{f''(\xi)}{2}h^3\int_{-1}^{2}t(t-1)dt = \dfrac{3h^3f''(\xi)}{4}
+    $$}
+    \item La f\'ormula completa es:
+    \small{
+    $$
+    I = \dfrac{3h}{2}\left(f(x_1)+f(x_0)\right)+ \dfrac{3h^3f''(\xi)}{4}
+    $$}
+  \end{itemize}  
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas Abiertas de Newton-C\^otes}
+  Se puede escribir entonces, de manera general:
+  \footnotesize{
+$$
+\int_a^bf(x)dx =\alpha(w_1y_1+\cdots+w_{n+1}y_{n+1})+E
+$$}\normalsize
+siendo $h=\frac{b-a}{n+2}$, y denotando $E$ el error de integraci\'on.
+  \tiny{
+    \begin{center}
+      \begin{tabular}{@{} |c| c| c| c| @{}} 
+        \toprule
+        $n$ & $\alpha$ & $w_j,\ j=0,1,\ldots,n$ & $E$ \\[-1pt] 
+        \midrule
+        0 & 2 & 1 & $\dfrac{h^3f''(\xi)}{3}$ \\[-1pt]
+        \midrule
+        1 & $\dfrac{3}{2}$ & 1, 1 & $\dfrac{3h^3}{4}f''(\xi)$ \\[-1pt]
+        \midrule
+        2 & $\dfrac{4}{3}$ & 2, -1, 2 & $\dfrac{28h^5}{90}f^{(4)}(\xi)$ \\[-1pt]
+        \midrule
+        3 & $\dfrac{5}{24}$ & 11, 1, 1, 11 & $\dfrac{95h^5}{144}f^{(4)}(\xi)$ \\[-1pt]
+        \midrule
+        4 & $\dfrac{6}{20}$ & 11, -14, 26, -14, 11 & $\dfrac{41h^7}{140}f^{(6)}(\xi)$ \\[-1pt]
+        \midrule
+        5 & $\dfrac{7}{1440}$ & 611, -453, 562, 562, -453, 611 & $\dfrac{5257h^7}{8640}f^{(6)}(\xi)$ \\[-1pt]
+        \midrule
+        6 & $\dfrac{3956}{14175}$ & 460, -954, 2196, -2459, 2196, -954, 460 & $\dfrac{9h^9}{1400}f^{(8)}(\xi)$ \\
+        \bottomrule
+        \end{tabular}
+\end{center}}
+\end{frame}
+%%%%%
 \end{document}
 
