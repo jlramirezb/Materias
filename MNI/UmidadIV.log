@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  30 MAR 2025 19:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  30 MAR 2025 20:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -996,7 +996,7 @@ Package epstopdf Info: Source file: <ejem1.eps>
 (epstopdf)             Command: <repstopdf --outfile=ejem1-eps-converted-to.pdf ejem1.eps>
 (epstopdf)             \includegraphics on input line 142.
 Package epstopdf Info: Output file is already uptodate.
-<ejem1-eps-converted-to.pdf, id=702, 1348.03625pt x 739.76375pt>
+<ejem1-eps-converted-to.pdf, id=714, 1348.03625pt x 739.76375pt>
 File: ejem1-eps-converted-to.pdf Graphic file (type pdf)
 <use ejem1-eps-converted-to.pdf>
 Package pdftex.def Info: ejem1-eps-converted-to.pdf  used on input line 142.
@@ -1148,7 +1148,7 @@ Package epstopdf Info: Source file: <ejem2.eps>
 (epstopdf)             Command: <repstopdf --outfile=ejem2-eps-converted-to.pdf ejem2.eps>
 (epstopdf)             \includegraphics on input line 205.
 Package epstopdf Info: Output file is already uptodate.
-<ejem2-eps-converted-to.pdf, id=1044, 1348.03625pt x 739.76375pt>
+<ejem2-eps-converted-to.pdf, id=1056, 1348.03625pt x 739.76375pt>
 File: ejem2-eps-converted-to.pdf Graphic file (type pdf)
 <use ejem2-eps-converted-to.pdf>
 Package pdftex.def Info: ejem2-eps-converted-to.pdf  used on input line 205.
@@ -2034,7 +2034,7 @@ Package epstopdf Info: Source file: <trapz.eps>
 (epstopdf)             Command: <repstopdf --outfile=trapz-eps-converted-to.pdf trapz.eps>
 (epstopdf)             \includegraphics on input line 691.
 Package epstopdf Info: Output file is already uptodate.
-<trapz-eps-converted-to.pdf, id=3008, 557.08125pt x 557.08125pt>
+<trapz-eps-converted-to.pdf, id=3020, 557.08125pt x 557.08125pt>
 File: trapz-eps-converted-to.pdf Graphic file (type pdf)
 <use trapz-eps-converted-to.pdf>
 Package pdftex.def Info: trapz-eps-converted-to.pdf  used on input line 691.
@@ -2420,7 +2420,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [135
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 907--907
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 908--908
  [][][][]  
  []
 
@@ -2470,7 +2470,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [140
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 915--915
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 916--916
  [][][][]  
  []
 
@@ -2493,7 +2493,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [142
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 976--976
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 977--977
  [][][][]  
  []
 
@@ -2507,7 +2507,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [143
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 991--991
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 992--992
  [][][][]  
  []
 
@@ -2539,7 +2539,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [146
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1006--1006
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1007--1007
  [][][][]  
  []
 
@@ -2571,7 +2571,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [149
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1016--1016
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1017--1017
  [][][][]  
  []
 
@@ -2594,12 +2594,12 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [151
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1034--1034
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1035--1035
  [][][][]  
  []
 
 
-Overfull \hbox (9.16814pt too wide) detected at line 1034
+Overfull \hbox (9.16814pt too wide) detected at line 1035
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) [] (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 ht\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2) [] \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 n\OT1/cmr/m/n/12 )
  []
 
@@ -2613,7 +2613,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [152
 
 ]
-Overfull \hbox (9.16814pt too wide) detected at line 1034
+Overfull \hbox (9.16814pt too wide) detected at line 1035
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) [] (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 ht\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2) [] \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 n\OT1/cmr/m/n/12 )
  []
 
@@ -2627,7 +2627,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [153
 
 ]
-Overfull \hbox (9.16814pt too wide) detected at line 1034
+Overfull \hbox (9.16814pt too wide) detected at line 1035
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) [] (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 ht\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 1)\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2) [] \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 n\OT1/cmr/m/n/12 )
  []
 
@@ -2641,7 +2641,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [154
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1073--1073
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1074--1074
  [][][][]  
  []
 
@@ -2664,7 +2664,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [156
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1085--1085
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1086--1086
  [][][][]  
  []
 
@@ -2705,12 +2705,12 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [160
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1099--1099
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1100--1100
  [][][][]  
  []
 
 
-Overfull \hbox (3.86414pt too wide) detected at line 1099
+Overfull \hbox (3.86414pt too wide) detected at line 1100
 []
  []
 
@@ -2724,7 +2724,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [161
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1116--1116
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1117--1117
  [][][][]  
  []
 
@@ -2738,7 +2738,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [162
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1128--1128
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1129--1129
  [][][][]  
  []
 
@@ -2779,7 +2779,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [166
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1167--1167
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1168--1168
  [][][][]  
  []
 
@@ -2820,7 +2820,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [170
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1178--1178
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1179--1179
  [][][][]  
  []
 
@@ -2834,7 +2834,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [171
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1208--1208
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1209--1209
  [][][][]  
  []
 
@@ -2866,7 +2866,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [174
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1224--1224
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1225--1225
  [][][][]  
  []
 
@@ -2889,7 +2889,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [176
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1252--1252
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1253--1253
  [][][][]  
  []
 
@@ -2903,7 +2903,7 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [177
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1266--1266
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1267--1267
  [][][][]  
  []
 
@@ -2926,12 +2926,12 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [179
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1281--1281
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1282--1282
  [][][][]  
  []
 
 
-Overfull \hbox (2.49382pt too wide) detected at line 1281
+Overfull \hbox (2.49382pt too wide) detected at line 1282
 \OML/cmm/m/it/10.95 R\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 ) = [] [][] \OML/cmm/m/it/10.95 hth\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 1)\OML/cmm/m/it/10.95 hdt \OT1/cmr/m/n/10.95 = []\OML/cmm/m/it/10.95 h[] [][] t\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 t \OMS/cmsy/m/n/10.95 ^^@ \OT1/cmr/m/n/10.95 1)\OML/cmm/m/it/10.95 dt \OT1/cmr/m/n/10.95 = []
  []
 
@@ -2945,12 +2945,12 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 [180
 
 ]
-Overfull \hbox (40.09575pt too wide) in paragraph at lines 1312--1312
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1313--1313
  [][][][]  
  []
 
 
-Overfull \vbox (2.65651pt too high) detected at line 1312
+Overfull \vbox (2.65651pt too high) detected at line 1313
  []
 
 
@@ -2961,6 +2961,120 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
  []
 
 [181
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1328--1328
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[182
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[183
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[184
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[185
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1361--1361
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[186
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[187
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[188
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[189
+
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1380--1380
+ [][][][]  
+ []
+
+
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[190
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[191
+
+]
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[192
 
 ]
 \tf@nav=\write6
@@ -2978,21 +3092,21 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-05-27>
  ***********
 Package rerunfilecheck Info: File `UmidadIV.out' has not changed.
-(rerunfilecheck)             Checksum: BF80BA6B661FF5983C8463DFA197532F;927.
+(rerunfilecheck)             Checksum: 6C08313DEBF22CEE92A542B6F8FD2515;1367.
  ) 
 Here is how much of TeX's memory you used:
- 26420 strings out of 473583
- 521590 string characters out of 5732336
+ 26456 strings out of 473583
+ 521979 string characters out of 5732336
  1949908 words of memory out of 5000000
- 48441 multiletter control sequences out of 15000+600000
+ 48453 multiletter control sequences out of 15000+600000
  569640 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,443b,907s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on UmidadIV.pdf (181 pages, 737208 bytes).
+Output written on UmidadIV.pdf (192 pages, 768245 bytes).
 PDF statistics:
- 5229 PDF objects out of 6186 (max. 8388607)
- 4803 compressed objects within 49 object streams
- 369 named destinations out of 1000 (max. 500000)
- 466 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5535 PDF objects out of 6186 (max. 8388607)
+ 5093 compressed objects within 51 object streams
+ 393 named destinations out of 1000 (max. 500000)
+ 482 words of extra memory for PDF output out of 10000 (max. 10000000)
 

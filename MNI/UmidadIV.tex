@@ -893,9 +893,10 @@ $$
   \end{itemize}
 \end{frame}
 %%%%%
+\subsection{F\'ormulas de Newton-C\^otes}
 \begin{frame}{F\'ormulas de Newton-C\^otes}
   \begin{itemize}
-    \item Las fórmulas de cuadratura de Newton-Cotes son fórmulas de cuadratura de tipo interpolatorio obtenidas
+    \item Las fórmulas de cuadratura de Newton-C\^otes son fórmulas de cuadratura de tipo interpolatorio obtenidas
     para nodos igualmente espaciados.
     \item<2-> Tal como se ha explicado de forma general cada una de estas fórmulas
     se calcula integrando el polinomio interpolador correspondiente.
@@ -1309,6 +1310,73 @@ siendo $h=\frac{b-a}{n+2}$, y denotando $E$ el error de integraci\'on.
         \bottomrule
         \end{tabular}
 \end{center}}
+\end{frame}
+%%%%%
+\subsection{F\'ormulas de Newton-C\^otes Compuestas}
+\begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
+  \begin{itemize}
+    \item Tal como se ha podido ver en el estudio de las fórmulas de cuadratura de Newton-Cotes, cuando la fórmula
+    de integración es de orden $p$, el error cometido es:
+    $$
+    R(f) = \dfrac{Kh^{p+2}f^{(n+1)}(\xi)}{(n+1)!}
+    $$
+    \item<2-> El único valor sobre el que se puede actuar para disminuir el error es $h$. Para disminuir el error, por tanto se
+    deberá disminuir el valor de $h$, lo que implica aumentar el número de nodos de la fórmula.
+    \item<3-> Sin embargo, aumentar el número de nodos de la fórmula no implica disminuir el error, para un número elevado de nodos, el proceso de integración es inestable.  
+    \item<4-> La manera de disminuir el valor de $h$, es creando subintervalos dentro del intervalo $[a,b]$, y aplicando fórmulas de integración sencillas en cada subintervalo.
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
+  \begin{itemize}
+    \item Por tanto las f\'ormulas de Newton-C\^otes compuestas se calculan de la siguiente manera:
+    $$
+    \int_{a}^{b}f(x)dx = \sum_{i=1}^{N}I_i + \sum_{i=1}^NR_i(f)
+    $$
+    \begin{center}
+    \begin{tikzpicture}[scale=1.5] % Ajusta la escala según sea necesario
+
+      % Dibujar la línea principal
+      \draw[thick] (0,0) -- (5,0);
+    
+      % Marcas en la línea
+      \foreach \x in {0,1,2,4,5} {
+        \draw (\x,0.1) -- (\x,-0.1);
+      }
+    
+      % Etiquetas de los puntos
+      \node[above] at (0,0.1) {$a$};
+      \node[above] at (0.5,0.1) {$I_1$};
+      \node[above] at (1.5,0.1) {$I_2$};
+      \node[above] at (5,0.1) {$b$};
+      
+      %Etiqueta IN
+      \node[above] at (4.5,0.1) {$I_N$};    
+    \end{tikzpicture}
+  \end{center}
+  \item<2-> Cada una de las fórmulas $I_i$, pueden ser diferentes, pero el orden de las fórmulas será distinto, con lo que en unas zonas del intervalo, el error cometido será mayor que en otras.
+  \item<3-> Para evitar esto, se utiliza la misma fórmula repetida $N$ veces, utilizando de este modo el mismo valor de $h$ en el intervalo, lo que simplifica los cálculos.
+  \item<4-> Este proceso también homogeniza el error cometido a lo largo de todo el intervalo [a,b].
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
+  \begin{itemize}
+    \item Cuando se aplican estas fórmulas, el error cometido es:
+    {\small
+    $$
+    R(f) = \sum_{i=1}^{N}R_i(f) = \sum_{i=1}^{N}\dfrac{Kh^{p+2}f^{(p+1)}(\xi_i)}{(p+1)!} = \dfrac{Kh^{p+2}}{(p+1)!}\sum_{i=1}^{N}f^{(p+1)}(\xi_i)
+    $$}
+    \item<2-> En cada subintervalo existe un valor $\xi_i$ para el que se calcula la derivada $p+1$. 
+    \item<3-> En el intervalo total [a,b] existe algun punto $\xi$ para el cual
+    $$
+    \sum_{i=1}^{N}f^{(p+1)}(\xi_i) = Nf^{(p+1)}(\xi)
+    $$
+    con lo que la expresión de error queda de la forma:
+    $$
+    R(f) = N\dfrac{Kh^{p+2}}{(p+1)!}f^{p+1}(\xi)
+    $$
+  \end{itemize}
 \end{frame}
 %%%%%
 \end{document}

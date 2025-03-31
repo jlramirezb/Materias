@@ -4,3 +4,5 @@
 \beamer@sectionintoc {3}{Integraci\'on Num\'erica}{94}{0}{3}
 \beamer@subsectionintoc {3}{1}{Regla del Trapecio}{104}{0}{3}
 \beamer@subsectionintoc {3}{2}{Regla de Simpson}{113}{0}{3}
+\beamer@subsectionintoc {3}{3}{F\'ormulas de Newton-C\^otes}{136}{0}{3}
+\beamer@subsectionintoc {3}{4}{F\'ormulas de Newton-C\^otes Compuestas}{182}{0}{3}
