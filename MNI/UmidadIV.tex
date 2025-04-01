@@ -1528,8 +1528,83 @@ siendo $h=\frac{b-a}{n+2}$, y denotando $E$ el error de integraci\'on.
   \end{itemize}
 \end{frame}
 %%%%%%
-\begin{frame}
+\begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
+  \begin{itemize}
+    \item En cuanto al error cometido, se tiene que:
+    $$
+    R(f) = \sum_{i=1}^{N}R_i(f) = \sum_{i=1}^{N}-\dfrac{h^5f^{(4)}(\xi)}{90}=-\dfrac{h^5}{90}\sum_{i=1}^{N}f^{(4)}(\xi_i)
+    $$
+    \item<2-> >El valor de $h$ para la f\'ormula compuesta viene dada por $h=\frac{b-a}{2N}$, por lo tanto
+    $$
+    R(f) = -N \dfrac{h^5}{90}f^{(4)}(\xi) = -\dfrac{(b-a)h^4}{180}f^{(4)}(\xi)
+    $$ 
+  \end{itemize}
+\end{frame}
+%%%%%%%
+\begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
+  \text{F\'ormulas abiertas}\\
+  \text{n=0; F\'ormula del punto medio.}
+  \begin{itemize}
+    \item En las f\'ormulas abiertas, el valor de $h=\frac{b-a}{N(n+2)}$ y el gr\'afico para esta f\'ormula es
+    \begin{center}
+      \begin{tikzpicture}[scale=1.2]
   
+        % Eje principal
+        \draw[thick] (0,0) -- (8,0);
+      
+        % Marcas en el eje
+        \foreach \x in {0, 1, 2, 3, 4, 6, 7, 8} {
+          \draw (\x,0.1) -- (\x,-0.1);
+        }
+      
+        % Nodos
+        \node[above] at (0,1) {$a$};
+        \node[above] at (0,0.1) {$x_0$};
+        \node[above] at (1,0.1) {$x_1$};
+        \node[above] at (2,0.1) {$x_2$};
+        \node[above] at (3,0.1) {$x_3$};
+        \node[above] at (4,0.1) {$x_4$};
+        \node[above] at (6,0.1) {$x_{2N-2}$};
+        \node[above] at (7,0.1) {$x_{2N-1}$};
+        \node[above] at (8,0.1) {$x_{2N}$};
+        \node[above] at (8,1) {$b$};
+      
+        % Intervalos I_i
+        \node[above] at (1,0.8) {$I_1$}; % Mueve I1 hacia arriba
+        \node[above] at (3,0.8) {$I_2$};
+        \node[above] at (7,0.8) {$I_N$};
+      
+        % Llave para I_1
+        \draw[decorate,decoration={brace,amplitude=8pt}]
+          (0,0.5) -- (2,0.5);
+        % Llave para I_2
+        \draw[decorate,decoration={brace,amplitude=8pt}]
+          (2,0.5) -- (4,0.5);
+        % Llave para I_N
+        \draw[decorate,decoration={brace,amplitude=8pt}]
+          (6,0.5) -- (8,0.5);
+      
+        % Flecha y etiqueta para h
+        \draw[<->] (0,-0.3) -- (1,-0.3);
+        \node[below] at (0.5,-0.4) {$h = \frac{b-a}{2N}$};
+      
+      \end{tikzpicture}    
+      \end{center}
+      \item La regla del punto medio es: 
+      $$
+      \int_{x_0}^{x_2}f(x)dx = 2hf(x_1)+\dfrac{h^3f''(\xi)}{3}
+      $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
+  \begin{itemize}
+    \item Particionando el intervalo $[a,b]$ en $N$ subintervalos, resulta
+    \begin{align*}
+      \int_{a}^{b}f(x)dx = &  \int_{x_0}^{x_2}f(x)dx + \int_{x_2}^{x_4}f(x)dx+\cdots+\int_{x_{2N-2}}^{x_{2N}}f(x)dx\\
+      = & 2hf(x_1) + 2hf(x_3)
+    \end{align*}
+  \end{itemize}
 \end{frame}
 \end{document}
 
