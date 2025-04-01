@@ -15,6 +15,8 @@
 \author{Prof. Jos\'e Luis Ram\'irez}
 \date{\today}
 
+\sloppy
+\setlength{\emergencystretch}{3em} % Allow more flexibility in line breaking
 \begin{document}
 
 \maketitle
@@ -60,7 +62,7 @@
     \item<4-> Puede ser posible encontrar una antiderivada simb\'olicamente, pero puede ser m\'as f\'acil computar una aproximaci\'on num\'erica que computar la antiderivada. \'Ese puede ser el caso si la antiderivada se da como una serie o producto infinita, o si su evaluaci\'on requiere una funci\'on especial la cu\'al no est\'a disponible.
   \end{itemize}
 \end{frame}
-%%%%%
+% %%%%%
 \section{Diferenciaci\'on Num\'erica}
 \begin{frame}{Diferenciaci\'on Num\'erica}
     \begin{itemize}
@@ -1450,9 +1452,10 @@ siendo $h=\frac{b-a}{n+2}$, y denotando $E$ el error de integraci\'on.
     R(f) = -N\dfrac{h^3}{12}f''(\xi)=-\dfrac{(b-a)h^2}{12}f''(\xi)
     $$
     \item<2-> La formula compuesta del trapecio es por lo tanto:
+    {\small
     $$
       \int_{a}^{b}f(x)dx = \dfrac{h}{2}\left[f(x_0)+f(x_N)+2\sum_{i=1}^{N-1}f(x_i)\right]- \dfrac{(b-a)h^2}{12}f''(\xi)
-    $$
+    $$}
   \end{itemize}
 \end{frame}
 %%%%%
@@ -1507,15 +1510,26 @@ siendo $h=\frac{b-a}{n+2}$, y denotando $E$ el error de integraci\'on.
       $$
       \int_{x_0}^{x_2}f(x)dx = \dfrac{h}{3}\left(f(x_0)+4f(x_1)+f(x_2)\right)-\dfrac{h^5f^{(4)}(\xi)}{90}      
       $$
+    \end{itemize}
   \end{frame}
-%%%%%
+%%%%
 \begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
   \begin{itemize}
     \item Creando una partici\'on del intervalo $[a,b]$ en $N$ subintervalos, se tiene que:
+    {\footnotesize
     \begin{align*}
-      \int_{a}^{b}f(x)dx & = \int_{x_0}^{x_2}f(x)dx + \int_{x_2}^{x_4}f(x)dx + \cdots + \int_{x_{2N-2}}^{x_{2N}}f(x)dx\\      
-    \end{align*}
+      \int_{a}^{b}f(x)dx = &  \int_{x_0}^{x_2}f(x)dx + \int_{x_2}^{x_4}f(x)dx + \cdots + \int_{x_{2N-2}}^{x_{2N}}f(x)dx\\      
+      = & \dfrac{h}{3}\left(f(x_0)+4f(x_1)+f(x_2)\right)+\dfrac{h}{3}\left(f(x_2)+4f(x_3)+f(x_4)\right)+\\
+      & \cdots+\dfrac{h}{3}\left(f(x_{2N-2})+4f(x_{2N-1})+f(x_{2N})\right)\\
+      = & \dfrac{h}{3}\left[f(x_0)+4f(x_1)+2f(x_2)+4f(x_3)+\cdots\right.\\
+      & +\left.2f(x_{2N-2})+4f(x_{2N-1})+f(x_{2N})\right]+R(f)\\
+      = & \dfrac{h}{3}\left[f(x_0)+f(x_{2N})+4\sum_{i=1}^{N}f(x_{2i-1})+2\sum_{i=1}^{N-1}f(x_{2i})\right]+R(f)
+    \end{align*}}
   \end{itemize}
+\end{frame}
+%%%%%%
+\begin{frame}
+  
 \end{frame}
 \end{document}
 
