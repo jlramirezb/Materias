@@ -6,3 +6,4 @@
 \beamer@subsectionintoc {3}{2}{Regla de Simpson}{113}{0}{3}
 \beamer@subsectionintoc {3}{3}{F\'ormulas de Newton-C\^otes}{136}{0}{3}
 \beamer@subsectionintoc {3}{4}{F\'ormulas de Newton-C\^otes Compuestas}{182}{0}{3}
+\beamer@subsectionintoc {3}{5}{M\'etodo de Integraci\'on de Romberg}{208}{0}{3}

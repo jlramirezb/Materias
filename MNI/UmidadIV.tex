@@ -1602,9 +1602,103 @@ siendo $h=\frac{b-a}{n+2}$, y denotando $E$ el error de integraci\'on.
     \item Particionando el intervalo $[a,b]$ en $N$ subintervalos, resulta
     \begin{align*}
       \int_{a}^{b}f(x)dx = &  \int_{x_0}^{x_2}f(x)dx + \int_{x_2}^{x_4}f(x)dx+\cdots+\int_{x_{2N-2}}^{x_{2N}}f(x)dx\\
-      = & 2hf(x_1) + 2hf(x_3)
+      = & 2hf(x_1) + 2hf(x_3)+\cdots+2hf(x_{2N-1})+ R(f)\\
+      = & 2h\sum_{i=1}^{N}f(x_{2i-1})+ R(f) \
     \end{align*}
   \end{itemize}
 \end{frame}
+%%%%%
+\begin{frame}{F\'ormulas de Newton-C\^otes Compuestas}
+  \begin{itemize}
+    \item El error cometido es:
+    $$
+    R(f) = \sum_{i=1}^{N}R_i(f) = \sum_{i=1}^{N}\dfrac{h^3f''(\xi)}{3} = \dfrac{h^3}{3}\sum_{i=1}^{N}f''(\xi_i)
+    $$
+    \item<2-> El valor de $h$ en la f\'ormula compuesta es $h=\frac{b-a}{2N}$, por lo tanto:
+    $$
+    R(f) = N \dfrac{h^3}{3}f''(\xi) = \dfrac{(b-a)h^2}{6}f''(\xi)
+    $$
+    \item<3-> La f\'ormula compuesta del punto medio es por lo tanto:
+    $$
+    \int_{a}^{b}f(x)dx = 2h\sum_{i=1}^{N}f(x_{2i-1})+ \dfrac{(b-a)h^2}{6}f''(\xi)
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\subsection{M\'etodo de Integraci\'on de Romberg}
+\begin{frame}{M\'etodo de Integraci\'on de Romberg}
+  \begin{itemize}
+    \item Como sde ha visto la regla del trapecio proporciona la aproximaci\'on
+    de una integral con un error considerablemente grande
+    \item<2-> El m\'etodo de Romberg busca mejorar el procedimiento y hacerlo m\'as eficiente.
+    \item<3-> Consideremos la regla compuesta con nodos $n_1 = 1$; $n_2 = 2$; $n_3 =
+    4$; $\cdots$ ; $n_i = 2^{i-1}$, la cual viene dada por
+    $$
+      \int_{a}^{b}f(x) = \dfrac{h_i}{2}\left[f(a)+ f(b)+2\sum_{i=1}^{2^{i-1}-1}f(x_i)\right] - \dfrac{(b-a)h_i^2}{12}f''(\xi)
+    $$
+    con $h_i = \dfrac{b-a}{2^{i-1}}$ y $x_k = a+kh_i$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo de Integraci\'on de Romberg}
+  \begin{itemize}
+    \item Sea
+    $$
+    R(i,1) = \dfrac{h_i}{2}\left[f(a)+ f(b)+2\sum_{k=1}^{2^{i-1}-1}f(a+kh_i)\right]
+    $$
+    \item<2-> entonces
+    $$
+    R(1,1) = \dfrac{h_1}{2}\left[f(a)+ f(b)\right]
+    $$
+    pero $h_1=b-a$, entonces
+    $$
+    R(1,1) = \dfrac{b-a}{2}\left[f(a)+ f(b)\right]
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo de Integraci\'on de Romberg}
+  \begin{itemize}
+    \item Ahora, tomando $h_2=\frac{b-a}{2}$
+    \begin{align*}
+      R(2,1) & = \dfrac{h_2}{2}\left[f(a)+ f(b)+2f(a+h_2)\right]\\
+      & = \dfrac{b-a}{4}\left[f(a)+ f(b)\right]+ 2\dfrac{b-a}{4}f(a+h_2)\\
+      & = \dfrac{b-a}{4}\left[f(a)+ f(b)\right]	+ \dfrac{b-a}{2}f(a+h_2)\\
+      & = \dfrac{1}{2}\left[\dfrac{b-a}{2}\left(f(a)+ f(b)\right) + (b-a)f(a+h_2)\right]\\
+      R(2,1) & = \dfrac{1}{2}\left[R(1,1) + h_1f(a+h_2)\right]        
+    \end{align*}
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo de Integraci\'on de Romberg}
+  \begin{itemize}
+    \item Ahora, tomando $h_3=\frac{b-a}{4}$
+  \end{itemize}
+    {\footnotesize
+    \begin{align*}
+      R(3,1) & = \dfrac{h_3}{2}\left[f(a)+ f(b)+2\sum_{k=1}^{4-1}f(a+kh_3)\right]\\
+      & = \dfrac{h_3}{2}\left[f(a)+ f(b)+2(f(a+h_3)+f(a+2h_3)+f(a+3h_3)) \right]\\
+    & = \dfrac{h_3}{2}\left[f(a)+ f(b)+2f\left(a+2\dfrac{b-a}{4}\right)+2\left(f(a+h_3)+f(a+3h_3)\right)\right]\\  
+    & = \dfrac{h_3}{2}\left[f(a)+ f(b)+2f\left(a+\dfrac{b-a}{2}\right)+2\left(f(a+h_3)+f(a+3h_3)\right)\right]\\  
+    & = \dfrac{b-a}{8}\left[f(a) + f(b) + 2f(a+h_2)+2(f(a+h_3)+f(a+3h_3))\right]\\  
+    \end{align*}
+    $$
+    =\dfrac{1}{2}\left[\dfrac{b-a}{4}\left(f(a) + f(b)\right) + \dfrac{b-a}{2}f(a+h_2) + \dfrac{b-a}{2}(f(a+h_3)+f(a+3h_3))\right]
+    $$}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo de Integraci\'on de Romberg}
+  \begin{itemize}
+    \item Por lo tanto se tiene que
+    $$
+    R(3,1) = \dfrac{1}{2}\left[R(2,1) + h_2(f(a+h_3)+f(a+3h_3))\right]
+    $$
+    \item<2-> Continuando con este proceso se tiene que
+    $$
+    R(k,1) = \dfrac{1}{2}\left[R(k-1,1) + h_{k-1}\sum_{i=1}^{2^{k-2}}f(a+(2i-1)h_{k})\right]
+    $$
+  \end{itemize}
+\end{frame}
+
 \end{document}
 
