@@ -1699,6 +1699,75 @@ siendo $h=\frac{b-a}{n+2}$, y denotando $E$ el error de integraci\'on.
     $$
   \end{itemize}
 \end{frame}
-
+%%%%%
+\begin{frame}{M\'etodo de Integraci\'on de Romberg}
+  \begin{itemize}
+    \item Con el fin de acelerar el m\'etodo de Romberg, es com\'un usar el proceso de extrapolaci\'on de Richardson.
+    \item<2-> Sea $f \in C^{\infty}[a, b]$, se puede probar que la regla compuesta del trapecio se puede escribir como
+    $$
+    \int_{a}^{b}f(x)dx-R(k,1) = a_1h^2+a_2h^4+a_3h^6 +\cdots
+    $$
+    \item<2-> Reemplazando $k$ por $k+1$ y $h$ por $h/2$, se tiene que
+    $$
+    \int_{a}^{b}f(x)dx-R(k+1,1) = a_1\dfrac{h^2}{4}+a_2\dfrac{h^4}{16}+a_3\dfrac{h^6}{64} +\cdots
+    $$
+    \item<3->Multoplicando esta \'ultima ecuacion por 4 restando la anterior queda que:
+    {\footnotesize
+    $$
+    3\int_{a}^{b}f(x)dx-4R(k+1,1)+R(k,1) = a_2\left(\dfrac{h^4}{4}-h^4\right) + a_3\left(\dfrac{h^6}{16}-h^6\right)+\cdots
+    $$}
+  \end{itemize}
+\end{frame}
+%%%%
+\begin{frame}{M\'etodo de Integraci\'on de Romberg}
+  \begin{itemize} 
+    \item Por lo tanto
+    {\small
+    $$
+    \int_{a}^{b}f(x)dx-\left[R(k+1,1)+\dfrac{R(k+1,1)-R(k,1)}{3}\right] =-\dfrac{a_2h^4}{4} - \dfrac{5a_3h^6}{16}+\cdots
+    $$}
+    $$
+    \int_{a}^{b}f(x)dx =R(k,2) -\dfrac{a_2h^4}{4} - \dfrac{5a_3h^6}{16}+\cdots
+    $$
+    \item donde 
+    $$
+    R(k,2) = \dfrac{4R(k+1,1)-R(k,1)}{4-1}
+    $$
+    \item que al reescribirlo queda como
+    $$
+    R(k,2) = \dfrac{4R(k,1)-R(k-1,1)}{4-1}
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo de Integraci\'on de Romberg}
+  \begin{itemize}
+    \item Se puede repetir el procedimiento para eliminar el termino $h^4$, reemplazando $k$ por $k+1$ y $h$ por $h/2$
+    $$
+    \int_{a}^{b}f(x)dx =R(k+1,2)-a_2\dfrac{h^4}{64} - a_3\dfrac{5h^6}{1024}+\cdots    
+    $$
+    \item restando 16 veces esta ecuaci\'on a la anterior se tiene que
+    $$
+    15\int_{a}^{b}f(x)dx =16R(k+1,2)-R(k,2)+\cdots
+    $$
+    \item y por tanto
+    $$
+    \int_{a}^{b}f(x)dx = \dfrac{16R(k+1,2)-R(k,2)}{15}+\cdots
+    $$
+    \item Por lo tanto
+    $$
+    \int_{a}^{b}f(x)dx = R(k,3) + \cdots
+    $$
+  \end{itemize}
+\end{frame}
+%%%%%
+\begin{frame}{M\'etodo de Integraci\'on de Romberg}
+  \begin{itemize}
+    \item Continuando con el proceso se tiene que
+    $$
+    R(k,i) = \dfrac{4^{i-1}R(k,i-1)-R(k-1,i-1)}{4^{i-1}-1}
+    $$
+    $$
+  \end{itemize}
 \end{document}
 
