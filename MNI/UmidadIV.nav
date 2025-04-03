@@ -227,8 +227,10 @@
 \headcommand {\beamer@framepages {220}{220}}
 \headcommand {\slideentry {3}{5}{8}{221/221}{M\'etodo de Integraci\'on de Romberg}{0}}
 \headcommand {\beamer@framepages {221}{221}}
-\headcommand {\beamer@partpages {1}{221}}
-\headcommand {\beamer@subsectionpages {208}{221}}
-\headcommand {\beamer@sectionpages {94}{221}}
-\headcommand {\beamer@documentpages {221}}
-\headcommand {\gdef \inserttotalframenumber {104}}
+\headcommand {\slideentry {3}{5}{9}{222/222}{M\'etodo de Integraci\'on de Romberg}{0}}
+\headcommand {\beamer@framepages {222}{222}}
+\headcommand {\beamer@partpages {1}{222}}
+\headcommand {\beamer@subsectionpages {208}{222}}
+\headcommand {\beamer@sectionpages {94}{222}}
+\headcommand {\beamer@documentpages {222}}
+\headcommand {\gdef \inserttotalframenumber {105}}

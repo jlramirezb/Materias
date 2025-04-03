@@ -1767,7 +1767,21 @@ siendo $h=\frac{b-a}{n+2}$, y denotando $E$ el error de integraci\'on.
     $$
     R(k,i) = \dfrac{4^{i-1}R(k,i-1)-R(k-1,i-1)}{4^{i-1}-1}
     $$
+    \item El c\'alculo de los valores $R(k,i)$ se suele representar en forma de tabla.
     $$
+    \begin{array}{|c|c|c|c|c|c|c|}
+    \hline
+    k      & O(h^2)  & O(h^4)  & O(h^6)  & O(h^8)  & \cdots & O(h^{2n})\\ \hline                             
+    1      & R(1,1) &        &        &        &        &       \\\hline
+    2      & R(2,1) & R(2,2) &        &        &        &       \\\hline
+    3      & R(3,1) & R(3,2) & R(3,3) &        &        &       \\\hline
+    4      & R(4,1) & R(4,2) & R(4,3) & R(4,4) &        &       \\\hline
+    \vdots & \vdots & \vdots & \vdots & \vdots & \ddots &       \\\hline
+    n      & R(n,1) & R(n,2) & R(n,3) & R(n,4) & \cdots & R(n,n)\\\hline
+    \end{array} 
+    $$    
   \end{itemize}
+\end{frame}
+%%%%%
 \end{document}
 

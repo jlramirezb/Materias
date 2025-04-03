@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  2 APR 2025 20:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  2 APR 2025 21:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -625,8 +625,7 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count357
 \l__pdf_internal_box=\box83
-)
-No file UmidadIV.aux.
+) (./UmidadIV.aux)
 \openout1 = `UmidadIV.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
@@ -647,6 +646,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -701,6 +701,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 20.
+ (./UmidadIV.out) (./UmidadIV.out)
 \@outlinefile=\write5
 \openout5 = `UmidadIV.out'.
 
@@ -754,8 +755,7 @@ Overfull \hbox (40.09575pt too wide) in paragraph at lines 30--30
  [][][][]  
  []
 
-No file UmidadIV.toc.
-
+(./UmidadIV.toc)
 
 
 Overfull \hbox (40.09575pt too wide) has occurred while \output is active
@@ -1007,7 +1007,7 @@ Package epstopdf Info: Source file: <ejem1.eps>
 (epstopdf)             Command: <repstopdf --outfile=ejem1-eps-converted-to.pdf ejem1.eps>
 (epstopdf)             \includegraphics on input line 145.
 Package epstopdf Info: Output file is already uptodate.
-<ejem1-eps-converted-to.pdf, id=670, 1348.03625pt x 739.76375pt>
+<ejem1-eps-converted-to.pdf, id=720, 1348.03625pt x 739.76375pt>
 File: ejem1-eps-converted-to.pdf Graphic file (type pdf)
 <use ejem1-eps-converted-to.pdf>
 Package pdftex.def Info: ejem1-eps-converted-to.pdf  used on input line 145.
@@ -1159,7 +1159,7 @@ Package epstopdf Info: Source file: <ejem2.eps>
 (epstopdf)             Command: <repstopdf --outfile=ejem2-eps-converted-to.pdf ejem2.eps>
 (epstopdf)             \includegraphics on input line 208.
 Package epstopdf Info: Output file is already uptodate.
-<ejem2-eps-converted-to.pdf, id=1012, 1348.03625pt x 739.76375pt>
+<ejem2-eps-converted-to.pdf, id=1063, 1348.03625pt x 739.76375pt>
 File: ejem2-eps-converted-to.pdf Graphic file (type pdf)
 <use ejem2-eps-converted-to.pdf>
 Package pdftex.def Info: ejem2-eps-converted-to.pdf  used on input line 208.
@@ -2045,7 +2045,7 @@ Package epstopdf Info: Source file: <trapz.eps>
 (epstopdf)             Command: <repstopdf --outfile=trapz-eps-converted-to.pdf trapz.eps>
 (epstopdf)             \includegraphics on input line 694.
 Package epstopdf Info: Output file is already uptodate.
-<trapz-eps-converted-to.pdf, id=2980, 557.08125pt x 557.08125pt>
+<trapz-eps-converted-to.pdf, id=3026, 557.08125pt x 557.08125pt>
 File: trapz-eps-converted-to.pdf Graphic file (type pdf)
 <use trapz-eps-converted-to.pdf>
 Package pdftex.def Info: trapz-eps-converted-to.pdf  used on input line 694.
@@ -3438,31 +3438,51 @@ Overfull \hbox (40.09575pt too wide) has occurred while \output is active
 
 [221
 
-])
-Runaway argument?
-\@kernel@before@enddocument \UseOneTimeHook {enddocument}\@kernel@after@enddocument \ETC.
-! File ended while scanning use of \beamer@collect@@body.
-<inserted text> 
-                \par 
-<*> ...SUARIO/Documents/repo/Materias/MNI/UmidadIV
-                                                  
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
+]
+Overfull \hbox (40.09575pt too wide) in paragraph at lines 1784--1784
+ [][][][]  
+ []
 
-! Emergency stop.
-<*> ...SUARIO/Documents/repo/Materias/MNI/UmidadIV
-                                                  
-*** (job aborted, no legal \end found)
 
- 
+
+
+Overfull \hbox (40.09575pt too wide) has occurred while \output is active
+ [][][][]  
+ []
+
+[222
+
+]
+\tf@nav=\write6
+\openout6 = `UmidadIV.nav'.
+
+\tf@toc=\write7
+\openout7 = `UmidadIV.toc'.
+
+\tf@snm=\write8
+\openout8 = `UmidadIV.snm'.
+
+ (./UmidadIV.aux)
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-05-27>
+ ***********
+Package rerunfilecheck Info: File `UmidadIV.out' has not changed.
+(rerunfilecheck)             Checksum: B9C41FC2CCF531BD3F231355056B279B;1604.
+ ) 
 Here is how much of TeX's memory you used:
- 26947 strings out of 473583
- 537102 string characters out of 5732336
+ 27026 strings out of 473583
+ 539043 string characters out of 5732336
  1949908 words of memory out of 5000000
- 48883 multiletter control sequences out of 15000+600000
+ 48948 multiletter control sequences out of 15000+600000
  569947 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,443b,905s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on UmidadIV.pdf (222 pages, 872187 bytes).
+PDF statistics:
+ 6377 PDF objects out of 7423 (max. 8388607)
+ 5875 compressed objects within 59 object streams
+ 454 named destinations out of 1000 (max. 500000)
+ 490 words of extra memory for PDF output out of 10000 (max. 10000000)
+
