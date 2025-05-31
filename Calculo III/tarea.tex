@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{tmargin=1cm, lmargin=1cm, rmargin=1cm, bmargin=1cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz}
+\usetikzlibrary{intersections, backgrounds, patterns, calc, decorations.pathreplacing}
+\usepgfplotslibrary{fillbetween}
+
+
+\begin{document}
+\begin{center}
+    {\Large \bf Tarea. Sección 34. Cálculo II}
+\end{center}
+
+\begin{enumerate}
+  \item Hallar el \'area sombreada entre las curvas $f(x)$ y $g(x)$
+
+\begin{center}
+\begin{tikzpicture}[
+  domain=0:4,
+  declare function={f(\x) = sqrt(max(\x,0)); g(\x) = 3/2 - \x/2;}, % Use max(\x,0) for safety if domain starts < 0
+  scale=1 % Consider setting width/height in axis options instead
+]
+\begin{axis}[
+  axis lines=middle,
+  xmin=-1, xmax=4.5,
+  ymin=-1.5, ymax=4.5,
+  xlabel=$x$, ylabel=$y$,
+  xtick={-1,0,1,2,3,4},
+  ytick={-1,0,1,2,3,4},
+  %xticklabels={-1,0,1,2,3,4},
+  %yticklabels={-1,0,1,2,3,4},
+  axis line style=latex-latex,
+  ticklabel style={font=\scriptsize},
+  label style={font=\small},
+  legend style={at={(0.95,0.95)},anchor=north east,font=\scriptsize}
+]
+\addplot [thick, orange] {f(x)} node [above left] {$f(x) = \sqrt{x}$};
+\addplot [thick, blue] {g(x)} node [below left] {$g(x) = \frac{3}{2} - \frac{x}{2}$};
+
+\pgfmathsetmacro\intersectionX{1};
+\pgfmathsetmacro\intersectionY{1}; % Valor calculado manualmente para la intersección
+% --- Shading ---
+
+% Añadir estos dos bloques \addplot para el sombreado correcto:
+% Parte 1: Área bajo f(x) desde x=0 hasta x=intersectionX
+\addplot [pattern=north west lines, pattern color=gray!90, fill opacity=1, draw=none, domain=0:\intersectionX] {f(x)} \closedcycle;
+
+
+% Parte 2: Área bajo g(x) desde x=intersectionX hasta x=3
+\addplot [pattern=north west lines, pattern color=gray!90, fill opacity=1, draw=none, domain=\intersectionX:3] {g(x)} \closedcycle;
+
+% Opcional: Marcar el punto de intersección
+%\fill [red] (axis cs:\intersectionX, \intersectionY) circle (2pt) node[above right, font=\tiny] {$(1,1)$};
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\begin{itemize}
+  \item Integrando con respecto a la variable $x$
+  \item Integrando con respecto a la variable $y$
+\end{itemize}
+\item Calcular el área de ls región limitada por las siguientes curvas empleando el método de Simpson con $h=0.1$, Realice un dibujo del área definida por las curvas,
+$$
+\begin{cases}
+y=x^2+1\\
+y=0\\
+x=1\\
+x=2  
+\end{cases}
+$$
+\item Utilizando sumas de Riemann, determinar el área bajo la curva $f(x)=3x^2-x+7$ en el intervalo $[0,1]$
+\item Resuelva las integrales impropias
+que se proponen a continuación y diga si divergen o convergen:
+\begin{align*}
+a) &\;\; \int_{2c}^{4c}\displaystyle\frac{dx}{\sqrt{x^2-4c^2}}&\quad
+ b) &\;\;\int_1^\infty (1-x)e^{-x}dx
+\end{align*}
+\item Determinar la longitud del arco de la curva $f(x) = \displaystyle\int_{1}^{x} \sqrt{t + 1 + \frac{1}{t}} \, dt$, con $1 \le x \le 4$.
+
+\end{enumerate}
+\end{document}
