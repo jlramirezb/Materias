@@ -15,74 +15,92 @@
 
 \begin{document}
 \begin{center}
-    {\Large \bf Tarea. Sección 34. Cálculo II}
+    {\Large \bf Práctica I. Cálculo II}
 \end{center}
 
 \begin{enumerate}
-  \item Hallar el \'area sombreada entre las curvas $f(x)$ y $g(x)$
+  \item Una compañía de muebles fabrica butacas, mecedoras y sillas, y cada una de ellas de tres modelos: E(económico), M (medio) y L (lujo). Cada mes produce 20 modelos E, 15 modelos M y 10 modelos L de butacas; 12 modelos E, 8 modelos M y 5 modelos L de mecedoras; y 18 modelos E, 20 modelos M y 12 modelos L de sillas. Representa esta información en una matriz.
+  \item El inventario de una librería de la carrera de Ciencias Económicas es:
 
+Libros de: Derecho 80 , Contabilidad 160 , matemática 120 y Administración 240
+
+Apuntes de : Derecho 40, Contabilidad 120 , Matemática 80 y Administración 160
+\begin{enumerate}
+  \item Represente mediante una matriz A , el inventario de esa librería.
+  \item Expresar como el producto de un escalar por una matriz en forma conveniente, de manera que los elementos de esta última sean números de un dígito.
+  \item Si la biblioteca de la Universidad tiene el 10\% de ese material ¿Cuál es la matriz en ese caso?
+\end{enumerate}
+\item Don Antonio tiene dos estaciones de servicio, una en el centro y otra en el sur de la ciudad. Durante el primer fin de semana de mayo, las estaciones registraron las ventas de combustibles representadas por la siguiente información:
+\[
+A =
+\begin{array}{r@{\hspace{0.5em}}r r r} % r para las etiquetas de fila, r r r para las columnas de datos
+\multicolumn{1}{c}{} & \text{diesel} & \text{super} & \text{super plus} \\ % Encabezados de columna
+\text{centro} & 1200 & 750 & 650 \\
+\text{sur} & 1100 & 850 & 600
+\end{array}
+\qquad
+B =
+\begin{array}{r@{\hspace{0.5em}}r r r} % r para las etiquetas de fila, r r r para las columnas de datos
+\multicolumn{1}{c}{} & \text{diesel} & \text{super} & \text{super plus} \\ % Encabezados de columna
+\text{centro} & 1260 & 860 & 520 \\
+\text{sur} & 1160 & 750 & 750
+\end{array}
+\]
+\begin{enumerate}
+  \item Halle la matriz que represente el total de ventas realizado en los dos días.
+  \item Si el lunes las ventas son siempre el 10\% más de la del día anterior ¿Cuál resulta ser la nueva matriz?
+\end{enumerate}
+
+\item Un constructor hace una urbanización con tres tipos de viviendas: S(sencillas), N(normales) y L(lujo). Cada vivienda de tipo S tiene 1 ventana grande, 7 medianas y1 pequeña. Cada vivienda de tipo N tiene 2 ventanas grandes, 9 medianas y 2 pequeñas. Y cada vivienda de tipo L tiene 4 ventanas grandes, 10 medianas y 3 pequeñas.
+
+Cada ventana grande tiene 4 cristales y 8 bisagras; cada ventana mediana tiene 2 cristales y 4 bisagras; y cada ventana pequeña tiene 1 cristal y2 bisagras.
+\begin{enumerate}
+  \item Escribir una matriz que describa el número y tamaño de ventanas en cada tipo de vivienda y otra matriz que exprese el numero de cristales y el número de bisagras de cada tipo de ventana.
+  \item Calcular una matriz, a partir de las anteriores, que exprese el número de cristales y bisagras necesarios en cada tipo de vivienda.
+\end{enumerate}
+\item Una empresa nacional tiene cuatro distribuidoras, una en cada región (norte, centro, sur y
+Cuyo). Las ventas de tres de sus productos por región, expresadas en millones de dólares,
+fueron:\\
+\begin{tabular}{ll}
+Año 2004 & Año 2005\\
+Región 1, producto 1: 2.6 & Región 1, producto 1: 3.6\\
+Región 1, producto 2: 3.2 & Región 1, producto 2: 4.5\\
+Región 1, producto 3: 2.4 & Región 1, producto 3: 2.9\\
+Región 2, producto 1: 4.8 & Región 2, producto 1: 2.5\\
+Región 2, producto 2: 4.4 & Región 2, producto 2: 5.0\\
+Región 2, producto 3: 3.6 & Región 2, producto 3: 3.0\\
+Región 3, producto 1: 1.8 & Región 3, producto 1: 3.0\\
+Región 3, producto 2: 2.5 & Región 3, producto 2: 3.5\\
+Región 3, producto 3: 3.8 & Región 3, producto 3: 4.6\\
+Región 4, producto 1: 0.9 & Región 4, producto 1: 2.5\\
+Región 4, producto 2: 2.8 & Región 4, producto 2: 3.8\\
+Región 4, producto 3: 2.5 & Región 4, producto 3: 4.0
+\end{tabular}
+\begin{enumerate}
+\item Organizar los datos anteriores de modo que la información se presente en forma más clara.
+\item Si llamamos A a la matriz de ventas del año 2004 y B a la del año 2005
+\begin{enumerate}
+  \item Dar el significado de los elementos a23 y b21 .
+  \item Calcular las ventas totales de los dos años de cada producto y cada región.
+  \item Calcular e interpretar $A - B$
+  \item La gerencia de la empresa había proyectado para el año 2006 un 30\% de incremento en las ventas de los productos en todas las regiones respecto al año 2004. Calcular la diferencia entre los niveles de venta proyectados y los niveles
+de venta reales del año 2005.
+\end{enumerate}
+\end{enumerate}
+\item El número de horas que ha trabajado durante los últimos meses en cada actividad está dada por la matriz:
 \begin{center}
-\begin{tikzpicture}[
-  domain=0:4,
-  declare function={f(\x) = sqrt(max(\x,0)); g(\x) = 3/2 - \x/2;}, % Use max(\x,0) for safety if domain starts < 0
-  scale=1 % Consider setting width/height in axis options instead
-]
-\begin{axis}[
-  axis lines=middle,
-  xmin=-1, xmax=4.5,
-  ymin=-1.5, ymax=4.5,
-  xlabel=$x$, ylabel=$y$,
-  xtick={-1,0,1,2,3,4},
-  ytick={-1,0,1,2,3,4},
-  %xticklabels={-1,0,1,2,3,4},
-  %yticklabels={-1,0,1,2,3,4},
-  axis line style=latex-latex,
-  ticklabel style={font=\scriptsize},
-  label style={font=\small},
-  legend style={at={(0.95,0.95)},anchor=north east,font=\scriptsize}
-]
-\addplot [thick, orange] {f(x)} node [above left] {$f(x) = \sqrt{x}$};
-\addplot [thick, blue] {g(x)} node [below left] {$g(x) = \frac{3}{2} - \frac{x}{2}$};
-
-\pgfmathsetmacro\intersectionX{1};
-\pgfmathsetmacro\intersectionY{1}; % Valor calculado manualmente para la intersección
-% --- Shading ---
-
-% Añadir estos dos bloques \addplot para el sombreado correcto:
-% Parte 1: Área bajo f(x) desde x=0 hasta x=intersectionX
-\addplot [pattern=north west lines, pattern color=gray!90, fill opacity=1, draw=none, domain=0:\intersectionX] {f(x)} \closedcycle;
-
-
-% Parte 2: Área bajo g(x) desde x=intersectionX hasta x=3
-\addplot [pattern=north west lines, pattern color=gray!90, fill opacity=1, draw=none, domain=\intersectionX:3] {g(x)} \closedcycle;
-
-% Opcional: Marcar el punto de intersección
-%\fill [red] (axis cs:\intersectionX, \intersectionY) circle (2pt) node[above right, font=\tiny] {$(1,1)$};
-
-\end{axis}
-\end{tikzpicture}
+\begin{tabular}{|l|c|c|c|c|}
+\cline{2-5}
+\multicolumn{1}{c|}{} & Marzo & Abril & Mayo & Junio \\
+\hline
+Clases particulares & 20 & 15 & 40 & 5 \\
+\hline
+Trabajos con computadora & 15 & 10 & 12 & 0 \\
+\hline
+Ciber & 30 & 20 & 16 & 10 \\
+\hline
+\end{tabular}
 \end{center}
-\begin{itemize}
-  \item Integrando con respecto a la variable $x$
-  \item Integrando con respecto a la variable $y$
-\end{itemize}
-\item Calcular el área de ls región limitada por las siguientes curvas empleando el método de Simpson con $h=0.1$, Realice un dibujo del área definida por las curvas,
-$$
-\begin{cases}
-y=x^2+1\\
-y=0\\
-x=1\\
-x=2  
-\end{cases}
-$$
-\item Utilizando sumas de Riemann, determinar el área bajo la curva $f(x)=3x^2-x+7$ en el intervalo $[0,1]$
-\item Resuelva las integrales impropias
-que se proponen a continuación y diga si divergen o convergen:
-\begin{align*}
-a) &\;\; \int_{2c}^{4c}\displaystyle\frac{dx}{\sqrt{x^2-4c^2}}&\quad
- b) &\;\;\int_1^\infty (1-x)e^{-x}dx
-\end{align*}
-\item Determinar la longitud del arco de la curva $f(x) = \displaystyle\int_{1}^{x} \sqrt{t + 1 + \frac{1}{t}} \, dt$, con $1 \le x \le 4$.
-
+Calcúlese la matriz de precios totales e interprete estas matrices.
 \end{enumerate}
 \end{document}
