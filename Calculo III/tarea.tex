@@ -11,11 +11,12 @@
 \usepackage{tikz}
 \usetikzlibrary{intersections, backgrounds, patterns, calc, decorations.pathreplacing}
 \usepgfplotslibrary{fillbetween}
+\usepackage{multicol}
 
 
 \begin{document}
 \begin{center}
-    {\Large \bf Práctica I. Cálculo II}
+    {\Large \bf Práctica I-b. Cálculo III}
 \end{center}
 
 \begin{enumerate}
@@ -102,5 +103,385 @@ Ciber & 30 & 20 & 16 & 10 \\
 \end{tabular}
 \end{center}
 Calcúlese la matriz de precios totales e interprete estas matrices.
+\item Sean las matrices
+\[
+A = \begin{pmatrix}
+2 & -1 \\
+3 & 0 \\
+1 & -3
+\end{pmatrix}
+\qquad
+B = \begin{pmatrix}
+4 & 0 & 0 \\
+1 & 2 & 3 \\
+5 & -1 & 1
+\end{pmatrix}
+\qquad
+C = \begin{pmatrix}
+1 & -2 & 1 \\
+0 & 2 & -4 \\
+3 & -1 & 6
+\end{pmatrix}
+\qquad
+D = \begin{pmatrix}
+3 & -4\\
+0 & 0\\
+2 & -1
+\end{pmatrix}
+\]
+Efectuar cuando sea posible los siguientes cálculos
+\begin{multicols}{4}
+\begin{enumerate}
+  \item $B+C$
+  \item $A+(-C)$
+  \item $B^t + C^t$
+  \item $A + B$
+  \item $A^t + (-D)$
+  \item $D+(-D)$
+  \item $B + D$
+  \item $C+C^t$
+\end{enumerate}
+\end{multicols}
+\item Hallar las matrices $X \in \mathbb{R}^{2\times2}$ que satisfacen en cada caso las siguientes ecuaciones:
+\begin{enumerate}
+  \item $\begin{pmatrix}
+    1 & 2\\
+    3 & 4
+  \end{pmatrix}X+\begin{pmatrix}
+    1 & 0\\
+    0 & 3
+  \end{pmatrix} = \begin{pmatrix}
+    0 & 0\\
+    0 & 0
+  \end{pmatrix}$
+  \item $\begin{pmatrix}
+    1 & 9\\
+    0 & 3
+  \end{pmatrix}X+\begin{pmatrix}
+    2 & 3\\
+    5 & 6
+  \end{pmatrix}X = X$
+\end{enumerate}
+\item Encontrar una matriz $X$ que verifique $X - B^2 = AB$, siendo:
+$$
+A=\begin{pmatrix}
+1 & 2 & 1\\
+1 & 3 & 1\\
+0 & 0 & 2
+\end{pmatrix} \qquad B=\begin{pmatrix}
+1 & 0 & -1\\
+2 & 2 & 2\\
+0 & 0 & 6
+\end{pmatrix}
+$$
+\item Sean las matrices:
+$$
+A=\begin{pmatrix}
+2 & -2 \\
+-1 & -3
+\end{pmatrix} \qquad B=\begin{pmatrix}
+-4 & 2\\
+0 & -1
+\end{pmatrix}
+$$
+Verifique que:
+\begin{multicols}{3}
+\begin{enumerate}
+  \item $(A+B)^t = A^t+B t$
+  \item $A^tB^t = (BA)^t$
+  \item $(A^t)^2 = (A^2)^t$
+\end{enumerate}
+\end{multicols}
+\item Sean $A$, $B$ y $C$ matrices invertibles y simétricas (es decir, que son iguales a su matriz transpuesta). Demostrar
+(justificando adecuadamente con las propiedades de las operaciones con matrices):
+\begin{enumerate}
+  \item $(AB)^tA^{-1}B = B^2$
+  \item $(CA)^{-1}CA^t = I$
+  \item $(ABC)^{-1}A^t(C^{-1}B^{-1})^{-1} = I$
+\end{enumerate}
+\item En cada uno de los siguientes ítems, determina todas las matrices $B$ que verifican la ecuación dada.
+\begin{enumerate}
+  \item $\begin{pmatrix}
+    1 & 2 & 3\\
+    4 & 5 & 6\\
+    -1 & 2 & -3
+  \end{pmatrix}B=\begin{pmatrix}
+    3\\
+    6\\
+    -3
+  \end{pmatrix}$
+  \item $\begin{pmatrix}
+    1 & 1 \\
+    -2 & -2
+  \end{pmatrix}B=\begin{pmatrix}
+    1 & 0\\
+    0 & 1
+  \end{pmatrix}$
+  \item $\begin{pmatrix}
+    1 & 1 & 0\\
+    -1 & -1 & -1\\
+    0 & 2 & -3
+  \end{pmatrix}B=\begin{pmatrix}
+    2 & -1\\
+    3 & 0\\
+    1 & 2
+  \end{pmatrix}$
+  \end{enumerate}
+\item Verificar que $C$ es la inversa de $A$ aplicando la definición.
+$$
+A=\begin{pmatrix}
+2 & 4 & -2\\
+-4 & -6 & 1\\
+3 & 5 & -1
+\end{pmatrix} \qquad C=\begin{pmatrix}
+1/2 & -3 & -4\\
+-1/2 & 2 & 3\\
+-1 & 1 & 2
+\end{pmatrix}
+$$
+\item Determinar el rango de cada una de las siguientes matrices, y en el caso en que sea posible determinar la
+matriz inversa.
+$$
+A=\begin{pmatrix}
+  1 & 2\\
+  -1 & 1
+\end{pmatrix}\quad B=\begin{pmatrix}
+  1 & 0 & 0\\
+  2 & 1 & -1\\
+  3 & -1 & 1
+\end{pmatrix}\quad C=\begin{pmatrix}
+  1 & 2 & 3 & 4\\
+  1 & 3 & 2 & 6\\
+  -2 & -2 & -6 & 0\\
+  1 & 4 & 1 & 7
+\end{pmatrix}\quad D=\begin{pmatrix}
+  2 & 3\\
+  4 & 6
+\end{pmatrix}\quad E=\begin{pmatrix}
+  1 & 0 & 3 & 4\\
+  2 & 1 & 6 & 5\\
+  0 & 1 & 2 & 7
+\end{pmatrix}
+$$
+\item Completar la matriz $A=\begin{pmatrix}
+  1 & -1 & 0\\
+  *  & * & *\\
+  *  & * & *
+\end{pmatrix}$ para obtener una matriz $3\times3$:
+\begin{enumerate}
+  \item con rango 1
+  \item con rango 2
+  \item con rango 3
+\end{enumerate}
+\item ¿Para que valores de $\beta$ la matriz A tiene rango $r$?
+\begin{enumerate}
+  \item $r=2$
+  \item $r=3$
+\end{enumerate}
+  $$
+  A=\begin{pmatrix}
+    1+\beta & 2 & 3\\
+    1 & 2 & 1\\
+    1 & 3 & -1-\beta
+  \end{pmatrix}
+  $$
+  \item Dadas las siguientes matrices obtener, si existe, la inversa aplicando el método de Gauss-Jordan.
+  $$
+A=\begin{pmatrix}
+2 & 1\\
+-2 & 2
+\end{pmatrix} \qquad B=\begin{pmatrix}
+-1 & 1 & 2\\
+1 & 0 & 3\\
+1 & 1 & 1
+\end{pmatrix}\qquad C=\begin{pmatrix}
+2 & -1 & 0\\
+3 & 1 & 2\\
+5 & 0 & 1
+\end{pmatrix}
+  $$
+\item Dadas las matrices:
+$$
+A=\begin{pmatrix}
+  -26 & -7 & 12\\
+  11 & 3 & -5\\
+  -5 & -1 & 2
+\end{pmatrix}\qquad B=\begin{pmatrix}
+  1 & 2& -1\\
+  3 & 8 & 2\\
+  4 & 9 & -1
+\end{pmatrix}
+$$
+\begin{enumerate}
+  \item Verificar que $A$ es la inversa de $B$ aplicando la definición.
+  \item Aplicar el proceso de Gauss a la matriz $B$ para obtener $A$.
+\end{enumerate}
+\item Calcular el rango de las siguientes matrices aplicando operaciones elementales de fila. Para las matrices cuadradas cuyo rango sea igual a su orden, encuentre las respectivas
+inversas.
+$$
+A = \begin{pmatrix} 
+  1 & 2 \\ 
+  4 & 2 \end{pmatrix}\qquad 
+B = \begin{pmatrix}
+  1 & 1 & 2 \\
+  2 & 0 & -1 \\
+  -6 & -1 & 0 \end{pmatrix} \qquad
+C = \begin{pmatrix}
+  2 & 3 & 2 \\
+  1 & -1 & 3 \\
+  -4 & -6 & -4 \end{pmatrix}\qquad
+D = \begin{pmatrix}
+  1 & 0 & -1 & 2 \\
+  2 & 1 & 3 & -1 \\
+  1 & 0 & -4 & -2 \\
+  0 & 2 & 1 & 3 \end{pmatrix}
+$$
+\item Calcular los siguientes determinantes:
+\begin{multicols}{4}
+\begin{enumerate}
+  \item $\left|\begin{array}{cccc}
+  18 & 5 & 7 & 8\\
+  18 & 3 & 4 & 4\\
+  9 & 1 & 1 & 1\\
+  9 & 2 & 3 & 4
+  \end{array}\right|$
+  \item $\left|\begin{array}{ccc}
+  9 & 2 & 2 \\
+  27 & 7 & 7\\
+  18 & 5 & 4  
+  \end{array}\right|$
+  \item $\left|\begin{array}{ccc}
+  9 & 2 & 2 \\
+  28 & 8 & 8\\
+  18 & 5 & 4  
+  \end{array}\right|$
+  \item $\left|\begin{array}{cccc}
+  19 & 5 & 7 & 8\\
+  18 & 4 & 4 & 4\\
+  9 & 1 & 2 & 1\\
+  9 & 2 & 3 & 4
+  \end{array}\right|$
+  \item $\left|\begin{array}{cccc}
+  16 & 5 & 7 & 10\\
+  16 & 3 & 4 & 5\\
+  8 & 1 & 1 & 1\\
+  8 & 2 & 3 & 5
+  \end{array}\right|$
+  \item $\left|\begin{array}{ccc}
+  8 & 2 & 3 \\
+  24 & 7 & 11\\
+  16 & 5 & 6  
+  \end{array}\right|$
+  \item $\left|\begin{array}{ccc}
+  8 & 2 & 3 \\
+  25 & 8 & 12\\
+  16 & 5 & 6  
+  \end{array}\right|$
+  \item $\left|\begin{array}{cccc}
+  17 & 5 & 7 & 10\\
+  16 & 4 & 4 & 5\\
+  8 & 1 & 2 & 1\\
+  8 & 2 & 3 & 5
+  \end{array}\right|$
+\end{enumerate}
+\end{multicols}
+\item Cálcule el determinante para cada matriz dada:
+$$
+A=\begin{pmatrix}
+  2 & 4\\
+  -1 & 3
+\end{pmatrix}\qquad B=\begin{pmatrix}
+  3 & 5 & 1\\
+  0 & 6 & -2\\
+  2 & 5 & 1
+\end{pmatrix}\qquad C=\begin{pmatrix}
+  3 & 0 & 0\\
+  0 & 6 & 0\\
+  2 & -5 & 1
+\end{pmatrix}
+$$
+\item Calcule el valor de $x$ en la siguiente ecuación
+$$
+\left|\begin{array}{cc}
+  x-2 & -3\\
+  2 & 1
+\end{array}\right|=2
+$$
+\item Partiendo de la siguiente matriz, calcula el determinante de la matriz $A$ por el desarrollo de Laplace (cofactores):
+$$
+3A = \begin{pmatrix}
+  3 & -30 & 24\\
+  15 & 6 & 0\\
+  2 & -5 & 1
+\end{pmatrix}
+$$
+\begin{enumerate}
+  \item Según la segunda fila.
+  \item Según la tercera columna
+\end{enumerate}
+\item Dado el siguiente sistema de ecuaciones:
+$$
+\left\{\begin{array}{rcl}
+  x_1+x_2-x_3 & = & 7\\
+  4x_1-x_2+5x_3 & = & 4\\
+  6x_1+x_2+3x_3 & = & 18
+  \end{array}\right.
+$$
+\begin{enumerate}
+  \item Escriba la matriz aumentada del sistema
+  \item Utilice el método de eliminación de Gauss para determinar todas las soluciones, si existen, del sistema dado.
+\end{enumerate}
+\item Exprese los sistemas de ecuaciones dados de la forma $Ax=b$ y obtenga su solución
+$$
+(a) \left\{\begin{array}{rcl}
+  3x_1+6x_2-2x_3 & = & 10\\
+  -x_1+x_2+4x_3 & = & 9\\
+  5x_1+2x_2+x_3 & = & -3
+  \end{array}\right. \qquad (b)\left\{\begin{array}{rcl}
+  -2x+6y-10z & = & 6\\
+  x-y+z & = & 2\\
+  3x-7y+11z & = & -4
+  \end{array}\right.
+$$
+\item Determine los valores de $a$, si existen, para que el sistema
+$$
+\left\{\begin{array}{rcl}
+  x+y+z & = & 2\\
+  x+2y+z & = & 3\\
+  x+y+(a^2-3)z & = & a
+  \end{array}\right.
+$$
+\begin{enumerate}
+  \item Sea inconsistente
+  \item Tenga infinitas soluciones. Halle las soluciones para este caso.
+  \item Tenga solución única. Halle la solución para este caso.
+\end{enumerate}
+\item Halle los valores de $k$, si existen, para que el sistema
+\[
+\begin{cases}
+x + y + z = 5 \\
+x + 2y - z = -1 \\
+x + z = 9 \\
+3x + y + (k^2 + 3)z = k + 29
+\end{cases}
+\]
+\begin{enumerate}
+  \item Sea inconsistente
+  \item Tenga infinitas soluciones
+  \item Tenga solución única
+\end{enumerate}
+\item Dada la matriz 
+$$
+A = \begin{pmatrix}
+  1 & 1 & 0\\
+  1 & 1 & 1\\
+  0 & 2 & 1
+\end{pmatrix}
+$$
+\begin{enumerate}
+  \item Halle $Adj(A)$
+  \item ¿Es la matriz $A$ invertible?
+  \item En caso de ser invertible determine su inversa a partir de la adjunta de $A$ y usando Gauss-Jordan. Compare los resultados obtenidos.
+\end{enumerate}
 \end{enumerate}
 \end{document}
