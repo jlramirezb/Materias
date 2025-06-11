@@ -1,6 +1,11 @@
-\frametitle{Motivaci\'on.}
-  \begin{itemize}
-    \item En el planteamiento matem\'atico de muchos problemas realistas, los sistemas de ecuaciones algebraicas, y de una manera especial los lineales, aparecen de manera natural.
-    \item<2-> La b\'usqueda de m\'etodos de resoluci\'on de sistemas de ecuaciones lineales es un tema de gran importancia en la ciencia.
-    \item<3-> El objetivo de este tema es desarrollar estrategias num\'ericas que permitan resolver sistemas de ecuaciones relativamente grandes de una manera eficiente.
-  \end{itemize}
+\begin{enumerate}
+    \item<1-> \textbf{Paso 1: Resolver para $x_1$.}
+    De la primera ecuaci\'on $(E_1)$, y asumiendo $a_{1,1} \neq 0$:
+    $$x_1 = \frac{b_1}{a_{1,1}}$$
+    \item<2-> \textbf{Paso 2: Resolver para $x_2$.}
+    Sustituimos el valor de $x_1$ en la segunda ecuaci\'on $(E_2)$:
+    $$a_{2,1}x_1 + a_{2,2}x_2 = b_2$$
+    Despejando $x_2$ (asumiendo $a_{2,2} \neq 0$):
+    $$x_2 = \frac{b_2 - a_{2,1}x_1}{a_{2,2}}$$
+
+  \end{enumerate}
