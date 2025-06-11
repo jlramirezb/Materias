@@ -298,6 +298,30 @@ que en general no tiene porqu\'e converger (requieren an\'alisis de convergencia
 }
 %%%
 \begin{frame}[fragile]
+  \frametitle{Algoritmo de Sustituci\'on Regresiva}
+  \begin{algorithm}[H]
+    \SetKwInOut{Input}{Entrada}
+    \SetKwInOut{Output}{Salida}
+    \SetKwComment{Comment}{//}{}
+    \caption{Sustituci\'on Regresiva para resolver $Ux=b$}
+    \Input{Matriz triangular superior $U \in \mathbb{R}^{n \times n}$ no singular, vector $b \in \mathbb{R}^n$}
+    \Output{Vector soluci\'on $x \in \mathbb{R}^n$}
+    \BlankLine
+    \Comment{Resolver para $x_n$}
+    $x_n \leftarrow b_n / u_{n,n}$\;
+    \BlankLine
+    \Comment{Resolver para $x_i$, $i=n-1, \ldots, 1$}
+    \For{$i \leftarrow n-1$ \KwTo $1$}{
+      $suma \leftarrow 0$\;
+      \For{$j \leftarrow i+1$ \KwTo $n$}{
+        $suma \leftarrow suma + u_{i,j} * x_j$\;
+      }
+      $x_i \leftarrow (b_i - suma) / u_{i,i}$\;
+    }
+  \end{algorithm}
+\end{frame}
+%%%%
+\begin{frame}[fragile]
   Si la matriz de coeficientes del sistema es triangular inferior, para resolver el sistema podemos proceder de manera similar al caso anterior, pero empezando por despejar $x_1$ de la primera ecuaci\'on. El procedimiento en este caso se denomina sustituci\'on progresiva o hacia adelante.
   $$
     \left\{\begin{array}{lcc}
@@ -309,9 +333,9 @@ que en general no tiene porqu\'e converger (requieren an\'alisis de convergencia
             a_{n,1}x_{1} + a_{n,2}x_2 + \cdots + a_{n,i-1}x_{i-1} + a_{n,i}x_i + \cdots + a_{n,n}x_n & = & b_{n}
            \end{array}\right.
     $$
-  \end{frame}
-%%%
-\begin{frame}[fragile]  
+\end{frame}
+%%%%
+\frame{
   \begin{enumerate}
     \item<1-> \textbf{Paso 1: Resolver para $x_1$.}
     De la primera ecuaci\'on $(E_1)$, y asumiendo $a_{1,1} \neq 0$:
@@ -321,13 +345,12 @@ que en general no tiene porqu\'e converger (requieren an\'alisis de convergencia
     $$a_{2,1}x_1 + a_{2,2}x_2 = b_2$$
     Despejando $x_2$ (asumiendo $a_{2,2} \neq 0$):
     $$x_2 = \frac{b_2 - a_{2,1}x_1}{a_{2,2}}$$
-   
-  \end{enumerate}
-\end{frame}
-%%%%
+    \end{enumerate}
+}
+%%%%%
 \frame{
   \begin{enumerate}
-    \item<1-> \textbf{Paso $k$: Resolver para $x_i$.}
+  \item<1-> \textbf{Paso $k$: Resolver para $x_i$.}
     En general, para $i = 2, 3, \ldots, n$, una vez que $x_1, x_2, \ldots, x_{i-1}$ son conocidos, resolvemos la ecuaci\'on $(E_i)$:
     $$a_{i,1}x_1 + a_{i,2}x_2 + \cdots + a_{i,i-1}x_{i-1} + a_{i,i}x_i = b_i$$
     Despejando $x_i$ (asumiendo $a_{i,i} \neq 0$):
@@ -338,6 +361,30 @@ que en general no tiene porqu\'e converger (requieren an\'alisis de convergencia
   \end{enumerate}
 }
 %%%%
+\begin{frame}[fragile]
+  \frametitle{Algoritmo de Sustituci\'on Progresiva}
+  \begin{algorithm}[H]
+    \SetKwInOut{Input}{Entrada}
+    \SetKwInOut{Output}{Salida}
+    \SetKwComment{Comment}{//}{}
+    \caption{Sustituci\'on Progresiva para resolver $Lx=b$}
+    \Input{Matriz triangular inferior $L \in \mathbb{R}^{n \times n}$ no singular, vector $b \in \mathbb{R}^n$}
+    \Output{Vector soluci\'on $x \in \mathbb{R}^n$}
+    \BlankLine
+    \Comment{Resolver para $x_1$}
+    $x_1 \leftarrow b_1 / l_{1,1}$\;
+    \BlankLine
+    \Comment{Resolver para $x_i$, $i=2, \ldots, n$}
+    \For{$i \leftarrow 2$ \KwTo $n$}{
+      $suma \leftarrow 0$\;
+      \For{$j \leftarrow 1$ \KwTo $i-1$}{
+        $suma \leftarrow suma + l_{i,j} * x_j$\;
+      }
+      $x_i \leftarrow (b_i - suma) / l_{i,i}$\;
+    }
+  \end{algorithm}
+\end{frame}
+
 %%%%
 \frame{
   \begin{itemize}

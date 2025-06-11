@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.11)  11 JUN 2025 12:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.11)  11 JUN 2025 12:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -782,5 +782,867 @@ Overfull \hbox (10.97461pt too wide) detected at line 134
 ]
 \openout4 = `unidadI.vrb'.
 
+ (./unidadI.vrb) [44
+
+]
+\openout4 = `unidadI.vrb'.
+
  (./unidadI.vrb
-Over
+Overfull \hbox (21.80453pt too wide) detected at line 11
+[]
+ []
+
+) [45
+
+] [46
+
+] [47
+
+] [48
+
+] [49
+
+]
+\openout4 = `unidadI.vrb'.
+
+ (./unidadI.vrb) [50
+
+]
+Overfull \hbox (14.07925pt too wide) detected at line 409
+[]
+ []
+
+[51
+
+] [52
+
+] [53
+
+] [54
+
+] [55
+
+] [56
+
+] [57
+
+] [58
+
+] [59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+] [64
+
+] [65
+
+] [66
+
+] [67
+
+] [68
+
+] [69
+
+] [70
+
+] [71
+
+] [72
+
+] [73
+
+] [74
+
+] [75
+
+] [76
+
+] [77
+
+] [78
+
+] [79
+
+] [80
+
+] [81
+
+] [82
+
+] [83
+
+] [84
+
+] [85
+
+] [86
+
+] [87
+
+] [88
+
+] [89
+
+] [90
+
+] [91
+
+] [92
+
+] [93
+
+] [94
+
+] [95
+
+] [96
+
+] [97
+
+] [98
+
+] [99
+
+] [100
+
+] [101
+
+] [102
+
+] [103
+
+] [104
+
+] [105
+
+] [106
+
+] [107
+
+] [108
+
+] [109
+
+]
+Overfull \hbox (25.31068pt too wide) detected at line 977
+\OML/cmm/m/it/10.95 H[] \OT1/cmr/m/n/10.95 = [][] = []
+ []
+
+[110
+
+] [111
+
+] [112
+
+] [113
+
+] [114
+
+] [115
+
+] [116
+
+] [117
+
+] [118
+
+] [119
+
+] [120
+
+] [121
+
+] [122
+
+] [123
+
+] [124
+
+] [125
+
+] [126
+
+] [127
+
+] [128
+
+] [129
+
+] [130
+
+] [131
+
+] [132
+
+] [133
+
+] [134
+
+] [135
+
+] [136
+
+] [137
+
+] [138
+
+] [139
+
+] [140
+
+] [141
+
+] [142
+
+] [143
+
+] [144
+
+] [145
+
+] [146
+
+] [147
+
+] [148
+
+] [149
+
+] [150
+
+] [151
+
+] [152
+
+] [153
+
+] [154
+
+] [155
+
+] [156
+
+] [157
+
+] [158
+
+] [159
+
+] [160
+
+] [161
+
+] [162
+
+] [163
+
+] [164
+
+] [165
+
+] [166
+
+] [167
+
+] [168
+
+] [169
+
+] [170
+
+] [171
+
+] [172
+
+] [173
+
+] [174
+
+] [175
+
+] [176
+
+] [177
+
+] [178
+
+] [179
+
+] [180
+
+] [181
+
+] [182
+
+] [183
+
+] [184
+
+] [185
+
+] [186
+
+] [187
+
+] [188
+
+] [189
+
+] [190
+
+] [191
+
+] [192
+
+] [193
+
+]
+<gsproc.png, id=5796, 344.03531pt x 76.78688pt>
+File: gsproc.png Graphic file (type png)
+<use gsproc.png>
+Package pdftex.def Info: gsproc.png  used on input line 1527.
+(pdftex.def)             Requested size: 172.01723pt x 38.39334pt.
+ [194
+
+ <./gsproc.png>]
+File: gsproc.png Graphic file (type png)
+<use gsproc.png>
+Package pdftex.def Info: gsproc.png  used on input line 1527.
+(pdftex.def)             Requested size: 172.01723pt x 38.39334pt.
+ [195
+
+]
+File: gsproc.png Graphic file (type png)
+<use gsproc.png>
+Package pdftex.def Info: gsproc.png  used on input line 1527.
+(pdftex.def)             Requested size: 172.01723pt x 38.39334pt.
+ [196
+
+]
+<gs_p1.png, id=5879, 132.495pt x 112.92188pt>
+File: gs_p1.png Graphic file (type png)
+<use gs_p1.png>
+Package pdftex.def Info: gs_p1.png  used on input line 1540.
+(pdftex.def)             Requested size: 66.24733pt x 56.46078pt.
+ [197
+
+ <./gs_p1.png>]
+File: gs_p1.png Graphic file (type png)
+<use gs_p1.png>
+Package pdftex.def Info: gs_p1.png  used on input line 1540.
+(pdftex.def)             Requested size: 66.24733pt x 56.46078pt.
+ [198
+
+]
+<gs_p2_a.png, id=5934, 135.50626pt x 116.68594pt>
+File: gs_p2_a.png Graphic file (type png)
+<use gs_p2_a.png>
+Package pdftex.def Info: gs_p2_a.png  used on input line 1553.
+(pdftex.def)             Requested size: 67.75294pt x 58.34282pt.
+<gs_p2_b.png, id=5935, 313.9228pt x 121.20282pt>
+File: gs_p2_b.png Graphic file (type png)
+<use gs_p2_b.png>
+Package pdftex.def Info: gs_p2_b.png  used on input line 1553.
+(pdftex.def)             Requested size: 156.96101pt x 60.60126pt.
+ [199
+
+ <./gs_p2_a.png> <./gs_p2_b.png>]
+File: gs_p2_a.png Graphic file (type png)
+<use gs_p2_a.png>
+Package pdftex.def Info: gs_p2_a.png  used on input line 1553.
+(pdftex.def)             Requested size: 67.75294pt x 58.34282pt.
+File: gs_p2_b.png Graphic file (type png)
+<use gs_p2_b.png>
+Package pdftex.def Info: gs_p2_b.png  used on input line 1553.
+(pdftex.def)             Requested size: 156.96101pt x 60.60126pt.
+ [200
+
+] [201
+
+] [202
+
+] [203
+
+] [204
+
+] [205
+
+] [206
+
+] [207
+
+] [208
+
+]
+Overfull \hbox (19.12872pt too wide) detected at line 1641
+\OML/cmm/m/it/8 a[] \OT1/cmr/m/n/8 = \OML/cmm/m/it/8 r[]q[] \OT1/cmr/m/n/8 + [] + \OML/cmm/m/it/8 r[]q[] \OT1/cmr/m/n/8 = \OML/cmm/m/it/8 r[]q[] \OT1/cmr/m/n/8 + [] + \OML/cmm/m/it/8 r[]q[] \OT1/cmr/m/n/8 + 0\OML/cmm/m/it/8 q[] \OT1/cmr/m/n/8 + [] + 0\OML/cmm/m/it/8 q[] \OT1/cmr/m/n/8 = \OML/cmm/m/it/8 Q [] \OT1/cmr/m/n/8 = \OML/cmm/m/it/8 Qr[]
+ []
+
+[209
+
+] [210
+
+] [211
+
+] [212
+
+] [213
+
+] [214
+
+] [215
+
+] [216
+
+] [217
+
+] [218
+
+] [219
+
+] [220
+
+] [221
+
+] [222
+
+]
+Overfull \hbox (16.46165pt too wide) in alignment at lines 1746--1746
+ [][][] []
+ []
+
+[223
+
+]
+Overfull \hbox (16.46165pt too wide) in alignment at lines 1746--1746
+ [][][] []
+ []
+
+[224
+
+] [225
+
+] [226
+
+] [227
+
+] [228
+
+] [229
+
+] [230
+
+] [231
+
+] [232
+
+] [233
+
+] [234
+
+] [235
+
+] [236
+
+] [237
+
+] [238
+
+]
+<./reflex.jpg, id=7100, 655.248pt x 313.6518pt>
+File: ./reflex.jpg Graphic file (type jpg)
+<use ./reflex.jpg>
+Package pdftex.def Info: ./reflex.jpg  used on input line 1866.
+(pdftex.def)             Requested size: 196.57591pt x 94.09625pt.
+ [239
+
+ <./reflex.jpg>]
+File: ./reflex.jpg Graphic file (type jpg)
+<use ./reflex.jpg>
+Package pdftex.def Info: ./reflex.jpg  used on input line 1866.
+(pdftex.def)             Requested size: 196.57591pt x 94.09625pt.
+ [240
+
+] [241
+
+] [242
+
+] [243
+
+] [244
+
+] [245
+
+] [246
+
+] [247
+
+] [248
+
+] [249
+
+] [250
+
+] [251
+
+] [252
+
+] [253
+
+] [254
+
+] [255
+
+] [256
+
+] [257
+
+] [258
+
+] [259
+
+] [260
+
+] [261
+
+] [262
+
+]
+Overfull \hbox (7.38403pt too wide) detected at line 2130
+\OML/cmm/m/it/8 A \OT1/cmr/m/n/8 = \OML/cmm/m/it/8 QR \OT1/cmr/m/n/8 = [] []
+ []
+
+[263
+
+] [264
+
+] [265
+
+] [266
+
+] [267
+
+] [268
+
+] [269
+
+]
+Overfull \vbox (0.96336pt too high) detected at line 2195
+ []
+
+[270
+
+]
+<./rotacion.jpg, id=7990, 493.845pt x 485.815pt>
+File: ./rotacion.jpg Graphic file (type jpg)
+<use ./rotacion.jpg>
+Package pdftex.def Info: ./rotacion.jpg  used on input line 2211.
+(pdftex.def)             Requested size: 98.76724pt x 97.16127pt.
+ [271
+
+ <./rotacion.jpg>]
+File: ./rotacion.jpg Graphic file (type jpg)
+<use ./rotacion.jpg>
+Package pdftex.def Info: ./rotacion.jpg  used on input line 2211.
+(pdftex.def)             Requested size: 98.76724pt x 97.16127pt.
+ [272
+
+]
+File: ./rotacion.jpg Graphic file (type jpg)
+<use ./rotacion.jpg>
+Package pdftex.def Info: ./rotacion.jpg  used on input line 2211.
+(pdftex.def)             Requested size: 98.76724pt x 97.16127pt.
+ [273
+
+] [274
+
+] [275
+
+] [276
+
+]
+Overfull \hbox (15.8677pt too wide) in alignment at lines 2259--2259
+ [][][] []
+ []
+
+[277
+
+]
+Overfull \hbox (15.8677pt too wide) in alignment at lines 2259--2259
+ [][][] []
+ []
+
+[278
+
+]
+Overfull \hbox (15.8677pt too wide) in alignment at lines 2259--2259
+ [][][] []
+ []
+
+[279
+
+]
+<./rota2.jpg, id=8240, 395.4775pt x 361.35pt>
+File: ./rota2.jpg Graphic file (type jpg)
+<use ./rota2.jpg>
+Package pdftex.def Info: ./rota2.jpg  used on input line 2275.
+(pdftex.def)             Requested size: 138.41919pt x 126.4744pt.
+ [280
+
+ <./rota2.jpg>] [281
+
+] [282
+
+] [283
+
+] [284
+
+] [285
+
+] [286
+
+] [287
+
+] [288
+
+] [289
+
+] [290
+
+]
+Overfull \hbox (27.73128pt too wide) detected at line 2375
+\OML/cmm/m/it/10 t \OT1/cmr/m/n/10 = [] = [] = 1\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ;  c \OT1/cmr/m/n/10 = [] = []\OML/cmm/m/it/10 ;  s \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ct \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 = []
+ []
+
+
+Overfull \hbox (27.66316pt too wide) detected at line 2375
+\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = [] [] [] = [] [] = []
+ []
+
+[291
+
+]
+Overfull \hbox (27.73128pt too wide) detected at line 2375
+\OML/cmm/m/it/10 t \OT1/cmr/m/n/10 = [] = [] = 1\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ;  c \OT1/cmr/m/n/10 = [] = []\OML/cmm/m/it/10 ;  s \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ct \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 = []
+ []
+
+
+Overfull \hbox (27.66316pt too wide) detected at line 2375
+\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = [] [] [] = [] [] = []
+ []
+
+[292
+
+]
+Overfull \hbox (27.73128pt too wide) detected at line 2375
+\OML/cmm/m/it/10 t \OT1/cmr/m/n/10 = [] = [] = 1\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ;  c \OT1/cmr/m/n/10 = [] = []\OML/cmm/m/it/10 ;  s \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ct \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 = []
+ []
+
+
+Overfull \hbox (27.66316pt too wide) detected at line 2375
+\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = [] [] [] = [] [] = []
+ []
+
+[293
+
+]
+Overfull \hbox (27.73128pt too wide) detected at line 2375
+\OML/cmm/m/it/10 t \OT1/cmr/m/n/10 = [] = [] = 1\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ;  c \OT1/cmr/m/n/10 = [] = []\OML/cmm/m/it/10 ;  s \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ct \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^^A [] \OT1/cmr/m/n/10 = []
+ []
+
+
+Overfull \hbox (27.66316pt too wide) detected at line 2375
+\OML/cmm/m/it/10.95 J\OT1/cmr/m/n/10.95 (1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; ^^R\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = [] [] [] = [] [] = []
+ []
+
+[294
+
+] [295
+
+] [296
+
+] [297
+
+] [298
+
+] [299
+
+] [300
+
+]
+Overfull \hbox (16.4196pt too wide) detected at line 2459
+\OML/cmm/m/it/10.95 A \OT1/cmr/m/n/10.95 = [] \OMS/cmsy/m/n/10.95 ! \OML/cmm/m/it/10.95 G[]A \OT1/cmr/m/n/10.95 = [] []
+ []
+
+[301
+
+]
+Overfull \hbox (16.41405pt too wide) detected at line 2508
+\OML/cmm/m/it/9 G[]A \OT1/cmr/m/n/9 = [] \OMS/cmsy/m/n/9 ! \OML/cmm/m/it/9 G[]A \OT1/cmr/m/n/9 = [] []
+ []
+
+[302
+
+]
+Overfull \hbox (16.41405pt too wide) detected at line 2508
+\OML/cmm/m/it/9 G[]A \OT1/cmr/m/n/9 = [] \OMS/cmsy/m/n/9 ! \OML/cmm/m/it/9 G[]A \OT1/cmr/m/n/9 = [] []
+ []
+
+[303
+
+] [304
+
+] [305
+
+] [306
+
+]
+Overfull \vbox (3.48457pt too high) detected at line 2610
+ []
+
+[307
+
+]
+Overfull \vbox (3.48457pt too high) detected at line 2610
+ []
+
+[308
+
+]
+Overfull \vbox (3.48457pt too high) detected at line 2610
+ []
+
+[309
+
+] [310
+
+] [311
+
+] [312
+
+] [313
+
+] [314
+
+] [315
+
+]
+Overfull \hbox (27.78969pt too wide) in alignment at lines 2687--2687
+ [][][] []
+ []
+
+[316
+
+]
+Overfull \hbox (31.392pt too wide) in alignment at lines 2709--2709
+ [][][] []
+ []
+
+[317
+
+] [318
+
+] [319
+
+] [320
+
+] [321
+
+] [322
+
+] [323
+
+]
+Overfull \hbox (3.74081pt too wide) in alignment at lines 2752--2752
+ [][][] []
+ []
+
+[324
+
+]
+Overfull \hbox (3.74081pt too wide) in alignment at lines 2752--2752
+ [][][] []
+ []
+
+[325
+
+] [326
+
+] [327
+
+] [328
+
+] [329
+
+] [330
+
+] [331
+
+] [332
+
+] [333
+
+] [334
+
+] [335
+
+] [336
+
+] [337
+
+] [338
+
+] [339
+
+] [340
+
+] [341
+
+] [342
+
+] [343
+
+]
+Overfull \hbox (30.17389pt too wide) detected at line 2849
+[]
+ []
+
+[344
+
+]
+\tf@nav=\write6
+\openout6 = `unidadI.nav'.
+
+\tf@toc=\write7
+\openout7 = `unidadI.toc'.
+
+\tf@snm=\write8
+\openout8 = `unidadI.snm'.
+
+ (./unidadI.aux)
+Package rerunfilecheck Info: File `unidadI.out' has not changed.
+(rerunfilecheck)             Checksum: F230CE6D1090A0309AE22919F7968A85;1340.
+ ) 
+Here is how much of TeX's memory you used:
+ 24343 strings out of 480171
+ 470201 string characters out of 5894489
+ 759246 words of memory out of 5000000
+ 41090 multiletter control sequences out of 15000+600000
+ 481460 words of font info for 75 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 128i,18n,122p,462b,947s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on unidadI.pdf (344 pages, 1324338 bytes).
+PDF statistics:
+ 10466 PDF objects out of 10688 (max. 8388607)
+ 9606 compressed objects within 97 object streams
+ 699 named destinations out of 1000 (max. 500000)
+ 2244 words of extra memory for PDF output out of 10000 (max. 10000000)
+

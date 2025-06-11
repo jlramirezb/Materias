@@ -1,11 +1,21 @@
-\begin{enumerate}
-    \item<1-> \textbf{Paso 1: Resolver para $x_1$.}
-    De la primera ecuaci\'on $(E_1)$, y asumiendo $a_{1,1} \neq 0$:
-    $$x_1 = \frac{b_1}{a_{1,1}}$$
-    \item<2-> \textbf{Paso 2: Resolver para $x_2$.}
-    Sustituimos el valor de $x_1$ en la segunda ecuaci\'on $(E_2)$:
-    $$a_{2,1}x_1 + a_{2,2}x_2 = b_2$$
-    Despejando $x_2$ (asumiendo $a_{2,2} \neq 0$):
-    $$x_2 = \frac{b_2 - a_{2,1}x_1}{a_{2,2}}$$
-
-  \end{enumerate}
+\frametitle{Algoritmo de Sustituci\'on Progresiva}
+  \begin{algorithm}[H]
+    \SetKwInOut{Input}{Entrada}
+    \SetKwInOut{Output}{Salida}
+    \SetKwComment{Comment}{//}{}
+    \caption{Sustituci\'on Progresiva para resolver $Lx=b$}
+    \Input{Matriz triangular inferior $L \in \mathbb{R}^{n \times n}$ no singular, vector $b \in \mathbb{R}^n$}
+    \Output{Vector soluci\'on $x \in \mathbb{R}^n$}
+    \BlankLine
+    \Comment{Resolver para $x_1$}
+    $x_1 \leftarrow b_1 / l_{1,1}$\;
+    \BlankLine
+    \Comment{Resolver para $x_i$, $i=2, \ldots, n$}
+    \For{$i \leftarrow 2$ \KwTo $n$}{
+      $suma \leftarrow 0$\;
+      \For{$j \leftarrow 1$ \KwTo $i-1$}{
+        $suma \leftarrow suma + l_{i,j} * x_j$\;
+      }
+      $x_i \leftarrow (b_i - suma) / l_{i,i}$\;
+    }
+  \end{algorithm}
