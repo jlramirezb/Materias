@@ -40,23 +40,23 @@
 \frame
 {
    \frametitle{Motivaci\'on.}
-   
-Si bien existen m\'etodos exactos  como el m\'etodo de Cramer, estos son muy costosos de aplicar en situaciones donde los sistemas a resolver tienen muchas ecuaciones.
+   \begin{enumerate}
+    \item Si bien existen m\'etodos exactos  como el m\'etodo de Cramer, estos son muy costosos de aplicar en situaciones donde los sistemas a resolver tienen muchas ecuaciones.
+    \item<2-> El n\'umero total de operaciones para resolver un sistema de dimensi\'on $n$ con este m\'etodo es
+    $$
+    T_C = (n+1)^{2}n!-1
+    $$
 
-El n\'umero total de operaciones para resolver un sistema de dimensi\'on $n$ con este m\'etodo es
-$$
-T_C = (n+1)^{2}n!-1
-$$
-
-\begin{table}[!ht]
- \begin{tabular}{|c|c|}\hline
-$n$ & $T_C$  \\\hline
-$5$ & $4319$ \\\hline
-$10$ & $4\times10^8$\\\hline
-$100$ &  $10^{158}$\\\hline
- \end{tabular}
-\caption{Operaciones elementales del m\'etodo de Cramer segun el tama\~no de la matriz($n$).}
-\end{table}
+    \begin{table}[!ht]
+    \begin{tabular}{|c|c|}\hline
+    $n$ & $T_C$  \\\hline
+    $5$ & $4319$ \\\hline
+    $10$ & $4\times10^8$\\\hline
+    $100$ &  $10^{158}$\\\hline
+    \end{tabular}
+    \caption{Operaciones elementales del m\'etodo de Cramer segun el tama\~no de la matriz($n$).}
+    \end{table}
+  \end{enumerate}
 }
 %%%%
 \frame{
@@ -328,9 +328,9 @@ que en general no tiene porqu\'e converger (requieren an\'alisis de convergencia
             a_{1,1}x_1  & = & b_1\\
             a_{2,1}x_1 + a_{2,2}x_2 & = & b_2\\
               \vdots & & \vdots\\
-            a_{i,1}x_1 + \cdots + a_{i,i-1}x_{i-1} + a_{i,i}x_i  & = & b_i\\
+            a_{i,1}x_1 + a_{i,2}x_2 + \cdots + a_{i,i}x_i  & = & b_i\\
             \vdots & & \vdots\\
-            a_{n,1}x_{1} + a_{n,2}x_2 + \cdots + a_{n,i-1}x_{i-1} + a_{n,i}x_i + \cdots + a_{n,n}x_n & = & b_{n}
+            a_{n,1}x_{1} + a_{n,2}x_2 + \cdots + a_{n,i}x_i + \cdots + a_{n,n}x_n & = & b_{n}
            \end{array}\right.
     $$
 \end{frame}
@@ -338,10 +338,10 @@ que en general no tiene porqu\'e converger (requieren an\'alisis de convergencia
 \frame{
   \begin{enumerate}
     \item<1-> \textbf{Paso 1: Resolver para $x_1$.}
-    De la primera ecuaci\'on $(E_1)$, y asumiendo $a_{1,1} \neq 0$:
+    De la primera ecuaci\'on, y asumiendo $a_{1,1} \neq 0$:
     $$x_1 = \frac{b_1}{a_{1,1}}$$
     \item<2-> \textbf{Paso 2: Resolver para $x_2$.}
-    Sustituimos el valor de $x_1$ en la segunda ecuaci\'on $(E_2)$:
+    Sustituimos el valor de $x_1$ en la segunda ecuaci\'on:
     $$a_{2,1}x_1 + a_{2,2}x_2 = b_2$$
     Despejando $x_2$ (asumiendo $a_{2,2} \neq 0$):
     $$x_2 = \frac{b_2 - a_{2,1}x_1}{a_{2,2}}$$
@@ -351,12 +351,14 @@ que en general no tiene porqu\'e converger (requieren an\'alisis de convergencia
 \frame{
   \begin{enumerate}
   \item<1-> \textbf{Paso $k$: Resolver para $x_i$.}
-    En general, para $i = 2, 3, \ldots, n$, una vez que $x_1, x_2, \ldots, x_{i-1}$ son conocidos, resolvemos la ecuaci\'on $(E_i)$:
+    En general, para $i = 2, 3, \ldots, n$, una vez que $x_1, x_2, \ldots, x_{i-1}$ son conocidos, resolvemos la $i$-\'esima ecuaci\'on:
     $$a_{i,1}x_1 + a_{i,2}x_2 + \cdots + a_{i,i-1}x_{i-1} + a_{i,i}x_i = b_i$$
     Despejando $x_i$ (asumiendo $a_{i,i} \neq 0$):
     $$x_i = \frac{b_i - (a_{i,1}x_1 + a_{i,2}x_2 + \cdots + a_{i,i-1}x_{i-1})}{a_{i,i}}$$
     O de forma m\'as compacta:
-    $$x_i = \frac{b_i - \displaystyle\sum_{k=1}^{i-1} a_{i,k}x_k}{a_{i,i}}$$
+    $$
+    x_i = \dfrac{b_i - \displaystyle\sum_{k=1}^{i-1} a_{i,k}x_k}{a_{i,i}} \qquad\forall i = 2, 3, \ldots, n-1, n
+    $$
     \item<2-> Se contin\'ua este proceso "hacia adelante" hasta que todas las inc\'ognitas $x_1, \ldots, x_n$ hayan sido determinadas.
   \end{enumerate}
 }
@@ -438,16 +440,19 @@ $$
 }
 %%%%%
 \frame{
-  Los n\'umeros
-$$
-m_{i,j} = \frac{a_{i,j}^{(j-1)}}{a_{j,j}^{(j-1)}}\quad \forall\,\,\, j=1,\ldots,n-1,\,\, i=j+1,\ldots,n
-$$
-se llaman multiplicadores.
-
-El sistema resultante tendr\'a entonces la forma triangular superior con elementos no nulos en la diagonal, por lo tanto, se puede resolver mediante sustituci\'on regresiva.
+  \begin{enumerate}
+    \item Los n\'umeros
+      $$
+      m_{i,j} = \frac{a_{i,j}^{(j-1)}}{a_{j,j}^{(j-1)}}\quad \forall\,\,\, j=1,\ldots,n-1,\,\, i=j+1,\ldots,n
+      $$
+      se llaman multiplicadores.
+    \item El sistema resultante tendr\'a entonces la forma triangular superior con elementos no nulos en la diagonal, por lo tanto, se puede resolver mediante sustituci\'on regresiva.
+  \end{enumerate}
+  
 }
 %%%%
 \frame{
+  \frametitle{Eliminación Gaussiana sin Pivoteo}
 \begin{algorithm}[H]
 % \SetLine
  \SetKwInOut{Input}{input}
@@ -473,6 +478,7 @@ El sistema resultante tendr\'a entonces la forma triangular superior con element
 }
 %%%%
 \frame{
+  \frametitle{Pr\'actica}
   Utilice la eliminaci\'on Gaussiana sin pivoteo para resolver el sistemas de ecuaciones.
   $$
 \left\{\begin{array}{l}
@@ -780,65 +786,61 @@ $$
 %%%%
 \frame{
   \frametitle{Condicionamiento de Sistemas.}
-  Se ha perturbado el t\'ermino independiente
-$$
-\frac{\|\Delta b\|_{\infty}}{\|b\|_{\infty}} = 3.03\times10^{-4}
-$$
-y esta perturbaci\'on induce una variaci\'on en la soluci\'on
-$$
-\frac{\|\Delta x\|_{\infty}}{\|x\|_{\infty}} = 1.36
-$$
+  \begin{itemize}
+    \item Se ha perturbado el t\'ermino independiente
+    $$
+      \frac{\|\Delta b\|_{\infty}}{\|b\|_{\infty}} = 3.03\times10^{-4}
+    $$
+    \item y esta perturbaci\'on induce una variaci\'on en la soluci\'on
+    $$
+    \frac{\|\Delta x\|_{\infty}}{\|x\|_{\infty}} = 1.36
+    $$
+  \end{itemize}  
 }
 %%%%
 \frame
 {
-El sistema est\'a bien condicionado si cuando $\Delta b$ es peque\~na, $\Delta x$ tambi\'en lo es. Observese que:
-
-\uncover<2->{
-$$
-\left.\begin{array}{ccc}
- Ax +A(\Delta x) & = & b + \Delta b\\
- Ax & = & b
-\end{array}\right\}\Rightarrow\left\{\begin{array}{ccc}
- A(\Delta x) & = & \Delta b\\
- \Delta x & = & A^{-1}(\Delta b)
-\end{array}\right.
-$$
-}
-
-\uncover<3->{
-Usando la propiedad para normas matriciales:
-$$
-\|\Delta x\| \leq \|A^{-1}\|\|\Delta b\|
-$$
-}
-
-\uncover<4->{
-De la soluci\'on exacta, $\|b\| \leq \|A\|\|x\|$ , lo que implica que:
-
-$$
-\frac{1}{\|x\|}\leq\frac{\|A\|}{\|b\|}
-$$
-}
+  \frametitle{Condicionamiento de Sistemas.}
+  \begin{itemize}
+    \item El sistema est\'a bien condicionado si cuando $\Delta b$ es peque\~na, $\Delta x$ tambi\'en lo es. Observese que:
+      \uncover<2->{
+      $$
+      \left.\begin{array}{ccc}
+      Ax +A(\Delta x) & = & b + \Delta b\\
+      Ax & = & b
+      \end{array}\right\}\Rightarrow\left\{\begin{array}{ccc}
+      A(\Delta x) & = & \Delta b\\
+      \Delta x & = & A^{-1}(\Delta b)
+      \end{array}\right.
+      $$
+      }
+    \item<3-> Usando la propiedad para normas matriciales:
+      $$
+      \|\Delta x\| \leq \|A^{-1}\|\|\Delta b\|
+      $$
+    \item<4-> De la soluci\'on exacta, $\|b\| \leq \|A\|\|x\|$ , lo que implica que:
+      $$
+      \frac{1}{\|x\|}\leq\frac{\|A\|}{\|b\|}
+      $$
+  \end{itemize}
 }
 %%%%
 \frame
 {
-De las dos relaciones anteriores se llega a que:
-
-$$
-\frac{\|\Delta x\|}{\|x\|} \leq \|A\|\|A^{-1}\|\frac{\|\Delta b\|}{\|b\|}
-$$
-
-donde $\frac{\|\Delta x\|}{\|x\|}$ representa el error relativo en los resultados, y $\frac{\|\Delta b\|}{\|b\|}$ el error relativo en los datos.
-
-\uncover<2->{
-De la relaci\'on, parece deducirse que el n\'umero $\|A\|\|A^{-1}\|$ es el factor determinante de la relaci\'on, ya que si es peque\~no se tendr\'a el efecto deseado, y si no, ocurre lo contrario.
-}
+  \frametitle{Condicionamiento de Sistemas.}
+  \begin{itemize}
+    \item De las dos relaciones anteriores se llega a que:
+    $$
+    \frac{\|\Delta x\|}{\|x\|} \leq \|A\|\|A^{-1}\|\frac{\|\Delta b\|}{\|b\|}
+    $$
+    donde $\frac{\|\Delta x\|}{\|x\|}$ representa el error relativo en los resultados, y $\frac{\|\Delta b\|}{\|b\|}$ el error relativo en los datos.
+    \item<2-> De la relaci\'on, parece deducirse que el n\'umero $\|A\|\|A^{-1}\|$ es el factor determinante de la relaci\'on, ya que si es peque\~no se tendr\'a el efecto deseado, y si no, ocurre lo contrario.
+  \end{itemize}
 }
 %%%%%
 \frame
 {
+  \frametitle{Condicionamiento de Sistemas.}
 \begin{block}{Definici\'on}
 Sea $\| \cdot \|$ una norma matricial subordinada y $A$ una matriz invertible. Se denomina n\'umero de condici\'on de la matriz $A$ respecto de la norma $\| \cdot \|$ a la expresi\'on:
 $$
@@ -848,37 +850,39 @@ $$
 }
 %%%%%
 \frame{
-\begin{itemize}
- \item Si los datos de un sistema $Ax=b$ son exactos con la precisi\'on de la m\'aquina, el error relativo de la soluci\'on cumple que
- $$
- \dfrac{\|x^{*}-x\|}{\|x\|} \leq \kappa(A)\epsilon
- $$
- \item<2-> El concepto de n\'umero de condici\'on de una matriz se generaliza a cualquier matriz $A$ (no necesariamente cuadrada) de rango completo mediante la expresi\'on
- $$
- \kappa(A) = \|A\|\|A^{\dagger}\|
- $$
- donde $A^{\dagger}$ es la matriz pseudoinversa de la matriz $A$.
- \item<3-> El n\'umero de condici\'on de una matriz $A$ es un indicador del error de amplificaci\'on que produce en un vector $x$ el someterlo a la transformaci\'on que define dicha matriz $A$.
-\end{itemize}
-
+  \frametitle{Condicionamiento de Sistemas.}
+  \begin{itemize}
+  \item Si los datos de un sistema $Ax=b$ son exactos con la precisi\'on de la m\'aquina, el error relativo de la soluci\'on cumple que
+  $$
+  \dfrac{\|x^{*}-x\|}{\|x\|} \leq \kappa(A)\epsilon
+  $$
+  \item<2-> El concepto de n\'umero de condici\'on de una matriz se generaliza a cualquier matriz $A$ (no necesariamente cuadrada) de rango completo mediante la expresi\'on
+  $$
+  \kappa(A) = \|A\|\|A^{\dagger}\|
+  $$
+  donde $A^{\dagger}$ es la matriz pseudoinversa de la matriz $A$.
+  \item<3-> El n\'umero de condici\'on de una matriz $A$ es un indicador del error de amplificaci\'on que produce en un vector $x$ el someterlo a la transformaci\'on que define dicha matriz $A$.
+  \end{itemize}
 }
 %%%%%
 \frame{
-\begin{itemize}
- \item<1-> Estudiando la sensibilidad de un sistema de ecuaciones a peque\~nas perturbaciones en los coeficientes de la matriz.
- \item<2-> Comparando la soluci\'on de
- $$
- Ax=b \qquad \mbox{ y } \qquad (A+\Delta A)(x+\Delta x)=b
- $$
- \item<3-> De la segunda igualdad, como $Ax=b$, haciendo $\Delta x = -A^{-1}\Delta A(x+\Delta x)$, despreciando el producto $\Delta A\cdot\Delta x$, resulta que
- $$
- \|\Delta x\| \leq \|A^{-1}\|\|\Delta A\|\|x\|
- $$
-\end{itemize}
+  \frametitle{Condicionamiento de Sistemas.}
+  \begin{itemize}
+  \item<1-> Estudiando la sensibilidad de un sistema de ecuaciones a peque\~nas perturbaciones en los coeficientes de la matriz.
+  \item<2-> Comparando la soluci\'on de
+  $$
+  Ax=b \qquad \mbox{ y } \qquad (A+\Delta A)(x+\Delta x)=b
+  $$
+  \item<3-> De la segunda igualdad, como $Ax=b$, haciendo $\Delta x = -A^{-1}\Delta A(x+\Delta x)$, despreciando el producto $\Delta A\cdot\Delta x$, resulta que
+  $$
+  \|\Delta x\| \leq \|A^{-1}\|\|\Delta A\|\|x\|
+  $$
+  \end{itemize}
 }
 %%%%%
 \frame{
-\begin{itemize}
+  \frametitle{Condicionamiento de Sistemas.}
+\begin{itemize}    
  \item<1-> Expresi\'on que tambi\'en se puede escribir como
  $$
  \dfrac{\|\Delta x\|}{\|x\|} \leq \|A^{-1}\|\|A\|\dfrac{\|\Delta A\|}{\|A\|}
@@ -898,24 +902,22 @@ $$
   $$
   \end{block}
 }
-  %%%
-  \frame {   
-  Para cualquier norma subordinada se verifican las siguientes propiedades del condicionamiento de una matriz:
-  
-  \begin{enumerate}
-   \item $cond(I)=1$.
-  \item $cond(A)\geq 1$.
-  \item $cond(A)=cond(A^{-1})$.
-  \item $cond(kA)= cond(A)\quad \forall k \in \mathbb{R}-\{0\}$.
-  \end{enumerate}
-  \uncover<2->{
-  Otra propiedad muy interesante es la que relaciona el condicionamiento con el radio espectral de la matriz del sistema
-  caso de que esta sea sim\'etrica. Si la matriz es sim\'etrica su norma 2, es su radio espectral. Por tanto:
-  
-  $$
-  cond_2(A) = \|A\|_2\|A^{-1}\|_2 = \rho(A)\rho(A^{-1}) = \frac{|\lambda_{\max}|}{|\lambda_{\min}|}
-  $$
-  }
+%%%
+\frame {   
+  \frametitle{Condicionamiento de una Matriz.}
+  \begin{itemize}
+    \item Para cualquier norma subordinada se verifican las siguientes propiedades del condicionamiento de una matriz:  
+    \begin{enumerate}
+      \item $cond(I)=1$.
+      \item $cond(A)\geq 1$.
+      \item $cond(A)=cond(A^{-1})$.
+      \item $cond(kA)= cond(A)\quad \forall k \in \mathbb{R}-\{0\}$.
+    \end{enumerate}
+    \item <2-> Otra propiedad muy interesante es la que relaciona el condicionamiento con el radio espectral de la matriz del sistema  caso de que esta sea sim\'etrica. Si la matriz es sim\'etrica su norma 2, es su radio espectral. Por tanto:  
+    $$
+    cond_2(A) = \|A\|_2\|A^{-1}\|_2 = \rho(A)\rho(A^{-1}) = \frac{|\lambda_{\max}|}{|\lambda_{\min}|}
+    $$
+  \end{itemize}
 }
 %%%%
 \frame{
