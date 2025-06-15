@@ -1,0 +1,603 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[spanish]{babel}
+\usepackage[english]{algorithm2e}
+
+%\usepackage[dvips]{graphicx}
+\usepackage{amsthm,amssymb,amsfonts,amsmath}
+\usepackage[left=1.0cm,right=1.0cm,bottom=1.5cm,top=1.5cm]{geometry}
+\usepackage{graphicx,color}
+\usepackage{multicol}
+%\usepackage[cp1252]{inputenc}
+%\usepackage{pifont}
+\newcommand{\sen}{\ensuremath{sen}}
+\newcommand{\ds}{\displaystile}
+\theoremstyle{plain}
+\newtheorem{teo}{Teorema}%[section]
+\newtheorem{defi}{Definici\'on}
+\newtheorem{ej}[defi]{Ejemplo}
+\newcommand{\I}{\mathbf{I}}
+\newcommand{\II}{\mathbf{II}}
+
+\pretolerance=10000
+
+\tolerance=12000
+%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Estos comandos controlan el interlineado.
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]%
+           {\setlength{\baselineskip}{#1 \defbaselineskip}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Para que TeX no sea tan exigente al momento de saltar la l\'inea
+\sloppy
+\linespread{1.3} % Por defecto tiene 1, para espacio y medio (1,5 cm) se coloca 1.3 y para doble espacio 1.6.
+\setlength{\parindent}{0cm}  %Sin sangr\'{\i}a entre p\'arrafos.
+\setlength{\parskip}{.6cm plus .1cm minus .1cm} %Separaci\'{o}n entre p\'{a}rrafos.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\thispagestyle{empty}
+
+%\textcolor{blue}
+
+\begin{center}
+
+\noindent\begin{minipage}{15.5cm}
+\textbf{UNIVERSIDAD DE CARABOBO.\\
+\noindent FACULTAD DE CIENCIAS Y TECNOLOG\'IA.\\
+\noindent DEPARTAMENTO DE MATEM\'ATICAS.\\
+\noindent Materia: M\'etodos Num\'ericos II\\
+\noindent Prof. Jos\'e Luis Ram\'irez B.\\
+}
+
+\end{minipage}
+\begin{minipage}[ht]{2.5cm}
+\includegraphics[width=2.5cm]{LogoUC.jpg}
+\end{minipage}
+
+
+\begin{center} {\it\bf\large Gu\'ia de Ejercicios I}
+\end{center}
+%\today\ \\
+\end{center}
+
+\begin{enumerate}
+ \item ``Resuelva'' los siguientes sistemas de ecuaciones lineales usando Eliminaci\'on Gaussiana con sustituci\'on hacia atr\'as con una aritm\'etica redondeo correcto a dos d\'igitos. No reordene las ecuaciones.(La soluci\'on exacta para cada sistema es $x_1=1\quad,x_2=-1,\quad x_3=3$).
+\begin{multicols}{2}
+\begin{enumerate}
+ \item $\left\{\begin{array}{lcc}
+         4x_1-x_2+x_3&=&8,\\
+         2x_1+5x_2+2x_3&=&3,\\
+         x_1+2x_2+4x_3&=&11
+        \end{array}\right.$
+
+ \item $\left\{\begin{array}{ccc}
+         4x_1+x_2+2x_3&=&9,\\
+         2x_1+4x_2-x_3&=&-5,\\
+         x_1+x_2-3x_3&=&-9
+        \end{array}\right.$
+
+
+ \item $\left\{\begin{array}{ccc}
+         x_1+2x_2+4x_3&=&11,\\
+         4x_1-x_2+x_3&=&8,\\
+         2x_1+5x_2+2x_3&=&3
+        \end{array}\right.$
+
+ \item $\left\{\begin{array}{ccc}
+         2x_1+4x_2-x_3&=&-5,\\
+         x_1+x_2-3x_3&=&-9,\\
+         4x_1+x_2+2x_3&=&9
+        \end{array}\right.$
+\end{enumerate}
+\end{multicols}
+
+\item Use el algoritmo de Eliminaci\'on Gaussiana y, si es posible, aritm\'etica de precisi\'on simple en una computadora, para resolver los siguientes sistemas lineales:
+\begin{multicols}{2}
+\begin{enumerate}
+ \item $\left\{\begin{array}{l}
+         \frac{1}{4}x_1+\frac{1}{5}x_2+\frac{1}{6}x_3 = 9,\\
+         \frac{1}{3}x_1+\frac{1}{4}x_2+\frac{1}{5}x_3 = 8,\\
+         \frac{1}{2}x_1+x_2+2x_2 = 8.\\
+        \end{array}\right.$
+
+\item $\left\{\begin{array}{ccc}
+        3.333x_1+15920x_2-10.333x_3&=&15913\\
+        2.222x_1+16.71x_2+9.612x_3&=&28.544\\
+        1.5611x_1+5.1791x_2+1.6852x_3&=&8.4254
+       \end{array}\right.$
+
+\item $\left\{\begin{array}{ccc}
+        x_1+\frac{1}{2}x_2+\frac{1}{3}x_3+\frac{1}{4}x_4&=&\frac{1}{6}\\
+        \frac{1}{2}x_1+\frac{1}{3}x_2+\frac{1}{4}x_3+\frac{1}{5}x_4&=&\frac{1}{7}\\
+        \frac{1}{3}x_1+\frac{1}{4}x_2+\frac{1}{5}x_3+\frac{1}{6}x_4&=&\frac{1}{8}\\
+        \frac{1}{4}x_1+\frac{1}{5}x_2+\frac{1}{6}x_3+\frac{1}{7}x_4&=&\frac{1}{9}\\
+       \end{array}\right.$
+\end{enumerate}
+\end{multicols}
+\item Dado el sistema lineal
+
+$$
+\left\{\begin{array}{ccc}
+ x_1-x_2+\alpha x_3&=&-2\\
+ -x_1+2x_2-\alpha x_3&=&3\\
+ \alpha x_1+x_2+x_3&=&2\\
+\end{array}\right.
+$$
+
+\begin{enumerate}
+ \item Obtenga el (los) valor(es) de $\alpha$ para el(los) cual(es) el sistema no tiene soluci\'on.
+ \item Encuentre el (los) valor(es) de $\alpha$ para el(los) cual(es) el sistema tiene un infinito n\'umero de soluciones.
+ \item Considerando que existe una soluci\'on \'unica para un valor dado $\alpha$, encuentre la soluci\'on.
+\end{enumerate}
+
+\item Factorice las siguientes matrices en la descomposici\'on $LU$ usando el Algoritmo de Factorizaci\'on con $l_{ii}=1$ para toda $i$:
+\begin{multicols}{2}
+\begin{enumerate}
+ \item $\left[ \begin{array}{ccc}
+         2&-1&1\\
+         3&3&9\\
+         3&3&5
+        \end{array}\right]
+$
+
+\item $\left[ \begin{array}{ccc}
+         2&-1.5&3\\
+         -1&0&2\\
+         4&-4.5&5
+        \end{array}\right]
+$
+
+\item $\left[ \begin{array}{ccc}
+         1.012&-2.132&3.104\\
+         -2.132&4.096&-7.013\\
+         3.104&-7.013&0.014
+        \end{array}\right]
+$
+
+\item $\left[ \begin{array}{cccc}
+         2&0&0&0\\
+         1&1.5&0&0\\
+         0&-3&0.5&0\\
+         2&-2&1&1
+        \end{array}\right]
+$
+\end{enumerate}
+\end{multicols}
+
+\item Sean $\{1,-2,3\},\{1,-1\},\{-1\}$ los multiplicadores de la Eliminaci\'on Gaussiana para obtener el sistema triangular
+    $$
+    \left\{\begin{array}{rrr}
+    x_1+2x_2-x_3+x_4 & = & 1\\
+    2x_2+x_3+ 3x_4 & = & -2\\
+    x_3-x_4 & = & 0\\
+    2x_4 &=&7\\
+    \end{array}\right.
+    $$
+    Calcule el sistema original.
+
+\item Calcule los n\'umeros de productos y sumas para factorizar una matriz y para resolver el sistema triangular.
+
+\item Resuelva el sistema $Ax=b$ con
+$$
+A=\left( \begin{array}{cccc}
+         4 & -2 & 8 & 4\\
+        -2 & 10 & -4 & 5\\
+         8 & -4 & 17 & 9\\
+         4 & -5 & 9 & 15\\
+        \end{array}\right), \quad
+b=\left(\begin{array}{c}
+0\\
+3\\
+-1\\
+-11\\
+\end{array}\right)
+$$
+
+\item Considere el sistema de orden $n$ definido por la igualdad
+$$
+A=\left( \begin{array}{ccccc}
+         2 & -1 &  &  &\\
+        -1 & 2 & -1 &  &\\
+           & -1 & 2 & -1 &\\
+           &   & \ddots & \ddots & \ddots\\
+           &   &  & -1 & 2\\
+        \end{array}\right)\left(\begin{array}{c}
+x_1\\
+x_2\\
+x_3\\
+\vdots\\
+x_n\\
+\end{array}\right) = \left(\begin{array}{c}
+0\\
+0\\
+0\\
+\vdots\\
+1\\
+\end{array}\right)
+$$
+
+Muestre que el vector $x=\frac{1}{n+1}(1,2,\ldots,n)$ es la \'unica soluci\'on del sistema anterior.
+
+\item Sea
+$$
+A=\left( \begin{array}{ccc}
+         0 & -1 & 0 \\
+         0 & 0 & 1 \\
+         2 & 3 & 1 \\
+        \end{array}\right)
+$$
+  \begin{itemize}
+   \item Hallar una factorizaci\'on $A = QR$. Una vez hallada, explicar qu\'e relaci\'on hay (en este ejemplo) entre los factores $QR$ y los de una factorizaci\'on $LU$ con pivoteo.
+  \item Probar que el producto $B = RQ$ tiene siempre los mismos autovalores que $A = QR$. (Naturalmente, si $Q$ es ortogonal).
+  \end{itemize}
+
+\item Triangularizar la matriz de Hilbert de orden 4. Usando operaciones con fracciones en forma exacta en (a) y usando aritm\'etica de punto decimal flotante con tres d\'igitos con redondeo en (b):
+\begin{multicols}{2}
+\begin{enumerate}
+ \item $$
+H=\left( \begin{array}{cccc}
+         1   & 1/2 & 1/3 & 1/4\\
+         1/2 & 1/3 & 1/4 & 1/5\\
+         1/3 & 1/4 & 1/5 & 1/6\\
+	 1/4 & 1/5 & 1/6 & 1/7\\
+        \end{array}\right)
+$$
+\item $$
+H=\left( \begin{array}{cccc}
+         1.000   & 0.500 & 0.333 & 0.250\\
+         0.500 & 0.333 & 0.250 & 0.200\\
+         0.333 & 0.250 & 0.200 & 0.167\\
+	 0.250 & 0.200 & 0.167 & 0.143\\
+        \end{array}\right)
+$$
+ \end{enumerate}
+\end{multicols}
+\item Calcular la inversa $A^{-1}$ de $A=
+\left( \begin{array}{ccc}
+         2   & 1 & 2 \\
+         1 & 2 & 3\\
+         4 & 1 & 2\\
+        \end{array}\right)
+$ de las dos maneras siguientes:
+\begin{enumerate}
+\item Resolviendo el sistema matricial $AX = I$ por pivoteo parcial.
+\item Calculando la factorizaci\'on $LU$ de $A$ y aplicando la identidad $A^{-1} = U ^{-1}L^{-1}$
+
+\end{enumerate}
+\item Determine los valores de $\alpha$ para los que la matriz
+$$
+A=\left( \begin{array}{ccc}
+         2   & \alpha & 0\\
+         \alpha & 2 & \alpha\\
+         0 & \alpha & 2\\
+        \end{array}\right)
+$$
+admite factorizaci\'on de Cholesky y calc\'ulela en su caso.
+
+\item Sea $A$ una matriz no singular de $\mathbb{R}^{n\times n}$ escrita en forma de bloques
+$$
+A=\left( \begin{array}{cc}
+         A_{11}   & A_{12} \\
+         A_{21} & A_{22} \\
+        \end{array}\right)
+$$
+donde $A_{11}$ es una matriz de tama\~no $m\times m$ y $A_{22}$ es de tama\~no $(n-m)\times(n-m)$.
+\begin{enumerate}
+\item Verificar la f\'ormula
+$$
+\left( \begin{array}{cc}
+         I   & 0 \\
+         -A_{21}A_{11}^{-1} & I \\
+        \end{array}\right)\left( \begin{array}{cc}
+         A_{11}   & A_{12} \\
+         A_{21} & A_{22} \\
+        \end{array}\right)=\left( \begin{array}{cc}
+         A_{11}   & A_{12} \\
+         0 & A_{22} - A_{21}A_{11}^{-1}A_{12} \\
+        \end{array}\right)
+$$
+para la eliminaci\'on del bloque $A_{21}$ (la matriz $A_{22} - A_{21}A_{11}^{-1}A_{12}$ es conocida como complemento de Schur de $A_{11}$ en $A$).
+\item Si $A_{21}$ se elimina fila a fila en $m$ pasos de eliminaci\'on Gaussiana, mostrar que el bloque $(2,2)$ de la matriz resultante de aplicar el proceso de eliminaci\'on Gaussiana es igual a $A_{22} - A_{21}A_{11}^{-1}A_{12}$.
+
+\end{enumerate}
+
+\item Calcular la factorizaci\'on $LU$ de la matriz
+$$
+A=\left( \begin{array}{cccc}
+         10 & 6 & -2 & 1\\
+         10 & 10 & -5 & 0\\
+         -2 & 2 & -2 & 1\\
+	      1 & 3 & -2 & 3\\
+        \end{array}\right)
+$$
+donde los elementos de la diagonal de $L$ son uno. Use la factorizaci\'on para hallar la soluci\'on del sistema $Ax=b$ donde $b^t=(-2,0,2,1)$.
+
+\item Calcular la factorizaci\'on de Cholesky de la matriz
+$$
+\left( \begin{array}{cccccc}
+         1 & 1 &   &   &   & \\
+         1 & 2 & 1 &   &   & \\
+           & 1 & 3 & 1 &   & \\
+	       &   & 1 & 4 & 1 & \\
+	       &   &   & 1 & 5 & 1\\
+	       &   &   &   & 1 & \lambda\\
+        \end{array}\right)
+$$
+Deducir de la factorizaci\'on el valor de $\lambda$ que hace a la matriz singular.
+
+\item Analizar que sucede cuando se aplica Eliminaci\'on Gaussiana con Pivoteo Parcial a la siguiente matriz
+$$
+A=\left( \begin{array}{ccccc}
+          1 &  0  &  0 &  0 & 1 \\
+         -1 &  1  &  0 &  0 & 1 \\
+         -1 & -1  &  1 &  0 & 1 \\
+	     -1 & -1  & -1 &  1 & 1 \\
+	     -1 & -1  & -1 & -1 & 1 \\
+        \end{array}\right)
+$$    
+
+\item M\'etodo de Gauss-Jordan: Este m\'etodo se puede describir como sigue. Use la $i$-\'esima
+ecuaci\'on para eliminar no solo los $x_i$ en las ecuaciones $E_{i+1},E_{i+2},\ldots,E_n$, como se hizo en el
+m\'etodo de eliminaci\'on de Gauss, sino tambi\'en de $E_1,E_2,\ldots,E_{i-1}$. Reduciendo $[A,b]$ a:
+$$
+\left( \begin{array}{cccc|c}
+          a_{1,1}^{(1)} &  0  &  \cdots &  0 & a_{1,n+1}^{(1)} \\
+          0 &  a_{2,2}^{(2)}  &  \ddots &  \vdots & a_{2,n+1}^{(2)} \\
+         \vdots & \ddots  &  \ddots &  0 & \vdots \\
+	     0 & \cdots  & 0 &  a_{n,n}^{(n)} & a_{n,n+1}^{(n)} \\
+        \end{array}\right)
+$$    
+la soluci\'on se obtiene tomando $x_i=\frac{a_{i,n+1}^{(i)}}{a_{i,i}^({(i)})}$ para $i=1,2,\ldots,n$. Este procedimiento evita la necesidad de la sustituci\'on hacia atr\'as en la Eliminaci\'on Gaussiana. Construya un algoritmo para el procedimiento de Gauss-Jordan siguiendo el patr\'on del algoritmo de Eliminaci\'on de Gauss sin pivoteo.
+
+\item Realice el conteo de operaciones del m\'etodo de Gauss-Jordan.
+
+\item Utilice el m\'etodo de Gauss-Jordan para resolver los ejercicios (1), (2) y (7).
+
+\item Si $A$ es sim\'etrica y definida positiva:
+  \begin{enumerate}
+  \item Escribir el algoritmo de la factorizaci\'on $LDL^T$.
+  \item Hacer el conteo de operaciones de $(a)$.
+  \end{enumerate}
+
+\item \begin{enumerate}
+      \item Demuestre que el producto de dos matrices triangulares inferiores $n\times n$, es una matriz triangular inferior.
+      \item Demuestre que el producto de dos matrices triangulares superiores $n\times n$, es una matriz triangular superior.
+      \item Demuestre que la inversa de una matriz triangular inferior no singular $n\times n$ es triangular inferior.
+      \end{enumerate}
+
+\item  Suponga que $m$ sistemas lineales $Ax=b$, $p=1,\ldots,m$, han de resolverse, cada uno con la matriz de coeficientes $A$ de $n\times n$.
+  \begin{enumerate}
+    \item Hallar el n\'umero de operaciones que requiere la eliminaci\'on gaussiana con sustituci\'on hacia atr\'as aplicada a la matriz ampliada $[A : b^1 b^2 \ldots b^m ]$.
+   \item Hallar el n\'umero de operaciones que requiere el m\'etodo de Gauss-Jordan aplicado a la matriz ampliada $[A : b^1 b^2 \ldots b^m ]$.
+
+  \end{enumerate}
+
+\item Una matriz $Q \in \mathbb{R}^{n \times n}$ se denomina ortogonal si $QQ^t=Q^tQ=I$, es decir, $Q^{-1}=Q^t$. Considere el sistema lineal $Ax=b$, con $A \in \mathbb{R}^{n \times m}$, $x \in \mathbb{R}^m$,  y $b \in \mathbb{R}^n$. Suponga que $A$ se puede factorizar como $QR$, es decir, $A=QR$, donde $Q$ es una matriz ortogonal y $R$ es una matriz triangular superior.
+\begin{enumerate}
+ \item Explique como se puede usar la factorizaci\'on $QR$ de $A$, para resolver el Sistemas de Ecuaciones Normales (SEN) asociado al sistema general $Ax=b$.
+ \item Considere el sistema $Ax=b$
+$$
+A=\left(\begin{array}{cc}
+      5 & 6 \\
+      4 & 8 \\
+      4 & 8  
+      \end{array}\right), \qquad  b=\left(\begin{array}{c}
+      22 \\
+      24 \\
+      24  
+      \end{array}\right)
+$$
+\item Use la factorizaci\'on $QR$ de $A$, para hallar la soluci\'on del problema dado. Escriba las matrices, el sistema y la soluci\'on.
+\end{enumerate}
+
+\item La torre de Pisa se inclina m\'as a medida que pasa el tiempo. He aqu\'i las mediciones de la inclinaci\'on de la torre entre los a\~nos 75 y 87. La inclinaci\'on se da como la distancia entre el punto donde estar\'ia la torre en posici\'on vertical y el punto en el que realmente se encuentra. Las distancias se dan en d\'ecimas de mil\'imetros por encima de 2.9m.
+
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
+ A\~no & 75 & 76 & 77 & 78 & 79 & 80 & 81 & 82 & 83 & 84 & 85 & 86 & 87\\\hline
+ Inclinaci\'on & 642 & 644 & 656 & 667 & 673 & 688 & 696 & 698 & 713 & 717 & 725 & 742 & 757\\\hline
+\end{tabular}
+
+\begin{enumerate}
+ \item Muestre la matriz $A$ y el vector $b$ que resulta de ajustar los datos mediante una recta.
+\item Determine el rango de la matriz $A$ y el rango de la matriz aumentasda $(A|b)$. Tiene soluci\'on el sistema?
+\item Calcule el n\'umero de condici\'on de $A$ y $A^tA$. Que relaci\'on observa entre estos valores?
+\item Construya los elementos del sistema de ecuaciones normales para la matriz $A$ dada y el vector $b$.
+\item Resuelva el sistema anterior utilizando factorizaci\'on $QR$ y factorizaci\'on  de Cholesky.
+\end{enumerate}
+
+\item Usando primero el m\'etodo de Householder, y luego el m\'etodo de Givens, encuentre la factorizaci\'on $QR$ de la matriz:
+$$
+A=\left(\begin{array}{cc}
+      1 & -8 \\
+      2 & -1 \\
+      2 & 14  
+      \end{array}\right)
+$$
+
+\item Dado el siguiente sistema, muestre que la matriz asociada es positiva definida. Resuelva por medio de la factorizaci\'on de Cholesky y muestre la factorizaci\'on $ \tilde L D \tilde L^t$
+$$
+A=\left(\begin{array}{cccc}
+      4 & -2 & 8 & 4 \\
+      -2 & 10 & -4 & -5 \\
+      8 & -4 & 17 & 9\\
+      4 & -5 & 9 & 15
+      \end{array}\right), \qquad b=\left(\begin{array}{c}
+      0 \\
+      3\\
+      -1 \\
+      -11 
+      \end{array}\right)
+$$
+
+\item Resolver, usando el m\'etodo de eliminaci\'on gaussiana cl\'asica y sin pivoteo parcial, el siguiente sistema
+$$
+\left(\begin{array}{ccc}
+      0.0001 & 1 & 1  \\
+      3 & 1 & 1  \\
+      1 & 2 & 3 
+      \end{array}\right)\left(\begin{array}{c}
+      x_1 \\
+      x_2\\
+      x_3 
+      \end{array}\right)=\left(\begin{array}{c}
+      2.0001 \\
+      3\\
+      3 
+      \end{array}\right)
+$$
+compare los resultados obtenidos.
+
+\item Resolver, usando el m\'etodo de eliminaci\'on gaussiana con pivoteo total y con factorizaci\'on $QR$ (Gram-Schmidt, Householder, Givens) el siguiente sistema
+$$
+\left(\begin{array}{ccc}
+      0 & 1 & 1  \\
+      2 & 2 & 3  \\
+      4 & 1 & 1 
+      \end{array}\right)\left(\begin{array}{c}
+      x_1 \\
+      x_2\\
+      x_3 
+      \end{array}\right)=\left(\begin{array}{c}
+      2 \\
+      6\\
+      3 
+      \end{array}\right)
+$$
+
+\item Estudiar el condicionamiento del sistema $Ax=b$ con $A=\left(\begin{array}{cc}
+                                                                    1 & 1+\varepsilon\\
+								    1-\varepsilon & 1
+                                                                   \end{array}
+\right)$ siendo $\varepsilon>0$ en la norma $\|\cdot\|_{\infty}$.
+
+\item Repetir el ejercicio anterior con la norma $\|\cdot\|_1$.
+
+\item Dado el sistema lineal
+$$
+P=\left\{\begin{array}{lll}
+          0.1x + y & = & b_1\\
+	  0.1x + 1.5y & = & b_2
+         \end{array}\right.
+$$
+\begin{enumerate}
+\item Calcule el n\'umero de condici\'on en norma infinito.
+\item Sustituya $x$ por $x/\alpha$ y calcule el n\'umero de condici\'on de la nueva matriz. ?`Qu\'e relaci\'on tiene con
+la original? ?`Cu\'al $\alpha$ minimiza el n\'umero de condici\'on?
+\end{enumerate}
+
+\item Dado el sistema lineal
+$$
+\left(\begin{array}{cc}
+       \varepsilon & 1\\
+      1 & 1
+      \end{array}
+\right)\left(\begin{array}{c}
+              x_1\\
+	      x_2
+             \end{array}
+\right)=\left(\begin{array}{c}
+               1\\
+	      2
+              \end{array}
+\right)
+$$
+con $\varepsilon > 0$, peque\~no pero no nulo para el computador, ?`qu\'e resultado num\'erico se obtiene en el computador si se aplica el m\'etodo de Gauss sin pivoteo?, ?`dicho resultado es la soluci\'on correcta del sistema lineal? Razone su respuesta.
+
+\item Considere la siguiente matriz $A=\left(\begin{array}{cc}
+                                              d & a\\
+						a & d
+                                             \end{array}
+\right)$, donde $0<a<d$.
+\begin{enumerate}
+ \item Encuentre el factor $L$ de Cholesky.
+\item Consiga el vector $x$ tal que $Ax = b$ cuando $b = (3, 2)^t$ , $d = 9$ y $a = 6$.
+\end{enumerate}
+
+\item Sea $A \in \mathbb{R}^{n\times n}$ una matriz triangular inferior con unos en la diagonal, elementos $a_{i,1} = \alpha_i , i = 2,\ldots,n$ y ceros en el resto de las posiciones. Por ejemplo, si $n = 4$ entonces
+$$
+A=\left(\begin{array}{cccc}
+       1 & 0 & 0 & 0\\
+      \alpha_2 & 1 & 0 & 0\\
+      \alpha_3 & 0 & 1 & 0\\
+      \alpha_4 & 0 & 0 & 1\\
+      \end{array}\right)
+$$
+\begin{enumerate}
+ \item Calcule el n\'umero de condici\'on en la norma infinito de $A$, $\kappa_\infty(A)$ para cualquier $n$.
+\item Sean $b^t = (1, 1,\ldots, 1)$ y $b^t = (1.00005, 1,\ldots, 1)$. Suponga que $Ax = b$ y $A\tilde{x} = \tilde{b}$. Use $\kappa_\infty(A)$ para obtener una cota del error relativo en $\tilde{x}$, como aproximaci\'on de $x$, cuando $\max|\alpha_i| = 0,01$ y cuando $\max|\alpha_i| = 100$.
+\end{enumerate}
+
+\item Considere las matrices
+$$
+P=\left(\begin{array}{ccc}
+      0 & 1 & 0  \\
+      1 & 0 & 0  \\
+      0 & 0 & 1 
+      \end{array}\right), \qquad D=\left(\begin{array}{ccc}
+      3 & 0 & 0  \\
+      0 & 2 & 0  \\
+      0 & 0 & -5 
+      \end{array}\right), \qquad A=\left(\begin{array}{ccc}
+      2 & -1 & 2  \\
+      4 & -3 & 1  \\
+      3 & -4 & 1 
+      \end{array}\right)
+$$
+Calcular los productos $PA$, $AP$ , $DA$ y $AD$. ?`Qu\'e efecto produce premultiplicar y postmultiplicar una matriz $A$ por una matriz de permutación?, ?`Y por una matriz diagonal?
+
+\item Si $A \in \mathbb{R}^{n\times n}$ es una matriz Hessenberg superior, diga qu\'e hace el siguiente seudoc\'odigo y calcule la cantidad total de operaciones de punto flotante (sumas, restas, multiplicaciones y divisiones) que \'este efect\'ua.
+
+%\incmargin{1em}
+%\restylealgo{boxed}
+%\linesnumbered
+\begin{algorithm}[H]
+%\SetLine
+ \SetKwInOut{Input}{input}
+ \Input{$A \in \mathbb{R}^{n \times n}$}
+ \BlankLine
+ \For{$k\leftarrow 1$ \KwTo $n-1$}
+ {
+      $\alpha \leftarrow \displaystyle\frac{a_{k+1,k}}{a_{k,k}}$\\
+      \For{$j \leftarrow k$ \KwTo $n$}
+      {
+	$a_{k+1,j} \leftarrow a_{k+1,j}-\alpha*a_{k,j}$\\
+      }	
+ }
+\end{algorithm}
+%\decmargin{1em}
+
+\item Si se tiene una descomposici\'on $LU$ de una matriz $A \in \mathbb{R}^{n\times n}$, donde $L \in \mathbb{R}^{n\times n}$ es una matriz triangular inferior y $U \in \mathbb{R}^{n\times n}$ es una matriz triangular superior, proponga un seudoc\'odigo para resolver el sistema lineal $x^tA = b^t$.
+
+\item Sea $A=\left(\begin{array}{ccccc}
+                    90 & 1 & 2 & 3 & 4\\
+1 & 90 & 2 & 3 & 4\\
+ 1 & 2 & 90 & 3 & 4\\
+ 1 & 2 & 3 & 90 & 4\\
+ 1 & 2 & 3 & 4 & 90\\
+                   \end{array}
+\right)$, $b=\left(\begin{array}{c}
+                     1 \\
+ 2 \\
+ 3 \\
+ 4\\
+ 5\\
+                   \end{array}
+\right)$, $c= \left(\begin{array}{ccccc}
+                    1 & 2 & 3 & 4 & 5
+                   \end{array}
+\right)$, $d=\left(\begin{array}{c}
+                     11 \\
+ -3 \\
+ 8 \\
+ 7\\
+ 9\\
+                   \end{array}
+\right)$
+
+Resuelva los sistemas $Ax = b$ , $y^tA = c$ y $Ax = d$ usando una sola factorizaci\'on $LU$.
+
+\end{enumerate}
+\end{document}
