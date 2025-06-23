@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  22 JUN 2025 21:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  22 JUN 2025 22:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -568,7 +568,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (8.59727pt too wide) in paragraph at lines 135--151
+Overfull \hbox (8.59727pt too wide) in paragraph at lines 142--158
 \OT1/cmr/m/n/12 las coor-de-na-das de la ma-triz $\OML/cmm/m/it/12 A \OT1/cmr/m/n/12 = [] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 V$ \OT1/cmr/m/n/12 en la ba-se $\OML/cmm/m/it/12 B \OT1/cmr/m/n/12 = []$ 
  []
 
@@ -588,13 +588,13 @@ L3 programming layer <2024-05-27>
 Here is how much of TeX's memory you used:
  25876 strings out of 473583
  658952 string characters out of 5732336
- 1955908 words of memory out of 5000000
+ 1952908 words of memory out of 5000000
  48355 multiletter control sequences out of 15000+600000
  563667 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,9n,107p,781b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on practica2.pdf (3 pages, 110907 bytes).
+Output written on practica2.pdf (3 pages, 111446 bytes).
 PDF statistics:
  67 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream
