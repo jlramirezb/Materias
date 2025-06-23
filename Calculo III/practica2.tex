@@ -1,0 +1,198 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{tmargin=1cm, lmargin=1cm, rmargin=1cm, bmargin=1cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz}
+\usetikzlibrary{intersections, backgrounds, patterns, calc, decorations.pathreplacing}
+\usepgfplotslibrary{fillbetween}
+\usepackage{multicol}
+
+
+\begin{document}
+\begin{center}
+    {\Large \bf Práctica II. Cálculo III}
+\end{center}
+
+\begin{enumerate}
+  \item Se considera el conjunto de todos los polinomios de grado menor o igual a $n$, en variable real $x$, $\mathcal{P}_n = \{p(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\quad /\quad a_i \in \mathbb{R} \}$. Demostrar que $\mathcal{P}_n$ es un espacio vectorial real con las operaciones:
+  
+  $
+  \text{Suma de polinomios:}\left.\begin{array}{l}
+    p(x) = a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\\
+    q(x) = b_nx^n+b_{n-1}x^{n-1}+\cdots+b_1x+b_0
+  \end{array}\right\}
+  $
+  $$
+  p(x)+q(x) = (a_n+b_n)x^n+(a_{n-1}+b_{n-1})x^{n-1}+ \cdots + (a_1+b_1)x+(a_0+b_0) \in \mathcal{P}_n
+  $$
+  Producto de un polinomio por un escalar:
+  $$
+  \lambda p(x) = (\lambda a_n)x^n + (\lambda a_{n-1})x^{n-1} + \cdots + (\lambda a_1)x + (\lambda a_0) \quad \lambda \in \mathbb{R}
+  $$
+  \item Demuestra que $\mathbb{C} = \{x + yi : x, y \in \mathbb{R}\}$, junto con la suma usual de números complejos y la multiplicación escalar $\alpha (x + yi) = \alpha x + \alpha yi, \alpha \in \mathbb{R}$, es un espacio vectorial sobre $\mathbb{R}$.
+  \item Considere el conjunto $\mathbb{R}\times\mathbb{R}$ y las operaciones 
+  \begin{align*}
+    (x_1,x_2)\oplus (y_1,y_2) & = (x_1y_1,x_2y_2)\\
+    \alpha (x_1,x_2) & = (\alpha x_1,\alpha x_2)    
+  \end{align*}
+  donde $x_i, y_i, \alpha \in \mathbb{R}$. Explica por qué $\mathbb{R} \times \mathbb{R}$, junto con estas operaciones, no es un espacio vectorial real.
+  \item Sea $V = \{(x_1, x_2) : x_1, x_2 \in \mathbb{C}\}$. Para $(x_1, x_2)$, $(y_1, y_2) \in V$ y $\alpha \in \mathbb{C}$, definamos
+  \begin{align*}
+    (x_1, x_2) \oplus (y_1, y_2) & = (x_1 + y_1+1, x_2 + y_2+1)\\
+    \alpha \odot (x_1, x_2) & = (\alpha x_1 + \alpha - 1, \alpha x_2+\alpha - 1)
+  \end{align*}
+  Demuestra que $V$ es un espacio vectorial sobre $\mathbb{C}$. ¿Cuál es el vector cero?, ¿Cuál es el inverso aditivo?
+  \item Sea $S = \mathbb{R}^+$. Demuestra que $S$ es un espacio vectorial con las operaciones
+  \begin{align*}
+    v \oplus w = vw\\
+    \alpha \odot v = v^{\alpha}
+  \end{align*}
+  ¿Qué elemento de $S$ es la identidad aditiva? ¿Qué significado tiene $-x$ en este contexto?
+  \item Sea $\mathbb{R}$ el campo de los números reales. ¿Cuáles de los siguientes conjuntos son subespacios de $\mathbb{R}^3$?. Justifica tu respuesta.
+  \begin{enumerate}
+    \item $W_1 = \left\{(x_1,2x_2,3x_3) : x_1,x_2,x_3 \in \mathbb{R}\right\}$
+    \item $W_2 = \left\{(x_1,x_2,x_3) : x_1,x_2,x_3 \in \mathbb{Q}\right\}$
+    \item $W_3 = \left\{(x_1,x_1,x_1) : x_1 \in \mathbb{R}\right\}$
+    \item $W_4 = \left\{(x_1,x_2,x_3) : x_1,x_2,x_3 \in \mathbb{R}\quad \wedge\quad x_1^2+x_2^2+x_3^2\geq1 \right\}$
+  \end{enumerate}
+  \item Determina si los conjuntos $S_i$ son subespacios del espacio vectorial $V_i$. Justifica tu respuesta detalladamente.
+  \begin{enumerate}
+    \item $S_1=\left\{(x_1,x_2) \in \mathbb{R}^2 : x_1\leq x_2\right\}, V_1=\mathbb{R}^2$
+    \item $S_2=\left\{(x_1,\ldots,x_n) \in \mathbb{R}^n : x_1^2+\cdots+x_n^2=1\right\}, V_2=\mathbb{R}^n$
+    \item $S_3=\left\{(x_1,x_2,x_3,x_4) \in \mathbb{R}^4 : x_1+x_2=x_3-x_4\quad\wedge\quad x_1+2x_2+3x_3+4x_4=0\right\}, V_3=\mathbb{R}^4$
+  \end{enumerate}
+  \item Sea $V=E_{2\times2}(\mathbb{R})$ el espacio vectorial de todas las matrices cuadradas de orden 2 sobre el cuerpo $\mathbb{R}$. Estudiar si los siguientes subconjuntos son subespacios vectoriales de $V$:
+  \begin{multicols}{2}
+    \begin{enumerate}
+      \item $W=\left\{A \in E_{2\times2}(\mathbb{R}) / |A|=0\right\}$
+      \item $U=\left\{A \in E_{2\times2}(\mathbb{R}) / A=A^2 \right\}$
+    \end{enumerate}    
+  \end{multicols}
+  \item Establecer si los siguientes conjuntos son o no subespacios del respectivo espacio vectorial indicado justificando la respuesta (probar las propiedades de subespacio en caso que sea, o bien dar un contraejemplo que muestre la propiedad que falla en caso que no lo sea). En los casos que sea subespacio encontrar una base del mismo.
+  %\begin{multicols}{2}
+    \begin{enumerate}
+      \item $R = \left\{(x_1,x_2) \in \mathbb{R}^2\quad /\quad x_1 = 3x_2\right\}$
+      \item $W = \left\{(x_1,x_2,x_3) \in \mathbb{R}^3\quad /\quad 2x_1 - 3x_2 = 0\right\}$
+      \item $U = \left\{(x_1,x_2) \in \mathbb{R}^2 / x_1\cdot x_2 = 9\right\}$
+      \item $N=\left\{\begin{pmatrix}
+      a_{11} & a_{12}\\
+      a_{21} & a_{22}
+    \end{pmatrix} \in \mathbb{R}^{2\times2}:a_{11}+a_{12}+a_{22}=0 \wedge a_{21}=5a_{12}\right\}$
+    \end{enumerate}            
+  %\end{multicols}
+  \item Determinar si el vector $v=\begin{pmatrix}
+  3\\
+  9\\
+  -4\\
+  -2
+  \end{pmatrix}$ pertenece al subespacio generado por $u_1=\begin{pmatrix}
+  1\\
+  -2\\
+  0\\
+  3\end{pmatrix}$, $u_2 = \begin{pmatrix}
+    2\\
+    3\\
+    0\\
+    -1
+  \end{pmatrix}$ y $u_3 = \begin{pmatrix}
+    2\\
+    -1\\
+    2\\
+    1
+  \end{pmatrix}$.
+  \item Escribir la matriz $E = \begin{pmatrix}
+3 & 1\\
+1 & -1
+  \end{pmatrix}$ como combinación lineal de las matrices $A = \begin{pmatrix}
+1 & 1\\
+1 & 0
+  \end{pmatrix}$, $B = \begin{pmatrix}
+0 & 0\\
+1 & 1
+  \end{pmatrix}$ y $C = \begin{pmatrix}
+0 & 2\\
+0 & -1
+  \end{pmatrix}$.
+  \item Escribir el polinomio $v = x^2 + 4x - 3$ como una combinación lineal de los polinomios $e_1 = x^2 - 2x + 5$, $e_2 = 2x^2 - 3x$ y $e_3 = x + 3$.
+  \item ¿Para qué valores de $\alpha$ dejan de formar base de $\mathbb{R}^3$ los vectores $\left\{\begin{pmatrix}
+  \alpha\\
+  1-\alpha\\
+  \alpha\end{pmatrix},\begin{pmatrix}
+  0\\
+  3\alpha-1\\
+  2
+  \end{pmatrix},\begin{pmatrix}
+    -\alpha\\
+    1\\
+    0
+  \end{pmatrix}\right\}$?
+  \item Sea $V=E_{2\times2}(\mathbb{R})$ el espacio vectorial de todas las matrices cuadradas de orden 2 sobre el cuerpo $\mathbb{R}$. Hallar las coordenadas de la matriz $A = \begin{pmatrix}
+    2 & 3\\
+    4 & -7
+  \end{pmatrix} \in V$ en la base $B=\left\{\begin{pmatrix}
+  1 & 1\\
+  1 & 1
+  \end{pmatrix}, \begin{pmatrix}
+  0 & -1\\
+  1 & 0
+  \end{pmatrix}, \begin{pmatrix}
+  1 & -1\\
+  0 & 0
+  \end{pmatrix}, \begin{pmatrix}
+  1 & 0\\
+  0 & 0
+  \end{pmatrix}\right\}$
+  \item En el espacio vectorial $W$ de las matrices simétricas reales de orden 2, se considera la base $B=\left\{\begin{pmatrix}
+  1 & -1\\
+  -1 & 2
+  \end{pmatrix}, \begin{pmatrix}
+  1 & 0\\
+  0 & 1
+  \end{pmatrix}, \begin{pmatrix}
+  4 & 1\\
+  1 & 0
+  \end{pmatrix}, \begin{pmatrix}
+  3 & -2\\
+  -2 & 1
+  \end{pmatrix}\right\}$. Hallar las coordenadas de la matriz $A$ en la base $B$ en los siguientes casos:
+  \begin{multicols}{2}
+    \begin{enumerate}
+      \item $A=\begin{pmatrix}
+        1 & -5\\
+        -5 & 5
+      \end{pmatrix}$
+      \item $A=\begin{pmatrix}
+        1 & 2\\
+        2 & 4
+      \end{pmatrix}$
+    \end{enumerate}    
+  \end{multicols}
+  \item En $\mathbb{R}^3$ se consideran las bases $B=\left\{e_1,e_2,e_3\right\}$ y $B'=\left\{v_1,v_2,v_3\right\}$, siendo $B$ la base canónica y:
+  $$
+  \begin{cases}
+    v_1 = 2e_1\\
+    v_2 = -e_2+2e_3\\
+    v_3 = -3e_3
+  \end{cases}
+  $$
+  Hallar las coordenadas del vector $4e_1+e_2-5e_3$ en la base $B'$.
+  \item Dado el vector $u$, cuyas coordenadas en la base canónica $B=\left\{e_1,e_2,e_3,e_4\right\}$ son $\begin{pmatrix}
+    1\\1\\0\\1
+  \end{pmatrix}$, calcular sus coordenadas en la base $B'=\left\{e_1',e_2',e_3',e_4'\right\}$, relacionada con la anterior por las siguientes ecuaciones:
+  $$
+  \begin{cases}
+    e_1'=e_1+e_2\\
+    e_2'=e_3\\
+    e_3'=e_2+e_4\\
+    e_4'=e_2-e_3
+  \end{cases}
+  $$
+
+\end{enumerate}
+\end{document}
