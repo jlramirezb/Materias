@@ -213,6 +213,68 @@
   v_4 = -u_1 + 2u_3 + 3u_4
   $$
   Probar que $\mathcal{B'} = \{v_1 , v_2 , v_3 , v_4 \}$ es una base de $V$ y calcular las coordenadas en la base $\mathcal{B'}$ de un vector  $v$ que tiene por coordenadas en $\mathcal{B}$ a $(1, 2, 0, 1)$.
-
+  \item Calcular la dimensión y una base del siguiente subespacio vectorial de $\mathcal{M}_{2\times2}(\mathbb{R})$:
+  $$
+  U=\left\{\begin{pmatrix}
+  a & b\\
+  c & d
+  \end{pmatrix} \in \mathcal{M}_{2\times2}(\mathbb{R}) / \begin{array}{l}
+    a - b - c = 0\\
+    a + 2b + d = 0\\
+    3b + c + d = 0
+  \end{array} \right\}
+  $$
+  \item Se considera la matriz
+  $$
+  B=\begin{pmatrix}
+    2 & -1\\
+    -1 & 2    
+  \end{pmatrix}
+  $$
+  Hallar una base y la dimensión del subespacio vectorial
+  $$
+  U = \left\{ X \in \mathcal{M}_{2\times2}(\mathbb{R}) / BX = 3X\right\}
+  $$
+  \item Se considera la matriz
+  $$
+  A=\begin{pmatrix}
+    1 & -1 & 1\\
+    1 & -1 & 1    
+  \end{pmatrix}
+  $$
+  Hallar una base y la dimensión del subespacio vectorial
+  $$
+  U = \left\{ X \in \mathcal{M}_{2\times2}(\mathbb{R}) / XA = 0\right\}
+  $$
+  \item En $\mathbb{R}^2$ se considera el conjunto $\mathcal{B} = \{(3/5; 4/5); (-4/5; 3/5)\}$
+  \begin{enumerate}
+    \item Probar que $\mathcal{B}$ es una base de $\mathbb{R}^2$.
+    \item Calcular la matriz de cambio de base $P = P_{B\to C}$ de la base $\mathcal{B}$ a la base canónica $\mathcal{C} =\{(1; 0); (0; 1)\}$ y probar que P es una matriz ortogonal
+    \item Usar que P es ortogonal para calcular la matriz $P_{C\to B}$ de cambio de base de $\mathcal{C}$ a $\mathcal{B}$ y calcular las coordenadas de $v = (2; 1)$ respecto de la base $\mathcal{B}$.
+  \end{enumerate}
+  \item Considere las siguientes bases del espacio vectorial $\mathbb{R}^3$, $S = \{(0;-2; 3); (0; 1; 1); (1; 1; 0)\}$ y $T = \{(0;-1; 1); (0; 3; 0); (1;-1; 1)\}$. Sean $[u]_T = (2; 1; 3)$ y $[v]_S = (-1; 4; 1)$ dos vectores escritos en términos de las bases $S$ y $T$ respectivamente.
+  \begin{enumerate}
+    \item Determine la matriz de transición de la base $T$ a la base $S$.
+    \item Encuentre $[u]_S$. 
+    \item Determine la matriz de transición de la base $S$ a la base $T$.
+    \item Encuentre $[v]_T$.
+  \end{enumerate}
+  \item En $\mathbb{R}^3$ se considera el conjunto $\mathcal{B} = \{(1;-1; 1); (-2; \lambda; 0); (-1; 1; \lambda)\}$.
+  \begin{enumerate}
+    \item Hallar los valores de $\lambda$ para los que $\mathcal{B}$ no es una base de $\mathbb{R}^3$.
+    Para $\lambda = 1$, calcular las coordenadas del vector $v = (2; 1; 2)$ respecto de $\mathcal{B}$.
+    \item Para $\lambda = 0$, hallar la matriz de cambio de coordenadas de la base canónica de $\mathbb{R}^3$ a la base $\mathcal{B}$.
+    \item Para $\lambda = 2$, hallar una base ortonormal del subespacio generado por $\mathcal{B}$.
+  \end{enumerate}
+  \item Se considera el plano de $\mathbb{R}^3$ dado por
+  $$
+  U=\{(x,y,z)\in\mathbb{R}^3 / x=y+2z\}
+  $$
+  \begin{enumerate}
+    \item Hallar una base ortonormal de $U$.
+    \item Calcular la matriz $P$ de proyección ortogonal sobre $U$.
+    \item Hallar la distancia de $v = (1; 1; 1)$ a $U$.
+    \item Hallar una base del subespacio $W$ formado por los vectores de $\mathbb{R}^3$ cuya proyección ortogonal sobre $U$ es $(0; 0; 0)$.
+  \end{enumerate}
 \end{enumerate}
 \end{document}
