@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  26 JUN 2025 15:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  26 JUN 2025 21:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -481,16 +481,16 @@ LaTeX Font Info:    ... okay on input line 17.
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: <default>
+* paper: letterpaper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(28.45274pt, 557.38951pt, 28.45274pt)
-* v-part:(T,H,B)=(28.45274pt, 738.0645pt, 28.45274pt)
+* v-part:(T,H,B)=(28.45274pt, 723.83812pt, 42.67912pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
 * \textwidth=557.38951pt
-* \textheight=738.0645pt
+* \textheight=723.83812pt
 * \oddsidemargin=-43.81725pt
 * \evensidemargin=-43.81725pt
 * \topmargin=-80.81725pt
@@ -544,7 +544,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (24.91655pt too wide) in paragraph at lines 143--159
+Overfull \hbox (24.91655pt too wide) in paragraph at lines 144--160
 \OT1/cmr/m/n/12 lar las co-or-de-nadas de la ma-triz $\OML/cmm/m/it/12 A \OT1/cmr/m/n/12 = [] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 V$ \OT1/cmr/m/n/12 en la base $\OML/cmm/m/it/12 B \OT1/cmr/m/n/12 = []$ 
  []
 
@@ -553,7 +553,7 @@ Overfull \hbox (24.91655pt too wide) in paragraph at lines 143--159
 [2]
 
 [3]
-Overfull \hbox (105.1411pt too wide) in paragraph at lines 255--256
+Overfull \hbox (105.1411pt too wide) in paragraph at lines 258--259
 []\OT1/cmr/m/n/12 Considere las sigu-ientes bases del es-pa-cio vec-to-rial $\U/msb/m/n/12 R[]$\OT1/cmr/m/n/12 , $\OML/cmm/m/it/12 S \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (0; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 2; 3); (0; 1; 1); (1; 1; 0)\OMS/cmsy/m/n/12 g$ \OT1/cmr/m/n/12 y $\OML/cmm/m/it/12 T \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (0; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1; 1); (0; 3; 0); (1; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1; 1)\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
  []
 
@@ -574,7 +574,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  99i,9n,107p,781b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on practica2.pdf (4 pages, 110131 bytes).
+Output written on practica2.pdf (4 pages, 111523 bytes).
 PDF statistics:
  65 PDF objects out of 1000 (max. 8388607)
  40 compressed objects within 1 object stream
