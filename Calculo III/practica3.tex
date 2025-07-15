@@ -1,0 +1,48 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{tmargin=1.5cm, lmargin=1.5cm, rmargin=1.5cm, bmargin=1.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz}
+\usetikzlibrary{intersections, backgrounds, patterns, calc, decorations.pathreplacing}
+\usepgfplotslibrary{fillbetween}
+\usepackage{multicol}
+
+
+\begin{document}
+\begin{center}
+    {\Large \bf Práctica III. Cálculo III}
+\end{center}
+
+\begin{enumerate}
+  \item Si $V_1 = (1,-1)$, $V_2 = (2,-1)$, $V_3=(-3,2)$ y $W_1=(1,0)$, $W_2=(0,-1)$, $W_3=(1,1)$. ¿Existe una transformación lineal $T: \mathbb{R}^2\to\mathbb{R}^2$, tal que $T(V_i) = W_i$ para $i=1,2,3$?
+  \item Determinar cuáles de las siguientes aplicaciones son lineales:
+  \begin{enumerate}
+    \item $f : \mathbb{R}^3\to\mathbb{R}^2$ definida por $f((x; y; z)) = (x - y; y + 2z)$.
+    \item $f : \mathbb{R}^3\to\mathbb{R}^2$ definida por $f((x; y; z)) = (x - y^2; y + 2z)$.
+  \end{enumerate}
+  \item Sea $T: \mathbb{R}^3\to\mathbb{R}^3$, una transformación lineal , tal que: $T (1,1,1) = (1,0,2)$; $T( 1,0,1) = (0,1,1)$; $T ( 0,1,1) = ( 1,0,1)$. Encontrar $T(x,y,z)$
+  \item Se considera $f : \mathbb{R}^2\to\mathbb{R}^3$ aplicación lineal tal que $f((1,-1)) = (-1,-2,-3)$ y $f((-3, 2)) = (0, 5, 3)$. Determinar, si es posible, $f((x, y))$ donde $(x, y) \in \mathbb{R}^2$.
+  \item Sea $T: \mathbb{R}^2\to\mathbb{R}$, una transformación lineal definida por
+  $$
+  T (x,y,z) = 2x -3y +z
+  $$
+  \begin{enumerate}
+    \item Encontrar $[T]_{\beta,\alpha}$ donde $\beta = \{(1,0,0),(1,1,0),(1,1,1)\}$ y $\alpha =\{2\}$
+    \item  Encontrar kernel ($T$), Imagen ($T$), Nulidad($T$) y Rango ($T$).
+  \end{enumerate}
+  \item Sea $T: \mathbb{R}^4\to\mathbb{R}^3$ una transformación lineal definida por.
+  \begin{align*}
+    T(1,1,1,1) = (7,2,3)\\
+    T(1,1,1,0) =(6,1,7)\\
+    T(1,1,0,0) = (4,1,5)\\
+    T(1,0,0,0) = (1,0,1)
+  \end{align*}
+  Hallar $T( x,y,z,w)$.
+\end{enumerate}
+\end{document}
