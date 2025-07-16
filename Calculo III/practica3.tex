@@ -26,8 +26,44 @@
     \item $f : \mathbb{R}^3\to\mathbb{R}^2$ definida por $f((x; y; z)) = (x - y; y + 2z)$.
     \item $f : \mathbb{R}^3\to\mathbb{R}^2$ definida por $f((x; y; z)) = (x - y^2; y + 2z)$.
   \end{enumerate}
+  \item Sean $\mathcal{P}_2$ el espacio vectorial real de los polinomios de grado menor o igual a dos con coeficientes reales y la transformación $F : \mathbb{R}^3\to\mathcal{P}_2$ definida por:\\
+  $F(a,b,c) = (a + b)v_1 - cv_2$; donde $v_1 = x^2+1; v_2= 3x-1 \in \mathcal{P}_2 \quad\forall a,b,c \in \mathbb{R}$.\\
+  Determinar si $F$ es lineal.
   \item Sea $T: \mathbb{R}^3\to\mathbb{R}^3$, una transformación lineal , tal que: $T (1,1,1) = (1,0,2)$; $T( 1,0,1) = (0,1,1)$; $T ( 0,1,1) = ( 1,0,1)$. Encontrar $T(x,y,z)$
   \item Se considera $f : \mathbb{R}^2\to\mathbb{R}^3$ aplicación lineal tal que $f((1,-1)) = (-1,-2,-3)$ y $f((-3, 2)) = (0, 5, 3)$. Determinar, si es posible, $f((x, y))$ donde $(x, y) \in \mathbb{R}^2$.
+  \item Sea la transformación $S : \mathcal{P}_2\to\mathcal{R}^2$, definida por:
+  $$
+  S(ax^2 + bx + c) = (a + b,c)
+  $$
+  Determinar:
+  \begin{enumerate}
+    \item Si $S$ es una transformación lineal
+    \item El núcleo de la transformación $S$
+    \item El recorrido de la transformación $S$
+    \item Verificar $dim(\mathcal{P}_2)= dim(Nu(S))+dim(Img(S))$
+  \end{enumerate}
+  \item Para la transformación lineal $S : \mathbb{R}^2\to\mathcal{M}_2$ definida por:
+  $$
+  S(x,y,z) = \begin{pmatrix}
+    x-2y & y+z\\
+    y+z & x-y+z
+  \end{pmatrix}
+  $$
+  donde $\mathcal{M}_2$ es el espacio vectorial real de las matrices simétricas de orden dos con elementos reales, obtener:
+  \begin{enumerate}
+    \item El núcleo $N(S)$ de la transformación, su dimensión y una de sus bases.
+    \item El recorrido $S(\mathbb{R}^3)$ de la transformación, su dimensión y una de sus bases.
+    \item Demostrar que: $dim\mathbb{R}^3 = dim N(S) + dim S(\mathbb{R}^3)$.
+  \end{enumerate}
+  \item Para la transformación lineal $T : \mathbb{R}^3\to\mathbb{R}^3$ definida por:
+  $$
+  T (x, y, z) = (3x + y,6x- z,2y + z)
+  $$
+  Obtener:
+  \begin{enumerate}
+    \item El núcleo de $T$ y su dimensión.
+    \item El recorrido de $T$ y su dimensión.
+  \end{enumerate}
   \item Sea $T: \mathbb{R}^2\to\mathbb{R}$, una transformación lineal definida por
   $$
   T (x,y,z) = 2x -3y + z
