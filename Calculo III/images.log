@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  28 AUG 2025 12:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.7.23)  28 AUG 2025 14:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -245,6 +245,8 @@ File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen194
 )) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -332,7 +334,8 @@ LaTeX Info: Redefining \] on input line 2954.
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
 \l__pdf_internal_box=\box65
-) (./images.aux)
+)
+No file images.aux.
 \openout1 = `images.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -349,7 +352,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
- (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count305
 \scratchdimen=\dimen268
@@ -425,27 +428,23 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 
 
-[1
+c:/Users/USUARIO/Documents/repo/Materias/Calculo III/images.tex:38: I can't write on file `images.pdf'.
+(Press Enter to retry, or Control-Z to exit; default file extension is `.pdf')
+Please type another file name for output
+c:/Users/USUARIO/Documents/repo/Materias/Calculo III/images.tex:38: Emergency stop.
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.38 \end{document}
+                   
+*** (job aborted, file error in nonstop mode)
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./images.aux)
- ***********
-LaTeX2e <2024-06-01> patch level 2
-L3 programming layer <2024-05-27>
- ***********
- ) 
+ 
 Here is how much of TeX's memory you used:
- 14666 strings out of 473583
- 302630 string characters out of 5732336
- 1931908 words of memory out of 5000000
- 37323 multiletter control sequences out of 15000+600000
+ 14722 strings out of 473583
+ 303993 string characters out of 5732336
+ 1930908 words of memory out of 5000000
+ 37382 multiletter control sequences out of 15000+600000
  558523 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,7n,107p,492b,631s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on images.pdf (1 page, 50869 bytes).
-PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 102i,7n,107p,498b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
+c:/Users/USUARIO/Documents/repo/Materias/Calculo III/images.tex:38:  ==> Fatal error occurred, no output PDF file produced!
