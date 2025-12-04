@@ -1,0 +1,141 @@
+%------------------------------------------------------------------------
+% Prueba Matematica I
+%
+%       Realizado por:
+%       Jose Luis Ramirez
+%       Lennys Bello
+%                                                Actualizado: Noviembre 2007
+% ------------------------------------------------------------------------
+\documentclass[12pt,letterpaper]{article}
+\usepackage[left=1.0cm,top=1.0cm,right=1.0cm,bottom=1.0cm]{geometry}
+%\usepackage[activeacute,spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx, color}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsxtra}
+\usepackage{amsgen}
+\usepackage{amscd}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{latexsym}
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}[ht]{3cm}
+\includegraphics[width=3cm]{logo.jpg}
+\end{minipage}
+\begin{minipage}{12cm}
+\centering\textbf{Universidad Jos\'e Antonio P\'aez.\\
+Facultad de Ingenier\'ia.\\
+Escuela de Computaci\'on.\\
+C\'alculo Num\'erico.\\
+}
+\end{minipage}
+
+\begin{center}
+\underline{\textbf{Asignaci\'on 2}}\\[7pt]
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+
+\item Aplique el m\'etodo de bisecci\'on, encuentre una ra\'iz de:
+$$
+f(x) = x^8 - 36x^7 + 546x^6 - 4536x^5 + 22449x^4 - 67284x^3 + 118124x^
+2 - 109584x + 40320
+$$
+en el intervalo $[5.5; 6.5]$. Cambie -36 por -36,001 y repita el ejercicio y comente los resultados.
+
+\item Reescriba el algoritmo de bisecci\'on si se modifica as\'i: Se secciona en tres el intervalo de estudio en cada
+iteraci\'on (donde se encuentra la ra\'iz), se elige de los tres subintervalos el que contiene la ra\'iz y se asigna
+como aproximaci\'on el punto medio de este. Aplique su algoritmo al problema anterior y compare los
+resultados obtenidos, comente acerca de ello.
+
+\item Se desea hallar el rec\'iproco de un n\'umero $S$ con $S>0$. Para ello:
+\begin{enumerate}
+  \item Muestre que al aplicar el M\'etodo de Newton-Raphson se obtiene la f\'ormula de iteraci\'on
+  $$
+  x_{k+1} = x_k(2 - S\cdot x_k); k = 0; 1; \ldots
+  $$
+  \item Calcular $1/17$ usando el algoritmo planteado en el punto anterior.
+\end{enumerate}
+
+\item La suma de dos n\'umeros $a$ y $b$ es 21.2. Si a cada n\'umero se le a\~nade la ra\'iz cuadrada de s\'i mismo (es
+decir, $a + \sqrt{a}$), el producto de las dos sumas es 170.73.
+\begin{enumerate}
+  \item Usando el M\'etodo de Newton determine ambos n\'umeros dentro de una tolerancia de $10^{-8}$. Considere $x_0 = 0$ como valor inicial.
+  \item Usando el M\'etodo de la Secante, determine los dos n\'umeros dentro de una tolerancia de $10^{-8}$. Considere $x_0 = 0$ y $x_1 = 1$ como valores iniciales.
+\end{enumerate}
+\underline{Ayuda}: Conforme un sistema de dos ecuaciones con dos inc\'ognitas y red\'uzcalo a una ecuaci\'on con una inc\'ognita.
+
+\item \begin{enumerate}
+    \item Use el M\'etodo de Newton para hallar el m\'inimo de la siguiente funci\'on polin\'omica
+    $$
+    f(x) = 230x^4 + 18x^3 + 9x^2 - 221x - 9
+    $$    
+    Asigne el resultado a la variable $x_N$. Determine las funciones necesarias a mano.
+    \item Use el M\'etodo de la Secante para aproximar las ra\'ices de $f(x)$ sobre los intervalos $[-2, x_N]$ y
+    $[x_N, 2]$ (use los extremos de estos intervalos como aproximaciones iniciales). Indique la utilidad de
+    hallar el m\'inimo de la funci\'on para dividir el int\'ervalo.
+\end{enumerate}
+
+\item Estudiemos la aplicaci\'on de la iteraci\'on de punto fijo al c\'alculo de las ra\'ices de la funci\'on
+$$
+f(x) = -x^2 + x + \sin(x + 0.15)
+$$
+Para ello:
+ \begin{enumerate}
+  \item Dibuje la gr\'afica de $f$ y localice la ra\'iz de menor valor absoluto.Aplique la iteraci\'on de punto fijo a $g(x) = x - f(x)$ para aproximar esa ra\'iz con tolerancia=$10^{-15}$. Dibuje la
+ gr\'afica de los valores $x^{(k)}$. ?`Hay convergencia despu\'es de 100 iteraciones?
+
+ \item Aplique el siguiente esquema de iteraci\'on para 3 valores de $\alpha \in (-1,1)$ 
+ $$
+ g(x) = x - \alpha f(x)
+ $$
+ para mejorar las propiedades de convergencia. Vuelva a aplicar la iteraci\'on de punto fijo y compare los resultados.
+
+ \end{enumerate}
+\item Considere la ecuaci\'on:
+\begin{equation}\label{eq1}
+ 2x^3 = 3x+4
+\end{equation}
+
+\begin{enumerate}
+ \item Demostrar que la funci\'on $f(x) = 2x^3 - 3x - 4$ tiene una \'unica ra\'iz real $\alpha$ en $(1,2)$.
+ \item ?`Se puede usar bisecci\'on para hallar una aproximaci\'on a $\alpha$?
+ \item Convertir el problema de calcular la ra\'iz $\alpha$ de la ecuaci\'on (\ref{eq1}) en un problema de Punto Fijo, en el intervalo $[1,2]$. Ensayar por lo menos cuatro funciones de iteraci\'on en $[1,2]$.
+\end{enumerate}
+\item Diversos cables, como los de tel\'efono, l\'ineas el\'ectricas o TV por cable, suelen colgarse de postes de servicios p\'ublicos.
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Screenshot_219.png}
+    \caption{Cable colgando de un poste.}
+\end{figure}
+El cable tiene un peso uniforme $w$ (en Newtons/metro) por unidad de longitud. A partir del equilibrio de fuerzas en las direcciones 
+$x$ y $y$, se puede derivar la siguiente ecuaci\'on diferencial para la altura 
+$y$ del cable en cada punto $x$:
+$$
+\dfrac{d^2y}{dx^2} = \dfrac{w}{T}\sqrt{1+\left(\dfrac{dy}{dx}\right)^2}
+$$
+Donde $T$ es la fuerza de tensi\'on a lo largo del cable (en Newtons).
+
+La soluci\'on de esta ecuaci\'on diferencial es:
+$$
+y = \dfrac{T}{w}\cosh\left(\dfrac{wx}{T}\right) + y_{min}-\dfrac{T}{w}
+$$
+Donde $\cosh(x)$ es el coseno hiperb\'olico ($cosh(x) = \dfrac{e^x + e^{-x}}{2}$).
+\begin{itemize}
+    \item Debe escribir un c\'odigo en python para calcular la tensi\'on de tensi\'on $T$ en un cable tendido entre dos postes de altura $y$ en las posiciones $-x$ y $+x$ en la dirección horizontal. El programa debe garantizar que el cable est\'e a una altura m\'inima de 
+    $y_{min}$ por encima del suelo.
+    \item Despu\'es de calcular esta tensi\'on, usa la ecuaci\'on dada para dibujar un gr\'afico de los valores de la altura del cable entre los dos postes.
+    \item No es necesario verificar la validez de las entradas.
+    \item No necesita usar la ecuaci\'on diferencial dada en la introducci\'on para resolver la tarea.
+    \item Pruebe su programa con diferentes entradas. Ejemplo: para $x=50$, $y=15$, $y_{min}=8$ y 
+    $w=8$, la tensi\'on $T$ debe ser aproximadamente 1438.
+\end{itemize}
+\end{enumerate}
+\end{document}
