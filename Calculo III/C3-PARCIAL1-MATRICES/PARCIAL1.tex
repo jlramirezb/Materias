@@ -6,7 +6,7 @@
 \usepackage{anysize}
 \marginsize{0.75cm}{0.75cm}{0.5cm}{0.5cm}
 \papersize{27.9cm}{21.5cm}
-\renewcommand{\baselinestretch}{1.25}
+\renewcommand{\baselinestretch}{1.1}
 \setlength{\parindent}{0cm}
 \usepackage{graphicx}
 \usepackage{wrapfig}
@@ -23,7 +23,7 @@
 		\includegraphics[scale=0.7]{logofacyt}
 	\end{tabular}
 	
-	\vspace{-2.2cm}
+	\vspace{-3cm}
 	
 	\begin{center}
 		{UNIVERSIDAD DE CARABOBO}   \\
@@ -34,61 +34,13 @@
 	\end{center}
 		
 	Nombre y Apellido: \underline{\hspace*{7.8cm}} Cédula: \underline{\hspace*{3.1cm}} Sección: \underline{\hspace*{1.1cm}}\\
-	
-	
-	\vspace{0.8cm}
-	\pagestyle{empty}
-	
-	\textbf{PREGUNTA 1.} (5 ptos) Sean $A$, $B$, $C$ y $D$ las matrices:
-	\[
-	A = \begin{pmatrix} 0 & 1 & 0 \\ 2 & 0 & 0 \\ 0 & 0 & -1 \end{pmatrix} \quad
-	B = \begin{pmatrix} 4 & 3 & -3 \\ 6 & 1 & 9 \\ -3 & 0 & 5 \end{pmatrix} 
-	\quad
-	C = \begin{pmatrix} 0 & -1 & 0 \\ -2 & 0 & 0 \\ 0 & 0 & 2 \end{pmatrix} \quad
-	D = \begin{pmatrix} 1 & 1 & -1 \\ 2 & 0 & 3 \\ -1 & 0 & 1 \end{pmatrix}
-	\]
-	Calcule (2.5 ptos c/u): $AC + 2I$ y $(B - 3D)^3$.
-	
-	\vspace{0.8cm}
-	
-	\textbf{PREGUNTA 2.} (5 ptos) Usando el Método de Gauss-Jordan, hallar la inversa de la matriz:
-	\[
-	M = \begin{pmatrix} 1 & 2 & 0 \\ 3 & -1 & 2 \\ -2 & 0 & 1 \end{pmatrix}
-	\]
-	
-	\vspace{0.8cm}
-	
-	\textbf{PREGUNTA 3.} (4 ptos) Calcule el determinante de la matriz $D$ mediante un desarrollo por columnas:
-	\[
-	D = \begin{pmatrix} 2 & 0 & 1 & 4 \\ 3 & -1 & 2 & 0 \\ 0 & 5 & -3 & 1 \\ 1 & 2 & 0 & -2 \end{pmatrix}
-	\]
-	
-	\vspace{0.8cm}
-	
-	\textbf{PREGUNTA 4.} (6 ptos) Resuelva los siguientes sistemas de ecuaciones lineales (3 ptos c/u):
-	
-	\begin{itemize}
-		\item[a)] 
-		\[
-		\begin{cases}
-			2x - y + 3z = 8 \\
-			x + 3y - 2z = -1 \\
-			3x + 2y + z = 5
-		\end{cases}
-		\]
 		
-		\item[b)] 
-		\[
-		\begin{cases}
-			x + 2y - z = 0 \\
-			2x - y + 3z = 0 \\
-			3x + y + 2z = 0
-		\end{cases}
-		\]
-	\end{itemize}
-
-	\begin{itemize}
+	\vspace{-0.8cm}
+	\pagestyle{empty}
+		
+	\begin{enumerate}
 		\item Para que valores de $\alpha \in \mathbb{R}$ es igual a 2 el rango de la matriz:
+		\begin{flushright}{(5 pts)}\end{flushright}
 		\[
 		\begin{pmatrix} \alpha & -1 & 0 \\ 
 			1 & \alpha^2 & 1+\alpha^3	\\
@@ -96,6 +48,7 @@
 		\end{pmatrix}
 		\]
 		\item Considere el valor  del siguiente determinante:
+		\begin{flushright}{(5 pts)}\end{flushright}
 		\[
 		\begin{vmatrix}
 			a_{11} & a_{12} & a_{13} \\
@@ -111,9 +64,24 @@
 			 \end{vmatrix}
 		\]
 	\item Verifique si existe $M^{-1}$ hallando el $det(M)$ y en caso positivo use el Método de Gauss-Jordan para hallar $M^{-1}$, siendo:
+	\begin{flushright}{(5 pts)}\end{flushright}
 	\[
 	M = \begin{pmatrix} 1 & 2 & 0 \\ 3 & -1 & 2 \\ -2 & 0 & 1 \end{pmatrix}
 	\]
 
-	\end{itemize}
+	\item Un centro de datos tiene tres servidores ($A, B, C$) interconectados. La carga de trabajo de cada uno depende de los otros y de una entrada externa:
+        \begin{itemize}
+            \item \textbf{Servidor A:} Procesa 50\% de la carga de B, 20\% de C, más 500 unidades externas.            
+            \item \textbf{Servidor B:} Procesa 30\% de la carga de A, 40\% de C, más 300 unidades externas.
+            \item \textbf{Servidor C:} Procesa 20\% de la carga de A, 10\% de B, más 200 unidades externas.
+        \end{itemize}
+
+        \begin{enumerate}         
+            \item Traduce las descripciones a un sistema de 3 ecuaciones lineales.
+            \begin{flushright}{(2 pto)}\end{flushright}
+            \item Resuelva el sistema lineal $A\mathbf{x} = \mathbf{b}$.
+            \begin{flushright}{(3 pto)}\end{flushright}
+        \end{enumerate}
+
+	\end{enumerate}
 \end{document}
